@@ -6,7 +6,7 @@ Primary Local Server
 
 Secondary Local Runners
 
-8 x [ i7 with 8 core @3Ghz with 8Gb and 60Gb ]
+16 x [ i7 with 8 core @3Ghz with 8Gb and 60Gb ]
 
 Primary LLM Processor
 
