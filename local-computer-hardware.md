@@ -1,14 +1,34 @@
-Local Computer System available for git:
+# Local Computer Hardware
 
-Primary Local Server
+Hardware available for the Forgejo-Mind installation.
 
-1 x [ i9 with 20 cores @5Ghz with 64Gb and 2Tb NVMe ]
+## Primary forge server
 
-Secondary Local Runners
+| Spec | Value |
+|---|---|
+| CPU | i9 · 20 cores · 5 GHz |
+| RAM | 64 GB |
+| Storage | 2 TB NVMe |
+| Count | 1 |
 
-16 x [ i7 with 8 core @3Ghz with 8Gb and 60Gb ]
+## Runner fleet
 
-Primary LLM Processor
+| Spec | Value |
+|---|---|
+| CPU | i7 · 8 cores · 3 GHz |
+| RAM | 8 GB |
+| Storage | 60 GB SSD |
+| Count | 16 |
 
-1 x [ i9 with 32 cores @5Ghz with 64Gb and 1Tb NMVe and NVidia 4090 ]
-LM Studio with Goole Gemma 4 and over 100 others
+## LLM inference server
+
+| Spec | Value |
+|---|---|
+| CPU | i9 · 32 cores · 5 GHz |
+| RAM | 64 GB |
+| Storage | 1 TB NVMe |
+| GPU | NVIDIA RTX 4090 |
+| Software | LM Studio — Google Gemma 4 and 100+ models |
+| Count | 1 |
+
+All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
