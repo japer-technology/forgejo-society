@@ -7,15 +7,19 @@ into one ordered, copy-paste-friendly script.
 Work through the four phases in order. Each phase has a clear "done when" condition
 before you move on.
 
+> **New to this?** Start with the OS first.
+> - [Ubuntu Quick Start](ubuntu.md) — step-by-step Ubuntu 24.04 LTS install with validation at every step
+> - [Ubuntu Refresh](ubuntu-refresh.md) — clean up, repair UFW/fail2ban, audit a running host without reinstalling
+
 ---
 
 ## Pre-flight
 
 You need:
 
-- **Forge server**: Ubuntu 24.04 LTS installed (i9, 64 GB RAM, 2 TB NVMe) — see `01-ubuntu-foundation.md`
-- **Runner nodes × 16**: Ubuntu 24.04 LTS installed (i7, 8 GB RAM, 60 GB SSD)
-- **LLM inference server**: Ubuntu 24.04 LTS installed (i9, 64 GB RAM, 1 TB NVMe, RTX 4090)
+- **Forge server**: Ubuntu 24.04 LTS installed (i9, 64 GB RAM, 2 TB NVMe) — see [Ubuntu Quick Start](ubuntu.md)
+- **Runner nodes × 16**: Ubuntu 24.04 LTS installed (i7, 8 GB RAM, 60 GB SSD) — same guide
+- **LLM inference server**: Ubuntu 24.04 LTS installed (i9, 64 GB RAM, 1 TB NVMe, RTX 4090) — same guide
 - **Domain name** pointing at your forge server (or a private LAN hostname)
 - SSH access from your workstation to every host
 
