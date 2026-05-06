@@ -43,14 +43,15 @@ issue comments). Nothing happens outside version control.
 
 | Task class | Default model | Escalation condition |
 |---|---|---|
-| Issue triage, labelling | Local (Gemma 3 8B) | Ambiguous after 2 passes |
-| Code review | Local (Gemma 3 27B) | Security-critical change |
-| Documentation generation | Local (Gemma 3 27B) | Final publication draft |
+| Issue triage, labelling | Local (Gemma 4B / 8B Q4) | Ambiguous after 2 passes |
+| Code review | Local (Gemma 27B Q4) | Security-critical change |
+| Documentation generation | Local (Gemma 27B Q4) | Final publication draft |
 | Architecture synthesis | Cloud (GPT-4o / Claude) | Explicit request only |
 | External-facing release notes | Cloud | Explicit request only |
 
-The RTX 4090 host runs LM Studio with at least one fast small model (≤ 8B) and one
-capable reasoning model (≤ 27B). Cloud model usage requires an explicit policy
+The RTX 4090 host runs LM Studio (or Ollama) with at least one fast small model (≤ 8B) and one
+capable reasoning model (≤ 27B). Model families in order of preference: Google Gemma 4,
+Google Gemma 3, Mistral Small, Llama 3.x. Cloud model usage requires an explicit policy
 decision, not a default.
 
 ---
@@ -216,8 +217,19 @@ curl -s -X POST "$FORGEJO_URL/api/v1/repos/$OWNER/$REPO/issues" \
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which task classes are always local, conditionally cloud, or always human-reviewed?
-- [ ] Which repo classes may be written by agents directly without a PR gate?
-- [ ] What is the promotion path from `probation` to `trusted` for new agent capabilities?
+- **Always-local task classes:** Issue triage, duplicate detection, label application,
+  K-line routing, provenance recording, and code formatting checks. These are
+  bounded, high-frequency tasks with binary or enumerated outputs that a small
+  local model handles reliably after validation.
+- **Conditionally cloud:** Code review of security-critical changes (authentication,
+  cryptography, data handling), architecture synthesis when a new system-wide
+  pattern is being introduced, and publication-quality writing. Cloud escalation
+  requires an explicit label on the PR or a governance policy entry.
+- **Always human-reviewed (no automation exception):** Merging to `main` in a core
+  repository, promoting an agent from `experimental` to `trusted`, publishing a
+  new repository publicly, rotating a production secret, and any change to the
+  `governance-policies` repository.
+- **Repo classes that agents may write without a PR gate:** Only `memory` repositories
+  for provenance recording and K-line updates. All other classes require a PR gate.

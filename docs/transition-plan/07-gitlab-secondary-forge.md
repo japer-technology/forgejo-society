@@ -5,7 +5,7 @@ It provides a richer CI/CD ecosystem and broader ecosystem integrations as a bac
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Secondary forge for redundancy and wider ecosystem compatibility.
 - Additional public mirror for repositories that benefit from GitLab's discovery and CI features.
@@ -124,8 +124,13 @@ git clone https://gitlab.com/YOURGROUP/YOURREPO.git /tmp/gitlab-test-clone
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is GitLab a temporary bridge, a permanent mirror, or a full standby forge?
-- [ ] Should GitLab CI run on mirrored repositories to provide a second CI opinion?
-- [ ] Are there specific GitLab features (Container Registry, Package Registry) worth using?
+- **GitLab role:** Permanent mirror with optional secondary CI. It is not a standby
+  forge — Forgejo is the system of record and the primary CI platform.
+- **GitLab CI:** Run the secondary validation pipeline on `public-showcase` and
+  `open-contribution` repositories to provide a second CI opinion and to keep
+  GitLab credentials and pipelines exercised. This does not block merges.
+- **GitLab-specific features:** The Container Registry and Package Registry are
+  not used. If a specific need arises, document it first and get governance approval
+  before adding a GitLab-specific workflow.

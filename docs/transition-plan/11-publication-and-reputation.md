@@ -6,7 +6,7 @@ public surfaces on purpose, as a deliberate release step.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Keep private and active work inside Forgejo.
 - Publish selected repositories outward to GitHub, Codeberg, and GitLab as governed mirrors.
@@ -172,8 +172,15 @@ gh repo view YOURORG/YOURREPO
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which projects are public showcase projects versus private internal work?
-- [ ] Which public mirrors accept issues or pull requests directly?
-- [ ] What approval is required before a private Forgejo repository becomes public?
+- **Public vs private:** A repository becomes public only when it has been approved
+  by the lead maintainer and has passed a security review confirming no secrets,
+  credentials, or sensitive design details are committed. The approval is recorded
+  as an issue in `governance-policies`.
+- **Issue intake on mirrors:** GitHub mirrors for `open-contribution` repositories
+  may accept issues as external intake. All other mirrors have issues disabled.
+  GitLab and Codeberg mirrors never accept issues.
+- **Approval to publish publicly:** Lead maintainer approval is required. For
+  repositories in the `core` class, two maintainer sign-offs are required before
+  any public mirror is created.

@@ -445,8 +445,15 @@ sudo journalctl -u forgejo -f
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which authentication method is the default: local, LDAP, OAuth, or OIDC?
-- [ ] Which queue backend is used for Forgejo Actions: disk, Redis, or database?
-- [ ] Which data classes must be imported versus archived from GitHub?
+- **Authentication default:** Local accounts with SSH key authentication are the default
+  for maintainers and regular contributors. HTTPS with a personal access token is
+  acceptable for CI scripts and occasional contributors who have not set up SSH keys.
+- **Queue backend:** Start with the disk queue (default). Migrate to the database queue
+  once PostgreSQL is confirmed healthy and the agent load exceeds what the disk queue
+  handles reliably. Do not use Redis unless a specific bottleneck requires it.
+- **Data import vs archive:** Import all repositories with their full Git history, issues,
+  milestones, labels, and releases. Repositories not touched in the past two years
+  should be imported and then immediately set to `archive` class in Forgejo (read-only,
+  no runners).

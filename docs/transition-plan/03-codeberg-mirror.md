@@ -6,7 +6,7 @@ public continuity mirror — not the system of record.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Public mirror of selected repositories for visibility and redundancy.
 - Fallback collaboration point if the primary Forgejo instance is unavailable.
@@ -162,8 +162,14 @@ git clone https://codeberg.org/YOURORG/YOURREPO.git /tmp/codeberg-test-clone
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which repositories are mirrored continuously versus selectively?
-- [ ] Are issues disabled on Codeberg mirrors (recommended) or left open for emergency intake?
-- [ ] What is the maximum acceptable mirror lag before an alert fires?
+- **Mirror scope:** Mirror all repositories that are in the `public-showcase` or
+  `open-contribution` class. Private and experimental repositories are not mirrored.
+  Review the mirror list quarterly.
+- **Issues on Codeberg:** Disable issues on all Codeberg mirrors. Codeberg is a
+  read-only continuity mirror, not a collaboration point. The Forgejo instance is
+  the only issue tracker.
+- **Mirror lag alert threshold:** Alert if any mirror's `last_update` timestamp is
+  more than 24 hours old. Check mirror status daily via a scheduled Forgejo Actions
+  workflow that calls the API and posts an alert issue if the lag threshold is exceeded.

@@ -137,9 +137,13 @@ sudo tee /usr/local/bin/pg-backup-forgejo.sh > /dev/null <<'SCRIPT'
 #!/usr/bin/env bash
 set -euo pipefail
 
+# pg_dump --format=custom produces a binary archive (not plain SQL text).
+# Use .dump as the extension so it is not confused with a gzipped SQL file.
+# Restore with: pg_restore --dbname=forgejo /path/to/file.dump
+
 BACKUP_DIR="/backup/postgresql"
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-FILE="$BACKUP_DIR/forgejo-$TIMESTAMP.sql.gz"
+FILE="$BACKUP_DIR/forgejo-$TIMESTAMP.dump"
 
 mkdir -p "$BACKUP_DIR"
 
@@ -150,7 +154,7 @@ sudo -u postgres pg_dump \
   forgejo
 
 # Remove backups older than 14 days
-find "$BACKUP_DIR" -name "forgejo-*.sql.gz" -mtime +14 -delete
+find "$BACKUP_DIR" -name "forgejo-*.dump" -mtime +14 -delete
 
 echo "PostgreSQL backup complete: $FILE"
 SCRIPT
@@ -184,12 +188,12 @@ CREATE DATABASE forgejo
 GRANT ALL PRIVILEGES ON DATABASE forgejo TO forgejo;
 SQL
 
-# Restore
+# Restore — replace TIMESTAMP with the actual filename timestamp
 sudo -u postgres pg_restore \
   --dbname=forgejo \
   --no-privileges \
   --no-owner \
-  /backup/postgresql/forgejo-TIMESTAMP.sql.gz
+  /backup/postgresql/forgejo-TIMESTAMP.dump
 
 # Start Forgejo
 sudo systemctl start forgejo
@@ -291,8 +295,15 @@ sudo -u postgres psql -d forgejo -c \
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is a PostgreSQL standby replica needed for high-availability?
-- [ ] Which off-machine backup destination is used: local NAS, S3-compatible, or cloud?
-- [ ] What is the maximum acceptable recovery point objective (RPO)?
+- **PostgreSQL standby replica:** Not required at launch. The primary server has
+  sufficient RAID/backup coverage. If recovery time objective drops below 30 minutes
+  in the future, add a streaming standby replica to a second machine.
+- **Off-site backup destination:** Same as the Ubuntu foundation decision — use
+  `restic` with a S3-compatible backend (Backblaze B2 or Wasabi). The PostgreSQL
+  dumps are included in the restic backup alongside the Forgejo data.
+- **Recovery point objective (RPO):** Target RPO is 24 hours. The nightly backup
+  at 01:30 (database) and 02:00 (Forgejo data) meets this. For a tighter RPO,
+  enable PostgreSQL WAL archiving to the backup destination and configure
+  `archive_command` to ship WAL files continuously.

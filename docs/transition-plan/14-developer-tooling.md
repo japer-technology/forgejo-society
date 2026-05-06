@@ -293,8 +293,10 @@ pipx ensurepath
 ### 5.2 Node.js (via nvm)
 
 ```bash
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Install nvm — check https://github.com/nvm-sh/nvm/releases for the latest version
+NVM_VERSION="v0.40.1"   # replace with the current release from the releases page
+
+curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" | bash
 
 # Reload shell
 source ~/.bashrc
@@ -311,7 +313,8 @@ npm --version
 ### 5.3 Go
 
 ```bash
-GO_VERSION="1.23.4"   # check https://go.dev/dl/ for latest
+# Check https://go.dev/dl/ for the latest stable release before running this
+GO_VERSION="1.24.3"   # replace with the current stable release from go.dev/dl
 
 wget -O /tmp/go.tar.gz "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz"
 sudo tar -C /usr/local -xzf /tmp/go.tar.gz
@@ -347,11 +350,18 @@ LLM inference machine (i9 32-core, 64 GB, RTX 4090).
 
 ### 7.1 Install LM Studio
 
+Download the current Linux AppImage from <https://lmstudio.ai/download> (click the Linux tab
+and download the x86_64 AppImage for the latest release). Then install it:
+
 ```bash
-# Download the AppImage from https://lmstudio.ai (Linux build)
-# Replace the version number with the current release
+# Download page: https://lmstudio.ai/download
+# Replace <VERSION> with the actual version shown on the download page,
+# for example: LM_STUDIO_VERSION="0.3.16"
+
+LM_STUDIO_VERSION="<VERSION_FROM_DOWNLOAD_PAGE>"
+
 wget -O ~/lmstudio.AppImage \
-  "https://releases.lmstudio.ai/linux/x86/0.3.6/latest/LM-Studio-0.3.6-x86_64.AppImage"
+  "https://releases.lmstudio.ai/linux/x86/${LM_STUDIO_VERSION}/latest/LM-Studio-${LM_STUDIO_VERSION}-x86_64.AppImage"
 
 chmod +x ~/lmstudio.AppImage
 
@@ -434,8 +444,14 @@ For workstations that need a GUI Docker experience:
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is a dotfiles repository maintained in Forgejo for standard shell and editor config?
-- [ ] Which model is the default for background cognition on the LLM host?
-- [ ] Is there a headless LM Studio server mode or alternative (Ollama, llama.cpp) preferred?
+- **Dotfiles repository:** Yes — maintain a `dotfiles` repository in Forgejo containing
+  `~/.gitconfig`, `~/.zshrc`, `~/.tmux.conf`, `~/.gitignore_global`, and `~/.ssh/config`
+  (with hostnames only, no keys). New workstations clone this repo and run a bootstrap script.
+- **Default background-cognition model:** Google Gemma 3 27B Q4 GGUF on the RTX 4090 for
+  code review and documentation. Google Gemma 3 8B Q4 GGUF for high-frequency classification
+  and triage. Upgrade to Gemma 4 equivalents as they pass local validation.
+- **Headless server:** LM Studio is the default because it ships a stable OpenAI-compatible API.
+  If headless-only operation is preferred (no GUI), use **Ollama** (`ollama serve`) as an
+  alternative — it is API-compatible and runs without a display server.

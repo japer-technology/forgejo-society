@@ -5,7 +5,7 @@ primary Forgejo server, all 16 runner nodes, and the LLM inference machine.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Host the primary Forgejo instance (governance layer).
 - Provide a consistent, repeatable base for runner nodes.
@@ -320,8 +320,15 @@ and [13 — PostgreSQL database](13-postgresql-database.md).
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which LVM or ZFS layout is preferred for the forge host?
-- [ ] Which provider or cloud is the off-site backup destination?
-- [ ] Is Ansible used for host configuration management across the runner fleet?
+- **LVM layout:** Use LVM with separate logical volumes for `/`, `/var/lib/postgresql`,
+  `/var/lib/forgejo`, and `/backup`. This allows each volume to be resized, snapshotted,
+  or backed up independently. See the disk layout guidance in Phase 5.
+- **Off-site backup destination:** Use `restic` with an S3-compatible backend
+  (Backblaze B2, Wasabi, or a self-hosted MinIO instance on a NAS). Restic provides
+  encryption, deduplication, and integrity checking out of the box.
+- **Ansible for runner fleet:** Yes — write an Ansible playbook that encodes this guide
+  for the runner nodes. The playbook ensures all 16 nodes are configured identically
+  and can be re-provisioned in under 15 minutes. Store the playbook in a `core`
+  repository in Forgejo.
