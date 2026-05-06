@@ -6,13 +6,17 @@ and a 16-node Forgejo Actions runner fleet.
 
 ---
 
-## Start here
+## → [QUICKSTART.md](QUICKSTART.md) ← Start here if you want to run it now
 
-- [Master overview and installation checklists](docs/transition-plan/00-overview.md)
+The Quick Start sequences all commands into five ordered phases — OS, PostgreSQL,
+Forgejo, runner fleet, and LLM server — with a variables block at the top so you
+only fill in your domain and IPs once.
 
 ---
 
-## Installation guide
+## Detailed installation guide
+
+Work through the phases below in order. Each document is self-contained and command-level.
 
 ### Foundation
 
@@ -53,6 +57,14 @@ and a 16-node Forgejo Actions runner fleet.
 |---|---|---|
 | 12 | [Security and governance](docs/transition-plan/12-security-quotas-and-governance.md) | Secrets, quotas, audit, disaster recovery |
 | 04 | [GForge evaluation](docs/transition-plan/04-gforge-evaluation.md) | Decision framework for GForge |
+
+---
+
+## Master checklist
+
+The [overview document](docs/transition-plan/00-overview.md) has the complete four-phase
+installation checklist. Use it to track progress from clean hardware to a fully running
+cognitive ecology.
 
 ---
 
