@@ -71,6 +71,7 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 | 12 | [Security and governance](12-security-quotas-and-governance.md) | Quotas, secrets, audit, repo classes |
 | 13 | [PostgreSQL database](13-postgresql-database.md) | Full PostgreSQL setup and tuning |
 | 14 | [Developer tooling](14-developer-tooling.md) | Git, SSH, terminal, VS Code, LM Studio |
+| 15 | [Windows developer tooling](15-windows-developer-tooling.md) | Git for Windows, Visual Studio, SSH, Forgejo PAT, LM Studio |
 
 ---
 
@@ -135,6 +136,7 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 - [ ] Pull request and review expectations published in forge-neutral terms
 - [ ] No workflow documented that requires a GitHub-only tool
 - [ ] Contributor onboarding tested end-to-end on a fresh Ubuntu workstation
+- [ ] Windows contributor onboarding tested end-to-end — see [15](15-windows-developer-tooling.md)
 
 **Phase 3 done when:** A new contributor can go from zero to merged pull request using only the published instructions.
 
