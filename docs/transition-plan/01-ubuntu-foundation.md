@@ -50,6 +50,33 @@ Download: <https://releases.ubuntu.com/24.04/>
 Run all commands as your admin user with `sudo`. Replace `YOUR_USERNAME` with the
 actual account name.
 
+### 2.0 Remove snap curl and replace it with the apt version
+
+Ubuntu 24.04 desktop and some server ISOs ship `curl` as a snap. The snap version
+runs in a confined sandbox and **cannot write to `/usr/share/keyrings`**, which
+breaks every `curl | gpg --dearmor` key-import step used later for Docker, Caddy,
+VS Code, and others. Purge it and install the real apt package **before running any
+other command**.
+
+```bash
+# Check whether snap curl is installed (will print a path if so)
+which curl
+
+# Remove snap curl if present
+sudo snap remove curl
+
+# Install the real curl from apt
+sudo apt install -y curl wget
+
+# Confirm — must print /usr/bin/curl, NOT a snap path
+which curl
+curl --version
+```
+
+> **Do not skip this step on a desktop ISO.** On a server ISO you may find curl is
+> already the apt version; `which curl` will confirm it. Either way, running the
+> block above is safe.
+
 ### 2.1 Update the system
 
 ```bash
@@ -58,9 +85,17 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 ### 2.2 Install essential packages
 
+Ubuntu server and minimized ISOs ship without compilers. The `build-essential` meta-
+package pulls in `gcc`, `g++`, `make`, and `libc-dev` in one shot. The SSL and zlib
+dev headers are required by Rust's standard library and Python's `ssl`/`hashlib`
+modules. Install everything here so no later step fails due to missing toolchain
+components.
+
 ```bash
 sudo apt install -y \
-  git curl wget unzip gnupg2 lsb-release \
+  build-essential pkg-config \
+  libssl-dev libffi-dev zlib1g-dev \
+  git curl wget unzip xz-utils gnupg2 lsb-release \
   software-properties-common apt-transport-https ca-certificates \
   ufw fail2ban \
   htop iotop iftop ncdu \
