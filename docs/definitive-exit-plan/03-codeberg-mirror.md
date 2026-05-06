@@ -7,6 +7,7 @@ Codeberg is a strong hosted complement because it is community-oriented and Forg
 - Public mirror for important repositories.
 - Fallback collaboration point if the primary Forgejo instance is unavailable.
 - Public discovery surface that is not GitHub.
+- Continuity mirror that never becomes the system of record.
 
 ## Why include Codeberg
 
@@ -19,6 +20,7 @@ Codeberg is a strong hosted complement because it is community-oriented and Forg
 - Create the Codeberg organization or account structure.
 - Mirror the highest-priority repositories.
 - Publish minimal profile and repository descriptions.
+- Decide whether issues are disabled by default or left open only for emergency intake.
 - Track any features that differ from the primary Forgejo deployment.
 
 ## Continuity controls
@@ -26,6 +28,7 @@ Codeberg is a strong hosted complement because it is community-oriented and Forg
 - Keep mirror cadence documented and automated.
 - Confirm public clone access for all mirrored repositories.
 - Maintain a small operating manual for switching public references to Codeberg.
+- Keep repository metadata clear that Forgejo remains canonical.
 
 ## Open decisions
 

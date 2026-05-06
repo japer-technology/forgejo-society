@@ -6,6 +6,7 @@ GitLab is the strongest full-featured hosted or self-managed secondary forge in 
 
 - Secondary forge for redundancy, collaboration, or staged migration.
 - Backup venue for repositories that need richer integrated project features.
+- Additional continuity mirror that stays subordinate to Forgejo as the source of truth.
 
 ## Why include GitLab
 
@@ -18,7 +19,7 @@ GitLab is the strongest full-featured hosted or self-managed secondary forge in 
 - Define whether GitLab is hosted or self-managed in this strategy.
 - Mirror or import priority repositories.
 - Map groups, permissions, and protected branches.
-- Identify which workflows, if any, live in GitLab versus the primary Forgejo instance.
+- Avoid letting GitLab become the only place where an essential workflow can run.
 
 ## Continuity controls
 
