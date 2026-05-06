@@ -5,7 +5,7 @@ and enterprise settings. Treat it as an evaluated option, not the default path.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Candidate for institutional or specialized hosting requirements.
 - Reference point for comparing governance, project management, and compliance needs.
@@ -41,6 +41,8 @@ cannot cover. The default answer is **no** — use Forgejo.
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Has a specific institutional requirement been identified that mandates GForge evaluation?
+- **Institutional requirement for GForge:** No specific requirement has been identified.
+  GForge evaluation is deferred until a concrete gap in Forgejo's capabilities is
+  documented. The default answer remains **no — use Forgejo**.

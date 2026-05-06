@@ -8,7 +8,7 @@ vendor-specific client.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Keep Git CLI, Forgejo web UI, and VS Code Git all viable and documented.
 - Make HTTPS and SSH both work for every contributor.
@@ -176,8 +176,15 @@ With GitLens installed:
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is SSH the mandatory default for all maintainers, or is HTTPS-with-token acceptable?
-- [ ] Which credential helper is standard: `store`, `cache`, or a system keyring helper?
-- [ ] Is `tea` (the Forgejo CLI) part of the standard workstation setup?
+- **SSH vs HTTPS:** SSH is the mandatory default for all maintainers and regular
+  contributors with write access. HTTPS with a personal access token is acceptable
+  for read-only clones and CI scripts where SSH key management is impractical.
+- **Credential helper:** Use `store` for scripts and headless environments. Use the
+  system keyring helper (`libsecret-1-0` + `git-credential-libsecret`) on Ubuntu
+  desktop workstations for better security — it encrypts stored credentials in the
+  GNOME keyring rather than storing them in plaintext.
+- **`tea` CLI:** Yes — include `tea` in the standard workstation setup. It allows
+  opening pull requests, listing issues, and managing repositories from the terminal
+  without switching to a browser. Document it in the onboarding guide.

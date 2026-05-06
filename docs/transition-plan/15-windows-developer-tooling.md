@@ -431,9 +431,20 @@ tea pulls create \
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is a shared `%USERPROFILE%\.gitconfig` template distributed via a dotfiles repository in Forgejo?
-- [ ] Is WSL 2 part of the standard Windows developer setup or optional?
-- [ ] Which model is the default for local LM Studio inference on Windows developer machines?
-- [ ] Is a Windows SSH agent wrapper (e.g. Pageant via PuTTY) supported, or is the Windows OpenSSH agent mandatory?
+- **Dotfiles template:** Yes — distribute a `%USERPROFILE%\.gitconfig` template via the
+  `dotfiles` repository in Forgejo. Windows contributors clone or copy it and adjust
+  `user.name` and `user.email`. The template sets `core.autocrlf=false`,
+  `pull.rebase=true`, `credential.helper=manager`, and `init.defaultBranch=main`.
+- **WSL 2 status:** Recommended but not mandatory. It is the preferred environment
+  for Windows contributors who run the same scripts as the Linux runner fleet.
+  Git for Windows + Git Bash is the minimum requirement for contributors who do not
+  need a full Linux toolchain.
+- **Default model for Windows LM Studio:** Google Gemma 3 12B Q4 for machines with
+  8–16 GB VRAM. Gemma 3 27B Q4 for machines with ≥ 16 GB VRAM. Use the
+  central RTX 4090 inference server (`http://LLM_SERVER_IP:1234/v1`) by default
+  and fall back to local inference only when the central server is unreachable.
+- **SSH agent:** The Windows built-in OpenSSH agent (`ssh-agent` Windows service) is
+  the mandatory standard. PuTTY/Pageant is not supported — it requires a different
+  key format and complicates VS Code Remote SSH.

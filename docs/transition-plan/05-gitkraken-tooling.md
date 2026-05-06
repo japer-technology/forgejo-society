@@ -5,7 +5,7 @@ workflow. It belongs in the tooling layer, not the system-of-record layer.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Optional desktop Git client for day-to-day repository operations.
 - Visual history, diff, and merge tool that works against any Git remote.
@@ -112,7 +112,11 @@ Every GitKraken action must have a plain-git equivalent. This table confirms par
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Is GitKraken part of the standard contributor setup or merely tolerated?
-- [ ] Are paid GitKraken features (GitLens, Workspaces) used — and do they create dependency?
+- **GitKraken status:** Optional for contributors who prefer a GUI workflow. It is not
+  part of the standard setup and is not required for any documented workflow.
+  Every action documented for GitKraken has a plain-git equivalent listed in Phase 4.
+- **Paid GitKraken features:** Do not depend on paid features (GitLens for GitKraken,
+  Workspaces). If a paid feature is used, document the plain-git alternative so the
+  workflow remains available without a GitKraken subscription.

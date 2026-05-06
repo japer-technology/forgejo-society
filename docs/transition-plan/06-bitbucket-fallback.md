@@ -5,7 +5,7 @@ copy of critical repositories under a different provider.
 
 ---
 
-## Role in the exit plan
+## Role in Forgejo-Mind
 
 - Secondary or tertiary mirror for critical repositories only.
 - Commercial hosted option if self-hosting capacity is temporarily constrained.
@@ -119,7 +119,11 @@ curl -s -X DELETE \
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which repositories justify a Bitbucket mirror?
-- [ ] Is Bitbucket temporary insurance or a long-term standing backup?
+- **Repositories that justify Bitbucket:** Only the top five most critical core
+  repositories (Forgejo configuration, runner images, governance policies, and any
+  repository whose loss would halt all development). All others are covered by the
+  Codeberg and GitLab mirrors.
+- **Duration:** Bitbucket is long-term standing insurance. Keep it active as long as
+  the annual cost is negligible relative to the continuity benefit. Review annually.

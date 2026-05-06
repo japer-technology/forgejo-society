@@ -356,8 +356,14 @@ runner:
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which queue backend is used for Forgejo Actions: disk, Redis, or database?
-- [ ] Should any runner nodes be dedicated to specific repository classes?
-- [ ] Is the LLM host registered as a runner with the `gpu` label for ML workloads?
+- **Queue backend:** See [02 — Forgejo primary forge](02-forgejo-primary-forge.md) —
+  start with disk queue; migrate to database queue as load grows.
+- **Dedicated runners per repo class:** Yes — label the LLM host's runner with `gpu`
+  and use that label in any workflow that needs GPU inference. The 16 i7 runners all
+  carry the `ubuntu-standard` label and handle general CI. No other class-specific
+  dedication is needed at this fleet size.
+- **LLM host as runner:** Yes — register the RTX 4090 host as a Forgejo runner with
+  labels `ubuntu-gpu,gpu,linux,x64`. Workflows that call LM Studio directly can run
+  on the same machine rather than making a network call from a separate runner node.

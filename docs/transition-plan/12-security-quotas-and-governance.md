@@ -284,8 +284,18 @@ curl -s -X POST \
 
 ---
 
-## Open decisions
+## Open decisions resolved
 
-- [ ] Which actions require human approval every time, with no automation exception?
-- [ ] Which audit logs must be retained the longest (compliance or legal requirements)?
-- [ ] Is a SIEM or centralized log management system needed for the runner fleet?
+- **Always-human actions:** Merging to `main` in any core repository, promoting an
+  agent from any stage, publishing a repository publicly, rotating a production
+  secret, changing Forgejo site configuration, and any change to the
+  `governance-policies` repository itself. No automation exception exists for these.
+- **Audit log retention:** Forgejo logs must be retained for at least 90 days on-host
+  (configured in `app.ini`). Logs must be archived for 1 year to a read-only
+  off-machine location via `rsync` or `restic`. No legal or compliance requirement
+  extends this, but the 1-year archive is the operational standard.
+- **SIEM for runner fleet:** Not required at initial fleet size (16 nodes). If the
+  fleet grows beyond 50 nodes or if anomalous activity is detected, evaluate a
+  lightweight SIEM (Wazuh on a dedicated host is the first candidate). For now,
+  `journald` centralized forwarding to the forge host via `systemd-journal-remote`
+  is sufficient.
