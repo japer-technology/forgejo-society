@@ -6,11 +6,17 @@ and a 16-node Forgejo Actions runner fleet.
 
 ---
 
-## → [QUICKSTART.md](QUICKSTART.md) ← Start here if you want to run it now
+## Quick Start guides
 
-The Quick Start sequences all commands into five ordered phases — OS, PostgreSQL,
-Forgejo, runner fleet, and LLM server — with a variables block at the top so you
-only fill in your domain and IPs once.
+| Guide | What it covers |
+|-------|---------------|
+| **[Ubuntu Quick Start](docs/quick-start/ubuntu.md)** | Fresh Ubuntu 24.04 LTS install → hardened OS, step-by-step with validation after every step |
+| **[Ubuntu Refresh](docs/quick-start/ubuntu-refresh.md)** | Clean, update, reset UFW/fail2ban, audit services — no reinstall needed |
+| **[Forgejo-Mind Full Stack](docs/quick-start/forgejo-mind.md)** | Five-phase rapid deployment: OS → PostgreSQL → Forgejo → runner fleet → LLM server |
+
+Start with **Ubuntu Quick Start** if you are on bare metal. Start with **Ubuntu Refresh**
+if the OS is already installed and you need to clean it up or repair a service. Move on to
+**Forgejo-Mind Full Stack** when the OS is solid and you are ready to deploy the forge.
 
 ---
 
