@@ -639,7 +639,7 @@ echo ""
 echo "--- System health ---"
 check "No failed systemd units"   "sudo systemctl --failed --no-pager"     "0 loaded"
 check "Unattended-upgrades active" "sudo systemctl is-active unattended-upgrades" "active"
-check "Disk usage below 85%"      "df / | awk 'NR==2{print \$5}' | tr -d '%'" "[0-7][0-9]"
+check "Disk usage below 80%"      "df / | awk 'NR==2{print \$5}' | tr -d '%'" "[0-7][0-9]"
 
 echo ""
 echo "======================================"
