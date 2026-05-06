@@ -72,3 +72,4 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 ## The invention
 
 - [The Forge is the Mind, The Repo is an Agency](the-invention.md)
+- [Expected Performance at Full Flight](expected-performance.md)
