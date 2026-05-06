@@ -12,6 +12,11 @@ Scaffolding for a definitive GitHub exit plan focused on keeping software resear
 - [GitKraken Tooling](docs/definitive-exit-plan/05-gitkraken-tooling.md)
 - [Bitbucket Fallback](docs/definitive-exit-plan/06-bitbucket-fallback.md)
 - [GitLab as a Secondary Forge](docs/definitive-exit-plan/07-gitlab-secondary-forge.md)
+- [AI Agent Architecture](docs/definitive-exit-plan/08-ai-agent-architecture.md)
+- [High-Scale Runner Strategy](docs/definitive-exit-plan/09-runner-scale-strategy.md)
+- [Visual Studio and Desktop Integration](docs/definitive-exit-plan/10-visual-studio-desktop-integration.md)
+- [Publication and Reputation Strategy](docs/definitive-exit-plan/11-publication-and-reputation.md)
+- [Security, Quotas, and Operational Governance](docs/definitive-exit-plan/12-security-quotas-and-governance.md)
 
 ## Existing note
 
