@@ -1,8 +1,8 @@
-# Definitive GitHub Exit Plan — Master Overview
+# Forgejo-Mind — Complete Installation Guide
 
-This is the authoritative entry point for the complete GitHub exit. Every section
-below links to a precise, command-level guide. Work through the phases in order.
-Do not skip governance before execution.
+This is the authoritative entry point for installing and running Forgejo-Mind locally.
+Every section below links to a precise, command-level guide. Work through the phases
+in order. Do not skip governance before execution.
 
 ---
 

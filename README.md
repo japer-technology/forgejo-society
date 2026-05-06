@@ -1,18 +1,18 @@
-# github-exit
+# forgejo-mind
 
-A definitive, command-level GitHub exit plan. Everything needed to move primary
-software research and development off GitHub onto a self-hosted Forgejo stack,
-with Ubuntu as the base OS, PostgreSQL as the database, and a 16-node runner fleet.
+A complete, command-level installation guide for Forgejo-Mind: a self-hosted,
+local-first cognitive forge running on Ubuntu with PostgreSQL as the database
+and a 16-node Forgejo Actions runner fleet.
 
 ---
 
 ## Start here
 
-- [Master overview and phase checklists](docs/definitive-exit-plan/00-overview.md)
+- [Master overview and installation checklists](docs/definitive-exit-plan/00-overview.md)
 
 ---
 
-## Exit plan documents
+## Installation guide
 
 ### Foundation
 
@@ -56,6 +56,8 @@ with Ubuntu as the base OS, PostgreSQL as the database, and a 16-node runner fle
 ---
 
 ## Hardware reference
+
+See [local-computer-hardware.md](local-computer-hardware.md) for full specs.
 
 | Role | Spec | Count |
 |---|---|---|
