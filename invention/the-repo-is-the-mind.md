@@ -6,7 +6,9 @@ Many AI tools can hover around Git: they can read files, suggest changes, even g
 
 The `pi` coding agent and the Minimum Intelligence framework eliminate that context gap by embedding the AI directly in the repository - not as a service integration, but as a versioned dependency that operates inside your existing Git, Actions, and Issues infrastructure.
 
-#### What Where How Who When Why
+ie: [japer-technology/github-gstack-intelligence](https://github.com/japer-technology/github-gstack-intelligence)
+
+# What Where How Who When Why
 
 ## What - A `devDependency`, Not a Platform
 
