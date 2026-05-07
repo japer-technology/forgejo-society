@@ -3,7 +3,8 @@
 This document gives a grounded performance estimate for the Forgejo-Mind cognitive
 ecology when hundreds or thousands of agent activations occur simultaneously, using
 the hardware defined in [local-computer-hardware.md](local-computer-hardware.md) and
-the architecture defined in [the-invention.md](the-invention.md).
+the architecture defined in
+[the-forge-is-the-mind-the-repo-is-an-agency.md](the-forge-is-the-mind-the-repo-is-an-agency.md).
 
 ---
 

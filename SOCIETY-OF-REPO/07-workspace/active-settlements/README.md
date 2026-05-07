@@ -2,7 +2,7 @@
 
 Active settlements holds all settlements that are in progress: forming, pending approval, authorised, or executing.
 
-Completed settlements are archived to [../06-memory/decisions/](../06-memory/decisions/).
+Completed settlements are archived to [../../06-memory/decisions/](../../06-memory/decisions/).
 
 ---
 
@@ -30,4 +30,4 @@ When a settlement reaches `completed`, `failed`, `blocked`, or `cancelled`, it i
 
 ## Example
 
-See [../02-protocols/05-settlement.md](../02-protocols/05-settlement.md) for the full settlement schema and an example record.
+See [../../02-protocols/05-settlement.md](../../02-protocols/05-settlement.md) for the full settlement schema and an example record.
