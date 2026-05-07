@@ -99,6 +99,8 @@ Out of scope:
 | `scope-critic` | Is this decision within what the SOR should be doing? |
 | `staleness-critic` | Is this document or record too old to act on? |
 | `evidence-critic` | Is the proposed action based on reliable data? |
+| `overconfidence-critic` | Is the proposed conclusion overreaching the available evidence? |
+| `source-quality-critic` | Is the source document a reliable basis for this proposal? |
 
 ---
 
@@ -188,6 +190,10 @@ activates:
 
 suppresses:
   - subscription-bee
+
+weaken_when:
+  - payment_confirmed
+  - bill_disputed_and_held
 ```
 
 ---
@@ -218,6 +224,7 @@ activated:
   budget-watch: 0.82
   cost-critic: 0.78
   calendar-bee: 0.71
+  family-briefing: 0.88
 
 proposals:
   - from: insurance-bee

@@ -85,6 +85,12 @@ Out of scope:
 | `medication-bee` | Tracks medication schedules, refill dates, and prescription renewals | propose |
 | `preventive-care-bee` | Surfaces due or overdue preventive screenings and immunisations | propose |
 
+### Task and coordination agencies
+
+| Agency | Job | Authority |
+|---|---|---|
+| `task-bee` | Tracks open health-related tasks, follow-ups, and unactioned items from appointments | propose |
+
 ### Preparation and briefing agencies
 
 | Agency | Job | Authority |
@@ -200,6 +206,10 @@ activates:
 reinforce_when:
   - prescription_renewed_on_time
   - owner_confirms_useful
+
+weaken_when:
+  - medication_ceased_by_clinician
+  - false_alarm
 ```
 
 ```yaml
