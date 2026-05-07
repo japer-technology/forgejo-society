@@ -10,6 +10,7 @@ Memory is not a hidden chat log. It is versioned, inspectable, correctable, and 
 
 | System | What it holds | Path |
 |---|---|---|
+| [events/](events/README.md) | Event records and audit traces | `06-memory/events/` |
 | [episodic/](episodic/README.md) | What happened in specific events | `06-memory/episodic/` |
 | [semantic/](semantic/README.md) | What is known as general facts | `06-memory/semantic/` |
 | [procedural/](procedural/README.md) | How to do things (standard procedures) | `06-memory/procedural/` |
@@ -54,6 +55,8 @@ The society can always query archived memory explicitly.
 
 Memory repos are written to only by authorised agencies.
 
-K-lines require `govern` authority to modify — because K-lines affect the activation of all other agencies.
+K-lines require `govern` authority for structural modification — because changes to triggers, activated agencies, or suppressions affect the activation of all other agencies.
+
+Reinforcement metadata updates may be applied by an authorised evolution workflow, provided the workflow does not change K-line structure.
 
 See the [rights-registry](../01-governance/rights-registry.md) for memory write permissions.

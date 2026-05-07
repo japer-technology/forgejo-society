@@ -69,6 +69,26 @@ operational_categories:
 
 ---
 
+## Path interpretation
+
+Rights in this registry are declared as **logical paths**, not a requirement that every deployment use the same physical repository layout.
+
+For this scaffold:
+- `governance/*` maps to `01-governance/*`
+- `memory/*` maps to `06-memory/*`
+- `workspace/*` maps to `07-workspace/*`
+- `service/*` maps to `08-services/*`
+
+The following prefixes are agency-local namespaces unless a deployment promotes them into dedicated repos:
+- `documents/*`
+- `reports/*`
+- `tasks/*`
+- `logs/*`
+
+This keeps protocol names stable while allowing either a single-repo scaffold or a multi-repo deployment.
+
+---
+
 ## Agency read rights
 
 | Agency | May read |

@@ -55,4 +55,4 @@ last_reinforced: 2026-05-07T09:45:00Z
 
 Episodic memory is read during the agency-response phase when an agency needs context about prior similar events.
 
-It is also the source for K-line reinforcement: a successful episodic record triggers reinforcement of the K-line that activated the sequence.
+It is also one source for K-line review: a successful episodic record may trigger reinforcement metadata updates, while repeated failures may trigger a proposed structural K-line change for governance review.

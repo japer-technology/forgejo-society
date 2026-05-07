@@ -64,15 +64,29 @@ metadata:
 
 | K-line | Trigger | Activates |
 |---|---|---|
-| [kline.supplier-price-increase.yaml](kline.supplier-price-increase.yaml) | Supplier invoice with > 10% price change | supplier-bee, finance-watch, contract-bee, cost-critic |
-| [kline.contract-renewal.yaml](kline.contract-renewal.yaml) | Contract with renewal date approaching | contract-bee, finance-watch, owner-briefing |
-| [kline.staff-expiry.yaml](kline.staff-expiry.yaml) | Staff certificate within 60 days of expiry | staff-bee, owner-briefing |
+| [kline.supplier-price-increase.yaml](kline.supplier-price-increase.yaml) | Supplier invoice with > 10% price change | `agency.supplier-bee`, `agency.finance-watch`, `agency.contract-bee`, `critic.cost`, `agency.owner-briefing` |
+| [kline.contract-renewal.yaml](kline.contract-renewal.yaml) | Contract with renewal date approaching | `agency.contract-bee`, `agency.finance-watch`, `agency.owner-briefing` |
+| [kline.staff-expiry.yaml](kline.staff-expiry.yaml) | Staff certificate within 60 days of expiry | `agency.staff-bee`, `agency.owner-briefing` |
 
 ---
 
 ## K-line governance
 
-K-lines require `govern` authority to modify, because they affect the activation of all other agencies.
+K-lines require `govern` authority for structural modification, because they affect the activation of all other agencies.
+
+Structural modification means changing any of:
+- trigger conditions
+- activated agencies or weights
+- suppressed agencies
+- retirement or activation status
+
+Reinforcement metadata updates are narrower:
+- `reinforcement_count`
+- `weakening_count`
+- `last_reinforced`
+- memory temperature
+
+These metadata updates may be applied by an authorised evolution workflow without changing the K-line's structure.
 
 K-line changes must be:
 1. Proposed as a PR
@@ -88,6 +102,6 @@ A healthy Society of Repo grows its K-line library over time.
 
 Novel stimuli that produce successful outcomes become K-line candidates.
 
-The evolution review (quarterly) assesses which K-lines should be added, reinforced, weakened, or retired.
+The evolution review (quarterly) assesses which K-lines should be structurally added, updated, weakened, or retired.
 
 As K-line coverage grows, the proportion of fast activations (milliseconds vs. seconds or minutes) increases. This is the primary mechanism by which the ecology becomes faster with maturity.

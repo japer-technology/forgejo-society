@@ -84,7 +84,7 @@ approval:
 memory_updates:
   episodic:  true | false
   semantic:  list of new facts to record
-  kline:     reinforce | weaken | no_change
+  kline_review: reinforce_metadata | weaken_metadata | no_change | propose_structural_change
   failure:   true | false (if action failed)
 ```
 
@@ -120,6 +120,8 @@ memory_updates:
    c. When approval arrives, the settlement advances to authorised.
 
 8. The authorised executor is identified and the action is queued.
+   A `propose`-level executor may perform only internal analysis and writes within its declared proposal/report targets.
+   Any external effect requires an `act`-level executor (or human executor where required).
 
 9. After the action completes, the settlement is updated with the outcome.
 
@@ -186,11 +188,11 @@ stimulus_type: invoice.price-increase-detected
 timestamp: 2026-05-07T09:15:42Z
 
 activated:
-  - agency: supplier-bee
+  - agency: agency.supplier-bee
     weight: 0.95
-  - agency: finance-watch
+  - agency: agency.finance-watch
     weight: 0.84
-  - agency: cost-critic
+  - agency: critic.cost
     weight: 0.88
 
 proposals:
@@ -223,6 +225,6 @@ memory_updates:
   episodic: true
   semantic:
     - "Supplier X increased prices 18% in May 2026"
-  kline: reinforce
+  kline_review: reinforce_metadata
   failure: false
 ```

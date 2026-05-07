@@ -73,15 +73,15 @@ K-lines are remembered activation patterns: "when this kind of stimulus arrives,
 ```yaml
 # K-line match: supplier_invoice + price_change > 10%
 activates:
-  - supplier-bee
-  - finance-watch
-  - contract-bee
-  - cost-critic
-  - owner-briefing
+  - agency.supplier-bee
+  - agency.finance-watch
+  - agency.contract-bee
+  - critic.cost
+  - agency.owner-briefing
 
 suppresses:
-  - marketing-bee
-  - schedule-bee
+  - agency.staff-bee
+  - agency.tax-bee
 ```
 
 Agencies that are not relevant to this stimulus class remain dormant.
@@ -184,25 +184,25 @@ stimulus: supplier-invoice-uploaded
 timestamp: 2026-05-07T09:15:00Z
 
 activated:
-  supplier-bee: 0.91
-  finance-watch: 0.84
-  cost-critic: 0.78
+  agency.supplier-bee: 0.91
+  agency.finance-watch: 0.84
+  critic.cost: 0.78
 
 proposals:
-  - from: supplier-bee
+  - from: agency.supplier-bee
     proposal: Flag 18% price increase for owner review.
-  - from: finance-watch
+  - from: agency.finance-watch
     proposal: Compare against 12-month pricing history.
 
 objections:
-  - from: cost-critic
+  - from: critic.cost
     objection: No comparison to prior invoices yet made. Proposal is premature.
 
 settlement:
   action: Run price comparison, then prepare owner briefing.
   approval_required: false
   cloud_allowed: false
-  authorised_executor: finance-watch
+  authorised_executor: agency.finance-watch
 ```
 
 No important action happens without a settlement.
@@ -262,7 +262,7 @@ episodic memory  — what happened in this specific event
 semantic memory  — any new general fact that emerged
 procedural memory — any refinement to a standard procedure
 failure memory   — what went wrong and why
-K-lines         — reinforcement or weakening of activation patterns
+K-lines         — reinforcement metadata plus any proposed structural changes
 decisions        — the settlement record for future reference
 ```
 
@@ -280,12 +280,12 @@ Useful patterns are strengthened. Useless or harmful patterns are weakened.
 
 ```text
 if the owner confirms the briefing was useful:
-  → reinforce the K-line that activated this sequence
+  → update reinforcement metadata for the K-line that activated this sequence
   → reinforce the agencies that contributed useful signals
   → note the effective procedure
 
 if the briefing was not useful or was wrong:
-  → weaken the activating K-line
+  → update weakening metadata for the activating K-line
   → record the failure in failure memory
   → flag the responsible agency for evaluation
 
@@ -294,11 +294,11 @@ if a critic correctly identified a problem:
   → reinforce the objection pattern
 
 if an agency was not activated but should have been:
-  → propose K-line expansion
+  → propose a structural K-line expansion for governance review
   → flag for governance review
 ```
 
-Reinforcement is not automatic. It is a governed process, recorded as commits to memory repos.
+Reinforcement metadata updates may be automated within an authorised evolution workflow. Structural K-line changes remain governed changes recorded through PRs and owner approval.
 
 Over time, reinforcement concentrates cognition on the fastest, most accurate paths.
 

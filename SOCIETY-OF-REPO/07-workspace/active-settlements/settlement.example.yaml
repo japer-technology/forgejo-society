@@ -35,5 +35,5 @@ settlement:
 memory_updates:
   episodic: true
   semantic: []
-  kline: reinforce
+  kline_review: reinforce_metadata
   failure: false

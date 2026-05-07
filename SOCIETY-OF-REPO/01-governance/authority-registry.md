@@ -12,7 +12,7 @@ Authority levels are defined in the [constitution](constitution.md).
 |---|---|---|---|---|---|---|---|
 | `read` | Read only | designated repos | no | no | no | no | no |
 | `draft` | Draft only | designated repos | draft folders only | no | no | no | no |
-| `propose` | Propose | designated repos | workspace only | yes | no | no | no |
+| `propose` | Propose | designated repos | workspace + designated proposal/report paths | yes | no | no | no |
 | `act` | Act | designated repos | authorised write targets | yes | own-scope only | yes, authorised actions | no |
 | `govern` | Govern | all governance repos | governance repos | yes | governance scope | yes | yes, with human co-signature |
 | `human` | Human | all | all | yes | all | all | all |
@@ -97,3 +97,11 @@ The authority assignments in this registry are reviewed:
 - When any censor fires and records a violation
 
 All changes to this registry are preserved in Git history.
+
+---
+
+## Execution boundary
+
+`propose` authority permits an agency to perform bounded internal processing and to write proposal artefacts only within the write targets named in its constitution and the rights registry.
+
+`propose` authority does **not** permit external effects: no merges, no payments, no external disclosures, no governance changes, and no production actions outside those designated proposal/report paths.

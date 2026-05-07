@@ -115,7 +115,7 @@ agency.spawned
 agency.retired
 ```
 
-These events are written to a permanent governance log.
+These events are written to [../01-governance/governance-log/](../01-governance/governance-log/README.md).
 
 ---
 

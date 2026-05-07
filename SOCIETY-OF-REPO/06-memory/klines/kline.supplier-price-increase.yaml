@@ -22,8 +22,8 @@ activates:
     weight: 0.80
 
 suppresses:
-  - agency: agency.marketing-bee
-  - agency: agency.schedule-bee
+  - agency: agency.staff-bee
+  - agency: agency.tax-bee
 
 reinforce_when:
   - owner confirms the briefing was useful
