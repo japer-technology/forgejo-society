@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-07T22:08:00Z",
+  "settlement_id": "SET-20260507-001",
+  "agent": "agent-intake-bee",
+  "model_route": "local-small",
+  "source_repo": "agents/agent-intake-bee",
+  "source_ref": "issues/42",
+  "action": "proposal_opened",
+  "result": "under-critique"
+}

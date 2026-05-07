@@ -1,0 +1,17 @@
+name: agent-intake-bee
+repo_class: agent
+mission: Classify incoming work and draft the smallest safe next action.
+authority: propose
+activation_labels:
+  - activate:intake
+critic_requirements:
+  - critic-evidence
+  - critic-scope
+memory_writeback_repo: memory-decisions
+model_route:
+  default: local-small
+  escalation: governed-cloud
+outputs:
+  - settlement
+  - pull-request-comment
+  - provenance-record

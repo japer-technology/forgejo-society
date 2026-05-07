@@ -1,0 +1,19 @@
+id: SET-20260507-001
+status: under-critique
+source_repo: agents/agent-intake-bee
+source_ref: issues/42
+activation:
+  type: issue_label
+  label: activate:intake
+owner: agent-intake-bee
+critics_required:
+  - critic-evidence
+  - critic-scope
+cloud_allowed: false
+artifacts:
+  proposal_pr: 17
+  provenance_record: pending
+timestamps:
+  discovered_at: 2026-05-07T22:00:00Z
+  claimed_at: 2026-05-07T22:01:00Z
+  proposed_at: 2026-05-07T22:05:00Z
