@@ -46,7 +46,7 @@ Adding a new Society Channel requires:
 
 ## Reciprocal agreements
 
-See [reciprocal-agreement.example.yaml](reciprocal-agreement.example.yaml) for the format of a reciprocal (barter) agreement.
+See [reciprocal-agreement.example.md](reciprocal-agreement.example.md) for the format of a reciprocal (barter) agreement.
 
 ---
 
