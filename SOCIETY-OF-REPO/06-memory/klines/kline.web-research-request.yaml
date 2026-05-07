@@ -1,0 +1,42 @@
+id: kline.web-research-request
+title: Web Research Request
+version: 1
+status: active
+
+trigger:
+  stimulus_type: research_request
+  internet_access_required: true
+  confidence_threshold: 0.75
+
+activates:
+  - agency: agency.web-research-bee
+    weight: 0.95
+  - agency: critic.source-quality
+    weight: 0.90
+  - agency: critic.staleness
+    weight: 0.85
+  - agency: critic.overconfidence
+    weight: 0.80
+  - agency: agency.owner-briefing
+    weight: 0.70
+
+suppresses:
+  - agency: agency.intake-bee    # already classified; no re-routing needed
+  - agency: agency.tax-bee       # unrelated to general research
+  - agency: agency.staff-bee     # unrelated to general research
+
+reinforce_when:
+  - owner confirms the research summary was accurate and useful
+  - a claim in the summary is independently verified
+
+weaken_when:
+  - research summary contains factual errors
+  - sources cited are found to be unreliable or outdated
+  - owner indicates the output was not useful
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot

@@ -1,0 +1,52 @@
+id: agency.dependency-bee
+name: Dependency Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Track software library dependencies for known vulnerabilities, version
+    drift, licence compliance issues, and end-of-life status. Propose
+    upgrade paths and flag critical issues for owner review.
+  non_goals:
+    - execute dependency upgrades directly
+    - approve licence exceptions
+    - make legal assessments about licence compatibility
+    - run tests to verify upgrade safety (that is build-monitor-bee's role)
+
+authority:
+  level: propose
+  can_read:
+    - repos/code
+    - config/dependency-manifests
+    - memory/semantic
+    - memory/failure
+  can_write:
+    - workspace/dependency-report
+    - issues/dependency-alerts
+    - issues/labels
+  requires_approval_for:
+    - external_vulnerability_database_call
+    - cloud_model_call
+
+models:
+  default: local
+  cloud: approval_required
+
+outputs:
+  - vulnerability_alert
+  - version_drift_report
+  - licence_compliance_flag
+  - end_of_life_warning
+  - upgrade_path_proposal
+
+evaluation:
+  metrics:
+    - known_vulnerability_detection_rate
+    - false_positive_rate
+    - mean_time_to_alert
+    - owner_usefulness_score
+
+evolution:
+  probation_trigger: known_vulnerability_detection_rate < 0.90 over 90 days
+  retirement_trigger: known_vulnerability_detection_rate < 0.75 over 30 days on probation

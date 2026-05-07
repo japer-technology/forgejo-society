@@ -1,0 +1,40 @@
+id: kline.local-document-uploaded
+title: Local Document Uploaded
+version: 1
+status: active
+
+trigger:
+  stimulus_type: document_uploaded
+  document_destination: local
+  confidence_threshold: 0.80
+
+activates:
+  - agency: agency.intake-bee
+    weight: 0.98
+  - agency: agency.document-index-bee
+    weight: 0.90
+  - agency: critic.privacy
+    weight: 0.75
+  - agency: agency.owner-briefing
+    weight: 0.50
+
+suppresses:
+  - agency: agency.web-research-bee  # document is local, no web access needed
+  - agency: agency.build-monitor-bee # unrelated to document upload
+
+reinforce_when:
+  - document is correctly classified and indexed on first pass
+  - duplicate detection correctly identifies a near-duplicate
+  - owner confirms the intake report was accurate
+
+weaken_when:
+  - document is misclassified and requires manual correction
+  - duplicate is not detected when one exists
+  - index record is incomplete or inaccurate
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot

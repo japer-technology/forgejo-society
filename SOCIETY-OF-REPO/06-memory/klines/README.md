@@ -67,6 +67,10 @@ metadata:
 | [kline.supplier-price-increase.yaml](kline.supplier-price-increase.yaml) | Supplier invoice with > 10% price change | `agency.supplier-bee`, `agency.finance-watch`, `agency.contract-bee`, `critic.cost`, `agency.owner-briefing` |
 | [kline.contract-renewal.yaml](kline.contract-renewal.yaml) | Contract with renewal date approaching | `agency.contract-bee`, `agency.finance-watch`, `agency.owner-briefing` |
 | [kline.staff-expiry.yaml](kline.staff-expiry.yaml) | Staff certificate within 60 days of expiry | `agency.staff-bee`, `agency.owner-briefing` |
+| [kline.web-research-request.yaml](kline.web-research-request.yaml) | Research request requiring internet access | `agency.web-research-bee`, `critic.source-quality`, `critic.staleness`, `critic.overconfidence` |
+| [kline.code-change-submitted.yaml](kline.code-change-submitted.yaml) | Pull request opened on a code repo | `agency.code-review-bee`, `agency.dependency-bee`, `agency.build-monitor-bee`, `critic.evidence`, `critic.risk` |
+| [kline.local-document-uploaded.yaml](kline.local-document-uploaded.yaml) | Document uploaded to a local intake directory | `agency.intake-bee`, `agency.document-index-bee`, `critic.privacy` |
+| [kline.upcoming-deadline.yaml](kline.upcoming-deadline.yaml) | Scheduled timer fires with pending obligation within 7 days | `agency.calendar-bee`, `agency.task-bee`, `agency.contract-bee`, `agency.owner-briefing` |
 
 ---
 

@@ -1,0 +1,47 @@
+id: kline.code-change-submitted
+title: Code Change Submitted
+version: 1
+status: active
+
+trigger:
+  stimulus_type: pull_request_opened
+  code_change: true
+  confidence_threshold: 0.85
+
+activates:
+  - agency: agency.code-review-bee
+    weight: 0.95
+  - agency: agency.dependency-bee
+    weight: 0.80
+  - agency: agency.build-monitor-bee
+    weight: 0.75
+  - agency: critic.evidence
+    weight: 0.85
+  - agency: critic.risk
+    weight: 0.80
+  - agency: critic.overconfidence
+    weight: 0.75
+  - agency: agency.owner-briefing
+    weight: 0.60
+
+suppresses:
+  - agency: agency.intake-bee       # already classified; no re-routing needed
+  - agency: agency.tax-bee          # unrelated to code changes
+  - agency: agency.calendar-bee     # unrelated to code changes
+
+reinforce_when:
+  - review identifies a genuine issue that is subsequently fixed
+  - security flag is confirmed by the owner as valid
+  - owner confirms the review was useful
+
+weaken_when:
+  - review flags issues that are not genuine problems
+  - owner finds the review unhelpful or off-target
+  - review misses a known issue caught manually
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot

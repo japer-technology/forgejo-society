@@ -1,0 +1,41 @@
+id: kline.upcoming-deadline
+title: Upcoming Deadline
+version: 1
+status: active
+
+trigger:
+  stimulus_type: scheduled_timer
+  lookahead_days:
+    lte: 7
+  has_pending_obligation: true
+  confidence_threshold: 0.80
+
+activates:
+  - agency: agency.calendar-bee
+    weight: 0.95
+  - agency: agency.task-bee
+    weight: 0.85
+  - agency: agency.contract-bee
+    weight: 0.65
+  - agency: agency.owner-briefing
+    weight: 0.90
+
+suppresses:
+  - agency: agency.web-research-bee  # deadline alerts do not require web access
+  - agency: agency.supplier-bee      # unrelated to scheduling
+
+reinforce_when:
+  - owner confirms the deadline alert gave useful advance notice
+  - a task or obligation is completed on time following the alert
+
+weaken_when:
+  - alert fires for an already-completed item
+  - owner indicates the alert was not useful
+  - alert fires too late to be actionable
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot
