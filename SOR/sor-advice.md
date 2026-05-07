@@ -631,6 +631,390 @@ Use this before committing a new SOR file.
 
 ---
 
+## 18. Versioning and evolution
+
+A SOR file is a living specification. As the domain changes and the society learns, the file must change with it.
+
+### Version numbering
+
+Follow semantic versioning: `MAJOR.MINOR.PATCH`.
+
+| Change | Bump |
+|---|---|
+| New agency, censor, or critic added | MINOR |
+| K-line added or changed | MINOR |
+| Non-negotiable limit changed | MAJOR |
+| Identity or maturity level changed | MAJOR |
+| Typo fix, clarification, wording | PATCH |
+
+### What to record when you update
+
+Every MINOR or MAJOR version bump must add a new entry to **episodic memory** that records:
+- what changed
+- why it changed
+- what failure or event prompted the change (if any)
+
+```text
+2026-06: v1.1.0. Added supplier-watch agency. Prompted by missed 90-day contract review window.
+```
+
+### Version migration rule
+
+When the version changes, do not delete old K-lines or agencies immediately. Mark them `status: retired` and leave them in place for one operating cycle. Remove them in the next version. Sudden removal breaks continuity.
+
+---
+
+## 19. The policy ledger
+
+The censor section says "put exceptions in the policy ledger." This section explains what the policy ledger is and how to write it.
+
+### What it is
+
+The policy ledger is a section of the SOR file (or a separate companion file) that records standing **conditional rules** — things that are true in the domain but are not unconditional limits. It sits between a censor (unconditional) and a K-line (activation pattern).
+
+### Policy ledger format
+
+```yaml
+policy_id: policy.<domain>-<rule-name>
+rule: >
+  <A single declarative statement of the conditional rule.>
+condition: >
+  <When this rule applies.>
+exception: >
+  <How the exception is approved or documented.>
+review_cycle: <annual | quarterly | on-change>
+```
+
+### Example
+
+```yaml
+policy_id: policy.business-pre-authorised-spend
+rule: >
+  Recurring monthly subscriptions below $200 may be renewed without per-transaction approval.
+condition: >
+  Applies only to subscriptions already listed in the approved-subscriptions register.
+exception: >
+  New subscriptions require explicit owner approval before the first charge.
+review_cycle: annual
+```
+
+### Rules for the policy ledger
+
+- A policy is **not** a censor. It has a condition. The censor is what enforces the absolute floor.
+- Every policy must have a `review_cycle`. Policies that are never reviewed become hidden assumptions.
+- When a censor says "move the exception to the policy ledger," it means: write a policy entry, not a relaxed censor.
+
+---
+
+## 20. Conflict resolution between agencies
+
+When two agencies produce incompatible proposals in the same settlement, the SOR needs a rule for how to decide. Without this rule, the briefing agency is left to guess.
+
+### Define a resolution rule in every SOR
+
+Every SOR file must state one of the following conflict resolution modes in its identity block or a dedicated section:
+
+| Mode | Meaning |
+|---|---|
+| `critic-decides` | The critic with the most specific objection breaks the tie |
+| `owner-decides` | Conflicting proposals are surfaced to the owner without a recommendation |
+| `weight-decides` | The proposal from the higher-weight agency in the activated list wins |
+| `conservative-wins` | The more cautious proposal is adopted when confidence is below threshold |
+
+Most personal and household SORs should use `owner-decides`. Most business SORs with time pressure should use `conservative-wins`.
+
+### Detect a conflict during authoring
+
+A conflict is likely when:
+- Two agencies both have `act` authority (this is the most common authoring error — only one agency should have `act`)
+- Two K-lines both activate in response to the same trigger
+- A critic challenge and a worker proposal are both `approval_required: false`
+
+### Recording a conflict in settlement
+
+If a conflict is detected, record it explicitly:
+
+```yaml
+conflict:
+  agencies: [contract-bee, budget-watch]
+  resolution_mode: conservative-wins
+  resolved_in_favour_of: budget-watch
+  reason: >
+    Budget-watch activation weight was 0.91; contract-bee was 0.74.
+    Conservative rule applied.
+```
+
+---
+
+## 21. Stimulus taxonomy
+
+K-lines only fire reliably when stimulus names are consistent. If the same event is named differently on intake vs. in K-line triggers, the K-line never fires.
+
+### Define a stimulus vocabulary in every SOR
+
+Create a `stimulus_taxonomy` block that lists every named stimulus type the SOR recognises. Use this as the controlled vocabulary for both K-line triggers and sample stimuli.
+
+```yaml
+stimulus_taxonomy:
+  document_types:
+    - supplier_invoice
+    - lease_agreement
+    - compliance_certificate
+    - bank_statement
+  event_types:
+    - deadline_approach
+    - weekly_review
+    - new_document_received
+    - renewal_window_open
+  signal_types:
+    - price_change_above_threshold
+    - overdue_obligation
+    - expiry_within_window
+```
+
+### Rules
+
+- Every K-line `trigger` must use terms from this taxonomy.
+- `intake-bee` must be capable of classifying incoming stimuli into these types.
+- When a new type is needed, add it to the taxonomy first, then add the K-line.
+
+A taxonomy mismatch is the second most common cause of K-lines that silently fail (after agency-not-defined errors).
+
+---
+
+## 22. Retiring an agency
+
+Agencies become obsolete. A process that no longer exists should not have an agency watching for it. Leaving dead agencies in place creates noise and misleads future authors.
+
+### How to retire an agency
+
+1. Mark the agency `status: retired` in the agencies table.
+2. Scan every K-line for references to the agency. For each reference, either:
+   - Replace it with the agency that now performs that role, or
+   - Remove it from the `activates` list if no replacement exists
+3. Add an episodic memory entry recording the retirement and the reason.
+4. Bump the version (MINOR if no non-negotiable limits changed, MAJOR if they did).
+
+### What you must not do
+
+- Do not delete an agency and leave its name in K-lines. This creates silent activation failures.
+- Do not retire the only agency that activates a particular critic. Retiring a worker agency must not remove all critic coverage from a domain.
+
+### Retirement entry format (episodic memory)
+
+```text
+2026-09: procurement-bee retired. All supplier invoice handling moved to contract-bee.
+         K-line kline.business-invoice-anomaly updated to activate contract-bee.
+```
+
+---
+
+## 23. Briefing design
+
+The briefing agency is the most visible part of the SOR to the owner. A poorly designed briefing trains the owner to ignore it.
+
+### Briefing format rules
+
+1. **Maximum item count.** Every briefing has a hard ceiling — typically 5 items for a daily personal briefing, 10 for a weekly business review. More than this is noise. State the ceiling in the non-negotiable limits section.
+
+2. **Ordering.** Briefing items must be ordered by urgency, not by the order agencies activated:
+   - First: items requiring owner approval
+   - Second: items with a deadline within 7 days
+   - Third: items that are informational
+
+3. **Actionability.** Every briefing item must specify what the owner should do or decide. "Contract expires soon" is not actionable. "Contract expires 14 June — approve renewal or initiate cancellation" is.
+
+4. **Source attribution.** Every briefing item must state which agency produced it and what confidence level was assigned.
+
+### Briefing item format
+
+```yaml
+- priority: 1
+  from: contract-bee
+  confidence: 0.92
+  item: >
+    Lease agreement for 12 High St expires 30 June 2026 (54 days).
+    Break-clause deadline passes 15 May 2026 (29 days).
+  action_required: >
+    Confirm renewal or instruct solicitor to serve break notice before 15 May.
+  approval_required: true
+```
+
+### What ruins a briefing
+
+- Items that say "monitor" or "watch" with no required action
+- Duplicate items from two agencies about the same event
+- Items without a deadline or quantified threshold
+- Items carried over from a previous briefing that the owner already resolved
+
+A SOR that produces the same unresolved item every cycle has a settlement failure, not a briefing failure. The settlement must record that the item was not actioned and escalate it.
+
+---
+
+## 24. Privacy zones within a SOR
+
+Not all data held by a SOR is equally sensitive. A health SOR may contain both appointment dates (low sensitivity) and diagnosis records (high sensitivity). Treating both identically either over-restricts useful data or under-protects sensitive data.
+
+### Define sensitivity tiers
+
+Add a `privacy_zones` block to the SOR:
+
+```yaml
+privacy_zones:
+  zone_a:
+    label: public-operational
+    examples: [appointment_dates, renewal_deadlines, invoice_numbers]
+    cloud_allowed: false
+    agencies_with_read_access: all
+  zone_b:
+    label: private-personal
+    examples: [names, contact_details, financial_balances]
+    cloud_allowed: false
+    agencies_with_read_access: [intake-bee, owner-briefing]
+  zone_c:
+    label: sensitive-protected
+    examples: [diagnosis_records, medication_details, legal_positions]
+    cloud_allowed: false
+    agencies_with_read_access: [owner-briefing]
+    human_approval_required_to_access: true
+```
+
+### Rules
+
+- Zone C data must **never** appear in a settlement `proposals` block in clear text. Reference it by document ID only.
+- No agency except the briefing agency may read Zone C without explicit human approval recorded in the policy ledger.
+- The `pii-exfiltration-censor` must explicitly reference Zone B and Zone C as covered categories.
+- A health SOR must define at least three zones. A business SOR must define at least two.
+
+---
+
+## 25. Onboarding a new owner
+
+A SOR outlives the person who set it up. A new owner — a successor, a partner, or a team member taking over — must be able to understand and trust the SOR before relying on it.
+
+### Minimum onboarding deliverables
+
+Every SOR must contain a section named `handover_guide` with the following:
+
+```markdown
+## Handover guide
+
+### What this SOR does
+<Two sentences. What it tracks, what decisions it surfaces, what it will never do.>
+
+### What you must verify before trusting it
+1. Check that episodic memory reflects the last 6 months of real events.
+2. Confirm that non-negotiable limits match your current operating constraints.
+3. Review the policy ledger for any exceptions that may no longer apply.
+4. Run a dry-run settlement against a recent real stimulus and verify the output.
+
+### What to change first
+<State which agencies, K-lines, or limits are most likely to need updating for a new owner.>
+
+### Who approved the last version
+<Name or identifier of the human who approved the current version.>
+```
+
+### Dry-run requirement
+
+Before a new owner relies on a SOR in production, they must run at least one **dry-run settlement**:
+- Select a real past stimulus from the episodic memory
+- Run the settlement manually (or ask the briefing agency to simulate it)
+- Verify that the action and approval_required fields match what actually happened
+
+If the dry-run settlement diverges significantly from reality, update the SOR before relying on it.
+
+---
+
+## 26. Testing a SOR before live operation
+
+A SOR file written from scratch contains assumptions. Before the society activates against real stimuli, those assumptions must be tested.
+
+### Pre-activation checklist
+
+**Structural test**
+- [ ] Run the SOR authoring checklist from §16 against the file
+- [ ] Confirm every K-line agency is in the agencies section (manual cross-check)
+- [ ] Confirm every stimulus in the sample stimuli section maps to at least one K-line trigger
+
+**Settlement dry-run test**
+- [ ] Write one sample settlement using the template in §12
+- [ ] Verify that `approval_required` matches your intended policy
+- [ ] Verify that at least one critic appears in `activated`
+- [ ] Verify that at least one censor appears in `objections`
+
+**Censor test**
+For each censor defined, write one stimulus that *should* be blocked by that censor. Trace the settlement manually and confirm the censor fires.
+
+**K-line coverage test**
+For each agency defined, confirm there is at least one K-line that activates it. An agency with no K-line that triggers it is either redundant or the K-line taxonomy is incomplete.
+
+### Common test failures
+
+| Failure | Root cause |
+|---|---|
+| Censor never fires in any sample settlement | Censor limit is too narrow; stimulus vocabulary doesn't match |
+| Critic never appears in activated | Critic not included in any K-line `activates` list |
+| Sample settlement has `approval_required: false` for a financial action | Settlement author applied wrong threshold |
+| K-line triggers but activates an undefined agency | Agency renamed without updating K-line |
+
+---
+
+## 27. Delegation between SORs
+
+At Level 5 maturity, one SOR can call another through a governed channel. Even at Levels 3 and 4, a SOR may need to reference another SOR's output. This section establishes the rules for safe delegation.
+
+### When to delegate vs. when to expand
+
+**Expand the current SOR** when:
+- The new capability is in the same domain
+- The new agencies will need access to the same memory
+- The owner is the same person
+
+**Delegate to another SOR** when:
+- The new capability belongs to a clearly separate domain (e.g. health → business)
+- The new SOR has a different owner or authority structure
+- The delegation can be fully governed by a censor and an approval step
+
+### Delegation record format
+
+Every cross-SOR delegation must be recorded as a settlement entry:
+
+```yaml
+settlement_id: settlement.business-health-delegation.001
+stimulus: health-sor requested business-sor to create a task for a medical appointment
+delegating_sor: sor.health
+receiving_sor: sor.business
+scope_of_delegation: >
+  Create a calendar task only. No health record data passed.
+  No data about the medical nature of the appointment is transmitted.
+censor_checks:
+  - pii-exfiltration-censor: pass
+  - cloud-egress-censor: pass
+approval_required: false
+```
+
+### The `delegation-depth-censor` rule
+
+A SOR that delegates must define a `delegation-depth-censor` that prevents chains longer than one hop without human approval:
+
+```text
+No SOR may instruct a receiving SOR to issue a further delegation without explicit human approval at each hop.
+```
+
+Without this limit, a delegation chain can bypass censors by routing through intermediate SORs that have weaker limits.
+
+### What is never delegated
+
+- Memory write access
+- Authority level changes
+- Non-negotiable limit overrides
+- Zone C privacy data (from §24)
+
+These cannot travel across a delegation boundary regardless of maturity level.
+
+---
+
 ## See also
 
 - [SOR Examples](README.md) — worked examples for business, household, health, and personal assistant
