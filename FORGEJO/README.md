@@ -12,7 +12,8 @@ deep, command-level procedures.
 |---|---|---|
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
-| `transition-plan/` | Full platform rollout plan, governance, and continuity | [Transition plan](transition-plan/00-overview.md) |
+| `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
+| `examples/` | Runnable starter assets for agencies, settlements, critics, and workflows | [Examples](examples/README.md) |
 | `TASK-LISTS.md` | Checklist-first navigation across the entire folder | [Task lists](TASK-LISTS.md) |
 
 ---
@@ -42,5 +43,6 @@ deep, command-level procedures.
 - Every operational path should have a clear entry point.
 - Checklist-driven work should be reachable from [TASK-LISTS.md](TASK-LISTS.md).
 - Component procedures should stay in `install/`.
-- End-to-end rollout and governance work should stay in `transition-plan/`.
+- End-to-end rollout, runtime governance, and day-two operations should stay in `transition-plan/`.
+- Runnable starter assets should stay in `examples/`.
 - Quick-start guides should remain opinionated and fast, with links back to deeper material.

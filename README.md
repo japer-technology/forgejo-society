@@ -62,11 +62,15 @@ Work through the phases below in order. Each document is self-contained and comm
 | 07 | [GitLab secondary forge](FORGEJO/transition-plan/07-gitlab-secondary-forge.md) | GitLab push mirror and CI setup |
 | 06 | [Bitbucket fallback](FORGEJO/transition-plan/06-bitbucket-fallback.md) | Bitbucket mirror for critical repositories |
 
-### Governance and evaluation
+### Governance, operations, and evaluation
 
 | # | Document | What it covers |
 |---|---|---|
 | 12 | [Security and governance](FORGEJO/transition-plan/12-security-quotas-and-governance.md) | Secrets, quotas, audit, disaster recovery |
+| 17 | [SOR bootstrap and mapping](FORGEJO/transition-plan/17-sor-bootstrap-and-mapping.md) | SOR-to-Forgejo bridge, day-one bootstrap, shared-state rules |
+| 18 | [Runtime protocols and automation](FORGEJO/transition-plan/18-runtime-protocols-and-automation.md) | Activation, critic timing, privacy enforcement, reinforcement, costs |
+| 19 | [Operations, upgrades, and observability](FORGEJO/transition-plan/19-operations-upgrades-and-observability.md) | Recovery runbooks, upgrade and rollback, troubleshooting, cognitive metrics |
+| 20 | [Builder onboarding and examples](FORGEJO/transition-plan/20-builder-onboarding-and-examples.md) | First agency path, local testing, memory wiring, debug flow, examples |
 | 04 | [GForge evaluation](FORGEJO/transition-plan/04-gforge-evaluation.md) | Decision framework for GForge |
 
 ---

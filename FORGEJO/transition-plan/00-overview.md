@@ -73,6 +73,10 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 | 14 | [Developer tooling](14-developer-tooling.md) | Git, SSH, terminal, VS Code, LM Studio |
 | 15 | [Windows developer tooling](15-windows-developer-tooling.md) | Git for Windows, Visual Studio, SSH, Forgejo PAT, LM Studio |
 | 16 | [Network infrastructure](16-network-infrastructure.md) | Router fixed IPs, local DNS, SSH centralised control for all 20 hosts |
+| 17 | [SOR bootstrap and mapping](17-sor-bootstrap-and-mapping.md) | Maps Society-of-Repo concepts onto Forgejo repos, orgs, and the first governed deployment |
+| 18 | [Runtime protocols and automation](18-runtime-protocols-and-automation.md) | Activation, critic timing, fail-closed behavior, privacy enforcement, reinforcement, cost controls |
+| 19 | [Operations, upgrades, and observability](19-operations-upgrades-and-observability.md) | Recovery runbooks, upgrade and rollback, troubleshooting, cognitive observability |
+| 20 | [Builder onboarding and examples](20-builder-onboarding-and-examples.md) | How a new contributor builds, tests, promotes, and debugs an agency safely |
 
 ---
 
@@ -112,6 +116,7 @@ and no physical access to the runner node.
 - [ ] Caddy handling TLS with automatic Let's Encrypt certificate
 - [ ] Admin account created; SSH key authentication tested
 - [ ] Organizations, teams, and base permissions defined
+- [ ] SOR-to-Forgejo bootstrap plan adopted — see [17](17-sor-bootstrap-and-mapping.md)
 - [ ] Repository classes defined: `core`, `agent`, `experimental`, `public-showcase`, `archive`
 - [ ] Branch protection rules on `main` for all core repos
 - [ ] All GitHub repositories exported and imported into Forgejo
@@ -138,6 +143,7 @@ and no physical access to the runner node.
 - [ ] Centralized log collection verified (journald or remote syslog)
 - [ ] LM Studio running on the RTX 4090 host — see [14](14-developer-tooling.md)
 - [ ] Local model routing policy documented: which tasks use local vs cloud models
+- [ ] Runtime protocol, critic windows, and fail-closed rules documented — see [18](18-runtime-protocols-and-automation.md)
 - [ ] Cloud model cost ceiling and approval gate defined
 
 **Phase 2 done when:** A Forgejo Actions workflow on a runner node runs to completion and produces an artifact that is stored in Forgejo.
@@ -158,6 +164,7 @@ and no physical access to the runner node.
 - [ ] SSH key generation and registration procedure published
 - [ ] Branch naming convention published
 - [ ] Pull request and review expectations published in forge-neutral terms
+- [ ] Builder onboarding path tested from the example assets — see [20](20-builder-onboarding-and-examples.md)
 - [ ] No workflow documented that requires a GitHub-only tool
 - [ ] Contributor onboarding tested end-to-end on a fresh Ubuntu workstation
 - [ ] Windows contributor onboarding tested end-to-end — see [15](15-windows-developer-tooling.md)
@@ -180,6 +187,7 @@ and no physical access to the runner node.
 - [ ] Repository descriptions, topics, and README files consistent across all mirrors
 - [ ] Canonical source notice added to all mirror `README` files
 - [ ] Disaster recovery drill completed: restore Forgejo to clean Ubuntu host from backup
+- [ ] Recovery, upgrade, and observability runbooks adopted — see [19](19-operations-upgrades-and-observability.md)
 - [ ] Reduced-service operating mode documented and tested
 - [ ] Mirror recovery procedure tested: force-push from Forgejo to stale mirror
 

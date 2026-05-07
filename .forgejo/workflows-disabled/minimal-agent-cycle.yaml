@@ -1,0 +1,47 @@
+name: minimal-agent-cycle
+
+on:
+  workflow_dispatch:
+    inputs:
+      settlement_id:
+        description: Settlement identifier
+        required: true
+      source_repo:
+        description: Source repository path
+        required: true
+      source_ref:
+        description: Source issue, branch, or PR reference
+        required: true
+  issues:
+    types:
+      - labeled
+
+jobs:
+  prepare-settlement:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'issues' && github.event.label.name == 'activate:intake') }}
+    runs-on: ubuntu-standard
+    env:
+      SETTLEMENT_ID: ${{ inputs.settlement_id }}
+      SOURCE_REPO: ${{ inputs.source_repo }}
+      SOURCE_REF: ${{ inputs.source_ref }}
+    steps:
+      - name: Materialize activation payload
+        run: |
+          : "${SETTLEMENT_ID:=SET-LOCAL-TEST}"
+          : "${SOURCE_REPO:=${GITHUB_REPOSITORY}}"
+          : "${SOURCE_REF:=event}"
+          mkdir -p out
+          cat > out/settlement.yaml <<EOF2
+          id: ${SETTLEMENT_ID}
+          status: claimed
+          source_repo: ${SOURCE_REPO}
+          source_ref: ${SOURCE_REF}
+          owner: agent-intake-bee
+          critics_required:
+            - critic-evidence
+          cloud_allowed: false
+          EOF2
+          cat out/settlement.yaml
+      - name: Next action
+        run: |
+          echo "Copy this file into workspace-active-settlements, open a PR, and request critic review."

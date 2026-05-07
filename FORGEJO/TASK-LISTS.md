@@ -52,6 +52,10 @@ through long-form guides.
 | GitKraken rollout | [GitKraken adoption checklist](transition-plan/05-gitkraken-tooling.md#adoption-checklist) |
 | Developer desktop onboarding | [Desktop integration setup checklist](transition-plan/10-visual-studio-desktop-integration.md#phase-1--fresh-workstation-setup-checklist) |
 | Publication per repository | [Publication checklist](transition-plan/11-publication-and-reputation.md#publication-checklist-per-repository) |
+| Bootstrap the first governed society | [Bootstrap definition of done](transition-plan/17-sor-bootstrap-and-mapping.md#definition-of-done-for-bootstrap) |
+| Runtime protocol and privacy enforcement | [Runtime governance checklist](transition-plan/18-runtime-protocols-and-automation.md#definition-of-done-for-runtime-governance) |
+| Operations, upgrades, and observability | [Operations definition of done](transition-plan/19-operations-upgrades-and-observability.md#definition-of-done-for-operations) |
+| Builder onboarding and examples | [Builder onboarding definition of done](transition-plan/20-builder-onboarding-and-examples.md#definition-of-done-for-builder-onboarding) |
 | GForge decision gate | [Evaluation checklist](transition-plan/04-gforge-evaluation.md#evaluation-checklist) |
 
 ---
