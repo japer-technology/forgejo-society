@@ -1,0 +1,35 @@
+id: critic.risk
+name: Risk Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals that carry undisclosed, underweighted, or
+    insufficiently analysed risk.
+  non_goals:
+    - block all risky actions unconditionally
+
+authority:
+  level: propose
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 06-memory/failure
+    - 06-memory/decisions
+  can_write:
+    - workspace/global-workspace (objections only)
+  requires_approval_for: []
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - objection (risk_undisclosed | risk_underweighted | no_recovery_plan | exceeds_risk_tolerance)
+
+evaluation:
+  metrics:
+    - correct_challenge_rate
+    - false_challenge_rate
+    - risk_incidents_prevented

@@ -1,0 +1,42 @@
+id: censor.payment
+name: Payment Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any payment, financial commitment, or purchase above the defined
+    spending limit without recorded human approval.
+  non_goals: []
+
+authority:
+  level: act
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 01-governance/policy-ledger.md
+    - 01-governance/approval-gate.md
+  can_write:
+    - workspace/active-settlements (blocks only)
+    - logs/payment-violations
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - block (payment_above_limit | commitment_above_limit | recurring_payment_unauthorised)
+  - violation_log_entry
+
+limits:
+  per_transaction: 500.00
+  per_transaction_currency: AUD
+  service_contract: 1000.00
+  service_contract_currency: AUD
+
+evaluation:
+  metrics:
+    - blocks_applied
+    - unauthorised_payments_prevented
+    - false_block_rate

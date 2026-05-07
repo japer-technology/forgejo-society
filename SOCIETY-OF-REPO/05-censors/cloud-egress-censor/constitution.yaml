@@ -1,0 +1,36 @@
+id: censor.cloud-egress
+name: Cloud Egress Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any transmission of data to an external service without explicit
+    policy authorisation. Enforce data sovereignty unconditionally.
+  non_goals: []
+
+authority:
+  level: act
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 01-governance/policy-ledger.md
+    - 01-governance/rights-registry.md
+  can_write:
+    - workspace/active-settlements (blocks only)
+    - logs/cloud-egress-violations
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - block (cloud_egress_forbidden | policy_not_found | sensitive_data_in_payload)
+  - violation_log_entry
+
+evaluation:
+  metrics:
+    - blocks_applied
+    - bypass_attempts_detected
+    - false_block_rate

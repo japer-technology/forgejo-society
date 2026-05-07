@@ -1,0 +1,34 @@
+id: critic.evidence
+name: Evidence Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals that make claims without sufficient supporting evidence
+    or cite evidence that is unreliable, outdated, or not actually read.
+  non_goals:
+    - block proposals unconditionally
+    - replace worker analysis
+
+authority:
+  level: propose
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+  can_write:
+    - workspace/global-workspace (objections only)
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - objection (evidence_missing | evidence_weak | evidence_outdated | confidence_inconsistent)
+
+evaluation:
+  metrics:
+    - correct_challenge_rate
+    - false_challenge_rate
+    - objection_upheld_rate

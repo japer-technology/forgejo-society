@@ -1,0 +1,60 @@
+service_id: service.contract-obligation-extraction.v1
+provider: sor.forgejo-mind
+name: Contract Obligation Extraction
+version: 1
+status: active
+
+description: >
+  Extracts dates, obligations, renewal terms, risks, and owner questions
+  from business contracts.
+
+inputs:
+  accepted:
+    - contract_pdf
+    - supplier_name
+    - business_context (optional)
+  forbidden:
+    - raw patient data
+    - bank credentials
+    - tax file numbers
+    - full employee records
+
+outputs:
+  - obligation_summary
+  - deadline_list
+  - risk_flags
+  - questions_for_owner
+  - evidence_trace
+
+pricing:
+  mode: per_document
+  amount: 8.00
+  currency: AUD
+
+rights:
+  buyer_receives:
+    - internal_use
+    - audit_trace
+    - correction_right (30-day window)
+  provider_may_retain:
+    - anonymised performance metrics only
+  provider_may_not_retain:
+    - raw contract content
+    - identifiable business data
+
+privacy:
+  cloud_use: prohibited_unless_explicitly_approved
+  retention_days: 0
+  deletion_attestation_required: true
+
+reputation:
+  public_metrics:
+    - completion_rate
+    - dispute_rate
+    - policy_violation_count
+    - average_buyer_rating
+    - missed_obligation_rate
+
+dispute:
+  window_days: 30
+  arbitration: owner-mediated

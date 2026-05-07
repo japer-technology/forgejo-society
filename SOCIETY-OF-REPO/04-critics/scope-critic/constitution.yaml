@@ -1,0 +1,35 @@
+id: critic.scope
+name: Scope Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals that exceed an agency's declared scope, purpose,
+    or authority level.
+  non_goals:
+    - block proposals unconditionally
+
+authority:
+  level: propose
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 01-governance/authority-registry.md
+    - 03-agencies (constitutions)
+  can_write:
+    - workspace/global-workspace (objections only)
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - objection (scope_exceeded | authority_exceeded | access_violation)
+
+evaluation:
+  metrics:
+    - correct_challenge_rate
+    - false_challenge_rate
+    - objection_upheld_rate

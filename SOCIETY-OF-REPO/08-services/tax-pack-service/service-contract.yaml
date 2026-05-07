@@ -1,0 +1,60 @@
+service_id: service.tax-pack-preparation.v1
+provider: sor.forgejo-mind
+name: Tax Pack Preparation
+version: 1
+status: active
+
+description: >
+  Prepares structured BAS and tax pack data for a defined period,
+  ready for accountant review and lodgement.
+
+inputs:
+  accepted:
+    - financial_export_csv (accounting software export)
+    - period (quarter: Q1 | Q2 | Q3 | Q4)
+    - business_name
+    - abn (optional)
+  forbidden:
+    - raw patient data
+    - employment records
+    - bank credentials
+    - tax file numbers
+
+outputs:
+  - bas_summary
+  - anomaly_flag_list
+  - categorised_transaction_summary
+  - evidence_trace
+
+pricing:
+  mode: per_quarter
+  amount: 25.00
+  currency: AUD
+
+rights:
+  buyer_receives:
+    - internal_use
+    - audit_trace
+    - correction_right (30-day window)
+  provider_may_retain:
+    - anonymised performance metrics only
+  provider_may_not_retain:
+    - raw financial records
+    - identifiable business data
+
+privacy:
+  cloud_use: prohibited
+  retention_days: 0
+  deletion_attestation_required: true
+
+reputation:
+  public_metrics:
+    - completion_rate
+    - dispute_rate
+    - policy_violation_count
+    - average_buyer_rating
+    - accountant_correction_rate
+
+dispute:
+  window_days: 30
+  arbitration: owner-mediated

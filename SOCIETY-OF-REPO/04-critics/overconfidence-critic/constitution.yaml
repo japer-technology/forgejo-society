@@ -1,0 +1,33 @@
+id: critic.overconfidence
+name: Overconfidence Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals where the stated confidence level is higher than
+    the evidence supports, or where inference is presented as fact.
+  non_goals:
+    - challenge all proposals with high confidence
+
+authority:
+  level: propose
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+  can_write:
+    - workspace/global-workspace (objections only)
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - objection (confidence_exceeds_evidence | inference_presented_as_fact | unvalidated_task_class)
+
+evaluation:
+  metrics:
+    - correct_challenge_rate
+    - false_challenge_rate
+    - overconfident_actions_prevented

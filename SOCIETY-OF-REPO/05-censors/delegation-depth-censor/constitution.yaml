@@ -1,0 +1,37 @@
+id: censor.delegation-depth
+name: Delegation Depth Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any delegation chain that would exceed 3 hops from the
+    originating stimulus, preventing accountability diffusion.
+  non_goals: []
+
+authority:
+  level: act
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+  can_write:
+    - workspace/active-settlements (blocks only)
+    - logs/delegation-violations
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+limits:
+  max_delegation_depth: 3
+
+outputs:
+  - block (delegation_depth_exceeded)
+  - violation_log_entry
+
+evaluation:
+  metrics:
+    - blocks_applied
+    - deep_chains_prevented
+    - false_block_rate

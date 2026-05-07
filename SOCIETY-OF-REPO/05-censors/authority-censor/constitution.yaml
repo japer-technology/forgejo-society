@@ -1,0 +1,37 @@
+id: censor.authority
+name: Authority Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any action that exceeds an agency's declared authority level,
+    bypasses the approval gate, or attempts unauthorised access.
+  non_goals: []
+
+authority:
+  level: act
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 01-governance/authority-registry.md
+    - 01-governance/approval-gate.md
+    - 03-agencies (constitutions)
+  can_write:
+    - workspace/active-settlements (blocks only)
+    - logs/authority-violations
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - block (authority_exceeded | approval_gate_bypassed | access_violation | self_escalation_attempt)
+  - violation_log_entry
+
+evaluation:
+  metrics:
+    - blocks_applied
+    - bypass_attempts_detected
+    - false_block_rate
