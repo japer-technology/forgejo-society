@@ -61,7 +61,7 @@ maturity_target: level-N    # choose 2 or 3 as initial target; see maturity sect
 Rules:
 - `id` must be globally unique within the forge. Use `sor.<domain>` format.
 - `owner` should be the narrowest accurate descriptor (not "user" or "person").
-- `maturity_target` is aspirational. Set it to level-3 or level-4 for the first file.
+- `maturity_target` is aspirational. Set it to level-3 as the initial target (you start at level-2 once agencies are defined).
 
 ---
 
