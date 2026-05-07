@@ -143,18 +143,42 @@ payload:
 
 ---
 
+## Event storage
+
+During an active cognitive cycle, events are written under the stimulus workspace:
+
+```text
+07-workspace/global-workspace/{stimulus-id}/events/{event-id}.yaml
+```
+
+When the cycle completes, events are archived to the events memory system:
+
+```text
+06-memory/events/{year}/{month}/{event-id}.yaml
+```
+
+Governance events are additionally copied to:
+
+```text
+01-governance/governance-log/{year}/{event-id}.yaml
+```
+
+This gives the society both short-term operational visibility and long-term audit retention.
+
+---
+
 ## Event emission rules
 
 1. Every activated agency must emit at least one event when it processes a stimulus.
 2. Events must be emitted before the agency acts on a stimulus (announce intent).
 3. Events must be emitted after the agency completes its action (confirm completion).
-4. Events must be written to the relevant memory or workspace repo as a YAML file.
+4. Events must be written to the relevant workspace or memory path as a YAML file.
 5. Events must include the full trace chain (list of event IDs that led to this event).
 
 ---
 
 ## Event retention
 
-Events are memory. They are never deleted — they decay through the memory temperature protocol (see [06-memory.md](06-memory.md)).
+Events are memory. They are never deleted — operational events are archived to the events memory system and decay only in retrieval priority (see [06-memory.md](06-memory.md)).
 
 Audit-critical events (governance, financial, legal) are retained permanently regardless of temperature.

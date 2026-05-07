@@ -27,6 +27,8 @@ In a Society of Repo:
 ```
 global-workspace/
   {stimulus-id}/
+    events/
+      {event-id}.yaml
     proposals/
       {agency-id}.yaml
     objections/
@@ -41,8 +43,9 @@ global-workspace/
 ## Lifecycle
 
 1. Activation record is written when agencies are activated
-2. Agency proposals are written during agency-response phase
-3. Objections are written during criticism phase
-4. Blocks are written during censorship phase
-5. Settlement layer reads all files and forms the settlement
-6. After settlement is formed, workspace content for this stimulus is archived
+2. Events are appended to the stimulus event folder as the cycle progresses
+3. Agency proposals are written during agency-response phase
+4. Objections are written during criticism phase
+5. Blocks are written during censorship phase
+6. Settlement layer reads all files and forms the settlement
+7. After settlement is formed, workspace content for this stimulus is archived

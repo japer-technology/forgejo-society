@@ -54,16 +54,16 @@ Evolution is what makes the ecology get **measurably better** over time.
 After every completed settlement:
 
 1. If outcome was `success` and owner confirmed useful:
-   - Reinforce the matching K-line (increment `reinforcement_count`, update `last_reinforced`)
+   - Reinforce the matching K-line metadata (increment `reinforcement_count`, update `last_reinforced`)
    - Write an episodic memory record
 
 2. If outcome was `failure` or `blocked`:
-   - Weaken the matching K-line (increment `weakening_count`)
+   - Weaken the matching K-line metadata (increment `weakening_count`)
    - Write a failure memory record
    - Flag the responsible agency for quarterly review
 
 3. If outcome was `success` for a novel stimulus (no K-line matched):
-   - Propose a new K-line based on the activation pattern
+   - Propose a new structural K-line based on the activation pattern
    - Add to the K-line candidates list for quarterly review
 
 ### Quarterly evolution review
@@ -80,6 +80,8 @@ The quarterly review covers:
 - Review all K-lines with high `weakening_count` relative to `reinforcement_count`
 - Promote K-line candidates to active if evidence supports them
 - Retire K-lines that consistently produce false activations
+
+Only this review (or another owner-approved governance change) may alter K-line structure. Post-outcome automation may update K-line metadata only.
 
 **Memory:**
 - Run memory temperature decay (downgrade hot→warm→cold→archived as appropriate)

@@ -10,6 +10,7 @@ Memory is not a hidden chat log. It is versioned, inspectable, correctable, and 
 
 | Type | What it holds | Where it lives |
 |---|---|---|
+| Events | Event records and audit traces | `06-memory/events/` |
 | Episodic | What happened in specific events | `06-memory/episodic/` |
 | Semantic | What is known as general facts | `06-memory/semantic/` |
 | Procedural | How to do things | `06-memory/procedural/` |
@@ -158,7 +159,9 @@ The previous version is preserved in Git history. Corrections do not delete hist
 
 Memory is governed. No agency may write to a memory repo it is not authorised to write to (see the rights registry).
 
-The `klines` memory system requires `govern` authority to modify, because K-lines affect the activation of all other agencies.
+The `klines` memory system requires `govern` authority for structural changes, because K-lines affect the activation of all other agencies.
+
+Reinforcement metadata updates (`reinforcement_count`, `weakening_count`, `last_reinforced`, temperature) may be written by an authorised evolution workflow without changing the trigger or activation structure.
 
 ---
 

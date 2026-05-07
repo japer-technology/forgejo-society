@@ -11,6 +11,7 @@ Every agency, critic, censor, memory repo, and workspace repo operates under the
 | [approval-gate.md](approval-gate.md) | Actions that always require human approval, regardless of agency authority |
 | [rights-registry.md](rights-registry.md) | What data each agency may read, write, and transmit |
 | [policy-ledger.md](policy-ledger.md) | All active policies governing the SOR, versioned and dated |
+| [governance-log/](governance-log/README.md) | Permanent archive of governance events and approvals |
 
 ---
 

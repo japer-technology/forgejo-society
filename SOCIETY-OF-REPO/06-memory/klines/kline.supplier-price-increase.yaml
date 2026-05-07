@@ -22,8 +22,8 @@ activates:
     weight: 0.80
 
 suppresses:
-  - agency: agency.marketing-bee
-  - agency: agency.schedule-bee
+  - agency: agency.intake-bee   # already classified; no re-routing needed
+  - agency: agency.staff-bee    # unrelated to supplier-invoice pricing
 
 reinforce_when:
   - owner confirms the briefing was useful

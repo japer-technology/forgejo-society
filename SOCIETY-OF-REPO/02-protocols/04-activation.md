@@ -29,7 +29,7 @@ The activation layer receives:
 3. For each matching K-line:
    a. Activate each listed agency with the K-line's assigned activation weight.
    b. Suppress each listed suppressed agency.
-   c. Record the K-line match in the event log.
+   c. Record the K-line match in the stimulus event path.
 
 4. If no K-line matches:
    a. Emit activation.novel-stimulus event.
@@ -64,13 +64,13 @@ Each agency in a K-line activation list has a weight between 0 and 1.
 
 ```yaml
 activates:
-  - agency: supplier-bee
+  - agency: agency.supplier-bee
     weight: 0.95
-  - agency: finance-watch
+  - agency: agency.finance-watch
     weight: 0.84
-  - agency: contract-bee
+  - agency: agency.contract-bee
     weight: 0.71
-  - agency: cost-critic
+  - agency: critic.cost
     weight: 0.88
 ```
 
@@ -86,8 +86,8 @@ A K-line may suppress agencies that would otherwise activate:
 
 ```yaml
 suppresses:
-  - agency: marketing-bee
-  - agency: schedule-bee
+  - agency: agency.intake-bee   # already classified; no re-routing needed
+  - agency: agency.staff-bee    # unrelated to supplier-invoice pricing
 ```
 
 Suppressed agencies do not activate for this stimulus, regardless of their own K-line matching.
@@ -127,14 +127,14 @@ activation_record:
   kline_matched: kline.supplier-price-increase
   kline_match_confidence: 0.91
   activated:
-    - agency: supplier-bee
+    - agency: agency.supplier-bee
       weight: 0.95
-    - agency: finance-watch
+    - agency: agency.finance-watch
       weight: 0.84
-    - agency: cost-critic
+    - agency: critic.cost
       weight: 0.88
   suppressed:
-    - agency: marketing-bee
+    - agency: agency.intake-bee
 ```
 
 ---

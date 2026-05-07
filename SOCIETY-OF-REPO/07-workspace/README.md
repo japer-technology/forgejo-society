@@ -8,7 +8,7 @@ Workspace repos hold the society's current attention. They are the short-term wo
 
 | Repo | Contents |
 |---|---|
-| [global-workspace/](global-workspace/README.md) | All active proposals from all agencies; visible to critics and censors |
+| [global-workspace/](global-workspace/README.md) | All active proposals and per-stimulus event files; visible to critics and censors |
 | [current-focus/](current-focus/README.md) | The single stimulus currently being processed |
 | [active-settlements/](active-settlements/README.md) | All settlements in progress (forming, pending, authorised, executing) |
 | [owner-briefings/](owner-briefings/README.md) | Briefings, approval requests, and confirmations for the owner |
