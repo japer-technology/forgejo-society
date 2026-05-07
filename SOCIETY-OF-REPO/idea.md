@@ -2,6 +2,8 @@
 
 ## A definition, theory, protocol, and practice for repo-native cognitive societies
 
+> A forge-native cognitive ecology: a self-hosted, Git-versioned Society of Mind where repositories become durable cognitive organs, issues become stimuli, commits become memory, pull requests become proposed actions, and intelligence emerges from many small governed agencies rather than one monolithic AI.
+
 ---
 
 ## 1. Definition
