@@ -219,6 +219,10 @@ activates:
 reinforce_when:
   - owner_completes_review
   - open_items_resolved
+
+weaken_when:
+  - review_skipped_by_owner
+  - no_open_items_found
 ```
 
 ```yaml
@@ -237,6 +241,10 @@ activates:
 reinforce_when:
   - item_correctly_classified
   - owner_confirms_useful
+
+weaken_when:
+  - item_misclassified
+  - owner_overrides_classification
 ```
 
 ---

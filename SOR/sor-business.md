@@ -220,6 +220,10 @@ activates:
 reinforce_when:
   - bas_lodged_on_time
   - owner_confirms_useful
+
+weaken_when:
+  - obligation_resolved_early
+  - deadline_extended_by_authority
 ```
 
 ```yaml

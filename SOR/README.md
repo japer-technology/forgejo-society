@@ -17,6 +17,20 @@ Each example shows how to apply the SOR architecture — agencies, critics, cens
 
 ---
 
+## How to write a new SOR file
+
+Before writing a new SOR file, read [sor-advice.md](sor-advice.md).
+
+It covers:
+- required sections and their order
+- agency naming conventions and authority levels
+- how to write critics, censors, K-lines, and settlements correctly
+- the full authoring checklist
+- domain-specific advice for business, household, health, and personal assistant SORs
+- the most common authoring mistakes and how to avoid them
+
+---
+
 ## How to read these examples
 
 Each example follows the same structure:
