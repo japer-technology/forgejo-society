@@ -72,6 +72,30 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 | 13 | [PostgreSQL database](13-postgresql-database.md) | Full PostgreSQL setup and tuning |
 | 14 | [Developer tooling](14-developer-tooling.md) | Git, SSH, terminal, VS Code, LM Studio |
 | 15 | [Windows developer tooling](15-windows-developer-tooling.md) | Git for Windows, Visual Studio, SSH, Forgejo PAT, LM Studio |
+| 16 | [Network infrastructure](16-network-infrastructure.md) | Router fixed IPs, local DNS, SSH centralised control for all 20 hosts |
+
+---
+
+## Phase 0 — Network infrastructure
+
+**Goal:** Every host has a fixed IP, a resolvable local hostname, and can be reached
+over SSH from the operator workstation without a password or physical keyboard.
+
+### Phase 0 checklist
+
+- [ ] Host inventory table filled in (hostname, fixed IP, MAC) — see [16](16-network-infrastructure.md)
+- [ ] Router DHCP reservation created for all 20 hosts
+- [ ] Every host boots to its fixed IP — confirmed with `ip addr`
+- [ ] Local DNS resolves all 20 hostnames — confirmed with `ping <hostname>.forge.local`
+- [ ] Operator SSH key pair generated
+- [ ] `forge-op` admin user created on every host
+- [ ] SSH public key deployed to all 20 hosts via `ssh-copy-id`
+- [ ] `~/.ssh/config` written with short-name aliases for every host
+- [ ] Password SSH disabled on all hosts
+- [ ] `parallel-ssh` installed; `uptime` confirmed on all hosts in one command
+
+**Phase 0 done when:** `ssh runner-16 uptime` returns a result with no password prompt
+and no physical access to the runner node.
 
 ---
 

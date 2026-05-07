@@ -32,6 +32,7 @@ Work through the phases below in order. Each document is self-contained and comm
 
 | # | Document | What it covers |
 |---|---|---|
+| 16 | [Network infrastructure](FORGEJO/transition-plan/16-network-infrastructure.md) | Router fixed IPs, local DNS, SSH centralised control for all 20 hosts |
 | 01 | [Ubuntu foundation](FORGEJO/transition-plan/01-ubuntu-foundation.md) | Full Ubuntu 24.04 LTS install, hardening, packages, Docker |
 | 13 | [PostgreSQL database](FORGEJO/transition-plan/13-postgresql-database.md) | PostgreSQL 16 install, tuning, backup, restore |
 | 02 | [Forgejo primary forge](FORGEJO/transition-plan/02-forgejo-primary-forge.md) | Forgejo + Caddy + systemd, GitHub migration |
