@@ -14,6 +14,9 @@ Each example shows how to apply the SOR architecture — agencies, critics, cens
 | [sor-business.md](sor-business.md) | Small business | Contracts, invoices, staff, finance, compliance, and supplier management |
 | [sor-personal-health.md](sor-personal-health.md) | Personal health | Appointments, medications, test results, health records, and care reminders |
 | [sor-personal-assistant.md](sor-personal-assistant.md) | Personal assistant | Tasks, calendar, notes, reminders, research, and daily briefings |
+| [sor-share-trading.md](sor-share-trading.md) | Share trading | Positions, watchlists, corporate actions, trading journal, and portfolio metrics |
+| [sor-exercise-diet.md](sor-exercise-diet.md) | Exercise and diet | Training sessions, nutrition logs, body metrics, recovery, and programme tracking |
+| [sor-dnd-dm.md](sor-dnd-dm.md) | Dungeons and Dragons DM | Campaign lore, NPC records, encounter prep, session notes, and world continuity |
 
 ---
 
