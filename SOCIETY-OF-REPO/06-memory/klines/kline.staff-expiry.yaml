@@ -1,0 +1,34 @@
+id: kline.staff-expiry
+title: Staff Certificate Approaching Expiry
+version: 1
+status: active
+
+trigger:
+  document_type: staff_certificate
+  expiry_date:
+    within_days: 60
+  confidence_threshold: 0.85
+
+activates:
+  - agency: agency.staff-bee
+    weight: 0.95
+  - agency: agency.owner-briefing
+    weight: 0.90
+
+suppresses: []
+
+reinforce_when:
+  - owner acted on expiry warning in time
+  - certificate was renewed before expiry
+  - compliance gap was closed
+
+weaken_when:
+  - certificate was already noted as due for renewal in semantic memory
+  - false alarm due to incorrect expiry date extraction
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot

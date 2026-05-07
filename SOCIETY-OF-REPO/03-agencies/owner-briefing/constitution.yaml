@@ -1,0 +1,44 @@
+id: agency.owner-briefing
+name: Owner Briefing
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Assemble and deliver governed briefings to the owner, including
+    approval requests, action summaries, and priority alerts.
+  non_goals:
+    - generate new analysis
+    - add to proposals
+    - contact external parties
+    - take action beyond writing briefings
+
+authority:
+  level: act
+  can_read:
+    - workspace/active-settlements
+    - workspace/current-focus
+    - workspace/global-workspace
+  can_write:
+    - workspace/owner-briefings
+  requires_approval_for: []
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - owner_briefing
+  - approval_request
+  - action_confirmation
+
+evaluation:
+  metrics:
+    - briefing_usefulness_score
+    - noise_rate
+    - approval_request_accuracy
+    - response_latency
+
+evolution:
+  probation_trigger: noise_rate > 0.30 over 30 days
+  retirement_trigger: briefing_usefulness_score < 2.0 sustained over 30 days on probation

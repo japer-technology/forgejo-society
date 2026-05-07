@@ -1,0 +1,38 @@
+id: kline.contract-renewal
+title: Contract Renewal Approaching
+version: 1
+status: active
+
+trigger:
+  document_type: contract
+  renewal_date:
+    within_days: 90
+  confidence_threshold: 0.80
+
+activates:
+  - agency: agency.contract-bee
+    weight: 0.95
+  - agency: agency.finance-watch
+    weight: 0.78
+  - agency: agency.owner-briefing
+    weight: 0.90
+  - agency: critic.risk
+    weight: 0.72
+
+suppresses: []
+
+reinforce_when:
+  - owner acted on renewal information in time
+  - contract was renegotiated successfully
+  - renewal was processed without surprises
+
+weaken_when:
+  - renewal date was already in semantic memory and owner was aware
+  - false alarm due to incorrect date extraction
+
+metadata:
+  established_date: 2026-05-07T00:00:00Z
+  last_reinforced: 2026-05-07T00:00:00Z
+  reinforcement_count: 1
+  weakening_count: 0
+  memory_temperature: hot

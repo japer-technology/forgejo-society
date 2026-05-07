@@ -1,0 +1,50 @@
+id: agency.finance-watch
+name: Finance Watch
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Monitor financial records for anomalies, trends, and unusual spending,
+    and generate structured briefings for the owner and accountant.
+  non_goals:
+    - give financial or investment advice
+    - approve payments
+    - access bank accounts directly
+    - send raw financial records externally
+
+authority:
+  level: propose
+  can_read:
+    - financial_records
+    - memory/financial
+    - memory/semantic
+  can_write:
+    - reports/finance-watch
+    - tasks/owner-review
+  requires_approval_for:
+    - external_service_call
+    - financial_disclosure
+    - payment_authorisation
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - anomaly_flag
+  - cost_trend_report
+  - cash_flow_summary
+  - accountant_briefing
+  - periodic_financial_brief
+
+evaluation:
+  metrics:
+    - anomaly_detection_rate
+    - false_alarm_rate
+    - owner_usefulness_score
+    - briefing_quality_score
+
+evolution:
+  probation_trigger: false_alarm_rate > 0.25 over 90 days
+  retirement_trigger: owner_usefulness_score < 2.0 sustained over 60 days on probation

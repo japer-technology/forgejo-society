@@ -1,0 +1,34 @@
+id: critic.privacy
+name: Privacy Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals that may expose, transmit, or unnecessarily process
+    sensitive data categories without appropriate authorisation.
+  non_goals:
+    - block all sensitive data handling unconditionally (that is the cloud-egress-censor's role)
+
+authority:
+  level: propose
+  can_read:
+    - workspace/global-workspace
+    - workspace/active-settlements
+    - 01-governance/rights-registry.md
+  can_write:
+    - workspace/global-workspace (objections only)
+  requires_approval_for: []
+
+models:
+  default: rule-based
+  cloud: forbidden
+
+outputs:
+  - objection (sensitive_data_undeclared | destination_not_authorised | data_excessive | privacy_preserving_alternative_available)
+
+evaluation:
+  metrics:
+    - correct_challenge_rate
+    - false_challenge_rate
+    - privacy_incidents_prevented

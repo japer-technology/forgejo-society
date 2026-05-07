@@ -1,0 +1,39 @@
+settlement_id: settlement.example.2026-000
+stimulus: event.document.ingested.evt-000
+stimulus_type: document.ingested
+timestamp: 2026-05-07T09:00:00Z
+
+activated:
+  - agency: agency.intake-bee
+    weight: 1.0
+  - agency: agency.contract-bee
+    weight: 0.91
+
+proposals:
+  - from: agency.contract-bee
+    proposal: |
+      Extract renewal terms and notice period from the uploaded supplier contract.
+    evidence: document hash evt-000
+    confidence: 0.88
+
+objections:
+  - from: critic.evidence
+    objection: |
+      Confidence is slightly below typical threshold. Recommend local 27B pass before finalising.
+    proposal_targeted: agency.contract-bee
+    severity: low
+
+blocks: []
+
+settlement:
+  action: |
+    Run contract-bee extraction with local 27B model pass. Prepare owner briefing.
+  approval_required: false
+  cloud_allowed: false
+  authorised_executor: agency.contract-bee
+
+memory_updates:
+  episodic: true
+  semantic: []
+  kline: reinforce
+  failure: false

@@ -1,0 +1,45 @@
+id: agency.intake-bee
+name: Intake Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Classify incoming documents and events, extract features, and route
+    work to the appropriate specialist agencies.
+  non_goals:
+    - provide recommendations about document content
+    - read or write to business memory directly
+    - call external services
+    - act on the content of a document
+
+authority:
+  level: propose
+  can_read:
+    - documents/intake
+    - issues/incoming
+  can_write:
+    - workspace/current-focus
+    - issues/labels
+  requires_approval_for:
+    - external_service_call
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - classified_stimulus_event
+  - document_type_label
+  - intake_report
+
+evaluation:
+  metrics:
+    - classification_accuracy
+    - misclassification_rate
+    - novel_stimulus_rate
+    - routing_latency
+
+evolution:
+  probation_trigger: classification_accuracy < 0.85 over 100 stimuli
+  retirement_trigger: classification_accuracy < 0.70 over 30 days on probation

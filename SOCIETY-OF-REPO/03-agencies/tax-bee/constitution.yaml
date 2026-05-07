@@ -1,0 +1,50 @@
+id: agency.tax-bee
+name: Tax Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Surface tax obligations, deadlines, compliance requirements, and BAS
+    preparation data for the owner and accountant.
+  non_goals:
+    - give tax advice
+    - lodge tax returns or BAS directly
+    - send financial records externally without explicit approval
+    - make financial commitments on behalf of the owner
+
+authority:
+  level: propose
+  can_read:
+    - documents/tax
+    - memory/tax
+    - memory/semantic
+    - financial_records
+  can_write:
+    - reports/tax-obligations
+    - tasks/owner-review
+  requires_approval_for:
+    - external_service_call
+    - financial_disclosure
+    - lodgement_action
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - obligation_calendar
+  - bas_preparation_summary
+  - anomaly_flag
+  - lodgement_confirmation
+
+evaluation:
+  metrics:
+    - missed_deadline_rate
+    - false_alarm_rate
+    - owner_usefulness_score
+    - bas_preparation_accuracy
+
+evolution:
+  probation_trigger: missed_deadline_rate > 0.02 over any quarter
+  retirement_trigger: missed_deadline_rate > 0.05 over 30 days on probation
