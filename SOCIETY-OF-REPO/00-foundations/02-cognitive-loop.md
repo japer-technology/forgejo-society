@@ -80,8 +80,8 @@ activates:
   - agency.owner-briefing
 
 suppresses:
+  - agency.intake-bee
   - agency.staff-bee
-  - agency.tax-bee
 ```
 
 Agencies that are not relevant to this stimulus class remain dormant.

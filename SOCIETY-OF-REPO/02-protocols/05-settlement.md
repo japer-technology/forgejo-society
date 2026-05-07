@@ -84,7 +84,7 @@ approval:
 memory_updates:
   episodic:  true | false
   semantic:  list of new facts to record
-  kline_review: reinforce_metadata | weaken_metadata | no_change | propose_structural_change
+  kline_update: reinforce_metadata | weaken_metadata | no_change | propose_structural_change
   failure:   true | false (if action failed)
 ```
 
@@ -225,6 +225,6 @@ memory_updates:
   episodic: true
   semantic:
     - "Supplier X increased prices 18% in May 2026"
-  kline_review: reinforce_metadata
+  kline_update: reinforce_metadata
   failure: false
 ```

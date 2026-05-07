@@ -86,8 +86,8 @@ A K-line may suppress agencies that would otherwise activate:
 
 ```yaml
 suppresses:
-  - agency: agency.staff-bee
-  - agency: agency.tax-bee
+  - agency: agency.intake-bee   # already classified; no re-routing needed
+  - agency: agency.staff-bee    # unrelated to supplier-invoice pricing
 ```
 
 Suppressed agencies do not activate for this stimulus, regardless of their own K-line matching.
@@ -134,7 +134,7 @@ activation_record:
     - agency: critic.cost
       weight: 0.88
   suppressed:
-    - agency: agency.staff-bee
+    - agency: agency.intake-bee
 ```
 
 ---
