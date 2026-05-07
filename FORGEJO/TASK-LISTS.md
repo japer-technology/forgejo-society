@@ -22,6 +22,7 @@ through long-form guides.
 
 | Stage | Checklist |
 |---|---|
+| Network infrastructure (pre-requisite for all phases) | [Phase 0 checklist](transition-plan/00-overview.md#phase-0-checklist) |
 | Governance and source-of-truth setup | [Phase 1 checklist](transition-plan/00-overview.md#phase-1-checklist) |
 | Runner fleet and execution layer | [Phase 2 checklist](transition-plan/00-overview.md#phase-2-checklist) |
 | Developer workflow standardisation | [Phase 3 checklist](transition-plan/00-overview.md#phase-3-checklist) |
@@ -46,6 +47,7 @@ through long-form guides.
 
 | Topic | Checklist |
 |---|---|
+| Network infrastructure (fixed IPs, DNS, SSH) | [Network infrastructure checklist](transition-plan/16-network-infrastructure.md#phase-0-validation-checklist) |
 | Ubuntu base image and hardening | [Ubuntu foundation installation checklist](transition-plan/01-ubuntu-foundation.md#installation-checklist) |
 | GitKraken rollout | [GitKraken adoption checklist](transition-plan/05-gitkraken-tooling.md#adoption-checklist) |
 | Developer desktop onboarding | [Desktop integration setup checklist](transition-plan/10-visual-studio-desktop-integration.md#phase-1--fresh-workstation-setup-checklist) |
