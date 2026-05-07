@@ -82,12 +82,17 @@ See [00-foundations/02-cognitive-loop.md](00-foundations/02-cognitive-loop.md) f
 ```
 SOCIETY-OF-REPO/
 ├── README.md                       ← this file
-├── 00-foundations/                 ← theory, loop, maturity model, anti-patterns
+├── 00-foundations/                 ← theory, loop, maturity model, anti-patterns, skills catalogue
 ├── 01-governance/                  ← constitution, authority, approvals, rights, policies
 ├── 02-protocols/                   ← identity, events, activation, settlement, memory, channels
-├── 03-agencies/                    ← worker repos: intake-bee, contract-bee, tax-bee, staff-bee …
-├── 04-critics/                     ← challenge repos: evidence, scope, cost, privacy, risk …
-├── 05-censors/                     ← block repos: cloud-egress, authority, payment, delegation …
+├── 03-agencies/                    ← worker repos: intake-bee, document-index-bee, web-research-bee,
+│                                       code-review-bee, dependency-bee, build-monitor-bee,
+│                                       contract-bee, tax-bee, staff-bee, supplier-bee,
+│                                       finance-watch, calendar-bee, task-bee, owner-briefing
+├── 04-critics/                     ← challenge repos: evidence, scope, cost, privacy, risk,
+│                                       overconfidence, source-quality, staleness
+├── 05-censors/                     ← block repos: cloud-egress, authority, payment, delegation,
+│                                       credential, pii-exfiltration
 ├── 06-memory/                      ← memory repos: events, episodic, semantic, procedural, failure, klines, decisions
 ├── 07-workspace/                   ← attention repos: global-workspace, current-focus, settlements, briefings
 ├── 08-services/                    ← service repos exposed to other SORs
@@ -101,10 +106,10 @@ SOCIETY-OF-REPO/
 
 | Section | Description |
 |---|---|
-| [00-foundations/](00-foundations/README.md) | Society of Mind theory, the cognitive loop, maturity model, and anti-patterns |
+| [00-foundations/](00-foundations/README.md) | Society of Mind theory, the cognitive loop, maturity model, anti-patterns, and the skills catalogue |
 | [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger |
 | [02-protocols/](02-protocols/README.md) | Identity, constitution, event, activation, settlement, memory, service-channel, and governance protocols |
-| [03-agencies/](03-agencies/README.md) | Worker agency repos and their constitutions |
+| [03-agencies/](03-agencies/README.md) | Worker agency repos and their constitutions (perception, internet, software, business, personal, briefing) |
 | [04-critics/](04-critics/README.md) | Critic repos that challenge proposals |
 | [05-censors/](05-censors/README.md) | Censor repos that enforce hard limits |
 | [06-memory/](06-memory/README.md) | All memory systems: events, episodic, semantic, procedural, failure, K-lines, decisions |

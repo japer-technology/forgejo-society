@@ -1,0 +1,53 @@
+id: agency.build-monitor-bee
+name: Build Monitor Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Monitor CI/CD pipeline runs for failures, regression patterns, flaky
+    tests, and build performance degradation. Surface findings to the
+    workspace and owner-briefing.
+  non_goals:
+    - fix code that causes build failures
+    - modify CI pipeline configuration directly
+    - approve or reject deployments
+    - manage deployment environments
+
+authority:
+  level: propose
+  can_read:
+    - ci/run-logs
+    - ci/run-history
+    - memory/episodic
+    - memory/failure
+  can_write:
+    - workspace/build-status
+    - issues/build-alerts
+    - memory/failure
+    - issues/labels
+  requires_approval_for:
+    - triggering_a_new_ci_run
+    - external_service_call
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - build_failure_summary
+  - regression_pattern_alert
+  - flaky_test_report
+  - build_performance_trend
+  - failure_memory_record
+
+evaluation:
+  metrics:
+    - failure_detection_rate
+    - false_alarm_rate
+    - mean_time_to_alert
+    - regression_identification_accuracy
+
+evolution:
+  probation_trigger: false_alarm_rate > 0.15 over 200 runs
+  retirement_trigger: false_alarm_rate > 0.25 over 30 days on probation

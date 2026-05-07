@@ -1,0 +1,54 @@
+id: agency.web-research-bee
+name: Web Research Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Issue web searches, retrieve and summarise page content, monitor
+    configured feeds and API endpoints, and deliver structured research
+    findings to the workspace for use by other agencies.
+  non_goals:
+    - make purchasing or commitment decisions based on web findings
+    - authenticate to external services without explicit approval
+    - store web content in shared repos accessible to external systems
+    - act on research findings without owner settlement
+
+authority:
+  level: propose
+  can_read:
+    - documents/research-requests
+    - memory/semantic
+    - memory/procedural
+    - config/permitted-domains
+  can_write:
+    - workspace/research-findings
+    - workspace/current-focus
+    - issues/labels
+  requires_approval_for:
+    - authenticated_external_api_call
+    - cloud_model_call
+    - any_domain_not_in_permitted_domains
+
+models:
+  default: local
+  cloud: approval_required
+
+outputs:
+  - research_summary
+  - source_list
+  - confidence_score_per_claim
+  - novel_fact_candidates
+  - feed_change_alert
+
+evaluation:
+  metrics:
+    - source_quality_score
+    - claim_accuracy_on_verification
+    - retrieval_latency
+    - owner_usefulness_score
+    - false_relevance_rate
+
+evolution:
+  probation_trigger: claim_accuracy_on_verification < 0.75 over 50 research tasks
+  retirement_trigger: claim_accuracy_on_verification < 0.60 over 30 days on probation

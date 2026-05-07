@@ -1,0 +1,33 @@
+id: censor.credential
+name: Credential Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any action that would expose, log, comment, or transmit
+    secrets, API keys, passwords, tokens, or other credential material.
+    This censor is unconditional and cannot be overridden.
+
+blocks:
+  - any proposal that includes a plaintext secret, password, API key, or token in its output
+  - any action that would write credential material to a shared workspace or public issue
+  - any review comment or research summary that quotes a secret value found in code or config
+  - any log entry that echoes credential material in plaintext
+
+does_not_block:
+  - proposals that reference the existence of a secret without exposing its value
+  - redacted references (e.g., "API key found at line 42 — redacted")
+  - structured alerts that specify the file and line without quoting the value
+
+authority:
+  level: act
+  can_read:
+    - workspace/current-focus
+    - workspace/review-proposals
+    - workspace/research-findings
+  can_write:
+    - workspace/blocks
+    - issues/violation-log
+
+violation_log: issues/credential-censor-violations

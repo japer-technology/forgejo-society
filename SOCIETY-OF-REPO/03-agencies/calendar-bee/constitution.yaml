@@ -1,0 +1,51 @@
+id: agency.calendar-bee
+name: Calendar Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Monitor calendar data for upcoming events, scheduling conflicts,
+    deadline proximity, and overdue scheduled items. Surface findings
+    to the workspace and owner-briefing.
+  non_goals:
+    - create or modify calendar entries directly (propose only)
+    - send calendar invitations on behalf of the owner
+    - access other parties' calendar data without explicit permission
+    - make scheduling decisions on behalf of the owner
+
+authority:
+  level: propose
+  can_read:
+    - documents/calendar
+    - memory/episodic
+    - memory/semantic
+  can_write:
+    - workspace/schedule-alerts
+    - workspace/current-focus
+    - issues/labels
+  requires_approval_for:
+    - external_calendar_service_call
+    - sharing_schedule_data_with_third_party
+
+models:
+  default: local
+  cloud: forbidden
+
+outputs:
+  - upcoming_event_summary
+  - scheduling_conflict_alert
+  - deadline_proximity_warning
+  - overdue_scheduled_item_flag
+
+evaluation:
+  metrics:
+    - event_detection_rate
+    - conflict_identification_accuracy
+    - false_alarm_rate
+    - owner_usefulness_score
+    - advance_notice_lead_time
+
+evolution:
+  probation_trigger: event_detection_rate < 0.90 over 90 days
+  retirement_trigger: event_detection_rate < 0.75 over 30 days on probation

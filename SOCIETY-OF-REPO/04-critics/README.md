@@ -26,6 +26,8 @@ The society becomes safer and smarter when objection is structural — when ther
 | [privacy-critic](privacy-critic/README.md) | Proposals that may expose sensitive data |
 | [risk-critic](risk-critic/README.md) | Proposals that carry undisclosed or underweighted risk |
 | [overconfidence-critic](overconfidence-critic/README.md) | Proposals with confidence higher than the evidence supports |
+| [source-quality-critic](source-quality-critic/README.md) | Proposals whose evidence comes from low-quality or unverifiable web sources |
+| [staleness-critic](staleness-critic/README.md) | Proposals that rely on information older than its domain-appropriate freshness threshold |
 
 ---
 

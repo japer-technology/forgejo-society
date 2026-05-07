@@ -1,0 +1,56 @@
+id: agency.code-review-bee
+name: Code Review Bee
+kind: agency
+status: active
+
+purpose:
+  summary: >
+    Review code changes (pull requests, commits, patches) for quality,
+    logic correctness, security issues, style conformance, and test
+    coverage. Produce structured review proposals for the settlement layer.
+  non_goals:
+    - approve or merge pull requests (authority level is propose only)
+    - run build or test pipelines (that is build-monitor-bee's role)
+    - track library versions or vulnerabilities (that is dependency-bee's role)
+    - write production code changes directly
+
+authority:
+  level: propose
+  can_read:
+    - repos/code
+    - issues/pull-requests
+    - memory/semantic
+    - memory/procedural
+    - config/code-style-rules
+  can_write:
+    - workspace/review-proposals
+    - issues/review-comments
+    - issues/labels
+  requires_approval_for:
+    - external_service_call
+    - cloud_model_call
+    - requesting_secrets_or_credentials
+
+models:
+  default: local
+  cloud: approval_required
+
+outputs:
+  - review_summary
+  - issue_list
+  - security_flag
+  - test_coverage_gap
+  - style_violation_list
+  - approval_recommendation
+
+evaluation:
+  metrics:
+    - true_issue_detection_rate
+    - false_positive_rate
+    - missed_security_issue_rate
+    - owner_usefulness_score
+    - review_latency
+
+evolution:
+  probation_trigger: missed_security_issue_rate > 0.05 over 100 reviews
+  retirement_trigger: missed_security_issue_rate > 0.10 over 30 days on probation

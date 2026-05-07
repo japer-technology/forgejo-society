@@ -1,0 +1,37 @@
+id: critic.source-quality
+name: Source Quality Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals whose evidence is sourced from low-quality,
+    anonymous, single-sourced, or unverifiable web content. Require
+    proposals to declare source quality and corroboration.
+
+challenges:
+  - proposals citing only one web source for a factual claim
+  - proposals citing anonymous or unattributed web content
+  - proposals citing sources with no declared publication date
+  - proposals citing sources on domains not in the permitted-domains list
+  - proposals asserting certainty based on web content without corroboration
+
+does_not_challenge:
+  - proposals citing peer-reviewed or official sources
+  - proposals that already have a corroborating second source
+  - proposals whose claims are labelled as provisional or low-confidence
+
+authority:
+  level: object
+  can_read:
+    - workspace/research-findings
+    - workspace/current-focus
+    - config/permitted-domains
+  can_write:
+    - workspace/objections
+
+evaluation:
+  metrics:
+    - objection_validity_rate
+    - missed_poor_source_rate
+    - false_objection_rate

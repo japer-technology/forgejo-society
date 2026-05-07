@@ -30,6 +30,8 @@ Censors are the constitution enforced in code.
 | [authority-censor](authority-censor/README.md) | Actions that exceed an agency's authority level or bypass the approval gate |
 | [payment-censor](payment-censor/README.md) | Payments and financial commitments above the defined spending limit |
 | [delegation-depth-censor](delegation-depth-censor/README.md) | Delegation chains longer than 3 hops |
+| [credential-censor](credential-censor/README.md) | Exposure of secrets, API keys, passwords, or tokens in any output or log |
+| [pii-exfiltration-censor](pii-exfiltration-censor/README.md) | Personal identifying information leaving the local-access boundary without authorisation |
 
 ---
 

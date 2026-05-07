@@ -1,0 +1,36 @@
+id: censor.pii-exfiltration
+name: PII Exfiltration Censor
+kind: censor
+status: active
+
+purpose:
+  summary: >
+    Block any action that would transmit, share, log externally, or
+    write to a shared-access repo any personal identifying information
+    (PII) without explicit policy authorisation. This censor is
+    unconditional and cannot be overridden.
+
+blocks:
+  - any outbound HTTP call that includes PII in query parameters, headers, or body without authorisation
+  - any write to a workspace or shared repo that includes raw PII beyond the local-access boundary
+  - any research query that includes personal data (name, email, address, national ID, health data)
+  - any proposal to summarise or share calendar, task, or personal note content with external parties
+  - any cloud model call that includes unredacted PII in the prompt
+
+does_not_block:
+  - local processing of PII within the local-access boundary
+  - writes to local memory repos accessible only to the owner
+  - explicitly authorised external sharing with a recorded policy reference
+
+authority:
+  level: act
+  can_read:
+    - workspace/current-focus
+    - workspace/research-findings
+    - workspace/schedule-alerts
+    - workspace/task-status
+  can_write:
+    - workspace/blocks
+    - issues/violation-log
+
+violation_log: issues/pii-exfiltration-censor-violations

@@ -1,0 +1,37 @@
+id: critic.staleness
+name: Staleness Critic
+kind: critic
+status: active
+
+purpose:
+  summary: >
+    Challenge proposals that rely on information older than its declared
+    freshness threshold. Require proposals to declare the age of their
+    evidence and flag when that age exceeds the domain-appropriate limit.
+
+challenges:
+  - proposals citing web content with a publication date older than the domain threshold
+  - proposals using semantic memory records marked as cold or archived without explicit acknowledgement
+  - proposals presenting market, pricing, or regulatory data without a retrieval date
+  - proposals built on document versions superseded by a newer version in the index
+
+does_not_challenge:
+  - proposals that explicitly acknowledge evidence age and account for it
+  - proposals built on historical data where age is the point (e.g., trend analysis)
+  - proposals whose content is not time-sensitive by domain classification
+
+authority:
+  level: object
+  can_read:
+    - workspace/research-findings
+    - workspace/current-focus
+    - memory/semantic
+    - workspace/document-index
+  can_write:
+    - workspace/objections
+
+evaluation:
+  metrics:
+    - objection_validity_rate
+    - missed_stale_source_rate
+    - false_objection_rate
