@@ -2,7 +2,7 @@
 
 Decisions is the archive of completed settlement records.
 
-Active settlements live in [../07-workspace/active-settlements/](../07-workspace/active-settlements/). When a settlement is completed (state: `completed`, `failed`, `blocked`, or `cancelled`), it is archived here.
+Active settlements live in [../../07-workspace/active-settlements/](../../07-workspace/active-settlements/). When a settlement is completed (state: `completed`, `failed`, `blocked`, or `cancelled`), it is archived here.
 
 ---
 
@@ -38,4 +38,4 @@ Decisions are queried when:
 
 ## Schema
 
-Decision records use the same schema as the settlement protocol. See [../02-protocols/05-settlement.md](../02-protocols/05-settlement.md).
+Decision records use the same schema as the settlement protocol. See [../../02-protocols/05-settlement.md](../../02-protocols/05-settlement.md).

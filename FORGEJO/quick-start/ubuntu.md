@@ -658,13 +658,13 @@ Continue with the appropriate guide for the host's role:
 
 | Host role | Next guide |
 |-----------|-----------|
-| Forge server | [docs/install/04-docker-engine.md](../install/04-docker-engine.md) → PostgreSQL → Forgejo |
-| Runner node | [docs/install/04-docker-engine.md](../install/04-docker-engine.md) → Forgejo Runner |
-| LLM inference host | [docs/install/11-nvidia-drivers.md](../install/11-nvidia-drivers.md) → LM Studio |
-| Developer workstation | [docs/install/13-git-linux.md](../install/13-git-linux.md) |
+| Forge server | [Docker Engine](../install/04-docker-engine.md) → PostgreSQL → Forgejo |
+| Runner node | [Docker Engine](../install/04-docker-engine.md) → Forgejo Runner |
+| LLM inference host | [NVIDIA Drivers](../install/11-nvidia-drivers.md) → LM Studio |
+| Developer workstation | [Git and Git LFS (Linux)](../install/13-git-linux.md) |
 
 For the full sequential install order for each role, see
-[docs/install/00-index.md](../install/00-index.md).
+[Install library master index](../install/00-index.md).
 
 For a single-document rapid deployment of the entire Forgejo-Mind stack, see
-[docs/quick-start/forgejo-mind.md](forgejo-mind.md).
+[Forgejo-Mind Quick Start](forgejo-mind.md).

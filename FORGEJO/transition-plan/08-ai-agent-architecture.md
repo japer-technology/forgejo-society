@@ -1,7 +1,7 @@
 # AI Agent Architecture
 
 The AI agent architecture implements the cognitive ecology described in
-[The Forge is the Mind, The Repo is an Agency](../../the-invention.md).
+[The Forge is the Mind, The Repo is an Agency](../../inventor/the-forge-is-the-mind-the-repo-is-an-agency.md).
 Forgejo is the governance substrate. Agents are bounded workers that read from
 and write back to repositories through controlled interfaces.
 

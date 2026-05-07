@@ -1,7 +1,7 @@
 # Forgejo-Mind Quick Start
 
 This document is the fastest path from bare metal to a running Forgejo-Mind cognitive
-ecology. It sequences the commands from the detailed guides in `docs/transition-plan/`
+ecology. It sequences the commands from the detailed guides in `../transition-plan/`
 into one ordered, copy-paste-friendly script.
 
 Work through the four phases in order. Each phase has a clear "done when" condition
@@ -982,17 +982,17 @@ jobs:
 
 ## Detailed documentation
 
-All commands above are explained in full in the guides under `docs/transition-plan/`:
+All commands above are explained in full in the guides under `../transition-plan/`:
 
 | # | Guide | What it covers |
 |---|---|---|
-| 00 | [Overview and checklists](docs/transition-plan/00-overview.md) | Four-phase checklist and operating rules |
-| 01 | [Ubuntu foundation](docs/transition-plan/01-ubuntu-foundation.md) | Full OS install and hardening |
-| 13 | [PostgreSQL database](docs/transition-plan/13-postgresql-database.md) | PostgreSQL install, tuning, backup, restore |
-| 02 | [Forgejo primary forge](docs/transition-plan/02-forgejo-primary-forge.md) | Forgejo + Caddy + systemd, GitHub migration |
-| 09 | [Runner fleet](docs/transition-plan/09-runner-scale-strategy.md) | All 16 runner nodes, bulk registration |
-| 08 | [AI agent architecture](docs/transition-plan/08-ai-agent-architecture.md) | Cognitive ecology design, agent identity, LM Studio |
-| 14 | [Developer tooling](docs/transition-plan/14-developer-tooling.md) | Git, SSH, VS Code, GitKraken, LM Studio on Ubuntu |
-| 15 | [Windows tooling](docs/transition-plan/15-windows-developer-tooling.md) | Git for Windows, Visual Studio, SSH, LM Studio |
-| 12 | [Security and governance](docs/transition-plan/12-security-quotas-and-governance.md) | Secrets, quotas, audit, disaster recovery |
-| 11 | [Publication strategy](docs/transition-plan/11-publication-and-reputation.md) | Governed release and mirror workflow |
+| 00 | [Overview and checklists](../transition-plan/00-overview.md) | Four-phase checklist and operating rules |
+| 01 | [Ubuntu foundation](../transition-plan/01-ubuntu-foundation.md) | Full OS install and hardening |
+| 13 | [PostgreSQL database](../transition-plan/13-postgresql-database.md) | PostgreSQL install, tuning, backup, restore |
+| 02 | [Forgejo primary forge](../transition-plan/02-forgejo-primary-forge.md) | Forgejo + Caddy + systemd, GitHub migration |
+| 09 | [Runner fleet](../transition-plan/09-runner-scale-strategy.md) | All 16 runner nodes, bulk registration |
+| 08 | [AI agent architecture](../transition-plan/08-ai-agent-architecture.md) | Cognitive ecology design, agent identity, LM Studio |
+| 14 | [Developer tooling](../transition-plan/14-developer-tooling.md) | Git, SSH, VS Code, GitKraken, LM Studio on Ubuntu |
+| 15 | [Windows tooling](../transition-plan/15-windows-developer-tooling.md) | Git for Windows, Visual Studio, SSH, LM Studio |
+| 12 | [Security and governance](../transition-plan/12-security-quotas-and-governance.md) | Secrets, quotas, audit, disaster recovery |
+| 11 | [Publication strategy](../transition-plan/11-publication-and-reputation.md) | Governed release and mirror workflow |
