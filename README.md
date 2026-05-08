@@ -100,4 +100,5 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 ## The invention
 
 - [The Forge is the Mind, The Repo is an Agency](inventor/the-forge-is-the-mind-the-repo-is-an-agency.md)
+- [CI/CD Capabilities Become AI Agent Capabilities](inventor/ci-cd-capabilities-become-agent-capabilities.md)
 - [Expected Performance at Full Flight](inventor/forgejo-mind-expected-performance.md)
