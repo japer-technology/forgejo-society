@@ -94,7 +94,7 @@ This document turns the previously identified theoretical gaps into concrete add
 
 ## 6. Add a Resource and Attention Economy
 
-**Addition:** Formalise compute, latency, review bandwidth, and workspace attention as governed resources.
+**Addition:** Formalize compute, latency, review bandwidth, and workspace attention as governed resources.
 
 **Why it matters:** The research material treats resource competition as central, but SOR currently treats it only indirectly through cost and queueing implications.
 
