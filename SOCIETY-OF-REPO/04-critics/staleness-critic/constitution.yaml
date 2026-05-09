@@ -21,7 +21,7 @@ does_not_challenge:
   - proposals whose content is not time-sensitive by domain classification
 
 authority:
-  level: object
+  level: propose
   can_read:
     - workspace/research-findings
     - workspace/current-focus

@@ -22,7 +22,7 @@ does_not_challenge:
   - proposals whose claims are labelled as provisional or low-confidence
 
 authority:
-  level: object
+  level: propose
   can_read:
     - workspace/research-findings
     - workspace/current-focus

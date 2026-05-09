@@ -43,6 +43,8 @@ Authority levels are defined in the [constitution](constitution.md).
 | `privacy-critic` | `propose` | Challenges proposals; does not block alone |
 | `risk-critic` | `propose` | Challenges proposals; does not block alone |
 | `overconfidence-critic` | `propose` | Challenges proposals; does not block alone |
+| `source-quality-critic` | `propose` | Challenges proposals citing low-quality or unverifiable sources |
+| `staleness-critic` | `propose` | Challenges proposals relying on evidence past its freshness threshold |
 
 ### Censor agencies
 
@@ -52,6 +54,8 @@ Authority levels are defined in the [constitution](constitution.md).
 | `authority-censor` | `act` | Enforces authority limits unconditionally |
 | `payment-censor` | `act` | Enforces payment limits unconditionally |
 | `delegation-depth-censor` | `act` | Enforces chain depth limits unconditionally |
+| `credential-censor` | `act` | Blocks exposure of secrets, API keys, passwords, or tokens unconditionally |
+| `pii-exfiltration-censor` | `act` | Blocks PII leaving the local-access boundary without authorisation |
 
 ### Memory agencies
 
