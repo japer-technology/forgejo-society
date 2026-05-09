@@ -41,7 +41,7 @@ This document turns the previously identified theoretical gaps into concrete add
 
 ## 3. Add Meta-Administration as a distinct cognitive function
 
-**Addition:** Define a class of meta-administrative agencies responsible for reorganising the society's own cognitive machinery.
+**Addition:** Define a class of meta-administrative agencies responsible for reorganizing the society's own cognitive machinery.
 
 **Why it matters:** SOR includes evolution, but not a strong theory of agencies that manage learning, routing quality, abstraction quality, and coordination structure.
 
@@ -152,10 +152,12 @@ This document turns the previously identified theoretical gaps into concrete add
 **Concrete design additions:**
 - Add a `self-ideals` governance artifact class.
 - Define society-level ideals such as:
-  - evidence before confidence
-  - reversible change before irreversible change
-  - human dignity over convenience
-  - local-first over cloud-first when risk is comparable
+  - **Technical ideals**
+    - evidence before confidence
+    - reversible change before irreversible change
+    - local-first over cloud-first when risk is comparable
+  - **Ethical ideals**
+    - human dignity over convenience
 - Require agencies to cite the relevant self-ideal when making high-impact recommendations.
 - Add drift review for cases where repeated proposals conflict with declared ideals.
 
@@ -261,6 +263,8 @@ This document turns the previously identified theoretical gaps into concrete add
 - State explicitly that service or economic sophistication does not imply cognitive maturity.
 
 ## Suggested implementation order
+
+The order below is phased rather than exhaustive. Some additions are grouped under larger enabling phases, while others are best introduced as part of those broader changes rather than as standalone first steps.
 
 1. Frames and defaults layer
 2. Representation protocol
