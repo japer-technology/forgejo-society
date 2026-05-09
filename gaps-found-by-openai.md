@@ -250,7 +250,7 @@ This document turns the previously identified theoretical gaps into concrete add
 
 **Addition:** Expand the maturity model so later stages include representational maturity and self-regulatory maturity, not only K-lines, services, and economics.
 
-**Why it matters:** Current levels emphasise operational expansion more than cognitive depth.
+**Why it matters:** Current levels emphasize operational expansion more than cognitive depth.
 
 **Concrete design additions:**
 - Revise Level 4 to include:
