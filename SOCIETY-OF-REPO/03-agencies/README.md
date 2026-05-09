@@ -44,61 +44,37 @@ Worker agency repos are the front-line cognitive units of the Society of Repo. E
 | [calendar-bee](calendar-bee/README.md) | Monitors calendar data for upcoming events, conflicts, and deadline proximity | propose |
 | [task-bee](task-bee/README.md) | Tracks open tasks, overdue items, and blocked dependencies | propose |
 
-### Briefing and output
+### Assembly, briefing, and ecology roles
 
-| Agency | Job | Authority |
+| Role | Job | Authority |
 |---|---|---|
+| `assembly-bee` | Combines working summaries into assembly summaries before settlement | propose |
+| `directive-bee` | Breaks approved settlements into narrower downstream tasks | act |
 | [owner-briefing](owner-briefing/README.md) | Assembles and delivers governed briefings to the owner | act |
+| `activation-steward` | Reviews routing quality and congestion | propose |
+| `memory-steward` | Reviews memory drift, decay, and retrieval quality | propose |
+| `representation-steward` | Reviews representation-class correctness and supersession | propose |
+| `evaluation-steward` | Reviews credit assignment, bootstrap fairness, and metrics | propose |
+| `ecology-monitor` | Reviews groupthink, objection usefulness, and society-level health | propose |
 
 ---
 
 ## Agency design principles
 
-### Make agencies small
-
-Each agency does one thing.
-
-```text
-Good: contract-renewal-bee (watches for contract renewal windows)
-Good: invoice-duplicate-bee (detects duplicate invoices)
-Good: staff-expiry-bee (watches for certificate expiry)
-
-Bad:  everything-assistant
-Bad:  general-business-genius
-```
-
-Small agencies are:
-- easier to audit
-- easier to improve
-- easier to sell as services
-- easier to retire
-- easier to trust
-
-### Separate critics from workers
-
-A worker proposes.
-A critic challenges.
-A censor blocks.
-
-Do not merge these roles. The system becomes smarter and safer when objection is structural.
-
-### Every agency has a constitution
-
-See [../02-protocols/02-constitution.md](../02-protocols/02-constitution.md) for the constitution protocol.
-
-### Every agency has evaluation metrics
-
-If you cannot measure an agency's performance, you cannot improve it, trust it, or retire it.
+- Make agencies small.
+- Separate workers, critics, and censors.
+- Add insulation boundaries for shared-state risks.
+- Prefer specialised successors over one agency serving incompatible purposes.
+- Require every agency constitution to declare body, brain, and mind dependencies.
 
 ---
 
 ## Agency lifecycle
 
 ```text
-proposed → constitution drafted → human approval → spawned (active)
-        → probation (if performance falls below threshold)
-        → retirement (if probation fails)
-        → archived (constitution preserved for lineage)
+proposed → constitution drafted → human approval → bootstrap
+        → active → probation or differentiation trial → merge or retirement
+        → archived with lineage preserved
 ```
 
-All lifecycle transitions are governance events recorded in the evolution log.
+New agencies receive a protected bootstrap window. During bootstrap they are judged first on constitutional compliance, safety, and non-harm, then later on productivity.

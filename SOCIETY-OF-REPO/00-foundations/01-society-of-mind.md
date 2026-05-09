@@ -8,113 +8,84 @@ In 1986, Marvin Minsky published *The Society of Mind*. His central claim was ra
 
 Each agent is narrow. Each agent sees only a piece. No single agent understands the whole.
 
-Intelligence — real, useful, flexible intelligence — emerges from the structured **interaction** between them.
+Intelligence emerges from the structured **interaction, insulation, representation, and revision** of those parts.
 
-Minsky named several key structures in this ecology:
+---
 
-| Structure | Description |
-|---|---|
-| **Agents** | Small, bounded processes, each doing one thing |
-| **K-lines** | Knowledge-lines — remembered activation patterns that restore prior mental states |
-| **Critics** | Agents that suppress other agents when something is wrong |
-| **Censors** | Agents that permanently block certain kinds of action |
-| **Frames** | Structured knowledge units that encode how things typically work |
-| **Global workspace** | A shared activation space visible to many agents simultaneously |
+## Structures SOR now treats as first-class
 
-The key insight for AI is not that intelligence requires a powerful central reasoner.
-
-The key insight is that intelligence requires **organised conflict** — many parts pushing and pulling, with the settlement of those conflicts producing useful, governed action.
+| Structure | Description | SOR equivalent |
+|---|---|---|
+| **Agents** | Small bounded processes | Constitutional repos and roles |
+| **Frames** | Situation models with defaults and expected roles | `06-memory/frames/` plus frame selection in activation |
+| **K-lines** | Restored activation and inhibition patterns | `06-memory/klines/` |
+| **Analogies** | Structural reuse across domains | `06-memory/analogies/` and analogy fallback in activation |
+| **Critics** | Agents that challenge weak reasoning | `04-critics/` |
+| **Censors** | Non-negotiable blocks | `05-censors/` |
+| **Hierarchy** | Compression upward and directives downward | `02-protocols/13-hierarchy-and-summaries.md` |
+| **Insulation** | Protected independence between parts | `02-protocols/12-insulation.md` |
+| **Representation classes** | Different memory structures for different kinds of knowledge | `02-protocols/09-representation.md` |
+| **Credit assignment** | Learning which part of the loop mattered | `02-protocols/10-credit-assignment.md` |
+| **Introspection** | Recording unknowns and blind spots | `02-protocols/11-introspection.md` |
+| **Relational memory** | Association across memory classes | `02-protocols/14-relational-memory.md` |
+| **Self-ideals** | Internalised norms and self-images | `01-governance/self-ideals.md` |
+| **Ecology observation** | Society-level self-management | Meta-admin roles in `05-skills.md` and `10-evolution/README.md` |
 
 ---
 
 ## Why this matters for repositories
 
-Most AI agent systems today are built around a central model:
+Most AI agent systems are still structurally monarchical:
 
 ```text
 prompt → model → tools → output
 ```
 
-This is a monarchy. One agent controls everything.
+Society of Repo rejects that pattern.
 
-Monarchies are brittle. They fail catastrophically. They accumulate capability without accountability. They become unauditable.
+The SOR unit of intelligence is not a model call. It is a governed cycle in which a stimulus is represented, framed, activated, challenged, inhibited, settled, remembered, and revised.
 
-Society of Mind offers a different design: **distributed, governed, competitive intelligence.**
-
-Society of Repo applies this design to software forges, because software forges already have the primitive structures that Minsky described:
-
-| Minsky's structure | Forge equivalent |
-|---|---|
-| Agents | Repos with constitutions and workflows |
-| K-lines | YAML activation patterns in memory repos |
-| Critics | Repos whose job is to challenge proposals |
-| Censors | Repos whose job is to block forbidden actions |
-| Global workspace | A shared workspace repo visible to all active agencies |
-| Settlement | A recorded resolution of competing proposals |
-| Memory | Git history — versioned, inspectable, correctable |
-
-The forge is not a metaphor for a mind.
-
-The forge **is** the mind — if the repos are designed as cognitive organs.
+Repositories are a good substrate because they already provide:
+- durable state
+- inspectable history
+- branch-based insulation for experiments
+- review gates for structural change
+- composable services and workflows
 
 ---
 
-## The key move
+## Interaction is not enough
 
-The move from "AI agent in a repo" to "Society of Mind in a forge" is a change in the **unit of intelligence**.
+Minsky's later work emphasises that a rich mind needs more than cooperation.
 
-Old unit:
-> a model call
+SOR therefore treats these additional properties as essential:
 
-New unit:
-> a governed settlement among competing cognitive agencies
-
-This is not a bigger model or a faster model.
-
-It is a structural change in how cognition is organised and made accountable.
-
----
-
-## What this means in practice
-
-A Society of Repo does not try to build one agent that knows everything.
-
-It builds many agents that each know something useful and limited, and creates the infrastructure for:
-
-- **activation** — which agents wake for which stimulus
-- **competition** — agents proposing different actions
-- **criticism** — agents challenging weak proposals
-- **censorship** — agents blocking forbidden paths
-- **settlement** — the society choosing an authorised next step
-- **memory** — outcomes shaping future activations
-- **evolution** — useful agents strengthened, useless ones retired
-
-The intelligence is not in any one agent.
-
-The intelligence is in the **structure** — and that structure lives in the forge.
+1. **Representation** — the society must know whether a durable record is an episode, fact, procedure, frame, K-line, analogy, concept candidate, or ideal.
+2. **Insulation** — critics, censors, experiments, and memory loops must not collapse into one another through uncontrolled state sharing.
+3. **Hierarchy** — raw evidence must compress into working summaries, assembly summaries, settlement summaries, and executive briefings.
+4. **Analogy** — novel situations should borrow structure from related experience rather than fall immediately to exhaustive search.
+5. **Developmental growth** — new agencies need protected bootstrap periods and specialised successors.
+6. **Self-regulation** — the society must observe its own congestion, drift, groupthink, and blind spots.
 
 ---
 
-## The three claims of Society of Repo
+## The forge is the mind
+
+Society of Repo now makes three stronger claims:
 
 **Claim 1: The forge is the mind.**
-
-The software forge — Forgejo, its API, its issue tracker, its PR system, its runner fleet — is the cognitive substrate. Every action is a commit. Every decision is a settlement. Every failure is a memory. Every useful pattern becomes a K-line.
+The forge is the durable cognitive substrate in which settlements, memory, conflict, and revision live.
 
 **Claim 2: The repo is an agency.**
-
-A repository is not just a folder of files. It is a durable cognitive unit with a purpose, a constitution, a scope, a set of outputs, and a memory. Repos can wake, act, object, remember, and evolve.
+A repository is a durable cognitive unit with a role, constitutional scope, authority, memory rights, and evaluation criteria.
 
 **Claim 3: The society thinks.**
-
-When many repos interact through governed protocols — activating, proposing, criticising, settling, acting, remembering — useful intelligence emerges. Not from any one repo, but from the structured interaction of all of them.
+Intelligence arises from the ecology's structured interaction: representation, activation, criticism, inhibition, settlement, introspection, memory, and evolution.
 
 ---
 
-## Further reading
+## Source notes
 
-- Marvin Minsky, *The Society of Mind* (1986)
-- [02-cognitive-loop.md](02-cognitive-loop.md) — how the loop works in practice
-- [../02-protocols/04-activation.md](../02-protocols/04-activation.md) — activation protocol
-- [../02-protocols/05-settlement.md](../02-protocols/05-settlement.md) — settlement protocol
-- [../06-memory/klines/README.md](../06-memory/klines/README.md) — K-lines in depth
+- **Minsky 1986** grounds the core agent ecology, critics, censors, frames, K-lines, and hierarchy claim.
+- **Minsky 1988** sharpens the need for insulation, developmental growth, and protected specialisation.
+- **2025 Society of Minds research** informs the relational-memory, self-observation, and Mind–Brain–Body decomposition used here.

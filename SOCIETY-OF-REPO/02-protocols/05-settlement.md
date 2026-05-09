@@ -6,23 +6,18 @@ No non-trivial action may occur without a settlement.
 
 ---
 
-## What a settlement is
+## What a settlement records
 
-A settlement is not just a decision. It is:
-
-```text
-the stimulus that triggered the process
-the agencies that woke
-what each agency proposed
-what critics objected to
-what censors blocked
-what action was authorised
-what evidence was used
-whether human approval was required
-what memory should be updated
-```
-
-A settlement makes reasoning visible. It is the difference between "AI did something" and "the society formed a traceable judgment."
+A settlement records:
+- the stimulus that triggered the process
+- the governing frame and any analogies used
+- the agencies that woke and any routes that were inhibited
+- what each agency proposed
+- the evidence, method, confidence, and alternatives behind each proposal
+- the unknowns, blind spots, and observability limits still present
+- what critics objected to and what censors blocked
+- which ideals, procedures, and prior decisions shaped the outcome
+- what action was authorised and how memory should be updated
 
 ---
 
@@ -30,152 +25,105 @@ A settlement makes reasoning visible. It is the difference between "AI did somet
 
 ```yaml
 settlement_id:          # settlement.{domain}.{year}-{sequence}
-stimulus:               # The originating event or issue ID
-stimulus_type:          # Event type from the events taxonomy
-timestamp:              # ISO 8601 when settlement was formed
+stimulus:               # originating event or issue ID
+stimulus_type:          # event taxonomy value
+timestamp:              # ISO 8601 when settlement formed
+governing_frame: frame-id
+analogies_used:
+  - analogy-id
 
-# Which agencies were activated and at what weight
 activated:
   - agency: agency-id
-    weight: float (0–1)
+    weight: float
+inhibited:
+  - agency: agency-id
+    weight_delta: float
+    reason: text
 
-# What each activated agency proposed
 proposals:
   - from: agency-id
     proposal: |
       Human-readable description of the proposed action.
-    evidence:           # Supporting data or prior settlements cited
-    confidence: float   # Confidence in the proposal (0–1)
+    evidence:
+      - citation or record reference
+    method: retrieval | rule | local-model | hybrid
+    confidence: float
+    alternatives_considered:
+      - text
+    observability_limits:
+      - text
+    opaque_model_dependencies:
+      - text
+    cited_procedures:
+      - procedure-id
+    cited_decisions:
+      - settlement-id
+    cited_ideals:
+      - ideal-id
+    introspection:
+      unknowns:
+        - text
+      blind_spots:
+        - text
+      explanation_quality: low | medium | high
 
-# What critics objected to
 objections:
   - from: critic-id
     objection: |
-      Human-readable description of the objection.
+      Human-readable objection.
     proposal_targeted: agency-id
     severity: low | medium | high
+    usefulness_score: float
 
-# What censors blocked (if any)
 blocks:
   - from: censor-id
     block: |
-      Human-readable description of what was blocked.
+      What was blocked.
     reason: policy-id or rule reference
-    unconditional: true | false
+    unconditional: true
 
-# The settled outcome
 settlement:
   action: |
-    What will happen, in plain language.
+    What will happen.
   approval_required: true | false
-  approval_type:     # null, or the approval-gate category
-  cloud_allowed:     true | false
+  approval_type: null | category-id
+  cloud_allowed: true | false
   authorised_executor: agency-id
-  estimated_completion: ISO 8601 timestamp
+  summary_tier: settlement-summary | executive-briefing
 
-# Approval record (populated after human approval, if required)
-approval:
-  granted_by:    # human identifier
-  method:        # pr_merge | issue_comment | label
-  timestamp:     # ISO 8601
-  reference:     # PR number, issue URL, or commit SHA
+resource_budget:
+  max_agencies: int
+  max_critic_passes: int
+  max_wall_clock_seconds: int
+  max_workspace_items: int
+resource_usage:
+  agencies_used: int
+  critic_passes_used: int
+  wall_clock_seconds: int
+  workspace_items_used: int
 
-# Memory updates to apply after action completion
+dialogical_metrics:
+  diversity_of_proposal_sources: float
+  disagreement_resolution_quality: float
+  unnecessary_deliberation_rate: float
+
 memory_updates:
-  episodic:  true | false
-  semantic:  list of new facts to record
-  kline_update: reinforce_metadata | weaken_metadata | no_change | propose_structural_change
-  failure:   true | false (if action failed)
+  episodic: true | false
+  semantic: []
+  frame_update: no_change | reinforce_defaults | propose_new_frame
+  kline_update: reinforce_metadata | weaken_metadata | propose_structural_change
+  analogy_update: no_change | reinforce | propose_new_analogy
+  concept_candidates: []
+  failure: true | false
 ```
 
 ---
 
-## Settlement process
+## Major proposal rule
 
-```text
-1. Stimulus arrives and agencies are activated.
+Major proposals must cite the frame, procedures, prior decisions, and ideals used. They must also record what the society still does not know.
 
-2. Each activated agency submits a proposal to the global workspace.
-   Proposals are emitted as events (proposal.submitted).
-
-3. Critics evaluate all proposals.
-   Critics raise objections as events (objection.raised).
-   Critics may propose modifications to proposals.
-
-4. Censors evaluate all proposals.
-   Censors block any proposal that violates a hard limit.
-   Blocks are unconditional and cannot be overridden by any agency.
-   Blocks are emitted as events (block.applied).
-
-5. The settlement layer evaluates:
-   - Which proposals survived criticism without objection (or with resolved objection)
-   - Which proposals are blocked by censors (excluded)
-   - Whether human approval is required
-
-6. A settlement record is formed and written to active-settlements.
-
-7. If human approval is required:
-   a. The owner-briefing writes a request to the owner.
-   b. The settlement waits in pending state.
-   c. When approval arrives, the settlement advances to authorised.
-
-8. The authorised executor is identified and the action is queued.
-   A `propose`-level executor may perform only internal analysis and writes within its declared proposal/report targets.
-   Any external effect requires an `act`-level executor (or human executor where required).
-
-9. After the action completes, the settlement is updated with the outcome.
-
-10. Memory is updated according to the settlement's memory_updates field.
-```
-
----
-
-## Settlement states
-
-| State | Meaning |
-|---|---|
-| `forming` | Proposals are being submitted; criticism and censorship in progress |
-| `pending_approval` | Settlement formed; waiting for human approval |
-| `authorised` | Approved and ready for execution |
-| `executing` | Action in progress |
-| `completed` | Action completed successfully |
-| `failed` | Action failed during execution |
-| `blocked` | All proposed actions were blocked by censors; no action possible |
-| `cancelled` | Owner cancelled the settlement |
-
----
-
-## Trivial actions
-
-Not every action requires a full settlement.
-
-An action is **trivial** when:
-- It involves no data in sensitive categories
-- It requires no human approval
-- It has no external effects (cloud calls, payments, disclosures)
-- It is a pure read or a write to a workspace/draft folder
-- It is covered by an existing K-line with high confidence
-
-Trivial actions may proceed with a minimal settlement record:
-
-```yaml
-settlement_id: settlement.trivial.{sequence}
-stimulus: event-id
-action: brief description
-trivial: true
-authorised_executor: agency-id
-timestamp: ISO 8601
-```
-
----
-
-## Settlement storage
-
-Settlements are stored in [../07-workspace/active-settlements/](../07-workspace/active-settlements/).
-
-Completed settlements are archived to [../06-memory/decisions/](../06-memory/decisions/) after the memory-protocol retention period.
-
-All settlements are permanently preserved in Git history.
+A society cannot truly criticise what it cannot inspect.
 
 ---
 
@@ -186,45 +134,50 @@ settlement_id: settlement.supplier-invoice.2026-001
 stimulus: event.invoice.price-increase-detected.evt-042
 stimulus_type: invoice.price-increase-detected
 timestamp: 2026-05-07T09:15:42Z
+governing_frame: frame.supplier-price-review
+analogies_used: []
 
 activated:
   - agency: agency.supplier-bee
     weight: 0.95
   - agency: agency.finance-watch
     weight: 0.84
-  - agency: critic.cost
-    weight: 0.88
+inhibited:
+  - agency: agency.contract-bee
+    weight_delta: -0.20
+    reason: contract review is usually noise for simple price spikes
 
 proposals:
-  - from: agency.supplier-bee
-    proposal: Flag 18% price increase from Supplier X for owner review.
-    evidence: last-12-months-invoice-data
-    confidence: 0.92
   - from: agency.finance-watch
-    proposal: Compare new pricing against 12-month average and generate trend chart.
-    evidence: financial-history-q1-q4-2025
+    proposal: Compare the new price against the last 12 months and prepare a summary.
+    evidence:
+      - semantic.suppliers.supplier-x-history
+      - episodic.2026.05.evt-042
+    method: retrieval
     confidence: 0.87
-
-objections:
-  - from: critic.evidence
-    objection: finance-watch comparison requires historical data to be loaded first.
-    proposal_targeted: agency.finance-watch
-    severity: low
-
-blocks: []
-
-settlement:
-  action: >
-    Run price comparison (finance-watch), then prepare owner briefing with
-    price trend and comparison to alternatives (supplier-bee).
-  approval_required: false
-  cloud_allowed: false
-  authorised_executor: agency.finance-watch
-
-memory_updates:
-  episodic: true
-  semantic:
-    - "Supplier X increased prices 18% in May 2026"
-  kline_update: reinforce_metadata
-  failure: false
+    alternatives_considered:
+      - Immediate owner escalation without comparison
+    observability_limits:
+      - No competitor quote yet available
+    opaque_model_dependencies: []
+    cited_procedures:
+      - procedure.supplier.price-review
+    cited_decisions:
+      - settlement.supplier-invoice.2025-011
+    cited_ideals:
+      - evidence-before-confidence
+    introspection:
+      unknowns:
+        - Whether the increase reflects a temporary surcharge
+      blind_spots:
+        - No live market quote
+      explanation_quality: high
 ```
+
+---
+
+## Source notes
+
+- **Minsky 1986** grounds visible settlements and competing proposals.
+- **Minsky 1988** motivates better inhibition, alternatives, and developmental caution.
+- **2025 Society of Minds research** motivates introspection, provenance depth, and dialogical quality metrics.

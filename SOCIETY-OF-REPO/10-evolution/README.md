@@ -2,29 +2,7 @@
 
 The evolution layer manages the lifecycle of the Society of Repo itself.
 
-A living society must prune, reinforce, spawn, and retire.
-
----
-
-## Why evolution matters
-
-A society that never changes is a society that is slowly dying.
-
-Without evolution:
-- Useful agencies grow noisy over time
-- Outdated K-lines activate the wrong responses
-- Failed patterns repeat
-- Dead agencies consume resources
-- The society becomes less useful with each cycle
-
-With evolution:
-- Useful patterns are reinforced
-- Failed patterns are weakened
-- Noisy agencies are identified and fixed
-- Stale agencies are retired
-- New agencies are spawned when new capability is needed
-
-Evolution is what makes the ecology get **measurably better** over time.
+A living society must prune, reinforce, spawn, differentiate, merge, and retire.
 
 ---
 
@@ -32,78 +10,81 @@ Evolution is what makes the ecology get **measurably better** over time.
 
 | Review | Frequency | What it covers |
 |---|---|---|
-| Post-outcome reinforcement | After every completed settlement | K-line strengthening or weakening |
-| Quarterly evolution review | Every 3 months | All agencies, all K-lines, all memory temperature |
-| Annual constitution review | Once a year | Master constitution, authority registry, policy ledger |
+| Post-outcome reinforcement | After every completed settlement | Credit assignment, K-line updates, failure logging |
+| Quarterly ecology review | Every 3 months | Agencies, frames, K-lines, budgets, dialogical quality, groupthink, memory temperature |
+| Annual constitution review | Once a year | Constitution tiers, self-ideals, authority, policy ledger |
 
 ---
 
-## Evolution logs
+## Differentiation protocol
 
-| Log | Contents |
-|---|---|
-| [reinforcement-log.md](reinforcement-log.md) | K-line reinforcement and weakening events |
-| [retirement-log.md](retirement-log.md) | Agency retirement events with rationale |
+When one agency shows double-purpose pressure:
+1. create a specialised sibling or successor
+2. give the new role a protected bootstrap window
+3. run side-by-side comparison
+4. promote the specialist that performs better
+5. preserve rollback lineage with `specialized-from` links
 
----
-
-## Evolution protocol
-
-### Post-outcome reinforcement
-
-After every completed settlement:
-
-1. If outcome was `success` and owner confirmed useful:
-   - Reinforce the matching K-line metadata (increment `reinforcement_count`, update `last_reinforced`)
-   - Write an episodic memory record
-
-2. If outcome was `failure` or `blocked`:
-   - Weaken the matching K-line metadata (increment `weakening_count`)
-   - Write a failure memory record
-   - Flag the responsible agency for quarterly review
-
-3. If outcome was `success` for a novel stimulus (no K-line matched):
-   - Propose a new structural K-line based on the activation pattern
-   - Add to the K-line candidates list for quarterly review
-
-### Quarterly evolution review
-
-The quarterly review covers:
-
-**Agencies:**
-- Calculate per-agency performance metrics for the quarter
-- Flag any agency below its probation threshold
-- Review any agency already on probation (advance to retirement or clear from probation)
-- Review K-line candidate proposals
-
-**K-lines:**
-- Review all K-lines with high `weakening_count` relative to `reinforcement_count`
-- Promote K-line candidates to active if evidence supports them
-- Retire K-lines that consistently produce false activations
-
-Only this review (or another owner-approved governance change) may alter K-line structure. Post-outcome automation may update K-line metadata only.
-
-**Memory:**
-- Run memory temperature decay (downgrade hot→warm→cold→archived as appropriate)
-- Archive decision records older than the active window
-- Flag any memory repos growing too large for manual review
+If two divergent roles later reconverge, merge is allowed when metrics and scope show the split is no longer useful.
 
 ---
 
-## Retire aggressively
+## Bootstrap protection
 
-> Preserve lineage, but reduce clutter.
+New agencies are not judged by mature productivity thresholds.
 
-Retire or merge agencies that are:
-```text
-stale             — not activated in 90+ days
-duplicative       — provides the same output as another agency
-unreliable        — consistently below accuracy threshold
-too noisy         — false alarm rate above threshold for 60+ days
-outside scope     — scope has drifted from constitution
-rarely useful     — owner usefulness score < 2.0 sustained
-```
+During bootstrap, evaluate first for:
+- constitutional compliance
+- safety and non-harm
+- observability and trace quality
 
-Retirement is not deletion. The agency's constitution is archived. Its lineage is preserved. Its contribution to memory is maintained.
+Only after that should throughput or usefulness thresholds dominate.
 
-Retirement is the society's way of knowing itself — recognising what works and what does not.
+---
+
+## Dialogical quality metrics
+
+Quarterly ecology review tracks:
+- objection usefulness
+- revision quality
+- diversity of proposal sources
+- disagreement resolution quality
+- explanation adequacy
+- unnecessary deliberation rate
+- groupthink incidence
+
+A society can be productive while still becoming shallow or conformist. These metrics guard against that failure mode.
+
+---
+
+## Use of credit assignment
+
+Evolution review uses credit assignment records to distinguish:
+- bad frame choice from bad execution
+- bad routing from bad proposal content
+- helpful critics from noisy critics
+- justified blocks from overactive blocks
+
+Fine-grained learning beats coarse blame.
+
+---
+
+## Ecology monitor responsibilities
+
+The ecology monitor and stewards review:
+- activation congestion
+- memory drift and supersession debt
+- representation-class confusion
+- bootstrap bias against new agencies
+- repeated blind spots
+- insulation violations
+
+Structural changes still require governance approval.
+
+---
+
+## Source notes
+
+- **Minsky 1988** most directly motivates differentiation, bootstrap protection, and insulation-aware evolution.
+- **Minsky 1986** grounds K-lines and structured reinforcement.
+- **2025 Society of Minds research** motivates ecology-level metrics and credit assignment depth.

@@ -2,24 +2,7 @@
 
 K-lines (Knowledge-lines) are remembered activation patterns.
 
-A K-line says: "When this kind of thing happens, wake these agencies."
-
-K-lines are the central mechanism by which a Society of Repo develops instincts — fast, reliable responses to familiar stimuli that do not require full inference on every activation.
-
----
-
-## What a K-line is
-
-Minsky introduced K-lines in *The Society of Mind* (1986) as a way to explain how the mind recalls prior mental states.
-
-A K-line is not just a trigger. It is a **restoration of a prior activation pattern** — when a familiar stimulus arrives, the K-line replays the mental state that was effective the last time a similar stimulus was encountered.
-
-In a Society of Repo, a K-line is a YAML record that specifies:
-- What features trigger it (the trigger conditions)
-- Which agencies to wake (and at what activation weight)
-- Which agencies to suppress
-- When to reinforce it (successful outcomes)
-- When to weaken it (failed outcomes)
+A K-line says: "When this kind of thing happens, restore this mix of activation and inhibition."
 
 ---
 
@@ -30,29 +13,22 @@ id: kline.{name}
 title: Human-readable name
 version: N
 status: active | probation | retired
-
+linked_frames:
+  - frame-id
 trigger:
-  # Feature conditions. All must be met for the K-line to match.
   feature_name:
     value_or_condition: ...
-  confidence_threshold: float (minimum confidence in any feature for match)
-
 activates:
   - agency: agency-id
-    weight: float (0–1)
-
+    weight: float
+inhibits:
+  - agency: agency-id
+    weight_delta: float
 suppresses:
   - agency: agency-id
-
-reinforce_when:
-  - condition description
-
-weaken_when:
-  - condition description
-
+linked_analogies:
+  - analogy-id
 metadata:
-  established_date: ISO 8601
-  last_reinforced: ISO 8601
   reinforcement_count: integer
   weakening_count: integer
   memory_temperature: hot | warm | cold | archived
@@ -60,52 +36,20 @@ metadata:
 
 ---
 
-## Active K-lines
-
-| K-line | Trigger | Activates |
-|---|---|---|
-| [kline.supplier-price-increase.yaml](kline.supplier-price-increase.yaml) | Supplier invoice with > 10% price change | `agency.supplier-bee`, `agency.finance-watch`, `agency.contract-bee`, `critic.cost`, `agency.owner-briefing` |
-| [kline.contract-renewal.yaml](kline.contract-renewal.yaml) | Contract with renewal date approaching | `agency.contract-bee`, `agency.finance-watch`, `agency.owner-briefing` |
-| [kline.staff-expiry.yaml](kline.staff-expiry.yaml) | Staff certificate within 60 days of expiry | `agency.staff-bee`, `agency.owner-briefing` |
-| [kline.web-research-request.yaml](kline.web-research-request.yaml) | Research request requiring internet access | `agency.web-research-bee`, `critic.source-quality`, `critic.staleness`, `critic.overconfidence` |
-| [kline.code-change-submitted.yaml](kline.code-change-submitted.yaml) | Pull request opened on a code repo | `agency.code-review-bee`, `agency.dependency-bee`, `agency.build-monitor-bee`, `critic.evidence`, `critic.risk` |
-| [kline.local-document-uploaded.yaml](kline.local-document-uploaded.yaml) | Document uploaded to a local intake directory | `agency.intake-bee`, `agency.document-index-bee`, `critic.privacy` |
-| [kline.upcoming-deadline.yaml](kline.upcoming-deadline.yaml) | Scheduled timer fires with pending obligation within 7 days | `agency.calendar-bee`, `agency.task-bee`, `agency.contract-bee`, `agency.owner-briefing` |
-
----
-
 ## K-line governance
 
-K-lines require `govern` authority for structural modification, because they affect the activation of all other agencies.
+Structural modification still requires `govern` authority because K-lines shape the whole ecology.
 
-Structural modification means changing any of:
-- trigger conditions
-- activated agencies or weights
-- suppressed agencies
-- retirement or activation status
-
-Reinforcement metadata updates are narrower:
-- `reinforcement_count`
-- `weakening_count`
-- `last_reinforced`
-- memory temperature
-
-These metadata updates may be applied by an authorised evolution workflow without changing the K-line's structure.
-
-K-line changes must be:
-1. Proposed as a PR
-2. Reviewed by the owner
-3. Merged by the owner
-4. Reflected in the evolution log
+Metadata updates may be automated; trigger, activation, inhibition, and structural link changes may not.
 
 ---
 
-## K-line development
+## K-lines and inhibition
 
-A healthy Society of Repo grows its K-line library over time.
+K-lines may now:
+- activate useful agencies
+- dampen risky or noisy agencies
+- suppress clearly irrelevant paths
+- cite frames and analogies used during activation
 
-Novel stimuli that produce successful outcomes become K-line candidates.
-
-The evolution review (quarterly) assesses which K-lines should be structurally added, updated, weakened, or retired.
-
-As K-line coverage grows, the proportion of fast activations (milliseconds vs. seconds or minutes) increases. This is the primary mechanism by which the ecology becomes faster with maturity.
+Hard blocks remain the job of censors.

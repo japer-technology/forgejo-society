@@ -2,7 +2,7 @@
 
 Memory is a first-class system in a Society of Repo.
 
-Memory is not a hidden chat log. It is versioned, inspectable, correctable, and reviewable — because it lives in Git repos.
+Memory is not a hidden chat log. It is versioned, inspectable, correctable, and reviewable because it lives in Git repos.
 
 ---
 
@@ -12,51 +12,23 @@ Memory is not a hidden chat log. It is versioned, inspectable, correctable, and 
 |---|---|---|
 | [events/](events/README.md) | Event records and audit traces | `06-memory/events/` |
 | [episodic/](episodic/README.md) | What happened in specific events | `06-memory/episodic/` |
-| [semantic/](semantic/README.md) | What is known as general facts | `06-memory/semantic/` |
-| [procedural/](procedural/README.md) | How to do things (standard procedures) | `06-memory/procedural/` |
+| [semantic/](semantic/README.md) | Durable general facts | `06-memory/semantic/` |
+| [procedural/](procedural/README.md) | How to do things | `06-memory/procedural/` |
 | [failure/](failure/README.md) | What went wrong and why | `06-memory/failure/` |
-| [klines/](klines/README.md) | Remembered activation patterns (K-lines) | `06-memory/klines/` |
+| [frames/](frames/README.md) | Situation models with defaults, roles, and linked procedures | `06-memory/frames/` |
+| [analogies/](analogies/README.md) | Cross-domain structural mappings | `06-memory/analogies/` |
+| [concepts/](concepts/README.md) | Candidate abstractions waiting for governance review | `06-memory/concepts/` |
+| [klines/](klines/README.md) | Remembered activation and inhibition patterns | `06-memory/klines/` |
 | [decisions/](decisions/README.md) | Archived settlement records | `06-memory/decisions/` |
-
----
-
-## Memory temperature
-
-Every memory record has a temperature:
-
-| Temperature | Meaning | K-line matching |
-|---|---|---|
-| `hot` | Recent, actively reinforced | Highest priority |
-| `warm` | Relevant but not recently reinforced | Normal priority |
-| `cold` | Stale; not recently referenced | Low priority |
-| `archived` | Preserved but inactive | Not auto-matched |
-
-### Decay schedule
-
-- Hot → warm: 30 days without reinforcement
-- Warm → cold: 90 days without reinforcement
-- Cold → archived: 365 days without reinforcement
 
 ---
 
 ## Memory principle
 
-> Memory should decay, not disappear.
+> Memory should decay, relate, and differentiate — not disappear.
 
 Old memory becomes colder unless reinforced.
+Durable records are linked through typed relations.
+Different kinds of knowledge stay in different representation classes.
 
-Deletion is rare. Reduced activation is safer.
-
-The society can always query archived memory explicitly.
-
----
-
-## Memory governance
-
-Memory repos are written to only by authorised agencies.
-
-K-lines require `govern` authority for structural modification — because changes to triggers, activated agencies, or suppressions affect the activation of all other agencies.
-
-Reinforcement metadata updates may be applied by an authorised evolution workflow, provided the workflow does not change K-line structure.
-
-See the [rights-registry](../01-governance/rights-registry.md) for memory write permissions.
+See [../02-protocols/09-representation.md](../02-protocols/09-representation.md) and [../02-protocols/14-relational-memory.md](../02-protocols/14-relational-memory.md).
