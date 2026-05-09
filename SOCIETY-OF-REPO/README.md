@@ -113,7 +113,7 @@ SOCIETY-OF-REPO/
 
 | Section | Description |
 |---|---|
-| [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk |
+| [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk, unified gap incorporation |
 | [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger, self-ideals |
 | [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory |
 | [03-agencies/](03-agencies/README.md) | Worker, assembly, and meta-admin roles |
