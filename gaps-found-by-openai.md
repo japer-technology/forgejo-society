@@ -107,7 +107,7 @@ This document turns the previously identified theoretical gaps into concrete add
   - max wall-clock time
   - max workspace size
 - Add an attention-allocation policy for congestion.
-- Add a summary-escalation rule: higher layers should receive compressed summaries unless deeper inspection is explicitly authorised.
+- Add a summary-escalation rule: higher layers should receive compressed summaries unless deeper inspection is explicitly authorized.
 
 ## 7. Add Concept Formation and Intermediate Units
 
@@ -140,7 +140,7 @@ This document turns the previously identified theoretical gaps into concrete add
   - specializes
   - analogous-to
   - supersedes
-- Require new durable memory items to declare at least zero or more explicit links.
+- Require new durable memory items to declare their explicit links, if any.
 - Add retrieval guidance for graph walks as well as folder/path lookup.
 
 ## 9. Add Internalised Norms and Self-Regulation
@@ -158,6 +158,8 @@ This document turns the previously identified theoretical gaps into concrete add
     - local-first over cloud-first when risk is comparable
   - **Ethical ideals**
     - human dignity over convenience
+    - minimization of unnecessary exposure
+    - restraint under uncertainty
 - Require agencies to cite the relevant self-ideal when making high-impact recommendations.
 - Add drift review for cases where repeated proposals conflict with declared ideals.
 
