@@ -1,6 +1,6 @@
 # Society Of Repo
 
-A complete design, scaffold, and specification for a **repo-native cognitive society** built on the principles of Marvin Minsky's *Society of Mind*.
+A complete design, scaffold, and specification for a **repo-native cognitive society** built on the principles of Marvin Minsky's *Society of Mind* and later work on multi-agent cognition.
 
 > **The forge is the mind. The repo is an agency. The society thinks.**
 
@@ -8,18 +8,20 @@ A complete design, scaffold, and specification for a **repo-native cognitive soc
 
 ## What is a Society of Repo?
 
-A Society of Repo (SOR) is a Git-native architecture in which repositories become the durable cognitive organs of a living, governed AI society. It does not depend on a single monolithic agent. Intelligence emerges from the structured interaction of many small, specialised, limited parts.
+A Society of Repo (SOR) is a Git-native architecture in which repositories become the durable cognitive organs of a living, governed AI society. Intelligence emerges from the structured interaction of many small, specialised, limited parts.
 
 Each part has a role:
 
 | Part | Role |
 |---|---|
 | **Agency repos** | Do useful, bounded work |
-| **Memory repos** | Preserve and recall events, experience, and learned patterns |
-| **Critic repos** | Challenge weak proposals |
+| **Assembly repos** | Compress lower-level outputs into higher-level summaries and directives |
+| **Memory repos** | Preserve and relate events, experience, patterns, frames, analogies, and concepts |
+| **Critic repos** | Challenge weak proposals and shallow reasoning traces |
 | **Censor repos** | Enforce hard limits |
-| **Governance repos** | Define law and authority |
+| **Governance repos** | Define law, rights, ideals, and stability tiers |
 | **Workspace repos** | Hold the society's current attention |
+| **Meta-admin roles** | Observe and redesign the ecology itself |
 | **Service repos** | Expose capabilities to other societies |
 
 The forge itself becomes the cognitive substrate:
@@ -28,11 +30,11 @@ The forge itself becomes the cognitive substrate:
 issues         → stimuli
 labels         → activation signals
 commits        → memory
-branches       → possible futures
+branches       → insulated futures and experiments
 pull requests  → proposed actions
 reviews        → criticism and inhibition
 merges         → accepted changes to the organism
-repos          → agencies
+repos          → agencies and organs
 the forge      → the mind
 ```
 
@@ -40,18 +42,20 @@ the forge      → the mind
 
 ## Theoretical basis
 
-The Society of Repo is a direct application of Marvin Minsky's **Society of Mind** (1986) to software forge infrastructure.
+Society of Repo now treats the following as first-class cognitive structures:
+- **frames** for situation recognition and defaults
+- **K-lines** for remembered activation and inhibition patterns
+- **analogy** for cross-domain fallback activation
+- **representation discipline** for deciding what kind of memory an artifact is
+- **insulation** for protected independence between subsystems
+- **hierarchy** for compression upward and directives downward
+- **credit assignment** for learning which part of the loop helped or harmed
+- **introspection** for recording unknowns, blind spots, and opacity dependencies
+- **relational memory** for typed graph links across all durable records
+- **self-ideals** for internalised norms beyond external rules
+- **ecology monitoring** for society-level self-regulation
 
-Minsky's core claim: *thinking is not one thing. It is the result of many limited agents, none of which thinks, interacting through a structured ecology.*
-
-Society of Repo applies this claim to AI running inside Git repositories:
-- K-lines become YAML files in memory repos
-- Critics and censors become repos with constitutions
-- Global workspace becomes a shared repo visible to all active agencies
-- Settlements become YAML records that make reasoning visible
-- Reinforcement becomes commit frequency, K-line metadata updates, and governed K-line revision
-
-See [00-foundations/01-society-of-mind.md](00-foundations/01-society-of-mind.md) for the full theoretical grounding.
+See [00-foundations/01-society-of-mind.md](00-foundations/01-society-of-mind.md) for the full grounding.
 
 ---
 
@@ -62,15 +66,18 @@ Every Society of Repo follows this recurring arc:
 ```text
 stimulus
   → perception
-  → activation
+  → frame selection
+  → K-line and analogy activation
   → agency response
   → criticism
+  → graduated inhibition
   → censorship
   → settlement
   → action
   → outcome
   → memory
-  → reinforcement
+  → credit assignment
+  → reinforcement and evolution
 ```
 
 See [00-foundations/02-cognitive-loop.md](00-foundations/02-cognitive-loop.md) for the complete loop specification.
@@ -81,23 +88,23 @@ See [00-foundations/02-cognitive-loop.md](00-foundations/02-cognitive-loop.md) f
 
 ```
 SOCIETY-OF-REPO/
-├── README.md                       ← this file
-├── 00-foundations/                 ← theory, loop, maturity model, anti-patterns, skills catalogue
-├── 01-governance/                  ← constitution, authority, approvals, rights, policies
-├── 02-protocols/                   ← identity, events, activation, settlement, memory, channels
-├── 03-agencies/                    ← worker repos: intake-bee, document-index-bee, web-research-bee,
-│                                       code-review-bee, dependency-bee, build-monitor-bee,
-│                                       contract-bee, tax-bee, staff-bee, supplier-bee,
-│                                       finance-watch, calendar-bee, task-bee, owner-briefing
+├── README.md
+├── 00-foundations/                 ← theory, loop, maturity, anti-patterns, skills, mind/brain/body, research crosswalk
+├── 01-governance/                  ← constitution, authority, approvals, rights, policies, self-ideals
+├── 02-protocols/                   ← identity, constitution, event, activation, settlement, memory,
+│                                       representation, credit-assignment, introspection, insulation,
+│                                       hierarchy, relational-memory, services, governance
+├── 03-agencies/                    ← worker, assembly, and meta-admin roles
 ├── 04-critics/                     ← challenge repos: evidence, scope, cost, privacy, risk,
 │                                       overconfidence, source-quality, staleness
 ├── 05-censors/                     ← block repos: cloud-egress, authority, payment, delegation,
 │                                       credential, pii-exfiltration
-├── 06-memory/                      ← memory repos: events, episodic, semantic, procedural, failure, klines, decisions
-├── 07-workspace/                   ← attention repos: global-workspace, current-focus, settlements, briefings
+├── 06-memory/                      ← events, episodic, semantic, procedural, failure, frames,
+│                                       analogies, concepts, klines, decisions
+├── 07-workspace/                   ← global-workspace, current-focus, settlements, briefings
 ├── 08-services/                    ← service repos exposed to other SORs
 ├── 09-channels/                    ← SOR-to-SOR service channel agreements
-└── 10-evolution/                   ← reinforcement log, retirement log, ecology lifecycle
+└── 10-evolution/                   ← reinforcement, differentiation, retirement, ecology lifecycle
 ```
 
 ---
@@ -106,17 +113,17 @@ SOCIETY-OF-REPO/
 
 | Section | Description |
 |---|---|
-| [00-foundations/](00-foundations/README.md) | Society of Mind theory, the cognitive loop, maturity model, anti-patterns, and the skills catalogue |
-| [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger |
-| [02-protocols/](02-protocols/README.md) | Identity, constitution, event, activation, settlement, memory, service-channel, and governance protocols |
-| [03-agencies/](03-agencies/README.md) | Worker agency repos and their constitutions (perception, internet, software, business, personal, briefing) |
-| [04-critics/](04-critics/README.md) | Critic repos that challenge proposals |
+| [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk |
+| [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger, self-ideals |
+| [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory |
+| [03-agencies/](03-agencies/README.md) | Worker, assembly, and meta-admin roles |
+| [04-critics/](04-critics/README.md) | Critic repos that challenge proposals and reasoning traces |
 | [05-censors/](05-censors/README.md) | Censor repos that enforce hard limits |
-| [06-memory/](06-memory/README.md) | All memory systems: events, episodic, semantic, procedural, failure, K-lines, decisions |
+| [06-memory/](06-memory/README.md) | Events, episodic, semantic, procedural, failure, frames, analogies, concepts, K-lines, decisions |
 | [07-workspace/](07-workspace/README.md) | Global workspace, current focus, active settlements, owner briefings |
 | [08-services/](08-services/README.md) | Services this SOR exposes to other societies |
 | [09-channels/](09-channels/README.md) | SOR-to-SOR service channel agreements and reciprocal trades |
-| [10-evolution/](10-evolution/README.md) | Reinforcement log, retirement log, and ecology lifecycle management |
+| [10-evolution/](10-evolution/README.md) | Reinforcement, differentiation, retirement, bootstrap protection, ecology review |
 
 ---
 
@@ -127,12 +134,12 @@ SOCIETY-OF-REPO/
 | 0 | Storage | Files in repos |
 | 1 | Memory | Structured records, events, summaries |
 | 2 | Agency | Repos with roles, constitutions, outputs |
-| 3 | Society | Multiple repos activate, criticise, settle, act |
-| 4 | Learning society | K-lines reinforce, agencies evaluated, weak parts retired |
-| 5 | Networked society | SOR calls other SORs through governed channels |
-| 6 | Economic society | SOR sells services, meters usage, grants rights, builds reputation |
+| 3 | Society | Multiple repos activate, criticise, inhibit, settle, act |
+| 4 | Reflective learning society | Frames, K-lines, introspection, credit assignment, differentiation, concept formation |
+| 5 | Networked society | Governed channels to other SORs |
+| 6 | Economic society | Metered services, rights, and reputation |
 
-See [00-foundations/03-maturity-model.md](00-foundations/03-maturity-model.md) for the full model.
+Network reach and commercial sophistication do **not** by themselves imply deeper cognition.
 
 ---
 
@@ -140,4 +147,4 @@ See [00-foundations/03-maturity-model.md](00-foundations/03-maturity-model.md) f
 
 > A Society of Repo is not one agent, one model, or one pipeline.
 > It is a governed ecology of many small useful intelligences — each limited, each inspectable, each versioned.
-> The intelligence is located in the structured interaction between them.
+> The intelligence is located in the structured interaction between them, and in the society's ability to represent, remember, compare, inhibit, revise, and observe itself.

@@ -1,34 +1,20 @@
 # Protocols
 
-The protocols are the operating rules of the Society of Repo. Every agency, critic, censor, and memory system must follow them.
+The protocols are the operating rules of the Society of Repo. Every agency, critic, censor, memory system, and meta-admin role follows them.
 
 | Protocol | Contents |
 |---|---|
-| [01-identity.md](01-identity.md) | Stable naming and ID conventions for every element |
+| [01-identity.md](01-identity.md) | Stable naming and ID conventions |
 | [02-constitution.md](02-constitution.md) | What every durable agency must declare |
 | [03-events.md](03-events.md) | Event schema and emission rules |
-| [04-activation.md](04-activation.md) | How stimuli activate agencies through K-lines |
-| [05-settlement.md](05-settlement.md) | Settlement structure, process, and storage |
-| [06-memory.md](06-memory.md) | How memory is written, read, decayed, and reinforced |
+| [04-activation.md](04-activation.md) | How stimuli select frames, K-lines, analogies, and budgets |
+| [05-settlement.md](05-settlement.md) | Settlement structure, provenance, introspection, and storage |
+| [06-memory.md](06-memory.md) | How memory is written, related, decayed, corrected, and reinforced |
 | [07-service-channel.md](07-service-channel.md) | SOR-to-SOR service transactions |
 | [08-governance.md](08-governance.md) | What always requires approval and how it is recorded |
-
----
-
-## Protocol principle
-
-Protocols are the connective tissue of the society.
-
-They ensure that every part of the system uses the same language, the same schemas, and the same decision rules — so that the society can reason about itself.
-
-Without protocols:
-- Agencies cannot communicate
-- Settlements cannot be interpreted
-- Memory cannot be matched
-- Governance cannot be enforced
-
-With protocols:
-- Every event is interpretable
-- Every settlement is legible
-- Every memory record is queryable
-- Every governance check is automatable
+| [09-representation.md](09-representation.md) | When knowledge belongs in each representation class |
+| [10-credit-assignment.md](10-credit-assignment.md) | How outcomes are attributed across the full loop |
+| [11-introspection.md](11-introspection.md) | Unknowns, blind spots, and explanation-quality recording |
+| [12-insulation.md](12-insulation.md) | Protected independence and controlled shared-state rules |
+| [13-hierarchy-and-summaries.md](13-hierarchy-and-summaries.md) | Summary tiers, assembly roles, and descending directives |
+| [14-relational-memory.md](14-relational-memory.md) | Typed graph links across durable cognitive artifacts |

@@ -5,319 +5,168 @@ Every Society of Repo follows a recurring arc from stimulus to reinforcement.
 ```text
 stimulus
   → perception
-  → activation
+  → frame selection
+  → K-line and analogy activation
   → agency response
   → criticism
+  → graduated inhibition
   → censorship
   → settlement
   → action
   → outcome
   → memory
-  → reinforcement
+  → credit assignment
+  → reinforcement and evolution
 ```
 
 ---
 
 ## Stimulus
 
-Something happens.
+A stimulus is any event that may require a response: issue, webhook, file arrival, timer, failed run, service call, or owner request.
 
-A stimulus is any event that enters the system and may require a response.
-
-```text
-an issue is opened
-a file is uploaded to a repo
-a document arrives in the intake directory
-a supplier invoice changes significantly
-a staff certificate approaches expiry
-a scheduled timer fires
-a webhook arrives from an external system
-a test suite fails
-a customer complaint is submitted
-another SOR calls a service
-```
-
-Stimuli arrive as issues, webhooks, scheduled triggers, or direct repository events.
-
-Every stimulus carries a payload: the content of the event plus contextual metadata.
+Every stimulus carries payload data, provenance, and a starting budget for time, model cost, critic passes, and workspace size.
 
 ---
 
 ## Perception
 
-Micro-agents extract features from the stimulus.
+Perception agents extract features and produce an initial representation of the situation.
 
-Perception converts raw content into a structured feature set that the activation layer can use.
-
-```text
-document_type: supplier_invoice
-price_change: +18%
-supplier: known_vendor
-recurring: true
-private_data: false
-urgency: medium
-```
-
-Perception agents are Class A agents — structural, no LLM inference required for most classifications. They run fast and in parallel.
-
-When perception is ambiguous, a local inference model classifies the edge cases.
+Output includes:
+- classified features
+- confidence per feature
+- immediate unknowns
+- sensitivity flags
+- candidate domains for frame lookup
 
 ---
 
-## Activation
+## Frame selection
 
-The feature set is matched against active K-lines.
+Before K-lines fire, the society asks: **what kind of situation is this?**
 
-K-lines are remembered activation patterns: "when this kind of stimulus arrives, wake these agencies."
+Frames provide defaults, expected roles, likely failure conditions, linked procedures, and linked K-lines. The selected frame becomes part of every non-trivial settlement.
 
-```yaml
-# K-line match: supplier_invoice + price_change > 10%
-activates:
-  - agency.supplier-bee
-  - agency.finance-watch
-  - agency.contract-bee
-  - critic.cost
-  - agency.owner-briefing
+If no frame matches strongly, the stimulus is marked novel and the analogy pass becomes more important.
 
-suppresses:
-  - agency.intake-bee
-  - agency.staff-bee
-```
+---
 
-Agencies that are not relevant to this stimulus class remain dormant.
+## K-line and analogy activation
 
-Activation is the routing layer. Its quality determines how much work the society does. A mature ecology with well-developed K-lines routes most stimuli in milliseconds, without inference.
+Activation uses four inputs together:
+- the classified stimulus
+- the selected frame
+- matching K-lines
+- relational links to analogous episodes and frames
 
-See [../02-protocols/04-activation.md](../02-protocols/04-activation.md) for the activation protocol.
+K-lines restore prior useful activation patterns.
+Analogy provides fallback structural borrowing when no strong direct match exists.
+
+The activation layer also applies:
+- soft inhibition from failure memory and weak prior outcomes
+- hard exclusions required by insulation rules
+- attention budgets and summary-first routing
 
 ---
 
 ## Agency response
 
-Each activated agency contributes a signal.
+Activated agencies contribute proposals, summaries, warnings, questions, and comparisons.
 
-An agency response is one or more of:
-
-```text
-summary          — what the agency found
-warning          — something concerning
-obligation       — a commitment or deadline
-question         — something the owner should decide
-draft            — a proposed action or document
-comparison       — how this relates to prior events
-recommendation   — what the agency thinks should happen
-objection        — a concern about a proposed path
-```
-
-Agency responses are proposed actions, not executed actions.
-
-Nothing is done yet.
-
-All proposals are submitted to the global workspace for criticism.
+Larger ecologies do not send all raw outputs directly to settlement. Intermediate assembly roles compress raw evidence into working summaries and assembly summaries first.
 
 ---
 
-## Criticism
+## Criticism and graduated inhibition
 
-Critics examine every non-trivial proposal.
+Critics challenge evidence quality, scope, risk, privacy, cost, staleness, and confidence.
 
-A critic asks:
-
-```text
-Where is the evidence for this claim?
-Is this inside the scope of the requesting agency?
-Is the cost justified?
-Is the confidence level appropriate?
-Is the wording safe for external use?
-Is this proposal consistent with prior decisions?
-Does this create a risk that has not been flagged?
-```
-
-Critics do not act. They object.
-
-An objection is a signal that a proposal is weak, premature, risky, or outside scope.
-
-Proposals without objections advance to the censorship layer.
-
-Proposals with objections are either modified, escalated, or rejected.
-
-See [../04-critics/README.md](../04-critics/README.md) for the full set of critics.
+Graduated inhibition sits between criticism and censorship:
+- weak paths may be dampened rather than blocked
+- repeated failure can reduce activation weights without forbidding a route
+- taboo paths can be deprioritised before they require a censor
 
 ---
 
 ## Censorship
 
-Censors enforce hard limits that cannot be overridden by any agency or critic.
-
-A censor says: **this path is forbidden regardless of the argument for it.**
-
-```text
-Do not send this data to any cloud service.
-Do not act without human approval.
-Do not expose patient data outside this system.
-Do not make a payment above the authorised limit.
-Do not increase an agency's authority level without a constitution change.
-Do not allow a delegated action chain deeper than 3 levels.
-```
-
-Censors are not critics. Critics challenge on merit. Censors enforce unconditionally.
-
-A proposal that violates a censor is blocked. The block is recorded. The settlement notes the block.
-
-See [../05-censors/README.md](../05-censors/README.md) for the full set of censors.
+Censors enforce hard limits that cannot be argued away: cloud egress, authority violations, payment limits, credential exposure, PII exfiltration, and excessive delegation.
 
 ---
 
 ## Settlement
 
-After criticism and censorship, the society settles on an authorised next step.
-
-A settlement is not just a decision.
-
-It is a **visible record of how the decision formed.**
-
 A settlement records:
+- the governing frame
+- the activated agencies and inhibitions
+- proposal provenance and method
+- alternatives considered
+- reasoning limits and blind spots
+- ideals and policies cited
+- the chosen action and required approval
 
-```yaml
-settlement_id: settlement.supplier-invoice.2026-001
-stimulus: supplier-invoice-uploaded
-timestamp: 2026-05-07T09:15:00Z
-
-activated:
-  agency.supplier-bee: 0.91
-  agency.finance-watch: 0.84
-  critic.cost: 0.78
-
-proposals:
-  - from: agency.supplier-bee
-    proposal: Flag 18% price increase for owner review.
-  - from: agency.finance-watch
-    proposal: Compare against 12-month pricing history.
-
-objections:
-  - from: critic.cost
-    objection: No comparison to prior invoices yet made. Proposal is premature.
-
-settlement:
-  action: Run price comparison, then prepare owner briefing.
-  approval_required: false
-  cloud_allowed: false
-  authorised_executor: agency.finance-watch
-```
-
-No important action happens without a settlement.
-
-A settlement is the difference between "AI did something" and "the society formed a traceable judgment."
-
-See [../02-protocols/05-settlement.md](../02-protocols/05-settlement.md) for the settlement protocol.
+This is where the society's judgment becomes visible.
 
 ---
 
-## Action
+## Action and outcome
 
-The authorised executor acts.
+The authorised executor acts within constitutional scope.
 
-Authorised actions include:
-
-```text
-write a summary to a workspace file
-open a new issue with specific labels
-draft a reply or report
-create a branch with proposed changes
-prepare an accountant pack
-request human approval via an issue comment
-call a service on another Society of Repo
-apply labels to the originating issue
-close an issue with a recorded outcome
-```
-
-Actions are always traceable. Every action is a commit, a PR, a comment, or a labelled issue event.
-
-Nothing happens outside version control.
-
----
-
-## Outcome
-
-The result of the action is observed and recorded.
-
-```text
-owner confirmed the briefing was useful
-owner corrected a misclassification
-the invoice comparison found a discrepancy
-the action was not useful
-the action was blocked by a downstream censor
-```
-
-Outcomes are the input to the memory and reinforcement stages.
+Outcomes include success, failure, block, revision required, owner override, and unexpected side-effects.
 
 ---
 
 ## Memory
 
-The outcome is written to the appropriate memory repos.
+The cycle writes to the right representation classes:
+- episodic records for the event
+- semantic facts for durable knowledge
+- procedural records for refined methods
+- frame updates when situation defaults changed
+- K-line updates for activation patterns
+- analogy links for structural reuse
+- concept candidates for recurring abstractions
+- failure memory for harmful or weak routes
 
-```text
-episodic memory  — what happened in this specific event
-semantic memory  — any new general fact that emerged
-procedural memory — any refinement to a standard procedure
-failure memory   — what went wrong and why
-K-lines         — reinforcement metadata plus any proposed structural changes
-decisions        — the settlement record for future reference
-```
-
-Memory is not a hidden log.
-
-Memory is versioned, inspectable, correctable, and reviewable — because it is all Git commits in structured repos.
-
-See [../06-memory/README.md](../06-memory/README.md) for the full memory system.
+All durable records carry typed relational links.
 
 ---
 
-## Reinforcement
+## Credit assignment and evolution
 
-Useful patterns are strengthened. Useless or harmful patterns are weakened.
+The society separately evaluates:
+- perception quality
+- frame choice
+- analogy choice
+- K-line activation
+- proposal quality
+- critic usefulness
+- censor correctness
+- settlement choice
+- execution quality
+- memory write quality
 
-```text
-if the owner confirms the briefing was useful:
-  → update reinforcement metadata for the K-line that activated this sequence
-  → reinforce the agencies that contributed useful signals
-  → note the effective procedure
-
-if the briefing was not useful or was wrong:
-  → update weakening metadata for the activating K-line
-  → record the failure in failure memory
-  → flag the responsible agency for evaluation
-
-if a critic correctly identified a problem:
-  → reinforce the critic's activation weight for this class
-  → reinforce the objection pattern
-
-if an agency was not activated but should have been:
-  → propose a structural K-line expansion for governance review
-  → flag for governance review
-```
-
-Reinforcement metadata updates may be automated within an authorised evolution workflow. Structural K-line changes remain governed changes recorded through PRs and owner approval.
-
-Over time, reinforcement concentrates cognition on the fastest, most accurate paths.
-
-This is the property that makes a Society of Repo get better with use, rather than degrading.
+Quarterly ecology review uses this evidence to reinforce, weaken, differentiate, merge, retire, or protect agencies.
 
 ---
 
 ## Loop summary
 
 ```text
-stimulus → perception → activation → response → criticism → censorship
-        → settlement → action → outcome → memory → reinforcement
-        → (back to stimulus)
+stimulus → perception → frame → activation → response → criticism
+         → inhibition → censorship → settlement → action → outcome
+         → memory → credit assignment → reinforcement → next cycle
 ```
 
-The loop runs continuously.
+The loop does not merely act.
+It learns what kind of situation it was in, what structures it used, what it still did not understand, and which part of the ecology deserves credit or blame.
 
-Each cycle produces a traceable record.
+---
 
-Each record feeds the next cycle.
+## Source notes
 
-The society becomes wiser with each loop it completes.
+- **Minsky 1986** informs the loop's framing, activation, criticism, and memory structure.
+- **Minsky 1988** informs graduated inhibition, insulation, developmental protection, and hierarchy.
+- **2025 Society of Minds research** informs relational memory, ecology observation, and reflective metrics.

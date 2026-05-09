@@ -2,7 +2,7 @@
 
 A Society of Repo develops through six levels. Each level adds structure, governance, memory, and capability.
 
-A SOR does not need to reach Level 6 to be useful. Level 2 already produces practical value. The ladder describes what becomes possible at each stage, not a mandatory progression.
+A SOR does not need Level 6 to be useful. The ladder describes what becomes possible at each stage, not a mandatory march toward commerce.
 
 ---
 
@@ -10,52 +10,29 @@ A SOR does not need to reach Level 6 to be useful. Level 2 already produces prac
 
 **What exists:** Files are stored in repositories.
 
-**What happens:** Humans read files. Humans do work. The repo is a filing cabinet.
+**Cognitive capability:** None.
 
-**Cognitive capability:** None. The repo is passive.
-
-**Signs you are here:**
-- Repos contain documents, code, or configs
-- All action is human-initiated
-- No workflows, no agents, no structured events
-
-**To advance to Level 1:** Add structured records, schemas, and event logs. Make the repo readable by machines as well as humans.
+**To advance:** Add machine-readable records and event logs.
 
 ---
 
 ## Level 1 — Repo as memory
 
-**What exists:** Repos hold structured records, events, and summaries. The repo is a machine-readable memory.
+**What exists:** Repos hold structured records, events, and summaries.
 
-**What happens:** Agents can read the repo's history. Issues are structured. Events are logged. Summaries are written by scripts.
+**Cognitive capability:** Recall.
 
-**Cognitive capability:** Recall. The repo can answer questions about the past.
-
-**Signs you are here:**
-- Issues follow a consistent schema
-- Commit messages follow a convention
-- Some structured YAML or JSON records exist
-- Automated scripts write summaries to files
-
-**To advance to Level 2:** Give repos constitutions. Define roles, purposes, and authority for each repo. Make the repo an actor, not just a store.
+**To advance:** Give repos constitutions, rights, and outputs.
 
 ---
 
 ## Level 2 — Repo as agency
 
-**What exists:** Repos have roles, constitutions, and outputs. Each repo is a cognitive organ with a defined job.
+**What exists:** Repos have roles, constitutions, and outputs.
 
-**What happens:** A repo with a constitution knows what it is for, what it may do, and what it must not do. It takes stimuli and produces structured outputs.
+**Cognitive capability:** Specialised work.
 
-**Cognitive capability:** Specialised work. A constitutional agency can perceive, classify, act, and record.
-
-**Signs you are here:**
-- At least some repos have `constitution.yaml`
-- Repos have defined inputs, outputs, and authority levels
-- At least one automated workflow runs on a trigger and produces a structured output
-- There is at least one memory repo
-
-**To advance to Level 3:** Add multiple agencies that interact. Add critics. Add censors. Add a settlement layer.
+**To advance:** Add multiple agencies, critics, censors, and settlements.
 
 ---
 
@@ -63,37 +40,41 @@ A SOR does not need to reach Level 6 to be useful. Level 2 already produces prac
 
 **What exists:** Multiple repos activate, criticise, inhibit, settle, and act in response to shared stimuli.
 
-**What happens:** A stimulus wakes multiple agencies. Agencies propose. Critics challenge. Censors block. A settlement forms. An action is taken. The outcome is recorded.
-
-**Cognitive capability:** Governed collective action. The society can respond to complex stimuli with multi-agency reasoning, criticism, and traceable decisions.
+**Cognitive capability:** Governed collective action.
 
 **Signs you are here:**
-- At least three agency repos with constitutions
-- At least one critic repo and one censor repo active
-- Settlements are recorded as YAML
-- A global workspace repo holds shared attention
-- The cognitive loop runs end-to-end on at least some stimuli
+- multi-agency settlements exist
+- critics and censors are active
+- active workspace and decisions memory both exist
+- non-trivial actions are settlement-governed
 
-**To advance to Level 4:** Add K-lines. Measure outcomes. Start reinforcing useful patterns. Retire agencies that do not contribute.
+**To advance:** Add frames, K-lines, credit assignment, introspection, and evolutionary redesign.
 
 ---
 
-## Level 4 — Learning society
+## Level 4 — Reflective learning society
 
-**What exists:** The society reinforces habits, updates K-lines, evaluates agency performance, and retires weak parts.
+**What exists:** The society learns with differentiated cognitive structures rather than only simple reinforcement.
 
-**What happens:** Outcomes update memory. K-lines grow stronger when patterns succeed. Weak or noisy agencies are identified, evaluated, and retired or redesigned. The society gets measurably better over time.
+**What happens:**
+- frames classify situation types before activation
+- K-lines restore activation and inhibition patterns
+- analogy assists novel cases
+- settlements record provenance, unknowns, and blind spots
+- credit assignment attributes success and failure across the whole loop
+- successor trials differentiate overloaded agencies
+- concept candidates and new frames are proposed from repeated patterns
 
-**Cognitive capability:** Self-improvement. The society optimises its own cognition through recorded experience.
+**Cognitive capability:** Reflective self-improvement.
 
 **Signs you are here:**
-- K-line YAML files exist and are updated after outcomes
-- Agencies have evaluation metrics and measured performance records
-- At least one agency has been retired or redesigned based on performance data
-- Failure memory is written consistently after failed actions
-- The evolution log shows reinforcement and retirement events
+- frame records exist and are cited in settlements
+- credit assignment records inform quarterly review
+- at least one differentiation/successor comparison has occurred
+- concept candidates or new semantic categories are governance-reviewed
+- introspection fields are consistently filled for non-trivial proposals
 
-**To advance to Level 5:** Open a governed interface to other societies. Define service contracts. Add a service discovery mechanism.
+**To advance:** Add governed service channels without abandoning reflective discipline.
 
 ---
 
@@ -101,34 +82,19 @@ A SOR does not need to reach Level 6 to be useful. Level 2 already produces prac
 
 **What exists:** The SOR can call other SORs through governed Society Channels.
 
-**What happens:** One SOR requests a service from another SOR. The transaction is governed: service contract, input rights, output rights, privacy terms, audit trace. The requesting SOR receives a structured output from the specialist SOR.
+**Cognitive capability:** Delegated expertise.
 
-**Cognitive capability:** Delegated expertise. The society can extend its capabilities by calling trusted specialists, without absorbing their full complexity internally.
-
-**Signs you are here:**
-- At least one service contract exists
-- At least one successful SOR-to-SOR transaction is recorded in the channel log
-- Privacy and rights terms are documented and enforced
-- Audit trace is preserved on both sides of the transaction
-
-**To advance to Level 6:** Add pricing, metering, reciprocal credits, and reputation tracking to service transactions.
+**Important note:** A Level 5 society is not cognitively deeper than Level 4 unless it preserves frames, introspection, relational memory, and credit assignment while networking.
 
 ---
 
 ## Level 6 — Economic society
 
-**What exists:** The SOR can sell services, meter usage, grant reciprocal rights, build reputation, and participate in a market of cognitive societies.
+**What exists:** The SOR can meter services, price work, grant rights, and build reputation.
 
-**What happens:** The SOR exposes measured, priced services to other societies. It tracks completion rates, dispute rates, and buyer ratings. It may enter reciprocal agreements, bartering services instead of currency. Its reputation in the network reflects its actual performance.
+**Cognitive capability:** Economic participation.
 
-**Cognitive capability:** Economic participation. The society has an identity and reputation in a larger ecology of useful cognitive societies.
-
-**Signs you are here:**
-- Services are published with pricing and rights terms
-- Usage is metered per transaction
-- Reputation metrics are tracked and publicly visible
-- At least one reciprocal agreement exists with another SOR
-- The SOR has earned income or credits through service transactions
+**Important note:** Revenue, metering, and reputation are ecology features, not evidence of reflective intelligence.
 
 ---
 
@@ -139,17 +105,15 @@ A SOR does not need to reach Level 6 to be useful. Level 2 already produces prac
 | 0 | Storage | Files in repos | None |
 | 1 | Memory | Structured records | Recall |
 | 2 | Agency | Constitutions and outputs | Specialised work |
-| 3 | Society | Multi-agency activation, settlement | Governed collective action |
-| 4 | Learning society | K-lines, reinforcement, retirement | Self-improvement |
+| 3 | Society | Multi-agency activation and settlement | Governed collective action |
+| 4 | Reflective learning society | Frames, introspection, credit assignment, differentiation, concept formation | Reflective self-improvement |
 | 5 | Networked society | SOR-to-SOR service channels | Delegated expertise |
 | 6 | Economic society | Pricing, metering, reputation | Economic participation |
 
 ---
 
-## Important note
+## Source notes
 
-Most useful work happens at Levels 2–4.
-
-A well-designed Level 3 SOR — with good agencies, a working cognitive loop, and clean memory — delivers more practical value than a poorly-designed Level 6 SOR with many service contracts but weak governance.
-
-Build solidly at each level before advancing.
+- **Minsky 1986** supplies the multi-agent and K-line basis for Levels 2–4.
+- **Minsky 1988** motivates developmental protection and differentiated specialisation in Level 4.
+- **2025 Society of Minds research** motivates relational memory, reflective metrics, and the warning that scale and networking are not the same as depth.
