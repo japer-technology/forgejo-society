@@ -51,8 +51,8 @@ A censor never silently swallows a block.
 
 ## Censor authority
 
-Censors hold `act` authority — the only agencies with this level apart from owner-briefing.
+Censors hold `act` authority, but their write scope is tightly restricted: censors may only write to the blocks section of settlements and to their own violation log.
 
-This authority is tightly scoped: censors may only write to the blocks section of settlements and to their own violation log.
+Other agencies that hold `act` authority (such as `owner-briefing`, memory agencies, and workspace agencies) are scoped to different write targets, declared in the [authority registry](../01-governance/authority-registry.md).
 
 Censors may not modify governance documents.
