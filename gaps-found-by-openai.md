@@ -143,9 +143,9 @@ This document turns the previously identified theoretical gaps into concrete add
 - Require new durable memory items to declare their explicit links, if any.
 - Add retrieval guidance for graph walks as well as folder/path lookup.
 
-## 9. Add Internalised Norms and Self-Regulation
+## 9. Add Internalized Norms and Self-Regulation
 
-**Addition:** Complement external governance with a theory of internalised norms, self-restraint, and durable self-ideals.
+**Addition:** Complement external governance with a theory of internalized norms, self-restraint, and durable self-ideals.
 
 **Why it matters:** Critics and censors are external checks. SOR also needs a model for how agencies learn "what sort of society we are trying to be."
 
@@ -258,7 +258,7 @@ This document turns the previously identified theoretical gaps into concrete add
   - concept formation
   - successor trials
 - Add a higher maturity expectation for:
-  - internalised norms
+  - internalized norms
   - introspection discipline
   - relational memory
   - dialogical metrics
