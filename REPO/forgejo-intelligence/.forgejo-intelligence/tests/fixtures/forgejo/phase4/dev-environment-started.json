@@ -1,0 +1,24 @@
+{
+  "action": "started",
+  "dev_environment": {
+    "id": 4400,
+    "name": "cache-debug-workspace",
+    "display_name": "Cache debug workspace",
+    "machine_type": "standard-2",
+    "html_url": "https://forgejo.example.test/octo/widgets/dev-environments/cache-debug-workspace",
+    "owner": {
+      "login": "ada"
+    }
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

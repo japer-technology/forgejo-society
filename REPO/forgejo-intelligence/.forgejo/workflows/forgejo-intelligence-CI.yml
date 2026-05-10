@@ -1,0 +1,48 @@
+name: forgejo-intelligence-CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: docker
+    container:
+      image: oven/bun:1-debian
+    steps:
+      - name: Prepare runner tools
+        run: |
+          set -euo pipefail
+          if command -v apt-get >/dev/null 2>&1; then
+            apt-get update
+            DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash ca-certificates coreutils git jq nodejs ripgrep
+            rm -rf /var/lib/apt/lists/*
+          fi
+
+          for tool in bun bash git jq node rg; do
+            if ! command -v "$tool" >/dev/null 2>&1; then
+              echo "::error::Required tool is missing: $tool"
+              exit 1
+            fi
+          done
+
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: cd .forgejo-intelligence && bun install
+
+      - name: Run test suite
+        run: cd .forgejo-intelligence && bun test tests/phase0.test.js tests/phase3-forgejo-api.test.ts tests/phase4-bridge.test.ts tests/phase5-lifecycle.test.ts tests/phase6-surfaces.test.ts tests/phase7-installer.test.ts tests/phase8-test-strategy.test.ts tests/phase9-docs.test.ts tests/phase10-cutover.test.ts
+
+      - name: Run Phase 8 acceptance checks
+        run: bash .forgejo-intelligence/tests/scripts/check-phase8.sh
+
+      - name: Run Phase 9 acceptance checks
+        run: bash .forgejo-intelligence/tests/scripts/check-phase9.sh
+
+      - name: Run Phase 10 acceptance checks
+        run: bash .forgejo-intelligence/tests/scripts/check-phase10.sh

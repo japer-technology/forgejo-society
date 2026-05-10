@@ -1,0 +1,28 @@
+{
+  "action": "completed",
+  "workflow_run": {
+    "id": 9100,
+    "name": "forgejo-intelligence-WORKFLOW-AGENT",
+    "run_number": 24,
+    "status": "completed",
+    "conclusion": "success",
+    "head_branch": "main",
+    "html_url": "https://forgejo.example.test/octo/widgets/actions/runs/9100",
+    "pull_requests": [
+      {
+        "number": 17
+      }
+    ]
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 9001,
+    "login": "octo"
+  }
+}

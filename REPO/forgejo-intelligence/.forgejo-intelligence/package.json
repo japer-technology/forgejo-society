@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "test": "bun test tests/phase0.test.js tests/phase3-forgejo-api.test.ts tests/phase4-bridge.test.ts tests/phase5-lifecycle.test.ts tests/phase6-surfaces.test.ts tests/phase7-installer.test.ts tests/phase8-test-strategy.test.ts tests/phase9-docs.test.ts tests/phase10-cutover.test.ts",
+    "test:node": "node --test tests/phase0.test.js tests/phase8-node.test.js",
+    "check": "bash tests/scripts/check-phase10.sh",
+    "check:phase0": "bash tests/scripts/check-phase0.sh",
+    "check:phase1": "bash tests/scripts/check-phase1.sh",
+    "check:phase2": "bash tests/scripts/check-phase2.sh",
+    "check:phase3": "bash tests/scripts/check-phase3.sh",
+    "check:phase4": "bash tests/scripts/check-phase4.sh",
+    "check:phase5": "bash tests/scripts/check-phase5.sh",
+    "check:phase6": "bash tests/scripts/check-phase6.sh",
+    "check:phase7": "bash tests/scripts/check-phase7.sh",
+    "check:phase8": "bash tests/scripts/check-phase8.sh",
+    "check:phase9": "bash tests/scripts/check-phase9.sh",
+    "check:phase10": "bash tests/scripts/check-phase10.sh",
+    "smoke:local-forgejo": "bash tests/scripts/smoke-local-forgejo.sh"
+  },
+  "dependencies": {
+    "@mariozechner/pi-coding-agent": "0.65.1"
+  }
+}

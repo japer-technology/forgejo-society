@@ -1,0 +1,30 @@
+{
+  "action": "created",
+  "reaction": {
+    "id": 8700,
+    "content": "eyes"
+  },
+  "issue": {
+    "id": 4200,
+    "number": 42,
+    "title": "Widget cache misses after restart",
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42"
+  },
+  "comment": {
+    "id": 8100,
+    "body": "I can reproduce this on the staging instance.",
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42#comment-8100"
+  },
+  "target_type": "comment",
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

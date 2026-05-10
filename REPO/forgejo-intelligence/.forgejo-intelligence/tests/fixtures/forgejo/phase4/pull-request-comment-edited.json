@@ -1,0 +1,47 @@
+{
+  "action": "edited",
+  "number": 17,
+  "pull_request": {
+    "id": 1700,
+    "html_url": "https://forgejo.example.test/octo/widgets/pulls/17",
+    "number": 17,
+    "title": "Persist widget cache between restarts",
+    "body": "Adds a small disk-backed cache for recomputed widget metadata.",
+    "labels": [],
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "mergeable": true,
+    "base": {
+      "ref": "main",
+      "sha": "d34db33fd34db33fd34db33fd34db33fd34db33f"
+    },
+    "head": {
+      "ref": "cache-persistence",
+      "sha": "f00df00df00df00df00df00df00df00df00df00d"
+    }
+  },
+  "comment": {
+    "id": 8200,
+    "html_url": "https://forgejo.example.test/octo/widgets/pulls/17#comment-8200",
+    "body": "Can we add a small migration note for existing cache files?",
+    "path": "internal/cache/store.go",
+    "diff_hunk": "@@ -10,6 +10,8 @@ func OpenStore(path string) (*Store, error) {"
+  },
+  "changes": {
+    "body": {
+      "from": "Can we add a migration note?"
+    }
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1002,
+    "login": "grace"
+  }
+}

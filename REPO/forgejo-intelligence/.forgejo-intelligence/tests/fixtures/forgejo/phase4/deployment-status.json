@@ -1,0 +1,27 @@
+{
+  "action": "updated",
+  "deployment": {
+    "id": 5500,
+    "environment": "staging",
+    "sha": "c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00",
+    "description": "Deploy widget cache service to staging.",
+    "url": "https://forgejo.example.test/octo/widgets/deployments/5500"
+  },
+  "deployment_status": {
+    "id": 5501,
+    "state": "success",
+    "description": "Staging deployment completed.",
+    "target_url": "https://staging.example.test/widgets"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1003,
+    "login": "linus"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "action": "updated",
+  "pages": [
+    {
+      "title": "Cache Operations",
+      "action": "edited",
+      "sha": "abc123abc123abc123abc123abc123abc123abc1",
+      "summary": "Documented cache restart behavior.",
+      "html_url": "https://forgejo.example.test/octo/widgets/wiki/Cache-Operations"
+    }
+  ],
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1003,
+    "login": "linus"
+  }
+}

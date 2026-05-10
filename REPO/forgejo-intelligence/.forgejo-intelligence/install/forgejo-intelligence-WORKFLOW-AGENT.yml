@@ -1,0 +1,157 @@
+name: forgejo-intelligence-WORKFLOW-AGENT
+
+on:
+  issues:
+    types: [opened, edited, reopened, closed, labeled, unlabeled, assigned, unassigned]
+  pull_request:
+    types: [opened, synchronize, reopened, closed, labeled, unlabeled, assigned, unassigned, edited]
+  release:
+    types: [published, edited, deleted]
+  push:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      run_agent:
+        description: "Run the agent after the Forgejo context dump"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+env:
+  FORGEJO_INTELLIGENCE_CONTEXT_DUMP: /tmp/forgejo-intelligence-context.json
+  FORGEJO_INTELLIGENCE_EVENT_DUMP: /tmp/forgejo-intelligence-event.json
+  FORGEJO_INTELLIGENCE_FORK_PR_POLICY: skip
+
+jobs:
+  run-agent:
+    runs-on: docker
+    container:
+      image: oven/bun:1-debian
+    concurrency:
+      group: intelligence-${{ forgejo.event.issue.number || forgejo.event.pull_request.number || forgejo.event.release.id || forgejo.ref || forgejo.run_id }}
+      cancel-in-progress: false
+    if: >-
+      forgejo.actor != 'forgejo-actions[bot]'
+      && forgejo.actor != 'forgejo-intelligence[bot]'
+      && (
+        forgejo.event_name != 'pull_request'
+        || forgejo.event.pull_request.head.repo.full_name == forgejo.event.repository.full_name
+      )
+    env:
+      FORGEJO_EVENT_PATH: ${{ forgejo.event_path }}
+      FORGEJO_EVENT_NAME: ${{ forgejo.event_name }}
+      FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+      FORGEJO_API_URL: ${{ forgejo.api_url }}
+      FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+      FORGEJO_ACTOR: ${{ forgejo.actor }}
+      FORGEJO_RUN_ID: ${{ forgejo.run_id }}
+      FORGEJO_TOKEN: ${{ forgejo.token }}
+    steps:
+      - name: Prepare runner tools
+        run: |
+          set -euo pipefail
+          if command -v apt-get >/dev/null 2>&1; then
+            apt-get update
+            DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash ca-certificates coreutils git jq nodejs
+            rm -rf /var/lib/apt/lists/*
+          fi
+
+          for tool in bun bash git jq node tee tac; do
+            if ! command -v "$tool" >/dev/null 2>&1; then
+              echo "::error::Required tool is missing: $tool"
+              exit 1
+            fi
+          done
+
+          bun --version
+          git --version
+          jq --version
+          node --version
+
+      - name: Dump redacted Forgejo context
+        run: |
+          set -euo pipefail
+          jq -n \
+            --arg event_name "${FORGEJO_EVENT_NAME:-}" \
+            --arg event_path "${FORGEJO_EVENT_PATH:-}" \
+            --arg repository "${FORGEJO_REPOSITORY:-}" \
+            --arg actor "${FORGEJO_ACTOR:-}" \
+            --arg run_id "${FORGEJO_RUN_ID:-}" \
+            --arg api_url "${FORGEJO_API_URL:-}" \
+            --arg server_url "${FORGEJO_SERVER_URL:-}" \
+            --arg fork_pr_policy "${FORGEJO_INTELLIGENCE_FORK_PR_POLICY:-skip}" \
+            '{
+              platform: "forgejo",
+              event_name: $event_name,
+              event_path: $event_path,
+              repository: $repository,
+              actor: $actor,
+              run_id: $run_id,
+              api_url: $api_url,
+              server_url: $server_url,
+              token: "redacted",
+              fork_pr_policy: $fork_pr_policy
+            }' > "$FORGEJO_INTELLIGENCE_CONTEXT_DUMP"
+
+          if [ -n "${FORGEJO_EVENT_PATH:-}" ] && [ -f "$FORGEJO_EVENT_PATH" ]; then
+            jq 'walk(
+              if type == "object" then
+                with_entries(
+                  if (.key | test("token|secret|password|authorization"; "i")) then
+                    .value = "redacted"
+                  else
+                    .
+                  end
+                )
+              else
+                .
+              end
+            )' "$FORGEJO_EVENT_PATH" > "$FORGEJO_INTELLIGENCE_EVENT_DUMP"
+          else
+            jq -n '{warning: "FORGEJO_EVENT_PATH unavailable"}' > "$FORGEJO_INTELLIGENCE_EVENT_DUMP"
+          fi
+
+          echo "Redacted Forgejo context:"
+          cat "$FORGEJO_INTELLIGENCE_CONTEXT_DUMP"
+          echo "Redacted Forgejo event payload:"
+          cat "$FORGEJO_INTELLIGENCE_EVENT_DUMP"
+
+      - name: Stop after no-op preflight
+        if: ${{ forgejo.event_name == 'workflow_dispatch' && inputs.run_agent != 'true' }}
+        run: |
+          echo "No-op preflight completed. Re-run with run_agent=true to execute Forgejo Intelligence."
+
+      - name: Checkout
+        if: ${{ forgejo.event_name != 'workflow_dispatch' || inputs.run_agent == 'true' }}
+        uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          ref: ${{ forgejo.event.repository.default_branch || forgejo.ref_name }}
+          fetch-depth: 0
+
+      - name: Guard
+        if: ${{ forgejo.event_name != 'workflow_dispatch' || inputs.run_agent == 'true' }}
+        run: bun .forgejo-intelligence/lifecycle/forgejo-intelligence-ENABLED.ts
+
+      - name: Preinstall
+        if: ${{ forgejo.event_name != 'workflow_dispatch' || inputs.run_agent == 'true' }}
+        run: bun .forgejo-intelligence/lifecycle/forgejo-intelligence-INDICATOR.ts
+
+      - name: Install dependencies
+        if: ${{ forgejo.event_name != 'workflow_dispatch' || inputs.run_agent == 'true' }}
+        run: cd .forgejo-intelligence && bun install
+
+      - name: Run
+        if: ${{ forgejo.event_name != 'workflow_dispatch' || inputs.run_agent == 'true' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: bun .forgejo-intelligence/lifecycle/forgejo-intelligence-ORCHESTRATOR.ts

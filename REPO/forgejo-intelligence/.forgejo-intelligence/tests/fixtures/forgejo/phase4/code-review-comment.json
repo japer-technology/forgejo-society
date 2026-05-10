@@ -1,0 +1,38 @@
+{
+  "action": "created",
+  "number": 17,
+  "pull_request": {
+    "id": 1700,
+    "html_url": "https://forgejo.example.test/octo/widgets/pulls/17",
+    "number": 17,
+    "title": "Persist widget cache between restarts",
+    "body": "Adds a small disk-backed cache for recomputed widget metadata.",
+    "state": "open",
+    "base": {
+      "ref": "main",
+      "sha": "d34db33fd34db33fd34db33fd34db33fd34db33f"
+    },
+    "head": {
+      "ref": "cache-persistence",
+      "sha": "f00df00df00df00df00df00df00df00df00d"
+    }
+  },
+  "comment": {
+    "id": 8300,
+    "html_url": "https://forgejo.example.test/octo/widgets/pulls/17#comment-8300",
+    "body": "This lock should be held for the shortest possible scope.",
+    "path": "internal/cache/store.go",
+    "diff_hunk": "@@ -22,6 +22,8 @@ func (s *Store) Put(key string, value []byte) error {"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

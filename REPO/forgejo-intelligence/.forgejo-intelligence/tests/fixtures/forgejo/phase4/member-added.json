@@ -1,0 +1,19 @@
+{
+  "action": "added",
+  "member": {
+    "id": 1002,
+    "login": "grace"
+  },
+  "permission": "write",
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

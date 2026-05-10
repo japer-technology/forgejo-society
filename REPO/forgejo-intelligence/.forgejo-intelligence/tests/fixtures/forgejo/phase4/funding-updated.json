@@ -1,0 +1,23 @@
+{
+  "action": "updated",
+  "funding": {
+    "id": 9400,
+    "account": "octo-maintainers",
+    "note": "Funding metadata updated.",
+    "privacy_level": "public",
+    "monthly_amount": 25,
+    "tier_name": "Supporter",
+    "html_url": "https://forgejo.example.test/octo/widgets/src/branch/main/.forgejo/FUNDING.yml"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

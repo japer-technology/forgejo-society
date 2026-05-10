@@ -1,0 +1,23 @@
+{
+  "action": "edited",
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "description": "Reusable widget service components.",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main",
+    "private": false
+  },
+  "changes": {
+    "repository": {
+      "name": {
+        "from": "old-widgets"
+      }
+    }
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

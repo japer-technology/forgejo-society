@@ -1,0 +1,22 @@
+{
+  "action": "created",
+  "label": {
+    "id": 7,
+    "name": "cache",
+    "color": "1d76db",
+    "description": "Cache-related work",
+    "exclusive": false,
+    "is_archived": false
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

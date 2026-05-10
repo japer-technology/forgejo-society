@@ -1,0 +1,25 @@
+{
+  "action": "published",
+  "package": {
+    "id": 3300,
+    "name": "widget-cache",
+    "package_type": "container",
+    "html_url": "https://forgejo.example.test/octo/-/packages/container/widget-cache"
+  },
+  "package_version": {
+    "id": 3301,
+    "version": "1.4.0",
+    "html_url": "https://forgejo.example.test/octo/-/packages/container/widget-cache/1.4.0"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1003,
+    "login": "linus"
+  }
+}

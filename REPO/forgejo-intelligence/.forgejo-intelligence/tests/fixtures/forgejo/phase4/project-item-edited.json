@@ -1,0 +1,32 @@
+{
+  "action": "edited",
+  "project": {
+    "id": 6100,
+    "title": "Cache stabilization",
+    "description": "Track cache hardening work.",
+    "html_url": "https://forgejo.example.test/octo/widgets/projects/6100"
+  },
+  "project_item": {
+    "id": 6101,
+    "note": "Validate cache restart test coverage",
+    "content_type": "Issue",
+    "html_url": "https://forgejo.example.test/octo/widgets/projects/6100/items/6101"
+  },
+  "field": {
+    "name": "Status"
+  },
+  "field_value": {
+    "name": "In progress"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "action": "edited",
+  "issue": {
+    "id": 4200,
+    "url": "https://forgejo.example.test/api/v1/repos/octo/widgets/issues/42",
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42",
+    "number": 42,
+    "title": "Widget cache misses after restart",
+    "body": "After restarting the service, cached widgets are recomputed on every request.",
+    "labels": [
+      {
+        "id": 7,
+        "name": "bug",
+        "color": "d73a4a"
+      }
+    ],
+    "state": "open"
+  },
+  "comment": {
+    "id": 8100,
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42#comment-8100",
+    "body": "I can reproduce this on the staging instance."
+  },
+  "changes": {
+    "body": {
+      "from": "I can reproduce this."
+    }
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

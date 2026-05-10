@@ -1,0 +1,93 @@
+name: forgejo-intelligence installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      overwrite:
+        description: "Replace managed Forgejo Intelligence install files"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+  push:
+    paths:
+      - ".forgejo-intelligence/**"
+      - ".forgejo/workflows/forgejo-intelligence-INSTALLER.yml"
+
+jobs:
+  bootstrap:
+    runs-on: docker
+    container:
+      image: oven/bun:1-debian
+    if: forgejo.actor != 'forgejo-actions[bot]' && forgejo.actor != 'forgejo-intelligence[bot]'
+    env:
+      FORGEJO_EVENT_PATH: ${{ forgejo.event_path }}
+      FORGEJO_EVENT_NAME: ${{ forgejo.event_name }}
+      FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+      FORGEJO_API_URL: ${{ forgejo.api_url }}
+      FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+      FORGEJO_ACTOR: ${{ forgejo.actor }}
+      FORGEJO_RUN_ID: ${{ forgejo.run_id }}
+      FORGEJO_TOKEN: ${{ forgejo.token }}
+    steps:
+      - name: Prepare runner tools
+        run: |
+          set -euo pipefail
+          if command -v apt-get >/dev/null 2>&1; then
+            apt-get update
+            DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends bash ca-certificates coreutils git jq nodejs
+            rm -rf /var/lib/apt/lists/*
+          fi
+
+          for tool in bun bash git jq node tee tac; do
+            if ! command -v "$tool" >/dev/null 2>&1; then
+              echo "::error::Required tool is missing: $tool"
+              exit 1
+            fi
+          done
+
+          bun --version
+          git --version
+          jq --version
+          node --version
+
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          ref: ${{ forgejo.event.repository.default_branch || forgejo.ref_name }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "forgejo-intelligence[bot]"
+          git config user.email "forgejo-intelligence[bot]@users.noreply.forgejo"
+
+      - name: Reset managed files for explicit overwrite
+        if: ${{ inputs.overwrite == 'true' }}
+        run: |
+          rm -f .forgejo/workflows/forgejo-intelligence-WORKFLOW-AGENT.yml
+          rm -f .forgejo/ISSUE_TEMPLATE/hatch.md
+          rm -f .forgejo-intelligence/AGENTS.md
+
+      - name: Install Forgejo Intelligence files
+        run: bun .forgejo-intelligence/install/forgejo-intelligence-INSTALLER.ts --yes
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> "$FORGEJO_OUTPUT"
+            echo "::notice::No installation changes detected."
+          else
+            echo "has_changes=true" >> "$FORGEJO_OUTPUT"
+            git diff --cached --name-only
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git commit -m "forgejo-intelligence: install Forgejo workflow"
+          git push origin "HEAD:${{ forgejo.event.repository.default_branch || forgejo.ref_name }}"

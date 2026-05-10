@@ -1,0 +1,39 @@
+{
+  "action": "opened",
+  "alert": {
+    "id": 9300,
+    "number": 3,
+    "summary": "Container image includes vulnerable cache library",
+    "description": "External scanner reported a vulnerable cache dependency.",
+    "state": "open",
+    "severity": "high",
+    "html_url": "https://forgejo.example.test/octo/widgets/security/alerts/3",
+    "security_vulnerability": {
+      "package": {
+        "name": "libcache"
+      },
+      "vulnerable_version_range": "< 1.4.2",
+      "first_patched_version": {
+        "identifier": "1.4.2"
+      }
+    },
+    "security_advisory": {
+      "cwes": [
+        {
+          "cwe_id": "CWE-400"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1003,
+    "login": "linus"
+  }
+}

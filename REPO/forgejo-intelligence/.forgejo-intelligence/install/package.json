@@ -1,0 +1,16 @@
+{
+  "name": "forgejo-intelligence-installer",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "forgejo-intelligence-install": "./forgejo-intelligence-INSTALLER.ts"
+  },
+  "scripts": {
+    "install:forgejo": "bun ./forgejo-intelligence-INSTALLER.ts",
+    "install:forgejo:dry-run": "bun ./forgejo-intelligence-INSTALLER.ts --dry-run --yes",
+    "migrate:forgejo": "bun ./forgejo-intelligence-INSTALLER.ts --migrate"
+  },
+  "dependencies": {
+    "@mariozechner/pi-coding-agent": "0.65.1"
+  }
+}

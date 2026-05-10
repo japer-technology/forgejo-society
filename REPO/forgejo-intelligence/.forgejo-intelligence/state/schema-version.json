@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "platform": "forgejo",
+  "migration": "github-to-forgejo-v1",
+  "stateRoot": ".forgejo-intelligence/state",
+  "sessionRoot": ".forgejo-intelligence/state/sessions",
+  "mappingRoots": {
+    "issues": ".forgejo-intelligence/state/issues",
+    "pullRequests": ".forgejo-intelligence/state/pull-requests"
+  },
+  "updatedAt": "2026-05-01T00:00:00.000Z"
+}

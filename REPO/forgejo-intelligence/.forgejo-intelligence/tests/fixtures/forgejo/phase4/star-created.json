@@ -1,0 +1,15 @@
+{
+  "action": "created",
+  "starred_at": "2026-04-24T06:00:00Z",
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1002,
+    "login": "grace"
+  }
+}

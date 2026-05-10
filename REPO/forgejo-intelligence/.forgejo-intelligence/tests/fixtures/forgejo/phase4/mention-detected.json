@@ -1,0 +1,30 @@
+{
+  "action": "detected",
+  "issue": {
+    "id": 4200,
+    "number": 42,
+    "title": "Widget cache misses after restart",
+    "body": "Looping in @linus for cache internals.",
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42"
+  },
+  "comment": {
+    "id": 8400,
+    "body": "@linus can you check the restart path?",
+    "html_url": "https://forgejo.example.test/octo/widgets/issues/42#comment-8400"
+  },
+  "mentioned_user": {
+    "login": "linus"
+  },
+  "source_surface": "issue",
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada"
+  }
+}

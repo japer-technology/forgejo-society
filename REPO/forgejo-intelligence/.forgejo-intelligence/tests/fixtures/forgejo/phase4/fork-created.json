@@ -1,0 +1,20 @@
+{
+  "action": "created",
+  "forkee": {
+    "id": 7001,
+    "name": "widgets",
+    "full_name": "grace/widgets",
+    "html_url": "https://forgejo.example.test/grace/widgets"
+  },
+  "repository": {
+    "id": 501,
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main"
+  },
+  "sender": {
+    "id": 1002,
+    "login": "grace"
+  }
+}

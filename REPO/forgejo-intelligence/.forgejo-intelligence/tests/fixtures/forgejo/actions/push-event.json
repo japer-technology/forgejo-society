@@ -1,0 +1,56 @@
+{
+  "ref": "refs/heads/main",
+  "before": "d34db33fd34db33fd34db33fd34db33fd34db33f",
+  "after": "c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00",
+  "compare_url": "https://forgejo.example.test/octo/widgets/compare/d34db33fd34db33fd34db33fd34db33fd34db33f...c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00",
+  "commits": [
+    {
+      "id": "c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00",
+      "message": "Cache widget metadata on disk",
+      "url": "https://forgejo.example.test/octo/widgets/commit/c0ffee00c0ffee00c0ffee00c0ffee00c0ffee00",
+      "author": {
+        "name": "Grace Hopper",
+        "email": "grace@example.test",
+        "username": "grace"
+      },
+      "committer": {
+        "name": "Grace Hopper",
+        "email": "grace@example.test",
+        "username": "grace"
+      },
+      "timestamp": "2026-04-24T04:12:00Z",
+      "added": [
+        "internal/cache/store.go"
+      ],
+      "removed": [],
+      "modified": [
+        "internal/widgets/metadata.go"
+      ]
+    }
+  ],
+  "repository": {
+    "id": 501,
+    "owner": {
+      "id": 9001,
+      "login": "octo",
+      "full_name": "Octo Maintainers"
+    },
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main",
+    "private": false
+  },
+  "pusher": {
+    "id": 1002,
+    "login": "grace",
+    "full_name": "Grace Hopper",
+    "email": "grace@example.test"
+  },
+  "sender": {
+    "id": 1002,
+    "login": "grace",
+    "full_name": "Grace Hopper",
+    "email": "grace@example.test"
+  }
+}

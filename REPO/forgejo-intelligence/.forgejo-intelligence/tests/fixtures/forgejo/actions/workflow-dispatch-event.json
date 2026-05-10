@@ -1,0 +1,24 @@
+{
+  "inputs": {
+    "run_agent": "false"
+  },
+  "repository": {
+    "id": 501,
+    "owner": {
+      "id": 9001,
+      "login": "octo",
+      "full_name": "Octo Maintainers"
+    },
+    "name": "widgets",
+    "full_name": "octo/widgets",
+    "html_url": "https://forgejo.example.test/octo/widgets",
+    "default_branch": "main",
+    "private": false
+  },
+  "sender": {
+    "id": 1001,
+    "login": "ada",
+    "full_name": "Ada Lovelace",
+    "email": "ada@example.test"
+  }
+}
