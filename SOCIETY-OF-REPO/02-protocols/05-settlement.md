@@ -90,6 +90,12 @@ settlement:
   cloud_allowed: true | false
   authorised_executor: agency-id
   summary_tier: settlement-summary | executive-briefing
+  forgejo_execution:
+    surface: issue | pull-request | action | release | wiki | none
+    target: issue-or-pr-number-url-or-path
+    api_method: createIssueComment | editIssue | createPullRequest | createRelease | updateWikiPage | none
+    workflow_run_id: string or null
+    commit_sha: string or null
 
 resource_budget:
   max_agencies: int

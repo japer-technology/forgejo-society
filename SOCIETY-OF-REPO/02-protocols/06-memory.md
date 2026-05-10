@@ -77,6 +77,28 @@ Retrieval should prefer the smallest summary tier adequate for the task.
 
 ---
 
+## Forgejo runtime state
+
+`.forgejo-intelligence/state/` is operational state, not automatically durable
+SOR memory.
+
+Runtime session mappings, JSONL transcripts, health reports, and migration
+records may be promoted into SOR memory only after representation review:
+
+| Runtime artifact | Promotion target |
+|---|---|
+| Redacted event payload or workflow log excerpt | events or failure memory |
+| Conversation summary | episodic memory |
+| Accepted operating procedure | procedural memory |
+| Accepted decision or approval | decisions memory |
+| Repeated activation/inhibition pattern | K-line memory |
+| Recurrent runner, token, API, or bridge fault | failure memory |
+
+Secrets, tokens, provider keys, authorization headers, passwords, and raw
+sensitive payloads are never memory artifacts.
+
+---
+
 ## Correction, conflict, and retirement
 
 Durable records may be corrected when they are factually wrong, superseded, duplicated, or misrepresented.

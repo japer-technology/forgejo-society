@@ -26,6 +26,7 @@ Worker agency repos are the front-line cognitive units of the Society of Repo. E
 | [code-review-bee](code-review-bee/README.md) | Reviews code changes for quality, security, and test coverage | propose |
 | [dependency-bee](dependency-bee/README.md) | Tracks library vulnerabilities, version drift, and licence compliance | propose |
 | [build-monitor-bee](build-monitor-bee/README.md) | Monitors CI/CD runs for failures, regressions, and flaky tests | propose |
+| [forgejo-ops-steward](forgejo-ops-steward/README.md) | Monitors Forgejo runtime surfaces, workflows, runner health, token scope, and state integrity | propose |
 
 ### Business operations
 

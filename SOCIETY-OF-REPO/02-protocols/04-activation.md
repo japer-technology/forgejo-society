@@ -15,6 +15,29 @@ The activation layer receives:
 4. the analogy index
 5. failure and inhibition history
 6. a per-stimulus budget for agencies, critic passes, model cost, wall-clock time, and workspace size
+7. Forgejo runtime context when the stimulus came from Forgejo: event name, action, actor, repository, surface folder, workflow run, and fork/public status
+
+---
+
+## Forgejo surface activation
+
+Forgejo surface activation is the operational gate before SOR agency activation.
+
+A Forgejo event may wake the society only when:
+
+1. the `.forgejo/workflows/` trigger receives the event
+2. `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` exists
+3. the event bridge maps the payload to a known surface
+4. the matching `forgejo-intelligent-*` folder exists
+5. the guardrail accepts the event
+6. the target agency, critic, censor, or service has a constitution and rights entry
+
+Folder presence is a runtime permission, not full cognitive authority. A
+surface folder can route a stimulus into the society; it cannot bypass
+constitutions, censors, settlements, or approval gates.
+
+Removing a surface folder is operational inhibition. Adding or restoring a
+surface folder is a governed activation change.
 
 ---
 
@@ -116,6 +139,13 @@ activation_record:
   suppressed:
     - agency: agency.staff-bee
       reason: frame excludes staff workflows
+  forgejo_context:
+    platform_event: issues
+    action: opened
+    actor: eric
+    repository: owner/repo
+    surface_folder: forgejo-intelligent-issue
+    workflow_run_id: "12345"
 ```
 
 ---

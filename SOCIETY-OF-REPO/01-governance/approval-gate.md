@@ -135,6 +135,49 @@ how: PR with service description, rights terms, privacy terms; owner review and 
 
 ---
 
+### Forgejo runtime authority
+
+```yaml
+category: runtime_enablement_change
+description: >
+  Restoring the Forgejo runtime enable sentinel, re-enabling a disabled
+  workflow, or otherwise allowing write-capable Forgejo automation to run after
+  it was stopped.
+who_approves: owner
+how: PR or settlement record explaining why re-enablement is safe; owner review and merge
+```
+
+```yaml
+category: surface_activation_change
+description: >
+  Adding or restoring any `forgejo-intelligent-*` surface folder, changing the
+  selected surface set, or enabling a previously retired Forgejo surface.
+  Emergency removal of a surface is allowed but must be logged and reviewed.
+who_approves: owner
+how: PR with surface purpose, triggers, API writes, state files, and test fixtures declared
+```
+
+```yaml
+category: token_scope_change
+description: >
+  Increasing the scope of `FORGEJO_TOKEN`, introducing a repository PAT for the
+  runtime, adding a new model provider secret, or changing secret mappings in a
+  way that expands runtime capability.
+who_approves: owner
+how: PR or issue with token purpose, minimum scope, expiry/rotation plan, and censor review
+```
+
+```yaml
+category: workflow_trigger_expansion
+description: >
+  Adding Forgejo Actions triggers, loosening actor/label/fork conditions, or
+  allowing public or fork-originated events to reach write-capable automation.
+who_approves: owner
+how: PR with threat model, fork policy, public-repo policy, and rollback path
+```
+
+---
+
 ## How approval is recorded
 
 Human approval is always a **traceable event** in version control:

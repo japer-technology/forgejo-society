@@ -79,6 +79,20 @@ event:
 | `kline.reinforced` | A K-line was reinforced after a successful outcome |
 | `kline.weakened` | A K-line was weakened after a failed outcome |
 
+### Forgejo runtime events
+
+| Type | Trigger |
+|---|---|
+| `forgejo.event.received` | A Forgejo Actions or webhook payload entered the SOR runtime |
+| `forgejo.event.normalized` | The bridge converted a Forgejo payload into the normalized event schema |
+| `forgejo.surface.routed` | A normalized event was mapped to an active `forgejo-intelligent-*` surface |
+| `forgejo.surface.rejected` | A guardrail rejected an unknown, inactive, bot-originated, oversized, or unsafe event |
+| `forgejo.state.committed` | Runtime state, session mapping, or transcript changes were committed to git |
+| `forgejo.api.write` | The runtime wrote to Forgejo through the platform API adapter |
+| `forgejo.workflow.failed` | A Forgejo Actions run failed before completing the runtime pipeline |
+| `forgejo.runtime.disabled` | The enable sentinel, workflow, token scope, or surface folder disabled runtime behavior |
+| `forgejo.health.reported` | A scheduled or manual runtime health check produced a report |
+
 ### Governance events
 
 | Type | Trigger |
@@ -141,6 +155,30 @@ payload:
   authorised_executor: agency ID
 ```
 
+### forgejo.event.normalized
+
+```yaml
+payload:
+  platform: forgejo
+  surface: issue | pull-request | commit | action | wiki | release | unknown
+  surface_folder: forgejo-intelligent-issue
+  platform_event: issues
+  action: opened
+  actor: string
+  repository: owner/repo
+  title: string
+  body_digest: string
+  number: integer or null
+  node_id: string or null
+  html_url: string
+  default_branch: string
+  metadata: object
+  raw_payload_ref: path to redacted payload or fixture
+```
+
+Raw Forgejo payloads may contain secrets or private data. If a raw payload is
+stored outside transient workflow logs, it must be redacted first.
+
 ---
 
 ## Event storage
@@ -174,6 +212,9 @@ This gives the society both short-term operational visibility and long-term audi
 3. Events must be emitted after the agency completes its action (confirm completion).
 4. Events must be written to the relevant workspace or memory path as a YAML file.
 5. Events must include the full trace chain (list of event IDs that led to this event).
+6. Forgejo runtime events must include the Forgejo run ID, repository, actor, and surface folder when those values exist.
+7. Guardrail rejections are still events. They are not agency failures unless a settlement later judges them as such.
+8. API writes must reference the adapter method used, the Forgejo target URL or issue/PR number, and the authorising settlement when the write has external effect.
 
 ---
 

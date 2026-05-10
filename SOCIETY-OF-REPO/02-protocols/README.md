@@ -18,3 +18,4 @@ The protocols are the operating rules of the Society of Repo. Every agency, crit
 | [12-insulation.md](12-insulation.md) | Protected independence and controlled shared-state rules |
 | [13-hierarchy-and-summaries.md](13-hierarchy-and-summaries.md) | Summary tiers, assembly roles, and descending directives |
 | [14-relational-memory.md](14-relational-memory.md) | Typed graph links across durable cognitive artifacts |
+| [15-forgejo-environment.md](15-forgejo-environment.md) | Forgejo runtime, Actions, surfaces, API boundary, state, and fail-closed operations |

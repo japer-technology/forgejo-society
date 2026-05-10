@@ -42,3 +42,15 @@ Completed items are moved to memory (decisions, episodic records) and removed fr
 All workspace repos are writable only by authorised agencies.
 
 The global-workspace is readable by all critics and censors, giving them visibility into every active proposal without needing direct access to the agencies that produced them.
+
+---
+
+## Forgejo workspace mirrors
+
+Forgejo issues, pull requests, comments, labels, and workflow logs are user
+interfaces and execution traces for workspace activity. They may initiate or
+mirror a workspace cycle, but the canonical SOR workspace record remains the
+structured files under `07-workspace/`.
+
+A Forgejo comment is enough to record owner approval only when the approval
+gate names that method and the settlement stores the exact Forgejo reference.

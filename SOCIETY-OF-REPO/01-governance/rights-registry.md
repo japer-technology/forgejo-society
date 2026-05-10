@@ -38,6 +38,11 @@ sensitive_categories:
     description: Tax file numbers, identity documents, personal addresses, biometrics.
     cloud_allowed: never
     external_allowed: never
+
+  runtime_secrets:
+    description: Forgejo tokens, model provider keys, PATs, passwords, webhook secrets, and credentials.
+    cloud_allowed: never
+    external_allowed: never
 ```
 
 ### Operational categories
@@ -65,6 +70,16 @@ operational_categories:
     description: Agency accuracy, usefulness, and evaluation data.
     cloud_allowed: anonymised_only
     external_allowed: anonymised_only
+
+  forgejo_runtime_state:
+    description: `.forgejo-intelligence/state/` mappings, transcripts, schema versions, migrations, runtime health reports, and redacted event diagnostics.
+    cloud_allowed: no
+    external_allowed: no_unless_anonymised
+
+  forgejo_runtime_control:
+    description: `.forgejo/workflows/`, `.forgejo-intelligence/` surface folders, runtime config, installer choices, and enable sentinel state.
+    cloud_allowed: no
+    external_allowed: no
 ```
 
 ---
@@ -78,6 +93,9 @@ For this scaffold:
 - `memory/*` maps to `06-memory/*`
 - `workspace/*` maps to `07-workspace/*`
 - `service/*` maps to `08-services/*`
+- `forgejo/workflows/*` maps to `.forgejo/workflows/*`
+- `forgejo/runtime/*` maps to `.forgejo-intelligence/*`
+- `forgejo/state/*` maps to `.forgejo-intelligence/state/*`
 
 The following prefixes are agency-local namespaces unless a deployment promotes them into dedicated repos:
 - `documents/*`
@@ -99,6 +117,7 @@ This keeps protocol names stable while allowing either a single-repo scaffold or
 | `staff-bee` | documents/staff, memory/staff, memory/procedural |
 | `supplier-bee` | documents/suppliers, memory/suppliers, memory/semantic |
 | `finance-watch` | financial_records, memory/financial, memory/semantic |
+| `forgejo-ops-steward` | forgejo/workflows, forgejo/runtime, forgejo/state, performance_metrics, governance policies |
 | `owner-briefing` | workspace/active-settlements, workspace/current-focus |
 | All critics | proposals in global-workspace |
 | All censors | all proposals, all active-settlements, governance policies |
@@ -117,6 +136,7 @@ This keeps protocol names stable while allowing either a single-repo scaffold or
 | `staff-bee` | reports/staff-compliance, tasks/owner-review |
 | `supplier-bee` | reports/supplier-analysis, tasks/owner-review |
 | `finance-watch` | reports/finance-watch, tasks/owner-review |
+| `forgejo-ops-steward` | reports/forgejo-ops, workspace/current-focus, tasks/owner-review |
 | `owner-briefing` | workspace/owner-briefings |
 | Critics | objections in global-workspace |
 | Censors | blocks in active-settlements, violation-log |
@@ -144,6 +164,10 @@ All transmissions are logged with:
 - data category classification
 - authorising policy
 - timestamp
+
+Runtime secrets are never transmit-eligible. They may be referenced by secret
+name only, never copied into prompts, issues, comments, wiki pages, workflow
+logs, memory records, or committed state.
 
 ---
 

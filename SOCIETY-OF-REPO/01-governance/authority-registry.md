@@ -31,6 +31,7 @@ Authority levels are defined in the [constitution](constitution.md).
 | `staff-bee` | `propose` | Flags expiries and compliance; owner decides |
 | `supplier-bee` | `propose` | Analyses and proposes; owner decides |
 | `finance-watch` | `propose` | Reports and proposes; owner decides |
+| `forgejo-ops-steward` | `propose` | Observes Forgejo runtime health, surface activation, token scope, and state integrity; owner decides changes |
 | `owner-briefing` | `act` | Writes briefings to workspace; authorised to act |
 
 ### Critic agencies

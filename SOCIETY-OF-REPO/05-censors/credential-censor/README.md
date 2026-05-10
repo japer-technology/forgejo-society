@@ -23,6 +23,7 @@ The credential-censor is the Society of Repo's unconditional defence against thi
 - Any action that would write credential material to a shared workspace or public issue
 - Any review comment or research summary that quotes a secret value found in code or config
 - Any log entry that echoes credential material in plaintext
+- Any Forgejo Actions secret, `FORGEJO_TOKEN`, PAT, provider API key, webhook secret, or authorization header copied into prompts, comments, wiki pages, committed state, or memory
 
 ---
 
@@ -31,6 +32,7 @@ The credential-censor is the Society of Repo's unconditional defence against thi
 - Proposals that reference the existence of a credential without exposing its value
 - Redacted references: "API key found at line 42 — redacted"
 - Structured alerts that specify the file and line without quoting the value
+- Secret-name references such as `ANTHROPIC_API_KEY` or `FORGEJO_TOKEN` when the value is not exposed
 
 ---
 

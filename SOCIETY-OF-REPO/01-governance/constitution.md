@@ -62,6 +62,7 @@ Out of scope:
 7. No delegation chain longer than 3 hops is permitted.
 8. No agency claims the `human` authority level.
 9. No action category listed in the approval gate is taken without human approval.
+10. No write-capable Forgejo runtime operates without the enable sentinel, active surface folder, guardrail pass, rights entry, and settlement boundary.
 
 ---
 
@@ -95,6 +96,12 @@ default_cloud_policy: forbidden
 cloud_requires: explicit_owner_approval_and_policy_record
 model_calls_are_logged: yes
 body_brain_mind_failure_split: required
+forgejo_runtime:
+  fail_closed: true
+  sentinel_required: .forgejo-intelligence/forgejo-intelligence-ENABLED.md
+  surface_activation_requires_folder: true
+  surface_activation_requires_governance: true
+  fork_pull_requests_default: skip
 ```
 
 ---

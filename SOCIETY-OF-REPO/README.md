@@ -38,6 +38,19 @@ repos          → agencies and organs
 the forge      → the mind
 ```
 
+In a Forgejo deployment this mapping is operational, not metaphorical:
+
+| Forgejo path or unit | SOR function |
+|---|---|
+| `.forgejo/workflows/` | Event loop and runner entrypoints |
+| `.forgejo-intelligence/` | Runtime surfaces, coordinators, agents, tests, and state |
+| `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` | Git-tracked runtime kill switch |
+| `.forgejo-intelligence/state/` | Session mappings, transcripts, schema version, and runtime reports |
+| `SOCIETY-OF-REPO/` | Governance, protocols, memory, agencies, critics, censors, and workspace specification |
+
+See [02-protocols/15-forgejo-environment.md](02-protocols/15-forgejo-environment.md)
+for the Forgejo runtime requirements.
+
 ---
 
 ## Theoretical basis
@@ -93,7 +106,7 @@ SOCIETY-OF-REPO/
 ├── 01-governance/                  ← constitution, authority, approvals, rights, policies, self-ideals
 ├── 02-protocols/                   ← identity, constitution, event, activation, settlement, memory,
 │                                       representation, credit-assignment, introspection, insulation,
-│                                       hierarchy, relational-memory, services, governance
+│                                       hierarchy, relational-memory, services, governance, Forgejo environment
 ├── 03-agencies/                    ← worker, assembly, and meta-admin roles
 ├── 04-critics/                     ← challenge repos: evidence, scope, cost, privacy, risk,
 │                                       overconfidence, source-quality, staleness
@@ -115,7 +128,7 @@ SOCIETY-OF-REPO/
 |---|---|
 | [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk, unified gap incorporation |
 | [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger, self-ideals |
-| [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory |
+| [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory, Forgejo environment |
 | [03-agencies/](03-agencies/README.md) | Worker, assembly, and meta-admin roles |
 | [04-critics/](04-critics/README.md) | Critic repos that challenge proposals and reasoning traces |
 | [05-censors/](05-censors/README.md) | Censor repos that enforce hard limits |

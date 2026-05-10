@@ -34,6 +34,10 @@ employment_decision
 agency_spawn
 agency_retirement
 external_service_registration
+runtime_enablement_change
+surface_activation_change
+token_scope_change
+workflow_trigger_expansion
 ```
 
 For the full definitions of each category, see [../01-governance/approval-gate.md](../01-governance/approval-gate.md).
@@ -116,6 +120,30 @@ agency.retired
 ```
 
 These events are written to [../01-governance/governance-log/](../01-governance/governance-log/README.md).
+
+---
+
+## Forgejo operations governance
+
+Forgejo can execute write-capable automation. Runtime changes that widen that
+automation are governance changes, even when they are implemented as ordinary
+file edits.
+
+The following require a settlement or governance PR before execution:
+
+| Runtime change | Governance reason |
+|---|---|
+| Restoring `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` | Re-enables all eligible automation |
+| Adding or restoring a `forgejo-intelligent-*` folder | Enables a new event surface |
+| Expanding `.forgejo/workflows/` triggers or loosening job conditions | Allows more stimuli to reach agents |
+| Allowing fork PR workflows to receive write tokens or model secrets | Expands untrusted-code exposure |
+| Increasing `FORGEJO_TOKEN` or PAT scope | Expands infrastructure authority |
+| Adding a new model provider secret | Expands model and data-egress capability |
+
+Emergency disablement is allowed without prior approval when it narrows
+automation: remove the enable sentinel, remove a surface folder, reduce token
+scope, or disable the workflow. The action must still emit a governance or
+Forgejo runtime event and be reviewed afterward.
 
 ---
 

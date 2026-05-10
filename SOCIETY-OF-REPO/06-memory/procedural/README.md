@@ -59,3 +59,11 @@ memory_temperature: hot
 Procedural memory is read when a known class of task arrives, allowing the society to follow an established path rather than reason from scratch.
 
 Procedures are refined after each use if the owner identifies improvements or corrections.
+
+---
+
+## Current procedures
+
+| Procedure | Purpose |
+|---|---|
+| [forgejo-runtime-operations.md](forgejo-runtime-operations.md) | Enable, disable, validate, and govern the Forgejo runtime safely |

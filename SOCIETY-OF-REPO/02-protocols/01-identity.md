@@ -28,6 +28,8 @@ All IDs use dot-separated hierarchical namespaces in lowercase with hyphens for 
 | `workspace` | A workspace repo | `workspace.global` |
 | `service` | A published service | `service.contract-extraction.v1` |
 | `channel` | A SOR-to-SOR channel | `channel.sor.forgejo-mind.sor.dental-compliance` |
+| `runtime` | A Forgejo runtime component | `runtime.forgejo.workflow-agent` |
+| `surface` | A Forgejo runtime surface | `surface.forgejo.issue` |
 | `kline` | A K-line record | `kline.supplier-price-increase` |
 | `settlement` | A settlement record | `settlement.contract-renewal.2026-001` |
 | `event` | An event | `event.document.ingested.evt-001` |

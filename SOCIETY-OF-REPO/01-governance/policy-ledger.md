@@ -163,6 +163,31 @@ rule: >
 enforcement: authority-censor, approval-gate
 ```
 
+### Forgejo runtime operations
+
+```yaml
+policy_id: pol.050
+title: Forgejo runtime fail-closed operations
+category: forgejo_runtime
+version: 1
+status: active
+effective_date: 2026-05-10
+supersedes: none
+rationale: >
+  The Society of Repo runs inside Forgejo through write-capable Actions,
+  surfaces, API tokens, and committed state. Runtime capability must be visible,
+  narrow, reversible, and governed.
+rule: >
+  The Forgejo runtime may run only when the enable sentinel exists, the event
+  maps to an active surface folder, the guardrail passes, and the requested
+  write stays inside rights, censor, settlement, and approval boundaries.
+  Restoring the sentinel, adding active surfaces, expanding workflow triggers,
+  loosening fork policy, adding provider secrets, or increasing token scope
+  requires owner approval through the approval gate. Emergency disablement may
+  narrow automation immediately but must be logged and reviewed afterward.
+enforcement: authority-censor, credential-censor, cloud-egress-censor, approval-gate, forgejo-environment-protocol
+```
+
 ---
 
 ## Superseded policies

@@ -9,6 +9,7 @@ Any action in a category listed in the approval gate without a recorded human ap
 Any agency attempting to read or write to a repo not listed in its constitution
 Any attempt to increase an agency's own authority level
 Any constitutional change without PR and owner merge
+Any Forgejo runtime reenablement, surface activation, token scope increase, or workflow trigger expansion without approval
 ```
 
 ## Constitution
