@@ -11,6 +11,10 @@ kill switch effective, even if many agencies and frames are still empty.
 Sources: `THE-REPO-IS-THE-MIND/possibility-2.md` *the first commit I would
 make*, and `SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`.
 
+Agents implementing this checklist MUST also follow
+`12-agent-implementation-playbook.md`. This checklist says *what* must exist;
+the playbook says the safe order and acceptance standard for creating it.
+
 ---
 
 ## Phase A — Skeleton (one PR)
@@ -144,6 +148,23 @@ make*, and `SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`.
 - [ ] `.forgejo-society/state/sessions/` (empty)
 - [ ] `.forgejo-society/state/runs/` (empty)
 - [ ] `.forgejo-society/state/mind/` (empty)
+
+### Agent completion rules
+
+- [ ] The implementing agent records which checklist items were completed,
+      deferred, or blocked by missing external services.
+- [ ] Every emitted runtime artifact has either a committed schema or an
+      explicit Phase B/C deferral.
+- [ ] Every dangerous path in `07-policies-and-safety.md` is represented in
+      `policies/danger-zones.yml`.
+- [ ] Every agency, critic, and censor manifest validates against
+      `schemas/manifest.schema.json`.
+- [ ] The workflow has no model prompt, authority decision, or memory rule
+      embedded directly in YAML.
+- [ ] The workflow can exit successfully before agent code runs when the enable
+      sentinel is absent.
+- [ ] A reviewer can trace one accepted stimulus through stimulus, perception,
+      activation, settlement, action, report, and memory paths.
 
 ---
 

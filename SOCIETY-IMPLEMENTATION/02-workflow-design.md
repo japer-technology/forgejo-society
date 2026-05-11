@@ -34,9 +34,14 @@ multiple workflow files.
 
 ## Concurrency
 
+Top-level workflow concurrency cannot depend on values computed by later steps.
+Use the most specific event fields available in the workflow expression, then
+write the fully normalized `surface_key` and `stimulus_key` into
+`state/runs/<run_id>/stimulus.json` during `normalize`.
+
 ```yaml
 concurrency:
-  group: forgejo-society/${{ surface_key }}/${{ stimulus_key }}
+  group: forgejo-society/${{ github.event_name }}/${{ github.event.issue.number || github.event.pull_request.number || github.event.comment.id || github.ref || github.run_id }}
   cancel-in-progress: false
 ```
 
