@@ -98,7 +98,8 @@ documented deferral.
 - keep write tools disabled until policy computation grants them
 
 Completion rule: an `activate:intake` issue can produce a comment listing the
-selected frame and activated agencies without modifying non-state files.
+selected frame and activated agencies without modifying files outside
+`.forgejo-society/state/`.
 
 ### 5. Add settlement and action
 
