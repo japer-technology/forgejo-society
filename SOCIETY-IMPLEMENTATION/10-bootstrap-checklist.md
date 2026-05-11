@@ -163,8 +163,8 @@ the playbook says the safe order and acceptance standard for creating it.
       embedded directly in YAML.
 - [ ] The workflow can exit successfully before agent code runs when the enable
       sentinel is absent.
-- [ ] A reviewer can trace one accepted stimulus through stimulus, perception,
-      activation, settlement, action, report, and memory paths.
+- [ ] A reviewer can trace one accepted event from initial stimulus through
+      perception, activation, settlement, action, report, and memory paths.
 
 ---
 

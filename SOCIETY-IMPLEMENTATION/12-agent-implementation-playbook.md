@@ -52,7 +52,9 @@ Work in this exact order so the runtime becomes safe before it becomes capable.
 
 ### 1. Freeze the safety boundary
 
-- create/expand the `.forgejo-society/` root files
+- create missing `.forgejo-society/` root files, and expand existing files
+  without deleting existing content unless a later checklist item explicitly
+  requires replacement
 - add `forgejo-society-ENABLED.md`
 - add `policies/kill-switch.yml`
 - add `policies/danger-zones.yml`
@@ -185,7 +187,8 @@ phase that has passed its acceptance checks.
 - creating many workflows because each event feels separate
 - letting workflow YAML contain prompts, policy decisions, or memory rules
 - treating censors as advisory prompts instead of mechanical tool-surface
-  changes
+  changes; censors must programmatically remove, disable, or deny tool
+  capabilities before an agent can use them
 - adding Phase B intelligence before Phase A safety exists
 - writing freeform agent prose where a handoff, signal, or settlement schema is
   required
