@@ -36,6 +36,7 @@ specification (`SOCIETY-OF-REPO/`) and the operational implementation
 | [09-handoff-and-signal-schemas.md](09-handoff-and-signal-schemas.md) | Signal, handoff, settlement, and K-line schema sketches. |
 | [10-bootstrap-checklist.md](10-bootstrap-checklist.md) | Minimum-viable first-commit file list and acceptance checks. |
 | [11-mapping-sor-to-implementation.md](11-mapping-sor-to-implementation.md) | Explicit mapping from every `SOCIETY-OF-REPO/` section to its concrete `.forgejo-society/` path or workflow step. |
+| [12-agent-implementation-playbook.md](12-agent-implementation-playbook.md) | Control-flow playbook for AI agents implementing Phase A safely and completely. |
 
 ---
 
@@ -65,10 +66,20 @@ before *where it lives*, because the workflow design is what makes the
 folder layout meaningful. Strict numeric order also works for reference
 reading.
 
-1. `00-overview.md` — synthesis and the two-target collapse rule
-2. `02-workflow-design.md` — read the body before the cortex, so the
-   layout in `01` is grounded in what actually runs
-3. `01-target-layout.md` — the folder tree, now interpretable
-4. `03-runtime-pipeline.md` — how the cognitive loop drives the layout
-5. The remaining documents (`04`–`10`) in numeric order
-6. `11-mapping-sor-to-implementation.md` last, as a verification table
+1. `00-overview.md` — synthesis and the two-target collapse rule.
+2. `12-agent-implementation-playbook.md` — control-flow playbook for AI agent
+   implementation before touching files
+3. `10-bootstrap-checklist.md` — scope Phase A before attempting later
+   cognition.
+4. `02-workflow-design.md` — read the body before the cortex, so the
+   layout in `01` is grounded in what actually runs.
+5. `01-target-layout.md` — the folder tree, now interpretable.
+6. `03-runtime-pipeline.md` — how the cognitive loop drives the layout.
+7. `04-folder-spec.md`, `05-agencies-critics-censors.md`,
+   `06-frames-polynemes-klines.md`, `07-policies-and-safety.md`,
+   `08-state-and-memory.md`, and `09-handoff-and-signal-schemas.md`.
+8. `11-mapping-sor-to-implementation.md` last, as a verification table.
+
+If any implementation instruction appears ambiguous, preserve these priorities:
+fail-closed safety first, Phase A scope second, auditability third, and
+capability last.

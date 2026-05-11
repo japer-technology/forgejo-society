@@ -184,8 +184,8 @@ The scheduled cron pass updates `decay_score` and proposes retirements via
 
 Per `SOCIETY-OF-REPO/02-protocols/14-relational-memory.md`, durable records
 carry typed graph links. The runtime indexes these on first read of each
-record into a transient index under `state/runs/<run_id>/relational-index.json`.
-The index is never committed.
+record into a transient index outside the committed tree, for example under the
+runner workspace temporary directory. The index is never committed.
 
 Link types include `supersedes`, `derived_from`, `contradicts`, `cites`,
 `reinforces`, `analogous_to`, `learned_from`. The schema is shared by all

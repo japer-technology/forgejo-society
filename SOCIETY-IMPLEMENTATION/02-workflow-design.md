@@ -34,9 +34,20 @@ multiple workflow files.
 
 ## Concurrency
 
+Top-level workflow concurrency cannot depend on values computed by later steps.
+Use the most specific event fields available in the workflow expression, then
+write the fully normalized `surface_key` and `stimulus_key` into
+`state/runs/<run_id>/stimulus.json` during `normalize`.
+
 ```yaml
 concurrency:
-  group: forgejo-society/${{ surface_key }}/${{ stimulus_key }}
+  group: >-
+    forgejo-society/${{ github.event_name }}/${{
+    github.event.issue.number ||
+    github.event.pull_request.number ||
+    github.event.comment.id ||
+    github.ref ||
+    github.run_id }}
   cancel-in-progress: false
 ```
 
@@ -45,6 +56,12 @@ number, PR number, comment id, push branch, schedule slot). Cancelling in
 progress is **off** — the society must finish settling once it has begun, to
 preserve credit assignment and K-line integrity. Insulation between unrelated
 stimuli is provided by the per-stimulus group key.
+
+The fallback order in the workflow expression is intentional: issue and PR
+numbers preserve dialogue/proposed-action continuity, comment IDs isolate
+individual follow-up comments when no issue/PR number is available, refs group
+pushes by branch, and `run_id` is the final fallback for manual or unknown
+events.
 
 ---
 
