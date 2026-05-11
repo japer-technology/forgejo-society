@@ -1,9 +1,8 @@
-# forgejo-mind
+# forgejo-society
 
-Forgejo-Mind is a self-hosted, local-first cognitive forge running on Ubuntu
-with PostgreSQL and a 16-node Forgejo Actions runner fleet.
+Forgejo-Society is a self-hosted, local-first cognitive forge using Forgejo on Ubuntu.
 
-All primary documentation now lives in [`/FORGEJO`](FORGEJO/README.md).
+See: [`/FORGEJO`](FORGEJO/README.md) for local installation instructions.
 
 ---
 
