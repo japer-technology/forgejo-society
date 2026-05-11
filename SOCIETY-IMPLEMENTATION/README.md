@@ -74,8 +74,9 @@ reading.
    layout in `01` is grounded in what actually runs
 5. `01-target-layout.md` — the folder tree, now interpretable
 6. `03-runtime-pipeline.md` — how the cognitive loop drives the layout
-7. The remaining documents (`04`–`09`) in numeric order, excluding `10` because
-   it was covered earlier
+7. `04-folder-spec.md`, `05-agencies-critics-censors.md`,
+   `06-frames-polynemes-klines.md`, `07-policies-and-safety.md`,
+   `08-state-and-memory.md`, and `09-handoff-and-signal-schemas.md`
 8. `11-mapping-sor-to-implementation.md` last, as a verification table
 
 If any implementation instruction appears ambiguous, preserve these priorities:

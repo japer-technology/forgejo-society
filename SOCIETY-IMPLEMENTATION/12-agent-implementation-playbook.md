@@ -191,9 +191,9 @@ phase that has passed its acceptance checks.
 
 - creating many workflows because each event feels separate
 - letting workflow YAML contain prompts, policy decisions, or memory rules
-- treating censors as advisory prompts instead of mechanical tool-surface
-  changes; censors must programmatically remove, disable, or deny tool
-  capabilities before an agent can use them
+- treating censors as advisory prompts instead of enforcement code; for example,
+  a censor must programmatically remove `write` or `bash` before an agent can
+  use those tools, not merely tell the agent to be careful
 - adding Phase B intelligence before Phase A safety exists
 - writing freeform agent prose where a handoff, signal, or settlement schema is
   required
