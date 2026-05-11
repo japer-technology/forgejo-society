@@ -9,4 +9,4 @@ See these repo for working examples of AI agents in a repo.
 
 ## The forge is the mind. The repo is an agency. The society thinks.
 
-### The book Society of the Mind was determined as the networking of The Repo is the Mind and thus `Society of Repo` was created.
+### The book Society of the Mind was determined as the networking of The Repo is the Mind and thus `Society of Repo` was invented.
