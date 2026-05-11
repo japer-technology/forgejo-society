@@ -144,7 +144,8 @@ the playbook says the safe order and acceptance standard for creating it.
 
 ### State (created on first run)
 
-- [ ] `.forgejo-society/state/schema-version` file (committed empty + version)
+- [ ] `.forgejo-society/state/schema-version` file (committed with version
+      content)
 - [ ] `.forgejo-society/state/sessions/` directory (empty)
 - [ ] `.forgejo-society/state/runs/` directory (empty)
 - [ ] `.forgejo-society/state/mind/` directory (empty)

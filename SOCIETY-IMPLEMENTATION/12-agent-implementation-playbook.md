@@ -109,7 +109,7 @@ selected frame and activated agencies without modifying files outside
 - use imagination branches for danger-zone writes
 - write owner briefings for `pending_human`
 
-Completion rule: dangerous requests become blocked or pending-human settlements,
+Completion rule: dangerous requests become blocked or `pending_human` settlements,
 not silent failures or direct writes.
 
 ### 6. Add memory and reporting
