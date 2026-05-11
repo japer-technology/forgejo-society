@@ -146,7 +146,7 @@ the playbook says the safe order and acceptance standard for creating it.
 
 - [ ] `.forgejo-society/state/schema-version` (committed empty + version)
 - [ ] `.forgejo-society/state/sessions/` (empty)
-- [ ] `.forgejo-society/state/runs/` (empty)
+- [ ] `.forgejo-society/state/runs/` directory (empty)
 - [ ] `.forgejo-society/state/mind/` (empty)
 
 ### Agent completion rules
