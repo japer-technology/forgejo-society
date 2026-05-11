@@ -19,22 +19,22 @@ The crosswalk is the contract: when SOR uses a Minsky term, it means
 | Society | The whole `SOCIETY-OF-REPO/` collection of agencies | [SOCIETY-OF-REPO/](../SOCIETY-OF-REPO/README.md) | The repo-of-repos |
 | Hierarchy | Assembly agencies that summarise others | [02-protocols/13-hierarchy-and-summaries.md](../SOCIETY-OF-REPO/02-protocols/13-hierarchy-and-summaries.md) | Assembly is a kind of agency |
 | Level-band | A scope in the assembly hierarchy | same | Bands are explicit, not emergent |
-| A-brain / B-brain | Working agencies / meta-admin agencies | [03-agencies/](../SOCIETY-OF-REPO/03-agencies/README.md) | Meta-admin agencies are B-brains |
+| A-brain / B-brain | Working agencies / plural meta-admin stewards under the B-brain observation protocol | [02-protocols/19-b-brain-observation.md](../SOCIETY-OF-REPO/02-protocols/19-b-brain-observation.md), [03-agencies/](../SOCIETY-OF-REPO/03-agencies/README.md) | B-brain is plural (D2); inputs and forbidden actions are explicit |
 | K-line | A K-line memory entry | [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | First-class memory kind |
 | Frame | A frame memory entry | [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | Slots, defaults, exceptions |
 | Transframe | A frame whose schema describes a change | same | Subkind of frame |
 | Frame-array | A grouping of related frames | same | Grouping is by name and version |
-| Polyneme | A cross-realm reference token | [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) | Each agency interprets locally |
-| Microneme | Sub-symbolic agency-internal feature | inside an agency | Not a top-level construct |
-| Pronome | Settlement-scoped attachment id | [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md) | Bound for one settlement window |
-| Isonome | Cross-agency invariant declared in foundations | [00-foundations/](../SOCIETY-OF-REPO/00-foundations/README.md) | Stable cross-realm meaning |
+| Polyneme | A typed event whose payload fields are interpreted differently per receiving agency | [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) (Representation primitives), [02-protocols/03-events.md](../SOCIETY-OF-REPO/02-protocols/03-events.md) | Each agency reads only its slice |
+| Microneme | Sub-symbolic agency-internal feature | inside an agency; [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) | Never a top-level artifact |
+| Pronome | Settlement-scoped attachment id | [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md), [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) | Bound when settlement opens; dissolved when it closes |
+| Isonome | Lifecycle control signal with the same meaning across agencies (`activate`, `inhibit`, `settle`, `commit`, `retract`, `escalate`) | [02-protocols/04-activation.md](../SOCIETY-OF-REPO/02-protocols/04-activation.md), [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md), [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) | Control signals, not content |
 | Default | A frame slot's default value | [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | Carries confidence and exceptions |
 | Exception | A recorded contradiction of a default | same | First-class, attached to the frame |
 | Censor | A censor under `05-censors/` | [05-censors/](../SOCIETY-OF-REPO/05-censors/README.md) | Fires upstream of agency execution |
-| Suppressor | A suppressor (subkind of censor) | same | Fires at the output boundary |
+| Suppressor | A suppressor catalogued separately from censors, anchored at a named boundary | [05-censors/README.md](../SOCIETY-OF-REPO/05-censors/README.md) (Suppressor catalogue) | Fires at the output boundary; every catch names the upstream censor that should have caught it |
 | Critic | A critic under `04-critics/` | [04-critics/](../SOCIETY-OF-REPO/04-critics/README.md) | Produces verdicts with rationale |
 | Settlement | A settlement record | [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md) | Mandatory for inter-agency conflict |
-| Self-model | An entry in the self-models registry | [01-governance/](../SOCIETY-OF-REPO/01-governance/README.md) | Versioned, multiple |
+| Self-model | An entry in the self-models registry, with mandatory honesty fields | [01-governance/self-models.md](../SOCIETY-OF-REPO/01-governance/self-models.md) | Plural; narratives must declare `load_bearing_for_governance: false` |
 | Self-ideal | An entry in the self-ideals registry | [01-governance/](../SOCIETY-OF-REPO/01-governance/README.md) | Slow-change, bootstrap-protected |
 | Self-narrative | Semantic memory entry tagged "narrative" | [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | Marked as hypothesis, not fact |
 | Cache transfer | Memory promotion from runtime to persisted | [02-protocols/06-memory.md](../SOCIETY-OF-REPO/02-protocols/06-memory.md) | Decision, not write-through |
@@ -48,8 +48,12 @@ The crosswalk is the contract: when SOR uses a Minsky term, it means
 | Cache-Transfer Principle | Memory promotion is a settled decision | [02-protocols/06-memory.md](../SOCIETY-OF-REPO/02-protocols/06-memory.md) | Slow on purpose |
 | Diversity Principle | Multiple memory kinds, multiple agency types | across realms | Heterogeneity is load-bearing |
 | Humour-as-Censor | Failure memory + overconfidence critic | [05-censors/](../SOCIETY-OF-REPO/05-censors/README.md), [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | Reinforced when they catch repeats |
-| Bridge Principle | Bridge agencies translate across realms | [02-protocols/](../SOCIETY-OF-REPO/02-protocols/README.md) | Lossy, directional, testable |
-| Time-blink | Partial memory entries with marked unknowns | [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | Acceptable; not failure |
+| Bridge Principle | Bridge agencies translate across realms with declared lossiness, direction, invariants, and round-trip tests | [02-protocols/18-bridges.md](../SOCIETY-OF-REPO/02-protocols/18-bridges.md) | Bridges are agencies, not utilities; propose authority only |
+| Time-blink | Partial memory entries with explicitly marked unknowns | [02-protocols/06-memory.md](../SOCIETY-OF-REPO/02-protocols/06-memory.md) (Partial returns and time-blinks) | Acceptable; consumers MUST handle partial returns |
+| Recognition vs reconstruction | Two distinct memory query operations gated by cost | [02-protocols/06-memory.md](../SOCIETY-OF-REPO/02-protocols/06-memory.md) (Recognition vs reconstruction) | Reconstruction must be justified by recognition |
+| Consolidation window / cache transfer timing | Deliberate delay between outcome and durable memory write | [02-protocols/06-memory.md](../SOCIETY-OF-REPO/02-protocols/06-memory.md) (Consolidation window) | Slowness is the feature |
+| Transframe | Settlement schema; subkind of frame describing change | [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md) (Settlement is a transframe), [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md) | Settlements ARE transframes, not metaphorically |
+| Frame-array | Group of frames sharing slots but differing on a viewpoint dimension | [02-protocols/09-representation.md](../SOCIETY-OF-REPO/02-protocols/09-representation.md), [06-memory/](../SOCIETY-OF-REPO/06-memory/README.md) | A frame may declare `array_member_of` |
 | Free will | Settlement of conflicts among equal-rank agencies | [02-protocols/05-settlement.md](../SOCIETY-OF-REPO/02-protocols/05-settlement.md) | "Choice" = settled outcome |
 | Consciousness | B-brain observation of working society | [03-agencies/](../SOCIETY-OF-REPO/03-agencies/README.md) (meta-admin) | Pattern-aware, content-blind |
 

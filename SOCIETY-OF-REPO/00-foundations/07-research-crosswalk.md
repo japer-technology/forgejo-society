@@ -19,5 +19,15 @@ This appendix maps implemented cognitive mechanisms to their research origin and
 | Self-ideals and drift review | Minsky-inspired value stabilisation + 2025 reflective governance | `01-governance/self-ideals.md`, `01-governance/constitution.md` |
 | Mind–Brain–Body | 2025 Society of Minds | `00-foundations/06-mind-brain-body.md` |
 | Dialogical quality metrics | 2025 Society of Minds | `10-evolution/README.md`, `00-foundations/05-skills.md` |
+| Suppressors (boundary-anchored, distinct from censors) | Minsky 1986 (suppressor / censor distinction) | `05-censors/README.md` (Suppressor catalogue) |
+| Bridges as first-class translator agencies | Minsky 1988 (representation realms) + 2025 Society of Minds (cross-realm faithfulness) | `02-protocols/18-bridges.md` |
+| B-brain / observation of the society itself | Minsky 1986 (B-brain), 1988 (meta-management) | `02-protocols/19-b-brain-observation.md`, `01-governance/constitution.md` (meta-admin tier) |
+| Plural self-models, distinct from self-ideals | Minsky 1986 (self as society) + 2025 Society of Minds (narrative honesty) | `01-governance/self-models.md` |
+| Representation primitives (Microneme, Polyneme, Isonome, Pronome, Transframe, Frame-array) | Minsky 1986 + Minsky 1988 | `02-protocols/09-representation.md` (Representation primitives) |
+| Recognition vs reconstruction; consolidation window; governed forgetting | Minsky 1986 (memory), 1988 (cache transfer, time-blinks) | `02-protocols/06-memory.md` |
+| Settlement runtime semantics (timeouts, fail-closed, retry, idempotency) | Architectural extension required by Insulation (P2) and Non-Compromise (P3) | `02-protocols/05-settlement.md` (Runtime semantics) |
+| K-line reinforcement, decay, probation, retirement thresholds | Minsky 1986 (K-line dynamics) + 2025 credit assignment | `06-memory/klines/README.md` |
+| Cognitive observability (separate from host metrics) | Minsky 1986 (censor invisibility / I5) + 2025 dialogical quality | `00-foundations/09-cognitive-observability.md` |
+| Bootstrap minimum-viable society | Practical extension; Minsky 1988 developmental protection | `00-foundations/10-bootstrap-minimum-viable-sor.md` |
 
 The crosswalk should be updated whenever a major cognitive mechanism is added, superseded, or relocated.

@@ -133,6 +133,79 @@ A society cannot truly criticise what it cannot inspect.
 
 ---
 
+## Settlement is a transframe
+
+A settlement IS a transframe (`02-protocols/09-representation.md`): it describes a *change* with explicit slots — the actor (the agencies), the action (the chosen path), the object (the stimulus and its target), the before-state (perception and frame), the after-state (the authorised outcome), the instrument (the executor), and the cause (cited evidence, ideals, decisions).
+
+This is not a metaphor. The settlement schema above is a transframe schema. New settlement *kinds* are new transframe specialisations and must declare which slots they extend or constrain.
+
+---
+
+## Suppressor stage
+
+Settlements record blocks from censors *and* catches from suppressors. The two are kept distinct because they sit at different points in the loop (see [05-censors/README.md](../05-censors/README.md)):
+
+```yaml
+suppressor_catches:
+  - from: suppressor-id
+    candidate_output: |
+      Redacted candidate output that was caught at the boundary.
+    boundary: forgejo-write | payment-call | egress | low-trust-surface
+    upstream_censor_that_should_have_caught: censor-id | none
+    learning_proposal: text
+    severity: low | medium | high
+```
+
+A suppressor catch in a settlement is not just a block; it is a *learning event* that names which censor or rule should have prevented the path earlier.
+
+---
+
+## Runtime semantics
+
+Settlement is a runtime contract, not only a schema. The protocol pins down what happens under the operational realities a long-running society actually faces.
+
+### Critic and censor windows
+
+```yaml
+runtime:
+  critic_window_seconds: 120        # how long critics have to register objections
+  censor_window_seconds: 30         # how long censors have to register blocks (must be < critic window)
+  required_critics:                 # critics whose absence fails the settlement closed
+    - evidence-critic
+    - risk-critic
+  required_censors:                 # censors whose absence fails the settlement closed
+    - cloud-egress-censor
+    - authority-censor
+    - credential-censor
+  optional_critics:                 # critics whose absence is logged but does not fail closed
+    - source-quality-critic
+    - staleness-critic
+```
+
+### Failure modes
+
+| Situation | Defined behaviour |
+|---|---|
+| A required critic is offline at window close | Settlement **fails closed**: no action authorised. Failure memory entry created. The B-brain layer is alerted. |
+| A required censor is offline at window close | Settlement **fails closed unconditionally**. There is no override path. |
+| An optional critic is offline | Settlement may proceed; the missing critic is recorded in `objections` as `unavailable` with a `recheck_required` flag. |
+| Two critics produce contradictory verdicts | Escalation under the Non-Compromise Principle (P3). The settlement records both verdicts and routes to a higher-rank decider; no implicit blending. |
+| Settlement budget (`max_wall_clock_seconds`, `max_critic_passes`) exhausted | Settlement closes with `outcome: budget_exhausted`. Action is *not* authorised by default; budget exhaustion is a learning signal, not a soft pass. |
+| Authorised executor not available | Settlement enters `awaiting-executor` for at most one further critic window, then fails closed. |
+| Owner approval required and not granted within the approval window | Settlement closes `outcome: approval_timeout`. The proposal is preserved; re-running requires a new settlement. |
+
+### Retry policy
+
+A failed-closed settlement is *never* automatically retried. Re-attempting the same stimulus class is itself a settlement-grade decision and must cite the original settlement's failure record.
+
+This rule prevents the most common drift pattern in multi-agent systems: silent retry until success, which destroys the failure-memory signal.
+
+### Idempotency
+
+Settlements carry a `stimulus` ID. The orchestrator MUST treat that ID as the idempotency key. A second settlement on the same stimulus while the first is open is forbidden; the second attempt joins the first as an additional input.
+
+---
+
 ## Example settlement
 
 ```yaml
