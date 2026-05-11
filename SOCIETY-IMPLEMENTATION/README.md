@@ -67,8 +67,8 @@ folder layout meaningful. Strict numeric order also works for reference
 reading.
 
 1. `00-overview.md` — synthesis and the two-target collapse rule
-2. `12-agent-implementation-playbook.md` — if you are an AI agent implementing
-   this, use it as the control checklist before touching files
+2. `12-agent-implementation-playbook.md` — control checklist for AI agent
+   implementation before touching files
 3. `10-bootstrap-checklist.md` — scope Phase A before attempting later cognition
 4. `02-workflow-design.md` — read the body before the cortex, so the
    layout in `01` is grounded in what actually runs

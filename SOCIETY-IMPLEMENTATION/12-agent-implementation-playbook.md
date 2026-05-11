@@ -52,9 +52,10 @@ Work in this exact order so the runtime becomes safe before it becomes capable.
 
 ### 1. Freeze the safety boundary
 
-- create missing `.forgejo-society/` root files, and expand existing files
-  without deleting existing content unless a later checklist item explicitly
-  requires replacement
+- create missing `.forgejo-society/` root files; when a file already exists,
+  update only the fields or sections required by the Phase A checklist and
+  preserve unrelated content unless a checklist item explicitly requires
+  replacement
 - add `forgejo-society-ENABLED.md`
 - add `policies/kill-switch.yml`
 - add `policies/danger-zones.yml`
@@ -72,6 +73,9 @@ agent code when the sentinel is absent or the kill switch is disabled.
 - add every Phase A trigger from `10-bootstrap-checklist.md`
 - implement named steps matching `02-workflow-design.md`
 - call only one runtime entrypoint: `.forgejo-society/lifecycle/mind.ts`
+  (TypeScript is the planned Phase A runtime per `01-target-layout.md` and
+  `10-bootstrap-checklist.md`; changing runtime language requires updating
+  those documents and the lifecycle file list first)
 - always run `report` after `guardrail` has started
 
 Completion rule: a run page must show the full cognitive phase sequence even
