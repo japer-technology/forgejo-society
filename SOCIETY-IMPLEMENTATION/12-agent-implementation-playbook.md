@@ -92,7 +92,8 @@ documented deferral.
 
 ### 4. Add read-only cognition first
 
-- implement perception, frame selection, polyneme activation, and K-line lookup
+- implement perception, frame selection, polyneme activation (repo-file
+  activators defined in `06-frames-polynemes-klines.md`), and K-line lookup
 - add minimum frames and polynemes
 - add minimum agencies, critics, and censors as manifests
 - keep write tools disabled until policy computation grants them

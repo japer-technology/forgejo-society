@@ -57,6 +57,12 @@ progress is **off** — the society must finish settling once it has begun, to
 preserve credit assignment and K-line integrity. Insulation between unrelated
 stimuli is provided by the per-stimulus group key.
 
+The fallback order in the workflow expression is intentional: issue and PR
+numbers preserve dialogue/proposed-action continuity, comment IDs isolate
+individual follow-up comments when no issue/PR number is available, refs group
+pushes by branch, and `run_id` is the final fallback for manual or unknown
+events.
+
 ---
 
 ## Permissions
