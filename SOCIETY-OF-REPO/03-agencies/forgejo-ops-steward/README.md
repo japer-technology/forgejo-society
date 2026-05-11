@@ -25,7 +25,12 @@ structured findings for the settlement and governance layers.
 5. Checks that Forgejo writes use the platform API adapter rather than ad hoc calls
 6. Reviews `.forgejo-intelligence/state/` schema, mappings, migrations, and health reports
 7. Flags unsupported or unvalidated Forgejo surfaces before they are treated as active capability
-8. Produces runtime risk reports for owner briefing and governance review
+8. Verifies that every active surface handler exports the required contract (`buildPrompt`, `postResponse`, `getSessionKey`, `getConcurrencyKey`, `getReactionTarget`) per [16-forgejo-runtime-layers.md](../../02-protocols/16-forgejo-runtime-layers.md)
+9. Confirms that the no-op preflight, phase checks, and disposable smoke harness have run on the cadence required by [17-forgejo-operational-verification.md](../../02-protocols/17-forgejo-operational-verification.md)
+10. Detects drift in committed configuration files (`config/install.json`, `.pi/settings.json`, `AGENTS.md`, `APPEND_SYSTEM.md`, `BOOTSTRAP.md`, `.gitattributes`, workflow YAML) without a matching settlement
+11. Reports on indicator coverage, concurrency-key collisions, and stuck or missing 👀 reactions
+12. Audits the `state/migrations/` archive for unprocessed legacy-source residue
+13. Produces runtime risk reports for owner briefing and governance review
 
 ---
 
@@ -44,14 +49,19 @@ structured findings for the settlement and governance layers.
 ## Outputs
 
 ```text
-surface_inventory          - active runtime surface and coordinator list
-sentinel_state_report      - whether runtime enablement matches governance state
-workflow_trigger_report    - workflow triggers, fork policy, runner label, and secret mapping summary
-token_scope_finding        - suspected over-broad or under-documented runtime token scope
-runner_health_finding      - Forgejo Actions runner or toolchain failure classification
-state_schema_report        - state schema, mappings, migrations, and transcript continuity status
-unsupported_surface_alert  - active surface without fixtures, handler, or validated instance support
-forgejo_ops_risk_report    - settlement-ready operational risk summary
+surface_inventory             - active runtime surface and coordinator list
+sentinel_state_report         - whether runtime enablement matches governance state
+workflow_trigger_report       - workflow triggers, fork policy, runner label, and secret mapping summary
+token_scope_finding           - suspected over-broad or under-documented runtime token scope
+runner_health_finding         - Forgejo Actions runner or toolchain failure classification
+state_schema_report           - state schema, mappings, migrations, and transcript continuity status
+unsupported_surface_alert     - active surface without fixtures, handler, or validated instance support
+handler_contract_report       - surface handlers missing one or more required functions
+verification_cadence_report   - missed no-op preflights, phase checks, or smoke runs
+config_drift_report           - changes to committed config files not traced to a settlement
+indicator_concurrency_report  - missing or stuck 👀 indicators and concurrency-key collisions
+migration_residue_report      - unprocessed entries under state/migrations/
+forgejo_ops_risk_report       - settlement-ready operational risk summary
 ```
 
 ---

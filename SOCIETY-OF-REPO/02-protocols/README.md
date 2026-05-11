@@ -19,3 +19,5 @@ The protocols are the operating rules of the Society of Repo. Every agency, crit
 | [13-hierarchy-and-summaries.md](13-hierarchy-and-summaries.md) | Summary tiers, assembly roles, and descending directives |
 | [14-relational-memory.md](14-relational-memory.md) | Typed graph links across durable cognitive artifacts |
 | [15-forgejo-environment.md](15-forgejo-environment.md) | Forgejo runtime, Actions, surfaces, API boundary, state, and fail-closed operations |
+| [16-forgejo-runtime-layers.md](16-forgejo-runtime-layers.md) | Surface, coordination, and agent-engine layer taxonomy plus the surface handler contract |
+| [17-forgejo-operational-verification.md](17-forgejo-operational-verification.md) | No-op preflight, mock and offline fixtures, phase checks, smoke harness, indicator and concurrency, schema and configuration evidence |

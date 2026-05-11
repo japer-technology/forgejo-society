@@ -50,6 +50,11 @@ In a Forgejo deployment this mapping is operational, not metaphorical:
 
 See [02-protocols/15-forgejo-environment.md](02-protocols/15-forgejo-environment.md)
 for the Forgejo runtime requirements.
+See [02-protocols/16-forgejo-runtime-layers.md](02-protocols/16-forgejo-runtime-layers.md)
+for the surface, coordination, and agent-engine layers and the surface
+handler contract.
+See [02-protocols/17-forgejo-operational-verification.md](02-protocols/17-forgejo-operational-verification.md)
+for preflight, fixture, smoke, and verification cadence requirements.
 
 ---
 
@@ -128,7 +133,7 @@ SOCIETY-OF-REPO/
 |---|---|
 | [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk, unified gap incorporation |
 | [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger, self-ideals |
-| [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory, Forgejo environment |
+| [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory, Forgejo environment, Forgejo runtime layers, Forgejo operational verification |
 | [03-agencies/](03-agencies/README.md) | Worker, assembly, and meta-admin roles |
 | [04-critics/](04-critics/README.md) | Critic repos that challenge proposals and reasoning traces |
 | [05-censors/](05-censors/README.md) | Censor repos that enforce hard limits |

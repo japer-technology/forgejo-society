@@ -45,6 +45,11 @@ outputs:
   - runner_health_finding
   - state_schema_report
   - unsupported_surface_alert
+  - handler_contract_report
+  - verification_cadence_report
+  - config_drift_report
+  - indicator_concurrency_report
+  - migration_residue_report
   - forgejo_ops_risk_report
 
 evaluation:
@@ -54,6 +59,9 @@ evaluation:
     - false_alarm_rate
     - mean_time_to_runtime_alert
     - secret_handling_violation_rate
+    - handler_contract_violation_rate
+    - verification_cadence_miss_rate
+    - config_drift_detection_rate
 
 evolution:
   probation_trigger: secret_handling_violation_rate > 0 or false_alarm_rate > 0.20 over 30 days
