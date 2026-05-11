@@ -66,18 +66,19 @@ before *where it lives*, because the workflow design is what makes the
 folder layout meaningful. Strict numeric order also works for reference
 reading.
 
-1. `00-overview.md` — synthesis and the two-target collapse rule
+1. `00-overview.md` — synthesis and the two-target collapse rule.
 2. `12-agent-implementation-playbook.md` — control-flow playbook for AI agent
    implementation before touching files
-3. `10-bootstrap-checklist.md` — scope Phase A before attempting later cognition
+3. `10-bootstrap-checklist.md` — scope Phase A before attempting later
+   cognition.
 4. `02-workflow-design.md` — read the body before the cortex, so the
-   layout in `01` is grounded in what actually runs
-5. `01-target-layout.md` — the folder tree, now interpretable
-6. `03-runtime-pipeline.md` — how the cognitive loop drives the layout
+   layout in `01` is grounded in what actually runs.
+5. `01-target-layout.md` — the folder tree, now interpretable.
+6. `03-runtime-pipeline.md` — how the cognitive loop drives the layout.
 7. `04-folder-spec.md`, `05-agencies-critics-censors.md`,
    `06-frames-polynemes-klines.md`, `07-policies-and-safety.md`,
-   `08-state-and-memory.md`, and `09-handoff-and-signal-schemas.md`
-8. `11-mapping-sor-to-implementation.md` last, as a verification table
+   `08-state-and-memory.md`, and `09-handoff-and-signal-schemas.md`.
+8. `11-mapping-sor-to-implementation.md` last, as a verification table.
 
 If any implementation instruction appears ambiguous, preserve these priorities:
 fail-closed safety first, Phase A scope second, auditability third, and

@@ -41,7 +41,13 @@ write the fully normalized `surface_key` and `stimulus_key` into
 
 ```yaml
 concurrency:
-  group: forgejo-society/${{ github.event_name }}/${{ github.event.issue.number || github.event.pull_request.number || github.event.comment.id || github.ref || github.run_id }}
+  group: >-
+    forgejo-society/${{ github.event_name }}/${{
+    github.event.issue.number ||
+    github.event.pull_request.number ||
+    github.event.comment.id ||
+    github.ref ||
+    github.run_id }}
   cancel-in-progress: false
 ```
 
