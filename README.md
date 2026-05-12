@@ -48,10 +48,3 @@ The project is organised around a small set of pillars:
 - **[`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/)** — earlier and sibling experiments
   (`github-minimum-intelligence`) that are being converted from a
   GitHub-runtime design to a Forgejo-runtime design.
-
-GitHub is used here only as a development environment and as one of several
-mirrors; the production runtime target is always self-hosted Forgejo. See
-[`github-compliance.md`](github-compliance.md) for the full posture.
-
-See [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md) for local installation instructions.
-
