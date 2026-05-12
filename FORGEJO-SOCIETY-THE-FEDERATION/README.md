@@ -1,3 +1,9 @@
 # Forgejo Society: The Federation
 
-The root Forgejo Society for and by the creator.
+> The root Forgejo Society for and by the creator in the spirit of Spock.
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
