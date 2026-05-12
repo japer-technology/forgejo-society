@@ -231,7 +231,7 @@ FORGEJO-SOCIETY-PAST operated at one-repo scale. `THE-SOCIETY-OF-REPO/` operates
 one-society scale. The hardware reference in
 [README.md §Hardware reference](../../README.md) — one i9 forge, sixteen i7
 runners, one i9+RTX 4090 LLM box — is sized for *many* simultaneous
-settlements ([FORGEJO-SOCIETY-MIND/analysis/forgejo-mind-expected-performance.md](../analysis/forgejo-mind-expected-performance.md)).
+settlements ([FORGEJO-SOCIETY-INTRODUCTION/analysis/forgejo-mind-expected-performance.md](../analysis/forgejo-mind-expected-performance.md)).
 The cross-society protocols ([THE-SOCIETY-OF-REPO/09-channels/](../../THE-SOCIETY-OF-REPO/09-channels/))
 and the meta-admin role anticipate *many* societies.
 
