@@ -19,6 +19,8 @@ cognitive ecology.
   </picture>
 </p>
 
+---
+
 The project is organised around a small set of pillars:
 
 - **[`FORGEJO-SOCIETY-INTRODUCTION/`](FORGEJO-SOCIETY-INTRODUCTION/README.md)** — the
