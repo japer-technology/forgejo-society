@@ -53,9 +53,5 @@ GitHub is used here only as a development environment and as one of several
 mirrors; the production runtime target is always self-hosted Forgejo. See
 [`github-compliance.md`](github-compliance.md) for the full posture.
 
-See [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md) for local
-installation instructions.
+See [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md) for local installation instructions.
 
----
-
-🧠 by Eric Mourant
