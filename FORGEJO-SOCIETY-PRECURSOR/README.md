@@ -1,4 +1,4 @@
-# Precursor Research & Development
+# Forgejo Society: Precursors
 
 <p align="center">
   <picture>
