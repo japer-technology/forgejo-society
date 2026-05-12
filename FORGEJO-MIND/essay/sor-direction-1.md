@@ -7,17 +7,17 @@ and is it the kind of thing that can become world-class and world-beating?*
 The check is performed against three bodies of work that already exist in the
 repository:
 
-- [`PAST-REPO/forgejo-intelligence/`](../../PAST-REPO/forgejo-intelligence/) —
+- [`.forgejo-intelligence/`](../../.forgejo-intelligence/) —
   the working, runnable Forgejo-native AI runtime and its conversion history
-  ([WHAT.md](../../PAST-REPO/forgejo-intelligence/WHAT.md),
-  [.ASPIRATION.md](../../PAST-REPO/forgejo-intelligence/.ASPIRATION.md),
-  [CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../PAST-REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
+  ([WHAT.md](../../.forgejo-intelligence/WHAT.md),
+  [.ASPIRATION.md](../../.forgejo-intelligence/.ASPIRATION.md),
+  [CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../.forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
 - [`THE-SOCIETY-OF-REPO/`](../../THE-SOCIETY-OF-REPO/README.md) — the governed
   cognitive ecology specification.
-- [`SOCIETY-IMPLEMENTATION/`](../../SOCIETY-IMPLEMENTATION/README.md) — the
+- [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md) — the
   planning bridge that collapses both into one workflow file and one root
-  folder ([00-overview.md](../../SOCIETY-IMPLEMENTATION/00-overview.md),
-  [12-agent-implementation-playbook.md](../../SOCIETY-IMPLEMENTATION/12-agent-implementation-playbook.md)).
+  folder ([00-overview.md](../../FORGEJO-SOCIETY-PLAN/00-overview.md),
+  [12-agent-implementation-playbook.md](../../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md)).
 
 The companion essay
 [sor-emergent-possibilities.md](sor-emergent-possibilities.md) describes what
@@ -43,27 +43,27 @@ to be.
 Three convictions sit underneath that paragraph:
 
 1. **Repo-native, not chatbot-on-top.** The agent participates through the same
-   surfaces humans use ([.ASPIRATION.md](../../PAST-REPO/forgejo-intelligence/.ASPIRATION.md)).
+   surfaces humans use ([.ASPIRATION.md](../../.forgejo-intelligence/.ASPIRATION.md)).
 2. **Presence is permission; absence is denial.** Capability is declared by the
    filesystem and audited by `git log`
-   ([WHAT.md](../../PAST-REPO/forgejo-intelligence/WHAT.md)).
+   ([WHAT.md](../../.forgejo-intelligence/WHAT.md)).
 3. **Governed cognition, not free-fire multi-agent.** Every non-trivial action
    leaves a settlement, and every settlement leaves a credit-assignment trace
    ([THE-SOCIETY-OF-REPO/02-protocols/](../../THE-SOCIETY-OF-REPO/02-protocols/)).
 
 Each conviction predates this repo. `forgejo-intelligence` proved (1) and (2)
-in code. `THE-SOCIETY-OF-REPO/` earned (3) in theory. `SOCIETY-IMPLEMENTATION/`
+in code. `THE-SOCIETY-OF-REPO/` earned (3) in theory. `FORGEJO-SOCIETY-PLAN/`
 is the collapse that fuses the three.
 
 ---
 
 ## 2. What PAST-REPO actually proved
 
-`PAST-REPO/forgejo-intelligence/` is not a doodle. It is a runnable
+`.forgejo-intelligence/` is not a doodle. It is a runnable
 Bun/TypeScript installer with `.forgejo` workflows, a Forgejo API adapter, a
 guardrail, a fail-closed sentinel, ~20 surface folders, and committed session
-state under `.forgejo-intelligence/state/` ([README.md](../../PAST-REPO/forgejo-intelligence/README.md),
-[.forgejo-intelligence/](../../PAST-REPO/forgejo-intelligence/.forgejo-intelligence/)).
+state under `.forgejo-intelligence/state/` ([README.md](../../.forgejo-intelligence/README.md),
+[.forgejo-intelligence/](../../.forgejo-intelligence/.forgejo-intelligence/)).
 Concretely, it proved seven things that the new direction is now allowed to
 take for granted:
 
@@ -76,18 +76,18 @@ take for granted:
    actually removed the capability.
 3. **A single sentinel can hold a fail-closed boundary.** The runtime refuses
    work when `forgejo-intelligence-ENABLED.md` is missing
-   ([WHAT.md §The Enable Sentinel](../../PAST-REPO/forgejo-intelligence/WHAT.md)).
+   ([WHAT.md §The Enable Sentinel](../../.forgejo-intelligence/WHAT.md)).
 4. **State-in-git is operationally fine.** Sessions, mappings, and migration
    archives live in the repo and are reviewable in PRs.
 5. **A typed Forgejo API adapter beats scattered `fetch` calls.** Pagination,
    retries, and a mock implementation drop straight into surface handlers
-   ([WHAT.md §Forgejo API Adapter](../../PAST-REPO/forgejo-intelligence/WHAT.md)).
+   ([WHAT.md §Forgejo API Adapter](../../.forgejo-intelligence/WHAT.md)).
 6. **GitHub-only surfaces can be retired honestly.** False parity is worse than
    a clear boundary
-   ([.ASPIRATION.md §Boundaries](../../PAST-REPO/forgejo-intelligence/.ASPIRATION.md)).
+   ([.ASPIRATION.md §Boundaries](../../.forgejo-intelligence/.ASPIRATION.md)).
 7. **Migration-as-installer works.** A single `--migrate --yes` command can
    move a live system off GitHub-Actions runtime without losing portable state
-   ([CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../PAST-REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
+   ([CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../.forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
 
 What PAST-REPO did **not** have, and admitted it did not have, is *cognition*.
 It had surfaces, sessions, an agent runtime, and a guardrail. It did not have
@@ -95,15 +95,15 @@ frames, K-lines, critics, censors, settlements, credit assignment, or
 governance. It was a polite, fail-closed listener with a memory of past
 exchanges. It was not yet a society, and it was not yet a mind.
 
-That is the gap `THE-SOCIETY-OF-REPO/` and `SOCIETY-IMPLEMENTATION/` are
+That is the gap `THE-SOCIETY-OF-REPO/` and `FORGEJO-SOCIETY-PLAN/` are
 designed to close.
 
 ---
 
-## 3. What SOCIETY-IMPLEMENTATION actually adds
+## 3. What FORGEJO-SOCIETY-PLAN actually adds
 
-`SOCIETY-IMPLEMENTATION/` is the collapse rule
-([00-overview.md](../../SOCIETY-IMPLEMENTATION/00-overview.md)):
+`FORGEJO-SOCIETY-PLAN/` is the collapse rule
+([00-overview.md](../../FORGEJO-SOCIETY-PLAN/00-overview.md)):
 
 > Every cognitive structure in `THE-SOCIETY-OF-REPO/` must collapse to either
 > a file under `.forgejo-society/` or a step in
@@ -117,24 +117,24 @@ the running society.
 Read against PAST-REPO, four upgrades are visible:
 
 - **One workflow, not many.** PAST-REPO had one workflow because it was small.
-  `SOCIETY-IMPLEMENTATION/02-workflow-design.md` makes one workflow a
+  `FORGEJO-SOCIETY-PLAN/02-workflow-design.md` makes one workflow a
   *constitutional* rule — multiple workflows would race settlement,
   censorship, and credit assignment across event boundaries Forgejo cannot
-  coordinate ([00-overview.md §Why one workflow](../../SOCIETY-IMPLEMENTATION/00-overview.md)).
+  coordinate ([00-overview.md §Why one workflow](../../FORGEJO-SOCIETY-PLAN/00-overview.md)).
 - **One root folder, not several.** `.forgejo-society/` is the *whole* mind.
   Removing it disables the society. A single PR can change cognition. The
   kill-switch invariant is the same one PAST-REPO proved, raised to constitute
-  the entire substrate ([00-overview.md §Why one folder](../../SOCIETY-IMPLEMENTATION/00-overview.md)).
+  the entire substrate ([00-overview.md §Why one folder](../../FORGEJO-SOCIETY-PLAN/00-overview.md)).
 - **Cognitive primitives become first-class files.** Frames as YAML, K-lines as
   YAML, critics and censors as Markdown manifests with a schema
-  ([01-target-layout.md](../../SOCIETY-IMPLEMENTATION/01-target-layout.md),
-  [05-agencies-critics-censors.md](../../SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md)).
+  ([01-target-layout.md](../../FORGEJO-SOCIETY-PLAN/01-target-layout.md),
+  [05-agencies-critics-censors.md](../../FORGEJO-SOCIETY-PLAN/05-agencies-critics-censors.md)).
   This is the move from "agents call tools" to "a society perceives,
   activates, settles, and remembers."
 - **A pipeline that maps cognition to commits.** Every cognitive step has a
   workflow phase, a runtime module, and a concrete read/write target under
   `.forgejo-society/state/`, `memory/`, or `workspace/`
-  ([03-runtime-pipeline.md](../../SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)).
+  ([03-runtime-pipeline.md](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)).
   Cognition is therefore *recoverable*, not just *observed*.
 
 The two-target collapse is the most important architectural decision in the
@@ -183,7 +183,7 @@ The constraint is correct because of three asymmetries:
 
 1. **Concurrency boundaries cannot be retrofitted.** Once a cognitive loop is
    split across workflow files, the per-stimulus group key becomes a polite
-   suggestion ([02-workflow-design.md §Concurrency](../../SOCIETY-IMPLEMENTATION/02-workflow-design.md)).
+   suggestion ([02-workflow-design.md §Concurrency](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)).
 2. **Kill switches degrade catastrophically when they are partial.** Two
    workflows, one sentinel — and one of the two will eventually forget to
    check it. Then the off-switch is a lie.
@@ -296,7 +296,7 @@ tighten its edges.
 
 ### 6.1 Treat the collapse rule as a load-bearing wall, not a guideline
 
-`SOCIETY-IMPLEMENTATION/00-overview.md` already states the collapse rule. It
+`FORGEJO-SOCIETY-PLAN/00-overview.md` already states the collapse rule. It
 should also be enforced *mechanically*. Concretely:
 
 - A scheduled job in the workflow that fails the run if any
@@ -334,7 +334,7 @@ superpower.
 
 ### 6.3 Lock in the migration story from PAST-REPO before adding new agencies
 
-PAST-REPO/forgejo-intelligence is real, runnable, and battle-tested in narrow
+.forgejo-intelligence is real, runnable, and battle-tested in narrow
 ways. The new society has a vastly larger surface area and almost no
 operational hours. The temptation will be to build the new society in
 parallel, then "switch over."
@@ -351,7 +351,7 @@ A safer path, and one that compounds, is:
    `mind.ts` reads from there and never touches the Forgejo API directly.
 
 That seam is hinted at in
-[03-runtime-pipeline.md §Pipeline mapping table](../../SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
+[03-runtime-pipeline.md §Pipeline mapping table](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
 where `lib/forgejo.ts` and `lib/git.ts` are listed as runtime modules. It is
 worth promoting from "module" to "contract" — a stable JSON schema between
 the integration layer and the cognition layer, versioned in
@@ -374,9 +374,9 @@ of the stack."
 
 A correct direction can still fail to land. The realistic failure modes are:
 
-- **Plan-shaped paralysis.** `SOCIETY-IMPLEMENTATION/` is twelve careful
+- **Plan-shaped paralysis.** `FORGEJO-SOCIETY-PLAN/` is twelve careful
   documents and the temptation is to keep planning. The Phase A bootstrap
-  ([10-bootstrap-checklist.md](../../SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md))
+  ([10-bootstrap-checklist.md](../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md))
   must ship as one PR even if many agencies and frames are still empty. A
   living, minimal society teaches faster than a complete plan.
 - **Cognition without observability.** If state files exist but no one ever
@@ -401,7 +401,7 @@ A correct direction can still fail to land. The realistic failure modes are:
 
 None of these is fatal. Each is foreseeable. Each has a corresponding control
 already named in the existing plans
-([07-policies-and-safety.md](../../SOCIETY-IMPLEMENTATION/07-policies-and-safety.md),
+([07-policies-and-safety.md](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md),
 [10-evolution/](../../THE-SOCIETY-OF-REPO/10-evolution/),
 [01-governance/](../../THE-SOCIETY-OF-REPO/01-governance/)). The work is to
 *use* the controls, not to add new ones.
@@ -428,7 +428,7 @@ to an agent product. They are the consequences of choosing this substrate
 from the beginning.
 
 PAST-REPO proved the substrate works. `THE-SOCIETY-OF-REPO/` earned the
-theory. `SOCIETY-IMPLEMENTATION/` is the collapse. The remaining work is to
+theory. `FORGEJO-SOCIETY-PLAN/` is the collapse. The remaining work is to
 ship the Phase A skeleton, defend the collapse rule, lead with the cognitive
 trace, lock the seam to the integration layer, and resist every pressure to
 add a third location.

@@ -23,7 +23,7 @@ is used for:
 Nothing in this repository is intended to run as a production service on
 github.com infrastructure. The cognitive ecology described in
 [`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/),
-[`SOCIETY-IMPLEMENTATION/`](SOCIETY-IMPLEMENTATION/), and
+[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/), and
 [`THE-REPO-IS-THE-MIND/`](THE-REPO-IS-THE-MIND/) is designed to live inside
 Forgejo, not GitHub.
 
@@ -46,14 +46,15 @@ This project's posture aligns with that rule because:
 | **GitHub Actions** | Only as needed to develop, lint, build, or test the code in this repo. | Permitted by the [Actions service terms][actions-tos]: Actions are for the production, testing, deployment, or publication of the software project associated with the repository. |
 | **GitHub Pages** | Not used as a runtime surface for the agent on github.com. The agent's public surface is published from Forgejo. | Pages is not being used as a stand-alone application backend. |
 
-## Specific subprojects under `PAST-REPO/`
+## Specific subprojects: `PAST-REPO/` and `.forgejo-intelligence/`
 
 The directory [`PAST-REPO/`](PAST-REPO/) contains earlier or sibling experiments —
-notably [`PAST-REPO/github-minimum-intelligence/`](PAST-REPO/github-minimum-intelligence/)
-and [`PAST-REPO/forgejo-intelligence/`](PAST-REPO/forgejo-intelligence/) — that are
-in the process of being converted from a GitHub-runtime design to a
-Forgejo-runtime design. The conversion is tracked in
-[`PAST-REPO/forgejo-intelligence/CONVERSION/`](PAST-REPO/forgejo-intelligence/CONVERSION/).
+notably [`PAST-REPO/github-minimum-intelligence/`](PAST-REPO/github-minimum-intelligence/) —
+and the top-level [`.forgejo-intelligence/`](.forgejo-intelligence/) (formerly
+`PAST-REPO/forgejo-intelligence/`) holds the runnable Forgejo runtime that is
+being converted from a GitHub-runtime design to a Forgejo-runtime design. The
+conversion is tracked in
+[`.forgejo-intelligence/CONVERSION/`](.forgejo-intelligence/CONVERSION/).
 
 Within `forgejo-society`, those subprojects are **source under development**:
 
@@ -66,7 +67,7 @@ Within `forgejo-society`, those subprojects are **source under development**:
   stand-alone or integrated application or service to third parties.
 - The intended runtime for all "intelligence" / agent behaviour is the
   Forgejo-side equivalent under
-  [`PAST-REPO/forgejo-intelligence/.forgejo-intelligence/`](PAST-REPO/forgejo-intelligence/.forgejo-intelligence/),
+  [`.forgejo-intelligence/.forgejo-intelligence/`](.forgejo-intelligence/.forgejo-intelligence/),
   triggered by [`.forgejo/`](.forgejo/) workflows on the self-hosted
   Forgejo instance.
 
