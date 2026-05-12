@@ -38,7 +38,7 @@ the playbook says the safe order and acceptance standard for creating it.
 - [ ] `.forgejo-society/AGENTS.md`             (Spock’s self-model)
 - [ ] `.forgejo-society/APPEND_SYSTEM.md`      (character law)
 - [ ] `.forgejo-society/README.md` (already exists; expand to point at
-      AGENTS, SOCIETY-IMPLEMENTATION, THE-SOCIETY-OF-REPO)
+      AGENTS, FORGEJO-SOCIETY-PLAN, THE-SOCIETY-OF-REPO)
 
 ### Config
 

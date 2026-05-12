@@ -22,12 +22,19 @@ The project is organised around a small set of pillars:
 - **[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md)** — the
   governance, protocols, agencies, critics, censors, memory, and workspace
   specification that turn the forge into a governed mind.
-- **[`SOCIETY-IMPLEMENTATION/`](SOCIETY-IMPLEMENTATION/README.md)** — the
-  concrete runtime layout that maps the Society of Repo specification onto
-  Forgejo workflows and services.
+- **[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/README.md)** — the
+  planning documents that map the Society of Repo specification onto the
+  two operational targets in this repository:
+  [`.forgejo/workflows/forgejo-society.yaml`](.forgejo/) (the body) and
+  [`.forgejo-society/`](.forgejo-society/) (the mind).
+- **[`.forgejo-intelligence/`](.forgejo-intelligence/)** — the runnable
+  Forgejo runtime surface (formerly `PAST-REPO/forgejo-intelligence/`):
+  surface handlers, coordinators, agent engines, tests, and runtime state.
+  It is being aligned with the Society of Repo specification and the
+  `FORGEJO-SOCIETY-PLAN/` collapse rule.
 - **[`PAST-REPO/`](PAST-REPO/)** — earlier and sibling experiments
-  (`forgejo-intelligence`, `github-minimum-intelligence`) that are being
-  converted from a GitHub-runtime design to a Forgejo-runtime design.
+  (`github-minimum-intelligence`) that are being converted from a
+  GitHub-runtime design to a Forgejo-runtime design.
 
 GitHub is used here only as a development environment and as one of several
 mirrors; the production runtime target is always self-hosted Forgejo. See

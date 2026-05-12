@@ -1,4 +1,7 @@
-# SOCIETY-IMPLEMENTATION
+# FORGEJO-SOCIETY-PLAN
+
+> See the [repository overview](../README.md) for how this folder fits with
+> `THE-SOCIETY-OF-REPO/`, `.forgejo-society/`, and `.forgejo-intelligence/`.
 
 Planning documents for the implementation of the **Society of Repo** specification
 (`THE-SOCIETY-OF-REPO/`) and the **repo-as-mind** thesis

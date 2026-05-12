@@ -9,7 +9,7 @@ git history. The Society supplies the governed mind: constitutions, critics,
 censors, settlements, memory, rights, and approvals.
 
 This protocol turns the Forgejo operational model extracted from
-`PAST-REPO/forgejo-intelligence` into SOR requirements.
+`.forgejo-intelligence` into SOR requirements.
 
 ---
 
