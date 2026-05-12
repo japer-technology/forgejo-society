@@ -1,6 +1,6 @@
-# forgejo-society
+# Forgejo Society
 
-> Society emerges when Minds, Intelligence, and Skill act together as one.
+> Societies emerge when Minds, Intelligences, and Skills act together as one.
 
 ## Introduction
 
