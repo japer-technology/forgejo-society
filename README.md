@@ -40,8 +40,7 @@ The project is organised around a small set of pillars:
   [`.forgejo/workflows/forgejo-society.yaml`](.forgejo/) (the body) and
   [`.forgejo-society/`](.forgejo-society/) (the mind).
 - **[`REPO/forgejo-intelligence/`](REPO/forgejo-intelligence/)** — the runnable
-  Forgejo runtime surface (formerly `.forgejo-intelligence/`, originally
-  `FORGEJO-SOCIETY-PAST/forgejo-intelligence/`): surface handlers, coordinators, agent
+  Forgejo runtime surface (formerly `.forgejo-intelligence/`: surface handlers, coordinators, agent
   engines, tests, and runtime state. It is being aligned with the Society of
   Repo specification and the `FORGEJO-SOCIETY-PLAN/` collapse rule.
 - **[`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/)** — earlier and sibling experiments
