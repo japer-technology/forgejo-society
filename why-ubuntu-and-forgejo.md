@@ -1,135 +1,133 @@
-# A Public Plea for a Fair Hearing
+# Why I'm Moving to Ubuntu and Forgejo
 
-*An open statement from the owner of the `japer-technology` GitHub Enterprise Cloud organisation regarding the suspension of the business-use GitHub account `japertechnology`.*
+*A companion note from the owner of the `japer-technology` GitHub Enterprise Cloud organisation.*
 
 ---
 
 ## Why this document exists
 
-The GitHub account I use for Japer Technology business activity, `japertechnology`, has been suspended. The notice referenced the Terms of Service generally rather than identifying a specific clause, which has made it harder for me to address the concern as precisely as I would like. I have submitted an appeal through the standard channel and am awaiting review.
+I have separately set out my position on the suspension of the `japertechnology` business-use account: I have appealed, I have contained, I have corrected the framing, and I would like a fair hearing. That position is about GitHub.
 
-I am writing this in the open — in a public repository inside the `japer-technology` organisation, which itself remains in good standing — because I want my position on the record alongside that appeal. My intent is simply to ask, in plain language, for a fair hearing.
+This document is about me.
 
-If a GitHub policy reviewer reads this, I hope it helps you understand who I am, what I was actually trying to do, what I have already done to fix it, and why I believe reinstatement — possibly with conditions — would be a proportionate outcome.
+It is about a parallel decision I am making for my own work, independently of how the appeal turns out: I am standing up a self-hosted **[Forgejo](https://forgejo.org/)** instance on **[Ubuntu Server LTS](https://ubuntu.com/server)** as the primary, durable home for Japer Technology's source code, issues, and CI.
 
-If anyone else reads this, I hope it stands as an honest account of one developer's experience working through the appeal process.
-
----
-
-## Who I am
-
-I am an independent developer and the owner of Japer Technology. The `japer-technology` organisation is a small Enterprise Cloud account with three members: the suspended business-use account (`japertechnology`), my private GitHub account (`ericmourant`), and `polgov1`, a director of Japer Technology. The organisation itself has not been suspended. The other members remain active and in good standing. The action taken was specifically and narrowly against the `japertechnology` account.
-
-To avoid any misunderstanding, I am not using `ericmourant` or asking `polgov1` to bypass the suspension or continue the suspended activity. Any actions by active organisation members are limited to legitimate containment, preservation, administration, and appeal support.
-
-I have been a paying GitHub customer. I chose Enterprise Cloud because I take the platform seriously and wanted to use it properly. I am not a bad actor, I am not running spam, I am not running malware, and I am not engaged in inauthentic activity. I am a developer who builds things on GitHub because I believe in GitHub.
+I want to explain that decision in plain language, in the same calm tone as the public plea, and on the record.
 
 ---
 
-## What I was actually doing
+## What this is not
 
-The project that I believe drew attention is `github-minimum-intelligence` ("GMI") — a repository-development tool that uses GitHub Issues as the interaction surface, GitHub Actions as the execution layer, and Git as persistent memory. It uses only documented, publicly supported GitHub APIs and features. It exists to help maintain, test, document, and propose changes to a repository — the same category of work that GitHub itself now ships as a commercial product through **Copilot Coding Agent** and **GitHub Agentic Workflows**.
+Before anything else, I want to be precise about what this move is **not**:
 
-That is the substance of the project. I want to be honest about two things that I believe, in retrospect, made it look like something more concerning than it was:
+- **It is not a boycott.** I am not asking anyone to leave GitHub. I am not "going dark" on GitHub. The `japer-technology` organisation remains in good standing and I intend to keep using it.
+- **It is not a campaign.** I am not framing this as a protest, a statement, or a "goodbye to GitHub" post. It is an engineering decision about resilience.
+- **It is not a claim of equivalence.** Forgejo is excellent open-source software, but it is not a like-for-like replacement for GitHub. GitHub's product surface — Copilot, the marketplace, Discussions, Sponsors, the network effects of millions of developers — is its own thing. I am not pretending otherwise.
+- **It is not a complaint about the suspension.** As I said in the plea: I accept that the Terms of Service permit suspension without prior notice, and I am not asking for procedural relief. The reason I am moving is forward-looking, not retaliatory.
+- **It is not contingent on the appeal.** Whether the appeal succeeds or fails, I am doing this. If `japertechnology` is reinstated tomorrow, the Forgejo instance still goes up.
 
-### 1. The framing was too broad
-
-Some of my public repository descriptions used language like *"GitHub as Infrastructure,"* *"GitHub is the runtime,"* and *"execution fabric."* I understand now how that reads to a policy reviewer. The Additional Product Terms for Actions are clear that Actions is for the development, testing, deployment, and publication of the software project associated with the repository — not as a general-purpose compute or serverless platform. My language overshot. It described an aspiration in terms that sounded like platformising Actions beyond its permitted scope. That was a framing mistake on my part, not a description of what the code actually does.
-
-### 2. The agent was high-powered without enough guardrails
-
-The public workflow requested broad write permissions (`contents: write`, `issues: write`, `actions: write`), allowed arbitrary bash execution, and pushed directly to `main`. The intent was experimentation. The effect was a configuration that did not match the cautious, guardrailed pattern that GitHub's own agentic-workflows guidance now defines (read-only defaults, safe outputs for writes, sandboxing, allowlisting, human review). I understand why a system that looks like that, running at scale, would be flagged.
-
-I am not pretending those choices were ideal. They were not. I own them.
+This is an architectural choice, not a grievance.
 
 ---
 
-## What I am not saying
+## The lesson I am acting on
 
-I want to be precise about what I am **not** claiming, because credibility matters here:
+I have said elsewhere, in a note addressed to other developers, that independent backups matter: that Section L.3 of the Terms of Service is real, that the 90-day data window is real, and that whatever you build on this platform should be built so that the loss of any one account is recoverable. That is not paranoia; it is engineering resilience.
 
-- **I am not claiming any procedural unfairness.** The Terms of Service permit suspension without prior notice, and I accept that. I am asking for reconsideration on the merits, not on procedure.
-- **I am not claiming I was singled out.** I accept that my framing and my agent's configuration could reasonably have looked concerning from the outside, and I want to explain that the underlying activity was legitimate and is now contained.
-- **I am not drawing any comparison or equivalence between my project and GitHub's own products.** I mention the broader architectural category only to note that the pattern is now well understood, that my implementation lacked the guardrails GitHub's own published guidance recommends, and that I have already brought it into line with that guidance.
-- **I am not minimising any operational impact.** If my workflows placed unwanted load on GitHub's infrastructure, I take responsibility for that. GitHub is best placed to judge that impact, and I accept its assessment.
-- **I am not asking anyone to apply pressure on my behalf.** I am stating my position publicly so that it is clearly on the record alongside my appeal. I am not calling for boycotts, brigades, or campaigns, and I would ask anyone reading this not to do so on my behalf.
+I wrote that sincerely, and I have to act on it sincerely. It would be incoherent to publicly tell other developers to build for resilience and then leave my own setup in the same single-provider posture that made the suspension feel as disorienting as it did.
+
+So this is me taking my own advice. The point of the move is not "instead of GitHub." The point is "in addition to GitHub, under my own control, on my own hardware, recoverable by me."
 
 ---
 
-## What has already been done
+## Why Ubuntu
 
-Containment is not a promise. It is the foundation on which any reinstatement request must stand. The remaining organisation members have already taken the following actions:
+I considered several Linux distributions. I am picking **Ubuntu Server LTS** because it is, deliberately, the boring choice:
 
-- **Automated workflows have been disabled** across the affected repositories.
-- **All API secrets and tokens** that ever touched the relevant workflows **have been rotated**.
-- **Public framing has been corrected.** Language describing the project as *"GitHub as infrastructure,"* *"the runtime,"* *"execution fabric,"* or *"runnable infrastructure units"* is being removed from all public-facing materials. The project is being re-described, accurately, as repository-development automation.
-- **Non-essential repositories are being archived** (read-only, transparent — not hidden) to reduce the public surface while review is pending.
-- **Organisation ownership has been verified** to ensure the org cannot be locked out while the `japertechnology` account is suspended.
-- **Account data preservation** has been initiated within the 90-day window described in Section L.2 of the Terms of Service.
+- **Long-term support.** Five years of standard support per LTS release, with the option to extend further. For a Git forge that I want to forget about for years at a time, that horizon matters more than novelty.
+- **Predictable, well-documented, well-trodden.** Forgejo, container runtimes, reverse proxies, backup tooling, monitoring agents — everything I need has first-class instructions for Ubuntu. When something breaks at 02:00, I want the search results to be obvious.
+- **Sensible defaults.** Unattended security upgrades, AppArmor, UFW, systemd, journald — the basics are already there and configured the way most operators expect.
+- **Hardware-agnostic.** It runs equally well on a small VPS, a home server, a NUC, or a cloud instance. That flexibility matters because the *point* of this exercise is not to be tied to one provider's environment.
+- **Familiarity.** I already operate Ubuntu. Choosing the OS I know best minimises the chance that I introduce a security or availability problem through unfamiliarity.
 
-If reinstated, I will additionally commit to:
-
-- **Read-only-by-default permissions** on all agent workflows, with writes performed via pull requests requiring human review.
-- **No direct pushes to `main`.** All changes through branch protection and CODEOWNERS review.
-- **Rate limits** on API calls and workflow triggers, sized to be a small fraction of any reasonable per-account budget.
-- **Tool allowlisting** instead of arbitrary bash execution.
-- **Network restrictions** on agent runners.
-- **Scope limited explicitly** to the development, testing, documentation, and maintenance of the repositories the agent is configured for — i.e., the scope permitted by the Additional Product Terms for Actions.
-
-These are not future promises in lieu of action. The org-level containment is already done. No agent workflow will run again from any account unless the guardrails are in place and the activity is clearly permitted.
+Ubuntu is not the most interesting answer. It is the answer least likely to surprise me. For infrastructure that has to *just keep working*, that is the right tradeoff.
 
 ---
 
-## The proportionality argument
+## Why Forgejo
 
-GitHub's Appeal and Reinstatement policy explicitly contemplates outcomes other than a binary keep-or-reverse. It allows a decision to be modified where a lesser severity of action is more appropriate. I would respectfully draw attention to several facts that I believe support a proportionate outcome:
+For the forge itself, I am picking **Forgejo**. The reasoning, in order of importance to me:
 
-1. **The action was already proportionate at the org level.** GitHub suspended one user account. It did not suspend the organisation, the other members, or the repositories. I read that pattern as a careful, account-level assessment, and I am grateful for it.
-2. **The architectural category is well established.** AI agents triggered by Issues, executing in Actions, and proposing changes to repositories with human review before merge is a recognised pattern, and GitHub has published clear guidance on how to do it safely. My earlier implementation did not follow that guidance closely enough; the corrected version does.
-3. **Remediation is complete or in progress, not hypothetical.** The unsuspended members have done the containment. The framing has been corrected. The technical guardrails are defined and ready to deploy.
-4. **The customer relationship is Enterprise Cloud, paid, and in good standing on the org side.** This is not a throwaway account. I have a long-term commitment to using this platform properly.
+### 1. It is genuinely community-governed and copyleft
 
-The proportionate outcome, as I see it, would be reinstatement of the one user account — with conditions if appropriate, with a probationary period if appropriate, or with a requirement to demonstrate the guardrails are in place before any agent workflow is enabled again. I would welcome any of those.
+Forgejo is a [Codeberg e.V.](https://codeberg.org/) project, [licensed GPLv3+](https://codeberg.org/forgejo/forgejo) (with AGPLv3+ for newer code), and developed in the open by a community of contributors rather than a single company. The whole reason I am doing this is to reduce single-point-of-control risk over my own work. Picking a forge whose own governance reduces that risk is consistent.
+
+### 2. It is a Git forge, not a reinvention
+
+Forgejo is "Git, with a web UI and the surrounding bits a small team needs": repositories, issues, pull/merge requests, wikis, releases, an API, webhooks, and a CI runner system ([Forgejo Actions](https://forgejo.org/docs/latest/user/actions/)) that is broadly compatible with the GitHub Actions workflow syntax. That last point matters practically — it means the workflows I have already written for GitHub are mostly portable, and I am not locking myself into a third bespoke CI dialect.
+
+### 3. The data is mine, in formats I understand
+
+Repositories are bare Git repositories on disk. Issues, users, and metadata live in a standard relational database. Attachments live in a directory or in object storage I control. I can `tar` it, I can `rsync` it, I can restore it on another machine in an afternoon. There is no proprietary export format and no vendor in the loop.
+
+### 4. It is operationally small enough for one person
+
+Forgejo runs as a single binary or a single container, with modest resource requirements. It is realistic for one developer to operate it, patch it, back it up, and monitor it without a platform team. That fits the size of Japer Technology honestly.
+
+### 5. It coexists cleanly with GitHub
+
+Git is distributed by design. The same repository can have `origin` pointing at GitHub and a second remote pointing at Forgejo, with mirror pushes in either direction. I do not have to choose. The Forgejo instance can be the durable copy of record while GitHub remains the public collaboration surface — or vice versa, or both, depending on the project.
+
+I considered other options (notably Gitea, GitLab CE, and just-bare-Git over SSH). Gitea is excellent, and Forgejo is its community-governed soft fork; the governance argument tipped me to Forgejo. GitLab CE is more capable but materially heavier to operate solo. Bare Git over SSH is the most minimal answer but gives up issues, CI, and a UI — the things I actually use.
 
 ---
 
-## What I am asking for
+## What this looks like in practice
 
-In order, in plain language:
+I am not going to describe the specific deployment in detail in a public document, for the obvious operational reasons. In broad strokes, the intent is:
 
-1. **Communication.** If it is possible to share which specific policy area is at issue, that would help me address it precisely and in good faith.
-2. **Review.** Please consider the appeal I have already submitted alongside the remediation that has already been done.
-3. **A proportionate decision.** Reinstatement, with conditions if appropriate. If the answer is no, I would respectfully ask for the secondary review path that the Appeal and Reinstatement policy already provides.
-4. **A path forward.** If there are specific changes I should make to the project, the workflows, the public framing, or my conduct as a customer, I would genuinely like to know what they are. I would much rather change my project than lose my account.
+- An Ubuntu Server LTS host I control, running a current Forgejo release.
+- HTTPS via a standard reverse proxy and an automated certificate.
+- Off-host, encrypted backups of the Git data, the database, and the attachments, on a regular schedule, with restore tested.
+- A small number of self-hosted runners for CI, scoped narrowly and configured according to the same guardrail patterns I have committed to elsewhere: least-privilege tokens, no arbitrary network egress from runners, allowlisted tools, and human review before anything merges.
+- Mirroring between Forgejo and the relevant GitHub repositories where it is useful, so the two stay in sync rather than diverging.
+- Clear separation between *Japer Technology business code* (which moves to Forgejo as the primary home) and *public open-source projects and analyses* (which continue to live happily on GitHub).
+
+Nothing here is novel. It is a standard small-shop self-hosted forge setup, deliberately so.
 
 ---
 
-## A note on tone
+## What this does *not* change about my relationship with GitHub
 
-I am writing this calmly and on purpose. Suspension is a disorienting experience for any developer, and I want to be clear that I am not approaching this as a grievance. I believe the right way to ask for a fair hearing is to behave like someone who is genuinely seeking one, in good faith and with respect for the people on the other side of the process. That is what I am trying to do here.
+To be unambiguous:
+
+- The `japer-technology` GitHub organisation stays. The repositories there stay. My remediation commitments — read-only-by-default agent permissions, no direct pushes to `main`, rate limits, tool allowlisting, network restrictions, scope limited to the Additional Product Terms for Actions — all stand.
+- I am still a paying Enterprise Cloud customer. I still want the `japertechnology` business-use account reinstated. I still want a conversation. I still want to do this properly on the platform.
+- Public collaboration on open work continues to make sense on GitHub. That is where the developers are, and I respect that.
+
+Standing up Forgejo is about making sure that the loss of any one account, on any one platform — including this one — is recoverable. That is engineering resilience. The plea and the move are not in tension. They come from the same place: a developer trying to behave responsibly on platforms he depends on.
 
 ---
 
 ## A note to other developers
 
-If you are reading this because you are also a developer building on GitHub, I want to leave one thought:
+If you are reading this because you are also a developer thinking about your own resilience posture, two thoughts:
 
-**Keep independent backups.** Section L.3 of the Terms of Service is real. The 90-day data window is real. Whatever you build on this platform, build it so that the loss of any one account is recoverable. That is not paranoia. It is engineering resilience. I wish I had taken it more seriously sooner. Please learn from that, even if nothing else here applies to you.
+1. **Do not move in anger.** A migration done because you are upset is a migration done badly. Whatever you set up in that mood will be operated in that mood, and it will hurt you later. Wait until the decision is boring.
+2. **Mirror, don't migrate, first.** The cheapest, lowest-risk first step is *additive*, not *substitutive*: get a second copy of your important repositories somewhere you control, on hardware or a VPS you pay for directly, with backups you have actually restored once. You do not need to leave anywhere to do that. You just need to stop being one account away from a bad day.
 
-And if your work touches GitHub Actions in ways that go beyond ordinary CI/CD: read the Additional Product Terms carefully, watch your framing, and adopt the guardrail patterns that GitHub's own agentic-workflows guidance recommends. The platform direction is clear. Build with it, not around it.
+That is what I am doing. It is not dramatic. It is just overdue.
 
 ---
 
 ## Closing
 
-I am one developer. I made some framing mistakes. I built an agent that was too powerful and not guardrailed enough. I have taken responsibility for that, contained it, and am ready to do whatever is needed to bring the work fully inside the boundaries the platform sets.
+I am moving Japer Technology's source-of-truth onto Ubuntu and Forgejo because the suspension reminded me, in a way I cannot un-learn, that any single platform — however good, however well-intentioned, however much I like using it — is a single point of failure for work I care about. The right response to that lesson is not to leave GitHub. The right response is to make sure I can survive being parted from it.
 
-I would like to be reinstated. I would like a conversation. I would like a chance to do this properly.
+The appeal still stands. So does my preference, all things being equal, to keep building on GitHub. This document just says, plainly, what I am doing in parallel so that the answer to "what happens if the platform says no?" is no longer "I find out the hard way."
 
-I am writing this publicly so that my position is clearly on the record alongside my appeal. If you are at GitHub and you are reading this: thank you for the time. I am ready whenever you are.
-
-— The owner of `japer-technology`
+— The owner of `japer-technology`: Eric Mourant
 
 ---
 
-*This document represents my personal position. It is not a legal claim, a demand, or a campaign. It is a request for a fair hearing through GitHub's own published processes. Related context is available in this repository's other analysis documents.*
+*This document represents my personal position. It is not a legal claim, a demand, or a campaign. It is an engineering note about resilience, written to sit on the public record alongside the other analysis documents in this repository.*
