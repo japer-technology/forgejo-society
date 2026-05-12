@@ -1,4 +1,4 @@
-# Forgejo Society — Introduction
+# Forgejo Society: Introduction
 
 <p align="center">
   <picture>
