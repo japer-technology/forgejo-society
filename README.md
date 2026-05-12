@@ -1,5 +1,7 @@
 # forgejo-society
 
+> Society emerges when Minds, Intelligence, and Skill act together as one.
+
 ## Introduction
 
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
