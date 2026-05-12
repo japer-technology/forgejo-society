@@ -1,0 +1,33 @@
+node_modules/
+.github-openclaw-intelligence/node_modules/
+.github-openclaw-intelligence/state/agents/*
+!.github-openclaw-intelligence/state/agents/main/
+.github-openclaw-intelligence/state/agents/main/*
+!.github-openclaw-intelligence/state/agents/main/sessions/
+.github-openclaw-intelligence/state/credentials/
+.github-openclaw-intelligence/skills/*
+!.github-openclaw-intelligence/skills/.gitkeep
+.github-openclaw-intelligence/SOUL
+.github-openclaw-intelligence/.openclaw/
+.github-openclaw-intelligence/package-lock.json
+.DS_Store
+
+# ── OpenClaw workspace leak guard ──────────────────────────────────────────────
+# OpenClaw may create identity/metadata files in the workspace root (repo root)
+# during agent execution.  These MUST NOT be committed — the canonical copies
+# live inside .github-openclaw-intelligence/.  cleanLeakedRootFiles() deletes
+# them before `git add`, but .gitignore acts as a final safety net.
+# Keep in sync with cleanLeakedRootFiles() in lifecycle/agent.ts and the
+# DEFAULT_*_FILENAME constants in openclaw's workspace module.
+/AGENTS.md
+/BOOTSTRAP.md
+/HEARTBEAT.md
+/IDENTITY.md
+/MEMORY.md
+/memory.md
+/SOUL
+/SOUL.md
+/TOOLS.md
+/USER.md
+/.openclaw/
+/memory/
