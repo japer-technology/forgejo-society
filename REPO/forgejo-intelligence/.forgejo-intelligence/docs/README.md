@@ -12,5 +12,5 @@ work and should not be read as active Forgejo runtime documentation.
 
 For current conversion status, see:
 
-- [../../CONVERSION/FORGEJO-MIND-SETUP-CONVERSION-PLAN.md](../../CONVERSION/FORGEJO-MIND-SETUP-CONVERSION-PLAN.md)
+- [../../CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../CONVERSION/FORGEJO-CONVERSION-PLAN.md)
 - [../../CONVERSION/README.md](../../CONVERSION/README.md)

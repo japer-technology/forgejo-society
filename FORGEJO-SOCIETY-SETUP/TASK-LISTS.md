@@ -62,7 +62,7 @@ through long-form guides.
 
 ## How to use this folder well
 
-1. Start in [FORGEJO-MIND-SETUP/README.md](README.md) for guide-first navigation.
+1. Start in [FORGEJO-SOCIETY-SETUP/README.md](README.md) for guide-first navigation.
 2. Use this file when you want checklist-first navigation.
 3. Drop into the detailed guide only after you know which checklist governs the work.
-4. Update this index whenever a new operational checklist is added anywhere under `FORGEJO-MIND-SETUP/`.
+4. Update this index whenever a new operational checklist is added anywhere under `FORGEJO-SOCIETY-SETUP/`.

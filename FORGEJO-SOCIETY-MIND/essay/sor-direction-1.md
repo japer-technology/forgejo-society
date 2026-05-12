@@ -57,7 +57,7 @@ is the collapse that fuses the three.
 
 ---
 
-## 2. What PAST-REPO actually proved
+## 2. What FORGEJO-SOCIETY-PAST actually proved
 
 `.forgejo-intelligence/` is not a doodle. It is a runnable
 Bun/TypeScript installer with `.forgejo` workflows, a Forgejo API adapter, a
@@ -89,7 +89,7 @@ take for granted:
    move a live system off GitHub-Actions runtime without losing portable state
    ([CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
 
-What PAST-REPO did **not** have, and admitted it did not have, is *cognition*.
+What FORGEJO-SOCIETY-PAST did **not** have, and admitted it did not have, is *cognition*.
 It had surfaces, sessions, an agent runtime, and a guardrail. It did not have
 frames, K-lines, critics, censors, settlements, credit assignment, or
 governance. It was a polite, fail-closed listener with a memory of past
@@ -114,16 +114,16 @@ service, a sidecar daemon, or a "control panel app." The mind is a folder; the
 body is a workflow; if it is not in those two places, it does not exist for
 the running society.
 
-Read against PAST-REPO, four upgrades are visible:
+Read against FORGEJO-SOCIETY-PAST, four upgrades are visible:
 
-- **One workflow, not many.** PAST-REPO had one workflow because it was small.
+- **One workflow, not many.** FORGEJO-SOCIETY-PAST had one workflow because it was small.
   `FORGEJO-SOCIETY-PLAN/02-workflow-design.md` makes one workflow a
   *constitutional* rule — multiple workflows would race settlement,
   censorship, and credit assignment across event boundaries Forgejo cannot
   coordinate ([00-overview.md §Why one workflow](../../FORGEJO-SOCIETY-PLAN/00-overview.md)).
 - **One root folder, not several.** `.forgejo-society/` is the *whole* mind.
   Removing it disables the society. A single PR can change cognition. The
-  kill-switch invariant is the same one PAST-REPO proved, raised to constitute
+  kill-switch invariant is the same one FORGEJO-SOCIETY-PAST proved, raised to constitute
   the entire substrate ([00-overview.md §Why one folder](../../FORGEJO-SOCIETY-PLAN/00-overview.md)).
 - **Cognitive primitives become first-class files.** Frames as YAML, K-lines as
   YAML, critics and censors as Markdown manifests with a schema
@@ -227,11 +227,11 @@ society. Only the presentation is serial. The design is correct.
 
 ### 4.5 Could the project be aiming at the wrong scale?
 
-PAST-REPO operated at one-repo scale. `THE-SOCIETY-OF-REPO/` operates at
+FORGEJO-SOCIETY-PAST operated at one-repo scale. `THE-SOCIETY-OF-REPO/` operates at
 one-society scale. The hardware reference in
 [README.md §Hardware reference](../../README.md) — one i9 forge, sixteen i7
 runners, one i9+RTX 4090 LLM box — is sized for *many* simultaneous
-settlements ([FORGEJO-MIND/analysis/forgejo-mind-expected-performance.md](../analysis/forgejo-mind-expected-performance.md)).
+settlements ([FORGEJO-SOCIETY-MIND/analysis/forgejo-mind-expected-performance.md](../analysis/forgejo-mind-expected-performance.md)).
 The cross-society protocols ([THE-SOCIETY-OF-REPO/09-channels/](../../THE-SOCIETY-OF-REPO/09-channels/))
 and the meta-admin role anticipate *many* societies.
 
@@ -253,7 +253,7 @@ It does **not** mean:
 - *Highest benchmark score on a coding-agent eval.* Benchmarks measure single
   agents on isolated tasks. SOR is not in that category and competing on those
   numbers would distort the design.
-- *Most capabilities checked off.* PAST-REPO already had twenty surface
+- *Most capabilities checked off.* FORGEJO-SOCIETY-PAST already had twenty surface
   folders. Capability count is not the moat.
 - *Most users.* The substrate is self-hosted Forgejo on local hardware
   ([README.md](../../README.md)). User count is not the metric.
@@ -332,7 +332,7 @@ That reorientation should show up in three places:
 The architecture's superpower is *legibility of cognition*. Lead with the
 superpower.
 
-### 6.3 Lock in the migration story from PAST-REPO before adding new agencies
+### 6.3 Lock in the migration story from FORGEJO-SOCIETY-PAST before adding new agencies
 
 .forgejo-intelligence is real, runnable, and battle-tested in narrow
 ways. The new society has a vastly larger surface area and almost no
@@ -361,11 +361,11 @@ the integration layer and the cognition layer, versioned in
   change) without touching cognition.
 - The cognition layer can be tested end-to-end against fixture stimuli without
   ever needing a live Forgejo instance.
-- The migration from PAST-REPO becomes additive, not disruptive: existing
+- The migration from FORGEJO-SOCIETY-PAST becomes additive, not disruptive: existing
   surfaces keep working; new cognition starts firing as soon as the seam is
   populated.
 
-This is the change that turns PAST-REPO from "earlier work" into "lower half
+This is the change that turns FORGEJO-SOCIETY-PAST from "earlier work" into "lower half
 of the stack."
 
 ---
@@ -427,7 +427,7 @@ git history, and sovereignty over thought are not features that can be added
 to an agent product. They are the consequences of choosing this substrate
 from the beginning.
 
-PAST-REPO proved the substrate works. `THE-SOCIETY-OF-REPO/` earned the
+FORGEJO-SOCIETY-PAST proved the substrate works. `THE-SOCIETY-OF-REPO/` earned the
 theory. `FORGEJO-SOCIETY-PLAN/` is the collapse. The remaining work is to
 ship the Phase A skeleton, defend the collapse rule, lead with the cognitive
 trace, lock the seam to the integration layer, and resist every pressure to

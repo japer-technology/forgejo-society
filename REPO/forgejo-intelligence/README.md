@@ -283,7 +283,7 @@ See [local development help](.forgejo-intelligence/help/local-development.md).
 | [.forgejo-intelligence/README.md](.forgejo-intelligence/README.md) | Runtime folder guide. |
 | [.forgejo-intelligence/forgejo-intelligence-QUICKSTART.md](.forgejo-intelligence/forgejo-intelligence-QUICKSTART.md) | Short install path. |
 | [.forgejo-intelligence/help/README.md](.forgejo-intelligence/help/README.md) | Operator help index. |
-| [CONVERSION/FORGEJO-MIND-SETUP-CONVERSION-PLAN.md](CONVERSION/FORGEJO-MIND-SETUP-CONVERSION-PLAN.md) | Conversion history and phase plan. |
+| [CONVERSION/FORGEJO-CONVERSION-PLAN.md](CONVERSION/FORGEJO-CONVERSION-PLAN.md) | Conversion history and phase plan. |
 
 ---
 

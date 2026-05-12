@@ -14,7 +14,7 @@ cognitive ecology.
 
 The project is organised around a small set of pillars:
 
-- **[`FORGEJO-MIND-SETUP/`](FORGEJO-MIND-SETUP/README.md)** — the practical,
+- **[`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md)** — the practical,
   command-level installation and operations library: how to bring Ubuntu, the
   Forgejo forge, runners, and the LLM server up from clean hardware to a
   fully running cognitive ecology.
@@ -31,10 +31,10 @@ The project is organised around a small set of pillars:
   [`.forgejo-society/`](.forgejo-society/) (the mind).
 - **[`REPO/forgejo-intelligence/`](REPO/forgejo-intelligence/)** — the runnable
   Forgejo runtime surface (formerly `.forgejo-intelligence/`, originally
-  `PAST-REPO/forgejo-intelligence/`): surface handlers, coordinators, agent
+  `FORGEJO-SOCIETY-PAST/forgejo-intelligence/`): surface handlers, coordinators, agent
   engines, tests, and runtime state. It is being aligned with the Society of
   Repo specification and the `FORGEJO-SOCIETY-PLAN/` collapse rule.
-- **[`PAST-REPO/`](PAST-REPO/)** — earlier and sibling experiments
+- **[`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/)** — earlier and sibling experiments
   (`github-minimum-intelligence`) that are being converted from a
   GitHub-runtime design to a Forgejo-runtime design.
 
@@ -42,7 +42,7 @@ GitHub is used here only as a development environment and as one of several
 mirrors; the production runtime target is always self-hosted Forgejo. See
 [`github-compliance.md`](github-compliance.md) for the full posture.
 
-See [`FORGEJO-MIND-SETUP/`](FORGEJO-MIND-SETUP/README.md) for local
+See [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md) for local
 installation instructions.
 
 ---
