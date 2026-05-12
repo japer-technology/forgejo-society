@@ -115,7 +115,10 @@ If any one of those is impossible, the implementation is not done.
   under `.forgejo-society/config/`)
 - Network egress policy specifics beyond the censor catalogue
 - Cross-society channels (`THE-SOCIETY-OF-REPO/09-channels/`) — covered as a stub
-  in the folder spec; full inter-society work is a later phase
+  in the folder spec; the *model* for inter-society calls is incorporated in
+  `13-inter-repo-communication.md` (built on
+  `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`), but
+  activating the first real channel is a later phase
 - Public-fabric publishing — Spock is the only public voice; the public-fabric
   agency is listed but not implemented in the first commit
 

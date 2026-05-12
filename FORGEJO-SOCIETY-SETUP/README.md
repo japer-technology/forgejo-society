@@ -1,5 +1,11 @@
 # FORGEJO Documentation Hub
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 `FORGEJO-SOCIETY-SETUP/` is the primary documentation library for this repository.
 It is organised so operators can either move fast from curated entry points or drill down into
 deep, command-level procedures.

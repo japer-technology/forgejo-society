@@ -1,5 +1,11 @@
 # Forgejo Society — Introduction
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 > **The forge is the mind. The repo is an agency. The society thinks.**
 
 This directory is the **gentle on-ramp** to the project. It explains, in plain
