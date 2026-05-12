@@ -49,3 +49,5 @@ See [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md) for local
 installation instructions.
 
 ---
+
+🧠 by Eric Mourant
