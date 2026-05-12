@@ -53,7 +53,7 @@ here, the mapping is out of date and must be updated.
 | `02-protocols/04-activation.md` | `.forgejo-society/protocols/activation.md` + `lifecycle/activate.ts` |
 | `02-protocols/05-settlement.md` | `.forgejo-society/protocols/settlement.md` + `schemas/settlement.schema.json` + `lifecycle/settle.ts` |
 | `02-protocols/06-memory.md` | `.forgejo-society/protocols/memory.md` + `lifecycle/memory.ts` + `memory/` tree |
-| `02-protocols/07-service-channel.md` | `.forgejo-society/protocols/service-channel.md` + `services/` + `channels/` |
+| `02-protocols/07-service-channel.md` | `.forgejo-society/protocols/service-channel.md` + `services/` + `channels/` (inter-society call shape and obligations: `13-inter-repo-communication.md`, sourced from `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`) |
 | `02-protocols/08-governance.md` | `.forgejo-society/protocols/governance.md` + `governance/` tree |
 | `02-protocols/09-representation.md` | `.forgejo-society/protocols/representation.md` + write rules in `08-state-and-memory.md` |
 | `02-protocols/10-credit-assignment.md` | `.forgejo-society/protocols/credit-assignment.md` + `lifecycle/credit-assignment.ts` |
@@ -61,10 +61,10 @@ here, the mapping is out of date and must be updated.
 | `02-protocols/12-insulation.md` | `.forgejo-society/protocols/insulation.md` + workflow `concurrency:` group + per-stimulus state dirs |
 | `02-protocols/13-hierarchy-and-summaries.md` | `.forgejo-society/protocols/hierarchy.md` + `agencies/assembly/*` |
 | `02-protocols/14-relational-memory.md` | `.forgejo-society/protocols/relational-memory.md` + typed `linked:` fields in record schemas |
-| `02-protocols/15-forgejo-environment.md` | `.forgejo-society/protocols/forgejo-environment.md` + workflow itself |
+| `02-protocols/15-forgejo-environment.md` | `.forgejo-society/protocols/forgejo-environment.md` + workflow itself (single-adapter rule extends to inter-society calls per `13-inter-repo-communication.md`) |
 | `02-protocols/16-forgejo-runtime-layers.md` | `.forgejo-society/protocols/forgejo-runtime-layers.md` + folder/presence semantics throughout |
 | `02-protocols/17-forgejo-operational-verification.md` | `.forgejo-society/protocols/forgejo-operational-verification.md` + Phase A acceptance checks in `10-bootstrap-checklist.md` |
-| `02-protocols/18-bridges.md` | `.forgejo-society/protocols/bridges.md` + `lifecycle/lib/forgejo.ts` |
+| `02-protocols/18-bridges.md` | `.forgejo-society/protocols/bridges.md` + `lifecycle/lib/forgejo.ts` + named bridge agencies under `agencies/integration/` (per `13-inter-repo-communication.md`) |
 | `02-protocols/19-b-brain-observation.md` | `.forgejo-society/protocols/b-brain-observation.md` + `agencies/meta-admin/ecology-monitor.md` |
 
 ---
@@ -160,6 +160,7 @@ All run in the `criticize` workflow step.
 |---|---|
 | channels/README.md | `.forgejo-society/channels/README.md` (stub) |
 | reciprocal-agreement.example.md | `.forgejo-society/channels/<peer>/reciprocal-agreement.md` (Phase C) |
+| inter-society call model | `FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md` (incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`) |
 
 ---
 

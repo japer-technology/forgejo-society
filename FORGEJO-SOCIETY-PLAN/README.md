@@ -46,6 +46,7 @@ specification (`THE-SOCIETY-OF-REPO/`) and the operational implementation
 | [10-bootstrap-checklist.md](10-bootstrap-checklist.md) | Minimum-viable first-commit file list and acceptance checks. |
 | [11-mapping-sor-to-implementation.md](11-mapping-sor-to-implementation.md) | Explicit mapping from every `THE-SOCIETY-OF-REPO/` section to its concrete `.forgejo-society/` path or workflow step. |
 | [12-agent-implementation-playbook.md](12-agent-implementation-playbook.md) | Control-flow playbook for AI agents implementing Phase A safely and completely. |
+| [13-inter-repo-communication.md](13-inter-repo-communication.md) | Inter-society (inter-repo) communication plan: incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md` into the two implementation targets. |
 
 ---
 
@@ -87,7 +88,10 @@ reading.
 7. `04-folder-spec.md`, `05-agencies-critics-censors.md`,
    `06-frames-polynemes-klines.md`, `07-policies-and-safety.md`,
    `08-state-and-memory.md`, and `09-handoff-and-signal-schemas.md`.
-8. `11-mapping-sor-to-implementation.md` last, as a verification table.
+8. `13-inter-repo-communication.md` — how addressable, governed inter-society
+   calls land in the two implementation targets (read before opening any
+   real `channels/<peer>/` directory).
+9. `11-mapping-sor-to-implementation.md` last, as a verification table.
 
 If any implementation instruction appears ambiguous, preserve these priorities:
 fail-closed safety first, Phase A scope second, auditability third, and
