@@ -1,4 +1,4 @@
-# FORGEJO Documentation Hub
+# Forgejo Society Setup
 
 <p align="center">
   <picture>
