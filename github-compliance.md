@@ -6,7 +6,7 @@
 the runners, the agent lifecycle, the LLM server, the storage, the public
 surface — is a self-hosted [Forgejo](https://forgejo.org/) installation on
 Ubuntu hardware owned and operated by the project maintainers (see
-[`README.md`](README.md) and [`FORGEJO/`](FORGEJO/)).
+[`README.md`](README.md) and [`FORGEJO-MIND-SETUP/`](FORGEJO-MIND-SETUP/)).
 
 **GitHub is used as a development environment only.** Specifically, github.com
 is used for:
@@ -16,13 +16,13 @@ is used for:
 - Issue-based collaboration during development.
 - Acting as one of several **mirrors** of the canonical Forgejo repository
   (alongside Codeberg, GitLab, and Bitbucket — see
-  [`FORGEJO/transition-plan/03-codeberg-mirror.md`](FORGEJO/transition-plan/03-codeberg-mirror.md),
-  [`FORGEJO/transition-plan/07-gitlab-secondary-forge.md`](FORGEJO/transition-plan/07-gitlab-secondary-forge.md),
-  and [`FORGEJO/transition-plan/06-bitbucket-fallback.md`](FORGEJO/transition-plan/06-bitbucket-fallback.md)).
+  [`FORGEJO-MIND-SETUP/transition-plan/03-codeberg-mirror.md`](FORGEJO-MIND-SETUP/transition-plan/03-codeberg-mirror.md),
+  [`FORGEJO-MIND-SETUP/transition-plan/07-gitlab-secondary-forge.md`](FORGEJO-MIND-SETUP/transition-plan/07-gitlab-secondary-forge.md),
+  and [`FORGEJO-MIND-SETUP/transition-plan/06-bitbucket-fallback.md`](FORGEJO-MIND-SETUP/transition-plan/06-bitbucket-fallback.md)).
 
 Nothing in this repository is intended to run as a production service on
 github.com infrastructure. The cognitive ecology described in
-[`SOCIETY-OF-REPO/`](SOCIETY-OF-REPO/),
+[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/),
 [`SOCIETY-IMPLEMENTATION/`](SOCIETY-IMPLEMENTATION/), and
 [`THE-REPO-IS-THE-MIND/`](THE-REPO-IS-THE-MIND/) is designed to live inside
 Forgejo, not GitHub.
@@ -46,32 +46,32 @@ This project's posture aligns with that rule because:
 | **GitHub Actions** | Only as needed to develop, lint, build, or test the code in this repo. | Permitted by the [Actions service terms][actions-tos]: Actions are for the production, testing, deployment, or publication of the software project associated with the repository. |
 | **GitHub Pages** | Not used as a runtime surface for the agent on github.com. The agent's public surface is published from Forgejo. | Pages is not being used as a stand-alone application backend. |
 
-## Specific subprojects under `REPO/`
+## Specific subprojects under `PAST-REPO/`
 
-The directory [`REPO/`](REPO/) contains earlier or sibling experiments —
-notably [`REPO/github-minimum-intelligence/`](REPO/github-minimum-intelligence/)
-and [`REPO/forgejo-intelligence/`](REPO/forgejo-intelligence/) — that are
+The directory [`PAST-REPO/`](PAST-REPO/) contains earlier or sibling experiments —
+notably [`PAST-REPO/github-minimum-intelligence/`](PAST-REPO/github-minimum-intelligence/)
+and [`PAST-REPO/forgejo-intelligence/`](PAST-REPO/forgejo-intelligence/) — that are
 in the process of being converted from a GitHub-runtime design to a
 Forgejo-runtime design. The conversion is tracked in
-[`REPO/forgejo-intelligence/CONVERSION/`](REPO/forgejo-intelligence/CONVERSION/).
+[`PAST-REPO/forgejo-intelligence/CONVERSION/`](PAST-REPO/forgejo-intelligence/CONVERSION/).
 
 Within `forgejo-society`, those subprojects are **source under development**:
 
 - They are not deployed from this repository to run as services on github.com.
 - The workflow files they contain
-  (`REPO/github-minimum-intelligence/.github/workflows/*.yml`) are part of
+  (`PAST-REPO/github-minimum-intelligence/.github/workflows/*.yml`) are part of
   the historical artifact being migrated. Where any of them remain enabled
   on github.com they are limited to development purposes for the source
   in this repo (build/lint/test/checkout), not used to provide a
   stand-alone or integrated application or service to third parties.
 - The intended runtime for all "intelligence" / agent behaviour is the
   Forgejo-side equivalent under
-  [`REPO/forgejo-intelligence/.forgejo-intelligence/`](REPO/forgejo-intelligence/.forgejo-intelligence/),
+  [`PAST-REPO/forgejo-intelligence/.forgejo-intelligence/`](PAST-REPO/forgejo-intelligence/.forgejo-intelligence/),
   triggered by [`.forgejo/`](.forgejo/) workflows on the self-hosted
   Forgejo instance.
 
 If at any point you (a maintainer) intend to enable one of the
-`REPO/github-minimum-intelligence/.github/workflows/*.yml` workflows on a
+`PAST-REPO/github-minimum-intelligence/.github/workflows/*.yml` workflows on a
 public github.com repository as a user-facing service, re-read the
 [Actions service terms][actions-tos] first and confirm the use still falls
 within "production, testing, deployment, or publication of the software

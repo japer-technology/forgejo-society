@@ -163,7 +163,7 @@ First step of the first job. No agent code runs before it.
 ```
 
 This is the operational invariant from
-`SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`.
+`THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`.
 
 ---
 

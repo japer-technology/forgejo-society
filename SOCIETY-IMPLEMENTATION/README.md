@@ -1,7 +1,7 @@
 # SOCIETY-IMPLEMENTATION
 
 Planning documents for the implementation of the **Society of Repo** specification
-(`SOCIETY-OF-REPO/`) and the **repo-as-mind** thesis
+(`THE-SOCIETY-OF-REPO/`) and the **repo-as-mind** thesis
 (`THE-REPO-IS-THE-MIND/possibility-2.md`) into the two operational targets that
 already exist in this repository:
 
@@ -15,7 +15,7 @@ already exist in this repository:
 
 This folder contains **planning only**. It does not contain runtime code,
 agency manifests, or runtime state. It is the bridge between the abstract
-specification (`SOCIETY-OF-REPO/`) and the operational implementation
+specification (`THE-SOCIETY-OF-REPO/`) and the operational implementation
 (`.forgejo/workflows/forgejo-society.yaml` + `.forgejo-society/`).
 
 ---
@@ -35,26 +35,26 @@ specification (`SOCIETY-OF-REPO/`) and the operational implementation
 | [08-state-and-memory.md](08-state-and-memory.md) | State, episodic, semantic, procedural, and K-line memory layout. |
 | [09-handoff-and-signal-schemas.md](09-handoff-and-signal-schemas.md) | Signal, handoff, settlement, and K-line schema sketches. |
 | [10-bootstrap-checklist.md](10-bootstrap-checklist.md) | Minimum-viable first-commit file list and acceptance checks. |
-| [11-mapping-sor-to-implementation.md](11-mapping-sor-to-implementation.md) | Explicit mapping from every `SOCIETY-OF-REPO/` section to its concrete `.forgejo-society/` path or workflow step. |
+| [11-mapping-sor-to-implementation.md](11-mapping-sor-to-implementation.md) | Explicit mapping from every `THE-SOCIETY-OF-REPO/` section to its concrete `.forgejo-society/` path or workflow step. |
 | [12-agent-implementation-playbook.md](12-agent-implementation-playbook.md) | Control-flow playbook for AI agents implementing Phase A safely and completely. |
 
 ---
 
 ## The two-target collapse rule
 
-`SOCIETY-OF-REPO/` is the specification. It is large and many-folder.
+`THE-SOCIETY-OF-REPO/` is the specification. It is large and many-folder.
 `.forgejo-society/` is the implementation. It must be **operational** and live
 beside one workflow file that runs it.
 
 The collapse rule is:
 
-> Everything in `SOCIETY-OF-REPO/` becomes either
+> Everything in `THE-SOCIETY-OF-REPO/` becomes either
 > (a) a file under `.forgejo-society/`, or
 > (b) a step in `.forgejo/workflows/forgejo-society.yaml`,
 > or it does not exist.
 
 Nothing cognitive lives outside those two targets in the runtime body.
-`SOCIETY-OF-REPO/` remains the specification of record; `.forgejo-society/`
+`THE-SOCIETY-OF-REPO/` remains the specification of record; `.forgejo-society/`
 remains the running mind.
 
 ---

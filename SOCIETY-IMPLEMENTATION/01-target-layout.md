@@ -43,7 +43,7 @@ Design details: `02-workflow-design.md`.
 │   ├── self-ideals.md
 │   └── governance-log/           ← append-only governance event archive
 │
-├── protocols/                    ← runtime-relevant excerpts of SOCIETY-OF-REPO/02-protocols
+├── protocols/                    ← runtime-relevant excerpts of THE-SOCIETY-OF-REPO/02-protocols
 │   ├── identity.md
 │   ├── events.md
 │   ├── activation.md
@@ -204,11 +204,11 @@ Design details: `02-workflow-design.md`.
 ## Notes on the layout
 
 - Every top-level subfolder of `.forgejo-society/` corresponds to a numbered
-  section of `SOCIETY-OF-REPO/`. The exhaustive mapping is in
+  section of `THE-SOCIETY-OF-REPO/`. The exhaustive mapping is in
   `11-mapping-sor-to-implementation.md`.
 - `lifecycle/` and `state/` are runtime-only and have no counterpart in the
   specification; they are the body that runs the mind.
-- `protocols/` are *runtime excerpts* of `SOCIETY-OF-REPO/02-protocols/`. The
+- `protocols/` are *runtime excerpts* of `THE-SOCIETY-OF-REPO/02-protocols/`. The
   specification remains the source of truth; the runtime keeps the parts the
   loop must consult on every cycle.
 - `forgejo-society-ENABLED.md` is the operational kill-switch. The workflow’s

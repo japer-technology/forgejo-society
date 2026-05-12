@@ -14,7 +14,7 @@ Visible self-description of the running mind. One file. Points readers at:
 
 - `AGENTS.md` — Spock’s self-model
 - `SOCIETY-IMPLEMENTATION/` — these planning documents
-- `SOCIETY-OF-REPO/` — the specification of record
+- `THE-SOCIETY-OF-REPO/` — the specification of record
 
 Convention: under 200 lines.
 
@@ -27,7 +27,7 @@ on the next workflow run.
 
 Contents are informational only. The workflow checks **only** the file’s
 existence. Editing the file does not enable or disable anything; deleting it
-does. This matches `SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`.
+does. This matches `THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`.
 
 ---
 
@@ -61,7 +61,7 @@ Convention: every value here is a small leaf YAML; no embedded scripts.
 
 ## `governance/`
 
-Direct, runtime-readable subset of `SOCIETY-OF-REPO/01-governance/`.
+Direct, runtime-readable subset of `THE-SOCIETY-OF-REPO/01-governance/`.
 
 | File | Source spec | Format | Read by |
 |---|---|---|---|
@@ -80,12 +80,12 @@ Authority levels MUST be exactly one of `read | draft | propose | act | govern
 
 ## `protocols/`
 
-Runtime excerpts of `SOCIETY-OF-REPO/02-protocols/`. Source remains the spec.
+Runtime excerpts of `THE-SOCIETY-OF-REPO/02-protocols/`. Source remains the spec.
 The runtime needs a local copy because the loop must read these on every
 cycle without crossing folder boundaries that govern presence-is-permission.
 
 Each file MUST start with a one-line link back to its source in
-`SOCIETY-OF-REPO/`. Edits to a runtime protocol file are themselves a
+`THE-SOCIETY-OF-REPO/`. Edits to a runtime protocol file are themselves a
 governance change and require a settlement under the `self-modification` frame.
 
 ---
@@ -177,7 +177,7 @@ Conventions:
 
 Same manifest schema as agencies, with `kind: critic`. Critics challenge on
 merit; they emit objections, never actions. Catalogue mirrors
-`SOCIETY-OF-REPO/04-critics/`.
+`THE-SOCIETY-OF-REPO/04-critics/`.
 
 ---
 
@@ -185,7 +185,7 @@ merit; they emit objections, never actions. Catalogue mirrors
 
 Same manifest schema as agencies, with `kind: censor` or `kind: suppressor`.
 Censors fire upstream (before tool grants); suppressors fire on candidate
-outputs. Catalogue mirrors `SOCIETY-OF-REPO/05-censors/`.
+outputs. Catalogue mirrors `THE-SOCIETY-OF-REPO/05-censors/`.
 
 A censor’s manifest MUST declare:
 
@@ -200,7 +200,7 @@ unconditional: true        # censors cannot be argued with
 ## `memory/`
 
 Long-term, governed memory. Subfolders mirror
-`SOCIETY-OF-REPO/06-memory/`. Detailed in `08-state-and-memory.md`.
+`THE-SOCIETY-OF-REPO/06-memory/`. Detailed in `08-state-and-memory.md`.
 
 Invariants:
 - append-only (corrections via PR, never in-place rewrites)
@@ -212,7 +212,7 @@ Invariants:
 
 ## `workspace/`
 
-Short-term attention. Subfolders mirror `SOCIETY-OF-REPO/07-workspace/`.
+Short-term attention. Subfolders mirror `THE-SOCIETY-OF-REPO/07-workspace/`.
 Items move out (to `memory/decisions/`) once their settlement is finalised.
 Workspace is the only place the runtime is allowed to mutate in place.
 
@@ -222,7 +222,7 @@ Workspace is the only place the runtime is allowed to mutate in place.
 
 Stubs in the first commit. `services/` lists capabilities this society
 exposes; `channels/` lists agreements with other societies. Per
-`SOCIETY-OF-REPO/08-services/` and `SOCIETY-OF-REPO/09-channels/`. Empty
+`THE-SOCIETY-OF-REPO/08-services/` and `THE-SOCIETY-OF-REPO/09-channels/`. Empty
 README files are acceptable until inter-society work is scoped.
 
 ---

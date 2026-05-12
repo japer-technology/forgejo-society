@@ -2,9 +2,9 @@
 
 The three Minsky-derived structures that turn the runtime from a router into
 a society. Source: `THE-REPO-IS-THE-MIND/possibility-2.md` and
-`SOCIETY-OF-REPO/02-protocols/04-activation.md`,
-`SOCIETY-OF-REPO/06-memory/frames/`, `SOCIETY-OF-REPO/06-memory/klines/`,
-and the deep-dive at `SOCIETY-OF-REPO/deep-dive/klines.md`.
+`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`,
+`THE-SOCIETY-OF-REPO/06-memory/frames/`, `THE-SOCIETY-OF-REPO/06-memory/klines/`,
+and the deep-dive at `THE-SOCIETY-OF-REPO/deep-dive/klines.md`.
 
 ---
 
