@@ -6,7 +6,7 @@
 the runners, the agent lifecycle, the LLM server, the storage, the public
 surface — is a self-hosted [Forgejo](https://forgejo.org/) installation on
 Ubuntu hardware owned and operated by the project maintainers (see
-[`README.md`](README.md) and [`FORGEJO-MIND-SETUP/`](FORGEJO-MIND-SETUP/)).
+[`README.md`](README.md) and [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/)).
 
 **GitHub is used as a development environment only.** Specifically, github.com
 is used for:
@@ -16,9 +16,9 @@ is used for:
 - Issue-based collaboration during development.
 - Acting as one of several **mirrors** of the canonical Forgejo repository
   (alongside Codeberg, GitLab, and Bitbucket — see
-  [`FORGEJO-MIND-SETUP/transition-plan/03-codeberg-mirror.md`](FORGEJO-MIND-SETUP/transition-plan/03-codeberg-mirror.md),
-  [`FORGEJO-MIND-SETUP/transition-plan/07-gitlab-secondary-forge.md`](FORGEJO-MIND-SETUP/transition-plan/07-gitlab-secondary-forge.md),
-  and [`FORGEJO-MIND-SETUP/transition-plan/06-bitbucket-fallback.md`](FORGEJO-MIND-SETUP/transition-plan/06-bitbucket-fallback.md)).
+  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md),
+  [`FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md`](FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md),
+  and [`FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md`](FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md)).
 
 Nothing in this repository is intended to run as a production service on
 github.com infrastructure. The cognitive ecology described in
@@ -46,12 +46,12 @@ This project's posture aligns with that rule because:
 | **GitHub Actions** | Only as needed to develop, lint, build, or test the code in this repo. | Permitted by the [Actions service terms][actions-tos]: Actions are for the production, testing, deployment, or publication of the software project associated with the repository. |
 | **GitHub Pages** | Not used as a runtime surface for the agent on github.com. The agent's public surface is published from Forgejo. | Pages is not being used as a stand-alone application backend. |
 
-## Specific subprojects: `PAST-REPO/` and `REPO/forgejo-intelligence/`
+## Specific subprojects: `FORGEJO-SOCIETY-PAST/` and `REPO/forgejo-intelligence/`
 
-The directory [`PAST-REPO/`](PAST-REPO/) contains earlier or sibling experiments —
-notably [`PAST-REPO/github-minimum-intelligence/`](PAST-REPO/github-minimum-intelligence/) —
+The directory [`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/) contains earlier or sibling experiments —
+notably [`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/`](FORGEJO-SOCIETY-PAST/github-minimum-intelligence/) —
 and [`REPO/forgejo-intelligence/`](REPO/forgejo-intelligence/) (formerly
-top-level `.forgejo-intelligence/`, originally `PAST-REPO/forgejo-intelligence/`)
+top-level `.forgejo-intelligence/`, originally `FORGEJO-SOCIETY-PAST/forgejo-intelligence/`)
 holds the runnable Forgejo runtime that is
 being converted from a GitHub-runtime design to a Forgejo-runtime design. The
 conversion is tracked in
@@ -61,7 +61,7 @@ Within `forgejo-society`, those subprojects are **source under development**:
 
 - They are not deployed from this repository to run as services on github.com.
 - The workflow files they contain
-  (`PAST-REPO/github-minimum-intelligence/.github/workflows/*.yml`) are part of
+  (`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/.github/workflows/*.yml`) are part of
   the historical artifact being migrated. Where any of them remain enabled
   on github.com they are limited to development purposes for the source
   in this repo (build/lint/test/checkout), not used to provide a
@@ -73,7 +73,7 @@ Within `forgejo-society`, those subprojects are **source under development**:
   Forgejo instance.
 
 If at any point you (a maintainer) intend to enable one of the
-`PAST-REPO/github-minimum-intelligence/.github/workflows/*.yml` workflows on a
+`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/.github/workflows/*.yml` workflows on a
 public github.com repository as a user-facing service, re-read the
 [Actions service terms][actions-tos] first and confirm the use still falls
 within "production, testing, deployment, or publication of the software
