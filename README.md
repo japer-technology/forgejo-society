@@ -5,8 +5,6 @@
 
 > Societies emerge when Minds, Intelligences, and Skills act together as one.
 
-## Introduction
-
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
 [Forgejo](https://forgejo.org/) running on Ubuntu hardware owned and operated
 by the project maintainers. It treats the forge — repositories, runners,
@@ -14,6 +12,12 @@ issues, pull requests, and CI/CD — not just as a place to store code, but as
 the operational substrate for a *society of agents*: governed AI agencies,
 critics, censors, and memory that together form a transparent, auditable
 cognitive ecology.
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
 
 The project is organised around a small set of pillars:
 
