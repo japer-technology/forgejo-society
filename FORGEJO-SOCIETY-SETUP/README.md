@@ -1,4 +1,4 @@
-# Forgejo Society Setup
+# Forgejo Society: Setup
 
 <p align="center">
   <picture>
