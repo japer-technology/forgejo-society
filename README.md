@@ -14,6 +14,9 @@ cognitive ecology.
 
 The project is organised around a small set of pillars:
 
+- **[`FORGEJO-SOCIETY-INTRODUCTION/`](FORGEJO-SOCIETY-INTRODUCTION/README.md)** — the
+  gentle on-ramp to the project: what Forgejo Society is, why it exists, the
+  cognitive arc, and a suggested reading order. Start here if you are new.
 - **[`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md)** — the practical,
   command-level installation and operations library: how to bring Ubuntu, the
   Forgejo forge, runners, and the LLM server up from clean hardware to a
