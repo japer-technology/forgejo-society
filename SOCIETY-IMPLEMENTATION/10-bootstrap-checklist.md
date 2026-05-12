@@ -9,7 +9,7 @@ into a working society shell, with the conscious bottleneck wired and the
 kill switch effective, even if many agencies and frames are still empty.
 
 Sources: `THE-REPO-IS-THE-MIND/possibility-2.md` *the first commit I would
-make*, and `SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`.
+make*, and `THE-SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`.
 
 Agents implementing this checklist MUST also follow
 `12-agent-implementation-playbook.md`. This checklist says *what* must exist;
@@ -38,7 +38,7 @@ the playbook says the safe order and acceptance standard for creating it.
 - [ ] `.forgejo-society/AGENTS.md`             (Spock’s self-model)
 - [ ] `.forgejo-society/APPEND_SYSTEM.md`      (character law)
 - [ ] `.forgejo-society/README.md` (already exists; expand to point at
-      AGENTS, SOCIETY-IMPLEMENTATION, SOCIETY-OF-REPO)
+      AGENTS, SOCIETY-IMPLEMENTATION, THE-SOCIETY-OF-REPO)
 
 ### Config
 

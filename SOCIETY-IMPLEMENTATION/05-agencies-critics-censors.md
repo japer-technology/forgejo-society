@@ -57,7 +57,7 @@ Validated by `schemas/manifest.schema.json`.
 ## First-ship agency catalogue
 
 Aligned with `possibility-2.md`’s *agencies I would actually ship first* and
-with the agency families in `SOCIETY-OF-REPO/03-agencies/`.
+with the agency families in `THE-SOCIETY-OF-REPO/03-agencies/`.
 
 ### Perception family — `agencies/perception/`
 
@@ -136,7 +136,7 @@ counterparts in `censors/` that mechanically alter the tool surface.
 
 ## First-ship critic catalogue (`critics/`)
 
-Mirrors `SOCIETY-OF-REPO/04-critics/`:
+Mirrors `THE-SOCIETY-OF-REPO/04-critics/`:
 
 - `critic.evidence` — proposals without sufficient evidence
 - `critic.scope` — proposals exceeding declared scope
@@ -154,7 +154,7 @@ they never act. They do not consume write tools.
 
 ## First-ship censor catalogue (`censors/`)
 
-Mirrors `SOCIETY-OF-REPO/05-censors/` and `possibility-2.md`’s safety set:
+Mirrors `THE-SOCIETY-OF-REPO/05-censors/` and `possibility-2.md`’s safety set:
 
 | id | `fires_at` | What it stops |
 |---|---|---|

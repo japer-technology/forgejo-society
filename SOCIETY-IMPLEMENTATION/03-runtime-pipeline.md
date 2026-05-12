@@ -1,6 +1,6 @@
 # 03 — Runtime Pipeline
 
-The cognitive loop from `SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`
+The cognitive loop from `THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`
 mapped onto the workflow phases (`02-workflow-design.md`) and onto concrete
 files in `.forgejo-society/`.
 
@@ -60,7 +60,7 @@ The pipeline writes into two distinct trees, with different lifetimes:
 
 Only the `settle` and `remember` phases may promote anything from `state/` or
 `workspace/` into `memory/`. This enforces the *representation discipline*
-protocol (`SOCIETY-OF-REPO/02-protocols/09-representation.md`).
+protocol (`THE-SOCIETY-OF-REPO/02-protocols/09-representation.md`).
 
 ---
 

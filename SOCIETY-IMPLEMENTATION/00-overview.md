@@ -22,12 +22,12 @@ This is the operational answer to two existing documents in the repository:
   architecture* thesis. It argues against generic multi-agent routing and in
   favour of activation, inhibition, frames, K-lines, censors, suppressors,
   imagined branches, and a single conscious presenter.
-- `SOCIETY-OF-REPO/` — the *governed ecology* specification. It defines
+- `THE-SOCIETY-OF-REPO/` — the *governed ecology* specification. It defines
   governance, protocols, agencies, critics, censors, memory, workspace,
   services, channels, and evolution as first-class structures.
 
 `possibility-2.md` answers *how a single repo can think*.
-`SOCIETY-OF-REPO/` answers *how a society of repos can govern itself*.
+`THE-SOCIETY-OF-REPO/` answers *how a society of repos can govern itself*.
 
 This planning folder collapses both into a single repo and a single workflow,
 without losing the structure that makes either of them coherent.
@@ -54,7 +54,7 @@ Multiple jobs are allowed inside the workflow. Multiple workflows are not.
 
 ## Why one folder
 
-`SOCIETY-OF-REPO/` is the specification. The implementation deliberately keeps
+`THE-SOCIETY-OF-REPO/` is the specification. The implementation deliberately keeps
 *all* runtime cognitive content in one root folder so that:
 
 - removing the folder fully disables the society
@@ -64,7 +64,7 @@ Multiple jobs are allowed inside the workflow. Multiple workflows are not.
   *presence is permission; absence is denial*
 - secrets, state, and committed cognition share one boundary
 
-The folder mirrors `SOCIETY-OF-REPO/` section-by-section, but in operational
+The folder mirrors `THE-SOCIETY-OF-REPO/` section-by-section, but in operational
 form: agencies are runnable manifests, critics and censors are runnable
 manifests, frames are YAML, K-lines are YAML, the workspace is a live
 directory, governance is a small set of YAML files.
@@ -75,7 +75,7 @@ The detailed mapping is in `11-mapping-sor-to-implementation.md`.
 
 ## The collapse rule (restated)
 
-> Every cognitive structure in `SOCIETY-OF-REPO/` must collapse to either a
+> Every cognitive structure in `THE-SOCIETY-OF-REPO/` must collapse to either a
 > file under `.forgejo-society/` or a step in
 > `.forgejo/workflows/forgejo-society.yaml`. Nothing else.
 
@@ -84,7 +84,7 @@ The current repository already has the right shape:
 ```
 .forgejo/workflows/forgejo-society.yaml   ← seed workflow exists
 .forgejo-society/README.md                ← seed folder exists
-SOCIETY-OF-REPO/                          ← full specification
+THE-SOCIETY-OF-REPO/                          ← full specification
 THE-REPO-IS-THE-MIND/possibility-2.md     ← cognitive thesis
 ```
 
@@ -102,7 +102,7 @@ A reviewer can:
    trace appear under `.forgejo-society/state/...` for that stimulus
 4. delete `.forgejo-society/forgejo-society-ENABLED.md` and confirm the
    society stops responding (presence is permission)
-5. point to any line in `SOCIETY-OF-REPO/` and find the corresponding live
+5. point to any line in `THE-SOCIETY-OF-REPO/` and find the corresponding live
    file or workflow step via `11-mapping-sor-to-implementation.md`
 
 If any one of those is impossible, the implementation is not done.
@@ -114,7 +114,7 @@ If any one of those is impossible, the implementation is not done.
 - Choice of LLM provider, model, or vendor SDK (left to a runtime config file
   under `.forgejo-society/config/`)
 - Network egress policy specifics beyond the censor catalogue
-- Cross-society channels (`SOCIETY-OF-REPO/09-channels/`) — covered as a stub
+- Cross-society channels (`THE-SOCIETY-OF-REPO/09-channels/`) — covered as a stub
   in the folder spec; full inter-society work is a later phase
 - Public-fabric publishing — Spock is the only public voice; the public-fabric
   agency is listed but not implemented in the first commit

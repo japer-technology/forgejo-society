@@ -1,6 +1,6 @@
-# 11 — Mapping: SOCIETY-OF-REPO → Implementation
+# 11 — Mapping: THE-SOCIETY-OF-REPO → Implementation
 
-Every section of `SOCIETY-OF-REPO/` maps to either a path under
+Every section of `THE-SOCIETY-OF-REPO/` maps to either a path under
 `.forgejo-society/` or a step in `.forgejo/workflows/forgejo-society.yaml`.
 This is the verification table that enforces the *two-target collapse rule*
 from `00-overview.md`.
@@ -176,7 +176,7 @@ All run in the `criticize` workflow step.
 
 ## THE-REPO-IS-THE-MIND/possibility-2.md cross-mapping
 
-Concepts from `possibility-2.md` that are not in `SOCIETY-OF-REPO/`:
+Concepts from `possibility-2.md` that are not in `THE-SOCIETY-OF-REPO/`:
 
 | possibility-2 concept | Implementation target |
 |---|---|
@@ -199,7 +199,7 @@ Concepts from `possibility-2.md` that are not in `SOCIETY-OF-REPO/`:
 
 A reviewer can:
 
-1. Pick any line in `SOCIETY-OF-REPO/` or `possibility-2.md`.
+1. Pick any line in `THE-SOCIETY-OF-REPO/` or `possibility-2.md`.
 2. Find it in this table.
 3. Open the corresponding implementation target.
 4. Confirm the capability is either present (Phase A done) or explicitly

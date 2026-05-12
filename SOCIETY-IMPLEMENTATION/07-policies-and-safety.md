@@ -7,9 +7,9 @@ cannot be argued out of these.
 
 Sources: `THE-REPO-IS-THE-MIND/possibility-2.md` (censors and suppressors as
 first-class code; danger zones; soul-file protection),
-`SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md` (runtime invariants),
-`SOCIETY-OF-REPO/05-censors/`, and
-`SOCIETY-OF-REPO/01-governance/approval-gate.md`.
+`THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md` (runtime invariants),
+`THE-SOCIETY-OF-REPO/05-censors/`, and
+`THE-SOCIETY-OF-REPO/01-governance/approval-gate.md`.
 
 ---
 
@@ -215,7 +215,7 @@ Every safety decision is recorded:
 - approval-gate redirections → `workspace/owner-briefings/<settlement_id>.md`
 
 A blocked outcome is as fully documented as a successful one. *Censor
-invisibility* (Insight I5 from `SOCIETY-OF-REPO/05-censors/README.md`) is
+invisibility* (Insight I5 from `THE-SOCIETY-OF-REPO/05-censors/README.md`) is
 addressed by always writing an explicit signal even when nothing visible
 happened, so suppressor-triggered escapes can be detected later by
 reviewing the trace.
@@ -224,7 +224,7 @@ reviewing the trace.
 
 ## Public-repo posture
 
-Per `SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`, fork PRs are
+Per `THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`, fork PRs are
 skipped by default. The guardrail step:
 
 - detects forks

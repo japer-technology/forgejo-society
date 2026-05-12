@@ -5,7 +5,7 @@ mind), runs in install mode to lay down a body of organ repos, and then, in
 governed dialogue with a human, spawns the further repos that the overall
 society needs to function.
 
-This analysis is grounded in `SOCIETY-OF-REPO/` and in particular:
+This analysis is grounded in `THE-SOCIETY-OF-REPO/` and in particular:
 
 - `00-foundations/10-bootstrap-minimum-viable-sor.md` (the MV-SOR seven repos)
 - `00-foundations/06-mind-brain-body.md` (the layer split)
@@ -55,7 +55,7 @@ repos as soon as the society can support it.
 
 | Logical role | What it carries | Where it eventually lives |
 |---|---|---|
-| **Mind template** | The `SOCIETY-OF-REPO/` specification: principles, protocols, ideals, plurality contract, approval gate, identity rules. This is the cognitive blueprint. | `sor-constitution` + `sor-protocols` |
+| **Mind template** | The `THE-SOCIETY-OF-REPO/` specification: principles, protocols, ideals, plurality contract, approval gate, identity rules. This is the cognitive blueprint. | `sor-constitution` + `sor-protocols` |
 | **Install workflow** | The `.forgejo/workflows/` and `.forgejo-intelligence/` runtime: the surface handlers, coordinators, the enable sentinel, the ability to call the Forgejo API, the ability to create new repositories. This is the body factory. | The orchestrator's runtime layer |
 | **Conversational surface** | The single point where a human can type "begin", answer questions, approve a spawn, or pull the kill switch. This is the mouth and ears of the society on day zero. | `sor-orchestrator` (until a dedicated `owner-briefing` channel is differentiated out) |
 
@@ -208,7 +208,7 @@ distinct (`00-foundations/06-mind-brain-body.md`).
 The clean way to read "copy the workflow (mind), run the workflow in install
 mode, it installs the rest (body)" is therefore:
 
-> The mind, expressed as `SOCIETY-OF-REPO/`, is *carried* in the top repo.
+> The mind, expressed as `THE-SOCIETY-OF-REPO/`, is *carried* in the top repo.
 > The installer is a *body-layer* program. Running it puts the mind into a
 > body. The brain — the models — is referenced by name but only invoked
 > later, under the censor, when a real stimulus needs it.

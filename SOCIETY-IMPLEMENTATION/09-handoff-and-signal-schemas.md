@@ -6,9 +6,9 @@ This document is the source-of-record for those schemas in *narrative* form;
 the JSON Schema files are the machine-checked form.
 
 Sources: `THE-REPO-IS-THE-MIND/possibility-2.md` (signals, handoffs, “no
-evidence, no trust”), `SOCIETY-OF-REPO/02-protocols/04-activation.md`,
-`SOCIETY-OF-REPO/02-protocols/05-settlement.md`,
-`SOCIETY-OF-REPO/deep-dive/klines-functional-spec.md`.
+evidence, no trust”), `THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`,
+`THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md`,
+`THE-SOCIETY-OF-REPO/deep-dive/klines-functional-spec.md`.
 
 ---
 
@@ -102,7 +102,7 @@ circuits the current cycle and may block settlement.
 ## Settlement
 
 The visible record of how a decision formed. One settlement per stimulus;
-mirrors `SOCIETY-OF-REPO/02-protocols/05-settlement.md` and is stored under
+mirrors `THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md` and is stored under
 `workspace/active-settlements/<settlement_id>.yml` until archived to
 `memory/decisions/`.
 

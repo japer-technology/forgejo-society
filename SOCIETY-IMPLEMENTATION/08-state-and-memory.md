@@ -4,11 +4,11 @@ The runtime maintains three trees with different lifetimes and write rules.
 This document specifies each tree’s layout, who may write to it, and how
 material flows between them.
 
-Sources: `SOCIETY-OF-REPO/06-memory/`, `SOCIETY-OF-REPO/07-workspace/`,
-`SOCIETY-OF-REPO/02-protocols/06-memory.md`,
-`SOCIETY-OF-REPO/02-protocols/09-representation.md`,
-`SOCIETY-OF-REPO/02-protocols/14-relational-memory.md`,
-`SOCIETY-OF-REPO/02-protocols/10-credit-assignment.md`, and
+Sources: `THE-SOCIETY-OF-REPO/06-memory/`, `THE-SOCIETY-OF-REPO/07-workspace/`,
+`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`,
+`THE-SOCIETY-OF-REPO/02-protocols/09-representation.md`,
+`THE-SOCIETY-OF-REPO/02-protocols/14-relational-memory.md`,
+`THE-SOCIETY-OF-REPO/02-protocols/10-credit-assignment.md`, and
 `possibility-2.md`’s *learning levels* and *layered blackboard* sections.
 
 ---
@@ -160,7 +160,7 @@ Edits in place are forbidden. Corrections happen via:
 2. a governance settlement that records the supersession
 
 This is the *append-only with linked corrections* convention from
-`SOCIETY-OF-REPO/06-memory/README.md`.
+`THE-SOCIETY-OF-REPO/06-memory/README.md`.
 
 ### Decay metadata
 
@@ -182,7 +182,7 @@ The scheduled cron pass updates `decay_score` and proposes retirements via
 
 ## Relational memory
 
-Per `SOCIETY-OF-REPO/02-protocols/14-relational-memory.md`, durable records
+Per `THE-SOCIETY-OF-REPO/02-protocols/14-relational-memory.md`, durable records
 carry typed graph links. The runtime indexes these on first read of each
 record into a transient index outside the committed tree, for example under the
 runner workspace temporary directory. The index is never committed.
