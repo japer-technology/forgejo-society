@@ -7,11 +7,11 @@ and is it the kind of thing that can become world-class and world-beating?*
 The check is performed against three bodies of work that already exist in the
 repository:
 
-- [`.forgejo-intelligence/`](../../.forgejo-intelligence/) —
+- [`.forgejo-intelligence/`](../../REPO/forgejo-intelligence/) —
   the working, runnable Forgejo-native AI runtime and its conversion history
-  ([WHAT.md](../../.forgejo-intelligence/WHAT.md),
-  [.ASPIRATION.md](../../.forgejo-intelligence/.ASPIRATION.md),
-  [CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../.forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
+  ([WHAT.md](../../REPO/forgejo-intelligence/WHAT.md),
+  [.ASPIRATION.md](../../REPO/forgejo-intelligence/.ASPIRATION.md),
+  [CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
 - [`THE-SOCIETY-OF-REPO/`](../../THE-SOCIETY-OF-REPO/README.md) — the governed
   cognitive ecology specification.
 - [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md) — the
@@ -43,10 +43,10 @@ to be.
 Three convictions sit underneath that paragraph:
 
 1. **Repo-native, not chatbot-on-top.** The agent participates through the same
-   surfaces humans use ([.ASPIRATION.md](../../.forgejo-intelligence/.ASPIRATION.md)).
+   surfaces humans use ([.ASPIRATION.md](../../REPO/forgejo-intelligence/.ASPIRATION.md)).
 2. **Presence is permission; absence is denial.** Capability is declared by the
    filesystem and audited by `git log`
-   ([WHAT.md](../../.forgejo-intelligence/WHAT.md)).
+   ([WHAT.md](../../REPO/forgejo-intelligence/WHAT.md)).
 3. **Governed cognition, not free-fire multi-agent.** Every non-trivial action
    leaves a settlement, and every settlement leaves a credit-assignment trace
    ([THE-SOCIETY-OF-REPO/02-protocols/](../../THE-SOCIETY-OF-REPO/02-protocols/)).
@@ -62,8 +62,8 @@ is the collapse that fuses the three.
 `.forgejo-intelligence/` is not a doodle. It is a runnable
 Bun/TypeScript installer with `.forgejo` workflows, a Forgejo API adapter, a
 guardrail, a fail-closed sentinel, ~20 surface folders, and committed session
-state under `.forgejo-intelligence/state/` ([README.md](../../.forgejo-intelligence/README.md),
-[.forgejo-intelligence/](../../.forgejo-intelligence/.forgejo-intelligence/)).
+state under `.forgejo-intelligence/state/` ([README.md](../../REPO/forgejo-intelligence/README.md),
+[.forgejo-intelligence/](../../REPO/forgejo-intelligence/.forgejo-intelligence/)).
 Concretely, it proved seven things that the new direction is now allowed to
 take for granted:
 
@@ -76,18 +76,18 @@ take for granted:
    actually removed the capability.
 3. **A single sentinel can hold a fail-closed boundary.** The runtime refuses
    work when `forgejo-intelligence-ENABLED.md` is missing
-   ([WHAT.md §The Enable Sentinel](../../.forgejo-intelligence/WHAT.md)).
+   ([WHAT.md §The Enable Sentinel](../../REPO/forgejo-intelligence/WHAT.md)).
 4. **State-in-git is operationally fine.** Sessions, mappings, and migration
    archives live in the repo and are reviewable in PRs.
 5. **A typed Forgejo API adapter beats scattered `fetch` calls.** Pagination,
    retries, and a mock implementation drop straight into surface handlers
-   ([WHAT.md §Forgejo API Adapter](../../.forgejo-intelligence/WHAT.md)).
+   ([WHAT.md §Forgejo API Adapter](../../REPO/forgejo-intelligence/WHAT.md)).
 6. **GitHub-only surfaces can be retired honestly.** False parity is worse than
    a clear boundary
-   ([.ASPIRATION.md §Boundaries](../../.forgejo-intelligence/.ASPIRATION.md)).
+   ([.ASPIRATION.md §Boundaries](../../REPO/forgejo-intelligence/.ASPIRATION.md)).
 7. **Migration-as-installer works.** A single `--migrate --yes` command can
    move a live system off GitHub-Actions runtime without losing portable state
-   ([CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../.forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
+   ([CONVERSION/FORGEJO-CONVERSION-PLAN.md](../../REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)).
 
 What PAST-REPO did **not** have, and admitted it did not have, is *cognition*.
 It had surfaces, sessions, an agent runtime, and a guardrail. It did not have
