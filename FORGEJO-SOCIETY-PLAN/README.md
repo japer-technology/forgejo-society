@@ -1,4 +1,4 @@
-# FORGEJO-SOCIETY-PLAN
+# Forgejo Society: Plan
 
 <p align="center">
   <picture>
