@@ -1,6 +1,6 @@
-# Local Computer Hardware
+# The Federation Computer Hardware
 
-Hardware available for the Forgejo-Mind installation.
+Hardware available for the root Forgejo Society installation.
 
 ## Primary forge server
 
@@ -20,6 +20,8 @@ Hardware available for the Forgejo-Mind installation.
 | Storage | 60 GB SSD |
 | Count | 16 |
 
+Forge and runners use **Ubuntu 24.04 LTS (Noble Numbat)**.
+
 ## LLM inference server
 
 | Spec | Value |
@@ -28,7 +30,5 @@ Hardware available for the Forgejo-Mind installation.
 | RAM | 64 GB |
 | Storage | 1 TB NVMe |
 | GPU | NVIDIA RTX 4090 |
-| Software | LM Studio — Google Gemma 4 and 100+ models |
+| Software | Windows 11 LM Studio — Google Gemma 4 and 100+ models |
 | Count | 1 |
-
-All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
