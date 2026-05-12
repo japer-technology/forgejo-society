@@ -3,8 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
-> Societies emerge when Minds, Intelligences, and Skills act together as one.
-
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
 [Forgejo](https://forgejo.org/) running on Ubuntu hardware owned and operated
 by the project maintainers. It treats the forge — repositories, runners,
@@ -13,9 +11,11 @@ the operational substrate for a *society of agents*: governed AI agencies,
 critics, censors, and memory that together form a transparent, auditable
 cognitive ecology.
 
+> Societies emerge when Minds, Intelligences, and Skills act together as one.
+
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="800">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
   </picture>
 </p>
 
