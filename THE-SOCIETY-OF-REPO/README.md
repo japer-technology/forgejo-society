@@ -1,5 +1,11 @@
 # Society Of Repo
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 A complete design, scaffold, and specification for a **repo-native cognitive society** built on the principles of Marvin Minsky's *Society of Mind* and later work on multi-agent cognition.
 
 > **The forge is the mind. The repo is an agency. The society thinks.**

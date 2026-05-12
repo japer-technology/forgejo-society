@@ -1,5 +1,11 @@
 # The Repo is the Mind
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 See these repo for working examples of AI agents in a repo.
 
 - https://github.com/japer-technology/github-gstack-intelligence

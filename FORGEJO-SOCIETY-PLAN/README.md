@@ -1,5 +1,11 @@
 # FORGEJO-SOCIETY-PLAN
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 > See the [repository overview](../README.md) for how this folder fits with
 > `THE-SOCIETY-OF-REPO/`, `.forgejo-society/`, and `REPO/forgejo-intelligence/`.
 

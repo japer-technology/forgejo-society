@@ -1,5 +1,11 @@
 # Society of Mind
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="OpenClaw Intelligence" width="500">
+  </picture>
+</p>
+
 A complete annotated reference to Marvin Minsky's *Society of Mind* (1986) and
 the closely related ONR-era research (1988), with deep insights, objections,
 extensions, and a crosswalk to the [Society of Repo](../THE-SOCIETY-OF-REPO/README.md)
