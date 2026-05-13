@@ -19,7 +19,7 @@
 
 ---
 
-## 0. TL;DR — the headline risks
+## 0. The headline risks
 
 If you copy the workflows in this repo into a github.com repository and run
 them as designed, you are very likely to be in breach of GitHub's terms in at
@@ -382,35 +382,7 @@ Forgejo before going anywhere near a public repo.
 
 ---
 
-## 5. Recommended remediations (if you must run on github.com at all)
-
-Listed without changing the project's stated direction (move to Forgejo):
-
-1. **Disable** every workflow under `FORGEJO-SOCIETY-PRECURSOR/**/.github/workflows/`
-   on any github.com fork by default; require an explicit opt-in.
-2. **Drop `actions: write`** from every installer job. Distribute the
-   agent as a release artefact users install manually, not as a workflow
-   that rewrites `.github/workflows/`.
-3. **Remove the `gmi-public-fabric` and `publish-public-fabric`
-   workflows** from any github.com deployment; serve the agent's public
-   surface from Forgejo Pages or another host.
-4. **Replace `INTELLIGENCE_EMERGENCY_TOKEN`** (org-wide PAT) with
-   per-repo, fine-grained tokens scoped only to the repo they manage,
-   and remove the cross-repo "kill all" mode entirely from the github.com
-   variant.
-5. **Gate `run-agent`** behind a private repo or a strict allowlist
-   *before* the runner boots (e.g. a `repository_dispatch`-only trigger
-   that an out-of-band authorisation service fires) so that anonymous
-   issue traffic cannot consume Actions minutes.
-6. **Rate-limit and log** every LLM call, and document a privacy notice
-   that issue contents are forwarded to third-party providers.
-7. **Stop committing per-turn memory** (`memory.log`, `state/`) on
-   github.com; keep that data on the Forgejo side only, where the
-   repository-as-database pattern is not a ToS issue.
-
----
-
-## 6. References
+## 5. References
 
 - GitHub Acceptable Use Policies — [`aup`][aup]
 - GitHub Terms of Service — [`tos`][tos]
