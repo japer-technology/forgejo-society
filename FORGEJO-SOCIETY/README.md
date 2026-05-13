@@ -1,4 +1,4 @@
-# Forgejo Society Repositories
+# Forgejo Society
 
 > Society = Minds + Intelligences + Skills
 
@@ -8,4 +8,4 @@
   </picture>
 </p>
 
-All of these repos require a very specific Ubuntu software configuration.
+Allocate a Society, Create Minds, Allow Intelligence, Refine Skills.
