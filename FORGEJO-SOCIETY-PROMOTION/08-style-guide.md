@@ -15,7 +15,7 @@ Concretely:
 - **Specifics over slogans.** Prefer a sentence about what a workflow
   does to a sentence about what "AI agents" do.
 - **Mechanisms over mystique.** Name the parts (workflow, runner,
-  agency, critic, censor, kline) rather than gesturing at intelligence.
+  agency, critic, censor, K-line) rather than gesturing at intelligence.
 - **Restraint over hype.** No urgency, no superlatives, no manufactured
   drama.
 - **Honest scope.** Describe what exists; mark what is planned as
@@ -35,8 +35,8 @@ copy must use those terms with the same meanings. Key examples:
 
 - *Forge*, *forgejo*, *runner*, *workflow* — used in their Forgejo
   sense.
-- *Agency*, *critic*, *censor*, *memory*, *workspace*, *kline*,
-  *settlement*, *signal*, *handoff* — used in their Society-of-Repo
+- *Agency*, *critic*, *censor*, *memory*, *workspace*, *K-line*,
+  *settlement*, *signal*, *handoff* — used in their Society of Repo
   sense.
 - *Authority levels* — `read`, `draft`, `propose`, `act`, `govern`,
   `human`. No other values.

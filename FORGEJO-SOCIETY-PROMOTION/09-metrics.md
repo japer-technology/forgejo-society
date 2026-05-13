@@ -44,7 +44,7 @@ rest of the work. Concretely:
 - Recurring lessons are promoted into updates to the relevant strategy
   document (`01-positioning.md` through `08-style-guide.md`).
 - Patterns that recur across campaigns become candidate **K-lines** in
-  the Society-of-Repo memory layout
+  the Society of Repo memory layout
   (`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`), so that the
   project's mind learns from how it has been described.
 
