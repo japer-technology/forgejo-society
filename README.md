@@ -52,3 +52,8 @@ The project is organised around a small set of pillars:
   promotion pillar: positioning, narratives, audiences, channels, campaigns,
   visual identity, press kit, style guide, and reusable copy and assets that
   carry the Society of Repo outward to the wider world.
+- **[`FORGEJO-SOCIETY-PUBLICITY/`](FORGEJO-SOCIETY-PUBLICITY/README.md)** — the
+  publicity pillar: announcements, media relations, events, coverage logs,
+  public statements, crisis communication, and recognition. Where promotion
+  is the project's outbound voice, publicity is its earned attention and
+  the public record of how it is received.
