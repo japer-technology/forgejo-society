@@ -7,8 +7,8 @@
 </p>
 
 These repositories were designed and built **before** the final society
-theory was born. They are the precursor experiments — the working drafts,
-prototypes, and failed-forward attempts — out of which *Forgejo Society*
+theory was born. They are the precursors — the fully functional, the working drafts,
+the prototypes, and failed-forward attempts — out of which *Forgejo Society*
 eventually emerged.
 
 They are kept here, in a single archival directory, because the lineage
