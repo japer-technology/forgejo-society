@@ -48,3 +48,7 @@ The project is organised around a small set of pillars:
 - **[`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/)** — earlier and sibling experiments
   (`github-minimum-intelligence`) that are being converted from a
   GitHub-runtime design to a Forgejo-runtime design.
+- **[`FORGEJO-SOCIETY-PROMOTION/`](FORGEJO-SOCIETY-PROMOTION/README.md)** — the
+  promotion pillar: positioning, narratives, audiences, channels, campaigns,
+  visual identity, press kit, style guide, and reusable copy and assets that
+  carry the Society of Repo outward to the wider world.
