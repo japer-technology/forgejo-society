@@ -1,0 +1,48 @@
+id: sor.publicity.metrics
+repo: japer-technology/forgejo-society-publicity-metrics
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/09-metrics.md
+
+remit: |
+  Owns publicity metrics and the learning loop. Aggregates counts, trends,
+  and honesty-over-reach indicators from every other member repo, and feeds
+  the resulting summaries back to the presenter so the Federation's cognitive
+  loop can credit-assign publicity work like any other settlement.
+
+lead_agencies:
+  - perception/metrics-collector
+  - memory/metrics-archivist
+  - assembly/metrics-summariser
+
+services_in:
+  - id: metrics.push
+    description: Receive a metric event from another member repo.
+    authority: act
+  - id: metrics.pull
+    description: Return a summarised metrics report.
+    authority: read
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.metrics-pull
+  - from: sor.publicity.announcements
+    via: publicity.metrics-push
+  - from: sor.publicity.events
+    via: publicity.metrics-push
+  - from: sor.publicity.coverage
+    via: publicity.metrics-push
+  - from: sor.publicity.recognition
+    via: publicity.metrics-push
+
+channels_out:
+  - to: sor.publicity.presenter
+    via: publicity.metrics-pull
+    purpose: deliver settled metrics summaries
+
+censors_required:
+  - cloud-egress-censor
+  - pii-exfiltration-censor
+  - staleness-critic

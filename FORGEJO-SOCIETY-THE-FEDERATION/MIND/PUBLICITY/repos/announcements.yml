@@ -1,0 +1,46 @@
+id: sor.publicity.announcements
+repo: japer-technology/forgejo-society-publicity-announcements
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/02-announcements.md
+
+remit: |
+  Owns the canonical record of dated public-facing announcements in the
+  project's own voice. Every announcement is drafted, reviewed, and published
+  through this repo. The presenter is the only inbound caller; outbound
+  publication runs through a censor-gated public-channel.
+
+lead_agencies:
+  - perception/announcement-intake
+  - code/announcement-drafter
+  - safety/announcement-reviewer
+
+services_in:
+  - id: announcement.draft
+    description: Draft an announcement from a settled fact in the Federation.
+    authority: propose
+  - id: announcement.publish
+    description: Publish a reviewed announcement.
+    authority: act
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+
+channels_out:
+  - to: sor.publicity.coverage
+    via: publicity.lateral
+    purpose: notify of new published announcement
+  - to: sor.publicity.metrics
+    via: publicity.metrics-push
+  - to: external.public-web
+    via: publicity.public-channel
+    purpose: publish to project blog / fediverse / RSS
+
+censors_required:
+  - cloud-egress-censor
+  - authority-censor
+  - secret-smeller
+  - pii-exfiltration-censor

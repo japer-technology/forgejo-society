@@ -1,0 +1,53 @@
+id: sor.publicity.presenter
+repo: japer-technology/forgejo-society-publicity-presenter
+role: presenter
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/00-overview.md
+  - FORGEJO-SOCIETY-PUBLICITY/01-principles.md
+
+remit: |
+  The single conscious voice of the Publicity sub-society. Brokers every
+  inbound call from the Federation and every outbound reply back to it. Holds
+  the publicity strategy as a whole and routes specialist work to the
+  appropriate member repo. No other member repo speaks back to the Federation
+  directly.
+
+lead_agencies:
+  - identity/spock-presenter
+  - assembly/publicity-conductor
+  - meta-admin/publicity-steward
+
+services_in:
+  - id: publicity.brief
+    description: Receive a publicity brief from the Federation and route it.
+    authority: act
+  - id: publicity.report
+    description: Return a settled publicity report to the Federation.
+    authority: act
+
+channels_out:
+  - to: sor.publicity.announcements
+    via: publicity.dispatch
+  - to: sor.publicity.media-relations
+    via: publicity.dispatch
+  - to: sor.publicity.events
+    via: publicity.dispatch
+  - to: sor.publicity.coverage
+    via: publicity.dispatch
+  - to: sor.publicity.statements
+    via: publicity.dispatch
+  - to: sor.publicity.crisis
+    via: publicity.dispatch
+  - to: sor.publicity.recognition
+    via: publicity.dispatch
+  - to: sor.publicity.metrics
+    via: publicity.metrics-pull
+  - to: sor.federation
+    via: federation.uplink
+
+censors_required:
+  - cloud-egress-censor
+  - authority-censor
+  - delegation-censor
