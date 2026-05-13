@@ -386,7 +386,7 @@ badly if certain disciplines are not maintained:
    LLM API calls do. A public repo + an issue-comment trigger on a
    self-hosted Forgejo is still a cost-amplifying surface for whoever
    owns the LLM key.
-3. **AGPL / GPLv3+ derivative considerations.** Forgejo is GPLv3+. If
+3. **GPLv3+ derivative considerations.** Forgejo is GPLv3+. If
    the project ever links the agent into Forgejo's process boundary
    (rather than running alongside it via Forgejo Actions), the resulting
    combined work inherits that licence. Anyone reusing or extending
