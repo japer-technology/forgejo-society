@@ -125,6 +125,10 @@ directory is the doorway; the others are the rooms it opens onto.
     — the core thesis stated as plainly as possible.
   - [`forgejo-mind-expected-performance.md`](analysis/forgejo-mind-expected-performance.md)
     — a grounded performance estimate for the cognitive ecology at full flight.
+  - [`composition-model.md`](analysis/composition-model.md) — the four
+    nouns (Society, Mind, Intelligence, Repo), how they layer, and how an
+    existing third-party repo is incorporated by dropping an Intelligence
+    into it in either `develop` or `run` mode.
 - **[`essay/`](essay/)** — longer essays that situate the project:
   - [`sor-direction-1.md`](essay/sor-direction-1.md) — directional essay on
     where the Society of Repo is heading.
