@@ -1,0 +1,56 @@
+id: sor.publicity.crisis
+repo: japer-technology/forgejo-society-publicity-crisis
+role: pillar-member
+society: sor.publicity
+
+remit: |
+  Owns crisis communication: incident response, transparency, and recovery.
+  Operates under the highest authority level in the sub-society; every
+  outbound channel call requires govern-level human approval per
+  FORGEJO-SOCIETY-PUBLICITY/07-crisis.md and the Federation's approval-gate.
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/07-crisis.md
+
+lead_agencies:
+  - safety/crisis-coordinator
+  - identity/voice-keeper
+  - meta-admin/incident-steward
+
+services_in:
+  - id: crisis.declare
+    description: Declare a crisis, opening a settlement under govern authority.
+    authority: govern
+  - id: crisis.respond
+    description: Issue a govern-approved crisis communication.
+    authority: govern
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+  - from: sor.federation
+    via: federation.uplink
+    purpose: Federation-initiated crisis declaration
+
+channels_out:
+  - to: sor.publicity.statements
+    via: publicity.lateral
+    purpose: file the crisis communication into the statements record
+  - to: sor.publicity.media-relations
+    via: publicity.lateral
+    purpose: distribute to listed contacts
+  - to: external.public-web
+    via: publicity.public-channel
+
+censors_required:
+  - cloud-egress-censor
+  - authority-censor
+  - secret-smeller
+  - pii-exfiltration-censor
+  - delegation-censor
+  - workflow-danger-censor
+
+approval_gate:
+  required: true
+  level: human
+  reference: FORGEJO-SOCIETY-PUBLICITY/07-crisis.md

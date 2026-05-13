@@ -1,0 +1,107 @@
+# federation-uplink.yml — Publicity <-> Federation channel
+#
+# The single channel that connects the Publicity sub-society back to the
+# root Forgejo Society (FORGEJO-SOCIETY-THE-FEDERATION). Only the presenter
+# repo speaks across this uplink. Every other Publicity member that needs to
+# reach the Federation must route through the presenter.
+#
+# At activation time, this entry materialises as two channels/<peer>/
+# directories:
+#   - one in sor.federation's runtime .forgejo-society/channels/sor.publicity.presenter/
+#   - one in sor.publicity.presenter's runtime .forgejo-society/channels/sor.federation/
+# with a matching reciprocal-agreement.md, channel.yml, and bridges.md, per
+# FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md.
+
+version: 1
+society: sor.publicity
+
+uplink:
+  id: federation.uplink
+  description: |
+    The Federation's delegation channel to the Publicity sub-society and the
+    sub-society's reporting channel back. Federation -> presenter only;
+    presenter -> Federation only.
+
+  peers:
+    federation:
+      id: sor.federation
+      repo: japer-technology/forgejo-society
+      role: root
+      runtime_root: .forgejo-society/
+
+    publicity_presenter:
+      id: sor.publicity.presenter
+      repo: japer-technology/forgejo-society-publicity-presenter
+      role: presenter
+      runtime_root: .forgejo-society/
+
+  bridge:
+    id: federation.publicity.bridge
+    description: |
+      Translates between the Federation's pillar-delegation schema and the
+      Publicity sub-society's brief/report schema. Lives as an
+      integration-family agency manifest under
+      agencies/integration/federation-publicity-bridge.md in *both* peers.
+    schema_in: schemas/federation-pillar-brief.schema.json
+    schema_out: schemas/federation-pillar-report.schema.json
+    lossiness: low
+    round_trip_drift_test: tests/federation-publicity-bridge.roundtrip.yml
+
+  directions:
+    - id: federation.to.publicity
+      from: sor.federation
+      to: sor.publicity.presenter
+      service: publicity.brief
+      authority: act
+      censors:
+        - authority-censor
+        - delegation-censor
+      budget: { calls_per_day: 25, payment: none }
+
+    - id: publicity.to.federation
+      from: sor.publicity.presenter
+      to: sor.federation
+      service: publicity.report
+      authority: act
+      censors:
+        - authority-censor
+        - cloud-egress-censor
+        - secret-smeller
+        - pii-exfiltration-censor
+      hosts:
+        - forge.forgejo-society.example
+      budget: { calls_per_day: 25, payment: { currency: USD, max_per_day: 0 } }
+
+  # Crisis traffic from the Federation may also enter the sub-society via the
+  # uplink. It bypasses the presenter only with explicit human approval and
+  # goes straight to sor.publicity.crisis. Listed here for completeness; the
+  # actual channel entry lives in channels.yml.
+  crisis_passthrough:
+    enabled: true
+    target: sor.publicity.crisis
+    approval_gate: human
+    censors:
+      - authority-censor
+      - workflow-danger-censor
+      - delegation-censor
+
+  reciprocal_agreement:
+    status: draft
+    file: ../../../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md
+    notes: |
+      A real reciprocal-agreement.md is created at activation time and must
+      be human-approved on both sides before the uplink is opened. Until then
+      this declaration is intent only; the cloud-egress-censor must deny
+      calls to the Federation host listed above.
+
+  audit:
+    federation_event_prefix: event.channel.publicity
+    presenter_event_prefix: event.channel.federation
+    settlement_archive: memory/decisions/
+
+  activation_prerequisites:
+    - federation_root_launched: false
+    - presenter_repo_provisioned: false
+    - reciprocal_agreement_signed: false
+    - bridge_roundtrip_test_passing: false
+    - cloud_egress_censor_registered_for_federation_host: false

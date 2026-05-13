@@ -1,0 +1,316 @@
+# channels.yml — Publicity sub-society wiring
+#
+# Every channel between Publicity member repos and out to the public web.
+# Each entry mirrors a runtime channels/<peer>/channel.yml file that will be
+# placed under the .forgejo-society/ of every participating society at
+# activation time, per FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md.
+
+version: 1
+society: sor.publicity
+
+# ---------------------------------------------------------------------------
+# Bridges declared once, referenced by id below. Each bridge corresponds to
+# an integration-family agency manifest inside each member repo at
+# agencies/integration/<bridge-id>.md.
+# ---------------------------------------------------------------------------
+bridges:
+  - id: publicity.dispatch
+    description: Presenter -> member dispatch. Carries a brief and a deadline.
+    schema_in: schemas/publicity-brief.schema.json
+    schema_out: schemas/publicity-acknowledgement.schema.json
+    lossiness: low
+
+  - id: publicity.lateral
+    description: Member -> member settlement handoff (announcement made, coverage filed, …).
+    schema_in: schemas/publicity-handoff.schema.json
+    schema_out: schemas/publicity-receipt.schema.json
+    lossiness: low
+
+  - id: publicity.metrics-push
+    description: Member -> metrics, fire-and-forget metric event.
+    schema_in: schemas/publicity-metric.schema.json
+    schema_out: schemas/publicity-metric-receipt.schema.json
+    lossiness: low
+
+  - id: publicity.metrics-pull
+    description: Presenter -> metrics, request a summarised report.
+    schema_in: schemas/publicity-metric-query.schema.json
+    schema_out: schemas/publicity-metric-summary.schema.json
+    lossiness: low
+
+  - id: publicity.public-channel
+    description: Member -> public web (blog, fediverse, RSS). Censor-gated.
+    schema_in: schemas/publicity-publication.schema.json
+    schema_out: schemas/publicity-publication-receipt.schema.json
+    lossiness: medium
+
+  - id: publicity.outreach-channel
+    description: media-relations -> external email relay for targeted outreach.
+    schema_in: schemas/publicity-outreach.schema.json
+    schema_out: schemas/publicity-outreach-receipt.schema.json
+    lossiness: medium
+
+# ---------------------------------------------------------------------------
+# The actual permitted channels. Each channel is unidirectional; reciprocal
+# traffic gets its own entry. Format mirrors channels/<peer>/channel.yml.
+# ---------------------------------------------------------------------------
+channels:
+
+  # --- Presenter dispatch to each member ----------------------------------
+  - id: presenter.to.announcements
+    from: sor.publicity.presenter
+    to: sor.publicity.announcements
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, delegation-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: presenter.to.media-relations
+    from: sor.publicity.presenter
+    to: sor.publicity.media-relations
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, delegation-censor, pii-exfiltration-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: presenter.to.events
+    from: sor.publicity.presenter
+    to: sor.publicity.events
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, delegation-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: presenter.to.coverage
+    from: sor.publicity.presenter
+    to: sor.publicity.coverage
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, delegation-censor]
+    budget: { calls_per_day: 200, payment: none }
+
+  - id: presenter.to.statements
+    from: sor.publicity.presenter
+    to: sor.publicity.statements
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, delegation-censor, overconfidence-critic]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: presenter.to.crisis
+    from: sor.publicity.presenter
+    to: sor.publicity.crisis
+    bridge: publicity.dispatch
+    authority: govern
+    censors: [authority-censor, delegation-censor, workflow-danger-censor]
+    approval_gate: human
+    budget: { calls_per_day: 5, payment: none }
+
+  - id: presenter.to.recognition
+    from: sor.publicity.presenter
+    to: sor.publicity.recognition
+    bridge: publicity.dispatch
+    authority: act
+    censors: [authority-censor, source-quality-critic]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: presenter.to.metrics
+    from: sor.publicity.presenter
+    to: sor.publicity.metrics
+    bridge: publicity.metrics-pull
+    authority: read
+    censors: [authority-censor]
+    budget: { calls_per_day: 100, payment: none }
+
+  # --- Lateral handoffs between members ----------------------------------
+  - id: announcements.to.coverage
+    from: sor.publicity.announcements
+    to: sor.publicity.coverage
+    bridge: publicity.lateral
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: events.to.announcements
+    from: sor.publicity.events
+    to: sor.publicity.announcements
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: events.to.coverage
+    from: sor.publicity.events
+    to: sor.publicity.coverage
+    bridge: publicity.lateral
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: media-relations.to.coverage
+    from: sor.publicity.media-relations
+    to: sor.publicity.coverage
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor, source-quality-critic]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: coverage.to.statements
+    from: sor.publicity.coverage
+    to: sor.publicity.statements
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor, overconfidence-critic]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: statements.to.coverage
+    from: sor.publicity.statements
+    to: sor.publicity.coverage
+    bridge: publicity.lateral
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: statements.to.media-relations
+    from: sor.publicity.statements
+    to: sor.publicity.media-relations
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor, pii-exfiltration-censor]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: recognition.to.announcements
+    from: sor.publicity.recognition
+    to: sor.publicity.announcements
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor, source-quality-critic, overconfidence-critic]
+    budget: { calls_per_day: 10, payment: none }
+
+  - id: announcements.to.media-relations
+    from: sor.publicity.announcements
+    to: sor.publicity.media-relations
+    bridge: publicity.lateral
+    authority: propose
+    censors: [authority-censor, pii-exfiltration-censor]
+    budget: { calls_per_day: 25, payment: none }
+
+  - id: crisis.to.statements
+    from: sor.publicity.crisis
+    to: sor.publicity.statements
+    bridge: publicity.lateral
+    authority: govern
+    censors: [authority-censor, secret-smeller]
+    approval_gate: human
+    budget: { calls_per_day: 5, payment: none }
+
+  - id: crisis.to.media-relations
+    from: sor.publicity.crisis
+    to: sor.publicity.media-relations
+    bridge: publicity.lateral
+    authority: govern
+    censors: [authority-censor, pii-exfiltration-censor]
+    approval_gate: human
+    budget: { calls_per_day: 5, payment: none }
+
+  # --- Metrics push from members to metrics ------------------------------
+  - id: announcements.to.metrics
+    from: sor.publicity.announcements
+    to: sor.publicity.metrics
+    bridge: publicity.metrics-push
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 200, payment: none }
+
+  - id: events.to.metrics
+    from: sor.publicity.events
+    to: sor.publicity.metrics
+    bridge: publicity.metrics-push
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 100, payment: none }
+
+  - id: coverage.to.metrics
+    from: sor.publicity.coverage
+    to: sor.publicity.metrics
+    bridge: publicity.metrics-push
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 500, payment: none }
+
+  - id: recognition.to.metrics
+    from: sor.publicity.recognition
+    to: sor.publicity.metrics
+    bridge: publicity.metrics-push
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  - id: metrics.to.presenter
+    from: sor.publicity.metrics
+    to: sor.publicity.presenter
+    bridge: publicity.metrics-pull
+    authority: act
+    censors: [authority-censor]
+    budget: { calls_per_day: 50, payment: none }
+
+  # --- External public-web channels (censor-gated, registered hosts) -----
+  - id: announcements.to.public-web
+    from: sor.publicity.announcements
+    to: external.public-web
+    bridge: publicity.public-channel
+    authority: act
+    censors:
+      - cloud-egress-censor
+      - secret-smeller
+      - pii-exfiltration-censor
+      - overconfidence-critic
+    hosts:
+      - blog.forgejo-society.example
+      - fediverse.forgejo-society.example
+    budget: { calls_per_day: 10, payment: { currency: USD, max_per_day: 0 } }
+
+  - id: statements.to.public-web
+    from: sor.publicity.statements
+    to: external.public-web
+    bridge: publicity.public-channel
+    authority: act
+    censors:
+      - cloud-egress-censor
+      - secret-smeller
+      - pii-exfiltration-censor
+      - overconfidence-critic
+    hosts:
+      - blog.forgejo-society.example
+      - fediverse.forgejo-society.example
+    budget: { calls_per_day: 5, payment: { currency: USD, max_per_day: 0 } }
+
+  - id: crisis.to.public-web
+    from: sor.publicity.crisis
+    to: external.public-web
+    bridge: publicity.public-channel
+    authority: govern
+    censors:
+      - cloud-egress-censor
+      - secret-smeller
+      - pii-exfiltration-censor
+      - workflow-danger-censor
+    hosts:
+      - blog.forgejo-society.example
+      - fediverse.forgejo-society.example
+    approval_gate: human
+    budget: { calls_per_day: 3, payment: { currency: USD, max_per_day: 0 } }
+
+  - id: media-relations.to.email-relay
+    from: sor.publicity.media-relations
+    to: external.email-relay
+    bridge: publicity.outreach-channel
+    authority: act
+    censors:
+      - cloud-egress-censor
+      - pii-exfiltration-censor
+      - delegation-censor
+      - secret-smeller
+    hosts:
+      - relay.forgejo-society.example
+    budget: { calls_per_day: 50, payment: { currency: USD, max_per_day: 1.00 } }

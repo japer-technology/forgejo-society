@@ -1,0 +1,49 @@
+id: sor.publicity.statements
+repo: japer-technology/forgejo-society-publicity-statements
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/06-statements.md
+
+remit: |
+  Owns the project's official public statements and responses to external
+  events. Receives correction requests from coverage/ and broader inquiries
+  from the presenter; produces statements that, once approved, are released
+  through the same censor-gated public-channel as announcements/.
+
+lead_agencies:
+  - code/statement-drafter
+  - safety/statement-reviewer
+  - identity/voice-keeper
+
+services_in:
+  - id: statement.draft
+    description: Draft a statement in response to an inquiry or coverage gap.
+    authority: propose
+  - id: statement.publish
+    description: Publish an approved statement.
+    authority: act
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+  - from: sor.publicity.coverage
+    via: publicity.lateral
+
+channels_out:
+  - to: sor.publicity.coverage
+    via: publicity.lateral
+    purpose: file the published statement back into the coverage log
+  - to: sor.publicity.media-relations
+    via: publicity.lateral
+    purpose: request targeted distribution of the statement
+  - to: external.public-web
+    via: publicity.public-channel
+
+censors_required:
+  - cloud-egress-censor
+  - authority-censor
+  - secret-smeller
+  - pii-exfiltration-censor
+  - overconfidence-critic

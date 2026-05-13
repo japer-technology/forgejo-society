@@ -1,0 +1,48 @@
+id: sor.publicity.events
+repo: japer-technology/forgejo-society-publicity-events
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/04-events.md
+
+remit: |
+  Owns talks, demos, podcasts, panels, and other appearances. Holds the
+  abstracts, recordings, and follow-up notes for each appearance, and
+  coordinates with announcements/ and coverage/ as events generate public
+  artefacts.
+
+lead_agencies:
+  - perception/event-intake
+  - assembly/event-planner
+  - memory/event-archivist
+
+services_in:
+  - id: event.propose
+    description: Propose a new appearance for review.
+    authority: propose
+  - id: event.confirm
+    description: Confirm a scheduled appearance and reserve resources.
+    authority: act
+  - id: event.archive
+    description: Archive abstract, recording, and follow-up after the event.
+    authority: act
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+
+channels_out:
+  - to: sor.publicity.announcements
+    via: publicity.lateral
+    purpose: announce confirmed events
+  - to: sor.publicity.coverage
+    via: publicity.lateral
+    purpose: register coverage produced by the event
+  - to: sor.publicity.metrics
+    via: publicity.metrics-push
+
+censors_required:
+  - cloud-egress-censor
+  - authority-censor
+  - pii-exfiltration-censor

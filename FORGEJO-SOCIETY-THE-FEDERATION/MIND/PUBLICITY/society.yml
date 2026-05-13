@@ -1,0 +1,97 @@
+# society.yml — Publicity sub-society of minds
+#
+# Declares the identity and membership of the Publicity sub-society delegated
+# by FORGEJO-SOCIETY-THE-FEDERATION. This file is a planning declaration; it
+# is mirrored into runtime wiring under each participating society's
+# .forgejo-society/channels/ at activation time.
+#
+# Schema follows the conventions of FORGEJO-SOCIETY-PLAN (see 04-folder-spec.md
+# and 13-inter-repo-communication.md).
+
+id: sor.publicity
+name: Forgejo Society — Publicity
+role: pillar
+pillar: publicity
+status: scaffold
+
+owner:
+  federation: sor.federation
+  governs_via: FORGEJO-SOCIETY-THE-FEDERATION/
+  delegated_responsibility: FORGEJO-SOCIETY-PUBLICITY/
+
+# The sub-society's single conscious voice. Federation -> presenter only.
+presenter: sor.publicity.presenter
+
+# Member repos that compose this sub-society. Each member is itself a Forgejo
+# Society with its own .forgejo-society/ and workflow. Files in repos/ describe
+# each member in detail.
+members:
+  - id: sor.publicity.presenter
+    repo: japer-technology/forgejo-society-publicity-presenter
+    role: presenter
+    file: repos/presenter.yml
+
+  - id: sor.publicity.announcements
+    repo: japer-technology/forgejo-society-publicity-announcements
+    role: pillar-member
+    file: repos/announcements.yml
+
+  - id: sor.publicity.media-relations
+    repo: japer-technology/forgejo-society-publicity-media-relations
+    role: pillar-member
+    file: repos/media-relations.yml
+
+  - id: sor.publicity.events
+    repo: japer-technology/forgejo-society-publicity-events
+    role: pillar-member
+    file: repos/events.yml
+
+  - id: sor.publicity.coverage
+    repo: japer-technology/forgejo-society-publicity-coverage
+    role: pillar-member
+    file: repos/coverage.yml
+
+  - id: sor.publicity.statements
+    repo: japer-technology/forgejo-society-publicity-statements
+    role: pillar-member
+    file: repos/statements.yml
+
+  - id: sor.publicity.crisis
+    repo: japer-technology/forgejo-society-publicity-crisis
+    role: pillar-member
+    file: repos/crisis.yml
+
+  - id: sor.publicity.recognition
+    repo: japer-technology/forgejo-society-publicity-recognition
+    role: pillar-member
+    file: repos/recognition.yml
+
+  - id: sor.publicity.metrics
+    repo: japer-technology/forgejo-society-publicity-metrics
+    role: pillar-member
+    file: repos/metrics.yml
+
+# Wiring is declared in wiring/. This list is the index, not the contract.
+wiring:
+  channels: wiring/channels.yml
+  federation_uplink: wiring/federation-uplink.yml
+
+# Default authority levels for the sub-society as a whole. Per-action limits
+# live in each repo's runtime governance/authority-registry.yml.
+authority:
+  draft: propose
+  publish_announcement: act
+  publish_statement: act
+  crisis_communication: govern
+  amend_published_record: govern
+
+# Activation prerequisites. While any of these is unmet, the sub-society is
+# "declared" but not "live"; the cloud-egress-censor will deny calls to its
+# hosts.
+activation:
+  prerequisites:
+    - federation_root_launched: false
+    - all_member_repos_provisioned: false
+    - reciprocal_channels_signed: false
+    - cloud_egress_censor_registered: false
+    - payment_censor_budgets_set: false

@@ -1,0 +1,50 @@
+id: sor.publicity.media-relations
+repo: japer-technology/forgejo-society-publicity-media-relations
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md
+
+remit: |
+  Owns the media list, journalist relationships, outreach protocols, embargo
+  policy, and inbound inquiry handling. Holds the authoritative directory
+  consulted by announcements/, statements/, and crisis/ when targeted
+  outreach is required.
+
+lead_agencies:
+  - memory/media-list-keeper
+  - integration/journalist-bridge
+  - safety/embargo-keeper
+
+services_in:
+  - id: media.list.lookup
+    description: Resolve a media outlet or journalist by id, beat, or region.
+    authority: read
+  - id: media.outreach.request
+    description: Request a targeted outbound contact.
+    authority: propose
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+  - from: sor.publicity.announcements
+    via: publicity.lateral
+  - from: sor.publicity.statements
+    via: publicity.lateral
+  - from: sor.publicity.crisis
+    via: publicity.lateral
+
+channels_out:
+  - to: external.email-relay
+    via: publicity.outreach-channel
+    purpose: deliver outreach to listed contacts
+  - to: sor.publicity.coverage
+    via: publicity.lateral
+    purpose: register expected coverage from outreach
+
+censors_required:
+  - cloud-egress-censor
+  - pii-exfiltration-censor
+  - authority-censor
+  - delegation-censor

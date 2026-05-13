@@ -1,0 +1,43 @@
+id: sor.publicity.recognition
+repo: japer-technology/forgejo-society-publicity-recognition
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/08-recognition.md
+
+remit: |
+  Owns awards, mentions, citations, and inclusions the project has received.
+  Receives high-signal entries from coverage/ and from the presenter; archives
+  them with provenance and links into the metrics feed.
+
+lead_agencies:
+  - perception/recognition-watcher
+  - memory/recognition-archivist
+  - safety/provenance-keeper
+
+services_in:
+  - id: recognition.register
+    description: Register a new award, citation, or inclusion.
+    authority: act
+  - id: recognition.lookup
+    description: Look up recognition by date, source, or category.
+    authority: read
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+  - from: sor.publicity.coverage
+    via: publicity.lateral
+
+channels_out:
+  - to: sor.publicity.metrics
+    via: publicity.metrics-push
+  - to: sor.publicity.announcements
+    via: publicity.lateral
+    purpose: propose an announcement for a notable recognition
+
+censors_required:
+  - cloud-egress-censor
+  - source-quality-critic
+  - overconfidence-critic

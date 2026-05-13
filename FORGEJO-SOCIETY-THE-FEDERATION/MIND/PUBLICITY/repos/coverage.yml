@@ -1,0 +1,49 @@
+id: sor.publicity.coverage
+repo: japer-technology/forgejo-society-publicity-coverage
+role: pillar-member
+society: sor.publicity
+
+implements:
+  - FORGEJO-SOCIETY-PUBLICITY/05-coverage.md
+
+remit: |
+  Owns the append-only log of how the project is described by others.
+  Receives notifications from announcements/, events/, and media-relations/;
+  ingests external mentions; files correction requests via statements/ when
+  the public record needs amendment.
+
+lead_agencies:
+  - perception/coverage-watcher
+  - memory/coverage-archivist
+  - safety/correction-keeper
+
+services_in:
+  - id: coverage.register
+    description: Register a new external coverage entry.
+    authority: act
+  - id: coverage.lookup
+    description: Look up coverage by date, outlet, or topic.
+    authority: read
+
+channels_in:
+  - from: sor.publicity.presenter
+    via: publicity.dispatch
+  - from: sor.publicity.announcements
+    via: publicity.lateral
+  - from: sor.publicity.events
+    via: publicity.lateral
+  - from: sor.publicity.media-relations
+    via: publicity.lateral
+
+channels_out:
+  - to: sor.publicity.statements
+    via: publicity.lateral
+    purpose: request a correction or response
+  - to: sor.publicity.metrics
+    via: publicity.metrics-push
+
+censors_required:
+  - cloud-egress-censor
+  - source-quality-critic
+  - staleness-critic
+  - pii-exfiltration-censor
