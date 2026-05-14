@@ -4,6 +4,43 @@ Society channels are governed agreements for SOR-to-SOR service relationships.
 
 This SOR may call services from other societies, and other societies may call services from this SOR.
 
+```mermaid
+flowchart LR
+  classDef self fill:#1f2a44,stroke:#7aa2f7,color:#fff,stroke-width:2px
+  classDef peer fill:#2a2a2a,stroke:#c0caf5,color:#fff
+  classDef chan fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef cen fill:#3a1e1e,stroke:#f7768e,color:#fff
+  classDef pay fill:#1e3a2a,stroke:#9ece6a,color:#fff
+
+  subgraph SELF[this SOR]
+    direction TB
+    WS[workspace]:::self
+    EX[exposed services<br/>08-services/]:::self
+    OUT[cloud-egress<br/>+ payment censors]:::cen
+    IN[input-rights<br/>censor]:::cen
+  end
+
+  subgraph PEERS[peer SORs]
+    direction TB
+    P1[dental-compliance]:::peer
+    P2[tax-pack-provider]:::peer
+    P3[contract-extraction]:::peer
+  end
+
+  C1[[channel · paid<br/>contract + audit]]:::chan
+  C2[[channel · reciprocal<br/>credits + barter]]:::pay
+  C3[[channel · inbound<br/>contract + audit]]:::chan
+
+  WS -->|outbound call| OUT --> C1 --> P1
+  P1 -. response .-> C1 -. response .-> WS
+
+  WS -->|outbound call| OUT --> C2 --> P2
+  P2 -. credits .-> C2 -. credits .-> WS
+
+  P3 -->|inbound call| C3 --> IN --> EX --> WS
+  WS -. response .-> EX -. response .-> C3 -. response .-> P3
+```
+
 ---
 
 ## What a Society Channel is

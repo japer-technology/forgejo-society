@@ -95,6 +95,22 @@ stimulus
 → reinforcement
 ```
 
+```mermaid
+flowchart LR
+  classDef sense fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef think fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef judge fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef block fill:#3a1e1e,stroke:#f7768e,color:#fff
+  classDef act   fill:#1e3a2a,stroke:#9ece6a,color:#fff
+  classDef mem   fill:#2e1e3a,stroke:#bb9af7,color:#fff
+
+  S([stimulus]):::sense --> P[perception]:::sense --> AC[activation]:::think
+  AC --> R[agency response]:::act --> CR[criticism]:::judge --> CN[censorship]:::block
+  CN --> ST{{settlement}}:::think --> A[action]:::act --> O[outcome]:::act
+  O --> M[memory]:::mem --> RF[reinforcement]:::mem
+  RF -.shapes next cycle.-> AC
+```
+
 ### Stimulus
 
 Something happens.

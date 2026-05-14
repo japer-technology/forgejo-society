@@ -4,6 +4,40 @@ A Society of Repo may call services provided by other societies, and may expose 
 
 A Society Channel is a governed repo-to-repo service relationship.
 
+```mermaid
+sequenceDiagram
+  autonumber
+  participant RA as Requesting SOR<br/>· workspace
+  participant CE as cloud-egress-censor
+  participant PG as approval-gate
+  participant CH as Channel<br/>(contract + audit)
+  participant PB as Provider SOR<br/>· input-rights censor
+  participant PS as Provider SOR<br/>· service
+  participant LE as Ledger / Reputation
+
+  RA->>CH: 1. Discovery — query service registry
+  CH-->>RA: provider's service contract
+  RA->>RA: 2. Negotiate terms
+  alt cost > limit OR sensitive data
+    RA->>PG: approval required
+    PG-->>RA: granted / denied (immutable record)
+  end
+  RA->>CE: 3. Prepare input payload
+  CE-->>RA: ✓ no forbidden inputs<br/>✗ blocked unconditionally
+  RA->>CH: 4. Transmit input (hash + classification)
+  CH->>PB: forward to provider boundary
+  PB-->>PB: input-rights check
+  PB->>PS: hand off accepted input
+  PS-->>CH: 5. Output (with confidence)
+  CH-->>RA: deliver output
+  RA->>RA: validate + write to workspace / memory
+  RA->>LE: 6. Payment / reciprocal credit
+  RA->>LE: 7. Satisfaction rating
+  LE-->>PS: reputation update
+  CH->>CH: 8. Audit trace<br/>(input hash · output hash · price · ts)<br/>never deletable
+  Note over RA,PS: 30-day dispute window
+```
+
 ---
 
 ## What a Society Channel is

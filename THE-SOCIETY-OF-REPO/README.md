@@ -30,6 +30,86 @@ Each part has a role:
 | **Meta-admin roles** | Observe and redesign the ecology itself |
 | **Service repos** | Expose capabilities to other societies |
 
+### Anatomy of a society
+
+```mermaid
+flowchart TB
+  classDef gov fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef agency fill:#1e3a2a,stroke:#9ece6a,color:#fff
+  classDef critic fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef censor fill:#3a1e1e,stroke:#f7768e,color:#fff
+  classDef memory fill:#2e1e3a,stroke:#bb9af7,color:#fff
+  classDef workspace fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef service fill:#2a2a2a,stroke:#c0caf5,color:#fff
+  classDef stim fill:#000,stroke:#fff,color:#fff
+
+  STIM([stimulus<br/>issue · webhook · timer · file]):::stim
+
+  subgraph FORGE["the forge = the mind"]
+    direction TB
+
+    subgraph GOV["01 governance"]
+      C[constitution]
+      AR[authority registry]
+      AG[approval gate]
+      SI[self-ideals]
+    end
+
+    subgraph WS["07 workspace"]
+      GW[global workspace]
+      CF[current focus]
+      AS[active settlements]
+    end
+
+    subgraph AG_R["03 agencies"]
+      IB[intake-bee]
+      CB[contract-bee]
+      SB[supplier-bee]
+      OBR[owner-briefing]
+    end
+
+    subgraph CR["04 critics"]
+      EVC[evidence]
+      SCC[scope]
+      RKC[risk]
+    end
+
+    subgraph CN["05 censors"]
+      CEC[cloud-egress]
+      AUC[authority]
+      PYC[payment]
+    end
+
+    subgraph MEM["06 memory"]
+      FR[frames]
+      KL[K-lines]
+      EP[episodic]
+      FA[failure]
+    end
+
+    subgraph SVC["08 services"]
+      SX[exposed services]
+    end
+  end
+
+  STIM --> WS
+  GOV  -.constrains.-> WS
+  MEM  -.frames + K-lines.-> WS
+  AG_R -->|propose| WS
+  CR   -.object.-> WS
+  CN   -.block.-> WS
+  WS   -->|settlement| MEM
+  WS   -->|authorised action| SVC
+
+  class GOV,C,AR,AG,SI gov
+  class AG_R,IB,CB,SB,OBR agency
+  class CR,EVC,SCC,RKC critic
+  class CN,CEC,AUC,PYC censor
+  class MEM,FR,KL,EP,FA memory
+  class WS,GW,CF,AS workspace
+  class SVC,SX service
+```
+
 The forge itself becomes the cognitive substrate:
 
 ```text
@@ -104,6 +184,33 @@ stimulus
   → reinforcement and evolution
 ```
 
+```mermaid
+flowchart LR
+  classDef sense fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef think fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef judge fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef block fill:#3a1e1e,stroke:#f7768e,color:#fff
+  classDef act   fill:#1e3a2a,stroke:#9ece6a,color:#fff
+  classDef mem   fill:#2e1e3a,stroke:#bb9af7,color:#fff
+
+  S([stimulus]):::sense --> P[perception]:::sense
+  P --> F[frame selection]:::think
+  F --> A[K-line + analogy<br/>activation]:::think
+  A --> R[agency response]:::act
+  R --> CR[criticism]:::judge
+  CR --> IN[graduated inhibition]:::judge
+  IN --> CN[censorship]:::block
+  CN --> ST{{settlement}}:::think
+  ST --> AC[action]:::act
+  AC --> OU[outcome]:::act
+  OU --> ME[memory]:::mem
+  ME --> CA[credit assignment]:::mem
+  CA --> EV[reinforcement<br/>+ evolution]:::mem
+  EV -.updates.-> F
+  EV -.updates.-> A
+  EV -.updates.-> R
+```
+
 See [00-foundations/02-cognitive-loop.md](00-foundations/02-cognitive-loop.md) for the complete loop specification.
 
 ---
@@ -172,3 +279,45 @@ Network reach and commercial sophistication do **not** by themselves imply deepe
 > A Society of Repo is not one agent, one model, or one pipeline.
 > It is a governed ecology of many small useful intelligences — each limited, each inspectable, each versioned.
 > The intelligence is located in the structured interaction between them, and in the society's ability to represent, remember, compare, inhibit, revise, and observe itself.
+
+---
+
+## Societies of societies
+
+A mature SOR rarely lives alone. It calls and is called by other SORs through governed channels — never as raw API integrations, but as cognitive transactions with contracts, censors, and audit trails.
+
+```mermaid
+flowchart LR
+  classDef sor fill:#1f2a44,stroke:#7aa2f7,color:#fff,stroke-width:2px
+  classDef chan fill:#2a2a2a,stroke:#c0caf5,color:#fff
+  classDef cen fill:#3a1e1e,stroke:#f7768e,color:#fff
+
+  subgraph A["SOR · forgejo-mind"]
+    AWS[workspace]:::sor
+    AOUT[cloud-egress<br/>censor]:::cen
+    ASVC[services]:::sor
+  end
+
+  subgraph B["SOR · dental-compliance"]
+    BSVC[services]:::sor
+    BIN[input rights<br/>censor]:::cen
+    BWS[workspace]:::sor
+  end
+
+  subgraph C["SOR · tax-pack-provider"]
+    CSVC[services]:::sor
+    CWS[workspace]:::sor
+  end
+
+  CH1[[channel<br/>contract + audit]]:::chan
+  CH2[[reciprocal<br/>credits]]:::chan
+
+  AWS -->|call| AOUT --> CH1 --> BIN --> BSVC --> BWS
+  BSVC -. response .-> CH1 -. response .-> AWS
+
+  AWS -->|call| CH2
+  CH2 --> CSVC --> CWS
+  CSVC -. credits .-> CH2 -. credits .-> AWS
+```
+
+Each channel carries a service contract, input/output rights, pricing or reciprocal credits, privacy and retention terms, an audit trace, and a reputation feedback loop. See [02-protocols/07-service-channel.md](02-protocols/07-service-channel.md) and [09-channels/](09-channels/README.md).

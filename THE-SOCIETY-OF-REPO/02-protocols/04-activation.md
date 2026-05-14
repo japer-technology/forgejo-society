@@ -55,6 +55,46 @@ surface folder is a governed activation change.
 9. Emit the activation record into the workspace.
 ```
 
+```mermaid
+flowchart TB
+  classDef in fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef think fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef gate fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef out fill:#1e3a2a,stroke:#9ece6a,color:#fff
+  classDef block fill:#3a1e1e,stroke:#f7768e,color:#fff
+
+  S([classified stimulus<br/>+ budgets]):::in
+  FX[(frame index)]:::think
+  KX[(K-line index)]:::think
+  AX[(analogy index)]:::think
+  FH[(failure / inhibition<br/>history)]:::block
+
+  S --> FS{strong frame match?}:::gate
+  FX --> FS
+  FS -- yes --> FRAME[selected frame<br/>+ defaults + procedures]:::think
+  FS -- no  --> NOVEL[mark novel<br/>analogy pass weighted up]:::think
+
+  FRAME --> KQ{strong K-line match?}:::gate
+  KX --> KQ
+  KQ -- yes --> KLINE[apply K-line<br/>activation pattern]:::think
+  KQ -- no  --> ANALOGY[analogy pass<br/>borrow structure]:::think
+  AX --> ANALOGY
+  NOVEL --> ANALOGY
+
+  KLINE --> MERGE[merge weights<br/>+ soft inhibition<br/>+ insulation<br/>+ budgets]:::think
+  ANALOGY --> MERGE
+  FH -.dampen.-> MERGE
+
+  MERGE --> ROUTE{evidence size<br/>vs budget}:::gate
+  ROUTE -- small --> EMIT
+  ROUTE -- large --> SUM[summary-first routing<br/>via assembly tier]:::think --> EMIT
+
+  EMIT[/activation record/]:::out
+  EMIT --> A1[awake agencies]:::out
+  EMIT --> A2[inhibited agencies]:::out
+  EMIT --> A3[suppressed agencies]:::block
+```
+
 ---
 
 ## Frames before K-lines

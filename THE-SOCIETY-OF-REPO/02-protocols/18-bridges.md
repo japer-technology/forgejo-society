@@ -6,6 +6,42 @@ Different agencies use different internal representations. They cannot directly 
 
 This protocol makes bridge agencies a first-class kind in SOR, with declared properties and explicit testability requirements.
 
+```mermaid
+flowchart LR
+  classDef realm fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef br fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef test fill:#2e1e3a,stroke:#bb9af7,color:#fff
+  classDef fail fill:#3a1e1e,stroke:#f7768e,color:#fff
+
+  subgraph SRC[realm X · source]
+    SX[representation X<br/>e.g. Forgejo event payload]:::realm
+  end
+  subgraph TGT[realm Y · target]
+    TY[representation Y<br/>e.g. SOR-typed stimulus]:::realm
+  end
+
+  BR1[[bridge X→Y<br/>directional · lossy<br/>declared invariants]]:::br
+  BR2[[bridge Y→X<br/>separate agency<br/>own constitution]]:::br
+
+  SX --> BR1 --> TY
+  TY --> BR2 --> SX
+
+  subgraph TESTS[required tests]
+    SC[schema contract]:::test
+    RT[round-trip drift]:::test
+    INV[invariant cases<br/>positive + negative]:::test
+  end
+  BR1 --- TESTS
+  BR2 --- TESTS
+
+  DRIFT{drift exceeds<br/>declared envelope?}:::test
+  TESTS --> DRIFT
+  DRIFT -- yes --> PROB[bridge → probation<br/>not a settlement input]:::fail
+  DRIFT -- no  --> OK([cleared for settlement])
+```
+
+A bridge that hides inside another agency hides the lossy step from review. Bridges are agencies — with constitutions, authority levels, memory footprints, and credit-assignment records — never anonymous utility code.
+
 ---
 
 ## When a bridge is required

@@ -4,6 +4,44 @@ Memory in a Society of Repo is a first-class system.
 
 Memory is versioned, inspectable, correctable, and reviewable because it lives in Git repos.
 
+```mermaid
+flowchart LR
+  classDef rec fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef rcn fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef store fill:#2e1e3a,stroke:#bb9af7,color:#fff
+
+  Q([memory query]):::rec --> R[recognition pass<br/>cheap · index lookup]:::rec
+  R -- match? --> RR{strong<br/>signal?}
+  RR -- no --> NEG([no match]):::rec
+  RR -- yes --> RC[reconstruction pass<br/>expensive · gated]:::rcn
+  RC --> PART[partial return<br/>K-line slots + frame defaults<br/>+ unknown / low-confidence]:::rcn
+
+  subgraph STORES[memory stores · 06-memory/]
+    direction TB
+    EV[(events)]:::store
+    EP[(episodic)]:::store
+    SE[(semantic)]:::store
+    PR[(procedural)]:::store
+    FA[(failure)]:::store
+    FR[(frames)]:::store
+    AN[(analogies)]:::store
+    CO[(concepts)]:::store
+    KL[(K-lines)]:::store
+    DE[(decisions)]:::store
+  end
+
+  R --- STORES
+  RC --- STORES
+
+  EV --- EP
+  FR --- KL
+  FR --- AN
+  KL --- AN
+  EP --- DE
+  FA --- KL
+  CO --- FR
+```
+
 ---
 
 ## Memory types
@@ -125,6 +163,20 @@ consolidation_window:
 The slowness of the window is *useful* (Cache-Transfer Principle, P13). It is the gap during which credit is assigned across the loop, late signals can arrive, and structural patterns become visible. Promoting too eagerly destroys the consolidation benefit; promoting too slowly loses the experience.
 
 A stimulus whose consolidation window expires without a closing decision is auto-flagged for the `memory-steward` and either promoted with the available evidence or recorded as a learning gap.
+
+```mermaid
+stateDiagram-v2
+  direction LR
+  [*] --> Outcome
+  Outcome --> Window : open consolidation window<br/>min P1H
+  Window --> Window : credit assignment<br/>introspection<br/>late critic objections<br/>late suppressor firings
+  Window --> Promoted : closing decision (settled)<br/>→ episodic / frame / K-line / failure
+  Window --> Expired : max P24H reached
+  Expired --> Promoted : steward closes with available evidence
+  Expired --> LearningGap : flagged for review
+  Promoted --> [*]
+  LearningGap --> [*]
+```
 
 ---
 

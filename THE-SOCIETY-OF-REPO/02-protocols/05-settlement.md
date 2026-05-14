@@ -4,6 +4,44 @@ A settlement is a visible record of how a decision formed in the society.
 
 No non-trivial action may occur without a settlement.
 
+```mermaid
+sequenceDiagram
+  autonumber
+  participant WS as Workspace<br/>(global-workspace)
+  participant AG as Agencies
+  participant CR as Critics
+  participant CN as Censors
+  participant ST as Settlement
+  participant GV as Approval Gate
+  participant EX as Authorised Executor
+  participant ME as Memory
+
+  WS->>AG: activation record + budgets
+  AG-->>WS: proposals (evidence, method, confidence,<br/>alternatives, blind spots)
+  par critic window (e.g. 120s)
+    CR-->>WS: objections (severity, usefulness)
+  and censor window (e.g. 30s, must close first)
+    CN-->>WS: blocks (unconditional, with policy ref)
+  end
+  alt required critic or censor offline at close
+    WS->>ST: fail-closed settlement
+    ST-->>ME: failure memory entry
+  else windows closed cleanly
+    WS->>ST: assemble settlement (transframe)
+    ST->>GV: needs approval?
+    alt routine
+      GV-->>ST: not required
+      ST->>EX: authorised action
+    else governed
+      GV->>EX: hold until human approves
+      Note over GV,EX: PR merge · issue comment · label
+      EX-->>GV: approval recorded (immutable)
+    end
+    EX-->>ST: outcome (success / fail / revise)
+    ST-->>ME: episodic + frame + K-line + decision<br/>+ analogy + concept candidates
+  end
+```
+
 ---
 
 ## What a settlement records

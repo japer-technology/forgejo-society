@@ -4,6 +4,48 @@ Every meaningful action in a Society of Repo emits an event.
 
 Events are the nervous system of the society. They carry stimuli from the outside world and signal state changes between agencies.
 
+```mermaid
+flowchart LR
+  classDef ext fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef bridge fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef bus fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef ws fill:#1e3a3a,stroke:#7dcfff,color:#fff
+  classDef mem fill:#2e1e3a,stroke:#bb9af7,color:#fff
+  classDef gov fill:#3a1e1e,stroke:#f7768e,color:#fff
+
+  subgraph EXT[external sources]
+    direction TB
+    FJ[Forgejo events<br/>issues · PR · push]:::ext
+    WH[webhooks · timers]:::ext
+    UP[file uploads]:::ext
+  end
+
+  BR[forgejo-intelligence-bridge<br/>+ guardrails]:::bridge
+
+  subgraph BUS[event bus = workspace + memory]
+    direction TB
+    NORM[normalised event]:::bus
+    LOOP[(cognitive loop<br/>events:<br/>activation · proposal<br/>objection · block<br/>settlement · action)]:::bus
+    GVE[(governance events<br/>approval · policy<br/>constitution · agency)]:::gov
+    SVE[(service channel events<br/>called · completed<br/>failed · blocked)]:::bus
+  end
+
+  WS[(07-workspace/<br/>global-workspace/<br/>{stimulus}/events/)]:::ws
+  EM[(06-memory/events/<br/>{year}/{month}/)]:::mem
+  GL[(01-governance/<br/>governance-log/)]:::gov
+
+  FJ --> BR
+  WH --> BR
+  UP --> BR
+  BR --> NORM --> LOOP
+  LOOP --> GVE
+  LOOP --> SVE
+  NORM -- live --> WS
+  LOOP -- live --> WS
+  WS -- on close --> EM
+  GVE -- always --> GL
+```
+
 ---
 
 ## Event schema

@@ -58,6 +58,45 @@ When a settlement requires human approval:
    - What happens if the owner approves vs. denies
 4. No further action is taken until the owner responds.
 
+```mermaid
+flowchart TB
+  classDef think fill:#1f2a44,stroke:#7aa2f7,color:#fff
+  classDef gate fill:#3a2e1e,stroke:#e0af68,color:#fff
+  classDef block fill:#3a1e1e,stroke:#f7768e,color:#fff
+  classDef act   fill:#1e3a2a,stroke:#9ece6a,color:#fff
+  classDef gov   fill:#2a2a2a,stroke:#c0caf5,color:#fff
+
+  ST{{settlement formed}}:::think
+  CAT{approval<br/>category?}:::gate
+  AUC[authority-censor<br/>enforces gate list]:::block
+  OBR[owner-briefing<br/>writes request]:::gov
+  WS[(owner-briefings<br/>workspace)]:::gov
+  HU[[human owner]]:::gov
+  M{decision}:::gate
+  PR[(PR merge)]:::gov
+  IC[(issue comment)]:::gov
+  LB[(label apply)]:::gov
+  AR[approval record<br/>immutable]:::gov
+  DR[denial record<br/>cancelled]:::block
+  EX[authorised executor]:::act
+  GE[(governance-log<br/>events)]:::gov
+
+  ST --> CAT
+  CAT -- routine --> EX
+  CAT -- governed --> AUC --> OBR --> WS --> HU
+  HU --> M
+  M -- via --> PR
+  M -- via --> IC
+  M -- via --> LB
+  PR --> AR
+  IC --> AR
+  LB --> AR
+  M -- denied --> DR
+  AR --> EX
+  AR --> GE
+  DR --> GE
+```
+
 ---
 
 ## How approval is granted
