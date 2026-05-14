@@ -32,6 +32,7 @@ deep, command-level procedures.
 |---|---|
 | [Ubuntu Quick Start](quick-start/ubuntu.md) | You are provisioning a fresh Ubuntu host from bare metal |
 | [Ubuntu Refresh](quick-start/ubuntu-refresh.md) | You are repairing, cleaning, or validating an existing Ubuntu host |
+| [Forgejo (minimum viable)](quick-start/forgejo-minimum.md) | You want a viable Forgejo on one Ubuntu host with the fewest possible commands |
 | [Forgejo-Society Full Stack](quick-start/forgejo-society.md) | You want the shortest guided path to a working Forgejo-Society deployment |
 
 ---

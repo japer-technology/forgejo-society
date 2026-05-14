@@ -1,5 +1,7 @@
 # Forgejo
 
+> **Evaluating?** For the absolute-minimum cut-and-paste path to a single-host viable Forgejo (SQLite, HTTP-only, ~5 commands), use the [Forgejo Minimum Viable Quick Start](../quick-start/forgejo-minimum.md). This guide is the full production install with PostgreSQL, Caddy, OS-level SSH, and backups.
+
 Forgejo is a self-hosted, community-driven Git forge that provides repositories, issue tracking, pull requests, releases, CI/CD via Actions, package registries, and a full web UI and REST API. It is the central hub of the Forgejo-Society stack: every developer pushes code here, every CI pipeline runs from here, and every LLM-assisted workflow originates here. This guide installs Forgejo as a binary service (not Docker) on the forge server, backed by PostgreSQL 16, proxied by Caddy, and accessible via both HTTPS and SSH. A backup script and systemd service are also configured.
 
 ---
