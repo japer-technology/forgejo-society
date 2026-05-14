@@ -1,0 +1,3 @@
+ubuntu installed
+
+chrome/beekeeper
