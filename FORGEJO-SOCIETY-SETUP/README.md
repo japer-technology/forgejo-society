@@ -21,7 +21,7 @@ deep, command-level procedures.
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
 | `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
-| `examples/` | Runnable starter assets for agencies, settlements, critics, and workflows | [Examples](examples/README.md) |
+| `CONFORMANCE/` | Drop-in conformance assets that prove a Forgejo installation is ready for advanced use by THE-SOCIETY-OF-REPO | [Conformance library](CONFORMANCE/README.md) |
 | `TASK-LISTS.md` | Checklist-first navigation across the entire folder | [Task lists](TASK-LISTS.md) |
 
 ---
@@ -52,7 +52,7 @@ deep, command-level procedures.
 - Checklist-driven work should be reachable from [TASK-LISTS.md](TASK-LISTS.md).
 - Component procedures should stay in `install/`.
 - End-to-end rollout, runtime governance, and day-two operations should stay in `transition-plan/`.
-- Runnable starter assets should stay in `examples/`.
+- Conformance assets that prove a Forgejo installation is ready for SOR work should stay in `CONFORMANCE/`.
 - Quick-start guides should remain opinionated and fast, with links back to deeper material.
 
 ---
