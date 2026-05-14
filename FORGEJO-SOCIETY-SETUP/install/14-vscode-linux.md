@@ -1,6 +1,6 @@
 # Visual Studio Code (Linux)
 
-Visual Studio Code is the primary code editor for Forgejo-Mind developers working on Ubuntu. It provides intelligent code completion, integrated Git source control with GitLens for in-editor blame and history, Remote-SSH for editing files directly on the forge server or runner nodes without local checkouts, and a rich extension ecosystem covering every language in the stack. VS Code is installed via the official Microsoft APT repository to ensure it receives updates through the standard `apt upgrade` mechanism. This guide installs VS Code and a curated set of extensions that cover the Forgejo-Mind technology stack.
+Visual Studio Code is the primary code editor for Forgejo-Society developers working on Ubuntu. It provides intelligent code completion, integrated Git source control with GitLens for in-editor blame and history, Remote-SSH for editing files directly on the forge server or runner nodes without local checkouts, and a rich extension ecosystem covering every language in the stack. VS Code is installed via the official Microsoft APT repository to ensure it receives updates through the standard `apt upgrade` mechanism. This guide installs VS Code and a curated set of extensions that cover the Forgejo-Society technology stack.
 
 ---
 
@@ -52,7 +52,7 @@ code --version
 
 ### 4. Install Required Extensions
 
-Install the curated Forgejo-Mind extension set. Run these commands from a terminal (not inside VS Code):
+Install the curated Forgejo-Society extension set. Run these commands from a terminal (not inside VS Code):
 
 ```bash
 # GitLens — enhanced Git history, blame, and visual diff

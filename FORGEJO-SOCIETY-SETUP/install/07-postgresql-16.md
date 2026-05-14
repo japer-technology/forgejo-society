@@ -116,7 +116,7 @@ The forge server has 64 GB RAM and a 20-core CPU. The following settings are tun
 sudo mkdir -p /etc/postgresql/16/main/conf.d
 
 sudo tee /etc/postgresql/16/main/conf.d/forgejo-tuning.conf > /dev/null <<'EOF'
-# Forgejo-Mind PostgreSQL performance tuning
+# Forgejo-Society PostgreSQL performance tuning
 # Hardware: i9 20-core @ 5 GHz, 64 GB RAM, 2 TB NVMe
 
 # Memory

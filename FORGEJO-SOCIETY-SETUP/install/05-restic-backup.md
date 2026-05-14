@@ -1,6 +1,6 @@
 # Restic Backup
 
-Restic is a modern, fast, encrypted backup program that supports deduplicated, incremental snapshots stored on a wide variety of backends including S3-compatible object storage (Backblaze B2, Wasabi, AWS S3). In the Forgejo-Mind stack, Restic protects the forge server's PostgreSQL database dumps, Forgejo repository data, and system configuration against hardware failure, ransomware, and accidental deletion. Every backup is client-side encrypted before it leaves the host — even the storage provider cannot read backup contents. Snapshots are deduplicated at the chunk level, so successive nightly backups of largely-unchanged data consume very little additional space.
+Restic is a modern, fast, encrypted backup program that supports deduplicated, incremental snapshots stored on a wide variety of backends including S3-compatible object storage (Backblaze B2, Wasabi, AWS S3). In the Forgejo-Society stack, Restic protects the forge server's PostgreSQL database dumps, Forgejo repository data, and system configuration against hardware failure, ransomware, and accidental deletion. Every backup is client-side encrypted before it leaves the host — even the storage provider cannot read backup contents. Snapshots are deduplicated at the chunk level, so successive nightly backups of largely-unchanged data consume very little additional space.
 
 ---
 
@@ -33,7 +33,7 @@ Restic supports multiple backends. This guide uses Backblaze B2 as the primary o
 #### Backblaze B2 Setup
 
 1. Create a Backblaze account at https://www.backblaze.com/b2/
-2. Create a private bucket named `forgejo-mind-backup` (do not make it public)
+2. Create a private bucket named `forgejo-society-backup` (do not make it public)
 3. Create an Application Key with read/write access to that bucket
 4. Note your:
    - **Account ID** (also called keyID)
@@ -50,7 +50,7 @@ sudo tee /etc/restic/b2.env > /dev/null <<'EOF'
 # Backblaze B2 credentials
 export B2_ACCOUNT_ID="YOUR_ACCOUNT_ID"
 export B2_ACCOUNT_KEY="YOUR_APPLICATION_KEY"
-export RESTIC_REPOSITORY="b2:forgejo-mind-backup:/forge"
+export RESTIC_REPOSITORY="b2:forgejo-society-backup:/forge"
 export RESTIC_PASSWORD="YOUR_STRONG_REPOSITORY_PASSWORD"
 EOF
 
@@ -65,7 +65,7 @@ For Wasabi S3, use:
 sudo tee /etc/restic/wasabi.env > /dev/null <<'EOF'
 export AWS_ACCESS_KEY_ID="YOUR_WASABI_KEY"
 export AWS_SECRET_ACCESS_KEY="YOUR_WASABI_SECRET"
-export RESTIC_REPOSITORY="s3:https://s3.eu-central-1.wasabisys.com/forgejo-mind-backup/forge"
+export RESTIC_REPOSITORY="s3:https://s3.eu-central-1.wasabisys.com/forgejo-society-backup/forge"
 export RESTIC_PASSWORD="YOUR_STRONG_REPOSITORY_PASSWORD"
 EOF
 sudo chmod 600 /etc/restic/wasabi.env
@@ -81,14 +81,14 @@ source /etc/restic/b2.env
 restic init
 
 # Expected output:
-# created restic repository xxxxxxxxxxxxxxxx at b2:forgejo-mind-backup:/forge
+# created restic repository xxxxxxxxxxxxxxxx at b2:forgejo-society-backup:/forge
 # Please note that knowledge of your password is required to access the repository.
 # Losing your password means that your data is irrecoverably lost!
 ```
 
 ### 4. Create the Backup Script
 
-The backup script runs as root, sources the credentials, and backs up the critical Forgejo-Mind directories.
+The backup script runs as root, sources the credentials, and backs up the critical Forgejo-Society directories.
 
 ```bash
 sudo tee /usr/local/bin/restic-backup-forge.sh > /dev/null <<'SCRIPT'

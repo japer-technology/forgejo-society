@@ -1,6 +1,6 @@
 # Git and Git LFS (Linux)
 
-Git is the distributed version control system that is the foundation of the entire Forgejo-Mind workflow — every line of code, configuration file, and documentation change flows through Git. Git LFS (Large File Storage) extends Git to handle large binary files (model weights, datasets, compiled artifacts, media) by storing the file content on the Forgejo LFS server and keeping only a pointer in the Git history. Without Git LFS, large binaries bloat the Git history and slow down every clone and fetch. This guide covers installing Git and Git LFS on Ubuntu 24.04 LTS, configuring sensible global defaults, and establishing a global `.gitignore` that prevents accidental commits of secrets, build artefacts, and IDE state.
+Git is the distributed version control system that is the foundation of the entire Forgejo-Society workflow — every line of code, configuration file, and documentation change flows through Git. Git LFS (Large File Storage) extends Git to handle large binary files (model weights, datasets, compiled artifacts, media) by storing the file content on the Forgejo LFS server and keeping only a pointer in the Git history. Without Git LFS, large binaries bloat the Git history and slow down every clone and fetch. This guide covers installing Git and Git LFS on Ubuntu 24.04 LTS, configuring sensible global defaults, and establishing a global `.gitignore` that prevents accidental commits of secrets, build artefacts, and IDE state.
 
 ---
 
@@ -267,7 +267,7 @@ git lfs version
 
 ## Continuity Controls
 
-- **Keep Git current:** Ubuntu 24.04's Git package receives security updates via `unattended-upgrades`. Review new Git releases periodically (https://git-scm.com/downloads) for features relevant to the Forgejo-Mind workflow.
+- **Keep Git current:** Ubuntu 24.04's Git package receives security updates via `unattended-upgrades`. Review new Git releases periodically (https://git-scm.com/downloads) for features relevant to the Forgejo-Society workflow.
 - **Global .gitignore maintenance:** Review and extend `~/.gitignore_global` when adding new tools or languages. Common omissions: Jupyter `.ipynb_checkpoints/`, Terraform `.terraform/`, AWS credentials `~/.aws/credentials` (add to the global ignore as a tripwire comment).
 - **Credential security:** The `credential.helper store` setting writes passwords in plain text to `~/.git-credentials`. On developer workstations, prefer a keyring-backed credential helper (`libsecret` on Linux, `osxkeychain` on macOS). On servers, use SSH keys exclusively and remove the credential helper setting.
 - **LFS configuration:** After initialising LFS, confirm each repository that contains large files has appropriate `.gitattributes` entries (e.g., `*.bin filter=lfs diff=lfs merge=lfs -text`). Run `git lfs track "*.bin"` in each relevant repository.

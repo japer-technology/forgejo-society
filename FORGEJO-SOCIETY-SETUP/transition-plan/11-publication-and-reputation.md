@@ -6,7 +6,7 @@ public surfaces on purpose, as a deliberate release step.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Keep private and active work inside Forgejo.
 - Publish selected repositories outward to GitHub, Codeberg, and GitLab as governed mirrors.

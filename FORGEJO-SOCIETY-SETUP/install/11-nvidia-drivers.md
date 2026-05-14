@@ -1,6 +1,6 @@
 # NVIDIA Drivers
 
-The NVIDIA driver package provides the kernel module and user-space libraries that allow software to communicate with the RTX 4090 GPU in the Forgejo-Mind LLM inference host. Without a correctly installed driver, the GPU is not accessible to any application — LM Studio falls back to CPU-only inference, which is orders of magnitude slower. The RTX 4090 has 24 GB of GDDR6X VRAM and can run large quantised language models (27B parameters at Q4) in real time. This guide covers selecting the correct driver version, handling Secure Boot, installing the CUDA toolkit, and enabling persistence mode so the GPU is immediately ready for inference requests without a warm-up delay.
+The NVIDIA driver package provides the kernel module and user-space libraries that allow software to communicate with the RTX 4090 GPU in the Forgejo-Society LLM inference host. Without a correctly installed driver, the GPU is not accessible to any application — LM Studio falls back to CPU-only inference, which is orders of magnitude slower. The RTX 4090 has 24 GB of GDDR6X VRAM and can run large quantised language models (27B parameters at Q4) in real time. This guide covers selecting the correct driver version, handling Secure Boot, installing the CUDA toolkit, and enabling persistence mode so the GPU is immediately ready for inference requests without a warm-up delay.
 
 ---
 

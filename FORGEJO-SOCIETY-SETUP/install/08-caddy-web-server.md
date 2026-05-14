@@ -1,6 +1,6 @@
 # Caddy Web Server
 
-Caddy is a modern, production-grade web server written in Go that provides automatic TLS certificate provisioning and renewal via ACME (Let's Encrypt or ZeroSSL) without any manual certificate management. In the Forgejo-Mind stack, Caddy acts as the HTTPS reverse proxy in front of Forgejo: it terminates TLS, applies gzip compression, logs requests in JSON format, and forwards traffic to Forgejo on port 3000. Caddy's automatic certificate renewal eliminates the operational burden of certbot cron jobs and expired certificates, which are a leading cause of forge outages. Caddy's built-in HTTP/2 and HTTP/3 support also ensures that Git HTTPS operations — which make heavy use of streaming — perform well.
+Caddy is a modern, production-grade web server written in Go that provides automatic TLS certificate provisioning and renewal via ACME (Let's Encrypt or ZeroSSL) without any manual certificate management. In the Forgejo-Society stack, Caddy acts as the HTTPS reverse proxy in front of Forgejo: it terminates TLS, applies gzip compression, logs requests in JSON format, and forwards traffic to Forgejo on port 3000. Caddy's automatic certificate renewal eliminates the operational burden of certbot cron jobs and expired certificates, which are a leading cause of forge outages. Caddy's built-in HTTP/2 and HTTP/3 support also ensures that Git HTTPS operations — which make heavy use of streaming — perform well.
 
 ---
 
@@ -69,7 +69,7 @@ sudo mkdir -p /var/log/caddy
 sudo chown caddy:caddy /var/log/caddy
 
 sudo tee /etc/caddy/Caddyfile > /dev/null <<'EOF'
-# Forgejo-Mind Caddy reverse proxy configuration
+# Forgejo-Society Caddy reverse proxy configuration
 # Replace git.yourdomain.com with your actual domain
 
 git.yourdomain.com {

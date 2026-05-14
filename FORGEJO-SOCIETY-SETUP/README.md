@@ -32,7 +32,7 @@ deep, command-level procedures.
 |---|---|
 | [Ubuntu Quick Start](quick-start/ubuntu.md) | You are provisioning a fresh Ubuntu host from bare metal |
 | [Ubuntu Refresh](quick-start/ubuntu-refresh.md) | You are repairing, cleaning, or validating an existing Ubuntu host |
-| [Forgejo-Mind Full Stack](quick-start/forgejo-mind.md) | You want the shortest guided path to a working Forgejo-Mind deployment |
+| [Forgejo-Society Full Stack](quick-start/forgejo-society.md) | You want the shortest guided path to a working Forgejo-Society deployment |
 
 ---
 

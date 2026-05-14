@@ -4,14 +4,14 @@ This is an example reciprocal (barter) agreement between two SORs.
 
 ```yaml
 reciprocal_agreement:
-  id: recip.sor.forgejo-mind.sor.example-partner.2026-001
+  id: recip.sor.forgejo-society.sor.example-partner.2026-001
   parties:
-    - sor.forgejo-mind
+    - sor.forgejo-society
     - sor.example-partner
   status: example  # change to: proposed | active | expired | terminated
 
   grant:
-    sor.forgejo-mind_receives:
+    sor.forgejo-society_receives:
       service: service.example-partner-capability.v1
       credits: 100
       credit_period_months: 12

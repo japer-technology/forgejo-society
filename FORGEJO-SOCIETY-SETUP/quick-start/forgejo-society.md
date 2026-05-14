@@ -1,6 +1,6 @@
-# Forgejo-Mind Quick Start
+# Forgejo-Society Quick Start
 
-This document is the fastest path from bare metal to a running Forgejo-Mind cognitive
+This document is the fastest path from bare metal to a running Forgejo-Society cognitive
 ecology. It sequences the commands from the detailed guides in `../transition-plan/`
 into one ordered, copy-paste-friendly script.
 

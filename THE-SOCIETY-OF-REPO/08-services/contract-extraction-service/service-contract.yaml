@@ -1,5 +1,5 @@
 service_id: service.contract-obligation-extraction.v1
-provider: sor.forgejo-mind
+provider: sor.forgejo-society
 name: Contract Obligation Extraction
 version: 1
 status: active

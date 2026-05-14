@@ -1,6 +1,6 @@
 # GitKraken (Windows)
 
-GitKraken is a cross-platform visual Git client that provides a graphical commit graph, interactive rebase, merge conflict resolution, and a rich set of forge integrations. On Windows, GitKraken integrates directly with the SSH keys generated in guide 22 and connects to the Forgejo forge over SSH or HTTPS. It is the recommended visual Git client for Forgejo-Mind developers working on Windows who prefer a GUI for managing complex branching, reviewing history, and handling merge conflicts. This guide covers WinGet installation, SSH configuration, connecting to the Forgejo forge, and optionally adding GitHub as a secondary integration.
+GitKraken is a cross-platform visual Git client that provides a graphical commit graph, interactive rebase, merge conflict resolution, and a rich set of forge integrations. On Windows, GitKraken integrates directly with the SSH keys generated in guide 22 and connects to the Forgejo forge over SSH or HTTPS. It is the recommended visual Git client for Forgejo-Society developers working on Windows who prefer a GUI for managing complex branching, reviewing history, and handling merge conflicts. This guide covers WinGet installation, SSH configuration, connecting to the Forgejo forge, and optionally adding GitHub as a secondary integration.
 
 ---
 

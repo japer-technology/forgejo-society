@@ -1,6 +1,6 @@
 # Visual Studio 2022
 
-Visual Studio 2022 is Microsoft's full-featured integrated development environment for Windows, providing the most complete experience for .NET, C++, ASP.NET, and desktop application development. In the Forgejo-Mind stack, Visual Studio 2022 is used by developers building .NET services, C++ tooling, or Windows desktop components that integrate with the forge. It connects to the Forgejo forge over HTTPS using Git Credential Manager (GCM), which stores credentials in the Windows Credential Manager — the same mechanism used by Git for Windows. This guide covers WinGet installation, workload selection, and GCM-based authentication to Forgejo.
+Visual Studio 2022 is Microsoft's full-featured integrated development environment for Windows, providing the most complete experience for .NET, C++, ASP.NET, and desktop application development. In the Forgejo-Society stack, Visual Studio 2022 is used by developers building .NET services, C++ tooling, or Windows desktop components that integrate with the forge. It connects to the Forgejo forge over HTTPS using Git Credential Manager (GCM), which stores credentials in the Windows Credential Manager — the same mechanism used by Git for Windows. This guide covers WinGet installation, workload selection, and GCM-based authentication to Forgejo.
 
 ---
 
@@ -25,7 +25,7 @@ WinGet downloads the Visual Studio Installer and launches it. The installer runs
 
 ### 2. Select Workloads in the Installer
 
-When the Visual Studio Installer opens, select the workloads relevant to the Forgejo-Mind stack:
+When the Visual Studio Installer opens, select the workloads relevant to the Forgejo-Society stack:
 
 | Workload | When to select |
 |----------|----------------|

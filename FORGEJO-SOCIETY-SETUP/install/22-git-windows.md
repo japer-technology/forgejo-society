@@ -1,6 +1,6 @@
 # Git for Windows
 
-Git for Windows provides the Git version control system, Git LFS, and a POSIX-compatible Bash shell (Git Bash) on Windows 10/11. It is the foundation for all developer tooling on Windows in the Forgejo-Mind stack — VS Code, GitKraken, Visual Studio, and the tea CLI all depend on Git being present. This guide installs Git for Windows via WinGet, configures global settings to match the Linux conventions used on the forge server, generates an SSH key pair for authenticating to the Forgejo forge, and validates end-to-end SSH connectivity.
+Git for Windows provides the Git version control system, Git LFS, and a POSIX-compatible Bash shell (Git Bash) on Windows 10/11. It is the foundation for all developer tooling on Windows in the Forgejo-Society stack — VS Code, GitKraken, Visual Studio, and the tea CLI all depend on Git being present. This guide installs Git for Windows via WinGet, configures global settings to match the Linux conventions used on the forge server, generates an SSH key pair for authenticating to the Forgejo forge, and validates end-to-end SSH connectivity.
 
 ---
 

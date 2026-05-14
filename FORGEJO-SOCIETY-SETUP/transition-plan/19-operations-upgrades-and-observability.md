@@ -1,6 +1,6 @@
 # Operations, Upgrades, and Cognitive Observability
 
-This document covers the day-two operating discipline for Forgejo-Mind: recovery,
+This document covers the day-two operating discipline for Forgejo-Society: recovery,
 maintenance, validation, and cognition-aware telemetry.
 
 ---

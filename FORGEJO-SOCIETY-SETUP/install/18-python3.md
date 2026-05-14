@@ -1,6 +1,6 @@
 # Python 3 and pipx
 
-Python 3 is the scripting language used throughout the Forgejo-Mind automation layer — integration scripts, LLM API clients, data processing utilities, and test harnesses are all written in Python. Ubuntu 24.04 LTS ships Python 3.12 pre-installed as a system dependency, but it lacks pip, venv support, and the development headers needed to compile C-extension packages. This guide adds those missing pieces and installs `pipx`, a tool for managing Python applications in isolated virtual environments so that globally installed tools (like `black`, `ruff`, and `httpie`) do not conflict with project-level dependencies.
+Python 3 is the scripting language used throughout the Forgejo-Society automation layer — integration scripts, LLM API clients, data processing utilities, and test harnesses are all written in Python. Ubuntu 24.04 LTS ships Python 3.12 pre-installed as a system dependency, but it lacks pip, venv support, and the development headers needed to compile C-extension packages. This guide adds those missing pieces and installs `pipx`, a tool for managing Python applications in isolated virtual environments so that globally installed tools (like `black`, `ruff`, and `httpie`) do not conflict with project-level dependencies.
 
 ---
 
@@ -226,6 +226,6 @@ pip3 --version
 
 - **System Python protection:** Never install packages directly into the system Python with `sudo pip3 install`. Always use `pipx` for global tools or `python3 -m venv` for project-specific environments. Installing into the system Python can break Ubuntu's package management.
 - **pipx updates:** Run `pipx upgrade-all` monthly to keep globally installed tools current. All tools are in isolated venvs, so upgrades cannot break each other.
-- **Virtual environment strategy:** Every project in the Forgejo-Mind monorepo should have its own `.venv` directory at the project root. Add `.venv/` to the global `.gitignore` (already included in guide 13).
+- **Virtual environment strategy:** Every project in the Forgejo-Society monorepo should have its own `.venv` directory at the project root. Add `.venv/` to the global `.gitignore` (already included in guide 13).
 - **Python version upgrades:** Ubuntu releases include the Python version for the LTS lifecycle. To use a newer Python version than the Ubuntu default, consider `pyenv` (similar to nvm for Python) or the `deadsnakes` PPA.
 - **ruff as a linter:** ruff replaces flake8, isort, and several other linters. Configure it in `pyproject.toml` with `[tool.ruff]`. Run `ruff check .` in CI via a Forgejo Actions workflow.

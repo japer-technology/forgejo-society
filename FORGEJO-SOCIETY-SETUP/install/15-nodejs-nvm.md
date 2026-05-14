@@ -1,6 +1,6 @@
 # Node.js via nvm
 
-Node.js is the JavaScript runtime required by many Forgejo-Mind toolchain components — build scripts, GitHub Actions-compatible CI steps, frontend asset pipelines, and automation utilities. Rather than installing Node.js from the Ubuntu APT repository (which ships an older version) or from a separate APT source, this guide uses `nvm` (Node Version Manager). nvm installs Node.js into the user's home directory, allows multiple Node.js versions to coexist on the same machine, and makes it trivial to switch between versions when different projects require different runtimes. This is particularly valuable on developer workstations and CI runner nodes where multiple projects with different Node.js version requirements are built.
+Node.js is the JavaScript runtime required by many Forgejo-Society toolchain components — build scripts, GitHub Actions-compatible CI steps, frontend asset pipelines, and automation utilities. Rather than installing Node.js from the Ubuntu APT repository (which ships an older version) or from a separate APT source, this guide uses `nvm` (Node Version Manager). nvm installs Node.js into the user's home directory, allows multiple Node.js versions to coexist on the same machine, and makes it trivial to switch between versions when different projects require different runtimes. This is particularly valuable on developer workstations and CI runner nodes where multiple projects with different Node.js version requirements are built.
 
 ---
 
@@ -73,7 +73,7 @@ nvm alias default
 
 ### 6. Install Global npm Packages
 
-These global packages are commonly needed across projects in the Forgejo-Mind stack:
+These global packages are commonly needed across projects in the Forgejo-Society stack:
 
 ```bash
 # Yarn — alternative package manager, faster installs for large monorepos

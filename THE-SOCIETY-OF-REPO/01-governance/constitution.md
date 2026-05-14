@@ -7,8 +7,8 @@ This is the master constitution of this Society of Repo.
 ## Identity
 
 ```yaml
-id: sor.forgejo-mind
-name: Forgejo Mind
+id: sor.forgejo-society
+name: Forgejo Society
 version: 1.1.0
 status: active
 owner: eric

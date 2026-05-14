@@ -5,7 +5,7 @@ and enterprise settings. Treat it as an evaluated option, not the default path.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Candidate for institutional or specialized hosting requirements.
 - Reference point for comparing governance, project management, and compliance needs.

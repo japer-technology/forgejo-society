@@ -1,6 +1,6 @@
-# Forgejo-Mind — Complete Installation Guide
+# Forgejo-Society — Complete Installation Guide
 
-This is the authoritative entry point for installing and running Forgejo-Mind locally.
+This is the authoritative entry point for installing and running Forgejo-Society locally.
 Every section below links to a precise, command-level guide. Work through the phases
 in order. Do not skip governance before execution.
 
