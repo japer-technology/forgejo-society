@@ -16,7 +16,7 @@ flowchart LR
   RR -- yes --> RC[reconstruction pass<br/>expensive · gated]:::rcn
   RC --> PART[partial return<br/>K-line slots + frame defaults<br/>+ unknown / low-confidence]:::rcn
 
-  subgraph STORES[memory stores · 06-memory/]
+  subgraph STORES["memory stores · 06-memory/"]
     direction TB
     EV[(events)]:::store
     EP[(episodic)]:::store

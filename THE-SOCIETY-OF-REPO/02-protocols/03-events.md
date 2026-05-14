@@ -20,19 +20,19 @@ flowchart LR
     UP[file uploads]:::ext
   end
 
-  BR[forgejo-intelligence-bridge<br/>+ guardrails]:::bridge
+  BR["forgejo-intelligence-bridge<br/>+ guardrails"]:::bridge
 
-  subgraph BUS[event bus = workspace + memory]
+  subgraph BUS["event bus = workspace + memory"]
     direction TB
     NORM[normalised event]:::bus
-    LOOP[(cognitive loop<br/>events:<br/>activation · proposal<br/>objection · block<br/>settlement · action)]:::bus
-    GVE[(governance events<br/>approval · policy<br/>constitution · agency)]:::gov
-    SVE[(service channel events<br/>called · completed<br/>failed · blocked)]:::bus
+    LOOP[("cognitive loop events:<br/>activation · proposal<br/>objection · block<br/>settlement · action")]:::bus
+    GVE[("governance events:<br/>approval · policy<br/>constitution · agency")]:::gov
+    SVE[("service channel events:<br/>called · completed<br/>failed · blocked")]:::bus
   end
 
-  WS[(07-workspace/<br/>global-workspace/<br/>{stimulus}/events/)]:::ws
-  EM[(06-memory/events/<br/>{year}/{month}/)]:::mem
-  GL[(01-governance/<br/>governance-log/)]:::gov
+  WS[("07-workspace/<br/>global-workspace/<br/>{stimulus}/events/")]:::ws
+  EM[("06-memory/events/<br/>{year}/{month}/")]:::mem
+  GL[("01-governance/<br/>governance-log/")]:::gov
 
   FJ --> BR
   WH --> BR

@@ -25,10 +25,10 @@ flowchart TB
   ASS -. directive .-> WORK
   WORK -. directive .-> RAW
 
-  subgraph LEGEND[ ]
+  subgraph LEGEND["legend"]
     direction LR
-    UP([▲ compress upward])
-    DN([▼ decompose downward<br/>no widened authority])
+    UP(["▲ compress upward"])
+    DN(["▼ decompose downward<br/>no widened authority"])
   end
 ```
 
