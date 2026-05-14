@@ -1,6 +1,6 @@
 # Zsh and Oh My Zsh
 
-Zsh (Z Shell) is a powerful interactive shell that extends Bash with better tab completion, spelling correction, history sharing across terminals, and a rich plugin ecosystem. Oh My Zsh is the most widely-used Zsh configuration framework, providing a large library of plugins and themes that dramatically improve developer productivity — tab-completing Git branch names, showing the current Git status in the prompt, and making Docker and kubectl commands more discoverable. For Forgejo-Mind developers who work extensively in the terminal, Zsh + Oh My Zsh is a significant quality-of-life improvement over the default Bash shell.
+Zsh (Z Shell) is a powerful interactive shell that extends Bash with better tab completion, spelling correction, history sharing across terminals, and a rich plugin ecosystem. Oh My Zsh is the most widely-used Zsh configuration framework, providing a large library of plugins and themes that dramatically improve developer productivity — tab-completing Git branch names, showing the current Git status in the prompt, and making Docker and kubectl commands more discoverable. For Forgejo-Society developers who work extensively in the terminal, Zsh + Oh My Zsh is a significant quality-of-life improvement over the default Bash shell.
 
 ---
 

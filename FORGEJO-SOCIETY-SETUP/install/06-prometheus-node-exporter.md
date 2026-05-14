@@ -1,6 +1,6 @@
 # Prometheus Node Exporter
 
-Prometheus Node Exporter is a lightweight metrics agent that exposes hardware and OS-level metrics from a Linux host — CPU usage, memory, disk I/O, network throughput, filesystem utilisation, and hundreds of other signals — in the Prometheus exposition format. In the Forgejo-Mind stack, every host (forge server, all 16 runner nodes, and the LLM inference host) runs Node Exporter so that a central Prometheus instance can scrape them and a Grafana dashboard can provide fleet-wide visibility. Metrics from the runner fleet help identify overloaded nodes, slow disks, and memory pressure before they cause CI job failures. The metrics port (9100) is restricted by UFW to the Prometheus server's IP only.
+Prometheus Node Exporter is a lightweight metrics agent that exposes hardware and OS-level metrics from a Linux host — CPU usage, memory, disk I/O, network throughput, filesystem utilisation, and hundreds of other signals — in the Prometheus exposition format. In the Forgejo-Society stack, every host (forge server, all 16 runner nodes, and the LLM inference host) runs Node Exporter so that a central Prometheus instance can scrape them and a Grafana dashboard can provide fleet-wide visibility. Metrics from the runner fleet help identify overloaded nodes, slow disks, and memory pressure before they cause CI job failures. The metrics port (9100) is restricted by UFW to the Prometheus server's IP only.
 
 ---
 
@@ -107,7 +107,7 @@ On the Prometheus server, add a job entry to `/etc/prometheus/prometheus.yml` (o
         - '192.168.0.50:9100'   # LLM host
       labels:
         environment: 'production'
-        fleet: 'forgejo-mind'
+        fleet: 'forgejo-society'
 ```
 
 Reload Prometheus:

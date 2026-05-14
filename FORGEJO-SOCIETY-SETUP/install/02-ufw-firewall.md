@@ -1,6 +1,6 @@
 # UFW Firewall
 
-UFW (Uncomplicated Firewall) is a user-friendly front end for the Linux kernel's `iptables` packet-filtering framework, included by default in Ubuntu 24.04 LTS. In the Forgejo-Mind stack, UFW is the first line of network defence on every host: it enforces a default-deny inbound policy and allows only the ports each role actually needs. The forge server accepts web traffic on 80 and 443 plus SSH; runner nodes accept only SSH from the management network; the LLM inference host accepts SSH and the LM Studio API port 1234 restricted to the local subnet. Getting UFW right before other services are exposed prevents accidental internet exposure of internal APIs, metrics endpoints, and database ports.
+UFW (Uncomplicated Firewall) is a user-friendly front end for the Linux kernel's `iptables` packet-filtering framework, included by default in Ubuntu 24.04 LTS. In the Forgejo-Society stack, UFW is the first line of network defence on every host: it enforces a default-deny inbound policy and allows only the ports each role actually needs. The forge server accepts web traffic on 80 and 443 plus SSH; runner nodes accept only SSH from the management network; the LLM inference host accepts SSH and the LM Studio API port 1234 restricted to the local subnet. Getting UFW right before other services are exposed prevents accidental internet exposure of internal APIs, metrics endpoints, and database ports.
 
 ---
 
@@ -105,7 +105,7 @@ Expected output shows only OpenSSH allowed inbound — no HTTP, no HTTPS, no oth
 
 ### LLM Inference Host Configuration
 
-The LLM host serves the LM Studio OpenAI-compatible API on port 1234, but only to hosts on the local subnet (192.168.0.0/24). Forgejo-Mind agents running on the forge server reach the inference host over the LAN.
+The LLM host serves the LM Studio OpenAI-compatible API on port 1234, but only to hosts on the local subnet (192.168.0.0/24). Forgejo-Society agents running on the forge server reach the inference host over the LAN.
 
 ```bash
 # Set defaults

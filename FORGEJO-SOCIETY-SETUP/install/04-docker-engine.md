@@ -1,6 +1,6 @@
 # Docker Engine
 
-Docker Engine is the container runtime that powers the Forgejo-Mind CI/CD pipeline. Each of the 16 runner nodes uses Docker to execute workflow jobs in isolated containers — a job requesting `runs-on: docker` spins up a fresh container, runs the workflow steps, and destroys the container on completion. This hard isolation means a failing or compromised job cannot affect the host OS or other jobs. Docker is also available on the forge server for running auxiliary containers (e.g., a local registry or monitoring stack). This guide installs the official Docker CE release from Docker's own APT repository rather than the older version shipped in Ubuntu's default repositories.
+Docker Engine is the container runtime that powers the Forgejo-Society CI/CD pipeline. Each of the 16 runner nodes uses Docker to execute workflow jobs in isolated containers — a job requesting `runs-on: docker` spins up a fresh container, runs the workflow steps, and destroys the container on completion. This hard isolation means a failing or compromised job cannot affect the host OS or other jobs. Docker is also available on the forge server for running auxiliary containers (e.g., a local registry or monitoring stack). This guide installs the official Docker CE release from Docker's own APT repository rather than the older version shipped in Ubuntu's default repositories.
 
 ---
 

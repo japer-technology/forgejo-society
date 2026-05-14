@@ -5,7 +5,7 @@ It provides a richer CI/CD ecosystem and broader ecosystem integrations as a bac
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Secondary forge for redundancy and wider ecosystem compatibility.
 - Additional public mirror for repositories that benefit from GitLab's discovery and CI features.

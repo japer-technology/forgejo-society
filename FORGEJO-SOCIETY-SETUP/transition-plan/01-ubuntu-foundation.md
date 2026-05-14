@@ -5,7 +5,7 @@ primary Forgejo server, all 16 runner nodes, and the LLM inference machine.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Host the primary Forgejo instance (governance layer).
 - Provide a consistent, repeatable base for runner nodes.

@@ -1,6 +1,6 @@
 # LM Studio (Windows)
 
-LM Studio on Windows provides a graphical interface for downloading, managing, and serving large language models locally. For Forgejo-Mind developers working on Windows, LM Studio offers the same OpenAI-compatible REST API as the Linux inference host — making it possible to run and test AI-assisted workflows on a local machine before deploying to the central RTX 4090 inference host. Model selection depends on available VRAM: the guide includes a tiered model recommendation table. Once the local server is started in LM Studio, any agent or script that targets `http://localhost:1234` can use the local GPU for inference.
+LM Studio on Windows provides a graphical interface for downloading, managing, and serving large language models locally. For Forgejo-Society developers working on Windows, LM Studio offers the same OpenAI-compatible REST API as the Linux inference host — making it possible to run and test AI-assisted workflows on a local machine before deploying to the central RTX 4090 inference host. Model selection depends on available VRAM: the guide includes a tiered model recommendation table. Once the local server is started in LM Studio, any agent or script that targets `http://localhost:1234` can use the local GPU for inference.
 
 ---
 
@@ -8,7 +8,7 @@ LM Studio on Windows provides a graphical interface for downloading, managing, a
 
 - Windows 10/11
 - A CUDA-capable NVIDIA GPU with at least 4 GB VRAM is recommended for GPU-accelerated inference. CPU-only inference works but is much slower.
-- [Forgejo](09-forgejo.md) — Forgejo should be running if this Windows machine is part of the Forgejo-Mind network and the local LM Studio server will serve other hosts on the subnet.
+- [Forgejo](09-forgejo.md) — Forgejo should be running if this Windows machine is part of the Forgejo-Society network and the local LM Studio server will serve other hosts on the subnet.
 
 ---
 
@@ -59,7 +59,7 @@ Use LM Studio's built-in model browser (the magnifying glass icon) to search for
 
 1. Click the **Local Server** icon (looks like `<->`) in the left panel
 2. Click **Select a model to load** and choose the downloaded model
-3. Set the port to **1234** (matches the expected Forgejo-Mind API endpoint)
+3. Set the port to **1234** (matches the expected Forgejo-Society API endpoint)
 4. Click **Start Server**
 5. LM Studio loads the model into VRAM — this takes 5–30 seconds depending on model size
 
@@ -180,6 +180,6 @@ Test-NetConnection -ComputerName localhost -Port 1234 -InformationLevel Quiet
 
 - **Model management:** LM Studio models are large GGUF files. Keep only the models you actively use — unused models waste disk space. Check **Settings → Model Storage** to see the total storage used and remove models via the **My Models** tab.
 - **VRAM management:** Only one model can be loaded at a time in standard LM Studio usage. If switching between models frequently, note that model loading takes time. Plan which model to load before starting a work session.
-- **API compatibility:** LM Studio's API is OpenAI-compatible. When upgrading LM Studio, test the API with your Forgejo-Mind integration scripts before relying on the new version in production.
+- **API compatibility:** LM Studio's API is OpenAI-compatible. When upgrading LM Studio, test the API with your Forgejo-Society integration scripts before relying on the new version in production.
 - **LM Studio updates:** LM Studio prompts for updates automatically. Apply updates during a maintenance window and re-test the API before resuming agent operations.
 - **GPU driver compatibility:** LM Studio requires the CUDA runtime that matches your NVIDIA driver version. If LM Studio fails to use the GPU after a driver update, check the LM Studio release notes for the minimum required driver version.

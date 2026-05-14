@@ -85,7 +85,7 @@ stimulus (issue / webhook / schedule / Cue)
 
 Performance, capacity, and what "full flight" looks like for this arc are
 analysed in
-[`analysis/forgejo-mind-expected-performance.md`](analysis/forgejo-mind-expected-performance.md).
+[`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md).
 
 ## How the rest of the repository fits
 
@@ -123,7 +123,7 @@ directory is the doorway; the others are the rooms it opens onto.
   central claim and quantify what the system can do:
   - [`ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
     — the core thesis stated as plainly as possible.
-  - [`forgejo-mind-expected-performance.md`](analysis/forgejo-mind-expected-performance.md)
+  - [`forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
     — a grounded performance estimate for the cognitive ecology at full flight.
   - [`composition-model.md`](analysis/composition-model.md) — the four
     nouns (Society, Mind, Intelligence, Repo), how they layer, and how an

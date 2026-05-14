@@ -6,7 +6,7 @@ public continuity mirror — not the system of record.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Public mirror of selected repositories for visibility and redundancy.
 - Fallback collaboration point if the primary Forgejo instance is unavailable.

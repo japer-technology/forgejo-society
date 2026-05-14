@@ -1,6 +1,6 @@
 # LM Studio (Linux)
 
-LM Studio is a desktop application and headless server for running large language models locally on consumer hardware. In the Forgejo-Mind stack, LM Studio runs on the RTX 4090 LLM inference host and exposes an OpenAI-compatible REST API on port 1234. Forgejo-Mind automation agents send chat completion requests to this endpoint to perform code review, issue triage, commit message generation, and other AI-assisted workflows — all without sending code or data to any external cloud provider. The RTX 4090's 24 GB VRAM is sufficient to run Gemma 3 27B at 4-bit quantisation in real time.
+LM Studio is a desktop application and headless server for running large language models locally on consumer hardware. In the Forgejo-Society stack, LM Studio runs on the RTX 4090 LLM inference host and exposes an OpenAI-compatible REST API on port 1234. Forgejo-Society automation agents send chat completion requests to this endpoint to perform code review, issue triage, commit message generation, and other AI-assisted workflows — all without sending code or data to any external cloud provider. The RTX 4090's 24 GB VRAM is sufficient to run Gemma 3 27B at 4-bit quantisation in real time.
 
 ---
 

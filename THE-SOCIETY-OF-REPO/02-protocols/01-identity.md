@@ -20,14 +20,14 @@ All IDs use dot-separated hierarchical namespaces in lowercase with hyphens for 
 
 | Scope | Description | Example |
 |---|---|---|
-| `sor` | A Society of Repo | `sor.forgejo-mind` |
+| `sor` | A Society of Repo | `sor.forgejo-society` |
 | `agency` | A worker agency | `agency.contract-bee` |
 | `critic` | A critic repo | `critic.evidence` |
 | `censor` | A censor repo | `censor.cloud-egress` |
 | `memory` | A memory system | `memory.episodic` |
 | `workspace` | A workspace repo | `workspace.global` |
 | `service` | A published service | `service.contract-extraction.v1` |
-| `channel` | A SOR-to-SOR channel | `channel.sor.forgejo-mind.sor.dental-compliance` |
+| `channel` | A SOR-to-SOR channel | `channel.sor.forgejo-society.sor.dental-compliance` |
 | `runtime` | A Forgejo runtime component | `runtime.forgejo.workflow-agent` |
 | `surface` | A Forgejo runtime surface | `surface.forgejo.issue` |
 | `kline` | A K-line record | `kline.supplier-price-increase` |

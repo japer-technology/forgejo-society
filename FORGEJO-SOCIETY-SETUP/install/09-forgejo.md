@@ -1,6 +1,6 @@
 # Forgejo
 
-Forgejo is a self-hosted, community-driven Git forge that provides repositories, issue tracking, pull requests, releases, CI/CD via Actions, package registries, and a full web UI and REST API. It is the central hub of the Forgejo-Mind stack: every developer pushes code here, every CI pipeline runs from here, and every LLM-assisted workflow originates here. This guide installs Forgejo as a binary service (not Docker) on the forge server, backed by PostgreSQL 16, proxied by Caddy, and accessible via both HTTPS and SSH. A backup script and systemd service are also configured.
+Forgejo is a self-hosted, community-driven Git forge that provides repositories, issue tracking, pull requests, releases, CI/CD via Actions, package registries, and a full web UI and REST API. It is the central hub of the Forgejo-Society stack: every developer pushes code here, every CI pipeline runs from here, and every LLM-assisted workflow originates here. This guide installs Forgejo as a binary service (not Docker) on the forge server, backed by PostgreSQL 16, proxied by Caddy, and accessible via both HTTPS and SSH. A backup script and systemd service are also configured.
 
 ---
 
@@ -75,7 +75,7 @@ Replace all placeholder values (`REPLACE_*`, `git.yourdomain.com`, passwords) be
 
 ```bash
 sudo -u forgejo tee /etc/forgejo/app.ini > /dev/null <<EOF
-APP_NAME = Forgejo-Mind
+APP_NAME = Forgejo-Society
 
 [server]
 DOMAIN           = git.yourdomain.com

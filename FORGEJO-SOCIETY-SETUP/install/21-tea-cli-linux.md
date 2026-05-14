@@ -1,6 +1,6 @@
 # tea CLI (Forgejo CLI, Linux)
 
-`tea` is the official command-line client for Gitea and Forgejo. It provides a terminal interface for every major forge operation — listing and creating repositories, managing issues and pull requests, creating releases, browsing notifications, and interacting with the CI pipeline — without opening a browser. In the Forgejo-Mind stack, `tea` is the primary tool for automation scripts and for operators who prefer to stay in the terminal. A single `tea login add` command authenticates the CLI against the forge using a personal access token, after which all operations work against the Forgejo-Mind forge by default.
+`tea` is the official command-line client for Gitea and Forgejo. It provides a terminal interface for every major forge operation — listing and creating repositories, managing issues and pull requests, creating releases, browsing notifications, and interacting with the CI pipeline — without opening a browser. In the Forgejo-Society stack, `tea` is the primary tool for automation scripts and for operators who prefer to stay in the terminal. A single `tea login add` command authenticates the CLI against the forge using a personal access token, after which all operations work against the Forgejo-Society forge by default.
 
 ---
 

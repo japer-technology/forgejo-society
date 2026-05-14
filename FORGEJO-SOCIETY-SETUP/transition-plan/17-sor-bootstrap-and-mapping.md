@@ -2,13 +2,13 @@
 
 This document closes the gap between the Society-of-Repo conceptual model and a real
 Forgejo deployment. Use it when turning the design into the first governed, repeatable,
-and observable Forgejo-Mind instance.
+and observable Forgejo-Society instance.
 
 ---
 
 ## SOR concept → Forgejo primitive
 
-| SOR concept | Forgejo primitive | Default location in Forgejo-Mind | Notes |
+| SOR concept | Forgejo primitive | Default location in Forgejo-Society | Notes |
 |---|---|---|---|
 | Agency | Repository + service account + workflow | `agents/<agent-name>` | One bounded job per repo |
 | Critic | Repository + required review rule | `critics/<critic-name>` | Blocks unsafe or weak proposals |
@@ -29,7 +29,7 @@ and observable Forgejo-Mind instance.
 |---|---|---|---|
 | Minimal day one | 1 org (`mind`) | 6–8 repos | First governed action |
 | Stable local society | 4 orgs (`governance`, `agents`, `memory`, `workspace`) | 12–20 repos | Clear separation of duties |
-| Full Forgejo-Mind | 4–6 orgs plus `public` and `services` | 40+ repos | Multiple agencies, mirrors, and external services |
+| Full Forgejo-Society | 4–6 orgs plus `public` and `services` | 40+ repos | Multiple agencies, mirrors, and external services |
 
 ### Minimal day-one repositories
 

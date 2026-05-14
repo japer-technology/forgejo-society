@@ -1,7 +1,7 @@
 # Ubuntu 24.04 LTS — Refresh Guide
 
 This guide covers the most common Ubuntu maintenance workflows: cleaning up a running
-system, repairing drifted configuration, resetting UFW or fail2ban back to the Forgejo-Mind
+system, repairing drifted configuration, resetting UFW or fail2ban back to the Forgejo-Society
 standard, and auditing what is actually running. Use it instead of a full reinstall.
 
 Every section is self-contained. Jump directly to the section you need.
@@ -107,7 +107,7 @@ sudo apt list --upgradable 2>/dev/null | grep -v "^Listing"
 ## §3 — Reset UFW firewall
 
 Use this section when UFW is disabled, has wrong rules, or was accidentally reset.
-This restores it to the Forgejo-Mind standard for the host's role.
+This restores it to the Forgejo-Society standard for the host's role.
 
 ### 3.1 Check the current state
 
@@ -205,7 +205,7 @@ sudo systemctl stop fail2ban
 ### 4.3 Restore the standard SSH jail configuration
 
 ```bash
-# Write the Forgejo-Mind standard SSH jail
+# Write the Forgejo-Society standard SSH jail
 # The ignoreip line prevents you from accidentally banning yourself or LAN hosts
 sudo tee /etc/fail2ban/jail.d/ssh.conf > /dev/null <<'EOF'
 [sshd]
@@ -295,7 +295,7 @@ cat /etc/ssh/sshd_config.d/hardening.conf
 
 ```bash
 sudo tee /etc/ssh/sshd_config.d/hardening.conf > /dev/null <<'EOF'
-# Forgejo-Mind SSH hardening
+# Forgejo-Society SSH hardening
 PermitRootLogin no
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -444,7 +444,7 @@ grep forge /etc/hosts
 
 ## §8 — Fix the timezone
 
-All Forgejo-Mind hosts must run UTC.
+All Forgejo-Society hosts must run UTC.
 
 ```bash
 sudo timedatectl set-timezone UTC
@@ -570,7 +570,7 @@ sudo journalctl --disk-usage
 
 ## §11 — Full system validation script
 
-Run this to confirm the entire Ubuntu base is in the correct Forgejo-Mind state. Copy and
+Run this to confirm the entire Ubuntu base is in the correct Forgejo-Society state. Copy and
 paste the whole block — it runs all checks in sequence and labels each result.
 
 ```bash
@@ -598,7 +598,7 @@ check() {
   fi
 }
 
-echo "=== Ubuntu 24.04 LTS — Forgejo-Mind Validation ==="
+echo "=== Ubuntu 24.04 LTS — Forgejo-Society Validation ==="
 echo ""
 
 echo "--- OS and hostname ---"
@@ -707,4 +707,4 @@ sudo tail -30 /var/log/ufw.log
 | [Ubuntu Quick Start](ubuntu.md) | Fresh install from bare metal |
 | [UFW Firewall](../install/02-ufw-firewall.md) | Full UFW documentation and advanced rules |
 | [fail2ban](../install/03-fail2ban.md) | Full fail2ban documentation including Forgejo HTTP jail |
-| [Forgejo-Mind Quick Start](forgejo-mind.md) | Full stack deployment (forge + runners + LLM) |
+| [Forgejo-Society Quick Start](forgejo-society.md) | Full stack deployment (forge + runners + LLM) |

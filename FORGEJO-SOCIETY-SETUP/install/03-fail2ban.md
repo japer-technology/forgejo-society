@@ -1,6 +1,6 @@
 # fail2ban
 
-fail2ban is an intrusion-prevention daemon that monitors system log files for repeated authentication failures and automatically instructs the firewall to ban offending IP addresses for a configurable duration. In the Forgejo-Mind stack, fail2ban is the second layer of SSH defence on every host — UFW limits which ports are reachable, and fail2ban ensures that any IP making repeated failed SSH login attempts is automatically banned before a brute-force attack can succeed. With the sshd jail configured to a 5-attempt threshold within 10 minutes and a 1-hour ban, automated credential-stuffing attacks are stopped long before they cause damage.
+fail2ban is an intrusion-prevention daemon that monitors system log files for repeated authentication failures and automatically instructs the firewall to ban offending IP addresses for a configurable duration. In the Forgejo-Society stack, fail2ban is the second layer of SSH defence on every host — UFW limits which ports are reachable, and fail2ban ensures that any IP making repeated failed SSH login attempts is automatically banned before a brute-force attack can succeed. With the sshd jail configured to a 5-attempt threshold within 10 minutes and a 1-hour ban, automated credential-stuffing attacks are stopped long before they cause damage.
 
 ---
 

@@ -8,7 +8,7 @@ vendor-specific client.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Keep Git CLI, Forgejo web UI, and VS Code Git all viable and documented.
 - Make HTTPS and SSH both work for every contributor.
