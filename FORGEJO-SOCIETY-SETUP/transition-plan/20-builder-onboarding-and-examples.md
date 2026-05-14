@@ -12,8 +12,9 @@ Use this order when onboarding a new builder:
 1. Read [SOR-to-Forgejo Mapping and Bootstrap](17-sor-bootstrap-and-mapping.md).
 2. Read [Runtime Protocols, Privacy Controls, and Reinforcement](18-runtime-protocols-and-automation.md).
 3. Read [Operations, Upgrades, and Cognitive Observability](19-operations-upgrades-and-observability.md).
-4. Copy the example assets from [`../examples/`](../examples/README.md).
-5. Enable the workflow template only after policy, tokens, and labels exist.
+4. Run the [Forgejo Conformance Repo](../CONFORMANCE/forgejo-conformance-repo/README.md) against your target repository to confirm the Forgejo installation is ready.
+5. Adapt the conformance fixtures into the first agency repo.
+6. Enable the workflow template only after policy, tokens, and labels exist.
 
 ---
 
@@ -36,7 +37,7 @@ The first agency should be easy to review and easy to revert.
 
 ### Checklist
 
-- [ ] Create repo from the minimal example
+- [ ] Create repo from the conformance fixtures
 - [ ] Set repo class to `agent`
 - [ ] Register a service account with least privilege
 - [ ] Add one activation label
@@ -100,19 +101,20 @@ Check in this order:
 
 | Asset | Path | Purpose |
 |---|---|---|
-| Example index | [`../examples/README.md`](../examples/README.md) | Entry point for starter assets |
-| Minimal agent repo | [`../examples/minimal-agent-repo/README.md`](../examples/minimal-agent-repo/README.md) | Smallest useful repo layout |
-| Agent manifest example | [`../examples/minimal-agent-repo/agent-manifest.example.yaml`](../examples/minimal-agent-repo/agent-manifest.example.yaml) | Repo-local role and routing config |
-| Settlement example | [`../examples/minimal-agent-repo/settlement.example.yaml`](../examples/minimal-agent-repo/settlement.example.yaml) | In-flight settlement record |
-| Critic response example | [`../examples/minimal-agent-repo/critic-response.example.md`](../examples/minimal-agent-repo/critic-response.example.md) | Blocking and approving review format |
-| Provenance example | [`../examples/minimal-agent-repo/provenance-record.example.json`](../examples/minimal-agent-repo/provenance-record.example.json) | Memory writeback format |
-| Workflow template | [`../../.forgejo/workflows-disabled/minimal-agent-cycle.yaml`](../../.forgejo/workflows-disabled/minimal-agent-cycle.yaml) | Forgejo Actions template kept disabled by default |
+| Conformance library | [`../CONFORMANCE/README.md`](../CONFORMANCE/README.md) | Entry point for conformance assets |
+| Forgejo Conformance Repo | [`../CONFORMANCE/forgejo-conformance-repo/README.md`](../CONFORMANCE/forgejo-conformance-repo/README.md) | Drop-in workflows that prove a Forgejo install is ready for SOR |
+| Agent manifest fixture | [`../CONFORMANCE/forgejo-conformance-repo/fixtures/agent-manifest.example.yaml`](../CONFORMANCE/forgejo-conformance-repo/fixtures/agent-manifest.example.yaml) | Repo-local role and routing config |
+| Settlement fixture | [`../CONFORMANCE/forgejo-conformance-repo/fixtures/settlement.example.yaml`](../CONFORMANCE/forgejo-conformance-repo/fixtures/settlement.example.yaml) | In-flight settlement record |
+| Critic response fixture | [`../CONFORMANCE/forgejo-conformance-repo/fixtures/critic-response.example.md`](../CONFORMANCE/forgejo-conformance-repo/fixtures/critic-response.example.md) | Blocking and approving review format |
+| Provenance fixture | [`../CONFORMANCE/forgejo-conformance-repo/fixtures/provenance-record.example.json`](../CONFORMANCE/forgejo-conformance-repo/fixtures/provenance-record.example.json) | Memory writeback format |
+| Conformance install workflow | [`../CONFORMANCE/forgejo-conformance-repo/.forgejo/workflows/forgejo-conformance-INSTALL.yaml`](../CONFORMANCE/forgejo-conformance-repo/.forgejo/workflows/forgejo-conformance-INSTALL.yaml) | Copy-and-dispatch workflow that scaffolds conformance assets |
+| Conformance test workflow | [`../CONFORMANCE/forgejo-conformance-repo/.forgejo/workflows/forgejo-conformance-TESTS.yaml`](../CONFORMANCE/forgejo-conformance-repo/.forgejo/workflows/forgejo-conformance-TESTS.yaml) | Copy-and-dispatch workflow that runs the conformance suite |
 
 ---
 
 ## Definition of done for builder onboarding
 
-- [ ] A new contributor can create one agent repo from the examples
+- [ ] A new contributor can create one agent repo from the conformance fixtures
 - [ ] The workflow can be tested by manual dispatch before live activation
 - [ ] The agent can write provenance without merge rights
 - [ ] A critic can stop the proposal
