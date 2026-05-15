@@ -3,6 +3,11 @@ repo: japer-technology/forgejo-society-publicity-presenter
 role: presenter
 society: sor.publicity
 
+# A presenter is the single conscious voice of its society and therefore MUST
+# NOT spawn its own sub-society — recursion stops at the presenter. See
+# ../../README.md "Recursion: when a member spawns its own sub-society".
+decomposition: presenter
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/00-overview.md
   - FORGEJO-SOCIETY-PUBLICITY/01-principles.md

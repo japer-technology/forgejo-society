@@ -3,6 +3,10 @@ repo: japer-technology/forgejo-society-publicity-statements
 role: pillar-member
 society: sor.publicity
 
+# Single remit, single authority profile (act). No federation needed. See
+# ../../README.md "Recursion: when a member spawns its own sub-society".
+decomposition: leaf
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/06-statements.md
 
