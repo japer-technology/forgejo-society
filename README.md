@@ -38,9 +38,7 @@ The project is organised around a small set of pillars:
   specification that turn the forge into a governed mind.
 - **[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/README.md)** - the
   planning documents that map the Society of Repo specification onto the
-  two operational targets in this repository:
-  [`.forgejo/workflows/forgejo-society.yaml`](.forgejo/) (the body) and
-  [`.forgejo-society/`](.forgejo-society/) (the mind).
+  two operational target repositories.
 - **[`FORGEJO-SOCIETY-PROMOTION/`](FORGEJO-SOCIETY-PROMOTION/README.md)** - the
   promotion pillar: positioning, narratives, audiences, channels, campaigns,
   visual identity, press kit, style guide, and reusable copy and assets that
