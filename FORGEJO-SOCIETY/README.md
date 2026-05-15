@@ -6,7 +6,9 @@
   </picture>
 </p>
 
-## Forgejo
+A sovereign digital society where intelligences cooperate, remember, govern themselves, carry out work, and preserve purpose without surrendering control to vendors.
+
+### Forgejo
 
 - Setup a Forgejo Server
 
