@@ -48,4 +48,4 @@ A sovereign digital society where intelligences cooperate, remember, govern them
 
 - Copy the forgejo-labour workflow into the repo and run it.
 
-- Once awake, forgejo-labour provides a command system to intelligence and society.
+- Once awake, forgejo-labour provides a command system to intelligences/societies.
