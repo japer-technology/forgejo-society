@@ -6,8 +6,28 @@
   </picture>
 </p>
 
-## Two repo only
+## Repo, then Intelligence, then Society
 
-A repo may contain none, one or both.
+Begin with a repo.
 
-> A repo may have Intelligence but can only be granted Society.
+Create one, or choose one that already exists.
+
+forgejo-intelligence is the human doorway into forgejo-society.
+
+Copy the forgejo-intelligence workflow into the repo and run it.
+
+Once awake, forgejo-intelligence provides the command system through which societies are created, managed, joined, or governed.
+
+Do not install forgejo-society by hand.
+
+forgejo-society can only be installed by a fully functioning forgejo-intelligence.
+
+A repo may possess Intelligence.
+
+From there, it may create Societies, or be granted access to others.
+
+> /society create TheFederation
+
+This installs forgejo-society into the repo.
+
+A Forgejo repo may contain neither application, either application, or both.
