@@ -120,3 +120,9 @@ explaining why the use is in fact permitted.
 
 [aup]: https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies
 [actions-tos]: https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
