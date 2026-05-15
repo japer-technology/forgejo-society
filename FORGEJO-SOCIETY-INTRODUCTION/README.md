@@ -8,7 +8,7 @@
 
 > **The forge is the mind. The repo is an agency. The society thinks.**
 
-This directory is the **gentle on-ramp** to the project. It explains, in plain
+This directory is the **on-ramp** to the project. It explains, in plain
 language, what *Forgejo Society* is, why it exists, and how the rest of the
 repository fits together. If you are reading this repo for the first time,
 start here before diving into the protocols, plans, or runtime code.
