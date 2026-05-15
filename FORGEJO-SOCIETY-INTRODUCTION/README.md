@@ -136,6 +136,9 @@ directory is the doorway; the others are the rooms it opens onto.
     on what *emergence* honestly means inside a Society of Repo, and how
     such possibilities are likely to reveal themselves to the people
     watching the forge.
+  - [`forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
+    — on how the Forgejo Society design and implementation are unique in
+    today's fast paced AI ecosystem.
 
 ## Suggested reading order
 
