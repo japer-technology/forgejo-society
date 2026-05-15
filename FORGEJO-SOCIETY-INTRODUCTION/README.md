@@ -13,6 +13,13 @@ language, what *Forgejo Society* is, why it exists, and how the rest of the
 repository fits together. If you are reading this repo for the first time,
 start here before diving into the protocols, plans, or runtime code.
 
+The introduction is **multi-pathed**: a curious reader, an end user,
+a developer, a full-stack developer, a systems operator, a researcher,
+and a governance reader each get a route shaped to what they already
+know and what they intend to do. Pick the one that matches you in
+[`reading-paths.md`](reading-paths.md), or follow the time-based quick
+paths in [Suggested reading order](#suggested-reading-order) below.
+
 For the operational, command-level installation guide, see
 [`FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md).
 For the formal specification of the mind, see
@@ -119,6 +126,10 @@ directory is the doorway; the others are the rooms it opens onto.
 ## What lives in this directory
 
 - **[`README.md`](README.md)** — this file: the introduction.
+- **[`reading-paths.md`](reading-paths.md)** — ordered, profile-specific
+  paths through the repository for the curious reader, end user /
+  operator, developer, full-stack developer, systems / infrastructure
+  operator, researcher / theorist, and governance / policy reader.
 - **[`analysis/`](analysis/)** — short analytical notes that defend the
   central claim and quantify what the system can do:
   - [`ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
@@ -139,6 +150,13 @@ directory is the doorway; the others are the rooms it opens onto.
 
 ## Suggested reading order
 
+The introduction supports two kinds of route: a **quick path** keyed
+on how much time you have, and a **profile path** keyed on what you
+already know and intend to do. Most readers use both — a quick path
+first, then a profile path when they decide to go deeper.
+
+### By time
+
 If you have ten minutes:
 
 1. This `README.md`.
@@ -153,3 +171,18 @@ If you have an hour:
 When you are ready to actually run it:
 
 6. [`../FORGEJO-SOCIETY-SETUP/README.md`](../FORGEJO-SOCIETY-SETUP/README.md).
+
+### By reader profile
+
+The full, ordered paths live in
+[`reading-paths.md`](reading-paths.md). The summary:
+
+| If you are…                                            | Take this path                                                                  |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| A curious reader with no technical background          | [Path A — Curious reader](reading-paths.md#path-a--curious-reader)              |
+| An end user who wants to install and run the society   | [Path B — End user / operator](reading-paths.md#path-b--end-user--operator)     |
+| A developer who will write or extend agencies          | [Path C — Developer](reading-paths.md#path-c--developer)                        |
+| A full-stack developer who wants the whole picture     | [Path D — Full-stack developer](reading-paths.md#path-d--full-stack-developer)  |
+| A systems / infrastructure operator                    | [Path E — Systems / infrastructure operator](reading-paths.md#path-e--systems--infrastructure-operator) |
+| A researcher or theorist                               | [Path F — Researcher / theorist](reading-paths.md#path-f--researcher--theorist) |
+| Someone evaluating governance, sovereignty, compliance | [Path G — Governance / policy reader](reading-paths.md#path-g--governance--policy-reader) |
