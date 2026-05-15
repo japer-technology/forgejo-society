@@ -8,6 +8,8 @@
 
 ## Forgejo
 
+- Setup a Forgejo Server
+
 ### Repo
 
 - Begin with a repo.
