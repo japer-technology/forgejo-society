@@ -3,6 +3,16 @@ repo: japer-technology/forgejo-society-publicity-crisis
 role: pillar-member
 society: sor.publicity
 
+# Strong candidate to spawn its own sub-society: crisis decomposes into
+# intake, drafting, legal/govern gate, and publish — each with a different
+# authority level and a different censor profile (notably workflow-danger
+# and human-approval gates). When that decomposition is realised in code,
+# promote to `decomposition: federated` and add MIND/CRISIS/society.yml on
+# the same shape used here. Until then, declared as `leaf` so the schema
+# matches today's reality. See ../../README.md "Recursion: when a member
+# spawns its own sub-society".
+decomposition: leaf
+
 remit: |
   Owns crisis communication: incident response, transparency, and recovery.
   Operates under the highest authority level in the sub-society; every

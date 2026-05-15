@@ -80,3 +80,19 @@ not yet provisioned. Activation requires:
 
 Until those steps land, the files here are the Federation's **declared
 intent** for the Publicity sub-society and its wiring.
+
+## Can a member repo spawn its own sub-society?
+
+Yes — by the recursion rule declared in
+[`../README.md`](../README.md#recursion-when-a-member-spawns-its-own-sub-society).
+The shape used in this folder (`society.yml` + `repos/` + `wiring/`) is
+fractal: any member listed here may, in turn, declare its own `MIND/<id>/`
+folder using the same shape.
+
+Each `repos/<member>.yml` file in this folder declares a `decomposition:`
+field — `leaf`, `presenter`, or `federated` — that records whether that
+member is expected to spawn a sub-society. Today every Publicity member is
+declared `leaf` (with `presenter` reserved for the presenter), and the files
+for `crisis`, `events`, and `media-relations` carry an inline note marking
+them as candidates for promotion to `federated` once a real second authority
+or censor profile appears.

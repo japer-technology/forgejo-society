@@ -3,6 +3,13 @@ repo: japer-technology/forgejo-society-publicity-media-relations
 role: pillar-member
 society: sor.publicity
 
+# Candidate to spawn its own sub-society: the media list (PII-heavy, distinct
+# censor profile) and outreach drafting (publicity voice, different authority)
+# are governance-heterogeneous remits. Promote to `federated` once a second
+# authority profile is required in the same repo. See ../../README.md
+# "Recursion: when a member spawns its own sub-society".
+decomposition: leaf
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md
 
