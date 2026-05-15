@@ -1,3 +1,8 @@
+
 ubuntu installed
 
-chrome/beekeeper
+chrome/beekeeper installed
+
+sudo apt install curl
+
+
