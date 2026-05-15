@@ -34,3 +34,9 @@ forge. "I didn't know" is not a defence. The warnings exist because the
 compliant path is narrow and every other path causes harm.
 
 **When in doubt: do not run it.**
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
