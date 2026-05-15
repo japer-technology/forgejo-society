@@ -6,28 +6,42 @@
   </picture>
 </p>
 
-## Repo, then Intelligence, then Society
+## Forgejo
 
-Begin with a repo.
+### Repo
 
-Create one, or choose one that already exists.
+- Begin with a repo.
 
-forgejo-intelligence is the human doorway into forgejo-society.
+- Create one, or choose one that already exists.
 
-Copy the forgejo-intelligence workflow into the repo and run it.
+### Intelligence
 
-Once awake, forgejo-intelligence provides the command system through which societies are created, managed, joined, or governed.
+- forgejo-intelligence is the human doorway into forgejo-society.
 
-Do not install forgejo-society by hand.
+- Copy the forgejo-intelligence workflow into the repo and run it.
 
-forgejo-society can only be installed by a fully functioning forgejo-intelligence.
+- Once awake, forgejo-intelligence provides the command system through which societies are created, managed, joined, or governed.
 
-A repo may possess Intelligence.
+- A repo may possess Intelligence.
 
-From there, it may create Societies, or be granted access to others.
+### Society
 
-> /society create TheFederation
+- Do not install forgejo-society by hand.
 
-This installs forgejo-society into the repo.
+- forgejo-society can only be installed by a fully functioning forgejo-intelligence.
 
-A Forgejo repo may contain neither application, either application, or both.
+- You may create Societies, or be granted access to other societies.
+
+  > /society create TheFederation
+
+- This installs forgejo-society into the repo.
+
+### Repo Labour
+
+- Create one, or choose one that already exists.
+
+- forgejo-labour is the code doorway into forgejo-society.
+
+- Copy the forgejo-labour workflow into the repo and run it.
+
+- Once awake, forgejo-labour provides a command system to intelligence and society.
