@@ -3,8 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
-> Societies emerge when Minds, Intelligences, and Skills act together as one.
-
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
 [Forgejo](https://forgejo.org/) running on Ubuntu hardware owned and operated
 by the project maintainers. It treats the forge - repositories, runners,
@@ -20,34 +18,5 @@ cognitive ecology.
 </p>
 
 Forgejo Society is unique because it makes five quiet reversals: the forge is the mind, intelligence is a governed society, capability is granted by files and audited by git, cognition persists as Git objects, and sovereignty is structural - owned hardware, forge, and files. Its implementation honours this by reducing repository cognition to one workflow file and one root folder, while moving the runtime off hosted infrastructure. In an AI world chasing demos, it offers something rarer: durable, governed, sovereign intelligence.
- 
 
----
-
-The project is organised around a small set of pillars:
-
-- **[`FORGEJO-SOCIETY-INTRODUCTION/`](FORGEJO-SOCIETY-INTRODUCTION/README.md)** - the
-  gentle on-ramp to the project: what Forgejo Society is, why it exists, the
-  cognitive arc, and a suggested reading order. Start here if you are new.
-- **[`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md)** - the practical,
-  command-level installation and operations library: how to bring Ubuntu, the
-  Forgejo forge, runners, and the LLM server up from clean hardware to a
-  fully running cognitive ecology.
-- **[`THE-SOCIETY-OF-MIND/`](THE-SOCIETY-OF-MIND/README.md)** - the
-  theoretical foundation, derived from Marvin Minsky's *Society of Mind*,
-  with a crosswalk into the project's own vocabulary.
-- **[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md)** - the
-  governance, protocols, agencies, critics, censors, memory, and workspace
-  specification that turn the forge into a governed mind.
-- **[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/README.md)** - the
-  planning documents that map the Society of Repo specification onto the
-  two operational target repositories.
-- **[`FORGEJO-SOCIETY-PROMOTION/`](FORGEJO-SOCIETY-PROMOTION/README.md)** - the
-  promotion pillar: positioning, narratives, audiences, channels, campaigns,
-  visual identity, press kit, style guide, and reusable copy and assets that
-  carry the Society of Repo outward to the wider world.
-- **[`FORGEJO-SOCIETY-PUBLICITY/`](FORGEJO-SOCIETY-PUBLICITY/README.md)** - the
-  publicity pillar: announcements, media relations, events, coverage logs,
-  public statements, crisis communication, and recognition. Where promotion
-  is the project's outbound voice, publicity is its earned attention and
-  the public record of how it is received.
+> Societies emerge when Minds, Intelligences, and Skills act together as one.
