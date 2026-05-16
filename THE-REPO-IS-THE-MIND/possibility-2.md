@@ -1,4 +1,4 @@
-A better answer!
+# A better answer
 
 **Do not implement Society of Mind as “a team of chatty agents.”**
 Implement it as a **repo-native cognitive architecture**, where Git files are not merely memory but the actual medium through which small mindless agencies activate, inhibit, remember, argue, rehearse, and become a coherent visible self.
@@ -25,7 +25,7 @@ read,bash,edit,write,grep,find,ls
 
 Society of Mind should turn that into an **activation economy**.
 
-Minsky’s core idea was not “multiple experts collaborate.” It was that intelligence emerges from many simple, individually mindless agents organized into societies, with no single magic principle doing the work. ([Wikipedia][1]) K-lines are especially important here: they attach to the agents active during a successful problem-solving state, then later reactivate a similar state for similar problems.  Frames, censors, and suppressors also matter: frames give structured expectations, while censors and suppressors prevent bad states or bad actions before they unfold. 
+Minsky’s core idea was not “multiple experts collaborate.” It was that intelligence emerges from many simple, individually mindless agents organized into societies, with no single magic principle doing the work. ([Wikipedia][1]) K-lines are especially important here: they attach to the agents active during a successful problem-solving state, then later reactivate a similar state for similar problems.  Frames, censors, and suppressors also matter: frames give structured expectations, while censors and suppressors prevent bad states or bad actions before they unfold.
 
 So the fusion is:
 
