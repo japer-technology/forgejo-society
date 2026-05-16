@@ -114,12 +114,12 @@ directory is the doorway; the others are the rooms it opens onto.
   planning documents that map the Society of Repo specification onto the
   two operational targets in this repository: the workflows (the body) and
   the `.forgejo-society/` configuration (the mind).
-- **[`../REPO/forgejo-intelligence/`](../REPO/forgejo-intelligence/)** — the
-  runnable Forgejo runtime surface: surface handlers, coordinators, agent
+- **[`../FORGEJO-SOCIETY/forgejo-intelligence/`](../FORGEJO-SOCIETY/forgejo-intelligence/)** —
+  the runnable Forgejo runtime surface: surface handlers, coordinators, agent
   engines, tests, and runtime state.
-- **[`../FORGEJO-SOCIETY-PAST/`](../FORGEJO-SOCIETY-PAST/)** — earlier and
-  sibling experiments being converted from a GitHub-runtime design to a
-  Forgejo-runtime design.
+- **[`../FORGEJO-SOCIETY-PRECURSOR/`](../FORGEJO-SOCIETY-PRECURSOR/)** —
+  earlier and sibling experiments being converted from a GitHub-runtime
+  design to a Forgejo-runtime design.
 - **[`../FORGEJO-SOCIETY-THE-FEDERATION/`](../FORGEJO-SOCIETY-THE-FEDERATION/)**
   — the federation and hardware substrate that hosts the society.
 
@@ -141,8 +141,6 @@ directory is the doorway; the others are the rooms it opens onto.
     existing third-party repo is incorporated by dropping an Intelligence
     into it in either `develop` or `run` mode.
 - **[`essay/`](essay/)** — longer essays that situate the project:
-  - [`sor-direction-1.md`](essay/sor-direction-1.md) — directional essay on
-    where the Society of Repo is heading.
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
     on what *emergence* honestly means inside a Society of Repo, and how
     such possibilities are likely to reveal themselves to the people
@@ -150,6 +148,13 @@ directory is the doorway; the others are the rooms it opens onto.
   - [`forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
     — on how the Forgejo Society design and implementation are unique in
     today's fast paced AI ecosystem.
+  - [`forgejo-society-technically-speaking.md`](essay/forgejo-society-technically-speaking.md)
+    — the hard-technical companion to the uniqueness essay: identifier
+    grammars, schemas, state machines, runtime invariants, and the
+    predicates that gate execution.
+  - [`sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
+    — on why internal total self-representation may be impossible for a
+    Society of Repo, and what that structural limit means in practice.
 
 ## Suggested reading order
 

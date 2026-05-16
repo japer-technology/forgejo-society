@@ -9,14 +9,14 @@ It is written against the architecture in
 [`THE-SOCIETY-OF-REPO/README.md`](../../THE-SOCIETY-OF-REPO/README.md), the
 introduction in [`../README.md`](../README.md), the planning bridge in
 [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md), and the
-runtime under [`REPO/forgejo-intelligence/`](../../REPO/forgejo-intelligence/).
+runtime under [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/).
 Where it makes a claim that is not obvious, it points at the file that earns
 the claim.
 
 The companion essays
-[`sor-direction-1.md`](sor-direction-1.md) and
-[`sor-emergent-possibilities.md`](sor-emergent-possibilities.md) ask whether
-the direction is correct and what may emerge from it. This essay sits
+[`forgejo-society-technically-speaking.md`](forgejo-society-technically-speaking.md) and
+[`sor-emergent-possibilities.md`](sor-emergent-possibilities.md) specify the
+machinery in detail and ask what may emerge from it. This essay sits
 alongside them and answers a narrower question: *what, concretely, is unique
 here?*
 
@@ -99,7 +99,7 @@ log`**. If a critic is present in the repo, the critic exists. If a censor
 file forbids an action, the action is forbidden. If an agency is not
 checked in, it is not in the society.
 
-[`REPO/forgejo-intelligence/WHAT.md`](../../REPO/forgejo-intelligence/WHAT.md)
+[`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
 states this in operational terms: the runtime declares its own surface by
 the files it ships, and changes to that surface are reviewed the same way
 any other code change is reviewed. There is no out-of-band "agent settings"
@@ -188,21 +188,21 @@ including the mind itself.
 ### 3.2 The runtime is real code, not a slide deck
 
 It would be easy to write a manifesto like this without an implementation
-behind it. There is one. [`REPO/forgejo-intelligence/`](../../REPO/forgejo-intelligence/)
+behind it. There is one. [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/)
 contains the runnable Forgejo-native runtime — a Bun/TypeScript installer,
 surface handlers, coordinators, agent engines, tests, and `.forgejo`
-workflows. Its [`README.md`](../../REPO/forgejo-intelligence/README.md),
-[`WHAT.md`](../../REPO/forgejo-intelligence/WHAT.md),
-[`.ASPIRATION.md`](../../REPO/forgejo-intelligence/.ASPIRATION.md), and the
+workflows. Its [`README.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/README.md),
+[`WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md),
+[`.ASPIRATION.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/.ASPIRATION.md), and the
 conversion plan in
-[`CONVERSION/FORGEJO-CONVERSION-PLAN.md`](../../REPO/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)
+[`CONVERSION/FORGEJO-CONVERSION-PLAN.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/CONVERSION/FORGEJO-CONVERSION-PLAN.md)
 make the trajectory legible: a system that began on GitHub Actions and is
 being moved, surface by surface, to Forgejo on owned hardware.
 
 The conversion itself is part of the uniqueness. Most projects in the AI
 ecosystem assume the cloud is forever. This one treats moving off it as a
 planned, file-by-file engineering activity, with sibling experiments under
-[`../../FORGEJO-SOCIETY-PAST/`](../../FORGEJO-SOCIETY-PAST/) tracking that
+[`../../FORGEJO-SOCIETY-PRECURSOR/`](../../FORGEJO-SOCIETY-PRECURSOR/) tracking that
 journey.
 
 ### 3.3 Governance is the same artefact as the code
@@ -283,7 +283,7 @@ A serious essay about uniqueness must also say what the design is *not*.
   intelligence.
 - It is **not finished**. The plan is explicit that significant pillars are
   scaffolds, including the publicity, promotion, and federation surfaces.
-  The conversion under [`REPO/forgejo-intelligence/`](../../REPO/forgejo-intelligence/)
+  The conversion under [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/)
   is in progress, not complete.
 - It is **not a comparative claim** about any other named project. It is a
   description of what this one does and why.

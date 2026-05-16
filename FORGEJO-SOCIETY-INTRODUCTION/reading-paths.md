@@ -54,8 +54,9 @@ running anything yet.*
    for a general audience.
 3. [`../THE-SOCIETY-OF-MIND/01-overview.md`](../THE-SOCIETY-OF-MIND/01-overview.md)
    — the Minsky idea the project rests on, in summary form.
-4. [`essay/sor-direction-1.md`](essay/sor-direction-1.md) — where the
-   project is headed, in one sitting.
+4. [`essay/forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
+   — where the project is headed and why it is shaped that way, in one
+   sitting.
 
 End point: you can explain *why* a forge is being treated as a mind, in
 your own words, to another curious reader.
@@ -191,8 +192,9 @@ you know where to look when any one of them is not.
    then the `00-foundations/`, `02-protocols/`, and `10-evolution/`
    pillars.
 5. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
-   then [`essay/sor-direction-1.md`](essay/sor-direction-1.md) — the
-   project's own argument about what may emerge and why.
+   then [`essay/sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
+   — the project's own argument about what may emerge and about the
+   structural limits of self-representation.
 6. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](../THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
    — the honest limits.
 
