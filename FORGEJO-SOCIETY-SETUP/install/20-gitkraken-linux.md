@@ -1,6 +1,6 @@
 # GitKraken (Linux)
 
-GitKraken is a cross-platform visual Git client that provides a graphical commit graph, interactive rebase, merge conflict resolution, pull request management, and Forgejo/GitHub/GitLab integrations in a single desktop application. In the Forgejo-Mind stack, GitKraken is the recommended visual Git client for developers who prefer a GUI for reviewing history, cherry-picking commits, and managing complex branching workflows. It connects to the Forgejo forge over SSH, using the same key pair configured in guide 13. This guide covers both the `.deb` package installation and the `snap` alternative.
+GitKraken is a cross-platform visual Git client that provides a graphical commit graph, interactive rebase, merge conflict resolution, pull request management, and Forgejo/GitHub/GitLab integrations in a single desktop application. In the Forgejo-Society stack, GitKraken is the recommended visual Git client for developers who prefer a GUI for reviewing history, cherry-picking commits, and managing complex branching workflows. It connects to the Forgejo forge over SSH, using the same key pair configured in guide 13. This guide covers both the `.deb` package installation and the `snap` alternative.
 
 ---
 

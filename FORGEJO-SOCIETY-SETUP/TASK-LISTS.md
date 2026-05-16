@@ -10,11 +10,11 @@ through long-form guides.
 
 | If you need to... | Use this checklist |
 |---|---|
-| Stand up the full Forgejo-Mind stack | [Transition plan overview](transition-plan/00-overview.md) |
+| Stand up the full Forgejo-Society stack | [Transition plan overview](transition-plan/00-overview.md) |
 | Install or rebuild a single host from scratch | [Install library index](install/00-index.md) |
 | Bring up Ubuntu quickly on any host | [Ubuntu Quick Start](quick-start/ubuntu.md#full-installation-checklist) |
 | Recover or repair an existing Ubuntu host | [Ubuntu Refresh](quick-start/ubuntu-refresh.md#quick-reference--which-section-do-i-need) |
-| Bring the full platform online fast | [Forgejo-Mind Quick Start](quick-start/forgejo-mind.md) |
+| Bring the full platform online fast | [Forgejo-Society Quick Start](quick-start/forgejo-society.md) |
 
 ---
 

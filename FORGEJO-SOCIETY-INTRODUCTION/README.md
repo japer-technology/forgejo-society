@@ -2,16 +2,23 @@
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
   </picture>
 </p>
 
 > **The forge is the mind. The repo is an agency. The society thinks.**
 
-This directory is the **gentle on-ramp** to the project. It explains, in plain
+This directory is the **on-ramp** to the project. It explains, in plain
 language, what *Forgejo Society* is, why it exists, and how the rest of the
 repository fits together. If you are reading this repo for the first time,
 start here before diving into the protocols, plans, or runtime code.
+
+The introduction is **multi-pathed**: a curious reader, an end user,
+a developer, a full-stack developer, a systems operator, a researcher,
+and a governance reader each get a route shaped to what they already
+know and what they intend to do. Pick the one that matches you in
+[`reading-paths.md`](reading-paths.md), or follow the time-based quick
+paths in [Suggested reading order](#suggested-reading-order) below.
 
 For the operational, command-level installation guide, see
 [`FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md).
@@ -85,7 +92,7 @@ stimulus (issue / webhook / schedule / Cue)
 
 Performance, capacity, and what "full flight" looks like for this arc are
 analysed in
-[`analysis/forgejo-mind-expected-performance.md`](analysis/forgejo-mind-expected-performance.md).
+[`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md).
 
 ## How the rest of the repository fits
 
@@ -107,37 +114,59 @@ directory is the doorway; the others are the rooms it opens onto.
   planning documents that map the Society of Repo specification onto the
   two operational targets in this repository: the workflows (the body) and
   the `.forgejo-society/` configuration (the mind).
-- **[`../REPO/forgejo-intelligence/`](../REPO/forgejo-intelligence/)** — the
-  runnable Forgejo runtime surface: surface handlers, coordinators, agent
+- **[`../FORGEJO-SOCIETY/forgejo-intelligence/`](../FORGEJO-SOCIETY/forgejo-intelligence/)** —
+  the runnable Forgejo runtime surface: surface handlers, coordinators, agent
   engines, tests, and runtime state.
-- **[`../FORGEJO-SOCIETY-PAST/`](../FORGEJO-SOCIETY-PAST/)** — earlier and
-  sibling experiments being converted from a GitHub-runtime design to a
-  Forgejo-runtime design.
+- **[`../FORGEJO-SOCIETY-PRECURSOR/`](../FORGEJO-SOCIETY-PRECURSOR/)** —
+  earlier and sibling experiments being converted from a GitHub-runtime
+  design to a Forgejo-runtime design.
 - **[`../FORGEJO-SOCIETY-THE-FEDERATION/`](../FORGEJO-SOCIETY-THE-FEDERATION/)**
   — the federation and hardware substrate that hosts the society.
 
 ## What lives in this directory
 
 - **[`README.md`](README.md)** — this file: the introduction.
+- **[`reading-paths.md`](reading-paths.md)** — ordered, profile-specific
+  paths through the repository for the curious reader, end user /
+  operator, developer, full-stack developer, systems / infrastructure
+  operator, researcher / theorist, and governance / policy reader.
 - **[`analysis/`](analysis/)** — short analytical notes that defend the
   central claim and quantify what the system can do:
   - [`ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
     — the core thesis stated as plainly as possible.
-  - [`forgejo-mind-expected-performance.md`](analysis/forgejo-mind-expected-performance.md)
+  - [`forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
     — a grounded performance estimate for the cognitive ecology at full flight.
   - [`composition-model.md`](analysis/composition-model.md) — the four
     nouns (Society, Mind, Intelligence, Repo), how they layer, and how an
     existing third-party repo is incorporated by dropping an Intelligence
     into it in either `develop` or `run` mode.
 - **[`essay/`](essay/)** — longer essays that situate the project:
-  - [`sor-direction-1.md`](essay/sor-direction-1.md) — directional essay on
-    where the Society of Repo is heading.
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
     on what *emergence* honestly means inside a Society of Repo, and how
     such possibilities are likely to reveal themselves to the people
     watching the forge.
+  - [`forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
+    — on how the Forgejo Society design and implementation are unique in
+    today's fast paced AI ecosystem.
+  - [`forgejo-society-technically-speaking.md`](essay/forgejo-society-technically-speaking.md)
+    — the hard-technical companion to the uniqueness essay: identifier
+    grammars, schemas, state machines, runtime invariants, and the
+    predicates that gate execution.
+  - [`sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
+    — on why internal total self-representation may be impossible for a
+    Society of Repo, and what that structural limit means in practice.
+  - [`forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
+    — defends the hypothesis that forges let Societies emerge when
+    Minds, Intelligences, and Skills act together as one.
 
 ## Suggested reading order
+
+The introduction supports two kinds of route: a **quick path** keyed
+on how much time you have, and a **profile path** keyed on what you
+already know and intend to do. Most readers use both — a quick path
+first, then a profile path when they decide to go deeper.
+
+### By time
 
 If you have ten minutes:
 
@@ -153,3 +182,18 @@ If you have an hour:
 When you are ready to actually run it:
 
 6. [`../FORGEJO-SOCIETY-SETUP/README.md`](../FORGEJO-SOCIETY-SETUP/README.md).
+
+### By reader profile
+
+The full, ordered paths live in
+[`reading-paths.md`](reading-paths.md). The summary:
+
+| If you are…                                            | Take this path                                                                  |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| A curious reader with no technical background          | [Path A — Curious reader](reading-paths.md#path-a--curious-reader)              |
+| An end user who wants to install and run the society   | [Path B — End user / operator](reading-paths.md#path-b--end-user--operator)     |
+| A developer who will write or extend agencies          | [Path C — Developer](reading-paths.md#path-c--developer)                        |
+| A full-stack developer who wants the whole picture     | [Path D — Full-stack developer](reading-paths.md#path-d--full-stack-developer)  |
+| A systems / infrastructure operator                    | [Path E — Systems / infrastructure operator](reading-paths.md#path-e--systems--infrastructure-operator) |
+| A researcher or theorist                               | [Path F — Researcher / theorist](reading-paths.md#path-f--researcher--theorist) |
+| Someone evaluating governance, sovereignty, compliance | [Path G — Governance / policy reader](reading-paths.md#path-g--governance--policy-reader) |

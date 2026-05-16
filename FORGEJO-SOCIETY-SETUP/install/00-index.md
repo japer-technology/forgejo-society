@@ -1,6 +1,6 @@
-# Forgejo-Mind Install Library — Master Index
+# Forgejo-Society Install Library — Master Index
 
-This index is the single entry point for every installation, validation, and deinstallation guide in the Forgejo-Mind project. Each document is fully standalone: it contains a description of the software, a prerequisites section with links to prior guides, a complete installation walkthrough, a validation section with every command needed to prove the install succeeded, a deinstallation section, and continuity controls. Real operators on production hardware can follow any guide from top to bottom without consulting a second source.
+This index is the single entry point for every installation, validation, and deinstallation guide in the Forgejo-Society project. Each document is fully standalone: it contains a description of the software, a prerequisites section with links to prior guides, a complete installation walkthrough, a validation section with every command needed to prove the install succeeded, a deinstallation section, and continuity controls. Real operators on production hardware can follow any guide from top to bottom without consulting a second source.
 
 ---
 
@@ -96,7 +96,7 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 | # | Guide | Description |
 |---|-------|-------------|
 | 11 | [NVIDIA Drivers](11-nvidia-drivers.md) | RTX 4090 driver installation on Ubuntu 24.04. Covers driver selection, Secure Boot considerations, CUDA toolkit, and persistence mode. |
-| 12 | [LM Studio (Linux)](12-lm-studio-linux.md) | Headless LLM inference server via LM Studio AppImage. Serves the OpenAI-compatible API on port 1234 for use by Forgejo-Mind agents. |
+| 12 | [LM Studio (Linux)](12-lm-studio-linux.md) | Headless LLM inference server via LM Studio AppImage. Serves the OpenAI-compatible API on port 1234 for use by Forgejo-Society agents. |
 
 ### Ubuntu Developer Tooling
 
@@ -128,6 +128,6 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 
 ## Continuity Controls
 
-- Review this index whenever a new component is added to Forgejo-Mind and add its guide to the catalogue and the recommended install order.
+- Review this index whenever a new component is added to Forgejo-Society and add its guide to the catalogue and the recommended install order.
 - Every guide in this library is versioned alongside the main repository — pull requests that change a component's install procedure must update the corresponding guide.
 - Maintain a tested install path: at least once per major Ubuntu LTS cycle, walk through the full forge-server install order on a fresh VM to verify every guide is still accurate.

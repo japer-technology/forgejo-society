@@ -1,6 +1,6 @@
 # Visual Studio Code (Windows)
 
-Visual Studio Code on Windows provides the same rich editing, debugging, and extension experience as the Linux version, with the additional benefit of the Remote-SSH extension allowing Windows developers to edit code that runs on the forge server or runner nodes directly — as if the remote files were local. In the Forgejo-Mind stack, VS Code on Windows is the primary editor for developers working from Windows workstations. The configuration in this guide mirrors the Linux guide to ensure a consistent experience across operating systems. Note that the GitHub Pull Request and Issues extension (`GitHub.vscode-pull-request-github`) is intentionally excluded — all pull request work happens through the Forgejo forge, not GitHub.
+Visual Studio Code on Windows provides the same rich editing, debugging, and extension experience as the Linux version, with the additional benefit of the Remote-SSH extension allowing Windows developers to edit code that runs on the forge server or runner nodes directly — as if the remote files were local. In the Forgejo-Society stack, VS Code on Windows is the primary editor for developers working from Windows workstations. The configuration in this guide mirrors the Linux guide to ensure a consistent experience across operating systems. Note that the GitHub Pull Request and Issues extension (`GitHub.vscode-pull-request-github`) is intentionally excluded — all pull request work happens through the Forgejo forge, not GitHub.
 
 ---
 
@@ -29,7 +29,7 @@ code --version
 
 ### 2. Install Extensions
 
-Run the following in PowerShell to install the full Forgejo-Mind extension set:
+Run the following in PowerShell to install the full Forgejo-Society extension set:
 
 ```powershell
 # GitLens — enhanced Git history, blame, and diff visualisation
@@ -60,7 +60,7 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension streetsidesoftware.code-spell-checker
 ```
 
-> **Do NOT install** `GitHub.vscode-pull-request-github` — this extension routes pull request workflows to GitHub. All PRs in Forgejo-Mind go through the Forgejo forge.
+> **Do NOT install** `GitHub.vscode-pull-request-github` — this extension routes pull request workflows to GitHub. All PRs in Forgejo-Society go through the Forgejo forge.
 
 ### 3. Configure Remote-SSH for the Forge Host
 

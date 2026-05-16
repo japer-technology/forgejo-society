@@ -10,7 +10,7 @@ this document records the rules that govern them.
 
 ## Logo
 
-- **Primary mark.** The current primary mark is `SOR.png` at the
+- **Primary mark.** The current primary mark is `logo.png` at the
   repository root, used in the header of the root `README.md` and most
   pillar READMEs.
 - **Usage.** Use the primary mark unmodified; do not recolour, distort,

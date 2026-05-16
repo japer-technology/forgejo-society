@@ -291,7 +291,7 @@ winget install --id Axosoft.GitKraken -e --source winget
 ## Phase 7 — LM Studio on Windows (private local LLM)
 
 LM Studio provides a local OpenAI-compatible inference API. Use it on any Windows machine
-with a capable GPU. The Forgejo-Mind architecture runs LM Studio on the dedicated RTX 4090
+with a capable GPU. The Forgejo-Society architecture runs LM Studio on the dedicated RTX 4090
 host, but you can also run a smaller model locally on a developer workstation.
 
 ### 7.1 Install LM Studio

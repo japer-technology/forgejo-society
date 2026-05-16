@@ -3,6 +3,11 @@ repo: japer-technology/forgejo-society-publicity-coverage
 role: pillar-member
 society: sor.publicity
 
+# Append-only external coverage log: one remit, one authority profile.
+# No federation needed. See ../../README.md "Recursion: when a member spawns
+# its own sub-society".
+decomposition: leaf
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/05-coverage.md
 

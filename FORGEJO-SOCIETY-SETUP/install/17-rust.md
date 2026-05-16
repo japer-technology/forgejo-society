@@ -1,6 +1,6 @@
 # Rust via rustup
 
-Rust is a systems programming language focused on memory safety, zero-cost abstractions, and high performance. In the Forgejo-Mind stack, Rust is used for performance-critical CLI tools, WebAssembly components, and any service where memory safety is a requirement without the overhead of garbage collection. The official installation method for Rust is `rustup`, a toolchain manager that handles multiple Rust versions, targets, and components in the user's home directory — similar to nvm for Node.js. The build-essential, libssl-dev, and pkg-config packages installed in guide 01 provide the C toolchain and native libraries that many Rust crates require during compilation.
+Rust is a systems programming language focused on memory safety, zero-cost abstractions, and high performance. In the Forgejo-Society stack, Rust is used for performance-critical CLI tools, WebAssembly components, and any service where memory safety is a requirement without the overhead of garbage collection. The official installation method for Rust is `rustup`, a toolchain manager that handles multiple Rust versions, targets, and components in the user's home directory — similar to nvm for Node.js. The build-essential, libssl-dev, and pkg-config packages installed in guide 01 provide the C toolchain and native libraries that many Rust crates require during compilation.
 
 ---
 

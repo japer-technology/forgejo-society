@@ -17,7 +17,7 @@ Hardware available for the root Forgejo Society installation.
 |---|---|
 | CPU | i7 · 8 cores · 3 GHz |
 | RAM | 8 GB |
-| Storage | 60 GB SSD |
+| Storage | 250 GB SSD |
 | Count | 16 |
 
 Forge and runners use **Ubuntu 24.04 LTS (Noble Numbat)**.

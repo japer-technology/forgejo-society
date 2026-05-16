@@ -5,7 +5,7 @@ host in one sitting. Every step is followed immediately by validation commands �
 If a validation command does not produce the expected output, **stop and fix it** before moving
 to the next step.
 
-This guide applies to all Forgejo-Mind hosts: the forge server, every runner node, and the
+This guide applies to all Forgejo-Society hosts: the forge server, every runner node, and the
 LLM inference host. Role-specific differences are noted inline.
 
 > **Total time:** approximately 30–45 minutes per host on a wired network.
@@ -110,7 +110,7 @@ Choose **Ubuntu Server** (not Minimized). Press **Done**.
 
 ### 4.4 Network — assign a static IP
 
-> Static IP is **mandatory** for every Forgejo-Mind host. DHCP addresses change on reboot and
+> Static IP is **mandatory** for every Forgejo-Society host. DHCP addresses change on reboot and
 > will break DNS, SSH access, and firewall rules.
 
 1. Arrow-key to your network interface (e.g. `eth0` or `eno1`) and press Enter.
@@ -278,7 +278,7 @@ curl --version
 
 ## Step 9 — Install essential packages
 
-These packages are required by every subsequent guide in the Forgejo-Mind library.
+These packages are required by every subsequent guide in the Forgejo-Society library.
 
 ```bash
 sudo apt install -y \
@@ -331,7 +331,7 @@ dpkg -l build-essential git curl wget ufw fail2ban jq 2>/dev/null \
 
 ## Step 10 — Set timezone to UTC
 
-All Forgejo-Mind hosts run UTC. This keeps log timestamps and cron schedules unambiguous
+All Forgejo-Society hosts run UTC. This keeps log timestamps and cron schedules unambiguous
 across the fleet regardless of operator location.
 
 ```bash
@@ -403,7 +403,7 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 
 # Write the hardening drop-in configuration
 sudo tee /etc/ssh/sshd_config.d/hardening.conf > /dev/null <<'EOF'
-# Forgejo-Mind SSH hardening
+# Forgejo-Society SSH hardening
 PermitRootLogin no
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -582,7 +582,7 @@ getent passwd forgejo
 ## Full installation checklist
 
 Run all of these in one pass after completing every step above to confirm the host is ready
-for the next phase of the Forgejo-Mind install.
+for the next phase of the Forgejo-Society install.
 
 ```bash
 echo "=== Ubuntu Quick Start — Final Validation ==="
@@ -666,5 +666,5 @@ Continue with the appropriate guide for the host's role:
 For the full sequential install order for each role, see
 [Install library master index](../install/00-index.md).
 
-For a single-document rapid deployment of the entire Forgejo-Mind stack, see
-[Forgejo-Mind Quick Start](forgejo-mind.md).
+For a single-document rapid deployment of the entire Forgejo-Society stack, see
+[Forgejo-Society Quick Start](forgejo-society.md).

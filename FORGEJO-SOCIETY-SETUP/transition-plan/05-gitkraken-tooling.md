@@ -5,7 +5,7 @@ workflow. It belongs in the tooling layer, not the system-of-record layer.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Optional desktop Git client for day-to-day repository operations.
 - Visual history, diff, and merge tool that works against any Git remote.

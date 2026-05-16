@@ -2,11 +2,11 @@
 
 **Date:** 2026-05-09  
 **Sources unified:**
-- `/home/runner/work/forgejo-mind/forgejo-mind/gaps-found-by-openai.md`
-- `/home/runner/work/forgejo-mind/forgejo-mind/gaps-found-by-anthropic.md`
-- `/home/runner/work/forgejo-mind/forgejo-mind/THE-SOCIETY-OF-MIND/research/1986.md`
-- `/home/runner/work/forgejo-mind/forgejo-mind/THE-SOCIETY-OF-MIND/research/1988.md`
-- Core `THE-SOCIETY-OF-REPO` design documents under `/home/runner/work/forgejo-mind/forgejo-mind/THE-SOCIETY-OF-REPO/`
+- `/home/runner/work/forgejo-society/forgejo-society/gaps-found-by-openai.md`
+- `/home/runner/work/forgejo-society/forgejo-society/gaps-found-by-anthropic.md`
+- `/home/runner/work/forgejo-society/forgejo-society/THE-SOCIETY-OF-MIND/research/1986.md`
+- `/home/runner/work/forgejo-society/forgejo-society/THE-SOCIETY-OF-MIND/research/1988.md`
+- Core `THE-SOCIETY-OF-REPO` design documents under `/home/runner/work/forgejo-society/forgejo-society/THE-SOCIETY-OF-REPO/`
 
 ---
 

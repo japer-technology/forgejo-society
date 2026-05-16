@@ -1,6 +1,6 @@
 # Runtime Protocols, Privacy Controls, and Reinforcement
 
-This document defines the operating contract for live Forgejo-Mind execution. Use it with
+This document defines the operating contract for live Forgejo-Society execution. Use it with
 [SOR-to-Forgejo Mapping and Bootstrap](17-sor-bootstrap-and-mapping.md) and the settlement
 protocol in `THE-SOCIETY-OF-REPO`.
 

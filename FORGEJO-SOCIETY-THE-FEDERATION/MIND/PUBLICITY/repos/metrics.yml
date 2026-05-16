@@ -3,6 +3,11 @@ repo: japer-technology/forgejo-society-publicity-metrics
 role: pillar-member
 society: sor.publicity
 
+# Single remit (publicity metrics + learning), single authority profile.
+# No federation needed. See ../../README.md "Recursion: when a member spawns
+# its own sub-society".
+decomposition: leaf
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/09-metrics.md
 

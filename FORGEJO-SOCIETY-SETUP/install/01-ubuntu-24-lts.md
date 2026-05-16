@@ -1,6 +1,6 @@
 # Ubuntu 24.04 LTS
 
-Ubuntu 24.04 LTS (Noble Numbat) is the foundation operating system for every host in the Forgejo-Mind stack — the primary forge server, all 16 runner nodes, and the RTX 4090 LLM inference host. It provides a stable, security-maintained base with a five-year standard support window (until April 2029) and a ten-year extended security maintenance window. Choosing a single LTS release across the entire fleet simplifies package management, kernel compatibility, and operational runbooks. This guide covers a fresh, bare-metal installation from ISO through to a fully hardened, updated, production-ready system.
+Ubuntu 24.04 LTS (Noble Numbat) is the foundation operating system for every host in the Forgejo-Society stack — the primary forge server, all 16 runner nodes, and the RTX 4090 LLM inference host. It provides a stable, security-maintained base with a five-year standard support window (until April 2029) and a ten-year extended security maintenance window. Choosing a single LTS release across the entire fleet simplifies package management, kernel compatibility, and operational runbooks. This guide covers a fresh, bare-metal installation from ISO through to a fully hardened, updated, production-ready system.
 
 ---
 
@@ -71,7 +71,7 @@ The Ubuntu 24.04 server installer is a text-based curses interface. Navigate wit
 
 #### Network Configuration (Static IP)
 
-Static IP is mandatory for every Forgejo-Mind host. The installer uses Netplan under the hood. Select your network interface and choose **Edit IPv4**. Switch from DHCP to **Manual** and fill in:
+Static IP is mandatory for every Forgejo-Society host. The installer uses Netplan under the hood. Select your network interface and choose **Edit IPv4**. Switch from DHCP to **Manual** and fill in:
 
 | Field | Forge server | Runner node example | LLM host |
 |-------|-------------|---------------------|----------|
@@ -112,7 +112,7 @@ Create the initial administrator account. This account is for initial setup only
 
 #### Snaps
 
-The installer offers to pre-install snaps. Deselect everything — no snaps are required in Forgejo-Mind, and snap versions of common tools (particularly curl) can cause path-resolution conflicts.
+The installer offers to pre-install snaps. Deselect everything — no snaps are required in Forgejo-Society, and snap versions of common tools (particularly curl) can cause path-resolution conflicts.
 
 #### Start the Installation
 
@@ -158,7 +158,7 @@ which curl
 
 ### 8. Install Essential Packages
 
-These packages are required by subsequent guides and useful for day-to-day operations on any Forgejo-Mind host.
+These packages are required by subsequent guides and useful for day-to-day operations on any Forgejo-Society host.
 
 ```bash
 sudo apt install -y \
@@ -202,7 +202,7 @@ sudo apt install -y \
 
 ### 9. Set Timezone to UTC
 
-All hosts in Forgejo-Mind run UTC. This ensures log timestamps and cron schedules are unambiguous across the fleet regardless of operator location.
+All hosts in Forgejo-Society run UTC. This ensures log timestamps and cron schedules are unambiguous across the fleet regardless of operator location.
 
 ```bash
 sudo timedatectl set-timezone UTC
@@ -258,7 +258,7 @@ Now harden the SSH daemon configuration:
 sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 
 sudo tee /etc/ssh/sshd_config.d/hardening.conf > /dev/null <<'EOF'
-# Forgejo-Mind SSH hardening
+# Forgejo-Society SSH hardening
 PermitRootLogin no
 PasswordAuthentication no
 ChallengeResponseAuthentication no

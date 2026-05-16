@@ -2,7 +2,7 @@
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
   </picture>
 </p>
 
@@ -292,7 +292,7 @@ flowchart LR
   classDef chan fill:#2a2a2a,stroke:#c0caf5,color:#fff
   classDef cen fill:#3a1e1e,stroke:#f7768e,color:#fff
 
-  subgraph A["SOR · forgejo-mind"]
+  subgraph A["SOR · forgejo-society"]
     AWS[workspace]:::sor
     AOUT[cloud-egress<br/>censor]:::cen
     ASVC[services]:::sor

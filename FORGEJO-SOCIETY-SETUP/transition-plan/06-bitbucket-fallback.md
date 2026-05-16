@@ -5,7 +5,7 @@ copy of critical repositories under a different provider.
 
 ---
 
-## Role in Forgejo-Mind
+## Role in Forgejo-Society
 
 - Secondary or tertiary mirror for critical repositories only.
 - Commercial hosted option if self-hosting capacity is temporarily constrained.

@@ -194,11 +194,11 @@ SORs may barter services instead of paying currency.
 reciprocal_agreement:
   id: recip.{party-a}.{party-b}.{year}-{sequence}
   parties:
-    - sor.forgejo-mind
+    - sor.forgejo-society
     - sor.dental-compliance
 
   grant:
-    sor.forgejo-mind_receives:
+    sor.forgejo-society_receives:
       service: service.dental-compliance-check.v1
       credits: 100
 

@@ -1,6 +1,6 @@
 # tea CLI (Windows)
 
-`tea` is the official command-line client for Gitea and Forgejo, providing a terminal interface for repository management, issue tracking, pull request operations, release management, and notifications. On Windows, `tea` runs natively in PowerShell and Command Prompt without requiring WSL2. In the Forgejo-Mind stack, `tea` on Windows gives developers the same forge automation capabilities as on Linux — creating issues from scripts, automating release tagging, and querying repository state from PowerShell workflows. This guide covers downloading the tea binary for Windows, adding it to the user PATH, authenticating with the Forgejo forge, and validating the most common operations.
+`tea` is the official command-line client for Gitea and Forgejo, providing a terminal interface for repository management, issue tracking, pull request operations, release management, and notifications. On Windows, `tea` runs natively in PowerShell and Command Prompt without requiring WSL2. In the Forgejo-Society stack, `tea` on Windows gives developers the same forge automation capabilities as on Linux — creating issues from scripts, automating release tagging, and querying repository state from PowerShell workflows. This guide covers downloading the tea binary for Windows, adding it to the user PATH, authenticating with the Forgejo forge, and validating the most common operations.
 
 ---
 
@@ -128,7 +128,7 @@ tea login ls
 
 ```powershell
 tea repos ls
-# Expected: a table of repositories from the Forgejo-Mind forge
+# Expected: a table of repositories from the Forgejo-Society forge
 ```
 
 - [ ] **Issues can be listed**

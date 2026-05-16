@@ -4,49 +4,26 @@
 [![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
-[Forgejo](https://forgejo.org/) running on Ubuntu hardware owned and operated
+[Forgejo](https://forgejo.org/), running on Ubuntu hardware owned and governed
 by the project maintainers. It treats the forge — repositories, runners,
-issues, pull requests, and CI/CD — not just as a place to store code, but as
+issues, pull requests, and CI/CD — not merely as a place to store code, but as
 the operational substrate for a *society of agents*: governed AI agencies,
-critics, censors, and memory that together form a transparent, auditable
-cognitive ecology.
-
-> Societies emerge when Minds, Intelligences, and Skills act together as one.
+critics, censors, and memory systems that together form a transparent,
+auditable cognitive ecology.
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
   </picture>
 </p>
 
----
+Forgejo Society is distinctive because it makes five quiet reversals: the forge
+becomes the mind, intelligence becomes a governed society, capability is granted
+by files and audited by Git, cognition persists as Git objects, and sovereignty
+becomes structural — rooted in owned hardware, owned forge, and owned files. Its
+implementation honours this by reducing repository cognition to one workflow
+file and one root folder, while moving runtime authority away from hosted
+infrastructure. In an AI world chasing demonstrations, it pursues something
+rarer: durable, governed, sovereign intelligence.
 
-The project is organised around a small set of pillars:
-
-- **[`FORGEJO-SOCIETY-INTRODUCTION/`](FORGEJO-SOCIETY-INTRODUCTION/README.md)** — the
-  gentle on-ramp to the project: what Forgejo Society is, why it exists, the
-  cognitive arc, and a suggested reading order. Start here if you are new.
-- **[`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/README.md)** — the practical,
-  command-level installation and operations library: how to bring Ubuntu, the
-  Forgejo forge, runners, and the LLM server up from clean hardware to a
-  fully running cognitive ecology.
-- **[`THE-SOCIETY-OF-MIND/`](THE-SOCIETY-OF-MIND/README.md)** — the
-  theoretical foundation, derived from Marvin Minsky's *Society of Mind*,
-  with a crosswalk into the project's own vocabulary.
-- **[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md)** — the
-  governance, protocols, agencies, critics, censors, memory, and workspace
-  specification that turn the forge into a governed mind.
-- **[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/README.md)** — the
-  planning documents that map the Society of Repo specification onto the
-  two operational targets in this repository:
-  [`.forgejo/workflows/forgejo-society.yaml`](.forgejo/) (the body) and
-  [`.forgejo-society/`](.forgejo-society/) (the mind).
-- **[`FORGEJO-SOCIETY-PROMOTION/`](FORGEJO-SOCIETY-PROMOTION/README.md)** — the
-  promotion pillar: positioning, narratives, audiences, channels, campaigns,
-  visual identity, press kit, style guide, and reusable copy and assets that
-  carry the Society of Repo outward to the wider world.
-- **[`FORGEJO-SOCIETY-PUBLICITY/`](FORGEJO-SOCIETY-PUBLICITY/README.md)** — the
-  publicity pillar: announcements, media relations, events, coverage logs,
-  public statements, crisis communication, and recognition. Where promotion
-  is the project's outbound voice, publicity is its earned attention and
-  the public record of how it is received.
+> Forges let Societies emerge when Minds, Intelligences, and Skills act together as one.

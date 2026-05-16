@@ -1,6 +1,6 @@
 # CI/CD Capabilities Become AI Agent Capabilities
 
-This document states the central idea of Forgejo-Mind as plainly as possible.
+This document states the central idea of Forgejo-Society as plainly as possible.
 
 The breakthrough is not merely that an AI agent can operate inside a repository.
 The deeper invention is that the normal capabilities of a software forge can be
@@ -33,7 +33,7 @@ A modern forge already knows how to:
 
 Those are usually treated as delivery and operations features.
 
-Forgejo-Mind treats them as cognition features.
+Forgejo-Society treats them as cognition features.
 
 That means the forge is no longer just where software gets built. It becomes the
 runtime substrate in which a society of bounded intelligences can perceive,
@@ -43,7 +43,7 @@ propose, criticise, remember, and act.
 
 ## The key reinterpretation
 
-| Standard forge / CI/CD primitive | Cognitive meaning in Forgejo-Mind |
+| Standard forge / CI/CD primitive | Cognitive meaning in Forgejo-Society |
 |---|---|
 | Issue, webhook, schedule, failing build | Stimulus |
 | Label, routing rule, workflow trigger | Activation |
@@ -88,7 +88,7 @@ It is located in the governed interaction between many specialised parts.
 
 Most agent systems treat the repository as a workspace the agent happens to use.
 
-Forgejo-Mind treats the forge itself as the architecture of mind:
+Forgejo-Society treats the forge itself as the architecture of mind:
 
 - the repos are not passive storage; they are specialised cognitive organs
 - the workflows are not background automation; they are activation and execution pathways
@@ -153,7 +153,7 @@ It is a bounded organ inside a larger cognitive ecology.
 
 Ordinary chat-based agents often lose continuity when the session ends.
 
-Forgejo-Mind moves continuity into forge artefacts:
+Forgejo-Society moves continuity into forge artefacts:
 
 - commits
 - issues
@@ -176,7 +176,7 @@ It depends on writing cognition back into versioned, reviewable artefacts.
 This architecture is not only about making agents more capable.
 It is also about making them governable.
 
-In Forgejo-Mind:
+In Forgejo-Society:
 
 - critics challenge weak or risky proposals
 - censors enforce hard limits
@@ -194,7 +194,7 @@ The goal is a long-lived, sovereign, inspectable AI institution.
 
 ## Practical summary
 
-Forgejo-Mind can be described technically as:
+Forgejo-Society can be described technically as:
 
 > **A local-first, forge-native, Society-of-Mind runtime in which CI/CD primitives are reinterpreted as cognitive primitives, repositories become specialised agencies, and durable intelligence emerges through governed interaction inside version control.**
 

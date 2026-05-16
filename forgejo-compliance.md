@@ -183,3 +183,10 @@ in fact permitted.
 [codeberg-tos]: https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md
 [codeberg-not]: https://docs.codeberg.org/getting-started/what-codeberg-is/
 [codeberg-ci]: https://docs.codeberg.org/ci/
+
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
+

@@ -1,6 +1,6 @@
 # Forgejo Runner (act_runner)
 
-The Forgejo Runner (also known as `act_runner`) is the CI/CD execution agent that listens for workflow jobs dispatched by the Forgejo forge and runs them in isolated Docker containers. In the Forgejo-Mind stack, all 16 runner nodes each run a single `forgejo-runner` process that connects outbound to the forge server, polls for queued jobs, and executes them in Docker containers — one container per job step. The runner registers itself with the forge using a one-time registration token and thereafter maintains a persistent polling connection. Each runner is configured with a capacity of 4 concurrent jobs, matching the 8-core CPU profile of the runner hardware.
+The Forgejo Runner (also known as `act_runner`) is the CI/CD execution agent that listens for workflow jobs dispatched by the Forgejo forge and runs them in isolated Docker containers. In the Forgejo-Society stack, all 16 runner nodes each run a single `forgejo-runner` process that connects outbound to the forge server, polls for queued jobs, and executes them in Docker containers — one container per job step. The runner registers itself with the forge using a one-time registration token and thereafter maintains a persistent polling connection. Each runner is configured with a capacity of 4 concurrent jobs, matching the 8-core CPU profile of the runner hardware.
 
 ---
 

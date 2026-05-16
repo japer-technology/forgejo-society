@@ -120,7 +120,7 @@ approval:
   granted_by: owner
   method: issue_comment
   timestamp: 2026-05-07T10:30:00Z
-  reference: https://forgejo.local/forgejo-mind/forgejo-mind/issues/42#comment-7
+  reference: https://forgejo.local/forgejo-society/forgejo-society/issues/42#comment-7
 ```
 
 This record is permanent and cannot be modified after writing.

@@ -1,5 +1,5 @@
 service_id: service.tax-pack-preparation.v1
-provider: sor.forgejo-mind
+provider: sor.forgejo-society
 name: Tax Pack Preparation
 version: 1
 status: active

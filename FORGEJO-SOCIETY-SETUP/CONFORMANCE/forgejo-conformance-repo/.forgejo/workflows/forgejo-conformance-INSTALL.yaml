@@ -1,0 +1,252 @@
+name: forgejo-conformance-INSTALL
+
+# Forgejo Conformance Repo — install workflow.
+#
+# Copy this file (and its sibling forgejo-conformance-TESTS.yaml) into the
+# `.forgejo/workflows/` folder of the target Forgejo repository, commit and push.
+# Then dispatch this workflow once. It scaffolds the conformance fixtures and
+# the conformance test harness under `.forgejo-society/conformance/` so that
+# `forgejo-conformance-TESTS` has something to run against.
+#
+# The install is idempotent: re-dispatching only refreshes missing files.
+
+on:
+  workflow_dispatch:
+    inputs:
+      install_path:
+        description: Repository path where conformance assets are written
+        required: false
+        default: .forgejo-society/conformance
+      commit_changes:
+        description: Commit and push scaffolded files back to the repo
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+jobs:
+  install-conformance:
+    runs-on: docker
+    container:
+      image: alpine:3
+    env:
+      INSTALL_PATH: ${{ inputs.install_path }}
+      COMMIT_CHANGES: ${{ inputs.commit_changes }}
+      FORGEJO_TOKEN: ${{ forgejo.token }}
+      FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+      FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+    steps:
+      - name: Prepare runner tools
+        run: |
+          set -euo pipefail
+          apk add --no-cache bash git curl jq
+
+      - name: Checkout target repository
+        uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Scaffold conformance fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${INSTALL_PATH:=.forgejo-society/conformance}"
+          mkdir -p "${INSTALL_PATH}/fixtures" "${INSTALL_PATH}/tests"
+
+          # Sentinel that future automation can use to detect a conformance install.
+          cat > "${INSTALL_PATH}/forgejo-conformance-ENABLED.md" <<'EOF'
+          # Forgejo Conformance — enabled
+
+          Presence of this file marks this repository as a Forgejo Conformance
+          Repo. The conformance test workflow will refuse to run if this file
+          is missing.
+          EOF
+
+          cat > "${INSTALL_PATH}/fixtures/agent-manifest.example.yaml" <<'EOF'
+          name: agent-intake-bee
+          repo_class: agent
+          mission: Classify incoming work and draft the smallest safe next action.
+          authority: propose
+          activation_labels:
+            - activate:intake
+          critic_requirements:
+            - critic-evidence
+            - critic-scope
+          memory_writeback_repo: memory-decisions
+          model_route:
+            default: local-small
+            escalation: governed-cloud
+          outputs:
+            - settlement
+            - pull-request-comment
+            - provenance-record
+          EOF
+
+          cat > "${INSTALL_PATH}/fixtures/settlement.example.yaml" <<'EOF'
+          id: SET-CONFORMANCE-001
+          status: under-critique
+          source_repo: agents/agent-intake-bee
+          source_ref: issues/42
+          activation:
+            type: issue_label
+            label: activate:intake
+          owner: agent-intake-bee
+          critics_required:
+            - critic-evidence
+            - critic-scope
+          cloud_allowed: false
+          artifacts:
+            proposal_pr: 17
+            provenance_record: pending
+          EOF
+
+          cat > "${INSTALL_PATH}/fixtures/critic-response.example.md" <<'EOF'
+          **critic:** `critic-evidence`
+
+          **decision:** blocking-objection
+
+          **reason:**
+          The proposal introduces a new classification rule but does not cite
+          the governing policy entry that permits it.
+
+          **required fix:**
+          Link the relevant policy record and restate the exact rule in the
+          settlement.
+          EOF
+
+          cat > "${INSTALL_PATH}/fixtures/provenance-record.example.json" <<'EOF'
+          {
+            "settlement_id": "SET-CONFORMANCE-001",
+            "agent": "agent-intake-bee",
+            "model_route": "local-small",
+            "source_repo": "agents/agent-intake-bee",
+            "source_ref": "issues/42",
+            "action": "proposal_opened",
+            "result": "under-critique"
+          }
+          EOF
+
+          # Conformance test scripts — the test workflow runs these in order.
+          cat > "${INSTALL_PATH}/tests/00-fixtures-present.sh" <<'EOF'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          base="${1:-.forgejo-society/conformance}"
+          required=(
+            "${base}/forgejo-conformance-ENABLED.md"
+            "${base}/fixtures/agent-manifest.example.yaml"
+            "${base}/fixtures/settlement.example.yaml"
+            "${base}/fixtures/critic-response.example.md"
+            "${base}/fixtures/provenance-record.example.json"
+          )
+          for f in "${required[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "FAIL: missing required conformance fixture: $f"
+              exit 1
+            fi
+          done
+          echo "PASS: all conformance fixtures present"
+          EOF
+          chmod +x "${INSTALL_PATH}/tests/00-fixtures-present.sh"
+
+          cat > "${INSTALL_PATH}/tests/10-fixtures-valid.sh" <<'EOF'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          base="${1:-.forgejo-society/conformance}"
+
+          # JSON fixtures must parse with jq.
+          jq -e . "${base}/fixtures/provenance-record.example.json" >/dev/null \
+            || { echo "FAIL: provenance-record.example.json is not valid JSON"; exit 1; }
+
+          # YAML fixtures must at minimum parse as YAML and contain expected keys.
+          for yaml_file in \
+            "${base}/fixtures/agent-manifest.example.yaml" \
+            "${base}/fixtures/settlement.example.yaml"; do
+            python3 -c "import sys,yaml; yaml.safe_load(open('${yaml_file}'))" \
+              || { echo "FAIL: ${yaml_file} is not valid YAML"; exit 1; }
+          done
+
+          grep -q '^name:' "${base}/fixtures/agent-manifest.example.yaml" \
+            || { echo "FAIL: agent manifest missing 'name'"; exit 1; }
+          grep -q '^id:'   "${base}/fixtures/settlement.example.yaml" \
+            || { echo "FAIL: settlement missing 'id'"; exit 1; }
+          echo "PASS: conformance fixtures parse and contain required keys"
+          EOF
+          chmod +x "${INSTALL_PATH}/tests/10-fixtures-valid.sh"
+
+          cat > "${INSTALL_PATH}/tests/20-forgejo-api-reachable.sh" <<'EOF'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          : "${FORGEJO_SERVER_URL:?FORGEJO_SERVER_URL must be set by the workflow}"
+          : "${FORGEJO_TOKEN:?FORGEJO_TOKEN must be set by the workflow}"
+          : "${FORGEJO_REPOSITORY:?FORGEJO_REPOSITORY must be set by the workflow}"
+
+          # Repo metadata must be reachable with the runner-supplied token.
+          code=$(curl -sS -o /tmp/repo.json -w '%{http_code}' \
+            -H "Authorization: token ${FORGEJO_TOKEN}" \
+            "${FORGEJO_SERVER_URL%/}/api/v1/repos/${FORGEJO_REPOSITORY}")
+          if [ "${code}" != "200" ]; then
+            echo "FAIL: Forgejo API /repos/${FORGEJO_REPOSITORY} returned ${code}"
+            cat /tmp/repo.json || true
+            exit 1
+          fi
+          jq -e '.full_name' /tmp/repo.json >/dev/null \
+            || { echo "FAIL: repo metadata missing full_name"; exit 1; }
+          echo "PASS: Forgejo API reachable with provided token"
+          EOF
+          chmod +x "${INSTALL_PATH}/tests/20-forgejo-api-reachable.sh"
+
+          cat > "${INSTALL_PATH}/tests/30-runner-capabilities.sh" <<'EOF'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          # The fact that this script is executing already proves a Forgejo
+          # runner accepted the `docker` label and produced a working shell
+          # with bash, git, curl, and jq. Re-assert each tool explicitly so
+          # operators see the exact failure if a runner image regresses.
+          for tool in bash git curl jq python3; do
+            if ! command -v "${tool}" >/dev/null 2>&1; then
+              echo "FAIL: required runner tool missing: ${tool}"
+              exit 1
+            fi
+          done
+          echo "PASS: runner exposes bash, git, curl, jq, python3"
+          EOF
+          chmod +x "${INSTALL_PATH}/tests/30-runner-capabilities.sh"
+
+          cat > "${INSTALL_PATH}/tests/README.md" <<'EOF'
+          # Forgejo Conformance Tests
+
+          These scripts are executed by `forgejo-conformance-TESTS.yaml` in
+          numeric order. Each script must print `PASS:` on success and exit
+          non-zero on failure. Add new checks by dropping a numbered script
+          into this folder; the test workflow picks them up automatically.
+          EOF
+
+          echo "Conformance assets written under ${INSTALL_PATH}:"
+          find "${INSTALL_PATH}" -type f | sort
+
+      - name: Commit conformance install
+        if: ${{ inputs.commit_changes == 'true' }}
+        shell: bash
+        env:
+          FORGEJO_REF_NAME: ${{ forgejo.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name  "forgejo-conformance"
+          git config user.email "forgejo-conformance@local"
+          git add "${INSTALL_PATH}"
+          if git diff --cached --quiet; then
+            echo "No changes to commit; conformance install already up to date."
+            exit 0
+          fi
+          git commit -m "forgejo-conformance: install scaffolded fixtures and tests"
+          # Push back to the originating branch using the workflow token.
+          remote_url="${FORGEJO_SERVER_URL%/}/${FORGEJO_REPOSITORY}.git"
+          git push "https://forgejo-conformance:${FORGEJO_TOKEN}@${remote_url#https://}" \
+            "HEAD:${FORGEJO_REF_NAME}"
+
+      - name: Next action
+        run: |
+          echo "Conformance install complete."
+          echo "Next: dispatch the 'forgejo-conformance-TESTS' workflow to validate the Forgejo installation."

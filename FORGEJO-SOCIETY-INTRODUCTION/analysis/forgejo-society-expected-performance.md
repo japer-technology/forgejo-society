@@ -1,16 +1,16 @@
-# Expected Performance — Forgejo-Mind at Full Flight
+# Expected Performance — Forgejo-Society at Full Flight
 
-This document gives a grounded performance estimate for the Forgejo-Mind cognitive
+This document gives a grounded performance estimate for the Forgejo-Society cognitive
 ecology when hundreds or thousands of agent activations occur simultaneously, using
 the hardware defined in [local-computer-hardware.md](../../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md) and
 the architecture defined in
-[the-forge-is-the-mind-the-repo-is-an-agency.md](the-forge-is-the-mind-the-repo-is-an-agency.md).
+[ci-cd-capabilities-become-agent-capabilities.md](ci-cd-capabilities-become-agent-capabilities.md).
 
 ---
 
 ## What is being measured
 
-Forgejo-Mind is not a pipeline. It is a cognitive ecology. The correct unit of
+Forgejo-Society is not a pipeline. It is a cognitive ecology. The correct unit of
 performance is not "jobs per second" but **stimulus-to-settlement throughput** — the
 rate at which stimuli enter the system, travel through the full cognitive arc, and
 produce durable, governed, memory-reinforcing outcomes.
@@ -221,7 +221,7 @@ minutes for the majority of the load.
 
 ## Comparison to standard GitHub Actions performance
 
-| Metric | Forgejo-Mind | GitHub Actions (hosted standard) |
+| Metric | Forgejo-Society | GitHub Actions (hosted standard) |
 |---|---|---|
 | Job start latency | **< 1 second** (always-on daemon, local network) | 15–45 seconds (VM provision + image pull) |
 | Cognitive memory between runs | **Durable** (Git memory, K-lines, settlements) | None (each run starts from zero) |
@@ -235,7 +235,7 @@ minutes for the majority of the load.
 | Self-improvement | **Yes** (evolution loop, K-lines, reinforcement) | No |
 | Accuracy at scale | **Validated to a defined number of nines per task class** | Not applicable |
 
-Forgejo-Mind is not competing with GitHub Actions on raw scale. It is operating in a
+Forgejo-Society is not competing with GitHub Actions on raw scale. It is operating in a
 different dimension — one where durability, accuracy, governance, sovereignty, and
 ecological self-improvement are the primary performance axes.
 
@@ -263,7 +263,7 @@ hardware.
 ## Summary
 
 At full flight — hundreds or thousands of agent activations from Cue, synchronous
-and asynchronous triggers — the Forgejo-Mind cognitive ecology delivers:
+and asynchronous triggers — the Forgejo-Society cognitive ecology delivers:
 
 - **Sub-second job activation** for all agent types, compared to 15–45 seconds on
   GitHub hosted runners.

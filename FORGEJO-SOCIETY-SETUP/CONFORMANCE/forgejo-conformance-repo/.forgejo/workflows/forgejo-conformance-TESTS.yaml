@@ -1,0 +1,76 @@
+name: forgejo-conformance-TESTS
+
+# Forgejo Conformance Repo — tests workflow.
+#
+# Run AFTER `forgejo-conformance-INSTALL` has been dispatched in this
+# repository. This workflow executes every conformance script under
+# `<install_path>/tests/` in order. Each script must exit zero and print
+# `PASS:`. Any failure fails the job and surfaces the failing script in
+# the workflow log.
+#
+# The workflow validates that this Forgejo installation is conforming for
+# advanced use by THE-SOCIETY-OF-REPO: runner labels work, the API is
+# reachable from a job, the runner image carries the expected toolchain,
+# and the conformance fixtures are present and parseable.
+
+on:
+  workflow_dispatch:
+    inputs:
+      install_path:
+        description: Repository path that holds the conformance install
+        required: false
+        default: .forgejo-society/conformance
+
+jobs:
+  run-conformance-tests:
+    runs-on: docker
+    container:
+      image: alpine:3
+    env:
+      INSTALL_PATH: ${{ inputs.install_path }}
+      FORGEJO_TOKEN: ${{ forgejo.token }}
+      FORGEJO_REPOSITORY: ${{ forgejo.repository }}
+      FORGEJO_SERVER_URL: ${{ forgejo.server_url }}
+    steps:
+      - name: Prepare runner tools
+        run: |
+          set -euo pipefail
+          apk add --no-cache bash git curl jq python3 py3-yaml
+
+      - name: Checkout target repository
+        uses: https://code.forgejo.org/actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Verify conformance install is present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f "${INSTALL_PATH}/forgejo-conformance-ENABLED.md" ]; then
+            echo "::error::Conformance install missing at ${INSTALL_PATH}."
+            echo "Dispatch the 'forgejo-conformance-INSTALL' workflow first."
+            exit 1
+          fi
+          if [ ! -d "${INSTALL_PATH}/tests" ]; then
+            echo "::error::Conformance tests folder missing at ${INSTALL_PATH}/tests."
+            exit 1
+          fi
+
+      - name: Run conformance scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          failed=0
+          for script in $(ls -1 "${INSTALL_PATH}/tests"/*.sh | sort); do
+            echo "----- running ${script} -----"
+            if ! bash "${script}" "${INSTALL_PATH}"; then
+              echo "::error::Conformance script failed: ${script}"
+              failed=1
+            fi
+          done
+          if [ "${failed}" -ne 0 ]; then
+            echo "::error::One or more conformance scripts failed."
+            exit 1
+          fi
+          echo "All conformance scripts passed."

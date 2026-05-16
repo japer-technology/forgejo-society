@@ -3,6 +3,13 @@ repo: japer-technology/forgejo-society-publicity-events
 role: pillar-member
 society: sor.publicity
 
+# Candidate to spawn its own sub-society: talks, demos, podcasts, and panels
+# involve different external partners and different egress rules. Likely to
+# be promoted to `federated` once any one event type needs its own authority
+# or censor profile. See ../../README.md "Recursion: when a member spawns
+# its own sub-society".
+decomposition: leaf
+
 implements:
   - FORGEJO-SOCIETY-PUBLICITY/04-events.md
 

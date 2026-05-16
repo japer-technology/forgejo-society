@@ -69,3 +69,72 @@ same shape and are added incrementally as the Federation delegates them.
 - **Presence-is-permission.** A pillar listed here is *declared*; it is
   *active* only once the matching `channels/<peer>/` directories exist on
   both sides under their respective runtime `.forgejo-society/`.
+
+## Recursion: when a member spawns its own sub-society
+
+The shape declared in this folder is **fractal**. Any member repo of any
+society (this folder's pillars, or any sub-society they themselves declare)
+MAY in turn declare its own `MIND/<id>/` folder using the *same* shape:
+`society.yml` + `repos/` + `wiring/`. There is no separate "sub-sub" schema;
+recursion just reuses this one at the next level down.
+
+The Federation only ever talks to a sub-society's presenter. What lives
+behind that presenter is the sub-society's own concern — including whether
+it is itself a federation of further repos. From any parent's point of view,
+a child sub-society is always a single endpoint.
+
+### When to spawn (the heterogeneity test)
+
+Spawn a sub-society from a member repo only when its remit decomposes into
+two or more *independently governed* responsibilities — i.e. they need
+different **authority levels** (per
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)),
+different **censors**, or different **lead agencies**, and a single repo
+would have to pretend they are the same.
+
+Stay a single repo when the work is one remit, one authority profile, one
+censor profile — even if it has many files. **Federate for governance
+heterogeneity, not for size.**
+
+### Two failure modes to avoid
+
+- **Premature federation.** Spawning a sub-society for a member whose work
+  is genuinely one remit. Symptom: every lateral message becomes a
+  settlement, latency and audit overhead grow, no governance benefit is
+  unlocked.
+- **Hidden federation.** A member that *should* be a sub-society but is
+  crammed into one repo. Symptom: one repo registers multiple authority
+  levels and multiple censor profiles for the *same* `services_in`. That is
+  the signal to promote it.
+
+### The `decomposition` field
+
+Every file in a `repos/` folder MUST declare a `decomposition:` field with
+exactly one of these values:
+
+| Value | Meaning |
+|---|---|
+| `leaf` | This repo will not spawn a sub-society. Its `services_in` share one authority profile and one censor profile. |
+| `presenter` | This repo is the parent's single conscious voice. It MUST be `leaf` by rule — recursion stops here so the presenter cannot be presented by something else. The only legal value when `role: presenter`. |
+| `federated` | This repo is itself a sub-federation. It MUST contain a `MIND/<id>/society.yml` of the same shape as this folder, and that sub-society MUST itself name a presenter. |
+
+Lint rule (planned, by the same adapter that reads `channels/`):
+
+- `role: presenter` ⇒ `decomposition: presenter`.
+- `decomposition: federated` ⇒ a `MIND/<id>/society.yml` exists in the
+  member repo and lists at least one member with `role: presenter`.
+- `decomposition: leaf` ⇒ no `MIND/` folder is present in the member repo.
+
+### Naming under recursion
+
+Dotted IDs simply append a segment per level — no new convention is needed:
+
+- `sor.publicity` — pillar sub-society
+- `sor.publicity.crisis` — member of the pillar
+- `sor.publicity.crisis.legal-gate` — member of `crisis`'s own sub-society
+- `sor.publicity.crisis.presenter` — the one voice `crisis` exposes upward
+  to Publicity's presenter
+
+The **uplink rule** that keeps this readable at any depth: *a sub-society's
+presenter only ever talks to its parent's presenter.* A grandparent never
+reaches inside a grandchild; every parent sees its children as flat.

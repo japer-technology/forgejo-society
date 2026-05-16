@@ -4,7 +4,7 @@
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/SOR.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
   </picture>
 </p>
 
@@ -21,7 +21,7 @@ deep, command-level procedures.
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
 | `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
-| `examples/` | Runnable starter assets for agencies, settlements, critics, and workflows | [Examples](examples/README.md) |
+| `CONFORMANCE/` | Drop-in conformance assets that prove a Forgejo installation is ready for advanced use by THE-SOCIETY-OF-REPO | [Conformance library](CONFORMANCE/README.md) |
 | `TASK-LISTS.md` | Checklist-first navigation across the entire folder | [Task lists](TASK-LISTS.md) |
 
 ---
@@ -32,7 +32,8 @@ deep, command-level procedures.
 |---|---|
 | [Ubuntu Quick Start](quick-start/ubuntu.md) | You are provisioning a fresh Ubuntu host from bare metal |
 | [Ubuntu Refresh](quick-start/ubuntu-refresh.md) | You are repairing, cleaning, or validating an existing Ubuntu host |
-| [Forgejo-Mind Full Stack](quick-start/forgejo-mind.md) | You want the shortest guided path to a working Forgejo-Mind deployment |
+| [Forgejo (minimum viable)](quick-start/forgejo-minimum.md) | You want a viable Forgejo on one Ubuntu host with the fewest possible commands |
+| [Forgejo-Society Full Stack](quick-start/forgejo-society.md) | You want the shortest guided path to a working Forgejo-Society deployment |
 
 ---
 
@@ -52,7 +53,7 @@ deep, command-level procedures.
 - Checklist-driven work should be reachable from [TASK-LISTS.md](TASK-LISTS.md).
 - Component procedures should stay in `install/`.
 - End-to-end rollout, runtime governance, and day-two operations should stay in `transition-plan/`.
-- Runnable starter assets should stay in `examples/`.
+- Conformance assets that prove a Forgejo installation is ready for SOR work should stay in `CONFORMANCE/`.
 - Quick-start guides should remain opinionated and fast, with links back to deeper material.
 
 ---
