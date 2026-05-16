@@ -9,6 +9,7 @@ Efficient activation is not only about speed. It is about selecting the right fr
 ## Activation inputs
 
 The activation layer receives:
+
 1. a classified stimulus
 2. the frame index
 3. the K-line index
@@ -110,6 +111,7 @@ Frame selection happens before K-line activation so that defaults, expected role
 ## Analogy fallback
 
 When direct K-line matches are weak:
+
 - search for structurally similar frames or episodes
 - record why the analogy was chosen
 - record confidence in the analogy and what may not transfer cleanly
@@ -124,6 +126,7 @@ Novel stimuli should borrow structure before they default to exhaustive, unbound
 Activation is not only wake-or-suppress.
 
 Soft inhibition may come from:
+
 - failure memory
 - stale K-lines
 - recent false positives

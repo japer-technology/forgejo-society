@@ -45,33 +45,39 @@ This explicit deferral list is itself a constitutional commitment: MV-SOR refuse
 Inside the seven repos, the following hand-written artifacts must exist before the first stimulus is accepted:
 
 ### In `sor-constitution`
+
 - `principles.md` — the seven principles (Plurality, Insulation, Non-Compromise, Differentiation, Credit Assignment, Honesty, Diversity)
 - `ideals/` — at least one self-ideal: typically `prefer-evidence-over-fluency.md`
 - `self-models.md` — at least one honest self-model entry, e.g. `coverage-self-model` with non-empty `known_blind_spots`
 - `plurality-contract.md` — explicit statement that no agency, critic, or censor speaks for the whole
 
 ### In `sor-agency-coder`
+
 - `constitution.md` — scope, authority (`propose` only, never `act`), inputs, outputs, frames it owns
 - `frames/` — at least three frames covering its declared scope, each with explicit defaults and exceptions
 - `klines/` — empty but with the schema present; the first K-lines will be hand-written after the first three real settlements
 - `failure-memory.md` — empty but present; the first entry will likely arrive within the first ten stimuli
 
 ### In `sor-critic-evidence`
+
 - `constitution.md` — scope, the single objection rule it enforces, the fields it consults
 - `objection-templates/` — at least one canonical objection text
 
 ### In `sor-censor-egress`
+
 - `constitution.md` — its single boundary, its fail-closed default, its escalation path
 - `boundary-spec.md` — a precise definition of "cloud egress" as it applies to this society
 - `firing-log/` — empty but present
 
 ### In `sor-memory`
+
 - `frames/index.md` — pointers to per-agency frame folders
 - `klines/index.md` — pointers to per-agency K-line folders
 - `failure-memory/index.md` — pointers to per-agency failure folders
 - `settlements/` — empty; populated by the orchestrator
 
 ### In `sor-orchestrator`
+
 - `stimuli/inbox/` — drop-folder for new stimuli (a markdown file per stimulus is enough)
 - `runtime-config.yaml` — the values from `02-protocols/05-settlement.md` *Runtime semantics* section, with conservative defaults
 - A single CI workflow that, on a new file in `stimuli/inbox/`, opens a settlement PR
@@ -85,6 +91,7 @@ The first action MV-SOR is allowed to take is itself a settled decision, not a h
 > **Stimulus:** "Add a single sentence to `sor-constitution/principles.md` clarifying the wording of the Honesty principle."
 
 This stimulus is chosen because it:
+
 - exercises every protocol (activation, frame selection, K-line lookup against an empty store, settlement, critic objection, censor non-firing, credit-assignment, consolidation window),
 - has bounded blast radius (one repo, one file, one sentence),
 - produces a useful first failure-memory entry regardless of outcome,

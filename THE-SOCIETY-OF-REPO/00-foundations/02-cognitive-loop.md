@@ -74,6 +74,7 @@ Every stimulus carries payload data, provenance, and a starting budget for time,
 Perception agents extract features and produce an initial representation of the situation.
 
 Output includes:
+
 - classified features
 - confidence per feature
 - immediate unknowns
@@ -95,6 +96,7 @@ If no frame matches strongly, the stimulus is marked novel and the analogy pass 
 ## K-line and analogy activation
 
 Activation uses four inputs together:
+
 - the classified stimulus
 - the selected frame
 - matching K-lines
@@ -104,6 +106,7 @@ K-lines restore prior useful activation patterns.
 Analogy provides fallback structural borrowing when no strong direct match exists.
 
 The activation layer also applies:
+
 - soft inhibition from failure memory and weak prior outcomes
 - hard exclusions required by insulation rules
 - attention budgets and summary-first routing
@@ -123,6 +126,7 @@ Larger ecologies do not send all raw outputs directly to settlement. Intermediat
 Critics challenge evidence quality, scope, risk, privacy, cost, staleness, and confidence.
 
 Graduated inhibition sits between criticism and censorship:
+
 - weak paths may be dampened rather than blocked
 - repeated failure can reduce activation weights without forbidding a route
 - taboo paths can be deprioritised before they require a censor
@@ -138,6 +142,7 @@ Censors enforce hard limits that cannot be argued away: cloud egress, authority 
 ## Settlement
 
 A settlement records:
+
 - the governing frame
 - the activated agencies and inhibitions
 - proposal provenance and method
@@ -161,6 +166,7 @@ Outcomes include success, failure, block, revision required, owner override, and
 ## Memory
 
 The cycle writes to the right representation classes:
+
 - episodic records for the event
 - semantic facts for durable knowledge
 - procedural records for refined methods
@@ -177,6 +183,7 @@ All durable records carry typed relational links.
 ## Credit assignment and evolution
 
 The society separately evaluates:
+
 - perception quality
 - frame choice
 - analogy choice

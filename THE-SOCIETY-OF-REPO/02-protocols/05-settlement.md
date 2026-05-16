@@ -47,6 +47,7 @@ sequenceDiagram
 ## What a settlement records
 
 A settlement records:
+
 - the stimulus that triggered the process
 - the governing frame and any analogies used
 - the agencies that woke and any routes that were inhibited

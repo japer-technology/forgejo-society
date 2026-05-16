@@ -147,6 +147,7 @@ for preflight, fixture, smoke, and verification cadence requirements.
 ## Theoretical basis
 
 Society of Repo now treats the following as first-class cognitive structures:
+
 - **frames** for situation recognition and defaults
 - **K-lines** for remembered activation and inhibition patterns
 - **analogy** for cross-domain fallback activation
