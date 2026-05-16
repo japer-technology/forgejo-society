@@ -26,4 +26,4 @@ file and one root folder, while moving runtime authority away from hosted
 infrastructure. In an AI world chasing demonstrations, it pursues something
 rarer: durable, governed, sovereign intelligence.
 
-> Forges let Societies emerge when Minds, Intelligences, and Skills act together as one.
+> The Forge makes Minds, Intelligences, Skills, and Labour accountable to one Society.
