@@ -1,6 +1,6 @@
 # Forgejo Society: The Federation
 
-> The root Forgejo Society for and by the creator in the spirit of Spock.
+> The root Forgejo Society for and by the creator in the spirit of Star Trek.
 
 <p align="center">
   <picture>
