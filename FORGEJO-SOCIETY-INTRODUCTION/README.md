@@ -155,6 +155,9 @@ directory is the doorway; the others are the rooms it opens onto.
   - [`sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
     — on why internal total self-representation may be impossible for a
     Society of Repo, and what that structural limit means in practice.
+  - [`forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
+    — defends the hypothesis that forges let Societies emerge when
+    Minds, Intelligences, and Skills act together as one.
 
 ## Suggested reading order
 
