@@ -23,7 +23,7 @@ first-class code; danger zones; soul-file protection),
 | Censors | `censors/*.md` | `censors.ts` + `policy.ts` | before tool grant; mechanically alters tool surface |
 | Approval gate | `governance/approval-gate.yml` | `act.ts` | before any human-required action |
 | Suppressors | `policies/danger-zones.yml` (suppressor blocks) + `censors/*.md` (kind: suppressor) | `act.ts` | on each candidate output |
-| Imagination branches | `policies/write-policy.yml` | `act.ts` | for any write touching a danger zone |
+| Candidate-future branches | `policies/write-policy.yml` | `act.ts` | for every write to `main`, except declared trivial-and-reversible exceptions |
 | Reversion | `agency.code.revert-path-finder` | required slot in `code-change` frame | before settlement |
 
 If any one of these blocks, the workflow does not silently do nothing — it
@@ -177,21 +177,47 @@ A suppressor’s outcome is one of:
 
 ---
 
-## Imagination branches
+## Candidate-future branches
 
-For every write that touches a danger zone, the `act` phase MUST work on
-`society/<stimulus_id>/candidate-<n>` rather than `main`. The branch is
-either fast-forwarded, opened as a PR, or left untouched per the danger
-zone’s censor. This is the operational form of `possibility-2.md`’s
-*branches as imagination*.
+`main` is the society's **accepted reality**. A branch is a **candidate
+future**. A merge into `main` is a **reality revision** that the
+settlement records. This is the reality-model framing in
+[`../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md);
+in operational terms it is `possibility-2.md`'s *branches as imagination*
+adopted as the default rather than as a danger-zone special case.
 
-The branch lifecycle:
+The operational rule has two tiers.
+
+**Default tier (every write to `main`).** For every candidate write to
+`main`, the `act` phase MUST work on `society/<stimulus_id>/candidate-<n>`
+rather than commit directly. Direct-to-`main` is reserved for the narrow
+exception classes declared in `policies/write-policy.yml` under
+`direct_commit_allowed:` (mechanical formatting, auto-generated artefacts
+the society itself does not author). The default key is:
+
+```yaml
+write_policy:
+  default: branch_and_settle    # every write to main becomes a candidate-future branch
+  direct_commit_allowed: [ ]    # exception list, kept short and reviewed
+```
+
+**Danger-zone tier (writes touching protected paths).** For writes that
+also match a `policies/danger-zones.yml` entry, the same branch path
+applies *and* the danger-zone's censor and approval requirements gate the
+outcome (fast-forward, PR, or comment-only).
+
+The branch lifecycle in either tier:
 
 1. created from `main` at the start of `act`
 2. modified, validated, summarised
-3. linked from the settlement
+3. linked from the settlement, with `reality_revision.base_sha`,
+   `proposed_sha`, and (on merge) `merge_sha` recorded
+   (see `09-handoff-and-signal-schemas.md`)
 4. retained (not auto-deleted) until the user accepts or rejects the
    settlement, so revert is trivial
+5. on `outcome: closed-without-merge`, the branch is preserved as a
+   *rejected hypothesis* and indexed under
+   `memory/failure/rejected-candidates/` per `08-state-and-memory.md`
 
 ---
 

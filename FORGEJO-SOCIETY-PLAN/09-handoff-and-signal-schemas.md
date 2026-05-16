@@ -154,6 +154,13 @@ action_authorised:
   payload_ref: <state path or branch ref>
   approval_state: <not_required|pending|granted|denied>
 
+reality_revision:             # present iff the action touched main
+  base_sha:        # main commit before the candidate-future branch was opened
+  proposed_sha:    # tip of society/<stimulus_id>/candidate-<n>
+  merge_sha:       # commit that became main; null until merged
+  branch:          # society/<stimulus_id>/candidate-<n>
+  outcome:         # merged | closed-without-merge | superseded | pending
+
 memory_updates:
   episodic:    [ <path>, ... ]
   semantic:    [ <path>, ... ]

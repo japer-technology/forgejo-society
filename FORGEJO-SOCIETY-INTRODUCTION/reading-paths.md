@@ -49,7 +49,11 @@ running anything yet.*
 1. [`analysis/ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
    — the central thesis stated as plainly as possible: a forge already
    has the primitives a society of agents needs.
-2. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
+2. [`analysis/git-as-reality-model.md`](analysis/git-as-reality-model.md)
+   — the one-sentence picture beneath the thesis: `main` is accepted
+   reality, branches are possible futures, merges are revisions of
+   reality.
+3. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
    — what *emergence* honestly means inside a Society of Repo, written
    for a general audience.
 3. [`../THE-SOCIETY-OF-MIND/01-overview.md`](THE-SOCIETY-OF-MIND/01-overview.md)
@@ -126,24 +130,27 @@ substrate — coherent in their head before touching anything.*
 
 1. [`analysis/composition-model.md`](analysis/composition-model.md) —
    how Society, Mind, Intelligence, and Repo layer.
-2. [`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
+2. [`analysis/git-as-reality-model.md`](analysis/git-as-reality-model.md)
+   — the epistemic reading of `main`, branches, and merges that the
+   protocols below silently rely on.
+3. [`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
    — what the cognitive arc looks like at full flight, end to end.
-3. [`../THE-SOCIETY-OF-MIND/04-architecture.md`](THE-SOCIETY-OF-MIND/04-architecture.md)
+4. [`../THE-SOCIETY-OF-MIND/04-architecture.md`](THE-SOCIETY-OF-MIND/04-architecture.md)
    and [`../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)
    — the architecture and its translation into this project's
    vocabulary.
-4. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
+5. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    then walk the numbered pillars (`01-governance` through
    `10-evolution`) at skim depth.
-5. [`../FORGEJO-SOCIETY-PLAN/00-overview.md`](../FORGEJO-SOCIETY-PLAN/00-overview.md)
+6. [`../FORGEJO-SOCIETY-PLAN/00-overview.md`](../FORGEJO-SOCIETY-PLAN/00-overview.md)
    then [`../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
    — how the specification is mapped onto workflows and configuration.
-6. [`analysis/inter-repo-protocols.md`](analysis/inter-repo-protocols.md)
+7. [`analysis/inter-repo-protocols.md`](analysis/inter-repo-protocols.md)
    and [`../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`](../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md)
    — how multiple repositories talk to one another.
-7. [`../FORGEJO-SOCIETY/forgejo-intelligence/README.md`](../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
+8. [`../FORGEJO-SOCIETY/forgejo-intelligence/README.md`](../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
    — the runtime surface.
-8. [`../FORGEJO-SOCIETY-THE-FEDERATION/README.md`](../FORGEJO-SOCIETY-THE-FEDERATION/README.md)
+9. [`../FORGEJO-SOCIETY-THE-FEDERATION/README.md`](../FORGEJO-SOCIETY-THE-FEDERATION/README.md)
    — the federation and substrate the society inhabits.
 
 End point: you can hold the whole arc — stimulus → activation → memory
@@ -194,13 +201,17 @@ you know where to look when any one of them is not.
 4. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    then the `00-foundations/`, `02-protocols/`, and `10-evolution/`
    pillars.
-5. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
+5. [`analysis/git-as-reality-model.md`](analysis/git-as-reality-model.md)
+   — how the framing *main = accepted reality, branches = possible
+   futures, merge = revision of reality* sharpens insulation,
+   settlement, the workspace, and memory.
+6. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
    then [`essay/sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
    then [`essay/forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
    — the project's own argument about what may emerge, about the
    structural limits of self-representation, and about the conditions
    under which a Society emerges from a forge at all.
-6. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
+7. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
    — the honest limits.
 
 End point: you can locate any claim the project makes against either

@@ -128,7 +128,7 @@ and can be inspected independently in the run UI.
 └────────┬─────────┘
          │
 ┌────────▼─────────┐
-│ act              │  Spock posts; commits; opens PRs; merges into imagined branches
+│ act              │  Spock posts; opens candidate-future branches; opens PRs; merges reality revisions
 └────────┬─────────┘
          │
 ┌────────▼─────────┐
@@ -235,14 +235,23 @@ for cycle in 0..max_cycles:
 Only the `conscious-presenter` agency may produce the visible response.
 All other agencies are internal cognitive machinery.
 
-For dangerous changes, the act step:
-1. opens an *imagination branch* (`society/<stimulus_id>/candidate-1`),
+`main` is the society's accepted reality. Every candidate write to `main`
+is treated as a proposed *reality revision* and articulated as a
+**candidate-future branch** first; direct-to-`main` is reserved for the
+exception classes declared in `policies/write-policy.yml`.
+
+For any non-trivial change, the act step:
+1. opens a *candidate-future branch* (`society/<stimulus_id>/candidate-1`),
 2. writes the diff there,
 3. runs validation,
-4. either fast-forwards (safe), opens a PR (medium risk), or comments only
-   (high risk / blocked).
+4. either fast-forwards (low-risk, critics and censors clean), opens a PR
+   (medium risk), or comments only (high risk / blocked).
 
-This implements `possibility-2.md`’s *branches as imagination*.
+This implements `possibility-2.md`'s *branches as imagination* and the
+reality-model framing in
+[`../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md):
+the branch is the hypothesis, the merge is the reality revision, the
+settlement is the audit record.
 
 ---
 

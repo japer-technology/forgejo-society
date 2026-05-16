@@ -66,7 +66,10 @@ the playbook says the safe order and acceptance standard for creating it.
 - [ ] `.forgejo-society/policies/danger-zones.yml` (the six first-ship zones
       from `07-policies-and-safety.md`)
 - [ ] `.forgejo-society/policies/tool-policy.yml`
-- [ ] `.forgejo-society/policies/write-policy.yml`
+- [ ] `.forgejo-society/policies/write-policy.yml` with
+      `default: branch_and_settle` and an empty `direct_commit_allowed: [ ]`
+      list (every write to `main` becomes a candidate-future branch by
+      default; see `07-policies-and-safety.md` *Candidate-future branches*)
 - [ ] `.forgejo-society/policies/memory-policy.yml`
 - [ ] `.forgejo-society/policies/self-modification-policy.yml`
 
@@ -74,7 +77,9 @@ the playbook says the safe order and acceptance standard for creating it.
 
 - [ ] `.forgejo-society/schemas/signal.schema.json`
 - [ ] `.forgejo-society/schemas/handoff.schema.json`
-- [ ] `.forgejo-society/schemas/settlement.schema.json`
+- [ ] `.forgejo-society/schemas/settlement.schema.json` (includes the
+      `reality_revision` block from `09-handoff-and-signal-schemas.md`:
+      `base_sha`, `proposed_sha`, `merge_sha`, `branch`, `outcome`)
 - [ ] `.forgejo-society/schemas/kline.schema.json`
 - [ ] `.forgejo-society/schemas/frame.schema.json`
 - [ ] `.forgejo-society/schemas/manifest.schema.json`
@@ -117,6 +122,8 @@ the playbook says the safe order and acceptance standard for creating it.
 - [ ] `.forgejo-society/memory/README.md`
 - [ ] one empty subdir per memory class (events, episodic, semantic,
       procedural, failure, frames, analogies, concepts, klines, decisions)
+- [ ] `.forgejo-society/memory/failure/rejected-candidates/` (empty;
+      receives an entry per closed-without-merge candidate-future branch)
 - [ ] `.forgejo-society/workspace/README.md`
 - [ ] empty subdirs: global-workspace, current-focus, active-settlements,
       owner-briefings
@@ -207,7 +214,11 @@ Each item is its own PR, gated by the `self-modification` frame:
       settlements
 - [ ] enable analogy fallback once `memory/analogies/` has at least one entry
 - [ ] enable scheduled cron pass (decay, ecology review)
-- [ ] enable imagination branches for non-danger-zone code changes
+- [ ] tighten the `direct_commit_allowed:` exception list in
+      `policies/write-policy.yml` based on observed Phase A traffic
+      (the default `branch_and_settle` for every write to `main` is
+      already enabled in Phase A; this item only reviews the exception
+      list)
 - [ ] add the assembly tier when traffic justifies summarisation
 - [ ] add the meta-admin family
 

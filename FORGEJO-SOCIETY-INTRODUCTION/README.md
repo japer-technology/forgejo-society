@@ -140,6 +140,14 @@ directory is the doorway; the others are the rooms it opens onto.
     nouns (Society, Mind, Intelligence, Repo), how they layer, and how an
     existing third-party repo is incorporated by dropping an Intelligence
     into it in either `develop` or `run` mode.
+  - [`git-as-reality-model.md`](analysis/git-as-reality-model.md) — how
+    the framing *main = accepted reality, branches = possible futures,
+    merge = revision of reality* sharpens insulation, settlement, the
+    workspace, and memory without changing the design.
+  - [`git-as-reality-model-plan-impact.md`](analysis/git-as-reality-model-plan-impact.md)
+    — the companion note: what the same framing implies for the
+    implementation plan in [`../FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md),
+    summarised as a small concrete edit list.
 - **[`essay/`](essay/)** — longer essays that situate the project:
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
     on what *emergence* honestly means inside a Society of Repo, and how

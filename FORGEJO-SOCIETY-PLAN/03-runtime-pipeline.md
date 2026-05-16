@@ -64,23 +64,47 @@ protocol (`THE-SOCIETY-OF-REPO/02-protocols/09-representation.md`).
 
 ---
 
-## Branches as imagination
+## Branches as candidate futures
 
-For any candidate action that touches a path listed in
-`policies/danger-zones.yml`, the `act` phase MUST:
+`main` is the society's **accepted reality**: the trusted, validated state
+of the repo. A branch is a **candidate future**: a hypothesis the society
+entertains but has not yet adopted. A merge is therefore a **reality
+revision** — the only point at which accepted reality changes — and the
+accompanying settlement is the audit record of that revision. See
+[`../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model.md)
+for the framing and
+[`../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model-plan-impact.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/git-as-reality-model-plan-impact.md)
+for its impact on this plan.
+
+The operational rule:
+
+- For **every** candidate write to `main`, the `act` phase MUST work on
+  `society/<stimulus_id>/candidate-<n>` rather than commit directly.
+  Direct-to-`main` is reserved for the narrow exception classes declared
+  in `policies/write-policy.yml` (mechanical formatting, auto-generated
+  artefacts the society itself does not author).
+- For any candidate action that touches a path listed in
+  `policies/danger-zones.yml`, the same branch path applies, with the
+  additional censor and approval requirements from
+  `07-policies-and-safety.md`.
+
+In either case, `act` MUST:
 
 1. create branch `society/<stimulus_id>/candidate-<n>`
 2. apply the proposed diff there
 3. run validation steps in the same workflow run
 4. write `diff-summary.md` and link it in the settlement
 5. only then either:
-   - fast-forward into `main` (if the danger-zone censor allows direct commit)
+   - fast-forward into `main` (low-risk, non-danger-zone changes that
+     pass critics and censors)
    - open a PR for review (medium risk)
    - leave the branch for human inspection and post a comment with a link
      (high risk; default for `workflow_mutation` and `soul_mutation`)
 
-This is `possibility-2.md`’s `main = believed world / branch = imagined
-world / diff = thought / merge = belief update`.
+This is the operational form of `possibility-2.md`'s `main = believed
+world / branch = imagined world / diff = thought / merge = belief update`,
+restated in the reality-model vocabulary so that the *default* is branch
+and the *exception* is direct commit.
 
 ---
 

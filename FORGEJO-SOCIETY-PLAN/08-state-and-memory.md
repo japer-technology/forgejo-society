@@ -119,7 +119,9 @@ memory/
 ├── procedural/
 │   └── <iso8601>-<change>.md        # how-to changes (frame edits, agency edits)
 ├── failure/
-│   └── <iso8601>-<topic>.md         # what went wrong and why
+│   ├── <iso8601>-<topic>.md         # what went wrong and why
+│   └── rejected-candidates/
+│       └── <settlement_id>.yml      # closed-without-merge branches, kept as rejected hypotheses
 ├── frames/
 │   └── <frame-id>.md                # learned frames produced by meta-admin
 ├── analogies/
@@ -146,6 +148,7 @@ memory/
 | `semantic/project-laws.log` | `archivist`, **only** with `human` authority confirmation | rare |
 | `procedural/` | `archivist`, **only** under `self-modification` frame | when the society changes its own behaviour |
 | `failure/` | `archivist` | on `outcome=failed` or `outcome=blocked` settlements |
+| `failure/rejected-candidates/` | `archivist` | on settlements whose `reality_revision.outcome` is `closed-without-merge`; entry points at the preserved branch and the rejecting settlement |
 | `frames/` | `meta-admin.differentiation-broker` via `archivist` + human confirmation | rare |
 | `analogies/` | `meta-admin` via `archivist` + human confirmation | rare |
 | `concepts/` | any agency via `archivist`, but governance must approve before promotion | as candidates |

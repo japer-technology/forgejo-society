@@ -186,13 +186,13 @@ Concepts from `possibility-2.md` that are not in `THE-SOCIETY-OF-REPO/`:
 | frames as repo-native expectations | `.forgejo-society/frames/*.frame.yml` + `schemas/frame.schema.json` |
 | K-lines as reusable mental states | `.forgejo-society/memory/klines/**` + `schemas/kline.schema.json` |
 | censors and suppressors as first-class code | `.forgejo-society/censors/*.md` + `policies/danger-zones.yml` + `policy.ts` |
-| branches as imagination | `act` step’s `society/<stimulus_id>/candidate-<n>` branch protocol |
+| branches as imagination (≡ branches as candidate futures of reality) | `act` step's `society/<stimulus_id>/candidate-<n>` branch protocol, branch-by-default for every write to `main`; merge into `main` is the reality revision recorded in `settlement.reality_revision` (see `09-handoff-and-signal-schemas.md`) |
 | layered blackboard | `state/.../workspace.md` + `blackboard.md` + `signals.jsonl` etc. |
 | difference engines | implicit in frame `slots:` (required slots == differences from desired state) |
 | direct internal addressing (`society <target>:`) | `nemes/phrase-polynemes.yml` `directive.*` symbols |
 | Spock as the conscious bottleneck | `agencies/integration/conscious-presenter.md` is the sole producer of visible response |
 | evidence-bearing handoffs (no evidence, no trust) | `schemas/handoff.schema.json` requires `evidence` on every claim |
-| mental physics (path → activation, diff → thought, branch → imagination, etc.) | runtime semantics encoded across `nemes/`, `act` step, `state/`, `memory/` |
+| mental physics (path → activation, diff → thought, branch → candidate future, merge → reality revision, etc.) | runtime semantics encoded across `nemes/`, `act` step, `state/`, `memory/`, and `settlement.reality_revision` |
 
 ---
 
