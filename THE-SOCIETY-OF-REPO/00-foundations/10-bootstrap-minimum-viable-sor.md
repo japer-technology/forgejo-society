@@ -11,7 +11,7 @@ MV-SOR is *not* a toy. It is the smallest structure under which all the architec
 MV-SOR requires exactly seven repositories on day one. Any fewer and the architectural commitments collapse into one place; any more is unjustified for bootstrap.
 
 | Repo | Role | Why required on day one |
-|---|---|---|
+| --- | --- | --- |
 | `sor-constitution` | Constitution, principles, plurality contract, ideals, self-models registry, self-ideals registry | Without it, no proposal can cite anything; settlements have no ground |
 | `sor-protocols` | The 19 protocol documents under `02-protocols/` plus `00-foundations/` | Without it, agencies cannot interoperate |
 | `sor-orchestrator` | Activation, settlement, and routing logic; reads stimuli from a `stimuli/` directory and opens settlement PRs | Without it, nothing actually runs |
@@ -29,7 +29,7 @@ That is the floor. Every architectural commitment in SOR is exercised by these s
 To stay grounded in the possible, MV-SOR explicitly *defers* the following — and names what triggers their introduction:
 
 | Deferred | Triggered when |
-|---|---|
+| --- | --- |
 | Suppressors as separate repos | The first time a proposal that *should* have been blocked by `sor-censor-egress` reaches a boundary. Until then, the censor IS the suppressor. |
 | Bridges (`02-protocols/18-bridges.md`) | The first time SOR needs to translate to or from another representation realm (e.g., Forgejo intelligence, an external schema). Bridges are not pre-built. |
 | Plural B-brain stewards | Once any one of (activation, memory, representation, evaluation, ecology) generates more than one weekly digest worth reviewing. Until then, a single `meta-steward` issue tracker fills all five roles, and that is recorded as a known compromise. |

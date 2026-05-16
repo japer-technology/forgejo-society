@@ -180,7 +180,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Devcontainer Config Changed | `push` (devcontainer file) | Devcontainer Config Analysis |
 | 2 | New Feature Added to Devcontainer | `push` (new `features` entry) | Devcontainer Config Analysis |
 | 3 | Breaking Devcontainer Change Detected | `push` (image/command removed) | Devcontainer Config Analysis |

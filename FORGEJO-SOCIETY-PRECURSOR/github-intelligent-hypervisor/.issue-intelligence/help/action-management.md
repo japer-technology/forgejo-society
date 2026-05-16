@@ -24,7 +24,7 @@ Issue Intelligence runs as a GitHub Actions workflow defined in `.github/workflo
 Each workflow run executes these steps in order:
 
 | Step | File | Purpose |
-|------|------|---------|
+| --- | --- | --- |
 | **Authorize** | (inline bash) | Verifies the actor has `admin`, `maintain`, or `write` permission |
 | **Checkout** | `actions/checkout@v4` | Checks out the repository at the default branch |
 | **Setup Bun** | `oven-sh/setup-bun@v2` | Installs the Bun runtime |

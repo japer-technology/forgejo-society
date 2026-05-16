@@ -23,7 +23,7 @@ The SOR is a way of making intelligence **physical** in the forge.
 At the coal face, the forge gives the SOR seven cheap, durable, inspectable primitives:
 
 | Forgejo primitive | Cognitive role |
-|---|---|
+| --- | --- |
 | issues | stimuli |
 | labels | activation signals |
 | commits | memory (append-only) |

@@ -939,7 +939,7 @@ git commit -m "fix: E2E test adjustments from integration run"
 ## Summary
 
 | Task | Files | Description |
-|------|-------|-------------|
+| --- | --- | --- |
 | 1 | pyproject.toml, __init__.py | Project scaffolding |
 | 2 | mock_llm.py | Mock OpenAI-compat server |
 | 3 | helpers.py | Selectors and utilities |

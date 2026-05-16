@@ -13,7 +13,7 @@
 ## Agent Identity
 
 | Property | Value |
-|----------|-------|
+| --- | --- |
 | **Name** | Moltis |
 | **Status** | Available — folder presence signals availability |
 

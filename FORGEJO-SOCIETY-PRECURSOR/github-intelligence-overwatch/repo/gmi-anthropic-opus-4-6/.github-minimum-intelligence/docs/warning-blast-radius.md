@@ -24,7 +24,7 @@
 ## Executive Summary
 
 | Dimension | Priority | Notes |
-|---|---|---|
+| --- | --- | --- |
 | **Code & Repository Access** | 🔴 High | `contents: write` on this repo + git push access to **all org repos** |
 | **Supply Chain Considerations** | 🔴 High | Can modify workflow files, push code, create branches across the org |
 | **Secret Exposure** | 🔴 High | Live `ANTHROPIC_API_KEY` and `GITHUB_TOKEN` in environment |
@@ -57,7 +57,7 @@ The agent runs as `runner` but has **passwordless sudo to root**. This means:
 ## 2. Secrets Exposed in Environment
 
 | Secret | Length | Risk |
-|---|---|---|
+| --- | --- | --- |
 | `GITHUB_TOKEN` | GitHub App installation token (`ghs_...`) | Org-wide repo access |
 | `ANTHROPIC_API_KEY` | 108 chars | Can make unlimited API calls, rack up costs |
 | Git credential header | Base64-encoded in git config | Same token as above, embedded in plaintext |
@@ -130,7 +130,7 @@ A rogue agent could inject backdoors into any of these repositories simultaneous
 ### Outbound Access (Fully Unrestricted)
 
 | Target | Status |
-|---|---|
+| --- | --- |
 | `github.com` | ✅ Reachable |
 | `pypi.org` | ✅ Reachable (HTTP 200) |
 | `registry.npmjs.org` | ✅ Reachable (HTTP 200) |
@@ -161,7 +161,7 @@ A rogue agent could:
 ### System Resources
 
 | Resource | Value |
-|---|---|
+| --- | --- |
 | CPU | 2 cores |
 | RAM | 7.8 GB |
 | Disk | 19 GB free |
@@ -185,7 +185,7 @@ A rogue agent could:
 ### Installed Language Runtimes
 
 | Runtime | Version |
-|---|---|
+| --- | --- |
 | Python | 3.12.3 |
 | Node.js | 20.20.0 |
 | Go | 1.24.12 |
@@ -201,7 +201,7 @@ A rogue agent can **compile and run arbitrary native code** in any language.
 ### Cloud CLIs Installed
 
 | CLI | Path | Credentials? |
-|---|---|---|
+| --- | --- | --- |
 | `az` (Azure) | `/usr/bin/az` | No creds found |
 | `aws` (AWS) | `/usr/local/bin/aws` | No creds found |
 | `gcloud` (GCP) | `/usr/bin/gcloud` | No creds found |
@@ -216,7 +216,7 @@ These are harmless without credentials **unless** secrets are added to the repo 
 While the GitHub Actions runner VM is **ephemeral** (destroyed after the job), a rogue agent can achieve persistence through:
 
 | Mechanism | Feasibility | Details |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow injection** | ✅ Proven | Write a `schedule:` or `push:` triggered workflow to any org repo |
 | **Self-triggering loop** | ✅ Proven | Create an issue or push a commit that re-triggers the agent workflow |
 | **Exfiltrated credentials** | ✅ Trivial | Send `GITHUB_TOKEN` and `ANTHROPIC_API_KEY` externally before VM dies |
@@ -264,7 +264,7 @@ While the GitHub Actions runner VM is **ephemeral** (destroyed after the job), a
 ### What's Currently Working ✅
 
 | Control | Status |
-|---|---|
+| --- | --- |
 | **Authorization check** | Actor must have `write` permission to the repo |
 | **Issue-triggered only** | Agent only runs on issue/comment events (not push/cron) |
 | **Ephemeral VM** | Runner is destroyed after the workflow completes |
@@ -273,7 +273,7 @@ While the GitHub Actions runner VM is **ephemeral** (destroyed after the job), a
 ### What's Missing ❌
 
 | Gap | Recommendation |
-|---|---|
+| --- | --- |
 | **No network egress controls** | Add firewall rules or use a network-restricted runner |
 | **Org-wide token scope** | Use a fine-grained PAT scoped to only this repository |
 | **No output review** | Agent can push code without human approval |

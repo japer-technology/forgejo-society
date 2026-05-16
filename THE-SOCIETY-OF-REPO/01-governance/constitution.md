@@ -71,7 +71,7 @@ Out of scope:
 The constitution is tiered so that deeper commitments are harder to change.
 
 | Tier | Meaning | Change standard |
-|---|---|---|
+| --- | --- | --- |
 | **Deep commitments** | Safety, privacy, human approval, authority boundaries, local-first defaults | Multi-cycle review, explicit owner acknowledgement, delay before merge |
 | **Stable operating rules** | Core protocols, representation rules, insulation map expectations, evaluation cadence | Standard governance PR plus owner approval |
 | **Adjustable tactics** | Thresholds, budgets, summary routing defaults, reporting formats | Governed PR with rationale |

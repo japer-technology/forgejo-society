@@ -75,7 +75,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active critics
 
 | Critic | Why |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Runtime claims must cite workflow logs, file paths, state reports, or test output |
 | `scope-critic` | The steward must not become a general build fixer or governance editor |
 | `risk-critic` | Token, fork, public-repo, and workflow trigger changes alter runtime risk |
@@ -86,7 +86,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active censors
 
 | Censor | Why |
-|---|---|
+| --- | --- |
 | `credential-censor` | Secrets may be named but never copied into reports or logs |
 | `authority-censor` | Runtime enablement, token scope, and surface activation require approval |
 | `cloud-egress-censor` | Runtime logs or state must not be sent externally without authorisation |
@@ -97,7 +97,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `surface_inventory_accuracy` | % of active runtime folders correctly reported |
 | `runtime_drift_detection_rate` | % of unapproved runtime changes surfaced before execution |
 | `false_alarm_rate` | % of reported runtime risks that are not material |

@@ -25,7 +25,7 @@ NullClaw follows secure-by-default behavior: local bind by default, pairing auth
 ## Baseline Controls
 
 | Item | Status | How |
-|---|---|---|
+| --- | --- | --- |
 | Gateway not publicly exposed by default | Enabled | Defaults to `127.0.0.1`; refuses public bind without tunnel/explicit override |
 | Pairing required | Enabled | One-time 6-digit pairing code, exchanged via `POST /pair` |
 | Filesystem scope limits | Enabled | `workspace_only = true` by default |

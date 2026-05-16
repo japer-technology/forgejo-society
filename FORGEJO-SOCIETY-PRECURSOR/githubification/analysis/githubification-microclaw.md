@@ -24,7 +24,7 @@ This analysis draws from three sources:
 Githubification converts a repository from something you clone and run locally into something that **runs on GitHub itself**. It leverages four GitHub primitives as infrastructure:
 
 | Primitive | Role |
-|-----------|------|
+| --- | --- |
 | **GitHub Actions** | Compute — serverless execution triggered by events |
 | **Git** | Storage — all state versioned in commits |
 | **GitHub Issues** | Interface — conversational UI via issue comments |
@@ -87,7 +87,7 @@ React with 👍 (success) or 👎 (failure)
 This is the critical distinction:
 
 | Aspect | GMI | MicroClaw |
-|--------|-----|-----------|
+| --- | --- | --- |
 | **Agent** | External (`pi` binary via npm) | Built-in (Rust agent engine) |
 | **Orchestration** | TypeScript lifecycle scripts | Unnecessary — agent orchestrates itself |
 | **LLM runtime** | Delegated to `pi` | Native (provider-agnostic, Anthropic + OpenAI-compatible) |
@@ -266,7 +266,7 @@ This subcommand:
 When Githubified, MicroClaw provides capabilities that GMI's underlying `pi` agent does not:
 
 | Capability | GMI (via pi) | MicroClaw |
-|------------|-------------|-----------|
+| --- | --- | --- |
 | File operations | read, write, edit | read, write, edit, grep, glob |
 | Shell execution | bash | bash with path guards and risk gates |
 | Web access | — | web search, web fetch |
@@ -330,7 +330,7 @@ As of March 2026, the [Githubification winners list](https://github.com/japer-te
 ### How MicroClaw Compares to the Top 5
 
 | Rank | Repo | Strategy | Key Difference from MicroClaw |
-|------|------|----------|------------------------------|
+| --- | --- | --- | --- |
 | 1 | Issue Intelligence | Native | Born for GitHub; single primitive focus |
 | 2 | GitClaw | Native | Born for GitHub; wraps external `pi` agent |
 | 3 | GMI | Native | Agent IS the Githubification layer |
@@ -367,7 +367,7 @@ These are new to the Githubification pattern library:
 ## Key Risks and Mitigations
 
 | Risk | Impact | Mitigation |
-|------|--------|------------|
+| --- | --- | --- |
 | Binary not available for runner architecture | Agent can't start | Fallback to `cargo build --release` from source |
 | SQLite binary diffs are opaque in Git | Reduced auditability | Human-readable companion exports (conversation logs, memory summaries) |
 | GitHub Actions 6-hour job timeout | Long agent runs killed | MicroClaw's `max_tool_iterations` config bounds execution; context compaction keeps sessions manageable |

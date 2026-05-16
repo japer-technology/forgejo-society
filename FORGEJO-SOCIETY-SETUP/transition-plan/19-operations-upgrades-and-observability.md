@@ -48,7 +48,7 @@ maintenance, validation, and cognition-aware telemetry.
 ## Troubleshooting matrix
 
 | Symptom | Check first | Likely fault domain |
-|---|---|---|
+| --- | --- | --- |
 | Forgejo UI unreachable | DNS, Caddy, `systemctl status forgejo` | network or service |
 | Clone over SSH fails | SSH host key, port, `app.ini`, firewall | SSH config |
 | Workflows queue forever | runner online state, labels, token scope | runner fleet |
@@ -104,7 +104,7 @@ maintenance, validation, and cognition-aware telemetry.
 ### Required metrics
 
 | Metric | Why it matters | Source |
-|---|---|---|
+| --- | --- | --- |
 | activation rate by agency | Shows whether routing is sensible | workflow events / settlement logs |
 | K-line hit rate | Shows whether memory is helping | memory lookup logs |
 | critic objection frequency | Shows quality pressure and noisy agents | PR review data |

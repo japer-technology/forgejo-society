@@ -15,7 +15,7 @@ and enterprise settings. Treat it as an evaluated option, not the default path.
 ## Evaluation questions
 
 | Question | Notes |
-|---|---|
+| --- | --- |
 | Does GForge solve a requirement that Forgejo, Codeberg, GitLab, or Bitbucket cannot? | Identify the specific gap before proceeding. |
 | Is its operational cost (hosting, licensing, maintenance) justified? | Compare against Forgejo, which is free and self-hosted. |
 | Does it improve long-term independence or increase vendor dependence? | Evaluate export and migration paths out of GForge. |

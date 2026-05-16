@@ -27,7 +27,7 @@ An **agent** is what happens when you give that brain hands. Connect it to a fil
 Cantor is a language model (Anthropic's Claude Opus 4.6) running inside a tool harness called [pi](https://github.com/badlogic/pi-mono). The harness provides:
 
 | Tool | What It Does |
-|------|-------------|
+| --- | --- |
 | `read` | Read any file in the repository |
 | `bash` | Execute shell commands |
 | `edit` | Make precise edits to existing files |
@@ -128,7 +128,7 @@ An AI agent that lives in a repository opens up possibilities that aren't availa
 ## What You Should Read
 
 | Document | What It Contains |
-|----------|-----------------|
+| --- | --- |
 | [Agent Identity](.github-minimum-intelligence/AGENTS.md) | Who Cantor is — name, nature, capabilities, principles |
 | [The Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md) | The ethical constraints governing agent behavior |
 | [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md) | The architectural thesis — why the repository is the right home for AI |

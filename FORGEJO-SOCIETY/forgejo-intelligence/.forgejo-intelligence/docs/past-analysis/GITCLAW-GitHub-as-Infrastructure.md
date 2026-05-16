@@ -25,7 +25,7 @@ Together, they demonstrate a progression from AI agent to agentic system, from p
 Every GitHub repository comes with a set of primitives that, when viewed through the lens of AI agent requirements, constitute a complete runtime environment:
 
 | Agent Requirement | GitHub Primitive |
-|---|---|
+| --- | --- |
 | **Compute** | GitHub Actions (workflow runners) |
 | **Persistent storage** | Git (commits, branches, history) |
 | **User interface** | Issues, Pull Requests, Discussions |
@@ -81,7 +81,7 @@ Issues provide threading (via comments), notification (via subscriptions), disco
 The architecture is deliberately minimal:
 
 | Component | Implementation |
-|---|---|
+| --- | --- |
 | **Engine** | Pi coding agent (single npm dependency) |
 | **Orchestrator** | `GITCLAW-AGENT.ts` — thin TypeScript wrapper |
 | **Guard** | `GITCLAW-ENABLED.ts` — fail-closed sentinel check |
@@ -123,7 +123,7 @@ The folder-in-a-repo pattern stays the same. The capability surface expands by a
 Pi is a conversation loop with tools. OpenClaw is a platform with agents, channels, plugins, memory, media processing, and a control plane. This distinction matters because it changes what a repo-native agent can do.
 
 | Capability | .GITCLAW (Pi) | .GITOPENCLAW (OpenClaw) |
-|---|---|---|
+| --- | --- | --- |
 | **Tools** | 7 (read, write, edit, bash, grep, find, ls) | 30+ (browser, web search, web fetch, memory, canvas, sub-agent, cron, TTS, and more) |
 | **Memory** | Append-only text log, grep-based recall | Hybrid SQLite BM25 + vector embeddings with temporal decay and MMR |
 | **Media** | Text only | Images, audio, video, PDFs — multimodal input |
@@ -227,7 +227,7 @@ This infrastructure model scales differently from traditional agent hosting:
 .GITCLAW's role as a test case is not just conceptual — it is architectural. Every infrastructure pattern that .GITCLAW validates, .GITOPENCLAW inherits:
 
 | Pattern | Validated by .GITCLAW | Used by .GITOPENCLAW |
-|---|---|---|
+| --- | --- | --- |
 | Issue-to-session mapping via JSON pointers in git | Yes | Yes |
 | Conflict-resilient push with `git pull --rebase` retry | Yes | Yes |
 | Fail-closed sentinel file guard | Yes | Yes |
@@ -322,7 +322,7 @@ The distinguishing contribution of the .GITCLAW/.GITOPENCLAW approach is the com
 Together, they demonstrate a clear progression:
 
 | Stage | System | What It Proves |
-|---|---|---|
+| --- | --- | --- |
 | **Proof of concept** | .GITCLAW | A folder can be an AI agent. GitHub is sufficient infrastructure. |
 | **Production platform** | .GITOPENCLAW | A folder can be an agentic system. OpenClaw provides the runtime depth. |
 

@@ -21,7 +21,7 @@ Githubification is the act of converting a repository into **GitHub-as-infrastru
 Four GitHub primitives serve four universal roles:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -36,7 +36,7 @@ This mapping is invariant across all Githubified repositories, from single-depen
 ### What PicoClaw Is
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Language** | Go 1.25+ |
 | **Binary** | Single static binary, CGO_ENABLED=0 |
 | **Size** | <10MB RAM footprint |
@@ -114,7 +114,7 @@ Does the agent exist yet?
 PicoClaw's architecture is **structurally identical** to MicroClaw's (the Githubification case study for channel addition):
 
 | Attribute | MicroClaw (Rust) | PicoClaw (Go) |
-|---|---|---|
+| --- | --- | --- |
 | Language | Rust (compiled) | Go (compiled) |
 | Runtime dependencies | Zero | Zero (CGO_ENABLED=0) |
 | Binary delivery | Pre-built from releases | Pre-built from releases |
@@ -131,7 +131,7 @@ PicoClaw IS the runtime. A single binary that accepts input, processes it throug
 ### Alternative Strategies Considered
 
 | Strategy | Viability | Reason |
-|---|---|---|
+| --- | --- | --- |
 | **Native (Strategy 1)** | ❌ Not applicable | PicoClaw already exists; Native is for agents designed from scratch for GitHub |
 | **Wrapping (Strategy 2)** | ✅ Viable fallback | If the binary should remain completely unmodified, a TypeScript/Bun lifecycle wrapper (like GMI's `agent.ts`) could orchestrate PicoClaw from outside |
 | **Substitution (Strategy 3)** | ⚠️ Unnecessary | PicoClaw CAN run on Actions — no need to substitute a different agent |
@@ -379,7 +379,7 @@ Add GitHub channel to `config.json`:
 #### 3.1 Lifecycle Pipeline
 
 | Step | Implementation |
-|---|---|
+| --- | --- |
 | **Guard** | Workflow authorization step (check collaborator permission) |
 | **Indicate** | Add 🚀 reaction to the triggering issue/comment |
 | **Execute** | Run `picoclaw github` with event payload |
@@ -390,7 +390,7 @@ Add GitHub channel to `config.json`:
 Two options (both are compatible):
 
 | Mechanism | Implementation |
-|---|---|
+| --- | --- |
 | **Workflow authorization** | GitHub API permission check (admin/maintain/write only) |
 | **Sentinel file** | `.picoclaw-state/ENABLED.md` must exist; workflow checks before proceeding |
 
@@ -417,7 +417,7 @@ Customize the workspace files for the GitHub persona:
 ## Mapping to GitHub Primitives
 
 | GitHub Primitive | PicoClaw Mapping |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Runs `picoclaw agent --message` (or `picoclaw github`) on ubuntu-latest. Binary downloaded from releases — no build step needed. |
 | **Git** | Session files, MEMORY.md, daily notes, and workspace config committed to `.picoclaw-state/`. Full conversation history is version-controlled. |
 | **GitHub Issues** | Each issue maps to a PicoClaw session (`github:issue-{N}`). Issue comments become InboundMessages; agent responses become issue comments. |
@@ -470,7 +470,7 @@ PicoClaw's `gateway` command runs a long-lived process for real-time chat platfo
 ## Comparison with Other Githubified Repos
 
 | Attribute | GMI (Native) | OpenClaw (Wrapping) | MicroClaw (Channel) | **PicoClaw (Channel)** |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Strategy | Native | Wrapping | Channel Addition | **Channel Addition** |
 | Language | TypeScript | Python/TS | Rust | **Go** |
 | Runtime deps | 1 (pi-coding-agent) | 30+ (Python) | 0 (compiled) | **0 (compiled, CGO=0)** |
@@ -488,11 +488,11 @@ PicoClaw sits closest to MicroClaw on the Githubification spectrum. Both are com
 ## Estimated Effort
 
 | Phase | Scope | Effort | Dependencies |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Phase 1 (MVP)** | Workflow + state dir + config | 1-2 days | GitHub Secrets configured |
 | **Phase 2 (Channel)** | Go channel adapter + CLI subcommand | 3-5 days | Phase 1 validated |
 | **Phase 3 (Lifecycle)** | Security + memory + operational maturity | 2-3 days | Phase 2 merged |
-| **Total** | Full Githubification | **~1-2 weeks** | |
+| **Total** | Full Githubification | **~1-2 weeks** |  |
 
 Phase 1 requires **zero changes** to PicoClaw's Go source code. The entire MVP is a workflow file, a state directory, and a configuration file. This means Githubification can begin immediately, validated incrementally, and refined over time.
 

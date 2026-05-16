@@ -37,7 +37,7 @@ The source-quality-critic activates whenever `web-research-bee` or any agency ci
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `objection_validity_rate` | % of objections subsequently confirmed as valid |
 | `missed_poor_source_rate` | % of poor-quality source proposals not challenged |
 | `false_objection_rate` | % of objections raised against adequate sources |

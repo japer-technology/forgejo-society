@@ -62,7 +62,7 @@ if: >
 ```
 
 | Prefix | Meaning |
-|---|---|
+| --- | --- |
 | `?` | Question — invoke AI with conversational persona |
 | `!` | Command — invoke AI in command-execution mode |
 | *(none)* | Ignored — no agent triggered |
@@ -78,7 +78,7 @@ if: >
 Rather than having one workflow respond to all issues, several analyses describe **label-based routing**: different labels trigger different agent behaviours, and unlabelled issues may trigger nothing at all.
 
 | Label | Behaviour |
-|---|---|
+| --- | --- |
 | `fix-me` | OpenHands resolver (heavy) — installs Python + openhands, creates PRs |
 | `question` | Conversational agent (lightweight) — simple LLM reply |
 | `hatch` | Personality discovery session |
@@ -96,7 +96,7 @@ Rather than having one workflow respond to all issues, several analyses describe
 The Agenticana analysis introduces a **Model Router** that selects LLM tier based on task complexity:
 
 | Task Complexity | Model Tier | Example |
-|---|---|---|
+| --- | --- | --- |
 | Simple lookup / rephrase | Cheapest (e.g., Haiku) | "What does this function do?" |
 | Medium analysis | Mid-tier (e.g., Sonnet) | "Review this PR diff" |
 | Complex multi-step | Pro (e.g., Opus) | "Architect a new system" |
@@ -152,7 +152,7 @@ jobs:
 For Python and JavaScript frameworks (CAMEL, LangChain.js, OpenHands CLI), full dependency installation is heavy:
 
 | Pattern | Example | Minutes Saved |
-|---|---|---|
+| --- | --- | --- |
 | Selective dependency groups | `pip install camel-ai[rag]` instead of `[all]` | 3–8 minutes per run |
 | Filtered package install | `pnpm --filter @langchain/core build` | 5–12 minutes per run |
 | Pre-built binary download | `curl ... zeroclaw-x86_64.tar.gz` | 2–6 minutes per run |
@@ -190,7 +190,7 @@ on:
 ## Summary Table
 
 | Pattern | Cost Reduction | Scope |
-|---|---|---|
+| --- | --- | --- |
 | Fail-closed auth guard | Eliminates unauthorized runs | All repos |
 | Bot-loop prevention | Eliminates infinite loops | All event-driven repos |
 | Prefix-gating | Filters incidental comments | High-traffic repos |

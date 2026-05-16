@@ -19,7 +19,7 @@ A Society of Repo (SOR) is a Git-native architecture in which repositories becom
 Each part has a role:
 
 | Part | Role |
-|---|---|
+| --- | --- |
 | **Agency repos** | Do useful, bounded work |
 | **Assembly repos** | Compress lower-level outputs into higher-level summaries and directives |
 | **Memory repos** | Preserve and relate events, experience, patterns, frames, analogies, and concepts |
@@ -127,7 +127,7 @@ the forge      → the mind
 In a Forgejo deployment this mapping is operational, not metaphorical:
 
 | Forgejo path or unit | SOR function |
-|---|---|
+| --- | --- |
 | `.forgejo/workflows/` | Event loop and runner entrypoints |
 | `.forgejo-intelligence/` | Runtime surfaces, coordinators, agents, tests, and state |
 | `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` | Git-tracked runtime kill switch |
@@ -244,7 +244,7 @@ THE-SOCIETY-OF-REPO/
 ## Navigation
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | [00-foundations/](00-foundations/README.md) | Theory, cognitive loop, maturity, anti-patterns, skills, Mind–Brain–Body, research crosswalk, unified gap incorporation |
 | [01-governance/](01-governance/README.md) | Constitution, authority registry, approval gate, rights registry, policy ledger, self-ideals |
 | [02-protocols/](02-protocols/README.md) | Identity, activation, settlement, memory, representation, credit assignment, introspection, insulation, hierarchy, relational memory, Forgejo environment, Forgejo runtime layers, Forgejo operational verification |
@@ -262,7 +262,7 @@ THE-SOCIETY-OF-REPO/
 ## The maturity ladder
 
 | Level | Name | What exists |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Files in repos |
 | 1 | Memory | Structured records, events, summaries |
 | 2 | Agency | Repos with roles, constitutions, outputs |

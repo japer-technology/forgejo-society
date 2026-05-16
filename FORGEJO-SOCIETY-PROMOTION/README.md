@@ -69,7 +69,7 @@ subfolders for the working materials those strategies produce.
 ### Strategy documents (read in order)
 
 | Document | Purpose |
-|---|---|
+| --- | --- |
 | [00-overview.md](00-overview.md) | What promotion means for this project, and the principles that govern it. |
 | [01-positioning.md](01-positioning.md) | Positioning statement, taglines, one-liners, and elevator pitches. |
 | [02-audiences.md](02-audiences.md) | Audience segments and tailored value propositions. |
@@ -84,7 +84,7 @@ subfolders for the working materials those strategies produce.
 ### Working subfolders
 
 | Folder | Contents |
-|---|---|
+| --- | --- |
 | [`assets/`](assets/README.md) | Source-of-truth visual assets: logos, images, diagrams. |
 | [`messaging/`](messaging/README.md) | Reusable copy blocks: taglines, blurbs, abstracts. |
 | [`talks/`](talks/README.md) | Talk abstracts, slide outlines, demo scripts. |

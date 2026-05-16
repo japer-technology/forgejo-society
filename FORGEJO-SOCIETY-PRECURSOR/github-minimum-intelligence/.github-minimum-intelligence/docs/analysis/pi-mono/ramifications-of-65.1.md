@@ -9,7 +9,7 @@ The upgrade from v0.57.1 to v0.65.1 brought 17 releases of improvements into GMI
 Before the upgrade, GMI was running on a version with known defects in its core pipeline: bash output truncation, concurrent file mutation races, compaction message drops, and unclean JSONL output. These weren't theoretical risks — they were active reliability limits. Removing them doesn't just fix bugs; it raises the ceiling on what GMI can reliably attempt.
 
 | Capability | Before (v0.57.1) | After (v0.65.1) | Ramification |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Bash output | Truncated at 2000 lines | Full output persisted to temp file | Agent can now safely run commands with large output (test suites, build logs, large diffs) without silent data loss |
 | File mutations | Race conditions on concurrent edit+write | Serialized in request order | Agent can do rapid multi-file edits without corruption — enables more ambitious refactoring |
 | Compaction | Messages dropped on repeated compaction | Re-summarises from kept boundary | Long conversations (10+ turns on a single issue) are now reliable, not degrading |
@@ -61,7 +61,7 @@ The v0.63.1 fix for repeated compaction dropping messages is the most consequent
 **Ramification for settings:** GMI's current compaction settings (`keepRecentTokens: 30000`, `reserveTokens: 16384`) were chosen conservatively because compaction was unreliable. With the fix in place, these values can be re-evaluated:
 
 | Setting | Current | Consideration |
-|---|---|---|
+| --- | --- | --- |
 | `keepRecentTokens` | 30000 | Could be increased further. With reliable compaction, the cost of compacting (summarisation tokens) is now predictable, and more recent context improves response quality |
 | `reserveTokens` | 16384 | Controls how much buffer is kept free for the model's response. 16K is generous for most responses. Could be decreased to 8192 if the model consistently generates shorter responses, freeing more context for conversation history |
 
@@ -127,7 +127,7 @@ Cross-referencing the upgrade doc, feature utilization audit, and implementation
 ### 8.1 Fully Utilised
 
 | Feature | Status | Value Extracted |
-|---|---|---|
+| --- | --- | --- |
 | CLI `--mode json` | ✅ Active | Core pipeline |
 | Session management | ✅ Active | Multi-turn continuity |
 | Settings (provider, model, thinking) | ✅ Active | Model configuration |
@@ -144,7 +144,7 @@ Cross-referencing the upgrade doc, feature utilization audit, and implementation
 ### 8.2 Available but Not Utilised — Highest ROI
 
 | Feature | Effort | Impact | Blocker |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `PI_CACHE_RETENTION=long` | 1 line in workflow | Token cost reduction (10% Anthropic, 50% OpenAI cached input rate) | None — pure configuration |
 | `quietStartup: true` | 1 line in settings.json | Cleaner JSONL, slightly less output noise | None — pure configuration |
 | Permission gate extension | ~50 lines TypeScript | Blocks destructive commands | None — uses existing event hooks |
@@ -155,7 +155,7 @@ Cross-referencing the upgrade doc, feature utilization audit, and implementation
 ### 8.3 Available but Appropriately Deferred
 
 | Feature | Reason for Deferral |
-|---|---|
+| --- | --- |
 | SDK migration | Subprocess works; high effort, medium reward |
 | Web UI integration | Requires content curation; not core to agent function |
 | Direct LLM API (`pi-ai`) | Adds second code path for marginal savings |
@@ -167,7 +167,7 @@ Cross-referencing the upgrade doc, feature utilization audit, and implementation
 ### 8.4 Not Applicable
 
 | Feature | Reason |
-|---|---|
+| --- | --- |
 | RPC mode | Bun runtime; SDK is the natural programmatic interface |
 | `pi-mom` | Slack bot; GMI's interface is GitHub Issues |
 | `pi-tui` | Terminal UI; GMI runs headless |
@@ -212,7 +212,7 @@ To get the maximum from pi-mono at v0.65.1, the following actions are ordered by
 Extracting more from pi-mono is not risk-free:
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Extension sprawl creates maintenance burden | Medium | Medium | Cap at 4–5 extensions; each must justify its existence |
 | More tools = more ways the LLM can fail | Low | Medium | Built-in tools (grep, find, ls) are read-only; new tools should be read-only where possible |
 | Security extensions create false sense of safety | Medium | High | Document that extensions are guardrails, not sandboxes. `bash` can bypass path protection |

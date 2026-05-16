@@ -60,7 +60,7 @@ Full documentation: https://github.com/japer-technology/gitclaw
 The email system can generate customized ZIP files based on information provided during sign-up:
 
 | User provides | ZIP is customized with |
-|--------------|----------------------|
+| --- | --- |
 | LLM provider | Pre-configured provider setting |
 | Preferred model | Pre-configured model selection |
 | Repository URL | Pre-set remote references |
@@ -87,7 +87,7 @@ https://install.gitclaw.dev/magic?token=abc123def456&repo=user/my-project&expire
 ```
 
 | Parameter | Purpose |
-|-----------|---------|
+| --- | --- |
 | `token` | Unique, cryptographically secure token |
 | `repo` | Target repository (pre-filled from user input) |
 | `expires` | Expiration timestamp (e.g., 24 hours) |
@@ -160,7 +160,7 @@ gitclaw-setup/ (private)
 ### Email Service Options
 
 | Service | Pros | Cons |
-|---------|------|------|
+| --- | --- | --- |
 | **Resend** | Modern API, great DX, generous free tier | Newer service |
 | **SendGrid** | Mature, feature-rich, good deliverability | Complex pricing |
 | **AWS SES** | Very cheap at scale, reliable | More setup required |

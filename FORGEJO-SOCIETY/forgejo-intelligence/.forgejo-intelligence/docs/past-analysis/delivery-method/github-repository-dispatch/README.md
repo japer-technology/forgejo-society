@@ -193,7 +193,7 @@ The target repository now has a pull request containing the `.GITCLAW/` folder a
 ### Payload Fields
 
 | Field | Type | Required | Description |
-|-------|------|----------|-------------|
+| --- | --- | --- | --- |
 | `target_repo` | string | Yes | Full repo identifier (`owner/name`) |
 | `provider` | string | No | LLM provider (default: `anthropic`) |
 | `model` | string | No | Model identifier |
@@ -215,7 +215,7 @@ The dispatch event requires authentication at two levels:
 ### Token Strategies
 
 | Strategy | How it works | Pros | Cons |
-|----------|-------------|------|------|
+| --- | --- | --- | --- |
 | **Personal Access Token (PAT)** | User provides their PAT, stored as a secret in the mothership repo | Simple setup | Broad scope, tied to a single user |
 | **Fine-Grained PAT** | PAT scoped to specific repos | Better security, limited scope | Must be updated when new repos are targeted |
 | **GitHub App Installation Token** | A GitHub App generates short-lived tokens | Best security, scoped per installation | Requires a GitHub App |

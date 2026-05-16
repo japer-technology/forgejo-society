@@ -13,7 +13,7 @@
 ## What It Orchestrates
 
 | Signal / Data | Description |
-|---|---|
+| --- | --- |
 | **Security alert events** | Monitors Dependabot alerts, secret scanning hits, and CodeQL findings for critical severity escalations |
 | **Workflow failure patterns** | Detects cascading CI/CD failures that indicate systemic issues rather than isolated test flakiness |
 | **Deployment rollback signals** | Watches deployment status events for failed rollouts that require immediate intervention |
@@ -23,7 +23,7 @@
 ## What It Provides
 
 | Capability | How It Works |
-|---|---|
+| --- | --- |
 | **Incident issue creation** | Automatically opens a high-priority issue with structured incident details when a critical threshold is breached |
 | **Rapid triage** | Applies emergency labels, assigns on-call reviewers, and pins the incident issue for maximum visibility |
 | **Runbook execution** | Executes predefined response procedures — rollback deployments, disable features, or lock branches |

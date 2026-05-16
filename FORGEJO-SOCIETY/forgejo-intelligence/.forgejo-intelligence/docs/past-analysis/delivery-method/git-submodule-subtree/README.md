@@ -155,7 +155,7 @@ git subtree pull --prefix .GITCLAW https://github.com/japer-technology/gitclaw.g
 ## Submodule vs. Subtree Comparison
 
 | Feature | Submodule | Subtree |
-|---------|-----------|---------|
+| --- | --- | --- |
 | **Files in host repo** | Pointer only (SHA reference) | Fully materialized files |
 | **Clone behavior** | Requires `--recurse-submodules` or `submodule init` | Standard `git clone` works |
 | **Update command** | `git submodule update --remote` | `git subtree pull` |

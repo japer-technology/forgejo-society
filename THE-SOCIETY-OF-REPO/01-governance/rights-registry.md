@@ -110,7 +110,7 @@ This keeps protocol names stable while allowing either a single-repo scaffold or
 ## Agency read rights
 
 | Agency | May read |
-|---|---|
+| --- | --- |
 | `intake-bee` | documents/intake, issues/incoming |
 | `contract-bee` | documents/contracts, memory/contracts, memory/semantic |
 | `tax-bee` | documents/tax, memory/tax, memory/semantic, financial_records (read-only) |
@@ -129,7 +129,7 @@ This keeps protocol names stable while allowing either a single-repo scaffold or
 ## Agency write rights
 
 | Agency | May write to |
-|---|---|
+| --- | --- |
 | `intake-bee` | issues (labels only), workspace/current-focus |
 | `contract-bee` | reports/contract-obligations, tasks/owner-review |
 | `tax-bee` | reports/tax-obligations, tasks/owner-review |

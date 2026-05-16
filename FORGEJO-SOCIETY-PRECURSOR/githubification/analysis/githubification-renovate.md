@@ -34,7 +34,7 @@ The answer is **yes**, with important architectural considerations driven by Ren
 ### Type 2 — Non-AI Software Repo
 
 | Before | After |
-|--------|-------|
+| --- | --- |
 | Clone the repo, install 394+ dependencies, configure credentials, run the CLI locally or set up hosted infrastructure | An AI agent in the repo exposes Renovate's capabilities through GitHub Issues and runs dependency analysis directly on GitHub Actions |
 
 Renovate is not an AI agent. It is a sophisticated piece of dependency management software with a deep configuration language, extensive manager support, and a complex execution pipeline. Githubification does not turn Renovate into an AI agent — it places an AI agent **alongside** Renovate that can:
@@ -52,7 +52,7 @@ Renovate is not an AI agent. It is a sophisticated piece of dependency managemen
 ### GitHub Actions Constraints vs. Renovate's Runtime Requirements
 
 | Constraint | GitHub Actions Provides | Renovate Requires | Feasible? |
-|-----------|------------------------|-------------------|-----------|
+| --- | --- | --- | --- |
 | **Ephemeral runners** | Stateless compute, destroyed after each job | Stateless CLI execution (designed for CI) | ✅ Yes — Renovate is already designed for ephemeral CI runners |
 | **6-hour max job duration** | Per-job time limit | Typical runs complete in minutes to low hours | ✅ Yes — even large repos finish well within limits |
 | **No inbound networking** | Outbound only | Outbound API calls to package registries and GitHub API | ✅ Yes — Renovate only makes outbound calls |
@@ -71,7 +71,7 @@ The challenge is not "can Renovate run on Actions?" (it already does). The chall
 ### The Real Feasibility Question: AI-Powered Access
 
 | Capability | Feasibility | Notes |
-|-----------|-------------|-------|
+| --- | --- | --- |
 | **Configuration generation** | ✅ High | Renovate's config is JSON — well-structured, well-documented, ideal for LLM generation |
 | **Configuration validation** | ✅ High | Renovate ships a config validator (`renovate-config-validator`) that can be invoked from Actions |
 | **Dependency scanning** | ✅ High | Renovate's dry-run mode (`--dry-run=lookup`) reports what it would update without creating PRs |
@@ -158,7 +158,7 @@ Native (Strategy 1) would mean rebuilding Renovate as a GitHub-born AI agent. Re
 ### GitHub Primitives Mapping
 
 | GitHub Primitive | Role in Githubified Renovate |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — runs the AI agent and invokes Renovate CLI tools (config validator, dry-run mode) |
 | **Git** | Storage and memory — conversation transcripts, generated configs, analysis results committed to the repo |
 | **GitHub Issues** | User interface — users ask about configuration, request dependency analysis, seek debugging help |
@@ -407,7 +407,7 @@ For Type 1 repos (AI agents), Githubification converts the agent's runtime. For 
 Each Renovate-specific skill maps to a capability that users currently access through the CLI, documentation, or trial-and-error:
 
 | Traditional Access | Githubified Access |
-|---|---|
+| --- | --- |
 | Read docs → write `renovate.json` manually | Ask the agent → receive a generated config |
 | Run `renovate-config-validator` locally | Ask the agent → validation runs on Actions |
 | Run `renovate --dry-run` locally | Ask the agent → dry-run analysis runs on Actions |
@@ -427,7 +427,7 @@ Renovate's existing GitHub Action isn't replaced by Githubification — it's com
 ## Comparison with Other Githubification Case Studies
 
 | Dimension | GMI (Native) | OpenClaw (Wrapped) | Agent Zero (Substituted) | **Renovate (Proposed)** |
-|-----------|-------------|-------------------|------------------------|-----------------------|
+| --- | --- | --- | --- | --- |
 | **Githubification type** | Type 1 — AI Agent | Type 1 — AI Agent | Type 1 — AI Agent | **Type 2 — Non-AI Software** |
 | **Strategy** | Native | Wrapping | Substitution | **Substitution + Skills** |
 | **Agent origin** | Born for GitHub | External, wrapped | External, substituted | **External software + AI overlay** |
@@ -442,7 +442,7 @@ Renovate's existing GitHub Action isn't replaced by Githubification — it's com
 ## The Four Primitives Applied to Renovate
 
 | GitHub Primitive | Role | Renovate-Specific Implementation |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Runs the AI agent; optionally invokes Renovate's config validator and dry-run mode |
 | **Git** | Storage and memory | Conversation transcripts, generated configurations, analysis reports — all committed |
 | **GitHub Issues** | User interface | Users ask configuration questions, request analysis, report problems — the agent replies |

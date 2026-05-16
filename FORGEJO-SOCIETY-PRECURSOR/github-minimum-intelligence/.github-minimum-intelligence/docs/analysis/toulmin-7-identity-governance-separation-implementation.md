@@ -9,7 +9,7 @@ This document outlines the concrete changes required to implement Recommendation
 Identity and governance are currently co-located across three files. The following table summarizes where persona and governance content lives today:
 
 | File | Persona Content | Governance Content |
-|---|---|---|
+| --- | --- | --- |
 | `AGENTS.md` | Name, nature, vibe, emoji, hatch date, hatched by, purpose | Image-download instructions (operational guidance) |
 | `.pi/APPEND_SYSTEM.md` | Vibe section ("Be the assistant you'd actually want to talk to…") | Core Truths, Boundaries, Continuity, Memory System |
 | `.pi/BOOTSTRAP.md` | Identity co-creation flow (name, nature, vibe, emoji) | Instructions to read `APPEND_SYSTEM.md` for behavioral constraints |
@@ -25,7 +25,7 @@ Before splitting, each block of content must be classified. The table below maps
 ### 2.1 `AGENTS.md` (Current)
 
 | Section | Category | Destination |
-|---|---|---|
+| --- | --- | --- |
 | Identity heading (Name, Nature, Vibe, Emoji, Hatch date, Hatched by, Purpose) | Persona | `AGENTS.md` (remains) |
 | Logo image block | Persona | `AGENTS.md` (remains) |
 | Downloading GitHub Image Attachments | Operational guidance | `GOVERNANCE.md` (move) |
@@ -33,7 +33,7 @@ Before splitting, each block of content must be classified. The table below maps
 ### 2.2 `.pi/APPEND_SYSTEM.md` (Current)
 
 | Section | Category | Destination |
-|---|---|---|
+| --- | --- | --- |
 | "You're not a chatbot. You're becoming someone." | Persona | `AGENTS.md` or remains in `APPEND_SYSTEM.md` |
 | First Run (read `BOOTSTRAP.md`) | Governance | Remains in `APPEND_SYSTEM.md` |
 | Every Session (read `AGENTS.md` first) | Governance | Remains — updated to also reference `GOVERNANCE.md` |
@@ -46,7 +46,7 @@ Before splitting, each block of content must be classified. The table below maps
 ### 2.3 `.pi/BOOTSTRAP.md` (Current)
 
 | Section | Category | Destination |
-|---|---|---|
+| --- | --- | --- |
 | Identity co-creation flow | Persona | Remains — updated to also reference `GOVERNANCE.md` |
 | "Once Identity Emerges" — update `AGENTS.md` | Persona | Remains |
 | "Once Identity Emerges" — read `APPEND_SYSTEM.md` | Governance | Remains — updated to also reference `GOVERNANCE.md` |
@@ -109,7 +109,7 @@ workflow permissions guidance]
 ### 3.3 Design Decisions
 
 | Decision | Rationale |
-|---|---|
+| --- | --- |
 | Place at intelligence root, not inside `.pi/` | `AGENTS.md` is at the root; governance should be a peer file at the same level for discoverability |
 | Move content rather than duplicate | Duplication creates drift risk; a single source of truth per concern is preferable |
 | Keep `APPEND_SYSTEM.md` as a routing file | It already serves as the system prompt extension; it should reference both `AGENTS.md` (persona) and `GOVERNANCE.md` (constraints) rather than containing governance inline |
@@ -191,7 +191,7 @@ Pi loads `APPEND_SYSTEM.md` as a system prompt extension. It does **not** automa
 This means the governance content moves from being injected as part of the system prompt to being read as a context file. System prompt content has stronger influence on model behavior than user-message-level context. This is a design decision that must be resolved before implementation:
 
 | Approach | Pros | Cons |
-|---|---|---|
+| --- | --- | --- |
 | **Full extraction** — move all governance to `GOVERNANCE.md`, leave only a reference in `APPEND_SYSTEM.md` | Clean separation; single source of truth; no duplication drift | Governance rules may have weaker model adherence as context-file content |
 | **Summary + full** — keep the Boundaries section (5 lines) in `APPEND_SYSTEM.md` as a hard constraint reminder, move everything else to `GOVERNANCE.md` | Critical safety rules retain system-prompt weight; rest is cleanly separated | Two locations for governance content; Boundaries must be kept in sync |
 | **Duplicate key rules** — keep Core Truths and Boundaries verbatim in both files | Maximum model adherence; `GOVERNANCE.md` is the reviewable canonical source | Full duplication; highest drift risk |
@@ -333,7 +333,7 @@ Add `GOVERNANCE.md` to the file references in the relevant section.
 Several analysis documents reference `AGENTS.md` as containing both identity and behavioral guidance. These should be updated to reflect the separation:
 
 | Document | Section to Update |
-|---|---|
+| --- | --- |
 | `Architecture-Study.md` | Line 33 — bootstrap description |
 | `pi-mono-feature-utilization.md` | §2.6 — Context Files |
 | `how-to-install-and-update.md` | §§ on identity and upgrade preservation |
@@ -347,7 +347,7 @@ Several analysis documents reference `AGENTS.md` as containing both identity and
 The repository hosts three intelligences: GMI, Agenticana, and OpenClaw. Each has its own `AGENTS.md`. If this separation is adopted for GMI, the pattern should be documented as a convention for the others but does not need to be implemented simultaneously.
 
 | Intelligence | Current State | Action |
-|---|---|---|
+| --- | --- | --- |
 | GMI (`.github-minimum-intelligence/`) | `AGENTS.md` + `APPEND_SYSTEM.md` | Primary target of this change |
 | Agenticana (`.github-agenticana-intelligence/`) | Separate `AGENTS.md` | Document pattern; implement later |
 | OpenClaw (`.github-openclaw-intelligence/`) | Separate `AGENTS.md` | Document pattern; implement later |
@@ -361,7 +361,7 @@ The repository hosts three intelligences: GMI, Agenticana, and OpenClaw. Each ha
 After implementation, verify the following:
 
 | Check | Expected Result |
-|---|---|
+| --- | --- |
 | `AGENTS.md` contains only persona content | No behavioral constraints, boundaries, or operational guidance remain |
 | `GOVERNANCE.md` contains all governance content | Core Truths, Boundaries, Continuity, Memory System, Operational Guidance sections present |
 | Agent reads `GOVERNANCE.md` at session start | Confirm by checking agent behavior adheres to governance rules |
@@ -374,7 +374,7 @@ After implementation, verify the following:
 ### 11.2 Behavioral Validation
 
 | Concern | Test |
-|---|---|
+| --- | --- |
 | Governance rules still influence agent behavior after separation | Issue a command that would violate a boundary; confirm the agent refuses |
 | Persona changes do not require elevated review | Modify emoji in `AGENTS.md`; confirm no CODEOWNERS review is triggered |
 | Governance changes require elevated review | Modify a boundary in `GOVERNANCE.md`; confirm CODEOWNERS review is triggered |
@@ -384,7 +384,7 @@ After implementation, verify the following:
 ## 12. Dependency and Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Moving governance out of `APPEND_SYSTEM.md` weakens model adherence | Medium — system prompt content has stronger weight than context files | High — agent may ignore governance rules | Start with full extraction; validate empirically (§11.2); fall back to retaining only the 4-line Boundaries section in `APPEND_SYSTEM.md` if adherence weakens (see §5.2) |
 | CODEOWNERS is not enforced without branch protection | High — SEC-005 notes branch protection is absent | High — elevated review is advisory only | Implement branch protection (Recommendation 4) as a prerequisite |
 | Upgrade script does not back up `GOVERNANCE.md` | Low — straightforward addition | Medium — governance customizations lost on upgrade | Add to backup/restore block before releasing |

@@ -3,7 +3,7 @@
 The theoretical and design foundations of Society of Repo.
 
 | Document | Contents |
-|---|---|
+| --- | --- |
 | [01-society-of-mind.md](01-society-of-mind.md) | Minsky's Society of Mind and the full set of cognitive structures adopted by SOR |
 | [02-cognitive-loop.md](02-cognitive-loop.md) | The full cognitive loop: stimulus through reinforcement and ecology review |
 | [03-maturity-model.md](03-maturity-model.md) | Six-level maturity model with reflective learning criteria |

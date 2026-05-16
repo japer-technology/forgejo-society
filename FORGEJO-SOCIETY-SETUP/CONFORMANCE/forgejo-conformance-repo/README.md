@@ -77,7 +77,7 @@ The numbered scripts under [`tests/`](tests/README.md) are the source of
 truth. At a minimum they prove:
 
 | Script | What it proves about the Forgejo installation |
-|---|---|
+| --- | --- |
 | `00-fixtures-present.sh` | The install workflow can write files into the target repository. |
 | `10-fixtures-valid.sh` | The runner can parse YAML and JSON, and the fixtures contain the keys SOR depends on. |
 | `20-forgejo-api-reachable.sh` | A workflow job can reach the Forgejo API with the token it was given. |

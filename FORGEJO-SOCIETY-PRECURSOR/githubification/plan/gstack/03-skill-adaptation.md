@@ -22,7 +22,7 @@ Every gstack skill follows the same adaptation process:
 ### `/review` — Pre-Landing PR Review
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/review` in Claude Code | `pull_request: [opened, synchronize]` |
 | **Input** | `git diff origin/<base>` run by agent | Diff provided by checkout + `git diff` on runner |
 | **Checklist** | Reads from `~/.claude/skills/review/checklist.md` | Reads from `.github-gstack-intelligence/skills/review/checklist.md` |
@@ -36,7 +36,7 @@ Every gstack skill follows the same adaptation process:
 ### `/cso` — Security Audit
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/cso` | `pull_request: [opened, synchronize]` (with `/review`) or label `security-audit` |
 | **Input** | Full codebase access via Claude Code | Full checkout on runner |
 | **Output** | OWASP Top 10 + STRIDE findings in terminal | Posted as PR comment with severity labels |
@@ -47,7 +47,7 @@ Every gstack skill follows the same adaptation process:
 ### `/ship` — Full Shipping Workflow
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/ship` | `workflow_dispatch` or issue comment "ship" |
 | **Input** | Current branch state | Checkout of specified branch |
 | **Workflow** | Tests → review → version bump → commit → push → PR | Same sequence, executed on runner |
@@ -59,7 +59,7 @@ Every gstack skill follows the same adaptation process:
 ### `/benchmark` — Performance Regression Detection
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/benchmark` | `push` to main or `schedule` (nightly) |
 | **Input** | Local benchmark suite | Benchmark suite on runner |
 | **Output** | Comparison against baseline | Posted as issue comment with regression/improvement table |
@@ -70,7 +70,7 @@ Every gstack skill follows the same adaptation process:
 ### `/retro` — Weekly Retrospective
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/retro` | `schedule: cron('0 17 * * 5')` (Friday 5pm) or `workflow_dispatch` |
 | **Input** | Git history for time window | Same — full git history via checkout with `fetch-depth: 0` |
 | **Output** | Retro report in terminal | New issue created with retro report, or posted in a dedicated retro issue |
@@ -81,7 +81,7 @@ Every gstack skill follows the same adaptation process:
 ### `/document-release` — Post-Release Documentation
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/document-release` | `release: [published]` |
 | **Input** | What changed since last release | Release notes + git diff between tags |
 | **Output** | Updated docs committed locally | PR opened with documentation updates |
@@ -96,7 +96,7 @@ Every gstack skill follows the same adaptation process:
 ### `/qa` — QA Testing with Real Browser
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/qa https://staging.example.com` | Issue comment: "qa https://staging.example.com" |
 | **Browser** | gstack browse daemon on localhost (persistent, sub-second) | Playwright launched fresh per workflow (cold-start acceptable) |
 | **Screenshots** | Saved to local filesystem, shown via Read tool | Uploaded as issue comment attachments via GitHub API |
@@ -109,7 +109,7 @@ Every gstack skill follows the same adaptation process:
 **Browser command mapping:**
 
 | gstack `$B` command | Playwright equivalent |
-|---------------------|----------------------|
+| --- | --- |
 | `$B goto <url>` | `await page.goto(url)` |
 | `$B screenshot <path>` | `await page.screenshot({ path })` |
 | `$B click <selector>` | `await page.click(selector)` |
@@ -129,7 +129,7 @@ Same as `/qa` but produces a report without making code changes. The adapted ski
 ### `/design-review` — Design Audit
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/design-review` | `pull_request` when CSS/UI files are changed (path filter: `**/*.css`, `**/*.scss`, `**/*.tsx`, `**/*.vue`) |
 | **Browser** | Browse daemon for screenshots | Playwright for before/after screenshots |
 | **Output** | Design findings with screenshots in terminal | PR comment with embedded screenshots and design scores |
@@ -139,7 +139,7 @@ Same as `/qa` but produces a report without making code changes. The adapted ski
 ### `/plan-design-review` — Report-Only Design Audit
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/plan-design-review` | Issue comment requesting design review |
 | **Output** | Design dimension ratings (0-10) in terminal | Posted as issue comment |
 
@@ -148,7 +148,7 @@ Same as `/qa` but produces a report without making code changes. The adapted ski
 ### `/investigate` — Root-Cause Debugging
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/investigate` with bug description | Issue opened with `investigate` label, or issue comment "investigate" |
 | **Input** | Bug description from user | Issue body = bug description |
 | **Output** | Root-cause analysis in terminal | Posted as issue comment |
@@ -159,7 +159,7 @@ Same as `/qa` but produces a report without making code changes. The adapted ski
 ### `/canary` — Post-Deploy Monitoring
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/canary` after deploy | `deployment_status: [success]` |
 | **Input** | Deployment URL | URL from deployment event payload |
 | **Browser** | Browse daemon for health checks | Playwright for health checks |
@@ -176,7 +176,7 @@ These skills require the GMI conversation pattern: agent posts a comment, user r
 ### `/office-hours` — Product Idea Refinement
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/office-hours` | Issue opened with `office-hours` label |
 | **Conversation** | Interactive back-and-forth in Claude Code | Issue comments: user posts, agent replies, user posts again |
 | **Session** | Claude Code session state | `.github-gstack-intelligence/state/issues/{N}.json` → `state/sessions/{ts}.jsonl` |
@@ -187,7 +187,7 @@ These skills require the GMI conversation pattern: agent posts a comment, user r
 ### `/plan-ceo-review` — CEO-Level Feature Review
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/plan-ceo-review` | Issue comment "plan-ceo-review" or label `ceo-review` |
 | **Input** | Feature description from user | Issue body = feature description |
 | **Output** | Structured analysis finding the "10-star product" | Posted as issue comment |
@@ -198,7 +198,7 @@ These skills require the GMI conversation pattern: agent posts a comment, user r
 ### `/plan-eng-review` — Architecture Review
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/plan-eng-review` | Issue comment or label `eng-review` |
 | **Input** | Architecture description or codebase | Issue body + full checkout |
 | **Output** | Architecture lock: data flow, edge cases, tests | Posted as issue comment |
@@ -208,7 +208,7 @@ These skills require the GMI conversation pattern: agent posts a comment, user r
 ### `/design-consultation` — Design System Creation
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/design-consultation` | Issue with `design-consultation` label |
 | **Conversation** | Extended multi-turn design system creation | Issue thread with iterative refinement |
 | **Output** | Complete design system specification | Accumulated in issue thread |
@@ -218,7 +218,7 @@ These skills require the GMI conversation pattern: agent posts a comment, user r
 ### `/autoplan` — Auto-Review Pipeline
 
 | Aspect | Local | Githubified |
-|--------|-------|-------------|
+| --- | --- | --- |
 | **Trigger** | Developer types `/autoplan` | Issue comment "autoplan" |
 | **Workflow** | Sequential: CEO review → design review → eng review | Sequential agent invocations within a single workflow run |
 | **Output** | Combined results from all three reviews | Single combined comment or three separate comments |
@@ -265,7 +265,7 @@ Your response will be posted as a GitHub {issue/PR} comment.
 ## Adaptation Priority
 
 | Priority | Skills | Rationale |
-|----------|--------|-----------|
+| --- | --- | --- |
 | P0 | `/review`, `/cso` | Highest value, lowest effort. Every PR gets reviewed and security-audited automatically. |
 | P1 | `/qa`, `/investigate` | High value, moderate effort. QA requires browser setup. |
 | P2 | `/retro`, `/benchmark`, `/document-release` | Scheduled/event-driven, fully automated. |

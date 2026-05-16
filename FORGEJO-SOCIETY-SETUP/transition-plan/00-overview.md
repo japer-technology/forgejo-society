@@ -9,7 +9,7 @@ in order. Do not skip governance before execution.
 ## Hardware reference
 
 | Role | Spec | Count |
-|---|---|---|
+| --- | --- | --- |
 | Primary forge server | i9 20-core @ 5 GHz · 64 GB RAM · 2 TB NVMe | 1 |
 | Runner fleet | i7 8-core @ 3 GHz · 8 GB RAM · 60 GB SSD | 16 |
 | LLM inference server | i9 32-core @ 5 GHz · 64 GB RAM · 1 TB NVMe · RTX 4090 | 1 |
@@ -56,7 +56,7 @@ All hosts run **Ubuntu 24.04 LTS (Noble Numbat)**.
 ## Document map
 
 | # | Document | What it covers |
-|---|---|---|
+| --- | --- | --- |
 | 01 | [Ubuntu foundation](01-ubuntu-foundation.md) | Full Ubuntu 24.04 LTS install and hardening |
 | 02 | [Forgejo primary forge](02-forgejo-primary-forge.md) | Forgejo + Caddy + systemd install |
 | 03 | [Codeberg mirror](03-codeberg-mirror.md) | Automated push mirroring to Codeberg |

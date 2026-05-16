@@ -224,7 +224,7 @@ The key control is audience discipline: the web surface serves non-developers an
 ## 4. Comparative Summary
 
 | Dimension | Interactive Demo | Session Viewer | No Implementation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Accessibility for non-developers** | Limited (API key required) | High (read-only, public, no GitHub needed) | None (requires GitHub literacy) |
 | **Eliminates "programmerville"** | Partially (still browser-technical) | Yes (presents agent work in plain terms) | No (GitHub is the only surface) |
 | **Accuracy of representation** | Low (no repo access) | High (real sessions) | N/A |
@@ -240,7 +240,7 @@ The key control is audience discipline: the web surface serves non-developers an
 Assigning weights based on GMI's maturity, architectural commitments, and the accessibility imperative:
 
 | Factor | Weight | Interactive Demo | Session Viewer | No Implementation |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Accessibility beyond programmerville | 30% | ★★☆☆☆ | ★★★★★ | ★☆☆☆☆ |
 | Adoption impact | 25% | ★★☆☆☆ | ★★★★☆ | ★★☆☆☆ |
 | Implementation cost / risk | 20% | ★★☆☆☆ | ★★★☆☆ | ★★★★★ |

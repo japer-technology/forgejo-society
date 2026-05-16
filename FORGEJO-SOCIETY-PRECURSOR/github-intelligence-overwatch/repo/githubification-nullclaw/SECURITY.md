@@ -12,6 +12,6 @@ We will respond within 48 hours and work on a fix promptly.
 ## Supported Versions
 
 | Version | Supported |
-|---------|-----------|
+| --- | --- |
 | Latest release | Yes |
 | Older releases | No |

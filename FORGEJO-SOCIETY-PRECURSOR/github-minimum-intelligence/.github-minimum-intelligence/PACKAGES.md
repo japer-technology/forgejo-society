@@ -8,7 +8,7 @@
 ### Runtime (npm)
 
 | Package | Version | Description |
-|---------|---------|-------------|
+| --- | --- | --- |
 | [@mariozechner/pi-coding-agent](https://github.com/badlogic/pi-mono) | 0.65.1 | Coding agent CLI with read, bash, edit, and write tools and session management. This is the core AI agent that powers the entire Minimum Intelligence system - it processes prompts, interacts with LLM providers, and manages conversation sessions. |
 
 ### pi-mono Feature Surface
@@ -16,7 +16,7 @@
 Beyond the CLI binary, GMI uses the following pi-mono feature categories:
 
 | Feature | Location | Description |
-|---------|----------|-------------|
+| --- | --- | --- |
 | Session management | `--session-dir`, `--session` | Multi-turn conversation continuity across workflow runs |
 | Project settings | `.pi/settings.json` | Provider, model, thinking level, compaction, and retry configuration |
 | System prompt extension | `.pi/APPEND_SYSTEM.md` | Behavioural guidelines appended to the default system prompt |
@@ -31,7 +31,7 @@ Beyond the CLI binary, GMI uses the following pi-mono feature categories:
 These are not package dependencies but are required for the system to function:
 
 | Dependency | Description |
-|------------|-------------|
+| --- | --- |
 | [GitHub Actions](https://github.com/features/actions) | The sole compute runtime. Every issue event triggers a workflow that runs the AI agent. No external servers or containers are needed. |
 | [GitHub Issues](https://docs.github.com/en/issues) | Used as the conversation interface. Each issue maps to a persistent AI conversation thread. |
 | [Git](https://git-scm.com/) | All session state, conversation history, and agent edits are committed to the repository. Git serves as the memory and storage layer. |
@@ -43,7 +43,7 @@ These are not package dependencies but are required for the system to function:
 These are referenced in `.github/workflows/`:
 
 | Action | Workflow | Description |
-|--------|----------|-------------|
+| --- | --- | --- |
 | [actions/checkout@v6](https://github.com/actions/checkout) | agent | Checks out the repository so the agent can read and write files. |
 | [oven-sh/setup-bun@v2](https://github.com/oven-sh/setup-bun) | agent | Installs the Bun runtime in the GitHub Actions environment. |
 | [actions/cache@v5](https://github.com/actions/cache) | agent | Caches `node_modules` keyed on the `bun.lock` hash to speed up dependency installation. |
@@ -56,7 +56,7 @@ These are referenced in `.github/workflows/`:
 An API key from at least one supported LLM provider is needed:
 
 | Provider | API Key Secret | Description |
-|----------|---------------|-------------|
+| --- | --- | --- |
 | [OpenAI](https://platform.openai.com/) | `OPENAI_API_KEY` | GPT models including GPT-5.4 (default provider). |
 | [Anthropic](https://console.anthropic.com/) | `ANTHROPIC_API_KEY` | Claude models. |
 | [Google Gemini](https://aistudio.google.com/) | `GEMINI_API_KEY` | Gemini 2.5 Pro and Flash models. |
@@ -70,7 +70,7 @@ An API key from at least one supported LLM provider is needed:
 These are pulled in transitively by `@mariozechner/pi-coding-agent`:
 
 | Package | Description |
-|---------|-------------|
+| --- | --- |
 | `@anthropic-ai/sdk` | Official Anthropic API client for Claude models. |
 | `@aws-sdk/client-bedrock-runtime` | AWS Bedrock client for accessing models via AWS infrastructure. |
 | `openai` | Official OpenAI API client. |

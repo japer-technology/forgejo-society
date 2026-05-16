@@ -245,7 +245,7 @@ git config core.hooksPath .githooks
 Hooks:
 
 | Hook | What it does |
-|------|-------------|
+| --- | --- |
 | `pre-commit` | Runs `zig fmt --check src/` — blocks commit if any file is not formatted |
 | `pre-push` | Runs `zig build test --summary all` — blocks push if any test fails or leaks |
 

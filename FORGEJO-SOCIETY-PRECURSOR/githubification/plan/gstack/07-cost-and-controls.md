@@ -19,14 +19,14 @@ The most important cadence optimisation is separating **resource extraction from
 ### Why This Matters
 
 | Approach | Cost per Skill Execution | Network Dependency | Predictability |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ❌ Fetch gstack resources at runtime | Higher (network + parse time) | Requires gstack repo access | Variable (depends on gstack changes) |
 | ✅ Pre-extracted resources via `run-refresh-gstack` | Lower (local file read only) | None | Deterministic (pinned version) |
 
 ### Resource Refresh Cadence
 
 | Strategy | When to Refresh | Who Triggers |
-|---|---|---|
+| --- | --- | --- |
 | **Manual** | Team decides when to adopt new gstack skills | `workflow_dispatch` with `function: run-refresh-gstack` |
 | **Scheduled** | Weekly or monthly | Add a schedule cron to `workflow_dispatch` |
 | **Release-driven** | When gstack publishes a new release | Webhook or manual trigger after gstack release |
@@ -49,7 +49,7 @@ fi
 ```
 
 | Permission Level | Access |
-|-----------------|--------|
+| --- | --- |
 | `admin` | ✅ Full access to all skills |
 | `maintain` | ✅ Full access to all skills |
 | `write` | ✅ Full access to all skills |
@@ -143,7 +143,7 @@ Disabled skills are ignored by the router even if their trigger fires.
 Not all skills need the most expensive model. github-gstack-intelligence supports per-skill model selection:
 
 | Skill | Recommended Model | Reasoning |
-|-------|-------------------|-----------|
+| --- | --- | --- |
 | `/review` | `claude-sonnet-4` | Code review needs strong reasoning |
 | `/cso` | `claude-sonnet-4` | Security audit needs thorough analysis |
 | `/ship` | `claude-sonnet-4` | Full workflow needs reliability |
@@ -170,7 +170,7 @@ Not all skills need the most expensive model. github-gstack-intelligence support
 ```
 
 | Tier | Behavior |
-|------|----------|
+| --- | --- |
 | `economy` | All skills use cheapest viable model (haiku for most, sonnet for code-touching skills) |
 | `standard` | Skills use recommended models (table above) |
 | `premium` | All skills use highest-quality model (opus for critical skills, sonnet for others) |
@@ -280,7 +280,7 @@ If the triggering comment already has a 🚀 reaction from the agent, skip it (i
 Rough cost estimates based on typical usage patterns:
 
 | Skill | Input Tokens (est.) | Output Tokens (est.) | Cost per Run (Sonnet) | Cost per Run (Haiku) |
-|-------|--------------------|-----------------------|----------------------|---------------------|
+| --- | --- | --- | --- | --- |
 | `/review` | ~10,000 (diff) | ~2,000 (findings) | ~$0.06 | ~$0.01 |
 | `/cso` | ~15,000 (codebase scan) | ~3,000 (findings) | ~$0.09 | ~$0.02 |
 | `/qa` | ~5,000 (instructions) | ~5,000 (report + commands) | ~$0.05 | ~$0.01 |
@@ -290,7 +290,7 @@ Rough cost estimates based on typical usage patterns:
 ### Monthly Cost Scenarios
 
 | Scenario | Activity | Estimated Monthly Cost |
-|----------|----------|----------------------|
+| --- | --- | --- |
 | **Solo dev** | 5 PRs/week, weekly retro, occasional QA | ~$15–30 |
 | **Small team** | 20 PRs/week, weekly retro, daily benchmark | ~$50–100 |
 | **Active project** | 50 PRs/week, all skills enabled | ~$150–300 |

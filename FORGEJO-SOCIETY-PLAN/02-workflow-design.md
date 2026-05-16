@@ -16,7 +16,7 @@ sub-step inside the new design.
 The workflow listens on the following events:
 
 | Forgejo event | Cognitive role |
-|---|---|
+| --- | --- |
 | `issues` (`opened`, `edited`, `labeled`, `reopened`) | Stimulus arrival on the dialogue surface |
 | `issue_comment` (`created`, `edited`) | Continued dialogue stimulus |
 | `pull_request` (`opened`, `edited`, `synchronize`, `reopened`) | Proposed-action surface |

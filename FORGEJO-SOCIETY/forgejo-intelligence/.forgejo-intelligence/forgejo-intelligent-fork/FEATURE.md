@@ -204,7 +204,7 @@ When any breaking changes are found in the upstream's ahead commits, the agent p
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Fork Lifecycle | 1–2 | `fork` event, scheduled cron | Welcome issue/comment, metadata update, state |
 | Upstream Divergence Tracking | 3–4 | Scheduled cron (daily) | Tracking issue comment, state |
 | Cross-Fork PR Facilitation | 5–6 | Slash command, `pull_request.*` events | Draft PR creation, tracking issue comment, state |
@@ -212,7 +212,7 @@ When any breaking changes are found in the upstream's ahead commits, the agent p
 | Slash Commands | 9–11 | `/sync-fork`, `/compare-upstream`, `/open-pr-to-upstream` | Sync, compare comment, draft PR, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 5 |
 | Response surfaces | 0 | 5 |
 | Interaction models | 0 | 3 (automated tracking, slash command, scheduled cron) |

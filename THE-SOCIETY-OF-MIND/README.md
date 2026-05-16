@@ -39,7 +39,7 @@ explicitly on the table. That is the job of this folder.
 Read in order on a first pass:
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | [01-overview.md](01-overview.md) | Minsky's thesis in one page; the shape of the book; the recurring moves. |
 | [02-glossary.md](02-glossary.md) | Annotated glossary: agent, agency, K-line, frame, neme, polyneme, isonome, microneme, B-brain, transframe, censor, suppressor, paranome, level-band, and more. |
 | [03-principles.md](03-principles.md) | Numbered Society-of-Mind principles with annotation: Investment, Papert's, Exception, Non-Compromise, Duplication, Insulation, Parsimony, and others. |
@@ -56,7 +56,7 @@ Read in order on a first pass:
 Source material lives under [research/](research/):
 
 | File | Source |
-|---|---|
+| --- | --- |
 | [research/1986.md](research/1986.md) | Whole Earth Review excerpts of *The Society of Mind*, Simon & Schuster, 1986. |
 | [research/1988.md](research/1988.md) | Marvin Minsky, *ONR Final Report*, August 1988 — connectionism, insulation, K-lines, frames, cache memory, zone refining. |
 | [research/2025-10-01.md](research/2025-10-01.md) | Mikkilineni & Michaels, *Society of Minds: The Architecture of Mindful Machines*, 2025 — modern dialogical extension. |
@@ -95,7 +95,7 @@ When this folder paraphrases or extends Minsky, it MUST say so. Use these
 prefixes inside the documents:
 
 | Prefix | Meaning |
-|---|---|
+| --- | --- |
 | **Minsky:** | Direct paraphrase of a passage in *The Society of Mind* (1986) or the ONR Final Report (1988). |
 | **Insight:** | A summary or restatement of a Minsky idea in this workspace's terms. |
 | **Extension:** | An explicit extension of Minsky beyond what he wrote, usually toward the Society of Repo. |

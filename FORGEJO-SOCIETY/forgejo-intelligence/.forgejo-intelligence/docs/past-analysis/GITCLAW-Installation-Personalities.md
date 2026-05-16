@@ -27,7 +27,7 @@ This document analyzes how to make that happen.
 Before designing personalities, we need to understand what's at stake. The moment `.GITCLAW` is installed and pushed, the agent has:
 
 | Capability | Implication |
-|---|---|
+| --- | --- |
 | **Full repository read/write** | Can modify any file — source, config, CI, docs, its own behavioral files |
 | **Arbitrary shell execution** | Can run any command available on the GitHub Actions Ubuntu runner |
 | **GitHub API access** | Can post comments, interact with issues, read metadata |
@@ -630,7 +630,7 @@ appendFileSync(resolve(stateDir, "personality-audit.jsonl"),
 ### The Three Layers Together
 
 | Layer | Enforcement | Handles Nuance | Bypassable | When |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | System Prompt | LLM-enforced | ✅ Yes | ⚠️ Possible | During generation |
 | Pre-Commit Validation | System-enforced | ❌ No | ❌ No | Before commit |
 | Post-Push Audit | Detective | N/A | N/A | After push |
@@ -706,7 +706,7 @@ The insight is that **installation is a configuration event**, not just a deploy
 Not all personalities need to ship at once. The highest-impact ones for a first release:
 
 | Priority | Personality | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | 🔴 P0 | **General** (current default) | Must exist — backward compatibility |
 | 🔴 P0 | **Writing** | Largest non-obvious use case; proves .GITCLAW isn't just for code |
 | 🟡 P1 | **Python Website** | Most common web framework; good template for other language personalities |

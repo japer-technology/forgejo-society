@@ -26,7 +26,7 @@ This document analyzes three repositories — the current repo (`japer-technolog
 **Key assets for Githubification:**
 
 | Asset | Location | Role in Githubified System |
-|-------|----------|---------------------------|
+| --- | --- | --- |
 | 20 agent specs | `agents/*.yaml` + `agents/*.md` | Agent personas for dispatch routing |
 | 36 skills | `skills/*/SKILL.md` | Context injection per agent invocation |
 | Model Router | `router/router.js` + `router/config.json` | Cost-aware model selection (lite/flash/pro/pro-extended) |
@@ -61,7 +61,7 @@ User opens issue or comments
 **The four primitives that make it work:**
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — ephemeral 2-core/7GB runners |
 | **Git** | Memory — session transcripts committed after every interaction |
 | **GitHub Issues** | UI — each issue is a persistent AI conversation thread |
@@ -87,7 +87,7 @@ User opens issue or comments
 **Five Githubification strategies** (derived from 6 case studies across 20 analyzed projects):
 
 | # | Strategy | When to Use | Example |
-|---|----------|-------------|---------|
+| --- | --- | --- | --- |
 | 1 | **Native** | Building a new agent from scratch for GitHub | GMI, GitClaw |
 | 2 | **Wrapping** | Agent exists, wrap without modifying source | OpenClaw |
 | 3 | **Substitution** | Agent's runtime conflicts with Actions | Agent Zero |
@@ -118,7 +118,7 @@ Guard → Validate → Indicate → Execute → Commit → Post → React
 Agenticana cannot use the simpler strategies:
 
 | Strategy | Why Not |
-|----------|---------|
+| --- | --- |
 | **Native** | Agenticana already exists with 20 agents, 36 skills, and a full architecture. It wasn't built for GitHub from scratch. |
 | **Wrapping** | There is no single entry point to wrap. Agenticana is 20 agents + a router + a memory system + a swarm dispatcher. A thin wrapper cannot capture this complexity. |
 | **Substitution** | Agenticana CAN run on GitHub Actions (Python + Node.js are natively supported). There's no fundamental runtime conflict. |
@@ -128,7 +128,7 @@ Agenticana cannot use the simpler strategies:
 **What makes Transformation unique:**
 
 | Dimension | Single-Agent Githubification | Agenticana Transformation |
-|-----------|------------------------------|---------------------------|
+| --- | --- | --- |
 | Routing | Not needed — one agent handles everything | Label-based or prefix-based dispatch to 20 specialists |
 | Concurrency | One agent per issue | Multiple agents per issue (swarm execution) |
 | Memory | Unified session history | Per-agent decisions + shared ReasoningBank |
@@ -266,7 +266,7 @@ jobs:
 The unified `agent.ts` orchestrator reads the issue title or comment body and dispatches based on the first character:
 
 | Prefix | Engine | Behavior |
-|--------|--------|----------|
+| --- | --- | --- |
 | `?` | **Agenticana** | Content analyzed by Model Router → routed to best of 20 specialist agents. Multi-agent swarm for complex tasks. ReasoningBank queried for past decisions. |
 | `!` | **GMI** | Content passed directly to `pi` generalist agent. Single-agent, single-session, direct execution. |
 | *(no prefix)* | **Ignored** | No AI response — prevents accidental triggers on regular issue discussions. |
@@ -308,7 +308,7 @@ When the `?` prefix triggers the Agenticana engine, the routing layer must decid
 #### Mechanism 1: Issue Labels → Agent Routing
 
 | Issue Label | Agent | What It Does |
-|-------------|-------|--------------|
+| --- | --- | --- |
 | `security` | security-auditor | Security review, vulnerability scanning |
 | `performance` | performance-optimizer | Performance audit, Lighthouse, bundle analysis |
 | `architecture` | orchestrator | Architecture planning, triggers Logic Simulacrum |
@@ -400,7 +400,7 @@ Attempt 10: wait 15s → retry
 On GitHub Actions, every invocation consumes minutes and LLM tokens. Agenticana's existing cost-optimization infrastructure becomes critical:
 
 | Mechanism | How It Saves |
-|-----------|-------------|
+| --- | --- |
 | **Model Router** | Routes simple tasks to `lite`/`flash` models instead of `pro` (40% token savings) |
 | **Skill Tier System** | Loads only Tier 1 (core) for simple tasks; adds Tier 2/3 only when domain matches (25% savings) |
 | **ReasoningBank Fast-Path** | If a past decision has similarity ≥ 0.85, reuse it instead of full LLM invocation (60% savings) |
@@ -410,7 +410,7 @@ On GitHub Actions, every invocation consumes minutes and LLM tokens. Agenticana'
 **Estimated cost per interaction:**
 
 | Scenario | Model Tier | Actions Minutes | LLM Tokens | Est. Cost |
-|----------|-----------|-----------------|------------|-----------|
+| --- | --- | --- | --- | --- |
 | Simple question (!) | GMI (pi) | 2-5 min | ~4,000 | ~$0.02 |
 | Simple routed task (?) | flash | 3-8 min | ~12,000 | ~$0.05 |
 | Complex multi-agent (?) | pro | 10-30 min | ~60,000 | ~$0.30 |
@@ -498,7 +498,7 @@ On GitHub Actions, every invocation consumes minutes and LLM tokens. Agenticana'
 ### What Changes (Local → Githubified)
 
 | Dimension | Local (Current) | Githubified (Target) |
-|-----------|----------------|---------------------|
+| --- | --- | --- |
 | **Trigger** | User types in VS Code / CLI | User opens issue or comments with prefix |
 | **Runtime** | Developer's machine | GitHub Actions runner (ubuntu-latest) |
 | **Context** | VS Code workspace, open files | Full repository checkout (fetch-depth: 0) |
@@ -512,7 +512,7 @@ On GitHub Actions, every invocation consumes minutes and LLM tokens. Agenticana'
 ### What Stays the Same
 
 | Component | Why It Transfers Directly |
-|-----------|--------------------------|
+| --- | --- |
 | 20 agent YAML specs | Agent personas are LLM-agnostic — they define system prompts, not runtime dependencies |
 | 36 skill SKILL.md files | Skills are markdown instructions — they work as LLM context in any execution environment |
 | Model Router | Complexity scoring and model tier selection are pure functions — no runtime dependency |
@@ -527,7 +527,7 @@ On GitHub Actions, every invocation consumes minutes and LLM tokens. Agenticana'
 The `.PLAN-v1.md` dual-engine architecture provides a unique advantage: users get **two AI systems in one installation**.
 
 | Need | Engine | Why |
-|------|--------|-----|
+| --- | --- | --- |
 | Quick question, simple fix | GMI (`!`) | Single generalist agent, fast, low cost |
 | Complex task, domain expertise needed | Agenticana (`?`) | 20 specialists, routing, memory, cost-optimized |
 | Architecture decision | Agenticana (`?`) + `architecture` label | Logic Simulacrum debate → ADR committed |
@@ -541,7 +541,7 @@ The `!` prefix gives GMI's proven simplicity for everyday tasks. The `?` prefix 
 ## Part 7: Comparison to Existing Githubified Repos
 
 | Dimension | GMI (Native) | OpenClaw (Wrapping) | Agent Zero (Substitution) | **Agenticana (Transformation)** |
-|-----------|-------------|--------------------|--------------------------|---------------------------------|
+| --- | --- | --- | --- | --- |
 | Agents | 1 | 1 (30+ tools) | 1 (substitute) | **20 specialists** |
 | Routing | None | None | None | **Label + NL + Swarm** |
 | Memory | JSONL sessions | JSONL sessions | JSONL sessions | **JSONL + ReasoningBank + Patterns** |
@@ -560,7 +560,7 @@ Agenticana's Githubification would be the **most sophisticated GitHub Action–b
 ## Part 8: Risks and Mitigations
 
 | Risk | Impact | Mitigation |
-|------|--------|-----------|
+| --- | --- | --- |
 | **Actions timeout** | Complex swarm tasks may exceed 4-hour limit | Emergency override label extends to 5 hours; break large tasks into subtasks |
 | **LLM cost spiraling** | 20 agents × pro model × frequent invocations | Model Router selects cheapest adequate tier; ReasoningBank fast-path skips LLM for known decisions; prefix gating prevents accidental triggers |
 | **Git push conflicts** | Multiple swarm agents push simultaneously | Proven 10-retry loop with `--rebase -X theirs`; sequential execution as fallback |
@@ -573,7 +573,7 @@ Agenticana's Githubification would be the **most sophisticated GitHub Action–b
 ## Part 9: Key Architectural Decisions
 
 | # | Decision | Rationale |
-|---|----------|-----------|
+| --- | --- | --- |
 | D1 | Single folder (`.github-agenticana-intelligence/`) | One installation, dual engine, clean separation from repo source |
 | D2 | Prefix routing (`?` / `!`) | Natural syntax, prevents accidental triggers, easy to teach |
 | D3 | Git-committed ReasoningBank | Makes every AI decision auditable, diffable, recoverable |
@@ -596,7 +596,7 @@ The dual-engine architecture from `.PLAN-v1.md` (GMI on `!`, Agenticana on `?`) 
 **The four GitHub primitives are sufficient:**
 
 | Primitive | Agenticana Role |
-|-----------|----------------|
+| --- | --- |
 | **GitHub Actions** | Runs 20 specialist agents, swarm orchestration, Logic Simulacrum debates, Guardian Mode checks |
 | **Git** | Persists ReasoningBank decisions, session transcripts, Proof-of-Work attestations, agent-created code changes |
 | **GitHub Issues** | Routes user requests to specialist agents via prefix + labels; displays multi-agent responses and debate outcomes |

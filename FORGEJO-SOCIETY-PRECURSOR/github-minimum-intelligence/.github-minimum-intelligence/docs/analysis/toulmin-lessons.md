@@ -15,7 +15,7 @@ Toulmin §7.4 — the agent could structure its own justifications using the Tou
 Introduce a `toulmin` output mode for agent responses to significant changes. When the agent proposes a code change, architectural decision, or configuration modification, it should emit a structured justification block:
 
 | Field | Content |
-|---|---|
+| --- | --- |
 | **Claim** | The proposed change |
 | **Grounds** | Evidence from the codebase, issue thread, or test results |
 | **Warrant** | The engineering principle connecting evidence to proposal |
@@ -43,7 +43,7 @@ Toulmin §5 Rebuttal — the ethical governance constraints are prompt-level gui
 Supplement the prompt-level ethical governance constraints with runtime enforcement mechanisms:
 
 | Layer | Mechanism |
-|---|---|
+| --- | --- |
 | **Input validation** | Reject or sanitize prompts containing known injection patterns before they reach the LLM |
 | **Output filtering** | Scan agent-generated diffs for dangerous patterns (credential exposure, workflow self-modification, destructive shell commands) before committing |
 | **Action sandboxing** | Restrict the set of shell commands the agent can execute to an explicit allowlist, enforced outside the LLM's control |
@@ -71,7 +71,7 @@ Toulmin §7.3 — qualifiers prevent overclaiming; GMI's arguments are strongest
 Add a **Scope & Limitations** section to `README.md` and the public-fabric landing page that states where GMI excels and where it does not:
 
 | Context | Suitability |
-|---|---|
+| --- | --- |
 | Single-repo, GitHub-native teams | **Strong** — full context fidelity, zero infrastructure |
 | Async code review and issue triage | **Strong** — fits the GitHub event model naturally |
 | Multi-repo orchestration | **Weak** — no cross-repo state sharing |
@@ -100,7 +100,7 @@ Toulmin §4 Rebuttal — the security self-assessment identifies critical gaps (
 Map each security finding to the Toulmin claim it rebuts and prioritize fixes by argumentative impact:
 
 | SEC Finding | Rebuts Claim | Priority | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SEC-002 (network egress) | Trust — sovereignty through legibility | High | Restrict outbound network access to LLM API endpoints only via Actions firewall rules |
 | SEC-005 (no branch protection) | Trust — reversibility | High | Document and enforce branch protection rules as part of the install process |
 | SEC-008 (self-replication) | Ethical — do no harm | Critical | Add a pre-commit check that rejects modifications to `.github/workflows/` files |
@@ -180,7 +180,7 @@ Toulmin §6 Rebuttal — the model conflates personality (tone, style) with gove
 Split `AGENTS.md` into two distinct files:
 
 | File | Content | Change Control |
-|---|---|---|
+| --- | --- | --- |
 | `AGENTS.md` | Persona attributes: name, emoji, tone, style | Normal PR review |
 | `GOVERNANCE.md` | Behavioral constraints, permission boundaries, safety rules | Elevated review — require approval from repo admin or CODEOWNERS |
 
@@ -207,7 +207,7 @@ Toulmin §2 Rebuttal — projects spanning multiple repositories with separate g
 Define an incremental path toward multi-repo awareness without abandoning the single-repo sovereignty principle:
 
 | Phase | Capability | Sovereignty Preserved |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Read-only cross-repo context via GitHub API | Yes — no state shared |
 | 2 | Cross-repo issue linking and reference resolution | Yes — each repo retains its own agent |
 | 3 | Coordinated multi-repo PRs via a lightweight orchestration issue | Partially — requires trust delegation |

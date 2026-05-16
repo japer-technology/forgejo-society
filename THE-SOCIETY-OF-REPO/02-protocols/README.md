@@ -3,7 +3,7 @@
 The protocols are the operating rules of the Society of Repo. Every agency, critic, censor, memory system, and meta-admin role follows them.
 
 | Protocol | Contents |
-|---|---|
+| --- | --- |
 | [01-identity.md](01-identity.md) | Stable naming and ID conventions |
 | [02-constitution.md](02-constitution.md) | What every durable agency must declare |
 | [03-events.md](03-events.md) | Event schema and emission rules |

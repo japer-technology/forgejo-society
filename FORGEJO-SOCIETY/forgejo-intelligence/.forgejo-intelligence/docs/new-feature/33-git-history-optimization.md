@@ -110,7 +110,7 @@ Each commit changes only state files (sessions, mappings). These intermediate co
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Delta file manager** | Split sessions into base + delta, manage lifecycle | ~2.5 hours |
 | **Session reconstructor** | Combine base + delta transparently for pi | ~1.5 hours |
 | **Consolidation engine** | Merge deltas into base at threshold | ~1.5 hours |

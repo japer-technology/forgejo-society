@@ -31,7 +31,7 @@ nullclaw gateway
 ## 常用命令速查
 
 | 命令 | 用途 |
-|---|---|
+| --- | --- |
 | `nullclaw onboard --api-key sk-... --provider openrouter` | 快速写入 provider 与 API Key |
 | `nullclaw onboard --interactive` | 交互式完整初始化 |
 | `nullclaw onboard --channels-only` | 只重配 channel / allowlist |

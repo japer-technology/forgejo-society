@@ -182,7 +182,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Sponsorship Created | `sponsorship.created` | Sponsorship Lifecycle |
 | 2 | Sponsorship Cancelled | `sponsorship.cancelled` | Sponsorship Lifecycle |
 | 3 | Sponsorship Tier Changed | `sponsorship.tier_changed` | Sponsorship Lifecycle |

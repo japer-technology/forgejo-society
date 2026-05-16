@@ -17,7 +17,7 @@ These documents map out every channel — from what exists today to ideas that c
 ## Documentation Map
 
 | Document | Description |
-|----------|-------------|
+| --- | --- |
 | [fork-import-installer](fork-import-installer/) | The current method — manual fork or import plus the installer script |
 | [github-application](github-application/) | A registered GitHub App that installs gitclaw with a single click |
 | [github-marketplace-action](github-marketplace-action/) | A published GitHub Action that bootstraps gitclaw from any workflow |

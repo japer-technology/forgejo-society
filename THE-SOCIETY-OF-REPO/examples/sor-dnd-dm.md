@@ -66,14 +66,14 @@ Out of scope:
 ### Document intake and routing
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes incoming notes, documents, and DM stimuli | propose |
 | `document-index-bee` | Indexes all campaign documents, lore entries, and session notes; answers retrieval queries | propose |
 
 ### World and lore agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `lore-bee` | Maintains the world index: geography, factions, history, deities, and established facts | propose |
 | `continuity-bee` | Cross-checks proposed content against established lore for contradictions | propose |
 | `faction-bee` | Tracks faction relationships, goals, resources, and current activities in the world | propose |
@@ -81,14 +81,14 @@ Out of scope:
 ### NPC and character agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `npc-bee` | Maintains NPC records: identity, motivation, relationships, last appearance, and status | propose |
 | `pc-bee` | Tracks player character records: level, class, background hooks, and story threads | propose |
 
 ### Encounter and session agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `encounter-bee` | Prepares encounter briefs: stat blocks, terrain notes, objectives, and reward tables | propose |
 | `session-bee` | Summarises completed sessions and extracts key outcomes for continuity records | propose |
 | `plot-bee` | Tracks open plot threads, planted foreshadowing, pending consequences, and arc milestones | propose |
@@ -96,21 +96,21 @@ Out of scope:
 ### Calendar and scheduling agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `campaign-calendar-bee` | Tracks the in-world calendar, scheduled events, and approaching in-world deadlines | propose |
 | `task-bee` | Tracks DM prep tasks, unresolved session questions, and outstanding research items | propose |
 
 ### Research and generation agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `rules-bee` | Looks up SRD rules, conditions, spells, and mechanics for the DM | propose |
 | `content-bee` | Generates names, location seeds, encounter seeds, and random content for DM review | draft |
 
 ### Briefing agency
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `dm-briefing` | Assembles and delivers governed session preparation briefings to the DM | act |
 
 ---
@@ -118,7 +118,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `continuity-critic` | Does this proposed content contradict established lore, NPC facts, or prior session outcomes? |
 | `evidence-critic` | Is this world fact, rule reference, or NPC detail sourced from a reliable campaign record? |
 | `scope-critic` | Is this SOR staying within its preparation and memory role, not directing the story? |
@@ -131,7 +131,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No campaign notes, player character records, or session data leave the local system without explicit DM approval |
 | `authority-censor` | No agency increases its own authority level |
 | `story-direction-censor` | No agency makes a decision about story outcomes, NPC choices, or plot direction — these belong to the DM |
@@ -407,7 +407,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Campaign notes and session documents in repos |
 | 1 | Memory | Structured lore, NPC, and session records |
 | **2** | **Agency** | **Agencies with roles, constitutions, and outputs** |

@@ -70,7 +70,7 @@ addresses explicitly:
 This project's posture aligns with all three layers as follows:
 
 | Forgejo surface | How this project uses it on the maintainers' self-hosted instance | How this project uses it on Codeberg / other shared Forgejo | Why this is compliant |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Repository storage** | Source of truth for the running system. | Mirror of the canonical repository, for federation, discoverability, and disaster recovery. | Used to host source for a free / open-source project. Not used as a generic backup or file-storage service. |
 | **Issues** | Live operations channel for the project and the agent. | Standard development discussion and task tracking. | Standard collaboration use under both the Forgejo CoC and Codeberg's Terms of Use. |
 | **Pull requests** | Code review and merge workflow. | Code review during development. | Standard collaboration use. |

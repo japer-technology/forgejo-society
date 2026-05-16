@@ -9,7 +9,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 1.1 Permission Gate Risks
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | PG-01 | Regex bypass via command reformulation | High | Medium | **High** | Document as guardrail, not security control; do not rely on for security guarantees |
 | PG-02 | False positive blocks legitimate operation | Medium | Medium | **Medium** | Start with minimal blocklist (catastrophic commands only); expand based on observed agent behaviour |
 | PG-03 | LLM wastes tokens retrying blocked operations | Medium | Low | **Low** | Block messages should be clear and actionable; include alternative approaches |
@@ -19,7 +19,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 1.2 Path Protection Risks
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | PP-01 | Bash tool bypasses all protections | High | Medium | **High** | Either extend to cover bash write operations or defer entirely |
 | PP-02 | Agent learns to use bash for all file writes | Medium | Medium | **Medium** | Monitor agent behaviour; if it consistently bypasses, the extension is counterproductive |
 | PP-03 | Protected paths list becomes stale | Medium | Low | **Low** | Review protected paths when new sensitive files are added to the project |
@@ -29,7 +29,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 1.3 GitHub Issue Context Risks
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | IC-01 | `gh` CLI not authenticated in Actions environment | Low | High | **High** | `GITHUB_TOKEN` is already passed; `gh` uses it automatically |
 | IC-02 | `gh` CLI command syntax changes in future version | Low | Medium | **Medium** | Pin `gh` version in workflow; test after upgrades |
 | IC-03 | Tool timeout on large issues/PRs | Low | Medium | **Medium** | 15-second timeout already set; consider pagination for large result sets |
@@ -39,7 +39,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 1.4 Agent Metadata Risks
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | AM-01 | Timestamp becomes stale during long sessions | Medium | Low | **Low** | Timestamp is refreshed at each agent invocation; staleness only affects within a single long run |
 | AM-02 | `before_agent_start` event not honoured in `--mode json` | Low | Medium | **Medium** | Test before deployment; fall back to no metadata injection if unsupported |
 | AM-03 | Environment variables leak sensitive information | Low | Medium | **Medium** | Only inject `GITHUB_REPOSITORY`, `GITHUB_RUN_ID`, `GITHUB_SERVER_URL` — no secrets |
@@ -52,7 +52,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 2.1 Risks of No Permission Gate
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation (Without Extension) |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | NPG-01 | Agent executes destructive command (`rm -rf /`) | Low | Critical | **High** | Trust in LLM's training not to generate destructive commands; rely on GitHub Actions runner isolation |
 | NPG-02 | Agent runs `sudo` in non-root context | Low | Low | **Low** | GitHub Actions runners don't have passwordless sudo by default; command fails safely |
 | NPG-03 | Agent force-pushes and loses git history | Low | Medium | **Medium** | Branch protection rules prevent force-push to protected branches |
@@ -60,7 +60,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 2.2 Risks of No Path Protection
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation (Without Extension) |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | NPP-01 | Agent modifies `.env` with secrets | Low | High | **High** | `.env` files should not be committed; `.gitignore` should exclude them |
 | NPP-02 | Agent edits GitHub Actions workflows | Low | High | **High** | Addressed by [security hardening analysis](../../toulmin-4-rebuttal-driven-security-hardening-implementation.md) staged-diff path check |
 | NPP-03 | Agent modifies `.pi/settings.json` | Low | Medium | **Medium** | Settings are loaded at startup; runtime modifications take effect only on next invocation |
@@ -68,7 +68,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 2.3 Risks of No Issue Context Tools
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation (Without Extension) |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | NIC-01 | Agent constructs incorrect `gh` command | Medium | Low | **Low** | Agent retries with corrected command; minimal token waste |
 | NIC-02 | Agent omits useful JSON fields in `gh` query | Medium | Low | **Low** | Incomplete but functional; agent can re-query with additional fields |
 | NIC-03 | Multi-step `gh` queries waste tokens | Medium | Low | **Low** | Acceptable overhead for current usage patterns |
@@ -76,7 +76,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 2.4 Risks of No Agent Metadata
 
 | ID | Risk | Likelihood | Impact | Severity | Mitigation (Without Extension) |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | NAM-01 | Agent generates incorrect timestamps | Medium | Low | **Low** | Agent can use `date` command via bash |
 | NAM-02 | Agent unaware of Actions run context | Low | Low | **Low** | Rarely needed; agent can check `$GITHUB_RUN_ID` via bash |
 
@@ -87,7 +87,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 3.1 Critical and High Risks by Decision
 
 | Decision | Critical Risks | High Risks | Total High+ |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Implement permission gate | 0 | 3 (PG-01, PG-04, PG-05) | 3 |
 | Don't implement permission gate | 0 | 1 (NPG-01) | 1 |
 | Implement path protection | 0 | 1 (PP-01) | 1 |
@@ -100,7 +100,7 @@ This document provides a detailed risk assessment for the extension enhancements
 ### 3.2 Net Risk Assessment
 
 | Extension | Implement Risk | Don't Implement Risk | Net Direction |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Permission gate** | 3 high risks | 1 high risk | **Implement carries more risk** |
 | **Path protection** | 1 high risk | 2 high risks | **Don't implement carries more risk** (but see §4.1) |
 | **Issue context** | 1 high risk | 0 high risks | **Implement carries more risk** (but the risk is already mitigated) |
@@ -145,7 +145,7 @@ This risk is common to all extensions and should be verified once, not per-exten
 ## 5. Risk-Adjusted Implementation Recommendation
 
 | Extension | Recommendation | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | **Issue context** | ✅ Implement | 1 high risk (already mitigated); 0 high risks of not implementing. Net-positive on productivity. |
 | **Metadata** | ✅ Implement | 0 high risks either way. Low cost, mild benefit, zero downside. |
 | **Permission gate** | ⚠️ Implement with conditions | More implementation risks than non-implementation risks, but the non-implementation risk (destructive command) is severe. Implement only with explicit guardrail documentation. |

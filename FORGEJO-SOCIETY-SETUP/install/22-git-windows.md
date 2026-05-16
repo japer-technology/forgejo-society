@@ -24,7 +24,7 @@ winget install --id Git.Git -e --source winget
 WinGet downloads and runs the Git for Windows installer silently. When the installer runs interactively (if WinGet prompts to open the installer), use these recommended settings:
 
 | Installer screen | Recommended choice |
-|-----------------|--------------------|
+| --- | --- |
 | Default editor | Visual Studio Code (if installed) |
 | Initial branch name | Override to `main` |
 | PATH environment | Git from command line and 3rd-party software |

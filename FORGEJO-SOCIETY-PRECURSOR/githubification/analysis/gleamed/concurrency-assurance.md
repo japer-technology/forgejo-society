@@ -40,7 +40,7 @@ concurrency:
 This is the critical choice. Using `cancel-in-progress: true` would drop runs when a newer event arrives, losing user messages. Setting it to `false` queues runs instead — the second run waits for the first to complete before starting.
 
 | Setting | Behaviour | When to Use |
-|---|---|---|
+| --- | --- | --- |
 | `cancel-in-progress: false` | Queue — waits for prior run | **Agent workflows (all cases in corpus)** |
 | `cancel-in-progress: true` | Cancel — drops prior run | CI/lint (latest commit matters, not every run) |
 
@@ -83,7 +83,7 @@ done
 ### Key Properties
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **10 attempts** | Sufficient for typical contention windows; beyond 10 attempts suggests a structural problem |
 | **Escalating backoff** | `sleep $((i * 2))` — 2s, 4s, 6s, 8s... up to 20s. Prevents thundering herd |
 | **`git pull --rebase`** | Rebases local commit on top of remote changes — cleaner history than merge |
@@ -132,7 +132,7 @@ This ensures the session history is auditable in git even though the primary dat
 ## The Concurrency Matrix
 
 | Scenario | Handling | Layer |
-|---|---|---|
+| --- | --- | --- |
 | Two comments on same issue | Workflow concurrency group queues second run | Layer 1 |
 | Two issues active simultaneously | Separate concurrency groups — run in parallel | Layer 1 |
 | Parallel `git push` from different issues | Retry loop with rebase | Layer 2 |

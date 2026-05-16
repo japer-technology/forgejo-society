@@ -5,7 +5,7 @@ Hardware available for the root Forgejo Society installation.
 ## Primary forge server
 
 | Spec | Value |
-|---|---|
+| --- | --- |
 | CPU | i9 · 20 cores · 5 GHz |
 | RAM | 64 GB |
 | Storage | 2 TB NVMe |
@@ -14,7 +14,7 @@ Hardware available for the root Forgejo Society installation.
 ## Runner fleet
 
 | Spec | Value |
-|---|---|
+| --- | --- |
 | CPU | i7 · 8 cores · 3 GHz |
 | RAM | 8 GB |
 | Storage | 250 GB SSD |
@@ -25,7 +25,7 @@ Forge and runners use **Ubuntu 24.04 LTS (Noble Numbat)**.
 ## LLM inference server
 
 | Spec | Value |
-|---|---|
+| --- | --- |
 | CPU | i9 · 32 cores · 5 GHz |
 | RAM | 64 GB |
 | Storage | 1 TB NVMe |

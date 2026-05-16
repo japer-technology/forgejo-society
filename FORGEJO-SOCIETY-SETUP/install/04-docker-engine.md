@@ -72,7 +72,7 @@ sudo apt install -y \
 **Package roles:**
 
 | Package | Purpose |
-|---------|---------|
+| --- | --- |
 | `docker-ce` | The Docker daemon (dockerd) |
 | `docker-ce-cli` | The `docker` CLI client |
 | `containerd.io` | Low-level container runtime |
@@ -141,7 +141,7 @@ EOF
 **Option explanations:**
 
 | Option | Value | Reason |
-|--------|-------|--------|
+| --- | --- | --- |
 | `log-driver` | `json-file` | Default JSON log driver with rotation |
 | `max-size` | `10m` | Rotate container logs at 10 MB |
 | `max-file` | `3` | Keep 3 rotated log files per container |

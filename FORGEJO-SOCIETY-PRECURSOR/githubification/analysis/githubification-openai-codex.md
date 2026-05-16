@@ -25,7 +25,7 @@ This is a **Type 1 — AI Agent Repo** candidate for Githubification: the reposi
 Every Githubification maps to the same four GitHub primitives. Here is how Codex maps:
 
 | GitHub Primitive | Role in Githubified Codex |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes `codex exec` or `codex app-server` in headless mode |
 | **Git** | Storage and memory — conversation history, file edits, and agent state are committed to the repo |
 | **GitHub Issues** | User interface — each issue becomes a conversation thread; comments are user turns, agent replies are posted back |
@@ -87,7 +87,7 @@ The Codex source code remains entirely untouched. The `.githubification-codex/` 
 Following the universal Githubification lifecycle pattern:
 
 | # | Step | What Happens |
-|---|------|------|
+| --- | --- | --- |
 | 1 | **Authorize** | Workflow step checks collaborator permission via `gh api` — rejects unauthorized users with 👎 |
 | 2 | **Checkout** | Clone the repository with full history |
 | 3 | **Indicate** | `indicator.ts` adds 🚀 reaction to show the agent is working |
@@ -330,7 +330,7 @@ jobs:
 ## Advantages of Codex for Githubification
 
 | Advantage | Detail |
-|---|---|
+| --- | --- |
 | **`codex exec` already exists** | Non-interactive mode is purpose-built for CI/CD — the hardest part of Githubification is already solved |
 | **Pre-built binaries available** | GitHub Releases provide platform-specific binaries — no build step needed |
 | **npm distribution** | `npm install -g @openai/codex` works on Actions runners — simplest install path |
@@ -345,7 +345,7 @@ jobs:
 ## Comparison with Other Githubified Agents
 
 | Dimension | GMI (Native) | OpenClaw (Wrapped) | Codex (Proposed Wrapping) |
-|-----------|-------------|-------------------|--------------------------|
+| --- | --- | --- | --- |
 | **Agent origin** | Built for GitHub | External, wrapped | External, wrapped |
 | **Runtime dependencies** | 1 (pi-coding-agent) | 30+ tools | 1 (codex binary) |
 | **Execution model** | TypeScript via Bun | TypeScript lifecycle → Node.js agent | Shell lifecycle → Rust binary |
@@ -405,7 +405,7 @@ The key differentiator: Codex's `codex exec` mode means the wrapping layer is th
 ## Risk Assessment
 
 | Risk | Severity | Mitigation |
-|------|----------|------------|
+| --- | --- | --- |
 | API key exposure in logs | High | Use `--quiet` flag, mask secrets in workflow |
 | Runaway execution (infinite loops) | Medium | Workflow timeout (30 min), `codex exec` has built-in limits |
 | Unauthorized access | Medium | Collaborator permission check, fail-closed |

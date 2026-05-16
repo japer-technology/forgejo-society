@@ -140,7 +140,7 @@ runs:
 ### Composite vs. JavaScript vs. Docker Action
 
 | Type | Pros | Cons |
-|------|------|------|
+| --- | --- | --- |
 | **Composite** | Simple, uses shell commands, no build step | Limited error handling, verbose YAML |
 | **JavaScript** | Rich GitHub API integration via `@actions/core` and `@actions/github`, better error handling | Requires bundling, `node_modules` management |
 | **Docker** | Full environment control, reproducible | Slower startup (container pull), larger size |
@@ -227,7 +227,7 @@ jobs:
 The action can accept configuration inputs that customize the gitclaw installation:
 
 | Input | Description | Default |
-|-------|-------------|---------|
+| --- | --- | --- |
 | `provider` | LLM provider | `anthropic` |
 | `model` | Model identifier | `claude-sonnet-4-20250514` |
 | `thinking` | Thinking mode (high, medium, low) | `high` |

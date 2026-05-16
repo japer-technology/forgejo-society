@@ -985,7 +985,7 @@ jobs:
 All commands above are explained in full in the guides under `../transition-plan/`:
 
 | # | Guide | What it covers |
-|---|---|---|
+| --- | --- | --- |
 | 00 | [Overview and checklists](../transition-plan/00-overview.md) | Four-phase checklist and operating rules |
 | 01 | [Ubuntu foundation](../transition-plan/01-ubuntu-foundation.md) | Full OS install and hardening |
 | 13 | [PostgreSQL database](../transition-plan/13-postgresql-database.md) | PostgreSQL install, tuning, backup, restore |

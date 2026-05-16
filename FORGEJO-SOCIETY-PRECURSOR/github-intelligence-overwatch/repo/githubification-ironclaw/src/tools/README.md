@@ -125,7 +125,7 @@ Both are first-class in the extension system (`ironclaw tool install` handles bo
 **Decision guide:**
 
 | Scenario | Use |
-|----------|-----|
+| --- | --- |
 | Good MCP server already exists | **MCP** |
 | Handles sensitive credentials (email send, banking) | **WASM** |
 | Quick prototype or one-off integration | **MCP** |

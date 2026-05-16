@@ -17,7 +17,7 @@ authoritative host inventory. Fill in the MAC address and chosen IP from your ro
 admin panel when you work through Phase 1.
 
 | Hostname | Role | Fixed IP | MAC address |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `forge` | Primary Forgejo server (i9 20-core · 64 GB · 2 TB NVMe) | `192.168.1.10` | — |
 | `llm` | LLM inference server (i9 32-core · 64 GB · RTX 4090) | `192.168.1.11` | — |
 | `runner-01` … `runner-16` | Forgejo runner fleet (i7 8-core · 8 GB · 60 GB SSD) | `192.168.1.20` … `192.168.1.35` | — |
@@ -503,7 +503,7 @@ tmux new-session -s runners
 As machines are added, renamed, or retired, update these three files in order:
 
 | File | What to update |
-|---|---|
+| --- | --- |
 | Router DHCP reservations | Add or remove the MAC → IP binding |
 | `/etc/dnsmasq.d/forge-hosts.conf` (if using Option B) | Add or remove the `address=` line |
 | `~/.ssh/config` (operator workstation) | Add or remove the `Host` alias block |

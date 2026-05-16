@@ -258,7 +258,7 @@ Posts the report as a formatted Markdown document in a new or updated discussion
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | On Package Published | `registry_package.published` | Package Lifecycle |
 | 2 | On Package Updated | `package.updated` | Package Lifecycle |
 | 3 | Issue Linkage from forgejo-intelligent-issue | `registry_package.published` | Package Lifecycle |

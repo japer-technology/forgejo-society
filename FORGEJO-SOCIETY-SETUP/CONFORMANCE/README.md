@@ -14,7 +14,7 @@ SOR-style work — agencies, settlements, critics, provenance?"*
 ## What lives here
 
 | Repo | Path | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Forgejo Conformance Repo | [`forgejo-conformance-repo/`](forgejo-conformance-repo/README.md) | A drop-in repo that installs and runs the conformance suite against a Forgejo installation. |
 
 ---

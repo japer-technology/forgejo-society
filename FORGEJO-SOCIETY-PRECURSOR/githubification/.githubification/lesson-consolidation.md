@@ -9,7 +9,7 @@
 This document consolidates the lessons from six Githubified repositories, each representing a different point on the spectrum of agent complexity, origin, and Githubification strategy:
 
 | # | Repository | Agent | Strategy | Key Lesson |
-|---|-----------|-------|----------|------------|
+| --- | --- | --- | --- | --- |
 | 1 | `japer-technology/github-openclaw` | OpenClaw — 30+ tools, semantic memory, browser automation | **Wrapping** | A complex agent can be Githubified without modifying a single line of its source |
 | 2 | `japer-technology/github-claw` | GitClaw — pi-based, born for GitHub | **Native** | The purest Githubification is an agent that was never meant to run anywhere else |
 | 3 | `japer-technology/github-minimum-intelligence` | GMI — pi-based, born for GitHub | **Native** | When the agent IS the Githubification layer, the architecture collapses to its simplest form |
@@ -26,7 +26,7 @@ Together, these six cases span the full range: from a single-dependency agent bo
 Across all six repositories — regardless of language, complexity, origin, or strategy — the same four GitHub primitives serve the same four roles:
 
 | GitHub Primitive | Role | Universal Across All Six |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | The runner that executes the agent — whether it's a TypeScript lifecycle script, a Python CLI, or a compiled Rust binary |
 | **Git** | Storage and memory | Sessions, conversations, decisions, and state are committed — JSONL, JSON, Markdown, or SQLite |
 | **GitHub Issues** | User interface | Each issue is a conversation thread — the agent reads comments, posts replies, and remembers across sessions |
@@ -47,7 +47,7 @@ The six case studies reveal five distinct strategies for Githubification, ordere
 There is no separate agent to wrap. The `.github-claw/` or `.github-minimum-intelligence/` folder IS the agent. The lifecycle scripts don't translate between GitHub and some external runtime — they speak GitHub natively. The result is the simplest architecture: a two-or-three-step lifecycle pipeline, a single runtime dependency (`pi-coding-agent`), and zero impedance mismatch.
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Agent origin** | Built for GitHub from scratch |
 | **Githubification folder** | IS the agent |
 | **Lifecycle complexity** | 2–3 steps |
@@ -63,7 +63,7 @@ There is no separate agent to wrap. The `.github-claw/` or `.github-minimum-inte
 The `.GITOPENCLAW/` folder sits alongside the agent's source code and orchestrates when and how the agent runs on GitHub Actions. The agent doesn't know it's running on GitHub — the lifecycle scripts translate between GitHub primitives and the agent's native interfaces.
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Agent origin** | External project, ported to GitHub |
 | **Githubification folder** | Alongside the agent source |
 | **Lifecycle complexity** | 5-step pipeline |
@@ -79,7 +79,7 @@ The `.GITOPENCLAW/` folder sits alongside the agent's source code and orchestrat
 Agent Zero requires a persistent HTTP server, WebSocket streaming, FAISS databases, and Docker sandboxing — all incompatible with GitHub Actions' ephemeral execution model. Instead of forcing a brittle partial wrap, the `.issue-intelligence/` folder deploys a different agent (the pi coding agent) that is GitHub-native, with Agent Zero's entire codebase available as read context.
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Agent origin** | External project, incompatible runtime |
 | **Githubification folder** | Alongside the agent source |
 | **Lifecycle complexity** | 3-step pipeline (same as native) |
@@ -95,7 +95,7 @@ Agent Zero requires a persistent HTTP server, WebSocket streaming, FAISS databas
 Agenticana's 20 specialist agents were designed for VS Code and CLI. Githubification must create a routing layer that maps GitHub events (issue opened, label applied, comment created) to the correct specialist agent. This dispatch layer is new infrastructure — not just a wrapper.
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Agent origin** | Built for VS Code/CLI, ported to GitHub |
 | **Githubification folder** | Primarily analysis, not yet implementation |
 | **Lifecycle complexity** | Requires multi-agent dispatch |
@@ -111,7 +111,7 @@ Agenticana's 20 specialist agents were designed for VS Code and CLI. Githubifica
 MicroClaw's channel-agnostic architecture (Telegram, Discord, Slack, Feishu, Web, etc.) means adding GitHub Issues is adding a new adapter to an existing multi-channel system. The agent orchestrates itself — no external lifecycle scripts needed.
 
 | Characteristic | Detail |
-|---|---|
+| --- | --- |
 | **Agent origin** | External project with channel-agnostic design |
 | **Githubification folder** | Design documents + minimal adapter code |
 | **Lifecycle complexity** | Workflow → binary → response |
@@ -156,7 +156,7 @@ Across all six case studies, regardless of strategy, the same structural pattern
 Every Githubified repo follows an ordered pipeline from event to response. The number of steps varies, but the structure is constant:
 
 | Step | OpenClaw | GitClaw | GMI | Agent0 | Agenticana | MicroClaw |
-|------|----------|---------|-----|--------|------------|-----------|
+| --- | --- | --- | --- | --- | --- | --- |
 | **Guard** | Sentinel file (`ENABLED.md`) | Sentinel file | Workflow auth step | Sentinel file | — (analysis phase) | Workflow auth step |
 | **Validate** | Preflight script | — | — | — | — | — |
 | **Indicate** | 👀 reaction | 👀 reaction | 🚀 reaction | 👀 reaction | — | 🚀 reaction |
@@ -172,7 +172,7 @@ The pipeline can be as lean as two files (GMI) or as structured as five steps (O
 Two approaches, both valid:
 
 | Approach | Used By | Mechanism | Kill Switch |
-|----------|---------|-----------|-------------|
+| --- | --- | --- | --- |
 | **Sentinel file** | OpenClaw, GitClaw, Agent0 | A Markdown file (`*-ENABLED.md`) that must exist; lifecycle script checks and exits if missing | `git rm` the file |
 | **Workflow authorization** | GMI, MicroClaw | Workflow step queries GitHub API for actor's permission level; rejects if not admin/maintain/write | GitHub's permission model |
 
@@ -199,7 +199,7 @@ When a user comments on issue #N weeks later, the agent loads the linked session
 Every case study commits agent state to git. The formats vary:
 
 | Repo | Session Format | Memory Format | State Format |
-|------|---------------|---------------|-------------|
+| --- | --- | --- | --- |
 | OpenClaw | JSONL | Append-only `memory.log` with `merge=union` | JSON issue mappings |
 | GitClaw | JSONL | JSONL sessions | JSON issue mappings |
 | GMI | JSONL | Append-only log + skills | JSON issue mappings |
@@ -227,7 +227,7 @@ This is a solved problem. The implementation is nearly identical across OpenClaw
 Every Githubified repo follows the same containment principle: everything the agent needs lives in one folder.
 
 | Repo | Folder | Contains |
-|------|--------|----------|
+| --- | --- | --- |
 | OpenClaw | `.GITOPENCLAW/` | Lifecycle, config, state, installer, tests, docs |
 | GitClaw | `.github-claw/` | Lifecycle, config, state, installer, tests, help, docs |
 | GMI | `.github-minimum-intelligence/` | Lifecycle, config, state, installer, skills, docs |
@@ -244,7 +244,7 @@ The folder is the product. It can be copied, version-controlled, backed up, and 
 Every case study provides a mechanism for agent identity, with increasing sophistication:
 
 | Repo | Identity Mechanism | Identity File |
-|------|-------------------|---------------|
+| --- | --- | --- |
 | OpenClaw | Configured in `AGENTS.md` | `AGENTS.md` |
 | GitClaw | Hatching conversation → `AGENTS.md` | `AGENTS.md` |
 | GMI | Hatching conversation → `AGENTS.md` + `user.md` | `AGENTS.md` |
@@ -261,7 +261,7 @@ GitClaw introduced **personality hatching** — a guided conversation where the 
 Every case study that has reached implementation includes an installer:
 
 | Repo | Installer | Mechanism |
-|------|-----------|-----------|
+| --- | --- | --- |
 | OpenClaw | `GITOPENCLAW-INSTALLER.yml` | GitHub Actions workflow that creates a PR |
 | GitClaw | `github-claw-INSTALLER.ts` | TypeScript script run with Bun |
 | GMI | `MINIMUM-INTELLIGENCE-INSTALLER.ts` + `setup.sh` | Script + curl-pipe-bash + GitHub App |
@@ -277,7 +277,7 @@ The installer creates `.github/workflows/` and `.github/ISSUE_TEMPLATE/` entries
 Every case study includes documentation beyond a README, with increasing depth:
 
 | Repo | Documentation | Purpose |
-|------|--------------|---------|
+| --- | --- | --- |
 | OpenClaw | `analysis/`, capability comparisons | Design reasoning |
 | GitClaw | `help/`, `THE-REPO-IS-THE-MIND.md` | Operational docs + design theory |
 | GMI | `docs/` (DEFCON levels, Four Laws, foundational questions, security assessment) | Governance framework |

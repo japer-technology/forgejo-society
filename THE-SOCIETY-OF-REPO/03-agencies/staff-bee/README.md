@@ -51,7 +51,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `missed_expiry_rate` | % of expiry dates not flagged with sufficient lead time |
 | `compliance_gap_detection_rate` | % of real compliance gaps surfaced |
 | `false_alarm_rate` | % of flagged issues that were not real concerns |

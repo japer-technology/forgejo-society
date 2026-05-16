@@ -17,7 +17,7 @@ public surfaces on purpose, as a deliberate release step.
 ## Repository publication classes
 
 | Class | Where it lives | Mirror cadence | Issues open? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `private` | Forgejo only | — | Internal only |
 | `mirrored-public` | Forgejo + GitHub + Codeberg | On commit | Disabled on mirrors |
 | `open-contribution` | Forgejo + GitHub | On commit | Open on GitHub mirror for intake |

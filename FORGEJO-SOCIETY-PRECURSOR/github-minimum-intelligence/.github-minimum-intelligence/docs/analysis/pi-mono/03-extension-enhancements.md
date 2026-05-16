@@ -11,7 +11,7 @@ GMI has one extension: `github-context.ts`, which registers a `github_repo_conte
 The pi extension API supports significantly more capabilities than GMI currently uses:
 
 | Capability | Used | Available |
-|---|---|---|
+| --- | --- | --- |
 | Custom tools (`registerTool`) | ✅ 1 tool | Unlimited |
 | Custom commands (`registerCommand`) | ❌ | ✅ |
 | Event interception (`on("tool_call")`) | ❌ | ✅ |
@@ -36,7 +36,7 @@ In `--mode json` (headless), all tool, command, event, and flag capabilities wor
 **Blocked patterns:**
 
 | Category | Patterns |
-|---|---|
+| --- | --- |
 | Destructive filesystem | `rm -rf /`, `rm -rf ~`, `rm -rf .` |
 | Privilege escalation | `sudo`, `su -`, `chmod 777` |
 | Network exfiltration | `curl -X POST`, `wget --post-data` |
@@ -88,7 +88,7 @@ export default function (pi: ExtensionAPI) {
 **Protected paths:**
 
 | Path Pattern | Reason |
-|---|---|
+| --- | --- |
 | `.env*` | Environment secrets |
 | `.github/workflows/*` | CI/CD pipeline |
 | `node_modules/` | Dependencies (should use package manager) |
@@ -138,7 +138,7 @@ export default function (pi: ExtensionAPI) {
 **Purpose:** Register additional GitHub-aware tools that reduce the agent's need to construct `gh` CLI commands:
 
 | Tool | Description |
-|---|---|
+| --- | --- |
 | `github_issue_context` | Returns current issue metadata (title, body, labels, assignees, state) |
 | `github_issue_comments` | Returns comments on the current or specified issue |
 | `github_pr_status` | Returns PR status (checks, reviews, merge state) for a given PR number |
@@ -316,7 +316,7 @@ Test by asking the agent to summarise another issue or check PR status:
 ## 5. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Permission gate blocks legitimate operations | Medium | Medium | Use specific patterns (not overly broad); provide bypass instruction in block message |
 | Path protection prevents needed edits | Low | Medium | Allow bash fallback; message explains how to use bash for intentional edits |
 | Extension load failure breaks agent | Low | High | Extensions load independently; one failure doesn't prevent others from loading |

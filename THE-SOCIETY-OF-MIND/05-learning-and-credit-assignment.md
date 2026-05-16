@@ -14,7 +14,7 @@ This page collects those moves and is honest about the gaps.
 Three pictures of learning Minsky explicitly rejects:
 
 | Rejected picture | Why |
-|---|---|
+| --- | --- |
 | Learning is "training a single network" | A single network has no place to put the structure that lets a society reuse what it has learned in new contexts. |
 | Learning is "adding facts to a knowledge base" | Papert's Principle: most growth is *administrative* — better ways to use what you already know. |
 | Learning is "global optimisation of a single utility" | Non-Compromise: averaging across competing agencies usually corrupts both. |

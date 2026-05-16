@@ -20,7 +20,7 @@ owner-briefings/
 ## Briefing types
 
 | Type | Contents |
-|---|---|
+| --- | --- |
 | `briefing` | Summary of completed analyses and settled actions |
 | `approval_request` | Formal request for human approval before action proceeds |
 | `action_confirmation` | Confirmation that an approved action was completed |

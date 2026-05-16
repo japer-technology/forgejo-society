@@ -10,14 +10,14 @@ This document applies Toulmin's model to the core arguments advanced by GitHub M
 
 ## 1. The Model
 
-| Component     | Role                                                                 |
-|---------------|----------------------------------------------------------------------|
-| **Claim**     | The assertion being made                                             |
-| **Grounds**   | The evidence or data supporting the claim                            |
-| **Warrant**   | The reasoning principle that connects grounds to claim               |
-| **Backing**   | The authority, evidence, or convention that supports the warrant     |
-| **Qualifier** | The degree of certainty — *probably*, *necessarily*, *presumably*    |
-| **Rebuttal**  | Conditions under which the claim would not hold                      |
+| Component | Role |
+| --- | --- |
+| **Claim** | The assertion being made |
+| **Grounds** | The evidence or data supporting the claim |
+| **Warrant** | The reasoning principle that connects grounds to claim |
+| **Backing** | The authority, evidence, or convention that supports the warrant |
+| **Qualifier** | The degree of certainty — *probably*, *necessarily*, *presumably* |
+| **Rebuttal** | Conditions under which the claim would not hold |
 
 A complete Toulmin argument reads: *"Given **Grounds**, and since **Warrant** (because **Backing**), **Qualifier** **Claim** — unless **Rebuttal**."*
 

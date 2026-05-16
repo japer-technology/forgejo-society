@@ -23,7 +23,7 @@ The previous case studies present two extremes. AutoGPT requires PostgreSQL, Red
 But the SDK introduces a new consideration that LangChain.js's provider-agnostic architecture avoids: **provider gravity**. While the SDK supports 100+ LLMs through LiteLLM, its core primitives — `Agent`, `Runner`, `Handoff`, `Guardrail`, `Session` — are designed around OpenAI's Responses and Chat Completions APIs. The tracing system integrates natively with the OpenAI dashboard. The realtime voice capabilities use OpenAI's WebSocket transport. The server-managed conversation feature (`conversation_id`, `previous_response_id`) is an OpenAI-specific optimization. For Githubification, this means the framework works best with an OpenAI API key in GitHub Secrets — and while other providers are supported, the experience is most complete with OpenAI.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — CI/CD workflows for linting, type-checking, testing across 5 Python versions, doc building, and publishing; could directly execute OpenAI Agents SDK agents |
 | **Git** | Storage — the repository itself, plus `PLANS.md` for task tracking; could store agent sessions, conversation history, and decision logs |
 | **GitHub Issues** | UI — currently used for bug reports, feature requests, model provider requests, and questions; could become the conversational interface for interacting with SDK-built agents |
@@ -182,7 +182,7 @@ This is the most sophisticated AI agent readiness infrastructure of any case stu
 The most important pattern in `github-openai-agents-python` is its positioning relative to the other Type 1 case studies:
 
 | Dimension | AutoGPT (Platform) | LangChain.js (Framework) | OpenAI Agents SDK (SDK) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **What it is** | Platform for building and running agents | Framework for composing LLM applications | SDK for building multi-agent workflows |
 | **Language** | Python + TypeScript | TypeScript | Python |
 | **Runtime dependencies** | PostgreSQL, Redis, RabbitMQ, Supabase, ClamAV, Docker | Node.js | Python 3.10+, uv |
@@ -228,7 +228,7 @@ Unlike LangChain.js where the Runnable interface provides a universal but abstra
 The `.agents/skills/` directory introduces a concept unique to this case study: **modular skill definitions** for AI coding agents:
 
 | Skill | Purpose |
-|---|---|
+| --- | --- |
 | `code-change-verification` | Full verification stack (format, lint, type-check, test) for code changes |
 | `docs-sync` | Documentation synchronization after code changes |
 | `examples-auto-run` | Automatic validation of examples |
@@ -278,7 +278,7 @@ For Githubification, this means: the **optimal** experience requires an OpenAI A
 The repository's AI readiness infrastructure is the most structured of any case study, organized in three layers:
 
 | Layer | Files | Audience | Purpose |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Onboarding** | `AGENTS.md`, `CLAUDE.md` | All AI coding agents | How to understand, build, test, and contribute to the project |
 | **Planning** | `PLANS.md` | AI agents doing multi-step work | How to plan, execute, and document complex tasks |
 | **Skills** | `.agents/skills/*` | AI agents during development | Reusable, named capabilities that agents can invoke |
@@ -354,7 +354,7 @@ result = Runner.run_sync(sdk_agent, user_issue_comment)
 This is the composition pattern identified in the LangChain.js lesson — the agent is built from the framework's own components. But the OpenAI Agents SDK adds capabilities that LangChain.js's Runnable interface doesn't provide as first-class concepts:
 
 | Capability | LangChain.js | OpenAI Agents SDK |
-|---|---|---|
+| --- | --- | --- |
 | **Multi-agent handoffs** | Must be composed from chains | Built-in `Handoff` primitive |
 | **Input/output guardrails** | Must be composed from validators | Built-in `Guardrail` class |
 | **Session persistence** | Must be composed from memory classes | Built-in `Session` management |

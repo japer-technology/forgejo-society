@@ -55,7 +55,7 @@ See [constitution.yaml](constitution.yaml).
 Every web-research-bee proposal passes through:
 
 | Critic | Why |
-|---|---|
+| --- | --- |
 | `source-quality-critic` | Web sources vary widely in reliability; proposals built on low-quality sources are challenged |
 | `staleness-critic` | Web content has a publish date; proposals based on old information are challenged |
 | `overconfidence-critic` | A single web source is rarely sufficient for a high-confidence claim |
@@ -65,7 +65,7 @@ Every web-research-bee proposal passes through:
 ## Active censors
 
 | Censor | Why |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | All outbound HTTP calls are cloud-egress events |
 | `credential-censor` | API keys must not appear in proposed action text |
 | `pii-exfiltration-censor` | Personal data must not be included in search queries or API calls |
@@ -75,7 +75,7 @@ Every web-research-bee proposal passes through:
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `source_quality_score` | Average quality rating of sources used |
 | `claim_accuracy_on_verification` | % of claims verified as accurate on spot-check |
 | `retrieval_latency` | Time from research request to summary in workspace |

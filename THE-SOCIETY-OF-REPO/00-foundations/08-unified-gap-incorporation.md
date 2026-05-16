@@ -14,7 +14,7 @@ The target is to make each research-backed cognitive mechanism explicit as one o
 ## Coverage map
 
 | # | Unified gap requirement | Incorporated in THE-SOCIETY-OF-REPO |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Frames as first-class system | `06-memory/frames/README.md`, `02-protocols/04-activation.md`, `00-foundations/02-cognitive-loop.md` |
 | 2 | Representation protocol | `02-protocols/09-representation.md`, `02-protocols/06-memory.md` |
 | 3 | Insulation as architecture rule | `02-protocols/12-insulation.md`, `00-foundations/04-anti-patterns.md` |

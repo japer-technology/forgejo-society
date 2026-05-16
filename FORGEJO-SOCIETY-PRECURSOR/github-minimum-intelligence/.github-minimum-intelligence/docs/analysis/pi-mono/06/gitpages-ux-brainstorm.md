@@ -11,7 +11,7 @@ The core tension: GMI's "GitHub as Infrastructure" principle means the canonical
 GitHub Pages should make the project accessible to audiences who will never navigate GitHub's developer-centric interface. The key distinction is not "extension vs. replacement" but "who is the audience?"
 
 | Pattern | Example | Audience | Alignment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Pages as read-only view** | Published documentation, session viewer | Non-developers, evaluators | ✅ High — makes Git content legible without Git literacy |
 | **Pages as tool distribution** | Downloadable CLI scripts, configuration generators | New adopters | ✅ High — GitHub serves the file; user runs it locally |
 | **Pages as interactive tool** | Browser-based config editor, issue composer | New adopters, maintainers | ✅ Medium-High — adds guided UX that GitHub's native interface lacks |
@@ -253,7 +253,7 @@ These ideas use Pages to host a Progressive Web App that provides offline-capabl
 ## 6. Priority Assessment
 
 | ID | Idea | Category | Effort | Value | Alignment | Priority |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 2.1 | Agent Interaction Gallery | A (Read-only) | 4–8h | High | High | **P2** |
 | 2.2 | Architecture Explorer | A (Read-only) | 8–16h | Medium | High | P3 |
 | 2.3 | Governance Dashboard | A (Read-only) | 4–6h | Medium | High | P3 |
@@ -337,7 +337,7 @@ This pattern preserves the "GitHub as Infrastructure" principle while acknowledg
 Most ideas in this brainstorm **do not require pi-web-ui**. The only ideas that would benefit from it are:
 
 | Idea | pi-web-ui Relevance |
-|---|---|
+| --- | --- |
 | Agent Interaction Gallery (2.1) | Would use pi-web-ui for rich session rendering |
 | Session Diagnostic Tool (4.1) | Could use pi-web-ui components for JSONL event display |
 | Offline Session Reader (5.1) | Would use pi-web-ui for mobile-friendly session rendering |

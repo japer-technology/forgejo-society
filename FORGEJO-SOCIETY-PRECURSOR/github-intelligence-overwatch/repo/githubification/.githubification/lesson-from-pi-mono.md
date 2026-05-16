@@ -25,7 +25,7 @@ Pi-mono is not a single agent. It is a _system_ of packages that compose into an
 Yet the architecture also provides everything a Githubification layer needs:
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner executes the coding agent via `npx tsx packages/coding-agent/src/cli.ts` or downloads a pre-built binary from GitHub Releases |
 | **Git** | Storage and memory — the agent already manages sessions and state via the filesystem; git commits provide persistence |
 | **GitHub Issues** | User interface — the agent's CLI interface accepts text input and produces text output, directly mappable to issue comments |
@@ -118,7 +118,7 @@ But pi-mono itself cannot use this shortcut. Inside the monorepo, packages refer
 The monorepo contains seven packages, but only one of them is the agent:
 
 | Package | Role | Githubification Relevance |
-|---------|------|---------------------------|
+| --- | --- | --- |
 | `pi-ai` | Multi-provider LLM API | Abstraction layer — supports OpenAI, Anthropic, Google, xAI, DeepSeek, Mistral, Groq, OpenRouter |
 | `pi-agent-core` | Agent runtime with tool calling | The execution engine — manages tool loops, state, and message history |
 | `pi-coding-agent` | Interactive coding agent CLI | **The agent itself** — what a Githubification layer would invoke |
@@ -150,7 +150,7 @@ This document is not just documentation — it's the instruction set that govern
 Pi-mono implements a three-workflow contributor management system that is documented in `.WORKFLOW-DESIGN-THEORY.md`:
 
 | Workflow | Trigger | Effect |
-|----------|---------|--------|
+| --- | --- | --- |
 | **PR Gate** (`pr-gate.yml`) | `pull_request_target: opened` | Checks if PR author is a bot, collaborator, or in `APPROVED_CONTRIBUTORS`; auto-closes unauthorized PRs |
 | **Approve Contributor** (`approve-contributor.yml`) | `issue_comment: created` | On `lgtm` from a maintainer, adds the issue author to `APPROVED_CONTRIBUTORS` and commits |
 | **CI** (`ci.yml`) | Push to main, PRs targeting main | `npm ci → npm run build → npm run check → npm test` in a single sequential job |
@@ -185,7 +185,7 @@ The IronClaw lesson identified pre-built binaries as an escape hatch for Rust. P
 Pi-mono includes a `.pi/` directory at the repository root — the same configuration mechanism used by the pi coding agent when it runs inside any repository. This directory contains:
 
 | Subdirectory | Contents | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `extensions/` | `diff.ts`, `files.ts`, `prompt-url-widget.ts`, `redraws.ts`, `tps.ts` | Custom tools that extend the agent's capabilities when working on this repo |
 | `prompts/` | `cl.md`, `is.md`, `pr.md` | Reusable prompt templates for changelog, issues, and PR workflows |
 | `git/` | `.gitignore` | Git configuration for agent sessions |
@@ -232,7 +232,7 @@ This also means that when GMI or GitClaw depends on `@mariozechner/pi-coding-age
 Pi-mono occupies a unique position in the Githubification case studies. It is not a Githubified repo. It is not even a repo that is about to be Githubified. It is **the engine that makes Githubification possible** for other repos.
 
 | Dimension | Other Type 1 Subjects | Pi Mono |
-|-----------|----------------------|---------|
+| --- | --- | --- |
 | **Role** | Agent to be Githubified | Agent that powers Githubification |
 | **Complexity** | Single agent (OpenClaw, IronClaw) or single folder (GMI, GitClaw) | 7-package monorepo with shared build chain |
 | **Githubification status** | Wrapped, native, or pre-Githubification | Pre-Githubification, but already consumed by Githubified repos |

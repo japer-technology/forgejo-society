@@ -9,7 +9,7 @@ Publishing a service turns useful cognition into a tradable, inspectable capabil
 ## Published services
 
 | Service | Description |
-|---|---|
+| --- | --- |
 | [contract-extraction-service/](contract-extraction-service/README.md) | Extract obligations, dates, and risks from business contracts |
 | [tax-pack-service/](tax-pack-service/README.md) | Prepare structured BAS and tax pack data for accountant review |
 

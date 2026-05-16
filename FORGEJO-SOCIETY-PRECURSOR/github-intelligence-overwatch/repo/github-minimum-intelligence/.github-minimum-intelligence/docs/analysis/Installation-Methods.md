@@ -498,7 +498,7 @@ jobs:
 ## Summary Comparison Matrix
 
 | # | Method | Changes to Source Repo | Works for Existing Repos | Auto-Updates | Complexity | Dependencies |
-|---|--------|----------------------|--------------------------|-------------|------------|-------------|
+| --- | --- | --- | --- | --- | --- | --- |
 | 1 | **curl/wget one-liner** | Add `install.sh` + docs | ✅ | ❌ | � Minimal | None |
 | 2 | **`gh` CLI extension** | Separate extension repo | ✅ | Via `gh extension upgrade` | � Low-Med | `gh` CLI |
 | 3 | **Template repository** | Enable setting | ❌ (new repos only) | ❌ | � Minimal | None |

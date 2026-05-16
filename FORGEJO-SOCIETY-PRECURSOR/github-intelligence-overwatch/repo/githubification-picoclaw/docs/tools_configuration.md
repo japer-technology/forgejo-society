@@ -22,35 +22,35 @@ Web tools are used for web search and fetching.
 
 ### Brave
 
-| Config        | Type   | Default | Description               |
-| ------------- | ------ | ------- | ------------------------- |
-| `enabled`     | bool   | false   | Enable Brave search       |
-| `api_key`     | string | -       | Brave Search API key      |
-| `max_results` | int    | 5       | Maximum number of results |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enabled` | bool | false | Enable Brave search |
+| `api_key` | string | - | Brave Search API key |
+| `max_results` | int | 5 | Maximum number of results |
 
 ### DuckDuckGo
 
-| Config        | Type | Default | Description               |
-| ------------- | ---- | ------- | ------------------------- |
-| `enabled`     | bool | true    | Enable DuckDuckGo search  |
-| `max_results` | int  | 5       | Maximum number of results |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enabled` | bool | true | Enable DuckDuckGo search |
+| `max_results` | int | 5 | Maximum number of results |
 
 ### Perplexity
 
-| Config        | Type   | Default | Description               |
-| ------------- | ------ | ------- | ------------------------- |
-| `enabled`     | bool   | false   | Enable Perplexity search  |
-| `api_key`     | string | -       | Perplexity API key        |
-| `max_results` | int    | 5       | Maximum number of results |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enabled` | bool | false | Enable Perplexity search |
+| `api_key` | string | - | Perplexity API key |
+| `max_results` | int | 5 | Maximum number of results |
 
 ## Exec Tool
 
 The exec tool is used to execute shell commands.
 
-| Config                 | Type  | Default | Description                                |
-| ---------------------- | ----- | ------- | ------------------------------------------ |
-| `enable_deny_patterns` | bool  | true    | Enable default dangerous command blocking  |
-| `custom_deny_patterns` | array | []      | Custom deny patterns (regular expressions) |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enable_deny_patterns` | bool | true | Enable default dangerous command blocking |
+| `custom_deny_patterns` | array | [] | Custom deny patterns (regular expressions) |
 
 ### Functionality
 
@@ -91,9 +91,9 @@ By default, PicoClaw blocks the following dangerous commands:
 
 The cron tool is used for scheduling periodic tasks.
 
-| Config                 | Type | Default | Description                                    |
-| ---------------------- | ---- | ------- | ---------------------------------------------- |
-| `exec_timeout_minutes` | int  | 5       | Execution timeout in minutes, 0 means no limit |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `exec_timeout_minutes` | int | 5 | Execution timeout in minutes, 0 means no limit |
 
 ## MCP Tool
 
@@ -101,23 +101,23 @@ The MCP tool enables integration with external Model Context Protocol servers.
 
 ### Global Config
 
-| Config    | Type   | Default | Description                         |
-| --------- | ------ | ------- | ----------------------------------- |
-| `enabled` | bool   | false   | Enable MCP integration globally     |
-| `servers` | object | `{}`    | Map of server name to server config |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `enabled` | bool | false | Enable MCP integration globally |
+| `servers` | object | `{}` | Map of server name to server config |
 
 ### Per-Server Config
 
-| Config     | Type   | Required | Description                                |
-| ---------- | ------ | -------- | ------------------------------------------ |
-| `enabled`  | bool   | yes      | Enable this MCP server                     |
-| `type`     | string | no       | Transport type: `stdio`, `sse`, `http`     |
-| `command`  | string | stdio    | Executable command for stdio transport     |
-| `args`     | array  | no       | Command arguments for stdio transport      |
-| `env`      | object | no       | Environment variables for stdio process    |
-| `env_file` | string | no       | Path to environment file for stdio process |
-| `url`      | string | sse/http | Endpoint URL for `sse`/`http` transport    |
-| `headers`  | object | no       | HTTP headers for `sse`/`http` transport    |
+| Config | Type | Required | Description |
+| --- | --- | --- | --- |
+| `enabled` | bool | yes | Enable this MCP server |
+| `type` | string | no | Transport type: `stdio`, `sse`, `http` |
+| `command` | string | stdio | Executable command for stdio transport |
+| `args` | array | no | Command arguments for stdio transport |
+| `env` | object | no | Environment variables for stdio process |
+| `env_file` | string | no | Path to environment file for stdio process |
+| `url` | string | sse/http | Endpoint URL for `sse`/`http` transport |
+| `headers` | object | no | HTTP headers for `sse`/`http` transport |
 
 ### Transport Behavior
 
@@ -176,13 +176,13 @@ The skills tool configures skill discovery and installation via registries like 
 
 ### Registries
 
-| Config                             | Type   | Default              | Description             |
-| ---------------------------------- | ------ | -------------------- | ----------------------- |
-| `registries.clawhub.enabled`       | bool   | true                 | Enable ClawHub registry |
-| `registries.clawhub.base_url`      | string | `https://clawhub.ai` | ClawHub base URL        |
-| `registries.clawhub.search_path`   | string | `/api/v1/search`     | Search API path         |
-| `registries.clawhub.skills_path`   | string | `/api/v1/skills`     | Skills API path         |
-| `registries.clawhub.download_path` | string | `/api/v1/download`   | Download API path       |
+| Config | Type | Default | Description |
+| --- | --- | --- | --- |
+| `registries.clawhub.enabled` | bool | true | Enable ClawHub registry |
+| `registries.clawhub.base_url` | string | `https://clawhub.ai` | ClawHub base URL |
+| `registries.clawhub.search_path` | string | `/api/v1/search` | Search API path |
+| `registries.clawhub.skills_path` | string | `/api/v1/skills` | Skills API path |
+| `registries.clawhub.download_path` | string | `/api/v1/download` | Download API path |
 
 ### Configuration Example
 

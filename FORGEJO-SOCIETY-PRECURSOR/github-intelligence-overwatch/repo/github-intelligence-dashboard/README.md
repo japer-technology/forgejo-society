@@ -13,7 +13,7 @@ Providing an account-wide GitHub Pages dashboard for active repositories that co
 ## Dashboard features
 
 | Section | Description |
-|---|---|
+| --- | --- |
 | **Summary bar** | Owner, active intelligence repo count, total public repos scanned, last generation timestamp (with relative time). |
 | **🧩 Intelligence types** | Tile grid showing how many repos use each intelligence framework type (minimum, maximum, agenticana, etc.). |
 | **🆘 Emergency Control** | Dedicated panel showing the emergency system's fail-safe state, disable/kill trigger presence, version, dry-run log count, and workflow file inventory. |

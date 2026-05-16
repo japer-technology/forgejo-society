@@ -17,7 +17,7 @@ NullClaw 采用 vtable 可插拔架构。多数能力通过接口实现并在工
 ## 子系统与扩展点
 
 | 子系统 | 接口 | 内置实现（节选） | 扩展方式 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AI Models | `Provider` | OpenRouter、Anthropic、OpenAI、Azure OpenAI、Gemini、Vertex AI、Ollama、Groq、Mistral、xAI、DeepSeek、Together、Fireworks、Perplexity、Cohere、Bedrock、Venice 等 50+ | 添加 provider 实现并注册 |
 | Channels | `Channel` | CLI、Telegram、Signal、Discord、Slack、Matrix、WhatsApp、Nostr、IRC、Lark、Line、DingTalk、Email、OneBot、QQ、MaixCam、Mattermost、iMessage、Web | 添加 channel 实现并注册 |
 | Memory | `Memory` | SQLite（hybrid 检索）、Markdown、ClickHouse、PostgreSQL、Redis、LanceDB、Lucid、LRU、API、None | 新增 memory backend |
@@ -31,7 +31,7 @@ NullClaw 采用 vtable 可插拔架构。多数能力通过接口实现并在工
 ## Memory 子系统
 
 | 层 | 实现 |
-|---|---|
+| --- | --- |
 | Vector 检索 | embedding 以 BLOB 存储在 SQLite，使用 cosine similarity |
 | Keyword 检索 | SQLite FTS5 + BM25 |
 | Hybrid 合并 | vector + keyword 加权合并 |

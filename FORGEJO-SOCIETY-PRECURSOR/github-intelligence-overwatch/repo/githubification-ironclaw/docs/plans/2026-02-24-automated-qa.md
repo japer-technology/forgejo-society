@@ -11,7 +11,7 @@
 A review of all closed issues and merged bug-fix PRs reveals that most IronClaw bugs fall into a few recurring categories:
 
 | Category | Examples | Root Cause |
-|----------|----------|------------|
+| --- | --- | --- |
 | Config persistence | Wizard re-triggers on restart, LLM backend silently ignored | No round-trip test for config write→restart→read |
 | Turn persistence | Tool approval results lost, user messages lost on crash | No test that persists a turn and reads it back |
 | Tool schema validity | `required`/`properties` mismatch → 400s with OpenAI strict mode | No schema validator in CI |
@@ -730,7 +730,7 @@ struct GarbageProvider;
 **Test scenarios:**
 
 | Scenario | Setup | Expected |
-|----------|-------|----------|
+| --- | --- | --- |
 | Primary fails, secondary works | FlakeyProvider(3) + working provider | Failover after 3 retries, user gets response |
 | All providers fail | FlakeyProvider(max) x3 | Graceful error to user, no panic |
 | Context limit mid-conversation | ContextBombProvider(5) | Auto-compaction triggers, conversation continues |
@@ -875,7 +875,7 @@ fn sanitizer_blocks_command_injection() {
 ## Implementation Priority
 
 | Priority | Tier | Item | Effort | Bugs Prevented |
-|----------|------|------|--------|----------------|
+| --- | --- | --- | --- | --- |
 | P0 | 1.1 | Tool schema validator | 1 day | Schema 400s with every provider |
 | P0 | 1.3 | Feature-flag CI matrix | 0.5 day | Dead code behind wrong cfg gate |
 | P0 | 1.4 | Docker build in CI | 0.5 day | Broken Docker builds |

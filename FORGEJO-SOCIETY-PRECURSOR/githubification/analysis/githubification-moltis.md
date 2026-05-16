@@ -38,7 +38,7 @@ This is the same strategy identified for MicroClaw in the Githubification lesson
 Across every Githubified repository — regardless of language, complexity, or strategy — the same four GitHub primitives serve the same four roles:
 
 | GitHub Primitive | Role in Githubified Moltis |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the Moltis binary as an ephemeral process triggered by issue events |
 | **Git** | Storage and memory — SQLite database, session files, and memory committed to the repo between runs |
 | **GitHub Issues** | User interface — each issue is a conversation thread; the agent reads comments and posts replies |
@@ -53,7 +53,7 @@ Moltis already has direct equivalents for every GMI capability. The mapping show
 ### Core Agent Capabilities
 
 | GMI Capability | Moltis Equivalent | Crate(s) | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Agent loop (pi-mono) | Agent runner with streaming | `moltis-agents` | Multi-step tool execution, sub-agent delegation |
 | Session management | JSONL session persistence | `moltis-sessions` | Auto-compaction, session resume |
 | System prompt | `moltis.toml` config | `moltis-config` | Per-agent personality, model selection |
@@ -65,7 +65,7 @@ Moltis already has direct equivalents for every GMI capability. The mapping show
 ### Channel Architecture
 
 | GMI Primitive | Moltis Channel Equivalent | Current Channels |
-|---|---|---|
+| --- | --- | --- |
 | Issue → conversation | Channel message → agent | Telegram, Discord, MS Teams, WhatsApp, Web UI |
 | Issue comment → continue | Incoming message on existing session | All channels support multi-turn |
 | Agent reply → issue comment | Outgoing message | All channels have send/reply |
@@ -74,7 +74,7 @@ Moltis already has direct equivalents for every GMI capability. The mapping show
 ### Security Model
 
 | GMI Security | Moltis Equivalent | Implementation |
-|---|---|---|
+| --- | --- | --- |
 | Workflow authorization (collaborator check) | Auth middleware | `moltis-gateway/src/auth.rs` — password + passkey + API key |
 | GitHub Secrets for API keys | Vault encryption | `moltis-vault` — XChaCha20-Poly1305 + Argon2id |
 | Agent only responds to authorized users | Channel allowlist | Per-channel sender authorization with OTP flow |
@@ -87,7 +87,7 @@ Moltis already has direct equivalents for every GMI capability. The mapping show
 Like IronClaw, Moltis has architectural decisions that serve as "escape hatches" — features that make Githubification viable without fundamental redesign:
 
 | Challenge | Moltis Escape Hatch |
-|---|---|
+| --- | --- |
 | Rust must be compiled before it can run | **Release binaries** — Moltis already publishes pre-built binaries via GitHub Releases, Homebrew, Docker, and Linux packages. The workflow can download and run directly. |
 | Database needs external services | **SQLite** — Moltis uses SQLite (via sqlx) for all persistence. No PostgreSQL, no external database. The SQLite file can be committed to git between runs. |
 | Tool execution needs isolation | **WASM sandbox** — `moltis-tools` runs untrusted tools in WASM containers via wasmtime. No Docker required on the Actions runner. |
@@ -301,7 +301,7 @@ This produces a significantly smaller binary focused only on the capabilities re
 ## Comparison with GMI
 
 | Dimension | GMI | Githubified Moltis |
-|---|---|---|
+| --- | --- | --- |
 | **Language** | TypeScript (Bun runtime) | Rust (compiled binary) |
 | **Core dependency** | `pi-coding-agent` (npm) | Self-contained (the binary IS the agent) |
 | **Install method** | `bun install` | Download pre-built binary |
@@ -338,7 +338,7 @@ Githubified Moltis would be a significantly more capable GitHub-native agent:
 ## Challenges and Mitigations
 
 | Challenge | Severity | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **Binary size** — Full Moltis binary is ~44 MB | Low | Feature-gated `github-agent` build excludes voice, browser, CalDAV, etc. Estimated 15-20 MB. |
 | **Build time** — Rust compilation takes 5-10 min | Low | Pre-built binaries from releases. Build from source only as fallback. |
 | **SQLite binary diffs** — Opaque in git | Medium | Per-issue concurrency groups prevent parallel writes. Human-readable companion exports (auto-generated during the commit step in Phase 4) provide auditability. |
@@ -352,7 +352,7 @@ Githubified Moltis would be a significantly more capable GitHub-native agent:
 ## Implementation Effort Estimate
 
 | Phase | Effort | Description |
-|---|---|---|
+| --- | --- | --- |
 | **Phase 1** — Channel adapter | ~500-800 LoC | New `moltis-github-channel` crate implementing the channel trait |
 | **Phase 2** — CLI subcommand | ~200-300 LoC | `github-agent` subcommand in `moltis-cli` |
 | **Phase 3** — Workflow file | ~150-200 lines YAML | Single workflow file following GMI patterns |

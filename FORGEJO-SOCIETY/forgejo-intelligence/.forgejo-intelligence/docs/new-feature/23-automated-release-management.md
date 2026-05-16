@@ -40,7 +40,7 @@ Conventional commit parsers (`feat:` → minor, `fix:` → patch, `BREAKING CHAN
 ### 5. It Composes With the Communication Stack
 
 | Feature | Release Integration |
-|---|---|
+| --- | --- |
 | **Dashboard (14)** | Release history feeds the dashboard timeline |
 | **Notification Intelligence (20)** | Releases reach the widest audience per §10 |
 | **Knowledge Base (17)** | Each release becomes a KB article (decisions bundled into a milestone) |
@@ -70,7 +70,7 @@ Conventional commit parsers (`feat:` → minor, `fix:` → patch, `BREAKING CHAN
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Commit analyzer** | Parse commits, classify types, extract references | ~2 hours |
 | **Version calculator** | Semantic version bump logic | ~1 hour |
 | **Changelog generator** | Categorized, attributed, linked changelog | ~2 hours |

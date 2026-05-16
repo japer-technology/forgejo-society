@@ -17,14 +17,14 @@ code per day. 100+ commits per week. Not by a team. By one person, part-time,
 using the right tools. The compression ratio between human-team time and
 AI-assisted time ranges from 3x (research) to 100x (boilerplate):
 
-| Task type                   | Human team | AI-assisted | Compression |
-|-----------------------------|-----------|-------------|-------------|
-| Boilerplate / scaffolding   | 2 days    | 15 min      | ~100x       |
-| Test writing                | 1 day     | 15 min      | ~50x        |
-| Feature implementation      | 1 week    | 30 min      | ~30x        |
-| Bug fix + regression test   | 4 hours   | 15 min      | ~20x        |
-| Architecture / design       | 2 days    | 4 hours     | ~5x         |
-| Research / exploration      | 1 day     | 3 hours     | ~3x         |
+| Task type | Human team | AI-assisted | Compression |
+| --- | --- | --- | --- |
+| Boilerplate / scaffolding | 2 days | 15 min | ~100x |
+| Test writing | 1 day | 15 min | ~50x |
+| Feature implementation | 1 week | 30 min | ~30x |
+| Bug fix + regression test | 4 hours | 15 min | ~20x |
+| Architecture / design | 2 days | 4 hours | ~5x |
+| Research / exploration | 1 day | 3 hours | ~3x |
 
 This table changes everything about how you make build-vs-skip decisions.
 The last 10% of completeness that teams used to skip? It costs seconds now.

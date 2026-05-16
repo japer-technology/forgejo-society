@@ -18,7 +18,7 @@
 ## Guiding Principles
 
 | Principle | Meaning |
-|---|---|
+| --- | --- |
 | **Git-native state** | All agent memory, decisions, and artifacts stay in the repo — diffable, auditable, revertable. |
 | **Zero external infrastructure** | Everything runs on GitHub Actions, the GitHub API, and the repository itself. |
 | **Incremental opt-in** | Each capability is a separate workflow/skill that a repo owner enables explicitly. |
@@ -305,7 +305,7 @@ Track what the agent does, how long it takes, and what it costs.
 ## Phase Summary
 
 | Phase | Focus | Key Outcomes |
-|---|---|---|
+| --- | --- | --- |
 | **0** | Foundation (done) | Issue-driven agent with git-backed state |
 | **1** | Pull Request Lifecycle | Agent reviews PRs, posts checks, gates merges |
 | **2** | Project Management & Triage | Auto-labeling, project board sync, milestone tracking |
@@ -361,7 +361,7 @@ How each GitHub feature connects to GitClaw:
 ## Feature × Phase Matrix
 
 | Feature | Phase | Trigger / API | New Permissions | Key Skill |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Pull Requests | 1 | `pull_request` event | `pull-requests: write` | `pr-review` |
 | PR Reviews | 1 | `pull_request_review` event | `pull-requests: write` | `pr-review` |
 | PR Comments / Threads | 1 | `pull_request_review_comment` event | `pull-requests: write` | `pr-review` |

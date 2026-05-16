@@ -23,7 +23,7 @@ The Agent Zero lesson demonstrated substitution: the agent was too complex to ru
 This separation means Githubification does not need to substitute. It can **run nanobot's actual agent loop** on GitHub Actions, with GitHub Issues as the communication channel. The agent loop is the same code that processes Telegram messages — it just receives its input from an issue comment instead of a Telegram webhook. The tools are the same. The LLM reasoning is the same. The memory system is the same. The skills are the same.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that installs nanobot and executes the agent loop |
 | **Git** | Storage and memory — sessions, workspace state, and memory files are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread, replacing Telegram/Discord/etc. |
@@ -106,7 +106,7 @@ The separation between `agent/` and `channels/` is the architectural feature tha
 The repository includes multiple deployment mechanisms — `pip install`, Docker, docker-compose, systemd service — all designed for persistent, long-running execution:
 
 | Deployment Method | Execution Model | GitHub Actions Compatible? |
-|---|---|---|
+| --- | --- | --- |
 | `pip install nanobot-ai` + `nanobot agent -m "..."` | Single-shot CLI | ✅ Yes — one message, one response |
 | `nanobot gateway` | Persistent process, multi-channel | ❌ No — requires long-running daemon |
 | Docker / docker-compose | Persistent container | ❌ No — requires long-running container |
@@ -137,7 +137,7 @@ This is the inverse of Agent Zero's architecture, where the agent was deeply cou
 nanobot's Python dependencies are substantial (~25 packages in `pyproject.toml`) but not prohibitive:
 
 | Category | Dependencies | Cold Start Impact |
-|---|---|---|
+| --- | --- | --- |
 | Core | `litellm`, `pydantic`, `httpx`, `loguru`, `rich` | ~30 seconds |
 | Channels | `python-telegram-bot`, `slack-sdk`, `lark-oapi`, `dingtalk-stream`, etc. | Installed but unused on Actions |
 | Tools | `croniter`, `readability-lxml`, `mcp` | Minimal |
@@ -216,7 +216,7 @@ nanobot's security model includes:
 On GitHub Actions, these protections layer with GitHub's own security model:
 
 | nanobot Security | GitHub Actions Security |
-|---|---|
+| --- | --- |
 | Command blocking | Runner isolation (ephemeral VMs) |
 | Path traversal protection | Repository-scoped filesystem |
 | Workspace sandboxing | Working directory scoping |
@@ -230,7 +230,7 @@ The two security models are complementary. nanobot's built-in guards handle LLM-
 The multi-channel gateway (`nanobot gateway`) is nanobot's most visible feature and the one that fundamentally cannot run on GitHub Actions. The gateway:
 
 | Gateway Requirement | GitHub Actions Constraint |
-|---|---|
+| --- | --- |
 | Maintains persistent WebSocket connections to Telegram, Discord, Slack, Feishu, DingTalk | No persistent connections — each run is ephemeral |
 | Keeps WhatsApp session alive via Node.js bridge on localhost:3001 | No persistent processes between workflow runs |
 | Polls IMAP for incoming email continuously | No long-running polling loops |
@@ -276,7 +276,7 @@ When nanobot runs on GitHub Actions, it brings its full skill system: GitHub ope
 A component-by-component evaluation of nanobot against GitHub Actions' constraints:
 
 | Component | Feasibility | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Agent loop (loop.py) | ✅ Highly feasible | Stateless per-turn, external LLM API calls, fits ephemeral model perfectly |
 | Tool system (shell, filesystem, web) | ✅ Highly feasible | All tools work on standard runners; shell guards prevent dangerous commands |
 | Skills system | ✅ Highly feasible | Markdown files loaded from filesystem — no adaptation needed |

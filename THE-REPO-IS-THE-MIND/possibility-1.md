@@ -6,19 +6,19 @@ I’d implement it as **Society of Mind, but Git-native**:
 
 Your existing **GitHub Minimum Intelligence** repo is already a strong proof-of-concept because it has the right primitive:
 
-| Society of Mind concept | Repo-native implementation                                 |
-| ----------------------- | ---------------------------------------------------------- |
-| Mind                    | The repository                                             |
-| Agents                  | Markdown-defined specialist roles                          |
-| Memory                  | Git-tracked state files, issue threads, session logs       |
-| Body                    | GitHub Actions runner                                      |
-| Speech                  | GitHub Issues/comments                                     |
-| Skills                  | `.pi/skills/`                                              |
-| Self/personality        | `AGENTS.md`                                                |
-| Attention               | Issue labels, prefixes, changed files, task router         |
-| Conflict                | Critic/reviewer agents                                     |
-| Censors                 | Policy/security agents                                     |
-| Learning                | Append-only memory logs, updated docs, updated agent files |
+| Society of Mind concept | Repo-native implementation |
+| --- | --- |
+| Mind | The repository |
+| Agents | Markdown-defined specialist roles |
+| Memory | Git-tracked state files, issue threads, session logs |
+| Body | GitHub Actions runner |
+| Speech | GitHub Issues/comments |
+| Skills | `.pi/skills/` |
+| Self/personality | `AGENTS.md` |
+| Attention | Issue labels, prefixes, changed files, task router |
+| Conflict | Critic/reviewer agents |
+| Censors | Policy/security agents |
+| Learning | Append-only memory logs, updated docs, updated agent files |
 
 The current repo is a **single-agent mind**. I would evolve it into a **multi-agent society kernel**.
 
@@ -553,18 +553,18 @@ read,bash,edit,write,grep,find,ls
 
 For Society of Mind, I’d use something like:
 
-| Agent             | Tools                               |
-| ----------------- | ----------------------------------- |
-| router            | `read,grep,find,ls`                 |
-| memory-librarian  | `read,grep,find,ls`                 |
-| cartographer      | `read,grep,find,ls,bash`            |
-| planner           | `read,grep,find,ls`                 |
-| security-governor | `read,grep,find,ls`                 |
-| implementer       | `read,grep,find,ls,edit,write,bash` |
-| tester            | `read,grep,find,ls,bash`            |
-| critic            | `read,grep,find,ls,bash`            |
-| integrator        | `read,grep,find,ls,edit,write,bash` |
-| archivist         | `read,grep,find,ls,edit,write`      |
+| Agent | Tools |
+| --- | --- |
+| router | `read,grep,find,ls` |
+| memory-librarian | `read,grep,find,ls` |
+| cartographer | `read,grep,find,ls,bash` |
+| planner | `read,grep,find,ls` |
+| security-governor | `read,grep,find,ls` |
+| implementer | `read,grep,find,ls,edit,write,bash` |
+| tester | `read,grep,find,ls,bash` |
+| critic | `read,grep,find,ls,bash` |
+| integrator | `read,grep,find,ls,edit,write,bash` |
+| archivist | `read,grep,find,ls,edit,write` |
 
 The implementer should not be the final authority.
 The integrator should not act unless critic/governor constraints pass.

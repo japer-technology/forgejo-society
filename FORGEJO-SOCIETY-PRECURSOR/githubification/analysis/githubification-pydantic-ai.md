@@ -11,7 +11,7 @@
 Four GitHub primitives serve four roles:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -36,7 +36,7 @@ This repository (`japer-technology/githubification-pydantic-ai`) is a fork of [p
 This repo is uniquely positioned because **AI agents are already operating inside the repository's development workflow**:
 
 | Component | File | Current Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `@claude` agent | `.github/workflows/at-claude.yml` | Responds to `@claude` mentions from maintainers and collaborators in issues and PRs |
 | PR automation bots | `.github/workflows/bots.yml` | Auto-labels PR size, categorizes PRs (bug/feature/docs/chore/dependency), conducts AI-powered code reviews |
 | CI pipeline | `.github/workflows/ci.yml` | Lint, typecheck, test (5 Python versions × 3 install variants), 100% coverage, docs build, release |
@@ -47,7 +47,7 @@ This repo is uniquely positioned because **AI agents are already operating insid
 All four GitHub primitives are already in active use for AI:
 
 | Primitive | Current Use |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Runs Claude Code for PR review, issue categorization, `@claude` agent execution |
 | **Git** | Stores the monorepo, test cassettes (VCR recordings), coverage data |
 | **GitHub Issues** | Structured YAML templates for bug reports, feature requests, questions; `@claude` triggers |
@@ -58,7 +58,7 @@ All four GitHub primitives are already in active use for AI:
 The gap from current state to full Githubification is **not** introducing AI to the repository — AI agents are already here. The gap is **redirecting AI from serving developers to serving users**:
 
 | Current | Githubified |
-|---|---|
+| --- | --- |
 | `@claude` responds to maintainer mentions | An agent responds to **any authorized user** opening an issue |
 | Claude reviews PRs against coding standards | An agent answers user questions about using Pydantic AI |
 | No persistent session state across issues | Session state committed to git, conversations resume across issues |
@@ -149,7 +149,7 @@ async def run_example(ctx: RunContext[GitHubContext], example_name: str) -> str:
 ### Required New Files
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `.github/workflows/githubification-agent.yml` | The Githubification workflow — triggers on `issues.opened` and `issue_comment.created`, authenticates, runs the agent |
 | `.githubification/agent.py` | The Pydantic AI agent — `Agent` construction, tools, dependencies, output types |
 | `.githubification/state/issues/` | Issue-to-session mapping (e.g., `42.json` → session file) |
@@ -217,7 +217,7 @@ The [lesson consolidation](https://github.com/japer-technology/githubification) 
 ### 1. The Lifecycle Pipeline
 
 | Step | Implementation |
-|---|---|
+| --- | --- |
 | **Guard** | Workflow authorization — check `author_association` against allowed roles |
 | **Indicate** | Post 🚀 reaction on the issue to show the agent is working |
 | **Execute** | `uv run python .githubification/agent.py` — construct the Agent, call `agent.run()`, post the reply |
@@ -248,7 +248,7 @@ Session transcripts, issue mappings, and agent decisions are committed to `.gith
 ### 5. The Four Primitives
 
 | Primitive | Current | Githubified |
-|---|---|---|
+| --- | --- | --- |
 | **Actions** | CI/CD + Claude Code for dev | + Issue-driven agent for users |
 | **Git** | Source code + test cassettes | + Session state and agent memory |
 | **Issues** | Bug reports, features, questions | + Conversational AI interface |
@@ -299,7 +299,7 @@ Switching providers requires changing one environment variable — not installin
 The existing `AGENTS.md` hierarchy (root → `agent_docs/` → directory-level files) enables the Githubification agent to load context relevant to the user's specific question rather than a monolithic document:
 
 | User Question | Context Loaded |
-|---|---|
+| --- | --- |
 | "How do I add a model provider?" | `models/AGENTS.md`, `agent_docs/api-design.md` |
 | "How do I write tests?" | `tests/AGENTS.md`, `agent_docs/index.md` |
 | "How does dependency injection work?" | `docs/dependencies.md`, source code examples |
@@ -316,7 +316,7 @@ The Githubification agent is **built with Pydantic AI to explain Pydantic AI**. 
 [GitHub Minimum Intelligence](https://github.com/japer-technology/github-minimum-intelligence) provides the reference implementation for the Native Githubification strategy. Here is how a Pydantic AI Githubification compares:
 
 | Dimension | GMI | Pydantic AI Githubification |
-|---|---|---|
+| --- | --- | --- |
 | **Runtime** | Bun + TypeScript (`pi-coding-agent`) | Python + `uv` (Pydantic AI `Agent`) |
 | **Agent engine** | pi-mono | Pydantic AI framework |
 | **Installation** | Copy one workflow, run once | Add workflow + agent script |

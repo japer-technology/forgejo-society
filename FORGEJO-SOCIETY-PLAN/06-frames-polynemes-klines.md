@@ -41,7 +41,7 @@ Validated by `schemas/frame.schema.json`.
 ### First-ship frame catalogue
 
 | File | When it fits |
-|---|---|
+| --- | --- |
 | `question.frame.yml` | The user is asking, not requesting change |
 | `bug.frame.yml` | A defect is reported with reproducible behaviour |
 | `feature.frame.yml` | A new capability is requested |
@@ -82,7 +82,7 @@ agencies. In `.forgejo-society/nemes/` they are repo files.
 `path-polynemes.yml`:
 
 | symbol | matches | default frame |
-|---|---|---|
+| --- | --- | --- |
 | `workflow-file` | `.forgejo/workflows/**`, `.github/workflows/**` | `security-sensitive` |
 | `soul-file` | `.forgejo-society/AGENTS.md`, `.forgejo-society/APPEND_SYSTEM.md` | `self-modification` |
 | `governance-file` | `.forgejo-society/governance/**` | `self-modification` |
@@ -95,7 +95,7 @@ agencies. In `.forgejo-society/nemes/` they are repo files.
 `label-polynemes.yml`:
 
 | symbol | matches |
-|---|---|
+| --- | --- |
 | `activation:intake` | `activate:intake` (compatible with the seed workflow) |
 | `kind:question` | `question` |
 | `kind:bug` | `bug` |
@@ -106,7 +106,7 @@ agencies. In `.forgejo-society/nemes/` they are repo files.
 `phrase-polynemes.yml`:
 
 | symbol | matches |
-|---|---|
+| --- | --- |
 | `memory-request` | `remember`, `what did we decide`, `you said before`, `last time` |
 | `safety-concern` | `secret`, `credential`, `api key`, `token`, `password` |
 | `ownership-question` | `who owns`, `who decided`, `who can` |

@@ -34,7 +34,7 @@ the maintainer rather than guessing.
 ## Repository map
 
 | Path | Purpose |
-|---|---|
+| --- | --- |
 | `README.md` | Project entry point. |
 | `WARNING.md` + `forgejo-compliance.md` + `forgejo-warning.md` + `github-compliance.md` + `github-warning.md` | The mandatory four-document compliance set. Treat as load-bearing. |
 | `THE-SOCIETY-OF-REPO/` | Canonical specification: vocabulary, governance, protocols, agencies, critics, censors, memory, workspace, services, channels, evolution. |

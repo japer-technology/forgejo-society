@@ -14,7 +14,7 @@ time, each declared channel becomes a directory under the runtime
 `.forgejo-society/channels/<peer>/` of every participating society.
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | [`channels.yml`](channels.yml) | Lateral and outbound channels between Publicity member repos and to the public web. |
 | [`federation-uplink.yml`](federation-uplink.yml) | The single channel that connects the Publicity presenter to the Federation root. |
 

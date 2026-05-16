@@ -65,7 +65,7 @@ Out of scope:
 ### Document and record agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes incoming health documents and stimuli | propose |
 | `document-index-bee` | Indexes health documents, answers retrieval queries | propose |
 | `health-record-bee` | Organises and surfaces personal health records, letters, and summaries | propose |
@@ -73,7 +73,7 @@ Out of scope:
 ### Appointment and scheduling agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `appointment-bee` | Tracks upcoming appointments, detects gaps, surfaces overdue follow-ups | propose |
 | `referral-bee` | Tracks open referrals, expiry dates, and specialist wait times | propose |
 | `calendar-bee` | Monitors health calendar for conflicts and approaching deadlines | propose |
@@ -81,20 +81,20 @@ Out of scope:
 ### Medication and preventive care agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `medication-bee` | Tracks medication schedules, refill dates, and prescription renewals | propose |
 | `preventive-care-bee` | Surfaces due or overdue preventive screenings and immunisations | propose |
 
 ### Task and coordination agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `task-bee` | Tracks open health-related tasks, follow-ups, and unactioned items from appointments | propose |
 
 ### Preparation and briefing agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `appointment-prep-bee` | Prepares a document summary ahead of an upcoming appointment | propose |
 | `health-briefing` | Assembles and delivers a governed personal health briefing | act |
 
@@ -103,7 +103,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is this reminder based on reliable and current data? |
 | `staleness-critic` | Is this record recent enough to be acted on? |
 | `scope-critic` | Is this SOR staying within its non-clinical boundaries? |
@@ -115,7 +115,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No health record, medication data, or personal identification leaves the local system without explicit owner approval |
 | `clinical-decision-censor` | No agency makes a clinical diagnosis, treatment recommendation, or medication dose change |
 | `authority-censor` | No agency increases its own authority level |
@@ -319,7 +319,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Health documents in repos |
 | 1 | Memory | Structured appointment, medication, and referral records |
 | **2** | **Agency** | **Agencies with roles, constitutions, and outputs** |

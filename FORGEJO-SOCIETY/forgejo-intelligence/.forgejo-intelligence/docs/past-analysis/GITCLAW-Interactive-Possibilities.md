@@ -34,7 +34,7 @@ on:
 This creates two distinct interactive entry points:
 
 | Event | Meaning | Interactive Implication |
-|---|---|---|
+| --- | --- | --- |
 | `issues.opened` | A human starts a new conversation | Fresh context; the agent has no prior memory for this thread |
 | `issue_comment.created` | A human continues an existing conversation | The agent resumes from its full prior context for this issue |
 
@@ -82,7 +82,7 @@ Issue #N → state/issues/N.json → state/sessions/<timestamp>.jsonl
 This creates a fundamentally different interaction model from stateless chatbots:
 
 | Property | Stateless Bot | GitClaw |
-|---|---|---|
+| --- | --- | --- |
 | Memory across messages | None | Full conversation history via JSONL sessions |
 | Memory across days/weeks | None | Sessions persisted as git commits |
 | Memory of file changes | None | Agent can see its own prior edits in the repo |
@@ -608,7 +608,7 @@ Agent: [creates docs/adr/0023-recommendation-caching.md with full context from t
 ### 7.1 Synchronous vs. Asynchronous Interaction
 
 | Mode | Current | Possible |
-|---|---|---|
+| --- | --- | --- |
 | **Synchronous (real-time)** | Not supported — Actions has 30–120s latency | Streaming responses via progressive comment edits; WebSocket-based real-time interaction via GitHub App webhooks |
 | **Asynchronous (turn-based)** | ✅ Full support via issue comments | Extended with scheduled check-ins, proactive notifications, and batch processing |
 | **Hybrid** | Partially supported (👀 indicator) | Agent posts "thinking..." comments that update progressively, then finalizes |
@@ -616,7 +616,7 @@ Agent: [creates docs/adr/0023-recommendation-caching.md with full context from t
 ### 7.2 Human-Initiated vs. Agent-Initiated
 
 | Initiator | Current | Possible |
-|---|---|---|
+| --- | --- | --- |
 | **Human → Agent** | ✅ Issues and comments | Extended to PR reviews, discussions, slash commands, workflow dispatch |
 | **Agent → Human** | Not supported | Proactive issue creation, @mention escalations, scheduled reports, alert notifications |
 | **Agent → Agent** | Not supported | Cross-issue references, label-driven dispatch, repository dispatch chains |
@@ -746,7 +746,7 @@ GitClaw's current issue-processing pipeline is a **complete interactive system**
 But issue comments are just the beginning. The interactive possibilities span:
 
 | Surface | Interaction Type | Key Value |
-|---|---|---|
+| --- | --- | --- |
 | **Issues** | Multi-turn conversations | Long-running investigations, planning, decisions |
 | **Pull Requests** | Code-level dialogue | Interactive review, pair programming, refactoring guidance |
 | **Review Threads** | Line-specific discussions | Contextual code analysis with back-and-forth |

@@ -11,7 +11,7 @@ Compress individual session JSONL files by surgically removing the content that 
 This repository's largest session (the one generating these specs) is **1,274KB**. Here's what's inside:
 
 | Content Type | Blocks | Size | % of Total |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tool calls (write, bash, read arguments) | 101 | 618 KB | 48.5% |
 | Tool results (command outputs, file contents) | 100 | 372 KB | 29.2% |
 | Text (agent responses + user messages) | 138 | 405 KB | 17.6% |
@@ -44,7 +44,7 @@ The current session gives the model 10,000 tokens of raw data when 100 tokens of
 Based on this repo's actual sessions:
 
 | Session | Original | Projected Compressed | Ratio |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1,274 KB (186 lines, current) | 1,274 KB | ~160 KB | 87% reduction |
 | 399 KB (86 lines) | 399 KB | ~60 KB | 85% reduction |
 | 209 KB (62 lines) | 209 KB | ~35 KB | 83% reduction |
@@ -75,7 +75,7 @@ Feature 22 (Context Window Intelligence) manages the token budget. Feature 06 (S
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Tool call compressor** | Replace write/bash/read arguments with summaries | ~2.5 hours |
 | **Tool result compressor** | Replace large outputs with summaries | ~2 hours |
 | **Thinking block stripper** | Remove thinking content, keep markers | ~30 min |

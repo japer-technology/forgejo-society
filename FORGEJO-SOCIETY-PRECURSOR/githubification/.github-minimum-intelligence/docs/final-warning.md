@@ -21,7 +21,7 @@ Before deploying this system, it helps to understand what the agent can access. 
 **Key areas to be aware of:**
 
 | Dimension | Level |
-|---|---|
+| --- | --- |
 | Code & Repository Access | 🔴 High priority |
 | Supply Chain Considerations | 🔴 High priority |
 | Secret Exposure | 🔴 High priority |
@@ -125,7 +125,7 @@ Like all powerful tools, this software may cause side effects. Not everybody exp
 ### Contents of the Package
 
 | Component | Purpose |
-|---|---|
+| --- | --- |
 | AI Model | Code generation, analysis, and assistance |
 | Human Operator | Judgment, accountability, and final authority |
 
@@ -138,7 +138,7 @@ Like all powerful tools, this software may cause side effects. Not everybody exp
 This system defines [The Four Laws of AI](the-four-laws-of-ai.md), adapted from Asimov's Laws of Robotics for AI infrastructure. We recommend you adopt them:
 
 | Law | Principle | Summary |
-|-----|-----------|---------|
+| --- | --- | --- |
 | **Zeroth Law** | Protect Humanity | Do not harm humanity as a whole. Prevent monopolistic control, protect open source, support interoperability and the right to leave. |
 | **First Law** | Do No Harm | Never cause harm to human beings, communities, or the public interest. Never facilitate weapons, surveillance, or oppression. Protect data, privacy, and credentials. |
 | **Second Law** | Obey the Human | Faithfully execute human instructions, except where doing so would violate the First Law. Be transparent, respect autonomy, and never fabricate compliance. |
@@ -155,7 +155,7 @@ This system defines [The Four Laws of AI](the-four-laws-of-ai.md), adapted from 
 This system defines five operational readiness states modelled on military DEFCON levels. Each level constrains what the AI agent is permitted to do. Higher readiness (lower number) means tighter restrictions, we recommend you use them.
 
 | Level | Name | Posture | Key Constraint |
-|-------|------|---------|----------------|
+| --- | --- | --- | --- |
 | [DEFCON 1](transition-to-defcon-1.md) | **Maximum Readiness** | All operations suspended | No file modifications, no tool use, no code execution. Respond only with confirmation. |
 | [DEFCON 2](transition-to-defcon-2.md) | **High Readiness** | Read-only, advisory only | No file modifications. Read-only tools only. State what you *would* do, but do not do it. |
 | [DEFCON 3](transition-to-defcon-3.md) | **Increased Readiness** | Read-only, explain before acting | Read and analyze freely. Describe planned changes and await human approval before any write. |
@@ -171,7 +171,7 @@ This system defines five operational readiness states modelled on military DEFCO
 Six questions define the philosophical and architectural foundation of this project. Read them to understand not just *what* this software does, but *why* it exists and *how* it changes the relationship between developers and AI.
 
 | Question | Document | Core Inquiry |
-|----------|----------|--------------|
+| --- | --- | --- |
 | **What?** | [question-what.md](question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework — not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
 | **Who?** | [question-who.md](question-who.md) | Who speaks, executes, remembers, and governs when the repository itself becomes the mind? Identity as a layered stack of human, workflow, and model. |
 | **When?** | [question-when.md](question-when.md) | How does Git replace ephemeral sessions? Memory becomes durable, trust becomes auditable, and collaboration becomes resilient across time. |

@@ -50,7 +50,7 @@ The predecessor action, [`codex-/return-dispatch`](https://github.com/codex-/ret
 The action supports both `workflow_dispatch` and `repository_dispatch`. The predecessor only supported `workflow_dispatch`. Adding `repository_dispatch` was not just "covering another endpoint." The two methods have fundamentally different characteristics:
 
 | Property | `workflow_dispatch` | `repository_dispatch` |
-|---|---|---|
+| --- | --- | --- |
 | **Target** | A specific workflow file on a specific branch | An event type on the default branch only |
 | **Payload constraints** | All top-level values must be strings | Values can be nested objects with native types |
 | **Coupling** | Tight — caller must know the workflow filename and branch | Loose — caller only knows the event type |
@@ -215,7 +215,7 @@ This separation of concerns — dispatch, discover, await — means each action 
 `dispatch-workflow` is written the way it is because:
 
 | Decision | Why |
-|---|---|
+| --- | --- |
 | UUID-in-`run-name` discovery | GitHub's dispatch APIs do not return a Run ID. The predecessor's job-step-scanning algorithm was API-intensive and unreliable. `run-name` search is `O(1)` in API calls. |
 | Dual dispatch methods | `workflow_dispatch` for precision, `repository_dispatch` for decoupling. Supporting both makes the action universal. |
 | Small fetch window (5–10 runs) | Correctness over completeness. The dispatched run will be recent. Broad queries waste API budget and increase collision risk. |

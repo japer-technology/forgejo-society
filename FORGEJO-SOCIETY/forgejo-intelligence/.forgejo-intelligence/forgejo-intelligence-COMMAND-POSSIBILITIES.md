@@ -142,14 +142,14 @@ permissions:
 
 ### **5. Workflow Triggers — Quick Reference**
 
-| Trigger                 | Action            | Typical Use                      |
-| ----------------------- | ----------------- | -------------------------------- |
-| `issues.opened`         | New issue created | Auto-tag, bot reply, triage      |
-| `issues.labeled`        | Label added       | Trigger review/test/deploy flows |
-| `issues.closed`         | Issue closed      | Cleanup, notification            |
-| `issue_comment.created` | Comment added     | Slash commands                   |
-| `workflow_dispatch`     | Manual            | Run on demand                    |
-| `schedule`              | Cron              | Periodic cleanup or rebase       |
+| Trigger | Action | Typical Use |
+| --- | --- | --- |
+| `issues.opened` | New issue created | Auto-tag, bot reply, triage |
+| `issues.labeled` | Label added | Trigger review/test/deploy flows |
+| `issues.closed` | Issue closed | Cleanup, notification |
+| `issue_comment.created` | Comment added | Slash commands |
+| `workflow_dispatch` | Manual | Run on demand |
+| `schedule` | Cron | Periodic cleanup or rebase |
 
 Learn all events + activity types in the official workflow syntax docs. ([GitHub Docs][1])
 

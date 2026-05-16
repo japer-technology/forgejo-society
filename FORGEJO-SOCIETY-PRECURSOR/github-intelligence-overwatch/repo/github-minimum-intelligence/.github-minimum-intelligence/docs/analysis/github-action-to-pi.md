@@ -9,7 +9,7 @@ This document traces the complete path from a GitHub event (issue opened or comm
 The workflow file `.github/workflows/github-minimum-intelligence-agent.yml` listens for two event types:
 
 | Event | Trigger Condition |
-|---|---|
+| --- | --- |
 | `issues: [opened]` | A new issue is created in the repository |
 | `issue_comment: [created]` | A comment is posted on an existing issue |
 
@@ -24,7 +24,7 @@ The workflow runs with `contents: write`, `issues: write`, and `actions: write` 
 Before `agent.ts` executes, the workflow runs five sequential steps that prepare the environment:
 
 | Step | Action | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | **Authorize** | Inline shell using `gh api` | Checks that the actor has `admin`, `maintain`, or `write` permission on the repository. Adds a 🚀 reaction to the triggering issue or comment as a visual indicator. Writes reaction metadata to `/tmp/reaction-state.json` for the agent's `finally` block. |
 | **Reject** | Conditional inline shell | Runs only if Authorize fails. Adds a 👎 reaction to signal rejection. |
 | **Checkout** | `actions/checkout@v6` | Clones the repository with `fetch-depth: 0` (full history) at the default branch. Full history is required because the agent performs `git push` with a `git pull --rebase` conflict-resolution loop. |
@@ -86,7 +86,7 @@ Minimum Intelligence maintains per-issue conversation state so that follow-up co
 ### 4.1 State Layout
 
 | Path | Content |
-|---|---|
+| --- | --- |
 | `.github-minimum-intelligence/state/issues/<number>.json` | Maps an issue number to its session file path |
 | `.github-minimum-intelligence/state/sessions/<timestamp>.jsonl` | The `pi` session transcript (newline-delimited JSON events) |
 
@@ -133,7 +133,7 @@ if (mode === "resume" && sessionPath) {
 ```
 
 | Argument | Value | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `--mode json` | Always `"json"` | Tells pi to emit newline-delimited JSON events on stdout instead of human-readable text. Required for programmatic output extraction. |
 | `--provider` | From `settings.json` | Selects the LLM provider (e.g., `openai`, `anthropic`, `google`). |
 | `--model` | From `settings.json` | Selects the specific model within the provider. |
@@ -147,7 +147,7 @@ if (mode === "resume" && sessionPath) {
 The prompt passed to `-p` differs by event type:
 
 | Event | Prompt Content |
-|---|---|
+| --- | --- |
 | `issues` (opened) | `"${title}\n\n${body}"` — the full issue title and body concatenated |
 | `issue_comment` (created) | `event.comment.body` — the comment text verbatim |
 
@@ -191,7 +191,7 @@ const agentText = await new Response(jq.stdout).text();
 ```
 
 | Tool | Role |
-|---|---|
+| --- | --- |
 | `tac` | Reverses the JSONL file so the most recent events appear first. |
 | `jq` | Parses the reversed JSON array, finds the first (most recent) `message_end` event where `role == "assistant"` and the content contains at least one `text` block, then extracts the text. |
 
@@ -253,7 +253,7 @@ The 🚀 reaction from the Authorize step is left in place in both cases.
 The following table summarizes every step from event to response, in execution order:
 
 | # | Component | Action |
-|---|---|---|
+| --- | --- | --- |
 | 1 | GitHub | Receives webhook, provisions runner, starts workflow |
 | 2 | Workflow: Authorize | Checks actor permissions, adds 🚀 reaction, writes `/tmp/reaction-state.json` |
 | 3 | Workflow: Checkout | Clones repository with full history |

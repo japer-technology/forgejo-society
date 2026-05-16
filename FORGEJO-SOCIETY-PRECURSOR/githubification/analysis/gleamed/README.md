@@ -3,7 +3,7 @@
 This folder synthesizes the lessons learned across all 23 Githubification analyses. Each file corresponds to one of the five themes extracted from the corpus.
 
 | File | Theme |
-|---|---|
+| --- | --- |
 | [`cadence-reduction.md`](./cadence-reduction.md) | How repos manage trigger frequency and Action run costs |
 | [`concurrency-assurance.md`](./concurrency-assurance.md) | The universal concurrency and state-safety patterns |
 | [`gitpages-web-interface.md`](./gitpages-web-interface.md) | Using GitHub Pages as a static UI layer |
@@ -16,7 +16,7 @@ This folder synthesizes the lessons learned across all 23 Githubification analys
 The 23 repositories analysed:
 
 | Repository | Type | Strategy |
-|---|---|---|
+| --- | --- | --- |
 | githubification-pi-mono | Type 1 — AI Agent | Native |
 | githubification-NemoClaw | Type 1 — Security | Wrapping |
 | githubification-moltis | Type 1 — AI Agent | Channel Addition |

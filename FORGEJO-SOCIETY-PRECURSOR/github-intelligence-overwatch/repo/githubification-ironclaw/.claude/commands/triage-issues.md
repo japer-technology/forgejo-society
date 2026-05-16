@@ -59,7 +59,7 @@ If an issue doesn't clearly fit either category (e.g., "improve X performance" c
 For each issue, assess how well-specified it is on a 3-tier scale:
 
 | Detail Level | Criteria |
-|-------------|----------|
+| --- | --- |
 | **Well-specified** | Has clear description of what/why, reproduction steps (bugs) or user story (features), acceptance criteria or expected behavior, and enough context to start working immediately |
 | **Adequate** | Describes the problem or request clearly, but missing some detail — no repro steps, vague acceptance criteria, or unclear scope. Needs 1-2 clarifying questions before work can start |
 | **Under-specified** | Vague title-only or single-sentence body, no context on why it matters, no clear definition of done. Needs significant discussion before it's actionable |
@@ -77,7 +77,7 @@ Score each bug on these dimensions and compute an overall severity rank:
 
 ### Impact (1-4)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 4 | **Critical** | Data loss, security vulnerability, complete feature broken, crash in common path |
 | 3 | **High** | Major feature degraded, workaround exists but painful, affects many users |
 | 2 | **Medium** | Minor feature broken, easy workaround, affects subset of users |
@@ -85,14 +85,14 @@ Score each bug on these dimensions and compute an overall severity rank:
 
 ### Urgency (1-3)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 3 | **Urgent** | Security issue, regression in recent release, blocking other work |
 | 2 | **Normal** | Should be fixed in next release cycle |
 | 1 | **Low** | Fix when convenient, backlog-worthy |
 
 ### Scope (1-3)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 3 | **Broad** | Affects core path, multiple modules, or all users |
 | 2 | **Moderate** | Affects one module or a specific configuration |
 | 1 | **Narrow** | Affects edge case or single obscure path |
@@ -110,7 +110,7 @@ Score each feature request on these dimensions:
 
 ### Value (1-4)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 4 | **High** | Unlocks new use cases, frequently requested, strategic alignment |
 | 3 | **Medium-High** | Significant quality-of-life improvement, good user demand signals |
 | 2 | **Medium** | Nice to have, modest improvement to existing workflow |
@@ -124,14 +124,14 @@ Look for value signals in the issue:
 
 ### Effort estimate (1-3, inverted — lower effort = higher score)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 3 | **Small** | <1 day, isolated change, clear implementation path |
 | 2 | **Medium** | 1-3 days, touches a few modules, some design needed |
 | 1 | **Large** | 3+ days, cross-cutting, needs RFC or architectural discussion |
 
 ### Readiness (1-3)
 | Score | Level | Description |
-|-------|-------|-------------|
+| --- | --- | --- |
 | 3 | **Ready** | Well-specified, implementation path clear, no blockers |
 | 2 | **Almost ready** | Needs minor clarification, but scope is understood |
 | 1 | **Not ready** | Needs design discussion, has open questions, blocked by other work |
@@ -171,7 +171,7 @@ Unassigned: N | Stale (>30d): N
 Bugs that need immediate attention. For each:
 
 | # | Title | Severity | Impact | Detail | Age | Assignee |
-|---|-------|----------|--------|--------|-----|----------|
+| --- | --- | --- | --- | --- | --- | --- |
 
 Include a 1-line summary of the root cause if discernible from the issue.
 
@@ -190,7 +190,7 @@ Compact table, sorted by severity descending.
 Features that are high-value and low-effort — do these first. For each:
 
 | # | Title | Opportunity | Value | Effort | Detail | Age |
-|---|-------|-------------|-------|--------|--------|-----|
+| --- | --- | --- | --- | --- | --- | --- |
 
 ### High-Opportunity Features (Opportunity 10+)
 
@@ -207,7 +207,7 @@ Compact table, sorted by opportunity descending.
 Issues rated "Under-specified" that can't be triaged effectively. For each, suggest 1-2 specific questions to ask the author to make it actionable.
 
 | # | Title | Type | What's missing |
-|---|-------|------|---------------|
+| --- | --- | --- | --- |
 
 ### Ambiguous Issues (Bug or Feature?)
 
@@ -234,7 +234,7 @@ Issues with no updates in 30+ days. Recommend: close, ping author, or keep.
 Group all issues by the area of the codebase they affect (infer from title/body/labels):
 
 | Area | Bugs | Features | Top Priority |
-|------|------|----------|-------------|
+| --- | --- | --- | --- |
 
 ### Suggested Next Actions
 

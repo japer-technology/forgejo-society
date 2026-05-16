@@ -23,7 +23,7 @@ The previous case studies establish a progression. Agent Zero introduces substit
 Pydantic AI breaks this assumption. The `at-claude.yml` workflow triggers on issue comments, PR review comments, and issue creation, deploying Claude Code with full repository access (read, write, and execute permissions) to respond to `@claude` mentions from maintainers and collaborators. The `bots.yml` workflow runs on every pull request, using Claude Code to automatically categorize PRs (`bug`, `feature`, `docs`, `chore`, `dependency`) and conduct full code reviews against the repository's extensive coding standards. These are not CI scripts that happen to use AI — they are **AI agents performing development tasks through GitHub Actions**, using the same GitHub primitives that Githubification relies on.
 
 | GitHub Primitive | Current Use | Githubification Extension |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute — CI/CD (lint, typecheck, test, docs, release), AI-powered PR review, AI-powered issue categorization, `@claude` agent execution | Would add issue-driven agent execution for user interaction |
 | **Git** | Storage — the monorepo, test cassettes (VCR recordings), coverage data | Would add session state, agent memory |
 | **GitHub Issues** | UI — bug reports, feature requests, questions (structured YAML templates) | Would become the conversational interface for interacting with Pydantic AI capabilities |
@@ -204,7 +204,7 @@ The documentation is served at [ai.pydantic.dev](https://ai.pydantic.dev/) and d
 The most distinctive pattern in `github-pydantic-ai` is that AI agents are not a future addition — they are an existing, operational part of the development workflow. No other case study has this:
 
 | Case Study | AI Agent Status |
-|---|---|
+| --- | --- |
 | **Agent Zero** | No AI agents in the development workflow |
 | **AutoGPT** | AI readiness files (copilot-instructions.md, AGENTS.md) — agents read, don't operate |
 | **LangChain.js** | AI readiness files (AGENTS.md) — agents read, don't operate |
@@ -217,7 +217,7 @@ The `at-claude.yml` and `bots.yml` workflows demonstrate that the leap from "AI 
 While other case studies have a single `AGENTS.md` or `copilot-instructions.md`, Pydantic AI implements a **hierarchical knowledge system**:
 
 | Level | File | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | **Repository root** | `AGENTS.md` / `CLAUDE.md` | Philosophy, contribution requirements, repo structure, development workflow |
 | **Coding guidelines** | `agent_docs/index.md` | 15KB of concrete coding standards (imports, naming, error handling, testing) |
 | **Topic guides** | `agent_docs/api-design.md`, `code-simplification.md`, `documentation.md` | Deep dives on specific topics |
@@ -259,7 +259,7 @@ print(result.output)  # Validated SupportOutput instance
 This pattern maps directly to Githubification:
 
 | Agent Concept | Githubification Mapping |
-|---|---|
+| --- | --- |
 | `Agent('model')` | The Githubification agent, configured with whichever LLM provider the repository owner specifies |
 | `deps_type` | GitHub context — issue number, repository, commenter, labels |
 | `output_type` | Structured response — a Pydantic model that validates the agent's reply format |
@@ -326,7 +326,7 @@ For Githubification, these security practices are directly transferable: the iss
 Pydantic AI enforces the highest code quality standards of any case study:
 
 | Quality Dimension | Mechanism |
-|---|---|
+| --- | --- |
 | **Code formatting** | `ruff format` via `make format` |
 | **Linting** | `ruff check` via `make lint` |
 | **Static type checking** | `pyright` in strict mode via `make typecheck` |
@@ -351,7 +351,7 @@ What makes `github-pydantic-ai` unique among the case studies is not just that i
 LangChain.js introduced the composition strategy: build the Githubification agent from the framework's own components. Pydantic AI takes this further. The Githubification agent would not only be built with Pydantic AI but would **extend the existing AI agent infrastructure** already deployed in the repository:
 
 | Component | Already Exists | Githubification Extension |
-|---|---|---|
+| --- | --- | --- |
 | Claude Code execution via GitHub Actions | `at-claude.yml` | Issue-driven agent workflow |
 | LLM API key in GitHub Secrets | `ANTHROPIC_API_KEY` | User-configurable model choice |
 | Issue comment triggers | `at-claude.yml` triggers on `issue_comment.created` | Same trigger, different prompt and tools |

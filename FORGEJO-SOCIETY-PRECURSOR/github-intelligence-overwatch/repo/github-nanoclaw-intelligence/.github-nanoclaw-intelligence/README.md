@@ -20,7 +20,7 @@ NanoClaw Intelligence maps every core NanoClaw capability to a GitHub primitive,
 Every NanoClaw capability has a corresponding GitHub primitive:
 
 | NanoClaw Feature | GitHub Infrastructure | Description |
-|-----------------|----------------------|-------------|
+| --- | --- | --- |
 | Multi-channel messaging | Issues, PRs, Discussions | Three conversation channels, each triggered by `` ` `` |
 | Task scheduler (cron/interval) | `schedule:` trigger | Recurring agent execution every 6 hours |
 | Group routing | Labels (`issues: [labeled]`) | Label-based routing and classification |
@@ -35,7 +35,7 @@ Every NanoClaw capability has a corresponding GitHub primitive:
 ## Channels
 
 | Channel | Trigger | Prefix | Use Case |
-|---------|---------|--------|----------|
+| --- | --- | --- | --- |
 | Issues | `issues.opened` | `` ` `` in title | General questions, tasks, conversations |
 | Issue Comments | `issue_comment.created` | `` ` `` in body | Follow-up on existing issues |
 | Pull Requests | `pull_request.opened` | `` ` `` in title | Code review, PR assistance |
@@ -51,7 +51,7 @@ Every NanoClaw capability has a corresponding GitHub primitive:
 ## The Prefix Protocol
 
 | Prefix | Intelligence | Description |
-|--------|-------------|-------------|
+| --- | --- | --- |
 | `` ` `` | NanoClaw Intelligence | Container-isolated, secure agent execution |
 | _(other)_ | None | No agent responds |
 
@@ -113,7 +113,7 @@ The `--model`, `--provider`, and `--thinking` flags are passed explicitly to the
 The NanoClaw runtime is built on the Claude Agent SDK and supports Anthropic models:
 
 | Provider | Secret Name | Models |
-|----------|------------|--------|
+| --- | --- | --- |
 | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet 4.6 (default), Claude Opus 4.6, Claude Haiku 4.5 |
 
 ---
@@ -145,7 +145,7 @@ Container behaviour is configured in `config/containers.json`:
 ## Tool Surface
 
 | Capability | Available |
-|-----------|-----------|
+| --- | --- |
 | File read/write/edit | ✅ |
 | Code search (grep, glob) | ✅ |
 | Bash execution (sandboxed) | ✅ |

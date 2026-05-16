@@ -97,12 +97,12 @@ sandbox@my-assistant:~$ openclaw agent --agent main --local -m "hello" --session
 
 NemoClaw installs the NVIDIA OpenShell runtime and Nemotron models, then uses a versioned blueprint to create a sandboxed environment where every network request, file access, and inference call is governed by declarative policy. The `nemoclaw` CLI orchestrates the full stack: OpenShell gateway, sandbox, inference provider, and network policy.
 
-| Component        | Role                                                                                      |
-|------------------|-------------------------------------------------------------------------------------------|
-| **Plugin**       | TypeScript CLI commands for launch, connect, status, and logs.                            |
-| **Blueprint**    | Versioned Python artifact that orchestrates sandbox creation, policy, and inference setup. |
-| **Sandbox**      | Isolated OpenShell container running OpenClaw with policy-enforced egress and filesystem.  |
-| **Inference**    | NVIDIA cloud model calls, routed through the OpenShell gateway, transparent to the agent.  |
+| Component | Role |
+| --- | --- |
+| **Plugin** | TypeScript CLI commands for launch, connect, status, and logs. |
+| **Blueprint** | Versioned Python artifact that orchestrates sandbox creation, policy, and inference setup. |
+| **Sandbox** | Isolated OpenShell container running OpenClaw with policy-enforced egress and filesystem. |
+| **Inference** | NVIDIA cloud model calls, routed through the OpenShell gateway, transparent to the agent. |
 
 The blueprint lifecycle follows four stages: resolve the artifact, verify its digest, plan the resources, and apply through the OpenShell CLI.
 
@@ -114,9 +114,9 @@ When something goes wrong, errors may originate from either NemoClaw or the Open
 
 Inference requests from the agent never leave the sandbox directly. OpenShell intercepts every call and routes it to the NVIDIA cloud provider.
 
-| Provider     | Model                               | Use Case                                       |
-|--------------|--------------------------------------|-------------------------------------------------|
-| NVIDIA cloud | `nvidia/nemotron-3-super-120b-a12b` | Production. Requires an NVIDIA API key.         |
+| Provider | Model | Use Case |
+| --- | --- | --- |
+| NVIDIA cloud | `nvidia/nemotron-3-super-120b-a12b` | Production. Requires an NVIDIA API key. |
 
 Get an API key from [build.nvidia.com](https://build.nvidia.com). The `nemoclaw onboard` command prompts for this key during setup.
 
@@ -126,12 +126,12 @@ Get an API key from [build.nvidia.com](https://build.nvidia.com). The `nemoclaw 
 
 The sandbox starts with a strict baseline policy that controls network egress and filesystem access:
 
-| Layer      | What it protects                                    | When it applies             |
-|------------|-----------------------------------------------------|-----------------------------|
-| Network    | Blocks unauthorized outbound connections.           | Hot-reloadable at runtime.  |
-| Filesystem | Prevents reads/writes outside `/sandbox` and `/tmp`.| Locked at sandbox creation. |
-| Process    | Blocks privilege escalation and dangerous syscalls. | Locked at sandbox creation. |
-| Inference  | Reroutes model API calls to controlled backends.    | Hot-reloadable at runtime.  |
+| Layer | What it protects | When it applies |
+| --- | --- | --- |
+| Network | Blocks unauthorized outbound connections. | Hot-reloadable at runtime. |
+| Filesystem | Prevents reads/writes outside `/sandbox` and `/tmp`. | Locked at sandbox creation. |
+| Process | Blocks privilege escalation and dangerous syscalls. | Locked at sandbox creation. |
+| Inference | Reroutes model API calls to controlled backends. | Hot-reloadable at runtime. |
 
 When the agent tries to reach an unlisted host, OpenShell blocks the request and surfaces it in the TUI for operator approval.
 
@@ -143,23 +143,23 @@ When the agent tries to reach an unlisted host, OpenShell blocks the request and
 
 Run these on the host to set up, connect to, and manage sandboxes.
 
-| Command                              | Description                                            |
-|--------------------------------------|--------------------------------------------------------|
-| `nemoclaw onboard`                  | Interactive setup wizard: gateway, providers, sandbox. |
-| `nemoclaw deploy <instance>`         | Deploy to a remote GPU instance through Brev.          |
-| `nemoclaw <name> connect`            | Open an interactive shell inside the sandbox.          |
-| `openshell term`                     | Launch the OpenShell TUI for monitoring and approvals. |
-| `nemoclaw start` / `stop` / `status` | Manage auxiliary services (Telegram bridge, tunnel).   |
+| Command | Description |
+| --- | --- |
+| `nemoclaw onboard` | Interactive setup wizard: gateway, providers, sandbox. |
+| `nemoclaw deploy <instance>` | Deploy to a remote GPU instance through Brev. |
+| `nemoclaw <name> connect` | Open an interactive shell inside the sandbox. |
+| `openshell term` | Launch the OpenShell TUI for monitoring and approvals. |
+| `nemoclaw start` / `stop` / `status` | Manage auxiliary services (Telegram bridge, tunnel). |
 
 ### Plugin commands (`openclaw nemoclaw`)
 
 Run these inside the OpenClaw CLI. These commands are under active development and may not all be functional yet.
 
-| Command                                    | Description                                              |
-|--------------------------------------------|----------------------------------------------------------|
-| `openclaw nemoclaw launch [--profile ...]` | Bootstrap OpenClaw inside an OpenShell sandbox.          |
-| `openclaw nemoclaw status`                 | Show sandbox health, blueprint state, and inference.     |
-| `openclaw nemoclaw logs [-f]`              | Stream blueprint execution and sandbox logs.             |
+| Command | Description |
+| --- | --- |
+| `openclaw nemoclaw launch [--profile ...]` | Bootstrap OpenClaw inside an OpenShell sandbox. |
+| `openclaw nemoclaw status` | Show sandbox health, blueprint state, and inference. |
+| `openclaw nemoclaw logs [-f]` | Stream blueprint execution and sandbox logs. |
 
 See the full [CLI reference](https://docs.nvidia.com/nemoclaw/latest/reference/commands.md) for all commands, flags, and options.
 

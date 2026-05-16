@@ -119,7 +119,7 @@ evaluation:
 ## Constitution lifecycle
 
 | State | Meaning |
-|---|---|
+| --- | --- |
 | `active` | Agency is operating normally |
 | `probation` | Agency performance is below threshold; under review |
 | `retired` | Agency is no longer active; constitution preserved for lineage |

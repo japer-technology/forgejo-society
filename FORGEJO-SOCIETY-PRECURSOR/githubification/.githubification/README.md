@@ -21,7 +21,7 @@ There are three primary patterns for Githubification, determined by what the rep
 The repository already contains an AI agent. Githubification converts that agent's functionality from something that must be installed and run locally into something that **runs natively inside GitHub as an Action**, using GitHub as AI infrastructure.
 
 | Before | After |
-|--------|-------|
+| --- | --- |
 | Clone the repo, install dependencies, run the agent locally | The agent executes directly on GitHub Actions—no local setup required |
 
 ### Type 2 — Non-AI Software Repo
@@ -32,7 +32,7 @@ The repository contains software that is **not** an AI agent. Githubification in
 2. **GitHub-as-infrastructure execution** — run the software itself on GitHub Actions without local installation.
 
 | Before | After |
-|--------|-------|
+| --- | --- |
 | Clone the repo, install, configure, and run the software locally | An AI agent exposes the software's capabilities and runs it on GitHub Actions |
 
 ### Type 3 — Hybrid / Variations

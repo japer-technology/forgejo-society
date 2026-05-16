@@ -11,7 +11,7 @@ This document examines where GitHub Pages Jekyll aligns with Minimum Intelligenc
 Minimum Intelligence builds on four GitHub-native primitives:
 
 | Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Issues** | Conversation interface |
 | **GitHub Actions** | Compute / execution runtime |
 | **Git** | Persistent, versioned memory |
@@ -39,7 +39,7 @@ Jekyll processes Markdown natively. The existing documentation tree is nearly Je
 GitHub already renders Markdown files in the repository browser. Jekyll adds:
 
 | Capability | Raw GitHub Markdown | Jekyll on GitHub Pages |
-|---|---|---|
+| --- | --- | --- |
 | Navigation / sidebar | Manual links only | Auto-generated from front matter or data files |
 | Search | GitHub code search only | Client-side search (lunr.js, etc.) |
 | Consistent layout | None — each file renders independently | Shared templates, headers, footers |
@@ -91,7 +91,7 @@ The front matter convention is also fully compatible with raw Markdown rendering
 Jekyll collections map naturally to the existing documentation structure:
 
 | Collection | Source Directory | Content |
-|---|---|---|
+| --- | --- | --- |
 | `analyses` | `docs/analysis/` | Technical analyses (data limits, this document, future studies) |
 | `questions` | `docs/` | Foundational questions (what, who, when, where, how, how much) |
 | `governance` | `docs/` | Security assessments, incident response, DEFCON levels, Four Laws |
@@ -141,7 +141,7 @@ The site becomes a maintained artifact of agent activity, not a separate system 
 ### 5.1 GitHub Pages Limits
 
 | Constraint | Limit |
-|---|---|
+| --- | --- |
 | Published site size | 1 GB recommended |
 | Repository size (soft) | 1 GB recommended, 5 GB hard |
 | Build time | 10-minute timeout |
@@ -164,7 +164,7 @@ For a documentation site driven by Markdown and front matter, the default GitHub
 ### 5.3 What Does Not Translate Well
 
 | Content Type | Issue |
-|---|---|
+| --- | --- |
 | Session transcripts (raw) | Often very long. May need truncation or summary views. |
 | Binary artifacts | Jekyll does not process images, PDFs, etc. — they pass through as static files but add to site size. |
 | Private repositories | GitHub Pages on free plans requires public repos. Private Pages requires GitHub Enterprise or a paid plan. |

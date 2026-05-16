@@ -124,7 +124,7 @@ These principles apply to every skill you execute.
 The pi-coding-agent provides these tools natively, which map to gstack's `allowed-tools`:
 
 | gstack Tool | pi-coding-agent Equivalent |
-|-------------|---------------------------|
+| --- | --- |
 | `Bash` | ✅ Built-in bash tool |
 | `Read` | ✅ Built-in file read |
 | `Write` | ✅ Built-in file write |
@@ -196,7 +196,7 @@ This gives multi-turn skills (`/office-hours`, `/plan-ceo-review`, `/plan-eng-re
 The agent reads credentials from GitHub Secrets via environment variables:
 
 | Secret | Purpose | Required |
-|--------|---------|----------|
+| --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Anthropic Claude API access | Yes (if using Anthropic provider) |
 | `OPENAI_API_KEY` | OpenAI API access | Optional (alternative provider) |
 | `GEMINI_API_KEY` | Google Gemini API access | Optional |
@@ -211,7 +211,7 @@ Pi-mono's multi-provider architecture means users can choose their preferred LLM
 ## What Pi-Mono Does NOT Provide
 
 | Capability | Status | Mitigation |
-|-----------|--------|------------|
+| --- | --- | --- |
 | Web search | Not built-in | Add as custom extension in `.pi/extensions/` or use API-based search |
 | Sub-agent orchestration | Not built-in | Decompose multi-skill workflows (`/autoplan`) into sequential steps within the single workflow agent invocation |
 | Browser automation | Not built-in | Agent uses bash tool to invoke Playwright scripts; browser setup handled by workflow |

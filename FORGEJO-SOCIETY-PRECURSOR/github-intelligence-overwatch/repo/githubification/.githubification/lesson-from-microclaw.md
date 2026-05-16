@@ -23,7 +23,7 @@ In the GitClaw and GMI case studies, Githubification means wrapping the `pi` cod
 MicroClaw collapses that separation. MicroClaw's `agent_engine.rs` already provides the multi-step tool execution loop, session resume with context compaction, structured and file-based memory, provider-agnostic LLM abstraction, and a full tool registry. It already has a channel adapter architecture where Telegram, Discord, Slack, Feishu, and Web are interchangeable ingress/egress surfaces. Adding GitHub Issues is just adding another adapter.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes MicroClaw as an ephemeral process |
 | **Git** | Storage and memory — SQLite database and file memory committed to the repo |
 | **GitHub Issues** | User interface — each issue is a conversation thread, routed through a new channel adapter |
@@ -82,7 +82,7 @@ Every previous case study runs an interpreted agent: TypeScript files executed b
 This changes the Githubification workflow design:
 
 | Aspect | GitClaw / GMI / OpenClaw | MicroClaw |
-|--------|--------------------------|-----------|
+| --- | --- | --- |
 | **Runtime install** | `bun install` with npm dependencies | Download pre-built binary from releases |
 | **Startup time** | Seconds (dependency install + script parse) | Sub-second (binary is ready immediately) |
 | **Dependency surface** | npm ecosystem (lockfiles, node_modules) | Zero runtime dependencies |
@@ -129,7 +129,7 @@ The previous case studies persist state as human-readable files: JSONL session t
 The Githubification design proposes a hybrid approach:
 
 | Layer | Format | Committed? | Purpose |
-|-------|--------|------------|---------|
+| --- | --- | --- | --- |
 | **Primary** | SQLite database (`microclaw.db`) | Yes | Full state — sessions, memories, messages, tasks |
 | **Readable companion** | Markdown and JSON exports | Yes | Auditability — conversation logs, memory summaries |
 | **File memory** | `AGENTS.md` files | Yes | Per-issue and global file memory (already file-based) |
@@ -155,7 +155,7 @@ This is a pragmatic compromise: SQLite means zero changes to MicroClaw's core pe
 The most significant capability gap between MicroClaw and the previous case studies:
 
 | Capability | pi-coding-agent (GitClaw/GMI) | OpenClaw | MicroClaw |
-|------------|-------------------------------|----------|-----------|
+| --- | --- | --- | --- |
 | **File tools** | read, write, edit | 30+ tools | read, write, edit, grep, glob |
 | **Shell** | bash | bash, browser | bash (with path guards) |
 | **Web** | — | browser automation | web search, web fetch |
@@ -188,7 +188,7 @@ Unauthorized attempts receive a 👎 reaction and the workflow terminates. There
 MicroClaw's workflow provides clear user feedback at every stage:
 
 | Stage | Reaction | Meaning |
-|-------|----------|---------|
+| --- | --- | --- |
 | Agent starts | 🚀 | "I'm working on it" |
 | Agent succeeds | 👍 | "Done — check my reply" |
 | Agent fails / unauthorized | 👎 | "Something went wrong" |
@@ -243,7 +243,7 @@ While the GitHub Actions workflow uses the bare binary, the Docker image offers 
 In every previous case study, Githubification creates an orchestration layer between GitHub and the agent. In MicroClaw, Githubification adds a channel to an agent that already has a multi-channel architecture. The difference is fundamental:
 
 | Approach | Who orchestrates? | New code |
-|----------|-------------------|----------|
+| --- | --- | --- |
 | **GitClaw/GMI** | Lifecycle scripts orchestrate `pi` | Lifecycle scripts (TypeScript) |
 | **OpenClaw** | `.GITOPENCLAW/` orchestrates OpenClaw | Orchestration layer (TypeScript) |
 | **MicroClaw** | MicroClaw orchestrates itself | Channel adapter (~300 lines of Rust) + CLI subcommand (~50 lines) |
@@ -324,7 +324,7 @@ The implementation plan estimates:
 ## Comparison with Other Case Studies
 
 | Dimension | OpenClaw (wrapped) | GitClaw (native-simple) | GMI (native-simple) | MicroClaw (native-complex) |
-|-----------|-------------------|------------------------|---------------------|---------------------------|
+| --- | --- | --- | --- | --- |
 | **Agent origin** | External project | Built for GitHub | Built for GitHub | External project with channel-agnostic design |
 | **Language** | TypeScript | TypeScript | TypeScript | Rust |
 | **LLM runtime** | OpenClaw's own | `pi-coding-agent` | `pi-coding-agent` | Built-in (`agent_engine.rs`) |

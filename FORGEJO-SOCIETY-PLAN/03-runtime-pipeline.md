@@ -30,7 +30,7 @@ writes.
 ## Pipeline mapping table
 
 | Cognitive step | Workflow job/step | Runtime module | Reads | Writes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Stimulus | `normalize` | `lib/forgejo.ts` | event payload | `state/runs/<run>/stimulus.json` |
 | Perception | `perceive` | `perceive.ts` | `stimulus.json`, `nemes/*` | `state/mind/issues/<n>/percepts.jsonl` |
 | Frame selection | `activate` | `frames.ts` | `frames/*.frame.yml`, `percepts.jsonl` | adds `frame:` to workspace |
@@ -53,7 +53,7 @@ writes.
 The pipeline writes into two distinct trees, with different lifetimes:
 
 | Tree | Lifetime | Owner | Purpose |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `.forgejo-society/state/` | per-run, append-only | runtime | episodic / per-stimulus trace |
 | `.forgejo-society/memory/` | durable, governed | settled cognition only | semantic, procedural, K-line, decision archive |
 | `.forgejo-society/workspace/` | short-term, swept after settlement | settlement layer | active attention |

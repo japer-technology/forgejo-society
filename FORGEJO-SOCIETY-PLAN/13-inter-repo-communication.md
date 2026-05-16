@@ -31,7 +31,7 @@ translation, authority, audit). Each layer maps to a location already
 specified by the plan:
 
 | Layer | Provided by | Implementation target in this plan |
-|---|---|---|
+| --- | --- | --- |
 | Transport | Forgejo (REST, webhooks, ActivityPub, runners, git) | `lifecycle/lib/forgejo.ts` (the single sanctioned API adapter, per §15) |
 | Identity | Forgejo URL space + SOR identity protocol | `protocols/identity.md` + ID convention in `schemas/manifest.schema.json` |
 | Contract | SOR Service Channel Protocol | `protocols/service-channel.md` + `services/` + `channels/` |

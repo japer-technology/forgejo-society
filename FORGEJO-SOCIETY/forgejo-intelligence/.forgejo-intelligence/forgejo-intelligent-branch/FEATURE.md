@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Branch Created | `create` (branch) | Branch Lifecycle |
 | 2 | Branch Deleted | `delete` (branch) | Branch Lifecycle |
 | 3 | Branch Renamed Detection | `create` + recent `delete` | Branch Lifecycle |

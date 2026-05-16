@@ -79,7 +79,7 @@ ironclaw pairing approve telegram ABC12345
 Edit `~/.ironclaw/channels/telegram.capabilities.json` (or the config injected by the host):
 
 | Option | Values | Default | Description |
-|--------|--------|---------|-------------|
+| --- | --- | --- | --- |
 | `dm_policy` | `open`, `allowlist`, `pairing` | `pairing` | `open` = allow all; `allowlist` = config + approved only; `pairing` = allowlist + send pairing reply to unknown |
 | `allow_from` | `["user_id", "username", "*"]` | `[]` | Pre-approved IDs/usernames. `*` allows everyone. |
 | `owner_id` | Telegram user ID | `null` | When set, only this user can message (overrides dm_policy) |

@@ -28,7 +28,7 @@ WinGet downloads the Visual Studio Installer and launches it. The installer runs
 When the Visual Studio Installer opens, select the workloads relevant to the Forgejo-Society stack:
 
 | Workload | When to select |
-|----------|----------------|
+| --- | --- |
 | **.NET desktop development** | For WPF, WinForms, and console .NET applications |
 | **ASP.NET and web development** | For .NET web APIs, Blazor, and MVC applications |
 | **Desktop development with C++** | For native C++ applications and CMake projects |

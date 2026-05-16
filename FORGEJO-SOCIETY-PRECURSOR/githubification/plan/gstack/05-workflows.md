@@ -231,7 +231,7 @@ gh workflow run github-gstack-intelligence-agent.yml \
 ## How the Single Workflow Replaces Eight Separate Files
 
 | Previous Plan (8 files) | Single Workflow Equivalent |
-|---|---|
+| --- | --- |
 | `gstack-review.yml` | `pull_request` trigger → `router.ts` routes to review/cso |
 | `gstack-agent.yml` | `issues` + `issue_comment` triggers → `router.ts` routes by command/label |
 | `gstack-qa.yml` | `issue_comment` trigger + conditional Playwright install |
@@ -248,7 +248,7 @@ The key insight: YAML is not the place for routing logic. All complexity moves i
 ## Concurrency Strategy
 
 | Event Source | Concurrency Group | Cancel-in-progress | Rationale |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `pull_request` | `github-gstack-intelligence-{repo}-pr-{PR#}` | `true` | New push supersedes previous review |
 | `issues` / `issue_comment` | `github-gstack-intelligence-{repo}-issue-{issue#}` | `false` | Queue conversation messages, don't drop |
 | `schedule` | `github-gstack-intelligence-{repo}-schedule` | `false` | Only one scheduled job at a time |

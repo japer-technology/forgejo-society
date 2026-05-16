@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active critics
 
 | Critic | Why |
-|---|---|
+| --- | --- |
 | `risk-critic` | Upgrade proposals without a rollback plan are challenged |
 | `evidence-critic` | Vulnerability alerts require a CVE reference or source |
 
@@ -62,7 +62,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `known_vulnerability_detection_rate` | % of publicly listed CVEs for in-scope libraries caught |
 | `false_positive_rate` | % of alerts that are not genuine issues |
 | `mean_time_to_alert` | Time from CVE publication to alert in workspace |

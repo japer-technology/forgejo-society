@@ -220,7 +220,7 @@ Understanding when gitclaw setup runs in the container lifecycle:
 ### Lifecycle Hooks
 
 | Hook | When it runs | Best for |
-|------|-------------|----------|
+| --- | --- | --- |
 | `postCreateCommand` | Once, after container creation | Installing gitclaw (first time setup) |
 | `postStartCommand` | Every time container starts | Verifying gitclaw is configured |
 | `postAttachCommand` | Every time a user attaches | Displaying welcome message with gitclaw status |
@@ -291,7 +291,7 @@ ghcr.io/japer-technology/gitclaw-devcontainer-features/gitclaw:1
 Dev Container Features work in multiple environments, not just GitHub Codespaces:
 
 | Environment | Support | Notes |
-|-------------|---------|-------|
+| --- | --- | --- |
 | **GitHub Codespaces** | ✅ Full support | Native integration |
 | **VS Code Dev Containers** | ✅ Full support | Local Docker-based |
 | **JetBrains Gateway** | ✅ Supported | Remote development |

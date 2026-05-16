@@ -13,7 +13,7 @@ Customize the LLM provider, model, agent personality, thinking level, tool acces
 ## Configuration Files Overview
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `.github-claw/.pi/settings.json` | LLM provider, model, and thinking level |
 | `.github-claw/AGENTS.md` | Agent identity — name, personality, instructions |
 | `.github-claw/.pi/APPEND_SYSTEM.md` | System prompt loaded every session |
@@ -185,7 +185,7 @@ Requires `OPENROUTER_API_KEY`. Browse available models at [openrouter.ai](https:
 The `defaultThinkingLevel` controls how much reasoning the model does before responding:
 
 | Level | Best For |
-|-------|----------|
+| --- | --- |
 | `"low"` | Quick responses, simple tasks, lower cost |
 | `"medium"` | Balanced reasoning for most use cases |
 | `"high"` | Complex tasks requiring deep analysis |

@@ -47,7 +47,7 @@ flowchart LR
 ## Memory types
 
 | Type | What it holds | Where it lives |
-|---|---|---|
+| --- | --- | --- |
 | Events | Event records and audit traces | `06-memory/events/` |
 | Episodic | Specific event histories | `06-memory/episodic/` |
 | Semantic | Durable general facts | `06-memory/semantic/` |
@@ -125,7 +125,7 @@ Retrieval should prefer the smallest summary tier adequate for the task.
 Following Minsky 1986, memory in SOR exposes **two distinct query operations**, and any consumer of memory must choose between them:
 
 | Operation | Question answered | Cost | Failure mode |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Recognition** | "Have I seen this kind of thing before, and how strongly?" | Cheap (index lookup, similarity score) | Returns nothing if the exact key is unknown |
 | **Reconstruction** | "Re-evoke the agencies, frame, K-lines, and ideals that were active when this kind of thing was handled." | Expensive (loads frame, replays activation, traverses links) | Returns a plausible but inexact partial state |
 
@@ -190,7 +190,7 @@ stateDiagram-v2
 Forgetting is governed, not accidental.
 
 | Memory class | Decay signal | Effect |
-|---|---|---|
+| --- | --- | --- |
 | **K-lines** | Reinforcement count not increasing for N review cycles; weakening count rising | Temperature drops `hot → warm → cold`; below threshold the K-line is `probation` |
 | **Frame defaults** | Exception count exceeds default-hit count over a defined window | Steward review opened to consider default demotion |
 | **Censors** | Zero firings across two quarterly cycles AND no observed near-miss recorded by suppressors | Censor reviewed for staleness; not auto-removed (irreversible-action risk remains) |
@@ -210,7 +210,7 @@ Runtime session mappings, JSONL transcripts, health reports, and migration
 records may be promoted into SOR memory only after representation review:
 
 | Runtime artifact | Promotion target |
-|---|---|
+| --- | --- |
 | Redacted event payload or workflow log excerpt | events or failure memory |
 | Conversation summary | episodic memory |
 | Accepted operating procedure | procedural memory |

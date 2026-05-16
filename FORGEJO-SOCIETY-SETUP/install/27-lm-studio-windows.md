@@ -45,7 +45,7 @@ Check the actual path in LM Studio → Settings → Model Storage.
 Use LM Studio's built-in model browser (the magnifying glass icon) to search for and download a model. The recommended tier table:
 
 | VRAM | Recommended Model | Approximate Size |
-|------|-------------------|-----------------|
+| --- | --- | --- |
 | ≥ 20 GB | Gemma 3 27B (Q4_K_M) | ~18 GB |
 | 8–16 GB | Gemma 3 12B (Q4_K_M) | ~8 GB |
 | 4–8 GB | Gemma 3 4B (Q4_K_M) | ~3 GB |

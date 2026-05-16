@@ -51,7 +51,7 @@ For each unique issue raised in the comments:
 Present the plan as a table to the user:
 
 | # | Issue | File:Line | Severity | Status | Planned Fix |
-|---|-------|-----------|----------|--------|-------------|
+| --- | --- | --- | --- | --- | --- |
 
 Wait for user confirmation before proceeding to implementation.
 

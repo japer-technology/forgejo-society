@@ -30,7 +30,7 @@ gh pr list --state merged --search "merged:>=$(date -v-7d +%Y-%m-%d)" --limit 10
 For each open PR, determine the primary module it touches by examining the `files` field. Classify into these categories based on the dominant `src/` subdirectory:
 
 | Category | Directories |
-|----------|------------|
+| --- | --- |
 | **LLM & Inference** | `src/llm/` |
 | **Agent Core** | `src/agent/`, `src/skills/` |
 | **Tools** | `src/tools/`, `tools-src/` |
@@ -67,7 +67,7 @@ Also check:
 Classify each PR by scope:
 
 | Scope | Criteria |
-|-------|----------|
+| --- | --- |
 | **Tiny** | <50 lines changed (additions + deletions), 1-2 files |
 | **Small** | 50-200 lines, 1-5 files |
 | **Medium** | 200-500 lines, 3-10 files |
@@ -145,7 +145,7 @@ Any detected conflicts, superseded PRs, or dependency chains.
 Group all PRs by their primary module in a compact table:
 
 | Module | PRs | Key PR to review first |
-|--------|-----|----------------------|
+| --- | --- | --- |
 
 ### Superseded PRs (recommend closing)
 PRs that are clearly superseded by merged work. Include reasoning.

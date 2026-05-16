@@ -10,14 +10,14 @@ This document applies critical theory to the core claims of GitHub Minimum Intel
 
 ## 1. The Framework
 
-| Concept                  | Role                                                                 |
-|--------------------------|----------------------------------------------------------------------|
-| **Ideology**             | The set of beliefs and assumptions that naturalize a particular arrangement of power |
-| **Power/Knowledge**      | The inseparability of what counts as knowledge from who controls the production of knowledge (Foucault) |
-| **Contradiction**        | Internal tensions within a system that reveal the gap between its claims and its structure |
-| **Reification**          | The process of treating contingent human choices as natural, inevitable, or technical necessities |
-| **Emancipation**         | The goal of critical theory: liberating subjects from domination by making power visible |
-| **Ideology critique**    | The method: exposing how systems present contingent arrangements as necessary or neutral |
+| Concept | Role |
+| --- | --- |
+| **Ideology** | The set of beliefs and assumptions that naturalize a particular arrangement of power |
+| **Power/Knowledge** | The inseparability of what counts as knowledge from who controls the production of knowledge (Foucault) |
+| **Contradiction** | Internal tensions within a system that reveal the gap between its claims and its structure |
+| **Reification** | The process of treating contingent human choices as natural, inevitable, or technical necessities |
+| **Emancipation** | The goal of critical theory: liberating subjects from domination by making power visible |
+| **Ideology critique** | The method: exposing how systems present contingent arrangements as necessary or neutral |
 
 A critical analysis asks: *"What does this system naturalize? What does it conceal? Who benefits from the concealment? What alternatives does it foreclose?"*
 
@@ -37,17 +37,17 @@ This is **reification**: a specific technical choice (running an agent on GitHub
 
 ### Power Analysis
 
-| Who benefits                       | How                                                   |
-|------------------------------------|-------------------------------------------------------|
-| GitHub (Microsoft)                 | Deeper platform lock-in; users invest more in GitHub's ecosystem |
-| GMI's authors                      | The claim differentiates GMI from competitors          |
-| Developers already on GitHub       | Their existing investment is validated and extended     |
+| Who benefits | How |
+| --- | --- |
+| GitHub (Microsoft) | Deeper platform lock-in; users invest more in GitHub's ecosystem |
+| GMI's authors | The claim differentiates GMI from competitors |
+| Developers already on GitHub | Their existing investment is validated and extended |
 
-| Who is marginalized                | How                                                   |
-|------------------------------------|-------------------------------------------------------|
-| Non-GitHub developers              | Excluded from "the mind" by platform choice            |
-| Self-hosted Git users              | Delegitimized as outside the substrate of intelligence |
-| Developers in resource-constrained settings | GitHub Actions costs are a barrier to entry   |
+| Who is marginalized | How |
+| --- | --- |
+| Non-GitHub developers | Excluded from "the mind" by platform choice |
+| Self-hosted Git users | Delegitimized as outside the substrate of intelligence |
+| Developers in resource-constrained settings | GitHub Actions costs are a barrier to entry |
 
 ### Contradiction
 
@@ -73,11 +73,11 @@ The "zero infrastructure" claim is persuasive precisely because it appeals to de
 
 ### Contradiction
 
-| Claimed value              | Structural reality                                     |
-|----------------------------|--------------------------------------------------------|
-| "No new infrastructure"    | GitHub *is* the infrastructure — maintained, priced, and controlled by Microsoft |
-| "No vendor lock-in"        | Complete vendor lock-in to GitHub's platform, billing model, and feature roadmap |
-| "Simplicity"               | The complexity is displaced to GitHub's internal systems, not eliminated |
+| Claimed value | Structural reality |
+| --- | --- |
+| "No new infrastructure" | GitHub *is* the infrastructure — maintained, priced, and controlled by Microsoft |
+| "No vendor lock-in" | Complete vendor lock-in to GitHub's platform, billing model, and feature roadmap |
+| "Simplicity" | The complexity is displaced to GitHub's internal systems, not eliminated |
 
 The contradiction is not that GMI is wrong about simplicity — it is genuinely simple to install and operate. The contradiction is that the *source* of that simplicity is dependency on a specific commercial platform, which is the opposite of the sovereignty the project claims.
 
@@ -95,13 +95,13 @@ Trust is presented as a **technical property** (auditability) rather than a **so
 
 Auditability is necessary for trust but does not *produce* trust. Trust is produced through:
 
-| Trust-producing factor     | GMI's engagement                                      |
-|----------------------------|-------------------------------------------------------|
-| Track record               | Limited — the project is new                           |
-| Institutional backing      | None — single-developer project                        |
-| Community oversight         | Minimal — no independent security audit                |
-| Power symmetry             | Partial — user controls repo but not the LLM           |
-| Cultural legitimacy        | Growing — open-source ethos provides some credibility  |
+| Trust-producing factor | GMI's engagement |
+| --- | --- |
+| Track record | Limited — the project is new |
+| Institutional backing | None — single-developer project |
+| Community oversight | Minimal — no independent security audit |
+| Power symmetry | Partial — user controls repo but not the LLM |
+| Cultural legitimacy | Growing — open-source ethos provides some credibility |
 
 ### Power Analysis
 
@@ -127,10 +127,10 @@ This is not unique to GMI; it mirrors a broader pattern in technology: **ethics 
 
 ### Power Analysis
 
-| Actor          | Relation to ethical constraints                           |
-|----------------|-----------------------------------------------------------|
-| The user       | Can read, modify, and version the constraints — genuine control |
-| The LLM        | Receives constraints as prompt text — no mechanical obedience |
+| Actor | Relation to ethical constraints |
+| --- | --- |
+| The user | Can read, modify, and version the constraints — genuine control |
+| The LLM | Receives constraints as prompt text — no mechanical obedience |
 | The model provider | Controls the model's training, safety filters, and system-level constraints — invisible governance layer *underneath* the user's constraints |
 
 The most significant power asymmetry is between the user (who writes the governance constraints file) and the model provider (who trained the model and controls its deepest behavioral dispositions). The user's ethical constraints are applied *on top of* the provider's constraints, which are neither visible nor modifiable. GMI's "textual constitutionalism" is a constitution written by the governed but enforced (or not) by a sovereign they cannot see.
@@ -159,12 +159,12 @@ This mirrors the broader platform economy pattern of **user-generated value**: t
 
 The bootstrap protocol is framed as a negotiation between equals, but the power relation is asymmetric:
 
-| Dimension        | Human                              | Agent                                 |
-|------------------|-------------------------------------|---------------------------------------|
-| Knowledge        | Knows their own preferences         | Knows nothing beyond the prompt       |
-| Persistence      | Remembers the relationship          | Forgets between sessions (without the config file) |
-| Stakes           | Invested in the outcome             | Indifferent to its own identity       |
-| Agency           | Genuine choice                      | Simulated choice                      |
+| Dimension | Human | Agent |
+| --- | --- | --- |
+| Knowledge | Knows their own preferences | Knows nothing beyond the prompt |
+| Persistence | Remembers the relationship | Forgets between sessions (without the config file) |
+| Stakes | Invested in the outcome | Indifferent to its own identity |
+| Agency | Genuine choice | Simulated choice |
 
 The agent does not *co-create* identity — it *performs* co-creation. The human's experience of collaboration is real; the agent's is a simulation. Calling this "co-creation" obscures the unidirectional nature of the labor.
 
@@ -194,14 +194,14 @@ The project's voluntary security self-assessment and the Toulmin analysis itself
 
 ## 8. Structural Contradictions Summary
 
-| Claim                          | Surface meaning                      | Critical reading                                    |
-|--------------------------------|--------------------------------------|-----------------------------------------------------|
-| "The repository is the mind"   | Intelligence belongs in the repo     | Platform dependency naturalized as ontology          |
-| "Zero new infrastructure"      | Simplicity and efficiency            | Costs displaced to a commercial platform, not eliminated |
-| "Sovereignty through legibility"| User controls the AI               | User controls the application layer; Microsoft controls the infrastructure layer |
-| "Trust through auditability"   | Technical transparency = trust       | Transparency ≠ accountability; audit trail does not prevent harm |
-| "Ethics as versioned text"     | Democratic governance of AI          | Performative governance without enforcement; ethics washing risk |
-| "Co-created identity"          | Human-AI partnership                 | Unpaid emotional labor producing system value; simulated agency |
+| Claim | Surface meaning | Critical reading |
+| --- | --- | --- |
+| "The repository is the mind" | Intelligence belongs in the repo | Platform dependency naturalized as ontology |
+| "Zero new infrastructure" | Simplicity and efficiency | Costs displaced to a commercial platform, not eliminated |
+| "Sovereignty through legibility" | User controls the AI | User controls the application layer; Microsoft controls the infrastructure layer |
+| "Trust through auditability" | Technical transparency = trust | Transparency ≠ accountability; audit trail does not prevent harm |
+| "Ethics as versioned text" | Democratic governance of AI | Performative governance without enforcement; ethics washing risk |
+| "Co-created identity" | Human-AI partnership | Unpaid emotional labor producing system value; simulated agency |
 
 ---
 

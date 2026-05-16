@@ -34,7 +34,7 @@ This is the multi-repo equivalent of "run the tests" — but across organization
 ### 4. It Composes as the Coordination Layer
 
 | Feature | Multi-Repo Dimension |
-|---|---|
+| --- | --- |
 | **Health Scanning (19)** | Org-wide health dashboard, cross-repo dependency staleness |
 | **Event Bridge (13)** | `repository_dispatch` to trigger actions in other repos |
 | **Release Management (23)** | Coordinate releases across related repos |
@@ -66,7 +66,7 @@ GitHub Actions `GITHUB_TOKEN` can be configured with permissions to access other
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Repo discovery** | Org API integration, repo metadata caching | ~1.5 hours |
 | **Dependency graph builder** | Parse manifests across repos, build graph | ~2.5 hours |
 | **Cross-repo search** | Search for symbols across related repos | ~2 hours |

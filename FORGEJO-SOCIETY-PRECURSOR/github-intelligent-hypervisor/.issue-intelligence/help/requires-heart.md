@@ -79,7 +79,7 @@ This prevents unreviewed issues from being processed when the gate is active.
 ## When to Use It
 
 | Scenario | Recommended |
-|----------|-------------|
+| --- | --- |
 | Public repo with many external contributors | ✅ Prevents the agent from responding to every new issue |
 | Private repo with trusted team | ❌ Adds friction without much benefit |
 | Repos with high issue volume | ✅ Lets you control which issues get agent attention |

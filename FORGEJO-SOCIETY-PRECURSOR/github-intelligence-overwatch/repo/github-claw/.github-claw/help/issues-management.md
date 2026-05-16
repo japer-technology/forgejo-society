@@ -103,7 +103,7 @@ Hatching is optional — the agent works without it, but it's more fun with a pe
 GitClaw can handle a wide range of tasks through issues:
 
 | Category | Examples |
-|----------|---------|
+| --- | --- |
 | **Code changes** | "Add a login page", "Refactor the database module", "Fix the bug in auth.ts" |
 | **Questions** | "How does the payment system work?", "What does this function do?" |
 | **File operations** | "Create a README", "Organize the docs folder", "Set up a GitHub Pages site" |

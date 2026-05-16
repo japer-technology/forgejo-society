@@ -70,12 +70,12 @@
 
 🤖 **Auto-Construído por IA**: Implementação nativa em Go de forma autônoma — 95% do núcleo gerado pelo Agente com refinamento humano no loop.
 
-|                               | OpenClaw      | NanoBot                  | **PicoClaw**                              |
-| ----------------------------- | ------------- | ------------------------ | ----------------------------------------- |
-| **Linguagem**                 | TypeScript    | Python                   | **Go**                                    |
-| **RAM**                       | >1GB          | >100MB                   | **< 10MB**                                |
-| **Inicialização**</br>(CPU 0.8GHz) | >500s         | >30s                     | **<1s**                                   |
-| **Custo**                     | Mac Mini $599 | Maioria dos SBC Linux </br>~$50 | **Qualquer placa Linux**</br>**A partir de $10** |
+|  | OpenClaw | NanoBot | **PicoClaw** |
+| --- | --- | --- | --- |
+| **Linguagem** | TypeScript | Python | **Go** |
+| **RAM** | >1GB | >100MB | **< 10MB** |
+| **Inicialização**</br>(CPU 0.8GHz) | >500s | >30s | **<1s** |
+| **Custo** | Mac Mini $599 | Maioria dos SBC Linux </br>~$50 | **Qualquer placa Linux**</br>**A partir de $10** |
 
 <img src="assets/compare.jpg" alt="PicoClaw" width="512">
 
@@ -609,10 +609,10 @@ Arquivo de configuração: `~/.picoclaw/config.json`
 
 Você pode substituir os caminhos padrão usando variáveis de ambiente. Isso é útil para instalações portáteis, implantações em contêineres ou para executar o picoclaw como um serviço do sistema. Essas variáveis são independentes e controlam caminhos diferentes.
 
-| Variável          | Descrição                                                                                                                             | Caminho Padrão            |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| Variável | Descrição | Caminho Padrão |
+| --- | --- | --- |
 | `PICOCLAW_CONFIG` | Substitui o caminho para o arquivo de configuração. Isso informa diretamente ao picoclaw qual `config.json` carregar, ignorando todos os outros locais. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Substitui o diretório raiz dos dados do picoclaw. Isso altera o local padrão do `workspace` e de outros diretórios de dados.          | `~/.picoclaw`             |
+| `PICOCLAW_HOME` | Substitui o diretório raiz dos dados do picoclaw. Isso altera o local padrão do `workspace` e de outros diretórios de dados. | `~/.picoclaw` |
 
 **Exemplos:**
 
@@ -667,7 +667,7 @@ O PicoClaw roda em um ambiente sandbox por padrão. O agente so pode acessar arq
 ```
 
 | Opção | Padrão | Descrição |
-|-------|--------|-----------|
+| --- | --- | --- |
 | `workspace` | `~/.picoclaw/workspace` | Diretório de trabalho do agente |
 | `restrict_to_workspace` | `true` | Restringir acesso de arquivos/comandos ao workspace |
 
@@ -676,7 +676,7 @@ O PicoClaw roda em um ambiente sandbox por padrão. O agente so pode acessar arq
 Quando `restrict_to_workspace: true`, as seguintes ferramentas são restritas ao sandbox:
 
 | Ferramenta | Função | Restrição |
-|------------|--------|-----------|
+| --- | --- | --- |
 | `read_file` | Ler arquivos | Apenas arquivos dentro do workspace |
 | `write_file` | Escrever arquivos | Apenas arquivos dentro do workspace |
 | `list_dir` | Listar diretorios | Apenas diretorios dentro do workspace |
@@ -736,7 +736,7 @@ export PICOCLAW_AGENTS_DEFAULTS_RESTRICT_TO_WORKSPACE=false
 A configuração `restrict_to_workspace` se aplica consistentemente em todos os caminhos de execução:
 
 | Caminho de Execução | Limite de Segurança |
-|----------------------|---------------------|
+| --- | --- |
 | Agente Principal | `restrict_to_workspace` ✅ |
 | Subagente / Spawn | Herda a mesma restrição ✅ |
 | Tarefas Heartbeat | Herda a mesma restrição ✅ |
@@ -775,7 +775,7 @@ Para tarefas de longa duração (busca web, chamadas de API), use a ferramenta `
 **Comportamentos principais:**
 
 | Funcionalidade | Descrição |
-|----------------|-----------|
+| --- | --- |
 | **spawn** | Cria subagente assíncrono, não bloqueia o heartbeat |
 | **Contexto independente** | Subagente tem seu próprio contexto, sem histórico de sessão |
 | **Ferramenta message** | Subagente se comunica diretamente com o usuário via ferramenta message |
@@ -811,7 +811,7 @@ O subagente tem acesso às ferramentas (message, web_search, etc.) e pode se com
 ```
 
 | Opção | Padrão | Descrição |
-|-------|--------|-----------|
+| --- | --- | --- |
 | `enabled` | `true` | Habilitar/desabilitar heartbeat |
 | `interval` | `30` | Intervalo de verificação em minutos (min: 5) |
 
@@ -960,7 +960,7 @@ Este design também possibilita o **suporte multi-agent** com seleção flexíve
 #### 📋 Todos os Fornecedores Suportados
 
 | Fornecedor | Prefixo `model` | API Base Padrão | Protocolo | Chave API |
-|-------------|-----------------|------------------|----------|-----------|
+| --- | --- | --- | --- | --- |
 | **OpenAI** | `openai/` | `https://api.openai.com/v1` | OpenAI | [Obter Chave](https://platform.openai.com) |
 | **Anthropic** | `anthropic/` | `https://api.anthropic.com/v1` | Anthropic | [Obter Chave](https://console.anthropic.com) |
 | **Zhipu AI (GLM)** | `zhipu/` | `https://open.bigmodel.cn/api/paas/v4` | OpenAI | [Obter Chave](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys) |

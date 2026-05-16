@@ -127,7 +127,7 @@ Every settlement sees every raw proposal directly.
 ## Summary
 
 | Anti-pattern | Core failure | Primary correction |
-|---|---|---|
+| --- | --- | --- |
 | Monarch agent | Single point of failure and opacity | Decompose into constitutional agencies |
 | Prompt swamp | No governance or metrics | Versioned constitutions |
 | Memory hoarding | Signal buried in noise | Temperature, supersession, retirement |

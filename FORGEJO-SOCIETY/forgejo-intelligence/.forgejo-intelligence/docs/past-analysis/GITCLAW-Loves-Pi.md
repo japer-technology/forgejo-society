@@ -37,7 +37,7 @@ That's it. That's the core.
 Everything else is plugged in through four orthogonal systems:
 
 | System | What It Does | How It's Shared |
-|--------|-------------|-----------------|
+| --- | --- | --- |
 | **Extensions** | TypeScript modules that add tools, commands, keyboard shortcuts, event handlers, and full TUI components | npm or git via Pi Packages |
 | **Skills** | On-demand capability packages following the [Agent Skills standard](https://agentskills.io) — specialized workflows as Markdown files | npm or git via Pi Packages |
 | **Prompt Templates** | Reusable prompts with variable interpolation, invoked via `/name` | npm or git via Pi Packages |
@@ -65,7 +65,7 @@ Every missing feature is a *design decision*. Pi trusts you to know what you nee
 Pi runs in four modes, each serving a different integration pattern:
 
 | Mode | Use Case |
-|------|----------|
+| --- | --- |
 | **Interactive** | You sit at a terminal and have a conversation. Full TUI with editor, message history, model switching, session branching. |
 | **Print / JSON** | One-shot: send a prompt, get a response, exit. JSON mode emits structured events as JSONL — perfect for piping into other tools. |
 | **RPC** | Stdin/stdout protocol for non-Node.js integrations. Speak JSON, get JSON back. |
@@ -195,7 +195,7 @@ For GitClaw, automatic compaction means conversations can span weeks or months w
 A quick snapshot of pi's reach:
 
 | Dimension | Scope |
-|-----------|-------|
+| --- | --- |
 | **Built-in providers** | 17+ (Anthropic, OpenAI, Google, xAI, Mistral, Groq, Bedrock, Vertex, OpenRouter, and more) |
 | **Authentication** | API keys *and* OAuth subscriptions (Claude Pro/Max, ChatGPT Plus/Pro, Copilot, Gemini CLI) |
 | **Built-in tools** | 7 (`read`, `write`, `edit`, `bash`, `grep`, `find`, `ls`) — selectable per session |

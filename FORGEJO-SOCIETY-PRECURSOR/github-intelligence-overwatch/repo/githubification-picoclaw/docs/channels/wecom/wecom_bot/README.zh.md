@@ -20,14 +20,14 @@
 }
 ```
 
-| 字段             | 类型   | 必填 | 描述                                         |
-| ---------------- | ------ | ---- | -------------------------------------------- |
-| token            | string | 是   | 签名验证代币                                 |
-| encoding_aes_key | string | 是   | 用于解密的 43 字符 AES 密钥                  |
-| webhook_url      | string | 是   | 用于发送回复的企业微信群聊机器人 Webhook URL |
-| webhook_path     | string | 否   | Webhook 端点路径（默认：/webhook/wecom）     |
-| allow_from       | array  | 否   | 用户 ID 白名单（空值 = 允许所有用户）        |
-| reply_timeout    | int    | 否   | 回复超时时间（单位：秒，默认值：5）          |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| token | string | 是 | 签名验证代币 |
+| encoding_aes_key | string | 是 | 用于解密的 43 字符 AES 密钥 |
+| webhook_url | string | 是 | 用于发送回复的企业微信群聊机器人 Webhook URL |
+| webhook_path | string | 否 | Webhook 端点路径（默认：/webhook/wecom） |
+| allow_from | array | 否 | 用户 ID 白名单（空值 = 允许所有用户） |
+| reply_timeout | int | 否 | 回复超时时间（单位：秒，默认值：5） |
 
 ## 设置流程
 

@@ -19,7 +19,7 @@ The society becomes safer and smarter when objection is structural — when ther
 ## Critic catalogue
 
 | Critic | What it challenges |
-|---|---|
+| --- | --- |
 | [evidence-critic](evidence-critic/README.md) | Proposals without sufficient evidence |
 | [scope-critic](scope-critic/README.md) | Proposals that exceed an agency's declared scope |
 | [cost-critic](cost-critic/README.md) | Proposals with unjustified or unbudgeted cost |
@@ -34,7 +34,7 @@ The society becomes safer and smarter when objection is structural — when ther
 ## Critics vs. censors
 
 | Critics | Censors |
-|---|---|
+| --- | --- |
 | Challenge on merit | Enforce hard limits |
 | Can be overruled if evidence is provided | Cannot be overruled |
 | Raise objections | Apply blocks |

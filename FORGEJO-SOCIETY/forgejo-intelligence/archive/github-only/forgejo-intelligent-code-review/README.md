@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **Pull request diffs** | Reads the diff between branches to analyze what changed |
 | **Review threads** | Monitors unresolved review comment threads for follow-up |
 | **Review verdicts** | Tracks `APPROVE`, `REQUEST_CHANGES`, and `COMMENT` reviews on PRs |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Structured reviews** | Posts `APPROVE`, `REQUEST_CHANGES`, or `COMMENT` reviews via the GitHub API with a consistent rubric |
 | **Line-level comments** | Attaches file-specific review comments to the correct diff hunks |
 | **Suggested changes** | Uses GitHub's "suggested change" syntax in review comments so users can apply fixes with one click |

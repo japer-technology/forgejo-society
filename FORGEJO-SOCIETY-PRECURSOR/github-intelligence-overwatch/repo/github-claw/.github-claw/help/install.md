@@ -47,7 +47,7 @@ This installs the `pi` coding agent and other runtime dependencies defined in `.
 Go to your GitHub repository **Settings → Secrets and variables → Actions → New repository secret** and add the API key for your chosen provider:
 
 | Provider | Secret Name | Where to Get It |
-|----------|-------------|-----------------|
+| --- | --- | --- |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -91,7 +91,7 @@ The 👀 reaction appears while the agent is working and disappears when it fini
 Set `defaultProvider` and `defaultModel` in `.github-claw/.pi/settings.json`:
 
 | Provider | `defaultProvider` | Example Model | API Key Secret |
-|----------|-------------------|---------------|----------------|
+| --- | --- | --- | --- |
 | Anthropic | `anthropic` | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
 | OpenAI | `openai` | `gpt-5.3-codex`, `gpt-5.3-codex-spark` | `OPENAI_API_KEY` |
 | Google Gemini | `google` | `gemini-2.5-pro`, `gemini-2.5-flash` | `GEMINI_API_KEY` |

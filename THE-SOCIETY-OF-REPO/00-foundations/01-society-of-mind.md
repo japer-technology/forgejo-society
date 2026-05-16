@@ -15,7 +15,7 @@ Intelligence emerges from the structured **interaction, insulation, representati
 ## Structures SOR now treats as first-class
 
 | Structure | Description | SOR equivalent |
-|---|---|---|
+| --- | --- | --- |
 | **Agents** | Small bounded processes | Constitutional repos and roles |
 | **Frames** | Situation models with defaults and expected roles | `06-memory/frames/` plus frame selection in activation |
 | **K-lines** | Restored activation and inhibition patterns | `06-memory/klines/` |

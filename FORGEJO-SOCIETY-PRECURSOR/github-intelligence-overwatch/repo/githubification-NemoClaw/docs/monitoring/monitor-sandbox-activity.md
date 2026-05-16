@@ -111,7 +111,7 @@ If the request fails, check the following:
 The following table lists common problems and their resolution steps:
 
 | Symptom | Resolution |
-|---|---|
+| --- | --- |
 | Sandbox shows as stopped | Run `nemoclaw onboard` to recreate the sandbox. |
 | Inference requests time out | Verify the provider endpoint is reachable. Check `openclaw nemoclaw status` for the active endpoint. |
 | Agent cannot reach an external host | Open the TUI with `openshell term` and approve the blocked request, or add the endpoint to the policy. |

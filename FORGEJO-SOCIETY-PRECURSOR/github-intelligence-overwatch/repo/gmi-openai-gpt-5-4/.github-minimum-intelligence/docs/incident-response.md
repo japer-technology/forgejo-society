@@ -79,7 +79,7 @@ gh workflow disable "github-minimum-intelligence-agent.yml"
 ### 2.1 Rotate all secrets immediately
 
 | Secret | Where to rotate | Command / Location |
-|--------|-----------------|--------------------|
+| --- | --- | --- |
 | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) | Regenerate the key and update the repo secret |
 | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) | Regenerate if configured |
 | `GITHUB_TOKEN` | Auto-expires when the workflow ends | Verify no persistent tokens were created |
@@ -260,7 +260,7 @@ gh secret list
 ### 5.2 Notify stakeholders
 
 | Audience | Channel | Content |
-|----------|---------|---------|
+| --- | --- | --- |
 | Organization admins | Direct message / email | Full incident timeline, actions taken, remaining risks |
 | Repository contributors | GitHub Issue (private repo) or direct contact | Summary of what happened, what was affected, what action they need to take |
 | Downstream consumers | Advisory / release note | Whether shipped code was affected, recommended actions |

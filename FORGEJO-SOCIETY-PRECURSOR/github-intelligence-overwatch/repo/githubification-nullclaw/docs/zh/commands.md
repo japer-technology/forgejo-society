@@ -21,7 +21,7 @@
 ## 初始化与交互
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw help` | 显示顶层帮助 |
 | `nullclaw version` / `nullclaw --version` | 查看 CLI 版本 |
 | `nullclaw onboard --interactive` | 交互式初始化配置 |
@@ -45,7 +45,7 @@
 ## 运行与运维
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw gateway` | 启动长期运行 runtime，默认读取配置中的 host/port |
 | `nullclaw gateway --port 8080` | 用 CLI 覆盖网关端口 |
 | `nullclaw gateway --host 0.0.0.0 --port 8080` | 用 CLI 覆盖监听地址与端口 |
@@ -74,7 +74,7 @@
 ### Channel
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw channel list` | 列出已知 / 已配置渠道 |
 | `nullclaw channel start` | 启动默认可用渠道 |
 | `nullclaw channel start telegram` | 启动指定渠道 |
@@ -85,7 +85,7 @@
 ### Cron
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw cron list` | 查看所有计划任务 |
 | `nullclaw cron add "0 * * * *" "command"` | 新增周期性 shell 任务 |
 | `nullclaw cron add-agent "0 * * * *" "prompt" --model <model> [--announce] [--channel <name>] [--to <id>]` | 新增周期性 agent 任务 |
@@ -100,7 +100,7 @@
 ### Skills
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw skills list` | 列出已安装 skill |
 | `nullclaw skills install <source>` | 从 GitHub URL 或本地路径安装 skill |
 | `nullclaw skills remove <name>` | 移除 skill |
@@ -109,7 +109,7 @@
 ### History
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw history list [--limit N] [--offset N] [--json]` | 列出会话记录 |
 | `nullclaw history show <session_id> [--limit N] [--offset N] [--json]` | 查看指定会话的消息详情 |
 
@@ -118,7 +118,7 @@
 ### Memory
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw memory stats` | 查看当前 memory 配置与关键计数 |
 | `nullclaw memory count` | 查看总条目数 |
 | `nullclaw memory reindex` | 重建向量索引 |
@@ -131,7 +131,7 @@
 ### Workspace / Capabilities / Models / Migrate
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw workspace edit AGENTS.md` | 用 `$EDITOR` 打开 bootstrap 文件 |
 | `nullclaw workspace reset-md --dry-run` | 预览将要重置的 markdown prompt 文件 |
 | `nullclaw workspace reset-md --include-bootstrap --clear-memory-md` | 重置 bundled markdown，并可附带清理 bootstrap / memory 文件 |
@@ -152,7 +152,7 @@
 ## 硬件与自动化集成
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw hardware scan` | 扫描已连接硬件 |
 | `nullclaw hardware flash <firmware_file> [--target <board>]` | 烧录固件（当前输出提示，尚未完整实现） |
 | `nullclaw hardware monitor` | 监控硬件（当前输出提示，尚未完整实现） |
@@ -162,7 +162,7 @@
 这组入口更偏自动化、集成、探针，不是普通用户的第一阅读路径：
 
 | 命令 | 说明 |
-|---|---|
+| --- | --- |
 | `nullclaw --export-manifest` | 导出 manifest |
 | `nullclaw --list-models` | 列出模型信息 |
 | `nullclaw --probe-provider-health` | 探测 provider 健康状态 |

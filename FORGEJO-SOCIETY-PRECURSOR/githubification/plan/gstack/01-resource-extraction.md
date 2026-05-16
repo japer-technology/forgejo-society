@@ -19,7 +19,7 @@ Resource extraction identifies which components carry their value forward into a
 These documents define the philosophy, identity, and operational standards of gstack. They are injected into every skill or referenced during execution.
 
 | Resource | Source Location | Extraction Purpose |
-|----------|----------------|-------------------|
+| --- | --- | --- |
 | `ETHOS.md` | `repo/gstack/ETHOS.md` | Three builder principles (Boil the Lake, Search Before Building, User Sovereignty) — injected into the pi-coding-agent's system prompt as operational values |
 | `ARCHITECTURE.md` | `repo/gstack/ARCHITECTURE.md` | Architectural decisions and rationale — context for adapting skills |
 | `AGENTS.md` | `repo/gstack/AGENTS.md` | Skill routing table and agent definitions — becomes the foundation for the skill router |
@@ -30,7 +30,7 @@ These documents define the philosophy, identity, and operational standards of gs
 These skills already operate on artifacts GitHub can provide (diffs, branches, commit history). They require minimal adaptation.
 
 | Skill | Source Directory | What It Does | Value Extracted |
-|-------|-----------------|--------------|-----------------|
+| --- | --- | --- | --- |
 | `/review` | `repo/gstack/review/` | Pre-landing PR review with structured checklists | `SKILL.md.tmpl` + `checklist.md` + `design-checklist.md` + `TODOS-format.md` + `greptile-triage.md` |
 | `/cso` | `repo/gstack/cso/` | OWASP Top 10 + STRIDE security audit | `SKILL.md.tmpl` + `ACKNOWLEDGEMENTS.md` |
 | `/ship` | `repo/gstack/ship/` | Run tests, review, push, open PR — full shipping workflow | `SKILL.md.tmpl` |
@@ -43,7 +43,7 @@ These skills already operate on artifacts GitHub can provide (diffs, branches, c
 These skills need a URL or brief user input, provided via issue body or comment.
 
 | Skill | Source Directory | What It Does | Value Extracted |
-|-------|-----------------|--------------|-----------------|
+| --- | --- | --- | --- |
 | `/qa` | `repo/gstack/qa/` | Browser-based QA testing with bug reporting | `SKILL.md.tmpl` + `references/issue-taxonomy.md` + `templates/qa-report-template.md` |
 | `/qa-only` | `repo/gstack/qa-only/` | QA report only — no code changes | `SKILL.md.tmpl` |
 | `/design-review` | `repo/gstack/design-review/` | Design audit with before/after screenshots | `SKILL.md.tmpl` |
@@ -56,7 +56,7 @@ These skills need a URL or brief user input, provided via issue body or comment.
 These skills require back-and-forth with the user via issue comments. They follow GMI's conversation pattern.
 
 | Skill | Source Directory | What It Does | Value Extracted |
-|-------|-----------------|--------------|-----------------|
+| --- | --- | --- | --- |
 | `/office-hours` | `repo/gstack/office-hours/` | Product idea refinement through conversation | `SKILL.md.tmpl` |
 | `/plan-ceo-review` | `repo/gstack/plan-ceo-review/` | CEO-level feature review | `SKILL.md.tmpl` |
 | `/plan-eng-review` | `repo/gstack/plan-eng-review/` | Architecture lock — data flow, edge cases, tests | `SKILL.md.tmpl` |
@@ -66,7 +66,7 @@ These skills require back-and-forth with the user via issue comments. They follo
 ### Skill Infrastructure
 
 | Resource | Source Location | Extraction Purpose |
-|----------|----------------|-------------------|
+| --- | --- | --- |
 | `scripts/gen-skill-docs.ts` | `repo/gstack/scripts/gen-skill-docs.ts` | Reference for building CI-adapted skill generation |
 | `scripts/skill-check.ts` | `repo/gstack/scripts/skill-check.ts` | Health dashboard pattern for monitoring skill availability |
 | `scripts/discover-skills.ts` | `repo/gstack/scripts/discover-skills.ts` | Skill discovery utility — reference for router implementation |
@@ -81,7 +81,7 @@ These skills require back-and-forth with the user via issue comments. They follo
 These resources are tightly coupled to gstack's local execution model and have no meaningful transfer to GitHub Actions.
 
 | Resource | Why It Stays Behind | GitHub-Native Replacement |
-|----------|--------------------|-----------------------------|
+| --- | --- | --- |
 | `browse/` source code | Persistent Chromium daemon optimized for sub-second local latency. CI doesn't need persistent daemons — ephemeral browsers are fine. | Playwright launched fresh per workflow run |
 | Tier 4 skills (`/careful`, `/freeze`, `/guard`, `/unfreeze`) | Local editing safety skills. CI has its own safety model: branch protection, CODEOWNERS, required reviews. | Branch protection rules and CODEOWNERS |
 | `/setup-browser-cookies` | Imports cookies from a developer's local browser. No equivalent in CI — authenticated testing uses service accounts or API tokens. | GitHub Secrets for service account credentials |
@@ -138,7 +138,7 @@ Update .github-gstack-intelligence/VERSION with source commit/tag
 For each extracted resource, the transformation from local to GitHub-native follows a consistent pattern:
 
 | Local Pattern | GitHub-Native Equivalent |
-|---|---|
+| --- | --- |
 | `{{PREAMBLE}}` template variable | CI-specific preamble injecting repo context, PR number, branch, diff summary |
 | `{{BROWSE_SETUP}}` template variable | Playwright setup block with `npx playwright install chromium` |
 | `AskUserQuestion` tool | Post an issue comment requesting input; wait for next `issue_comment` event |
@@ -155,7 +155,7 @@ For each extracted resource, the transformation from local to GitHub-native foll
 ## Extraction Completeness
 
 | Category | Count | Status |
-|----------|-------|--------|
+| --- | --- | --- |
 | Foundational documents | 4 | ✅ Fully extracted in `repo/gstack/` |
 | Tier 1 skills (event-driven) | 6 | ✅ Fully extracted |
 | Tier 2 skills (brief input) | 6 | ✅ Fully extracted |

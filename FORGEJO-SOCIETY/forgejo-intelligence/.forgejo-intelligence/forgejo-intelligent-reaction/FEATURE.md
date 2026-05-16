@@ -258,7 +258,7 @@ If the reactor lacks write access, silently records the signal without posting o
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | On Reaction Created | `reaction.created` | Reaction Detection |
 | 2 | On Reaction Deleted | `reaction.deleted` | Reaction Detection |
 | 3 | 👍 Thumbs Up on Issue or Issue Comment | `reaction.created` (+1, issue) | Positive Signal Processing |

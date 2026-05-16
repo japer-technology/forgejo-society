@@ -85,7 +85,7 @@ $ openclaw nemoclaw logs [-f] [-n <count>] [--run-id <id>]
 The `/nemoclaw` slash command is available inside the OpenClaw chat interface for quick actions:
 
 | Subcommand | Description |
-|---|---|
+| --- | --- |
 | `/nemoclaw status` | Show sandbox and inference state |
 
 ## Standalone Host Commands

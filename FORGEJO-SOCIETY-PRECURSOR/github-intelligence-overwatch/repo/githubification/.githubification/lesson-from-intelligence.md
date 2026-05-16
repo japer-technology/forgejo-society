@@ -23,7 +23,7 @@ This is a **Type 1 — AI Agent Repo** Githubification, but at a scale not seen 
 Issue Intelligence proved the vertical: a complete AI agent experience through Issues alone. GitHub Intelligence proves the horizontal: that same pattern, applied systematically to every GitHub feature, produces a platform-wide intelligence layer. The core architecture does not change — sentinel guard, lifecycle pipeline, issue-driven conversation, git-as-memory. What changes is the **number of surfaces** the intelligence touches.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent and all sub-modules |
 | **Git** | Storage and memory — sessions, conversations, and state across all modules |
 | **GitHub Issues** | Primary user interface — the core conversational thread |
@@ -136,7 +136,7 @@ This is the modular composition principle taken to its logical conclusion: **eve
 The repository uses a deliberate three-tier naming scheme:
 
 | Prefix | Purpose | Example |
-|--------|---------|---------|
+| --- | --- | --- |
 | `.github-intelligence` (no suffix) | Core agent | `.github-intelligence/` |
 | `.github-intelligent-*` | Primitive-specific intelligence | `.github-intelligent-issue/` |
 | `.github-intelligence-*` | Platform infrastructure | `.github-intelligence-swarm/` |

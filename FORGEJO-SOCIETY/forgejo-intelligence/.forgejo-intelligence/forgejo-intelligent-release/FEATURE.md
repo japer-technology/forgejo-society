@@ -279,7 +279,7 @@ Compares the monthly averages against the prior month's report stored in state a
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | On Release Created | `release.created` | Release Lifecycle |
 | 2 | On Release Published | `release.published` | Release Lifecycle |
 | 3 | On Release Edited | `release.edited` | Release Lifecycle |

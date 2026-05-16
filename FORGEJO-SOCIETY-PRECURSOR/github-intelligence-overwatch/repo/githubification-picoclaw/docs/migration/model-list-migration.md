@@ -14,7 +14,7 @@ The new `model_list` configuration offers several advantages:
 ## Timeline
 
 | Version | Status |
-|---------|--------|
+| --- | --- |
 | v1.x | `model_list` introduced, `providers` deprecated but functional |
 | v1.x+1 | Prominent deprecation warnings, migration tool available |
 | v2.0 | `providers` configuration removed |
@@ -81,7 +81,7 @@ The new `model_list` configuration offers several advantages:
 The `model` field uses a protocol prefix format: `[protocol/]model-identifier`
 
 | Prefix | Description | Example |
-|--------|-------------|---------|
+| --- | --- | --- |
 | `openai/` | OpenAI API (default) | `openai/gpt-5.2` |
 | `anthropic/` | Anthropic API | `anthropic/claude-opus-4` |
 | `antigravity/` | Google via Antigravity OAuth | `antigravity/gemini-2.0-flash` |
@@ -107,7 +107,7 @@ The `model` field uses a protocol prefix format: `[protocol/]model-identifier`
 ## ModelConfig Fields
 
 | Field | Required | Description |
-|-------|----------|-------------|
+| --- | --- | --- |
 | `model_name` | Yes | User-facing alias for the model |
 | `model` | Yes | Protocol and model identifier (e.g., `openai/gpt-5.2`) |
 | `api_base` | No | API endpoint URL |

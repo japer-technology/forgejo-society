@@ -255,7 +255,7 @@ External content passes through multiple security layers:
 ### Core Components
 
 | Component | Purpose |
-|-----------|---------|
+| --- | --- |
 | **Agent Loop** | Main message handling and job coordination |
 | **Router** | Classifies user intent (command, query, task) |
 | **Scheduler** | Manages parallel job execution with priorities |

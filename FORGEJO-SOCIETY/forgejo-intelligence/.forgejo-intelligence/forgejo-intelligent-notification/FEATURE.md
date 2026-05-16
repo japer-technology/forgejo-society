@@ -258,7 +258,7 @@ When an anomaly is detected, the agent posts a separate alert comment clearly la
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Daily Digest | 1–2 | Scheduled cron (daily) | Digest issue body edit, state |
 | Weekly Summary | 3–4 | Scheduled cron (weekly/monthly) | Digest issue comment, new retrospective issue, state |
 | Mention Digest | 5–6 | Scheduled cron (daily/hourly) | Digest issue body section, alert comment, state |
@@ -267,7 +267,7 @@ When an anomaly is detected, the agent posts a separate alert comment clearly la
 | Cross-Surface Aggregation | 13–14 | Scheduled cron (weekly/daily) | Weekly summary section, anomaly alert comment, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 1 (scheduled cron — no direct webhook) |
 | Response surfaces | 0 | 5 |
 | Interaction models | 0 | 3 (scheduled digest, slash command, cross-surface aggregation) |

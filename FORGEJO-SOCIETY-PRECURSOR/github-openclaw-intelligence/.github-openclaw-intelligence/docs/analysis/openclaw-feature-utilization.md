@@ -9,7 +9,7 @@ GitHub OpenClaw Intelligence depends on a single package — [`openclaw`](https:
 OpenClaw is a multi-channel AI gateway with extensible messaging integrations. It wraps `@mariozechner/pi-coding-agent` as its core agent runtime and adds:
 
 | Layer | Description | Used by OCI |
-|---|---|---|
+| --- | --- | --- |
 | `openclaw agent --local` | Embedded agent execution (no gateway server) | **Yes** |
 | `@mariozechner/pi-coding-agent` | Coding agent CLI with tool calling and session management | Yes (transitive) |
 | `@mariozechner/pi-ai` | Unified multi-provider LLM API | No (transitive only) |
@@ -37,7 +37,7 @@ JSON mode emits structured output on stdout. The agent pipes output through `tee
 **Key flags:**
 
 | Flag | Purpose |
-|------|---------|
+| --- | --- |
 | `--local` | Embedded execution without a Gateway server |
 | `--json` | Structured JSON output for response extraction |
 | `--message <prompt>` | User's prompt text |
@@ -75,7 +75,7 @@ OpenClaw's native session system (`OPENCLAW_STATE_DIR`, `--session-id`) provides
 Six setting groups are configured:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | `defaultProvider` | `openai` |
 | `defaultModel` | `gpt-5.4` |
 | `defaultThinkingLevel` | `high` |
@@ -97,7 +97,7 @@ The `AGENTS.md` file defines the agent's personality and standing orders. At run
 Ten bundled skills are enabled via `config/skills.json`:
 
 | Skill | Purpose |
-|---|---|
+| --- | --- |
 | `gh-issues` | Fetch GitHub issues, spawn sub-agents for fixes |
 | `github` | GitHub operations via `gh` CLI |
 | `weather` | Current weather and forecasts |
@@ -114,7 +114,7 @@ Ten bundled skills are enabled via `config/skills.json`:
 Seven extensions are declared in `config/extensions.json`:
 
 | Extension | Status |
-|---|---|
+| --- | --- |
 | `sub-agents` | ✅ Enabled |
 | `semantic-memory` | ✅ Enabled |
 | `media-understanding` | ✅ Enabled |
@@ -130,7 +130,7 @@ Seven extensions are declared in `config/extensions.json`:
 The agent uses four environment variables for runtime isolation:
 
 | Variable | Points To | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `OPENCLAW_STATE_DIR` | `.github-openclaw-intelligence/state/` | Persistent session storage |
 | `OPENCLAW_CONFIG_PATH` | `/tmp/openclaw-runtime.json` | Runtime config (skills, model) |
 | `OPENCLAW_OAUTH_DIR` | `.github-openclaw-intelligence/state/credentials/` | Credential storage |
@@ -227,7 +227,7 @@ Extension handlers can use `ctx.signal` to forward cancellation into nested mode
 ## 4. Priority Matrix
 
 | Feature | Effort | Impact | Priority |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ~~Compaction settings~~ | ~~Low~~ | ~~High~~ | ~~**P0**~~ ✅ Done |
 | ~~Retry settings~~ | ~~Low~~ | ~~High~~ | ~~**P0**~~ ✅ Done |
 | Custom extensions (GitHub tools) | Medium | High | **P1** — reduces prompt complexity |
@@ -245,7 +245,7 @@ Extension handlers can use `ctx.signal` to forward cancellation into nested mode
 GMI (the sibling project) uses the same underlying pi-coding-agent runtime but accesses it directly rather than through the OpenClaw wrapper. Key differences in feature utilization:
 
 | Feature | GMI | OCI | Gap |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CLI invocation | `pi --mode json -p <prompt>` | `openclaw agent --local --json --message <prompt>` | Different CLI, same underlying runtime |
 | Model/provider config | CLI flags (`--provider`, `--model`) | Runtime config (`agents.defaults.model`) | OCI uses config file; GMI uses flags |
 | Custom extensions | ✅ `github-context.ts` with `promptSnippet` | ❌ None | OCI should add equivalent |

@@ -89,7 +89,7 @@ In the **Remotes** panel on the left:
 Every GitKraken action must have a plain-git equivalent. This table confirms parity:
 
 | GitKraken action | Plain git equivalent |
-|---|---|
+| --- | --- |
 | Clone repository | `git clone <url>` |
 | Fetch all remotes | `git fetch --all` |
 | Create branch | `git checkout -b <name>` |

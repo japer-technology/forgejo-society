@@ -28,7 +28,7 @@ Inference requests are routed transparently through the OpenShell gateway.
 ## Profile Summary
 
 | Profile | Provider | Model | Endpoint | Use Case |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `default` | NVIDIA cloud | `nvidia/nemotron-3-super-120b-a12b` | `integrate.api.nvidia.com` | Production. Requires an NVIDIA API key. |
 
 ## Available Models
@@ -36,7 +36,7 @@ Inference requests are routed transparently through the OpenShell gateway.
 The `nvidia-nim` provider registers the following models from [build.nvidia.com](https://build.nvidia.com):
 
 | Model ID | Label | Context Window | Max Output |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `nvidia/nemotron-3-super-120b-a12b` | Nemotron 3 Super 120B | 131,072 | 8,192 |
 | `nvidia/llama-3.1-nemotron-ultra-253b-v1` | Nemotron Ultra 253B | 131,072 | 4,096 |
 | `nvidia/llama-3.3-nemotron-super-49b-v1.5` | Nemotron Super 49B v1.5 | 131,072 | 4,096 |

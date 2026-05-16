@@ -39,7 +39,7 @@ not as a free general-purpose compute / storage / hosting backend.
 This project's posture aligns with that rule because:
 
 | GitHub surface | How this project uses it | Why this is compliant |
-|---|---|---|
+| --- | --- | --- |
 | **Repository storage** | Source of truth during development; mirrored to Forgejo / Codeberg / GitLab / Bitbucket. | Used to develop the software in the repo. Not used as a generic backup or file-storage service. |
 | **Issues** | Development discussion and task tracking. | Standard collaboration use. |
 | **Pull requests** | Code review during development. | Standard collaboration use. |

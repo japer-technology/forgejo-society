@@ -99,7 +99,7 @@ template-repo/
 **Pre-run the installer vs. include raw `.GITCLAW/` only:**
 
 | Approach | Pros | Cons |
-|----------|------|------|
+| --- | --- | --- |
 | **Pre-installed** (workflows already in `.github/`) | Zero-step setup — just add the API key | Template is tightly coupled to a specific gitclaw version |
 | **Raw `.GITCLAW/` only** (user runs installer) | Installer generates files tailored to the repo | Adds a manual step; defeats the "zero CLI" benefit |
 
@@ -110,7 +110,7 @@ template-repo/
 Consider offering multiple templates for different use cases:
 
 | Template | Description |
-|----------|-------------|
+| --- | --- |
 | `gitclaw-starter` | Minimal repo with just gitclaw, ready for any project |
 | `gitclaw-typescript` | TypeScript project with gitclaw pre-configured |
 | `gitclaw-python` | Python project with gitclaw pre-configured |
@@ -212,7 +212,7 @@ jobs:
 The Template Repository method is most powerful when combined with other delivery methods:
 
 | Combination | Use Case |
-|-------------|----------|
+| --- | --- |
 | **Template + Marketplace Action** | Template for new repos, Action for adding to existing repos |
 | **Template + CLI Tool** | Template for browser-based setup, CLI for terminal-based setup |
 | **Template + GitHub App** | Template for quick starts, App for managed installations with updates |

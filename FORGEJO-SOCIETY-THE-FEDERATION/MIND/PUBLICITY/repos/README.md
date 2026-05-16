@@ -24,7 +24,7 @@ which subscriptions the sub-society actually permits.
 ## Index
 
 | Member | File | Decomposition | Implements |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Presenter | [`presenter.yml`](presenter.yml) | `presenter` | [`00-overview.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/00-overview.md), [`01-principles.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/01-principles.md) |
 | Announcements | [`announcements.yml`](announcements.yml) | `leaf` | [`02-announcements.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/02-announcements.md) |
 | Media relations | [`media-relations.yml`](media-relations.yml) | `leaf` (candidate to spawn) | [`03-media-relations.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md) |

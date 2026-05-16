@@ -59,7 +59,7 @@ At its foundation, GitHub is a hosted Git service. Every repository is a full ve
 Key primitives:
 
 | Primitive | Description |
-|-----------|-------------|
+| --- | --- |
 | **Commits** | Immutable snapshots of the entire tree, with author, timestamp, and message |
 | **Branches** | Lightweight pointers to commits — parallel lines of development |
 | **Tags** | Named pointers to specific commits — release markers |
@@ -81,7 +81,7 @@ The repository is not just where the agent's code lives — it is the agent's da
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Branch-per-investigation** | The agent creates a feature branch for exploratory work, keeping `main` clean until a human merges |
 | **Commit-level audit trails** | Structured commit messages with metadata (token usage, model, skill invoked) for forensic analysis |
 | **Blame-driven context** | When reviewing code, the agent uses `git blame` to understand who wrote what and when, enriching its analysis |
@@ -112,7 +112,7 @@ The mapping `issue #N → state/issues/N.json → state/sessions/<session>.jsonl
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Issue templates as skill selectors** | Different issue templates invoke different agent skills — "Bug Report" triggers triage, "Feature Request" triggers design analysis, "Code Review" triggers structured review |
 | **Task list automation** | The agent reads Markdown task lists in issue bodies and posts progress updates as items are completed |
 | **Sub-issue decomposition** | The agent breaks a large request into sub-issues, creating a hierarchy of tracked work items |
@@ -150,7 +150,7 @@ GitClaw does not currently trigger on pull request events. It operates exclusive
 This is one of the richest expansion surfaces:
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Auto-review on PR open** | When a PR is opened, the agent reads the diff, analyzes it, and posts a structured review with line-level comments |
 | **Review verdict logic** | The agent posts `APPROVE` for clean changes, `REQUEST_CHANGES` for issues found, with a consistent rubric |
 | **Diff summarization** | Large PRs get a top-level summary — what changed, why it matters, what to pay attention to |
@@ -172,7 +172,7 @@ This is one of the richest expansion surfaces:
 GitHub Actions is a CI/CD and workflow automation platform built into every repository. Key capabilities:
 
 | Capability | Description |
-|------------|-------------|
+| --- | --- |
 | **Event triggers** | 35+ event types: push, PR, issue, schedule, dispatch, deployment, release, and more |
 | **Workflow files** | YAML definitions in `.github/workflows/` |
 | **Runner environments** | Ubuntu, macOS, Windows, self-hosted, and larger runners |
@@ -204,7 +204,7 @@ The workflow is defined in `.github/workflows/GITCLAW-WORKFLOW-AGENT.yml` and us
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Multi-event workflows** | Extend triggers to `pull_request`, `discussion`, `schedule`, `workflow_dispatch`, and `repository_dispatch` |
 | **Scheduled agent tasks** | Cron-triggered runs for periodic triage, dependency audits, documentation freshness checks, and health reports |
 | **Workflow dispatch with inputs** | Manual triggers with parameters — task type, target issue, skill override, model selection |
@@ -245,7 +245,7 @@ GitClaw does not currently post check runs or commit statuses.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Agent-posted check runs** | After reviewing a PR, post a Check Run with inline annotations on problem lines |
 | **Required status checks** | Register `gitclaw/review` as a required check, gating merges on agent approval |
 | **Multi-check reporting** | Separate checks for different concerns: `gitclaw/style`, `gitclaw/security`, `gitclaw/tests` |
@@ -284,7 +284,7 @@ GitClaw does not currently interact with labels, milestones, or projects.
 ### What Could Be Done
 
 | Feature | Possibility |
-|---------|-------------|
+| --- | --- |
 | **Labels** | Auto-label issues based on content analysis (`bug`, `feature`, `question`, `documentation`); use labels to route to different agent skills (`agent:review`, `agent:triage`, `agent:docs`) |
 | **Labels** | Enforce a label taxonomy — warn when issues lack required labels or have conflicting ones |
 | **Labels** | Priority detection — analyze urgency signals in issue text and apply priority labels |
@@ -319,7 +319,7 @@ GitClaw does not currently interact with Discussions.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Q&A responder** | In Q&A categories, the agent answers questions by searching the codebase and citing specific files and functions |
 | **RFC summarizer** | For long design discussions, the agent posts periodic summaries: key arguments, open questions, emerging consensus |
 | **Discussion-to-issue converter** | When a discussion reaches a decision, the agent creates a tracked issue with the agreed-upon requirements |
@@ -354,7 +354,7 @@ GitClaw does not currently interact with releases or tags.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Changelog generation** | Read merged PRs and closed issues since the last tag; generate a structured changelog categorized by labels |
 | **Release note drafting** | Create a draft GitHub Release with generated notes, letting humans review before publishing |
 | **Semantic version detection** | Analyze the nature of changes (breaking, feature, fix) and recommend the next version number |
@@ -398,7 +398,7 @@ GitClaw does not currently interact with any security scanning features.
 ### What Could Be Done
 
 | Feature | Possibility |
-|---------|-------------|
+| --- | --- |
 | **CodeQL** | Triage alerts by severity — auto-close informational alerts, escalate critical ones to dedicated issues with fix proposals |
 | **CodeQL** | Generate fix PRs for common vulnerability patterns (SQL injection, XSS, path traversal) |
 | **CodeQL** | Track alert trends — detect regressions where new alerts appear after a merge |
@@ -439,7 +439,7 @@ GitClaw pushes directly to `main` with a retry-on-conflict strategy. It operates
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Protection audit** | The agent inspects branch protection settings and reports gaps (missing required reviews, no status checks, unsigned commits allowed) |
 | **Rule recommendations** | Based on repository activity patterns, suggest optimal protection rules |
 | **Compliance reporting** | Periodically verify that protection rules meet organizational standards |
@@ -464,7 +464,7 @@ GitClaw does not interact with CODEOWNERS.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **CODEOWNERS generation** | Analyze `git blame` across the codebase and generate a CODEOWNERS file reflecting actual ownership patterns |
 | **Stale owner detection** | Flag CODEOWNERS entries that reference users who have left the organization or haven't contributed recently |
 | **Coverage gap analysis** | Identify directories or file types not covered by any CODEOWNERS entry |
@@ -491,7 +491,7 @@ GitClaw does not currently use GitHub Pages.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Documentation site** | The agent generates and maintains a documentation site from repo content, deployed via Pages |
 | **Agent dashboard** | A live dashboard showing agent activity: recent conversations, open investigations, memory highlights, usage metrics |
 | **Skill catalog** | A browsable catalog of available agent skills, generated from skill files in `.pi/skills/` |
@@ -521,7 +521,7 @@ GitClaw does not interact with wikis.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Auto-generated wiki** | The agent generates wiki pages from code analysis — architecture overviews, API references, configuration guides |
 | **Wiki-as-knowledge-base** | The agent maintains a structured knowledge base in the wiki, updated as it learns from conversations |
 | **Decision log** | Each significant decision discussed in issues is summarized and added to a wiki decision log |
@@ -551,7 +551,7 @@ GitClaw does not publish packages or container images.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Skill packages** | Publish GitClaw skills as npm packages — installable via `bun add` or a future `gitclaw install` command |
 | **Container-based execution** | Package the agent runtime as a container image for reproducible, isolated execution |
 | **Package version monitoring** | Track published package versions and alert when new releases are available or vulnerabilities are disclosed |
@@ -582,7 +582,7 @@ GitClaw does not use environments or deployments.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Staged agent rollout** | Use environments to gate agent capability upgrades — test new skills in `staging` before `production` |
 | **Deployment tracking** | When the agent creates or approves a release, track the deployment through environments |
 | **Environment-scoped secrets** | Different LLM API keys or model selections per environment (cheaper models for staging, best models for production) |
@@ -612,7 +612,7 @@ GitClaw uses `GITHUB_TOKEN` (the default Actions token) and `github-actions[bot]
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Dedicated identity** | A GitHub App gives the agent its own identity (`gitclaw[bot]`) — distinct from `github-actions[bot]` and easier to audit |
 | **Fine-grained permissions** | App installation tokens can be scoped to exactly the permissions needed — no more, no less |
 | **Webhook-based triggers** | Apps receive webhooks directly, enabling lower-latency responses than Action-based triggers |
@@ -645,7 +645,7 @@ GitClaw triggers only on `issues` and `issue_comment` events via Actions workflo
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **External event ingestion** | CI failures, monitoring alerts, deployment events, or customer reports trigger the agent via `repository_dispatch` |
 | **Cross-service integration** | Slack, Discord, Linear, Jira, or PagerDuty events dispatch agent tasks |
 | **Typed event routing** | Define event types (`agent-task`, `security-alert`, `deploy-request`) with structured payloads that route to specific skills |
@@ -672,7 +672,7 @@ GitClaw uses a static `ANTHROPIC_API_KEY` secret for LLM access.
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Secretless LLM access** | If LLM providers adopt OIDC (or via a proxy), eliminate static API keys entirely |
 | **Cloud resource access** | The agent accesses AWS, GCP, or Azure resources using short-lived OIDC tokens — no static credentials to rotate |
 | **Credential audit** | The agent scans repo settings for long-lived secrets and recommends OIDC alternatives |
@@ -708,7 +708,7 @@ GitClaw uses the `gh` CLI (which wraps the REST API) for:
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Full platform participation** | Use the API to interact with every GitHub feature — PRs, projects, releases, security alerts, discussions |
 | **Batch operations** | GraphQL enables fetching issue + labels + milestone + project status in a single request, reducing latency |
 | **Cross-repo queries** | Query multiple repositories in an organization for consolidated views |
@@ -738,7 +738,7 @@ GitClaw does not interact with notifications. Humans see agent responses via nor
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Smart notification digest** | The agent generates a daily/weekly digest of important activity — summarizing instead of flooding |
 | **@mention handling** | The agent responds when @mentioned in any context (issue, PR, discussion, commit comment) |
 | **Escalation routing** | When the agent detects high-priority issues, it @mentions the appropriate team or individual |
@@ -764,7 +764,7 @@ GitClaw does not interact with social features. However, when a repo is forked, 
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Fork-aware memory** | Detect when running in a fork and adjust behavior — offer to start fresh or inherit upstream memory |
 | **Contributor onboarding** | Detect new contributors (first-time PRs) and provide personalized onboarding guidance |
 | **Star milestone celebrations** | Post celebratory messages or generate a community update when star milestones are reached |
@@ -789,7 +789,7 @@ GitHub's AI ecosystem is expanding rapidly:
 GitClaw occupies a different niche in the AI ecosystem:
 
 | Dimension | GitHub Copilot | GitClaw |
-|-----------|---------------|---------|
+| --- | --- | --- |
 | **Where it runs** | Editor / cloud | Repository (Actions) |
 | **Interface** | IDE / web chat | GitHub Issues |
 | **Memory** | Session-based | Git-committed, permanent |
@@ -801,7 +801,7 @@ GitClaw occupies a different niche in the AI ecosystem:
 ### What Could Be Done
 
 | Possibility | Description |
-|-------------|-------------|
+| --- | --- |
 | **Complementary roles** | Copilot assists in the editor; GitClaw assists in the issue tracker and review process — different surfaces, different strengths |
 | **GitHub Models integration** | Use GitHub Models API as an LLM provider, enabling GitClaw to run on GitHub-hosted models without external API keys |
 | **Copilot Extensions** | Build a Copilot Extension that queries GitClaw's session history — "what did the agent say about this code?" |
@@ -818,7 +818,7 @@ GitClaw occupies a different niche in the AI ecosystem:
 How each GitHub feature maps to agent interaction patterns:
 
 | GitHub Feature | Trigger | Read | Write | Memory | Gate |
-|----------------|---------|------|-------|--------|------|
+| --- | --- | --- | --- | --- | --- |
 | **Issues** | ✅ Event | ✅ Body, comments | ✅ Comments, reactions | ✅ Session mapping | — |
 | **Pull Requests** | 🔮 Event | 🔮 Diff, files, threads | 🔮 Reviews, comments | 🔮 PR-session mapping | 🔮 Required check |
 | **Actions** | ✅ Workflow | ✅ Logs, artifacts | ✅ Dispatch | ✅ State commits | ✅ Sentinel file |
@@ -915,7 +915,7 @@ Issues + Discussions + Wiki + Pages
 Each integration multiplies every existing one. The complexity stays linear — it is all files and API calls — but the capability surface grows **combinatorially**.
 
 | N features integrated | Possible feature combinations |
-|----------------------:|------------------------------:|
+| ---: | ---: |
 | 3 | 1 |
 | 5 | 10 |
 | 10 | 120 |

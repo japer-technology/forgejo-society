@@ -32,7 +32,7 @@ This analysis maps every Cronicle capability to its GitHub-native equivalent, ou
 Cronicle is a self-hosted, multi-server task scheduler that replaces Unix cron with a visual web interface. Its core capabilities:
 
 | Capability | Implementation |
-|---|---|
+| --- | --- |
 | **Scheduled job execution** | Cron-like timing with visual editor, multiple timezones |
 | **Real-time monitoring** | WebSocket (socket.io) push of live job status, progress bars, log streaming |
 | **Multi-server orchestration** | UDP discovery, primary/worker failover, server groups |
@@ -96,7 +96,7 @@ Cronicle's core functionality (scheduling + job execution) maps directly to GitH
 The Githubification invariant — four GitHub primitives serving four roles — maps to Cronicle as follows:
 
 | GitHub Primitive | Role | Cronicle Equivalent | Migration Path |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **GitHub Actions** | Compute | Cronicle scheduler + job runner + Node.js server | `schedule:` triggers replace cron; `workflow_dispatch` replaces on-demand runs; reusable workflows replace plugins |
 | **Git** | Storage and memory | Filesystem/S3/Couchbase storage engine | Job history, event definitions, and configuration stored as committed JSON/YAML files |
 | **GitHub Issues** | User interface | Web UI (htdocs/ SPA) | Issues become the conversational interface for scheduling, monitoring, and administration via AI agent |
@@ -118,7 +118,7 @@ Cronicle's Githubification is unique because **GitHub Actions already provides t
 ### Why This Strategy Works
 
 | Cronicle Feature | GitHub Native Equivalent | Gap |
-|---|---|---|
+| --- | --- | --- |
 | Cron scheduling | `on: schedule: - cron:` | ✅ Direct replacement |
 | On-demand execution | `on: workflow_dispatch:` | ✅ Direct replacement |
 | Plugin system (shell, HTTP) | Composite/reusable actions | ✅ Direct replacement |
@@ -183,7 +183,7 @@ Rather than attempting to replicate the full interactive UI (which would require
 #### What Migrates to GitHub Pages
 
 | Cronicle UI Component | GitHub Pages Equivalent | Data Source |
-|---|---|---|
+| --- | --- | --- |
 | **Home dashboard** (active jobs, stats) | Static dashboard rebuilt on each push/schedule | GitHub Actions API (workflow runs) |
 | **Schedule view** (event list with timing) | Table of scheduled workflows | Parsed from `.github/workflows/*.yml` cron expressions |
 | **Job history** (completed runs) | Run history table with status badges | GitHub Actions run history + git-committed state |
@@ -194,7 +194,7 @@ Rather than attempting to replicate the full interactive UI (which would require
 #### What Does NOT Migrate (Replaced by GitHub-native UX)
 
 | Cronicle UI Component | Why Not on Pages | GitHub-Native Replacement |
-|---|---|---|
+| --- | --- | --- |
 | **Real-time job monitor** | Requires WebSocket | GitHub Actions live log viewer |
 | **Schedule editor** | Requires backend write | Edit workflow YAML directly, or ask AI agent via Issue |
 | **User management** | Requires auth server | GitHub repository collaborators + RBAC |
@@ -206,7 +206,7 @@ Rather than attempting to replicate the full interactive UI (which would require
 The following existing assets can be directly reused on GitHub Pages:
 
 | Asset | Path | Reuse |
-|---|---|---|
+| --- | --- | --- |
 | **CSS theme** | `htdocs/css/style.css` | Color scheme, table styles, layout classes |
 | **Chart.js** | (dependency) | Performance graphs, success rate charts |
 | **Font Awesome 4.7** | (dependency) | Status icons, navigation icons |
@@ -265,7 +265,7 @@ jobs:
 Every Cronicle "event" (scheduled task) becomes a GitHub Actions workflow file:
 
 | Cronicle Concept | GitHub Actions Equivalent |
-|---|---|
+| --- | --- |
 | Event | Workflow file (`.github/workflows/*.yml`) |
 | Event timing (cron expression) | `on: schedule: - cron:` |
 | Event category | Workflow path prefix or labels |
@@ -331,7 +331,7 @@ jobs:
 ### Multi-Server → Multi-Runner
 
 | Cronicle Multi-Server | GitHub Actions Equivalent |
-|---|---|
+| --- | --- |
 | Primary server (scheduler) | GitHub Actions scheduler (automatic) |
 | Worker servers | Self-hosted runners with labels |
 | Server groups | Runner labels (`runs-on: [self-hosted, database-tier]`) |
@@ -349,7 +349,7 @@ A Minimum Intelligence agent inserted into this repository provides conversation
 #### What the Agent Can Do
 
 | User Request (via GitHub Issue) | Agent Action |
-|---|---|
+| --- | --- |
 | "Schedule a backup every night at 2am" | Creates/edits `.github/workflows/backup.yml` with `cron: '0 2 * * *'` |
 | "Show me what jobs ran yesterday" | Queries GitHub Actions API, formats run history as a table |
 | "Why did the ETL job fail?" | Fetches failed workflow run logs, analyzes error, suggests fix |
@@ -540,7 +540,7 @@ User opens Issue: "Run the ETL job now"
 ### Low Risk
 
 | Risk | Mitigation |
-|---|---|
+| --- | --- |
 | Cron scheduling differences (GitHub Actions accepts any cron syntax but has ~1-2 min execution jitter) | Document timezone conversion (Actions uses UTC only); note that while minute-level cron expressions are supported, actual trigger times may vary by 1-2 minutes |
 | GitHub Actions minutes usage | Public repos get unlimited minutes; private repos have free tier of 2,000 min/month |
 | Dashboard is not real-time | 15-minute refresh cycle + rebuild on workflow completion covers most use cases; live logs available in Actions tab |
@@ -548,7 +548,7 @@ User opens Issue: "Run the ETL job now"
 ### Medium Risk
 
 | Risk | Mitigation |
-|---|---|
+| --- | --- |
 | Complex plugin migration | Start with shell and HTTP plugins (direct equivalents exist); custom plugins may need rewriting as composite actions |
 | Multi-server job targeting | Self-hosted runners with labels replicate server groups; requires runner infrastructure setup |
 | Job history migration | Export existing Cronicle history to git-committed JSON before decommissioning |
@@ -556,7 +556,7 @@ User opens Issue: "Run the ETL job now"
 ### High Risk
 
 | Risk | Mitigation |
-|---|---|
+| --- | --- |
 | Sub-minute scheduling precision | GitHub Actions cron supports minute-level expressions but has ~1-2 min jitter on execution time; if sub-minute precision is required, keep a dedicated runner with a local scheduler |
 | Persistent-process jobs (long-running daemons) | GitHub Actions has a 6-hour job limit (72 hours for self-hosted); redesign long-running jobs as periodic health checks |
 | Large-scale multi-server orchestration | If operating 10+ worker servers with complex routing, a dedicated orchestration layer (Kubernetes, Nomad) may still be needed alongside the Githubified interface |
@@ -566,7 +566,7 @@ User opens Issue: "Run the ETL job now"
 ## Appendix A: File Mapping Reference
 
 | Current Cronicle Path | Githubified Equivalent | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `lib/main.js` | *(removed — no server needed)* | Server entry point |
 | `lib/engine.js` | `.github/workflows/*.yml` | Scheduling engine → workflow triggers |
 | `lib/scheduler.js` | GitHub Actions scheduler | Event timing |
@@ -612,7 +612,7 @@ The AI agent should be configured with a Cronicle-specific skill file (`.github-
 ### Data Sources
 
 | Data | Source | Collection Method |
-|---|---|---|
+| --- | --- | --- |
 | Scheduled workflows | `.github/workflows/*.yml` | Parse YAML files for `schedule:` triggers |
 | Run history | GitHub Actions API | `GET /repos/{owner}/{repo}/actions/runs` |
 | Run details | GitHub Actions API | `GET /repos/{owner}/{repo}/actions/runs/{id}` |

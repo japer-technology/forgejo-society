@@ -19,7 +19,7 @@ This document analyzes how gstack could be Githubified — transformed from a lo
 [Githubification](https://github.com/japer-technology/githubification) is the act of converting a repository into GitHub-as-infrastructure. Instead of cloning the repo and running the software elsewhere, the repo becomes something that runs on GitHub itself via GitHub Actions. Four GitHub primitives serve four roles universally:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent or software |
 | **Git** | Storage and memory — state is committed, versioned, searchable |
 | **GitHub Issues** | User interface — each issue is a conversation or task request |
@@ -34,7 +34,7 @@ The [Githubification project](https://github.com/japer-technology/githubificatio
 [GitHub Minimum Intelligence (GMI)](https://github.com/japer-technology/github-minimum-intelligence) demonstrates the gold standard of native Githubification. Its architecture provides the template for how gstack could operate on GitHub:
 
 | Component | GMI Implementation | gstack Equivalent |
-|---|---|---|
+| --- | --- | --- |
 | **Trigger** | Issue opened or commented | Issue opened, PR opened, push, comment, schedule, `workflow_dispatch` |
 | **Authorization** | Workflow step checks collaborator permissions | Same — workflow-level auth via `gh api` |
 | **Runtime** | `pi-coding-agent` via Bun | `claude` CLI (Anthropic) or `pi-coding-agent` via Bun |
@@ -64,7 +64,7 @@ Wrapping would mean running gstack's skills exactly as they run locally. This fa
 The transformation acknowledges that gstack's *value* is in its skill definitions (the prompt engineering, the workflow structure, the quality standards), not in its specific local execution model. The transformation maps each skill's workflow to GitHub Action triggers and replaces interactive prompts with issue-driven interfaces:
 
 | Local Interaction | GitHub Action Equivalent |
-|---|---|
+| --- | --- |
 | Developer types `/review` in Claude Code | PR is opened → workflow triggers → `/review` skill runs |
 | Developer types `/qa https://staging.example.com` | Issue comment contains "qa staging.example.com" → workflow triggers |
 | `AskUserQuestion` pauses for input | Agent posts a comment asking for input, waits for reply |
@@ -82,7 +82,7 @@ Not all twenty-five skills are equally suited for Githubification. This section 
 These skills already operate on artifacts that GitHub can provide (diffs, branches, URLs):
 
 | Skill | Trigger | How It Works on GitHub |
-|---|---|---|
+| --- | --- | --- |
 | `/review` | `pull_request: [opened, synchronize]` | Runs on every PR. Posts a structured code review as a PR comment. No user input needed — the diff IS the input. |
 | `/cso` | `pull_request: [opened, synchronize]` | OWASP Top 10 + STRIDE security audit runs automatically on every PR. Posts findings as a PR comment. |
 | `/ship` | `workflow_dispatch` or issue comment | Runs tests, reviews, pushes. The orchestrated version of the full shipping workflow. |
@@ -93,7 +93,7 @@ These skills already operate on artifacts that GitHub can provide (diffs, branch
 ### Tier 2 — Good Fit (needs URL or brief input, provided via issue)
 
 | Skill | Trigger | How It Works on GitHub |
-|---|---|---|
+| --- | --- | --- |
 | `/qa` | Issue comment with URL | User opens issue: "QA https://staging.example.com". Workflow launches Chromium on the runner, runs QA tests, posts bug report as comments with screenshots. |
 | `/qa-only` | Issue comment with URL | Same as `/qa` but report-only — no code changes. |
 | `/design-review` | `pull_request` on CSS/UI files | Design audit on PRs that touch visual files. Posts findings with before/after screenshots. |
@@ -104,7 +104,7 @@ These skills already operate on artifacts that GitHub can provide (diffs, branch
 ### Tier 3 — Moderate Fit (requires multi-turn conversation)
 
 | Skill | Trigger | How It Works on GitHub |
-|---|---|---|
+| --- | --- | --- |
 | `/office-hours` | Issue with `office-hours` label | Multi-turn conversation. User describes their product idea, agent asks questions via comments, user replies, agent refines. Follows the GMI conversation pattern exactly. |
 | `/plan-ceo-review` | Issue comment | CEO-level review of a feature idea. Posts structured analysis as a comment. May ask clarifying questions. |
 | `/plan-eng-review` | Issue comment | Architecture review. Locks architecture, data flow, edge cases, tests. Posts as comment. |
@@ -114,7 +114,7 @@ These skills already operate on artifacts that GitHub can provide (diffs, branch
 ### Tier 4 — Low Fit (local-only, safety, or meta-skills)
 
 | Skill | Assessment |
-|---|---|
+| --- | --- |
 | `/careful`, `/freeze`, `/guard`, `/unfreeze` | Safety skills for local editing. Not applicable to CI — replaced by branch protection rules and CODEOWNERS. |
 | `/browse` | The underlying browser is needed by other skills (QA, design-review) but `/browse` as a standalone interactive skill doesn't map to CI. The browser *capability* is Githubified; the *skill* is not. |
 | `/setup-browser-cookies` | Local-only. Cookie import from a developer's browser has no CI equivalent. |
@@ -277,7 +277,7 @@ Every AI decision, every review comment, every QA finding is committed to git. Y
 gstack skills are prompt templates designed for Claude Code. On GitHub Actions, the runtime options are:
 
 | Runtime | Pros | Cons |
-|---|---|---|
+| --- | --- | --- |
 | `claude` CLI (Anthropic) | Direct Claude access, supports tools, MCP | Requires `ANTHROPIC_API_KEY`, Claude-specific |
 | `pi-coding-agent` (pi-mono) | Multi-provider, proven on Actions (GMI uses it), session management | Smaller community, single maintainer |
 | Direct API calls | Maximum control, any provider | Must implement tool use, retry, streaming manually |
@@ -385,7 +385,7 @@ Options:
 ## Githubification Classification
 
 | Dimension | Assessment |
-|---|---|
+| --- | --- |
 | **Repo type** | Type 2 (Non-AI Software) + Type 3 (Hybrid) — gstack is a toolkit for AI agents, not an agent itself |
 | **Strategy** | Transformation — the interaction model must change from interactive/local to event-driven/remote |
 | **Lifecycle complexity** | Moderate — skill routing adds a layer beyond GMI's simple two-step lifecycle |

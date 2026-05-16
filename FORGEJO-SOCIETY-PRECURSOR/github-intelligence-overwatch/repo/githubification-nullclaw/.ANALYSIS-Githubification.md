@@ -21,7 +21,7 @@ NullClaw is a complete, self-contained AI assistant runtime written in Zig. It s
 NullClaw is the most Githubification-ready compiled agent studied to date. Where MicroClaw (Rust) demonstrated that a compiled binary turns Githubification into a channel adapter problem, and IronClaw showed that systems-language agents need escape hatches for heavy infrastructure, NullClaw eliminates every remaining friction point:
 
 | Friction Point | MicroClaw (Rust) | IronClaw (Rust) | NullClaw (Zig) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Binary size** | ~15 MB | ~20 MB | **678 KB** |
 | **Runtime dependencies** | System libraries | PostgreSQL or libSQL | **Zero (static musl)** |
 | **Startup time** | Sub-second | Sub-second | **< 2 ms** |
@@ -39,7 +39,7 @@ A 678 KB binary with zero dependencies means the workflow downloads and runs in 
 ### GitHub Primitives → NullClaw Subsystems
 
 | GitHub Primitive | NullClaw Subsystem | Mapping |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | `src/runtime.zig` → `RuntimeAdapter` | A new `GitHubActionsRuntime` adapter. Ephemeral, shell access, filesystem access, no long-running support, capped memory budget. |
 | **Git** | `src/memory/` → Memory engines | SQLite engine writes to `.nullclaw-github/state/nullclaw.db`, committed to git after each run. Alternatively, the Markdown engine for zero-dependency state. |
 | **GitHub Issues** | `src/channels/` → `Channel` vtable | A new `github.zig` channel adapter. Issues are conversations, comments are messages, reactions are status indicators. |
@@ -50,7 +50,7 @@ A 678 KB binary with zero dependencies means the workflow downloads and runs in 
 NullClaw already has every architectural feature needed for Githubification:
 
 | Requirement | NullClaw Feature | Status |
-|---|---|---|
+| --- | --- | --- |
 | Channel-agnostic agent loop | `src/agent.zig` + `src/agent/` | ✅ Exists |
 | Multi-provider LLM support | `src/providers/` (50+ providers) | ✅ Exists |
 | Environment-variable config | `Config.applyEnvOverrides()` | ✅ Exists |
@@ -236,7 +236,7 @@ jobs:
 ### Workflow Characteristics
 
 | Property | Value |
-|---|---|
+| --- | --- |
 | **Binary download** | < 1 second (678 KB) |
 | **Startup overhead** | < 2 ms |
 | **Total workflow cold start** | ~5–8 seconds (checkout + download + run) |
@@ -294,7 +294,7 @@ Both engines are selectable via build flag (`-Dengines=sqlite` or `-Dengines=bas
 A new `src/channels/github.zig` implementing `Channel.VTable`:
 
 | VTable Method | GitHub Implementation |
-|---|---|
+| --- | --- |
 | `start` | Read issue number and repository from environment variables. Load session mapping from `.nullclaw-github/state/issues/{N}.json`. |
 | `stop` | Write `last-response.md`. Commit state is handled by the workflow, not the channel. |
 | `send` | Write the response to `last-response.md` (or post directly via `gh` CLI if shell access is available). |
@@ -339,7 +339,7 @@ This allows NullClaw's agent loop, tool execution, and security policy to adapt 
 NullClaw's security model translates naturally to GitHub Actions:
 
 | Security Feature | Local Runtime | GitHub Actions |
-|---|---|---|
+| --- | --- | --- |
 | **Authorization** | Pairing system | Workflow-level collaborator permission check |
 | **Credential storage** | Encrypted secrets file | GitHub Secrets (repository-level) |
 | **Workspace scoping** | `workspace_dir` config | Checkout directory (workflow-controlled) |
@@ -351,7 +351,7 @@ NullClaw's security model translates naturally to GitHub Actions:
 ### Additional GitHub-Specific Security
 
 | Concern | Mitigation |
-|---|---|
+| --- | --- |
 | **Public repo exposure** | Authorization step rejects non-collaborators. Bot comments excluded by login suffix check. |
 | **Secrets in logs** | NullClaw already never logs secrets. GitHub Actions masks secrets automatically. |
 | **Workflow injection** | Issue body passed via `gh api` (not interpolated in YAML). Prompt sanitization in agent loop. |
@@ -377,7 +377,7 @@ For high-security deployments, self-hosted runners with NullClaw's full sandbox 
 No other agent can match NullClaw's workflow speed:
 
 | Phase | GMI (TypeScript) | MicroClaw (Rust) | NullClaw (Zig) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Dependency install** | 15–30s (`bun install`) | 0s (binary) | **0s (binary)** |
 | **Binary download** | N/A | ~2s (15 MB) | **< 1s (678 KB)** |
 | **Startup** | ~1s (Bun + script parse) | < 1s | **< 2 ms** |
@@ -493,7 +493,7 @@ Committing SQLite databases to git works but produces opaque binary diffs. Optio
 ### Phase 1 — GitHub Channel Adapter
 
 | Task | Files | Estimated LOC |
-|---|---|---|
+| --- | --- | --- |
 | Implement `Channel.VTable` for GitHub Issues | `src/channels/github.zig` | ~200–300 |
 | Register in channel factory | `src/channels/root.zig` | ~5 |
 | Add `github` to channel build flag | `build.zig` | ~5 |
@@ -503,7 +503,7 @@ Committing SQLite databases to git works but produces opaque binary diffs. Optio
 ### Phase 2 — GitHub Actions Runtime Adapter
 
 | Task | Files | Estimated LOC |
-|---|---|---|
+| --- | --- | --- |
 | Implement `RuntimeAdapter.VTable` for GitHub Actions | `src/runtime.zig` | ~40 |
 | Detect GitHub Actions environment automatically | `src/runtime.zig` | ~10 |
 | Tests for runtime adapter | `src/runtime.zig` (test block) | ~30 |
@@ -511,7 +511,7 @@ Committing SQLite databases to git works but produces opaque binary diffs. Optio
 ### Phase 3 — Workflow and Configuration
 
 | Task | Files |
-|---|---|
+| --- | --- |
 | Create workflow template | `.github/workflows/nullclaw-agent.yml` |
 | Create GitHub-specific config template | `.nullclaw-github/config.json` |
 | Create issue templates | `.github/ISSUE_TEMPLATE/nullclaw-chat.md` |
@@ -520,7 +520,7 @@ Committing SQLite databases to git works but produces opaque binary diffs. Optio
 ### Phase 4 — Polish and Distribution
 
 | Task | Description |
-|---|---|
+| --- | --- |
 | Build a GitHub-specialized binary in the release matrix | Add `nullclaw-github-linux-x86_64.bin` to the release workflow |
 | Create installer workflow | A `workflow_dispatch` workflow that bootstraps `.nullclaw-github/` |
 | Add personality hatching support | Issue template + agent behavior for identity discovery |
@@ -540,7 +540,7 @@ This is comparable to the MicroClaw estimate (~500 lines of new code) and substa
 ## Comparison with Other Githubified Agents
 
 | Dimension | GMI | GitClaw | MicroClaw | NullClaw |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Language** | TypeScript | TypeScript | Rust | **Zig** |
 | **Strategy** | Native (born-Githubified) | Native (born-Githubified) | Channel Addition | **Channel Addition** |
 | **Binary/Interpreted** | Interpreted (Bun) | Interpreted (Bun) | Compiled binary | **Compiled binary** |

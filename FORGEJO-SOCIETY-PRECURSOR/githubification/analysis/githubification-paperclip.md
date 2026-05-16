@@ -39,7 +39,7 @@ Paperclip is a self-hosted control plane where a human board operator creates co
 ### Core Capabilities
 
 | Capability | Implementation |
-|---|---|
+| --- | --- |
 | **Company management** | Create/list/update/archive companies, each with a goal, org chart, and budget |
 | **Agent orchestration** | 7+ adapter types (Claude, Codex, Cursor, Gemini, OpenCode, Pi, OpenClaw Gateway) |
 | **Org charts** | Strict tree hierarchy with `reports_to` relationships |
@@ -121,7 +121,7 @@ Despite its complexity, Paperclip should not be treated as a Substitution candid
 The Githubification invariant — four GitHub primitives serving four roles — maps to Paperclip as follows:
 
 | GitHub Primitive | Role | Paperclip Equivalent | Migration Path |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **GitHub Actions** | Compute | Express server, heartbeat service, adapter execution, budget enforcement | `schedule:` triggers replace heartbeat timers; `workflow_dispatch` replaces on-demand invocations; composite actions replace adapter execution; matrix jobs replace multi-agent scheduling |
 | **Git** | Storage and memory | PostgreSQL database (companies, agents, tasks, costs, sessions, activity) | JSON/YAML files committed to the repo replace database tables; company state stored as directory trees; session history as JSONL |
 | **GitHub Issues** | User interface | React UI (dashboard, org chart, tasks, costs, approvals) | Issues become the conversational interface for company management; labels encode status/priority/type; milestones encode goals; project boards encode org structure |
@@ -140,7 +140,7 @@ Three strategies are viable for Paperclip, each at a different point on the fide
 Replace the entire Paperclip server with GitHub-native primitives:
 
 | Component | Replacement |
-|---|---|
+| --- | --- |
 | Database | Git-committed JSON/YAML state files |
 | Heartbeat scheduler | `schedule:` cron triggers on workflows |
 | Task management | GitHub Issues with structured labels |
@@ -158,7 +158,7 @@ Replace the entire Paperclip server with GitHub-native primitives:
 Insert a GitHub Minimum Intelligence agent into the repo that provides conversational access to Paperclip's full API. The agent acts as a bridge between GitHub Issues and the Paperclip REST API:
 
 | Interaction | How It Works |
-|---|---|
+| --- | --- |
 | "Create a new company called TechCorp" | Agent calls `POST /api/companies` |
 | "Hire a CTO who reports to the CEO" | Agent calls `POST /api/agents` with `reportsTo` |
 | "What's the total spend this month?" | Agent calls `GET /api/costs/rollup` |
@@ -175,7 +175,7 @@ The GMI agent folder (`.github-minimum-intelligence/`) sits alongside the Paperc
 Progressively migrate Paperclip's server functionality into GitHub Actions workflows while keeping the data model intact:
 
 | Phase | What Migrates |
-|---|---|
+| --- | --- |
 | Phase 1 | Heartbeat scheduling → `schedule:` workflows that call agent adapters |
 | Phase 2 | Task lifecycle → Issue-driven with structured metadata in issue bodies |
 | Phase 3 | Budget enforcement → Pre-execution workflow step that checks committed ledger |
@@ -201,7 +201,7 @@ Progressively migrate Paperclip's server functionality into GitHub Actions workf
 ### What Maps Cleanly ✅
 
 | Paperclip Feature | GitHub Primitive | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Heartbeat timers | `on: schedule: - cron:` | Direct replacement. Per-agent workflows with cron expressions. |
 | On-demand agent invocation | `on: workflow_dispatch:` | Manual trigger with agent ID as input parameter. |
 | Task assignment triggers | `on: issues: types: [assigned]` | Issue assignment triggers agent workflow. |
@@ -217,7 +217,7 @@ Progressively migrate Paperclip's server functionality into GitHub Actions workf
 ### What Maps With Effort ⚠️
 
 | Paperclip Feature | GitHub Approach | Gap |
-|---|---|---|
+| --- | --- | --- |
 | Multi-company isolation | Separate repositories or directory-based scoping | GitHub has no native "company within a repo" concept. Separate repos provide true isolation but lose single-pane-of-glass. |
 | Org chart visualization | GitHub Pages static site or Mermaid in README | No interactive drag-and-drop. Mermaid diagrams are auto-generated from YAML. |
 | Budget hard-stop | Pre-execution workflow step | Eventually consistent — the check runs before the agent starts, not during. |
@@ -229,7 +229,7 @@ Progressively migrate Paperclip's server functionality into GitHub Actions workf
 ### What Doesn't Map ❌
 
 | Paperclip Feature | Why It's Hard | Workaround |
-|---|---|---|
+| --- | --- | --- |
 | Embedded PostgreSQL | GitHub Actions runners are ephemeral | Git-committed JSON/YAML state files (see §9). |
 | 40+ REST API routes | No persistent HTTP server | Issue commands → GMI agent → state file mutations. |
 | React UI (dashboard, org chart, detail views) | No dynamic server-rendered content | GitHub Pages static site rebuilt on push (see §7). |
@@ -250,7 +250,7 @@ The most natural first step is inserting a [GitHub Minimum Intelligence](https:/
 The GMI agent would need Paperclip-specific skills in `.github-minimum-intelligence/.pi/skills/`:
 
 | Skill | Purpose |
-|---|---|
+| --- | --- |
 | `paperclip-company` | Create, list, configure, and archive companies |
 | `paperclip-agents` | Hire agents, configure adapters, set reporting lines |
 | `paperclip-tasks` | Create tasks, assign work, track status, manage hierarchy |
@@ -342,7 +342,7 @@ jobs:
 ### Dashboard Content (generated from committed state)
 
 | Page | Data Source | Format |
-|---|---|---|
+| --- | --- | --- |
 | Company overview | `companies/*/company.yaml` | Summary table with goals, status, agent counts |
 | Org chart | `companies/*/agents/*.yaml` | Mermaid diagram auto-generated from `reportsTo` fields |
 | Task board | `companies/*/tasks/*.yaml` | Status-grouped task lists with assignees |
@@ -547,7 +547,7 @@ companies/
 ### Database Table → File Mapping
 
 | Drizzle Table | File Format | Location |
-|---|---|---|
+| --- | --- | --- |
 | `companies` | YAML | `companies/<slug>/company.yaml` |
 | `agents` | YAML | `companies/<slug>/agents/<name>.yaml` |
 | `issues` (tasks) | YAML or GitHub Issues | `companies/<slug>/tasks/<id>.yaml` or GitHub Issues with labels |
@@ -577,7 +577,7 @@ Paperclip's heartbeat service is its most sophisticated component — 3,800+ lin
 ### What GitHub Actions Provides
 
 | Capability | GitHub Actions Support |
-|---|---|
+| --- | --- |
 | Cron scheduling | ✅ `on: schedule:` — but minimum granularity is 5 minutes, and timing is approximate |
 | Manual trigger | ✅ `on: workflow_dispatch:` — with input parameters |
 | Event-driven trigger | ✅ `on: issues:`, `on: issue_comment:`, `on: push:` |
@@ -590,7 +590,7 @@ Paperclip's heartbeat service is its most sophisticated component — 3,800+ lin
 ### What GitHub Actions Lacks
 
 | Capability | Gap |
-|---|---|
+| --- | --- |
 | Sub-minute scheduling | Actions minimum is ~5 minutes; Paperclip heartbeats can be seconds |
 | Dynamic scheduling | Cron expressions are static in YAML; can't change interval at runtime |
 | Wakeup queue | No native queue — must use `workflow_dispatch` chains or repository dispatch |
@@ -641,7 +641,7 @@ Paperclip's unique position creates a philosophical question: **should the orche
 If every agent in a Paperclip company is already Githubified (runs on Actions, converses through Issues, persists through Git), then Paperclip's core value proposition — "orchestrate agents that phone home" — is already handled by GitHub itself:
 
 | Paperclip Provides | GitHub Already Has |
-|---|---|
+| --- | --- |
 | Agent scheduling | `schedule:` triggers |
 | Task assignment | Issue assignment |
 | Agent monitoring | Workflow run status |
@@ -657,7 +657,7 @@ In this view, a fully Githubified world doesn't need Paperclip — it needs a **
 GitHub's primitives are low-level. They provide the building blocks but not the abstractions:
 
 | What's Missing | Why It Matters |
-|---|---|
+| --- | --- |
 | Goal hierarchy | GitHub Issues are flat. Paperclip's "every task traces to the company goal" requires structured metadata. |
 | Budget enforcement | GitHub has no concept of token budgets or cost limits. This must be built. |
 | Org chart intelligence | GitHub teams are for access control, not reporting hierarchies. An org-aware dispatcher is needed. |
@@ -675,7 +675,7 @@ GitHub's primitives are low-level. They provide the building blocks but not the 
 Install GitHub Minimum Intelligence into the Paperclip repository. Create skills that can read and report on the Paperclip codebase. This provides immediate conversational access via GitHub Issues without changing any existing functionality.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | `.github-minimum-intelligence/` folder | Standard GMI installation |
 | `paperclip-overview` skill | Reads and summarizes company configs, agent status, task state |
 | Workflow file | `github-minimum-intelligence-agent.yml` |
@@ -686,7 +686,7 @@ Install GitHub Minimum Intelligence into the Paperclip repository. Create skills
 Define the file-based state format for companies, agents, tasks, goals, costs, and sessions. Build scripts that can read/write this state. This is the foundation for all subsequent phases.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | `companies/` directory structure | YAML configs for company, agents, goals, budgets |
 | State management scripts | `scripts/read-state.js`, `scripts/write-state.js` |
 | Cost ledger format | JSONL append-only with monthly rollup |
@@ -697,7 +697,7 @@ Define the file-based state format for companies, agents, tasks, goals, costs, a
 Replace the heartbeat service with GitHub Actions workflows. A dispatcher workflow runs on schedule, checks which agents need invocation, and triggers per-agent workflows.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | `heartbeat-dispatcher.yml` | Scheduled workflow that reads agent configs and dispatches |
 | `heartbeat-agent.yml` | Reusable workflow that executes a specific agent |
 | Budget guard step | Pre-execution check against committed cost ledger |
@@ -708,7 +708,7 @@ Replace the heartbeat service with GitHub Actions workflows. A dispatcher workfl
 Map Paperclip's task lifecycle to GitHub Issues. Task creation, assignment, status transitions, and comments all happen through Issues.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | Issue templates | Structured task templates with YAML front matter |
 | Label schema | `company:*`, `status:*`, `priority:*`, `agent:*`, `type:task`, `type:approval` |
 | Task lifecycle workflows | Handlers for `issues: [opened, assigned, labeled, closed]` |
@@ -719,7 +719,7 @@ Map Paperclip's task lifecycle to GitHub Issues. Task creation, assignment, stat
 Build a GitHub Pages dashboard that reads committed state files and generates a static site showing company status, org charts, task boards, and cost summaries.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | Dashboard generator script | Reads `companies/` tree, outputs static HTML |
 | Mermaid org chart | Auto-generated from agent YAML configs |
 | Cost visualizations | Chart.js charts from cost ledger data |
@@ -730,7 +730,7 @@ Build a GitHub Pages dashboard that reads committed state files and generates a 
 Create GitHub repository templates that set up a complete company from scratch. Support company import/export using the existing Paperclip company template format.
 
 | Deliverable | Description |
-|---|---|
+| --- | --- |
 | Repository template | Pre-configured workflows, scripts, and state directories |
 | Company import script | Converts Paperclip company export to file-based state |
 | `onboard` workflow | Guided company setup via `workflow_dispatch` with inputs |
@@ -780,7 +780,7 @@ flowchart TD
 ### High Risk ⛔
 
 | Risk | Impact | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions rate limits** | Multi-agent companies with frequent heartbeats may hit workflow dispatch limits (1,000 API requests/hour) | Batch dispatches; use matrix jobs for parallel agents; reduce heartbeat frequency |
 | **Git merge conflicts** | Concurrent agent commits to the same repository | Per-company concurrency groups; append-only formats; per-agent state directories |
 | **Schedule imprecision** | `schedule:` triggers can be delayed by minutes during high-demand periods | Accept eventual consistency; use `workflow_dispatch` for time-sensitive operations |
@@ -789,7 +789,7 @@ flowchart TD
 ### Medium Risk ⚠️
 
 | Risk | Impact | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **No real-time monitoring** | Board cannot see agent activity in real time | Webhook notifications on workflow completion; periodic dashboard rebuilds |
 | **Budget enforcement lag** | Cost check happens before agent runs, not during | Acceptable for most use cases; add mid-run checkpoints for long-running agents |
 | **Multi-company complexity** | Multiple companies in one repo create label/path conflicts | Use separate repositories per company (cleanest isolation) |
@@ -798,7 +798,7 @@ flowchart TD
 ### Low Risk ✅
 
 | Risk | Impact | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **Loss of React UI** | Less interactive experience | GitHub Pages dashboard covers 80% of use cases; Issues cover the rest |
 | **Adapter compatibility** | Not all Paperclip adapters translate to Actions | Start with process-based adapters (Claude, Pi); add others incrementally |
 | **Session management** | More complex without a persistent server | Same pattern as GMI — solved problem, battle-tested across 6+ Githubified repos |
@@ -810,7 +810,7 @@ flowchart TD
 The [GitHub Minimum Intelligence](https://github.com/japer-technology/github-minimum-intelligence) project provides a proven blueprint for every technical challenge Paperclip's Githubification will face:
 
 | Challenge | GMI's Proven Solution |
-|---|---|
+| --- | --- |
 | Agent execution on Actions | Single workflow file with guard → indicate → execute → commit pipeline |
 | Session persistence | JSONL files committed to git, loaded by session ID |
 | Issue-driven conversation | `Issue #N → state/issues/N.json → state/sessions/<session>.jsonl` |

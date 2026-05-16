@@ -334,7 +334,7 @@ service-specific terms exist to prevent.
 ## 3. Per-policy summary
 
 | Policy clause | Triggering files | Why |
-|---|---|---|
+| --- | --- | --- |
 | Acceptable Use Policy — *no excessive automated bulk activity* | All `run-agent` jobs; emergency-kill | Per-comment runner spawns; mass cross-repo deletes |
 | Acceptable Use Policy — *no interfering with other users / hosts* | `github-intelligence-emergency-trigger-kill.yml` | Deletes workflows in other repos in the org |
 | Acceptable Use Policy — *no using servers for file storage / data hosting* | `memory.log`, `state/`, `public-fabric/` | Append-only logs and AI output committed every turn |

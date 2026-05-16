@@ -15,7 +15,7 @@
 The cron module exists as a specification only. No triggers, no tasks, no dispatch infrastructure is wired yet.
 
 | Trigger | What the agent does |
-|---|---|
+| --- | --- |
 | *(none)* | *(nothing — the module is specification-only)* |
 
 Everything below is what becomes possible once this coordinator is implemented — and in particular, what becomes possible when [`lasith-kg/dispatch-workflow`](https://github.com/lasith-kg/dispatch-workflow) is adopted as the dispatch mechanism.
@@ -33,7 +33,7 @@ This matters for `forgejo-intelligence-cron` because the cron coordinator is not
 ### Key Capabilities Inherited from `dispatch-workflow`
 
 | Capability | How It Works | What It Enables for Cron |
-|---|---|---|
+| --- | --- | --- |
 | **Dual dispatch methods** | Supports both `workflow_dispatch` (target a specific workflow file on a specific branch) and `repository_dispatch` (target an event type on the default branch) | Choose the right dispatch method per task — `workflow_dispatch` for precision, `repository_dispatch` for decoupled event-driven triggers |
 | **Run ID discovery** | For `workflow_dispatch`: as of API version `2026-03-10`, the Run ID is returned natively in the response. For `repository_dispatch`: injects a UUID (`distinct_id`) into the dispatched run's name, then correlates it from recent workflow runs | Track every dispatched task to completion — know its status, its URL, its outcome |
 | **Cross-repo dispatch** | Targets any `owner/repo` the token has access to | Sweep multiple repositories from a single cron schedule — org-wide triage, federated health checks |
@@ -50,7 +50,7 @@ These are all the ways the cron coordinator can be activated — the inputs that
 ### Native Triggers
 
 | Trigger | How It Fires | What It Signals |
-|---|---|---|
+| --- | --- | --- |
 | **`schedule` (GitHub Actions cron)** | `on: schedule: - cron: '0 9 * * 1'` in the workflow file | Time-based activation — the heartbeat. Weekly triage, daily digests, hourly health checks. No human action required |
 | **`workflow_dispatch` (manual)** | Click "Run workflow" in the Actions tab, or call the API directly | On-demand execution of any scheduled task. A human (or another system) decides "run this now" |
 | **`repository_dispatch` (external)** | `POST /repos/{owner}/{repo}/dispatches` with an `event_type` | An external system triggers a task — a deployment pipeline, a monitoring alert, a Slack bot, a webhook relay |
@@ -58,7 +58,7 @@ These are all the ways the cron coordinator can be activated — the inputs that
 ### Chained Triggers (enabled by `dispatch-workflow`)
 
 | Trigger | How It Fires | What It Signals |
-|---|---|---|
+| --- | --- | --- |
 | **Self-dispatch** | A cron run uses `dispatch-workflow` to trigger its own workflow with different inputs | Deferred execution — a triage sweep finds 50 stale issues and dispatches a separate run to process them in batches, avoiding workflow timeout |
 | **Cascade dispatch** | A cron run dispatches a workflow in the same repo, which dispatches another | Multi-stage pipelines — scan → triage → notify → summarize, each stage a separate tracked workflow |
 | **Cross-repo dispatch** | A cron run dispatches workflows in other repositories the token can access | Organization-wide sweeps — one repo's cron schedule triggers intelligence runs across 10 sibling repos |
@@ -73,7 +73,7 @@ Using `dispatch-workflow`, the cron coordinator can fire these kinds of work —
 ### Same-Repository Targets
 
 | Target | Dispatch Method | Payload | What It Does |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Issue triage sweep** | `workflow_dispatch` | `{ "task": "triage", "days_stale": "14" }` | Dispatch the agent workflow with a triage prompt. The dispatched run scans issues, labels stale ones, and posts a summary |
 | **Documentation freshness audit** | `workflow_dispatch` | `{ "task": "docs-freshness" }` | Dispatch a run that checks README/wiki staleness against last-modified dates |
 | **Health check** | `workflow_dispatch` | `{ "task": "health" }` | Dispatch a run that validates all intelligence folders, checks LLM provider connectivity, and reports system status |
@@ -86,7 +86,7 @@ Using `dispatch-workflow`, the cron coordinator can fire these kinds of work —
 ### Cross-Repository Targets (enabled by `dispatch-workflow`)
 
 | Target | Dispatch Method | Why Cross-Repo | What It Does |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Org-wide triage** | `repository_dispatch` to each repo | One schedule, many repos | A central cron repo dispatches triage sweeps to every repository in the organization |
 | **Federated health check** | `repository_dispatch` to each repo | Unified health view | Dispatch health checks to all repos, collect results via Run IDs, and compile an org-wide health report |
 | **Upstream dependency watch** | `workflow_dispatch` to upstream repo | Monitor dependencies at their source | Dispatch a workflow in a dependency's repo to check its latest release, then compare against what this repo uses |
@@ -101,15 +101,15 @@ The defining feature of `dispatch-workflow` is Run ID discovery. These are the t
 ### Discovery Mechanisms
 
 | Mechanism | How It Works | When to Use |
-|---|---|---|
+| --- | --- | --- |
 | **Native `workflow_dispatch` Run ID** | As of [API version `2026-03-10`](https://docs.github.com/rest/about-the-rest-api/breaking-changes?apiVersion=2026-03-10), the `workflow_dispatch` endpoint returns a `200` response with `workflow_run_id`, `run_url`, and `html_url` directly in the response body | The simplest and preferred method for `workflow_dispatch` — no correlation needed, the Run ID is returned immediately |
-| **Distinct ID in `run-name`** | Dispatcher injects a UUID into `workflow-inputs`. The receiving workflow includes it in its `run-name` expression: `run-name: Task [${{ inputs.distinct_id && inputs.distinct_id || 'N/A' }}]`. The dispatcher then searches recent runs for the UUID. | `repository_dispatch` tasks where the API does not return a Run ID, or legacy `workflow_dispatch` usage on older API versions |
+| **Distinct ID in `run-name`** | Dispatcher injects a UUID into `workflow-inputs`. The receiving workflow includes it in its `run-name` expression: `run-name: Task [${{ inputs.distinct_id && inputs.distinct_id |  | 'N/A' }}]`. The dispatcher then searches recent runs for the UUID. | `repository_dispatch` tasks where the API does not return a Run ID, or legacy `workflow_dispatch` usage on older API versions |
 | **`repository_dispatch` discovery** | Uses `listWorkflowRunsForRepo` filtered by the default branch and event type `repository_dispatch`, searches for the distinct ID in the run name | Dispatching via event types — more decoupled, supports cross-repo. Still required because `repository_dispatch` returns `204 No Content` with no Run ID |
 
 ### Tracking Patterns
 
 | Pattern | How It Works | What It Enables |
-|---|---|---|
+| --- | --- | --- |
 | **Dispatch and report** | Cron dispatches a task, discovers its Run ID, and immediately posts the Run URL to a tracking issue | Visibility — every dispatched task has a link to its execution |
 | **Dispatch and await** | Cron dispatches a task, discovers its Run ID, passes it to `await-remote-run`, and blocks until completion | Synchronous pipelines — the cron run knows whether the task succeeded or failed before proceeding |
 | **Dispatch, await, and chain** | Cron dispatches task A, awaits it, reads its outcome, then dispatches task B with A's results as input | Dependent pipelines — triage first, then notify owners, then generate the weekly digest |
@@ -125,7 +125,7 @@ The defining feature of `dispatch-workflow` is Run ID discovery. These are the t
 ### Payload Structures
 
 | Dispatch Method | Payload Field | Constraints | Best For |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `workflow_dispatch` | `workflow-inputs` | Max 10 top-level keys, all values must be strings | Simple task routing — task ID, date range, flags |
 | `repository_dispatch` | `client_payload` (via `workflow-inputs`) | Max 10 top-level keys, but values can be nested objects with native types (numbers, booleans) | Rich task configuration — nested prompts, multi-repo target lists, structured options |
 
@@ -134,7 +134,7 @@ The defining feature of `dispatch-workflow` is Run ID discovery. These are the t
 The cron coordinator can maintain a `scheduled-tasks.json` file that defines available tasks. On each schedule trigger, it reads the registry and dispatches enabled tasks using `dispatch-workflow`.
 
 | Registry Field | Purpose | Example |
-|---|---|---|
+| --- | --- | --- |
 | `id` | Unique task identifier, passed as a workflow input | `"triage"`, `"health"`, `"digest"` |
 | `title` | Human-readable name for the dispatched run | `"Weekly Issue Triage"` |
 | `enabled` | Whether the task runs on the schedule trigger | `true` / `false` |
@@ -148,7 +148,7 @@ The cron coordinator can maintain a `scheduled-tasks.json` file that defines ava
 ### Dynamic Payload Examples
 
 | Scenario | Payload Sent via `dispatch-workflow` | What Happens |
-|---|---|---|
+| --- | --- | --- |
 | **Triage with custom threshold** | `{ "task": "triage", "stale_days": "30", "labels_required": "true" }` | The dispatched workflow reads the threshold and adjusts its scan criteria |
 | **Cross-repo health check** | `{ "task": "health", "source_repo": "my-org/central-ops", "report_issue": "42" }` | The dispatched workflow runs a health check and posts results back to issue #42 in the central-ops repo |
 | **Digest with date range** | `{ "task": "digest", "start_date": "2025-03-01", "end_date": "2025-03-07" }` | The dispatched workflow generates a digest for the specified week |
@@ -163,7 +163,7 @@ The cron coordinator can implement different scheduling strategies depending on 
 ### Schedule Patterns
 
 | Pattern | Cron Expression | Use Case |
-|---|---|---|
+| --- | --- | --- |
 | **Weekly Monday morning** | `0 9 * * 1` | Issue triage, weekly digest, documentation freshness |
 | **Daily at midnight UTC** | `0 0 * * *` | Health checks, dependency audits, stale branch detection |
 | **Every 6 hours** | `0 */6 * * *` | High-activity repos — frequent triage, rapid drift detection |
@@ -173,7 +173,7 @@ The cron coordinator can implement different scheduling strategies depending on 
 ### Overlap Prevention Strategies
 
 | Strategy | How It Works | When to Use |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions concurrency group** | `concurrency: group: cron-${{ github.workflow }}, cancel-in-progress: false` | Prevent two cron runs from executing simultaneously — queue the second |
 | **Cancel-in-progress** | `concurrency: group: cron-${{ github.workflow }}, cancel-in-progress: true` | If the previous cron run is still going, cancel it and start fresh |
 | **State-file lock** | Check for a `cron-lock.json` in the state directory before dispatching | Application-level locking — the cron coordinator checks if a prior run is still in progress |
@@ -186,7 +186,7 @@ The cron coordinator can implement different scheduling strategies depending on 
 These are concrete examples of how a trigger source, a dispatch target, and Run ID discovery combine into a real capability.
 
 | Trigger | Dispatch Target | Discovery | Scenario |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `schedule` weekly | `workflow_dispatch` → self | Enabled | Weekly triage: cron dispatches the agent workflow with `{ "task": "triage" }`, discovers the Run ID, and posts the Run URL to a tracking issue |
 | `schedule` daily | `workflow_dispatch` → self | Disabled | Daily health ping: cron dispatches a lightweight health check as fire-and-forget — no tracking needed |
 | `schedule` weekly | `repository_dispatch` → 5 repos | Enabled | Org-wide sweep: cron dispatches triage to 5 repositories, collects all 5 Run IDs, awaits all completions, and compiles a unified report |
@@ -205,7 +205,7 @@ These are concrete examples of how a trigger source, a dispatch target, and Run 
 `dispatch-workflow` requires an authenticated token. The permission requirements vary by dispatch method, discovery mode, and repository visibility. The cron coordinator must manage these carefully.
 
 | Mode | Required Fine-Grained Token Permissions | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `workflow_dispatch` | `actions: write` | Sufficient for dispatching and discovering (since `actions: write` implies `actions: read`) |
 | `workflow_dispatch` + `discover: true` | `actions: write` | Same — write implies read |
 | `repository_dispatch` | `contents: write` | Creates a repository dispatch event |
@@ -216,7 +216,7 @@ These are concrete examples of how a trigger source, a dispatch target, and Run 
 ### Token Generation Strategies for Cross-Repo Dispatch
 
 | Token Type | Lifetime | Scope | Best For |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **GitHub Actions Token** (`GITHUB_TOKEN`) | Per-run | Current repository only | Same-repo dispatch — simplest, most secure |
 | **GitHub App Token** | 1 hour (ephemeral) | Fine-grained per-repo access | Cross-repo dispatch — recommended for org-wide sweeps |
 | **Fine-Grained PAT** | Configurable expiry | Selected repositories | Backup option when GitHub App is not available |
@@ -228,7 +228,7 @@ These are concrete examples of how a trigger source, a dispatch target, and Run 
 The cron coordinator is currently specification-only. With `dispatch-workflow` as the dispatch mechanism, the full possibility space is:
 
 | Dimension | Current | Possible with `dispatch-workflow` |
-|---|---|---|
+| --- | --- | --- |
 | Trigger sources | 0 | 6 (`schedule`, `workflow_dispatch`, `repository_dispatch`, self-dispatch, cascade dispatch, cross-repo dispatch) |
 | Dispatch targets (same repo) | 0 | 8+ (triage, docs freshness, health check, digest, dependency audit, branch cleanup, label hygiene, custom prompt) |
 | Dispatch targets (cross-repo) | 0 | 4+ (org-wide triage, federated health, upstream dependency watch, template sync) |

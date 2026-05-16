@@ -9,7 +9,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ## Authority level definitions
 
 | Level | Name | Can read | Can write | Can open issues/PRs | Can merge | Can act on production | Can modify governance |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | `read` | Read only | designated repos | no | no | no | no | no |
 | `draft` | Draft only | designated repos | draft folders only | no | no | no | no |
 | `propose` | Propose | designated repos | workspace + designated proposal/report paths | yes | no | no | no |
@@ -24,7 +24,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ### Worker agencies
 
 | Agency | Authority level | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | `propose` | Classifies and routes; does not act directly |
 | `contract-bee` | `propose` | Extracts and proposes; owner decides |
 | `tax-bee` | `propose` | Surfaces obligations; owner decides |
@@ -37,7 +37,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ### Critic agencies
 
 | Agency | Authority level | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | `evidence-critic` | `propose` | Challenges proposals; does not block alone |
 | `scope-critic` | `propose` | Challenges proposals; does not block alone |
 | `cost-critic` | `propose` | Challenges proposals; does not block alone |
@@ -50,7 +50,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ### Censor agencies
 
 | Agency | Authority level | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | `cloud-egress-censor` | `act` | Enforces blocking unconditionally |
 | `authority-censor` | `act` | Enforces authority limits unconditionally |
 | `payment-censor` | `act` | Enforces payment limits unconditionally |
@@ -61,7 +61,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ### Memory agencies
 
 | Agency | Authority level | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | `episodic-memory` | `act` | Writes to memory repos on authorised trigger |
 | `semantic-memory` | `act` | Writes to memory repos on authorised trigger |
 | `procedural-memory` | `act` | Writes to memory repos on authorised trigger |
@@ -72,7 +72,7 @@ Authority levels are defined in the [constitution](constitution.md).
 ### Workspace agencies
 
 | Agency | Authority level | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | `global-workspace` | `act` | Writes to shared workspace on authorised trigger |
 | `current-focus` | `act` | Updates focus state |
 | `active-settlements` | `act` | Writes settlement records |

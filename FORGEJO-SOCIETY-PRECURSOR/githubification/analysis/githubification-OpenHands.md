@@ -17,7 +17,7 @@ This analysis examines how to deepen and extend that existing mechanism — tran
 ### What Already Works
 
 | GitHub Primitive | Current Mapping |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | `openhands-resolver.yml` runs the agent on a runner when an issue is labeled `fix-me` or a collaborator mentions `@openhands-agent` |
 | **Git** | The agent creates branches and draft PRs; code changes are committed. But conversation history and agent memory are **not** persisted to git |
 | **GitHub Issues** | Issues serve as task inputs. Comments report success or failure. But Issues are **not** used as a persistent conversational UI |
@@ -26,7 +26,7 @@ This analysis examines how to deepen and extend that existing mechanism — tran
 ### What Does Not Yet Exist
 
 | Capability | Status |
-|---|---|
+| --- | --- |
 | **Persistent conversation memory** | The resolver treats each issue as a one-shot task. There is no session file committed to git, no ability to continue a conversation across comments |
 | **Issue-as-conversation** | A user can trigger the agent, but cannot have a back-and-forth dialogue within a single issue |
 | **Git-committed session state** | No `state/` directory, no session-to-issue mapping, no JSONL transcripts |
@@ -100,7 +100,7 @@ Does the agent exist yet?
 The strongest Githubification leverages both:
 
 | Concern | Mechanism |
-|---|---|
+| --- | --- |
 | **Conversational AI via Issues** | GMI agent (Path B) — lightweight, persistent, immediate |
 | **Code fixing and PR creation** | OpenHands resolver (Path A, existing) — heavyweight, powerful, task-oriented |
 | **PR review** | `pr-review-by-openhands.yml` (existing) — automated code review |
@@ -116,7 +116,7 @@ The GMI agent handles the conversational surface — users ask questions, reques
 ### The Four Primitives
 
 | GitHub Primitive | Role | Implementation |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Two workflows: GMI for conversation, OpenHands resolver for code changes |
 | **Git** | Storage & Memory | Session transcripts in `state/`, code changes in branches/PRs, full audit trail |
 | **GitHub Issues** | User Interface | Each issue is a conversation (GMI) or a task (resolver). Labels route to the right agent |
@@ -243,7 +243,7 @@ No other repository in the Githubification series demonstrates this property. It
 ## The Four GitHub Primitives — Mapped
 
 | Primitive | Current State | After Githubification |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Resolver runs on `fix-me` label; PR review on PR open | + GMI agent runs on every issue/comment; persistent conversational compute |
 | **Git** | Code changes committed via PRs | + Session transcripts, conversation history, agent state committed to `state/` |
 | **GitHub Issues** | One-shot task triggers | + Persistent conversational threads; chat templates; hatching |
@@ -254,7 +254,7 @@ No other repository in the Githubification series demonstrates this property. It
 ## Risk Assessment
 
 | Risk | Mitigation |
-|---|---|
+| --- | --- |
 | **Actions minutes consumption** | GMI's single-dependency install is fast (~30s). Resolver is heavier. Use labels to gate the resolver; let GMI handle lightweight queries |
 | **Git repo size growth** | Session files are small (JSONL text). Prune old sessions periodically. The node_modules concern is addressed by `.gitignore` |
 | **Two-agent confusion** | Clear documentation, distinct issue templates, label-based routing. GMI handles conversation; resolver handles code |

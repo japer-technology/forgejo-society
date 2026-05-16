@@ -92,7 +92,7 @@ Skills are modular packages that extend the agent's capabilities. See [GITCLAW-P
 ### Built-In Skills
 
 | Skill | What it does |
-|-------|-------------|
+| --- | --- |
 | **memory** | Search and recall information from past sessions and memory logs |
 | **skill-creator** | Create, validate, and package new skills |
 

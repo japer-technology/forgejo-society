@@ -18,7 +18,7 @@ Each recommendation traces to the specific frameworks that identify it, and is s
 ## 1. Legend
 
 | Column | Meaning |
-|---|---|
+| --- | --- |
 | **ID** | Stable reference for tracking |
 | **Frameworks** | Which of the six analyses identify this issue (abbreviated: FL, SM, CT, RH, DF, TM) |
 | **Affects** | Which of the five core arguments are improved by the fix |
@@ -27,7 +27,7 @@ Each recommendation traces to the specific frameworks that identify it, and is s
 **Argument abbreviations:**
 
 | Abbr | Argument |
-|---|---|
+| --- | --- |
 | **A1** | Context Through Colocation ("The Repository Is the Mind") |
 | **A2** | Infrastructural Superiority ("Zero New Infrastructure") |
 | **A3** | Trust Through Auditability ("Sovereignty Through Legibility") |
@@ -41,7 +41,7 @@ Each recommendation traces to the specific frameworks that identify it, and is s
 Every framework flags the same pattern: GMI's arguments use absolute language that the evidence cannot discharge. Formal logic finds unsoundness; rhetoric finds rhetorical risk; debate finds vulnerability to negation; the scientific method finds unfalsifiable claims.
 
 | ID | Current Language | Recommended Fix | Affects | Frameworks |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | AF-01 | "**eliminates** the context gap" | "**reduces** the context gap" or "**narrows** the context gap for projects already on GitHub" | A1 | FL §2, SM §2, DF §2, TM §2 |
 | AF-02 | "**architecturally superior** to building dedicated infrastructure" | "**operationally simpler** for small-to-medium single-repo projects" | A2 | FL §3, RH §4, DF §3, TM §3 |
 | AF-03 | "**inherently more trustworthy**" | "**more auditable, and therefore more trustworthy under active review**" | A3 | FL §4, CT §4, RH §5, DF §4, TM §4 |
@@ -57,7 +57,7 @@ Every framework flags the same pattern: GMI's arguments use absolute language th
 The most common logical error across all arguments is conflating necessary and sufficient conditions. Three frameworks explicitly name this (FL, DF, TM) and the others identify it implicitly.
 
 | ID | Conflation | Correction | Affects | Frameworks |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | AF-06 | Auditability is treated as **sufficient** for trust | State that auditability is **necessary** for trust. Identify the additional conditions required: active review, reviewer expertise, reasoning transparency | A3 | FL §4, CT §4, DF §4, TM §4 |
 | AF-07 | Co-location is treated as **sufficient** for enforcement | State that co-location enables **maintenance** (humans can find and edit the file). Separate this from **enforcement** (which requires runtime mechanisms) | A4 | FL §5, SM §5, CT §5, DF §5, TM §5 |
 | AF-08 | Dialogue is treated as **sufficient** for alignment | State that collaborative identity definition is a **contributor** to alignment, not a **guarantee**. Acknowledge that output quality depends on model capability, task difficulty, and context quality — not only identity | A5 | FL §6, SM §6, DF §6, TM §6 |
@@ -72,7 +72,7 @@ The most common logical error across all arguments is conflating necessary and s
 Formal logic identifies equivocation as a recurring weakness (§7.3). Rhetoric confirms it — key terms carry different meanings in different arguments, creating persuasive ambiguity that weakens logical rigor.
 
 | ID | Term | Equivocal Meanings | Recommended Definition | Affects | Frameworks |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | AF-10 | "context" | Syntactic (file contents) vs. semantic (design rationale) vs. pragmatic (user intent) | Define explicitly which level of context is addressed. State that GMI provides syntactic context; semantic and pragmatic context depend on what the repository contains | A1 | FL §7.3, SM §2, TM §2 |
 | AF-11 | "trust" | Auditability (can inspect) vs. safety (prevents harm) vs. accountability (responsible party exists) | Define trust as a composite: auditability + active review + accountability. State which components GMI provides (auditability) and which it does not (accountability, prevention) | A3 | FL §7.3, CT §4, DF §4 |
 | AF-12 | "enforce" | Visibility (constraints are readable) vs. runtime enforcement (constraints are mechanically applied) | Always specify whether "enforce" means "make visible" or "prevent violation." GMI currently provides visibility; runtime enforcement is a roadmap item | A4 | FL §5, §7.3, CT §5, DF §5 |
@@ -88,7 +88,7 @@ Formal logic identifies equivocation as a recurring weakness (§7.3). Rhetoric c
 Formal logic identifies hidden premises that must be true for each argument to hold. The scientific method frames the same gaps as confounding variables. Debate frameworks identify them as unstated solvency assumptions.
 
 | ID | Hidden Premise | Arguments Affected | Recommended Action | Frameworks |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | AF-15 | Full project context is contained within the repository (excludes Slack conversations, external design docs, tacit knowledge) | A1 | State this boundary explicitly in the context-fidelity argument. Acknowledge that repository-native context is a subset of total project context | FL §2, SM §7.3, TM §2 |
 | AF-16 | The agent can process available context within its token budget (large monorepos may exceed the model window) | A1 | Document the practical token-budget constraint. State the conditions under which context fidelity degrades | FL §2, SM §2, TM §2 |
 | AF-17 | Reviewers have the expertise and time to evaluate agent-generated diffs | A3 | Acknowledge the reviewer-capacity assumption. Recommend review practices (review checklists, pair review for complex changes) as complementary measures | FL §4, CT §4, DF §4, TM §4 |
@@ -104,7 +104,7 @@ Formal logic identifies hidden premises that must be true for each argument to h
 Critical theory's strongest finding — and the structural contradiction every framework touches — is the tension between GMI's rhetoric of sovereignty and its structural dependence on GitHub (Microsoft).
 
 | ID | Change | Affects | Frameworks |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AF-20 | Acknowledge that GMI's sovereignty is **application-layer sovereignty**: the user controls the repository, but the platform is controlled by Microsoft. State this as a known tradeoff, not a defect | A1, A2, A3 | CT §2, §3; DF §3; RH §5 |
 | AF-21 | Replace "zero new infrastructure" language with "no **additional** infrastructure beyond GitHub" — making the platform dependency visible rather than invisible | A2 | CT §3, DF §3 |
 | AF-22 | Acknowledge that operational costs (runner minutes, API rate limits) are **transferred** to GitHub, not **eliminated** — the simplicity benefit is real but the cost is displaced, not removed | A2 | CT §3, DF §3, RH §4 |
@@ -118,7 +118,7 @@ Critical theory's strongest finding — and the structural contradiction every f
 The widest gap identified across all six frameworks is between stated properties and enforced properties. This is the Negative's strongest cross-cutting attack in debate, the soundness failure in formal logic, the governance fiction in critical theory, and the unfalsifiable residual in the scientific method.
 
 | ID | Change | Affects | Frameworks |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AF-23 | Distinguish between **visibility** (constraints are readable), **guidance** (constraints are included in the prompt), and **enforcement** (constraints are mechanically applied at runtime). State clearly which level GMI currently provides: visibility and guidance, not enforcement | A3, A4 | FL §5, CT §5, DF §5, §7.2, TM §5 |
 | AF-24 | Frame runtime enforcement mechanisms (input validation, output filtering, action sandboxing) as the path from guidance to enforcement. Reference these as roadmap items rather than claiming enforcement that does not yet exist | A4 | SM §5, CT §5, DF §5, TM §5 |
 | AF-25 | For the trust argument, add the concept of **pre-action review gates** (agent proposes changes, human approves before commit) as a complementary trust mechanism that addresses the gap between auditability and prevention | A3 | DF §4, SM §4, TM §4 |
@@ -132,7 +132,7 @@ The widest gap identified across all six frameworks is between stated properties
 Four frameworks independently identify that GMI records *actions* (commits) but not *reasoning* (the derivation behind the action). This makes auditability incomplete and trust conditional.
 
 | ID | Change | Affects | Frameworks |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AF-26 | Capture and publish the agent's reasoning alongside its actions — either as issue comments, commit message annotations, or a dedicated reasoning log | A3, A4 | FL §4, SM §4, DF §4, TM §4, §7.4 |
 | AF-27 | In the trust argument, state that GMI currently provides **action transparency** (what the agent did) but not **reasoning transparency** (why it did it), and that reasoning capture is planned | A3 | FL §4, DF §4, CT §4, TM §4 |
 
@@ -145,7 +145,7 @@ Four frameworks independently identify that GMI records *actions* (commits) but 
 Every framework converges on the same conclusion: GMI's arguments are strong within well-defined boundaries and weak outside them. Stating those boundaries explicitly strengthens every argument.
 
 | ID | Change | Affects | Frameworks |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AF-28 | Scope the context argument to **asynchronous workflows** (code review, issue triage, architectural discussion). Concede that synchronous use cases (pair programming, live debugging) are better served by low-latency hosted tools | A1 | DF §2, SM §2, RH §3 |
 | AF-29 | Scope the infrastructure argument to **small-to-medium, single-repository projects**. Concede that multi-repo orchestration and enterprise-scale deployments may benefit from purpose-built infrastructure | A2 | FL §3, DF §3, SM §3, RH §8.2 |
 | AF-30 | Scope the identity argument to **teams that value transparency and control**. Concede that most users will accept defaults and that co-creation is an option, not a requirement | A5 | SM §6, DF §6, RH §7, TM §6 |
@@ -159,7 +159,7 @@ Every framework converges on the same conclusion: GMI's arguments are strong wit
 Rhetoric's audience analysis (§8.2) identifies segments where GMI's arguments are weak. Fixes that address these gaps extend GMI's persuasive reach without weakening the core arguments.
 
 | ID | Current Gap | Recommended Fix | Affects | Frameworks |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | AF-31 | Enterprise architects find no scale, compliance, or SLA discussion | Add a section addressing enterprise considerations: how GMI's properties (auditability, configuration-as-code) map to compliance requirements, and where they do not | A2, A3 | RH §8.2, DF §3, SM §3 |
 | AF-32 | AI safety researchers find ethical claims stronger than evidence supports | Reframe the ethical governance constraints as a **governance transparency** mechanism rather than an **enforcement** mechanism. Cite the distinction between performative and material governance | A4 | CT §5, RH §6, SM §5, DF §5 |
 | AF-33 | Vendor-ecosystem users are counter-positioned as the "other" | Reframe the sovereignty narrative as a **complement** to vendor tools, not a **replacement**. Acknowledge that different deployment models serve different needs | A1, A2 | RH §8.2, CT §7 |
@@ -173,7 +173,7 @@ Rhetoric's audience analysis (§8.2) identifies segments where GMI's arguments a
 Critical theory identifies genuine emancipatory elements in GMI that are underemphasized in the current argumentation. Strengthening these claims costs nothing and improves every argument.
 
 | ID | Emancipatory Element | Recommended Change | Affects | Frameworks |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | AF-34 | **Demystification**: Making agent configuration visible as editable text reduces the mystification that concentrates power in AI providers | Emphasize transparency as a power-redistribution mechanism, not just a trust mechanism | A3, A4 | CT §7.1, RH §5 |
 | AF-35 | **Decentralization**: Each repository has its own agent — no central service can unilaterally change behavior across all users | Highlight this as a structural differentiator from platform-hosted AI, where a single model update affects millions | A1, A2 | CT §7.2, DF §2 |
 | AF-36 | **Accessible governance**: Encoding governance as Markdown lowers the barrier to participation — no AI ethics PhD required to review the governance constraints | Reframe the ethical argument around accessibility of governance participation, not enforcement effectiveness | A4 | CT §7.3, RH §6 |
@@ -188,7 +188,7 @@ Critical theory identifies genuine emancipatory elements in GMI that are underem
 Prioritized by number of converging frameworks and number of arguments affected:
 
 | Priority | Theme | IDs | Frameworks | Arguments |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **1 — Critical** | Qualify absolute language | AF-01 through AF-05 | All six | All five |
 | **2 — Critical** | Separate necessary from sufficient conditions | AF-06 through AF-09 | FL, SM, CT, DF, TM | A1, A3, A4, A5 |
 | **3 — High** | Close the enforcement gap | AF-23 through AF-25 | FL, SM, CT, DF, TM | A3, A4 |

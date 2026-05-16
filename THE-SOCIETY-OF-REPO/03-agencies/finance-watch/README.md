@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `anomaly_detection_rate` | % of real anomalies surfaced |
 | `false_alarm_rate` | % of flagged anomalies that were not real concerns |
 | `owner_usefulness_score` | Owner-reported usefulness rating (1–5) |

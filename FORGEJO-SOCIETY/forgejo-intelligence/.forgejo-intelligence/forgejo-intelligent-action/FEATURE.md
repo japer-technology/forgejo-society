@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Workflow Run Triggered | `workflow_run.requested` | Workflow Lifecycle |
 | 2 | Workflow Run Completed (Success) | `workflow_run.completed` (success) | Workflow Lifecycle |
 | 3 | Workflow Run Failed | `workflow_run.completed` (failure) | Workflow Lifecycle |

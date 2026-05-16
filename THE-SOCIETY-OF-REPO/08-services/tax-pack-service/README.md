@@ -40,7 +40,7 @@ AUD 25.00 per quarter.
 ## Reputation metrics
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `completion_rate` | % of requests completed successfully |
 | `dispute_rate` | % of transactions disputed |
 | `average_buyer_rating` | Mean buyer satisfaction score (1–5) |

@@ -9,7 +9,7 @@ GitHub Minimum Intelligence depends on a single package from the [pi-mono](https
 The monorepo publishes seven packages:
 
 | Package | Description | Used by GMI |
-|---|---|---|
+| --- | --- | --- |
 | `@mariozechner/pi-coding-agent` | Interactive coding agent CLI | **Yes** (v0.57.1) |
 | `@mariozechner/pi-ai` | Unified multi-provider LLM API | No (transitive only) |
 | `@mariozechner/pi-agent-core` | Agent runtime with tool calling and state management | No (transitive only) |
@@ -43,7 +43,7 @@ Pi's built-in session system (`--session-dir`, `--session`) provides multi-turn 
 Three settings are configured:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | `defaultProvider` | `openai` |
 | `defaultModel` | `gpt-5.4` |
 | `defaultThinkingLevel` | `high` |
@@ -65,7 +65,7 @@ Pi loads `AGENTS.md` at startup for project-specific instructions and agent iden
 Two skills are installed in `.pi/skills/`:
 
 | Skill | Purpose |
-|---|---|
+| --- | --- |
 | `memory` | Search and recall from `state/memory.log` and session transcripts |
 | `skill-creator` | Framework for creating new agent skills |
 
@@ -184,7 +184,7 @@ pi --mode rpc
 ## 4. Priority Matrix
 
 | Feature | Effort | Impact | Priority |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Compaction settings | Low | High | **P0** — prevents context exhaustion |
 | Retry settings | Low | High | **P0** — resilience in CI environment |
 | Extensions (GitHub tools) | Medium | High | **P1** — reduces prompt complexity |
@@ -229,7 +229,7 @@ The `keepRecentTokens` value is set to 30 000 (above pi's default of 20 000) bec
 Adding `.pi/prompts/` with templates for recurring GitHub workflows:
 
 | Template | Purpose |
-|---|---|
+| --- | --- |
 | `code-review.md` | Structured code review checklist |
 | `issue-triage.md` | Issue classification and labelling |
 
@@ -242,7 +242,7 @@ These templates are loaded by pi at startup and available to the agent's context
 A project-local extension at `.pi/extensions/github-context.ts` that registers a custom tool providing structured GitHub context to the LLM:
 
 | Tool | Description |
-|---|---|
+| --- | --- |
 | `github_repo_context` | Returns repository metadata (description, topics, default branch, visibility) via `gh` CLI |
 
 This eliminates the need for the LLM to construct `gh api` calls from memory for common context-gathering operations, reducing prompt tokens and improving reliability.
@@ -254,7 +254,7 @@ This eliminates the need for the LLM to construct `gh api` calls from memory for
 Three pi-mono packages are not recommended for GMI integration:
 
 | Package | Reason for Exclusion |
-|---|---|
+| --- | --- |
 | `pi-mom` | Slack bot; GMI's interface is GitHub Issues, not Slack |
 | `pi-tui` | Terminal UI; GMI runs headless in GitHub Actions |
 | `pi-pods` | GPU pod management; GMI uses hosted LLM APIs, not self-hosted models |

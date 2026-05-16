@@ -24,7 +24,7 @@ This analysis outlines how the repository could evolve further — from a substi
 The repository currently operates as three distinct layers:
 
 | Layer | Location | Purpose | Runs on GitHub? |
-|-------|----------|---------|-----------------|
+| --- | --- | --- | --- |
 | **Agent Zero Source** | Root (`agent.py`, `python/`, `prompts/`, `webui/`, etc.) | Full AI agent framework with web UI, Docker, FAISS memory | ❌ No — requires persistent server, Docker, WebSocket |
 | **Issue Intelligence** | `.issue-intelligence/` | GitHub-native conversational agent via Issues | ✅ Yes — triggers on issue/comment events |
 | **Analysis & Theory** | `.githubification/`, `.ANALYSIS-*`, `.WORKFLOW-DESIGN-THEORY.md`, `what-agent0-theories-hold-for-gitclaw/` | Documentation of architectural decisions and feasibility | N/A — informational |
@@ -56,7 +56,7 @@ Reply posted as issue comment → 👀 reaction removed
 ### 2.3 Core Dependencies
 
 | Component | Technology | Role |
-|-----------|-----------|------|
+| --- | --- | --- |
 | Runtime | Bun (TypeScript/JavaScript) | Executes lifecycle scripts |
 | Agent Engine | `@mariozechner/pi-coding-agent` (v0.52.5) | LLM orchestration, tool execution, session management |
 | Compute | GitHub Actions (ubuntu-latest) | Ephemeral execution environment |
@@ -103,7 +103,7 @@ The [github-minimum-intelligence](https://github.com/japer-technology/github-min
 GMI establishes a **three-file minimum** pattern:
 
 | File | Purpose | Current Equivalent in This Repo |
-|------|---------|-------------------------------|
+| --- | --- | --- |
 | `.github/workflows/github-minimum-intelligence-agent.yml` | Main workflow — triggers on issues/comments, orchestrates agent | `.github/workflows/ISSUE-INTELLIGENCE-WORKFLOW-AGENT.yml` |
 | `.github-minimum-intelligence/lifecycle/agent.ts` | Core orchestrator — prompt building, LLM execution, state persistence | `.issue-intelligence/lifecycle/ISSUE-INTELLIGENCE-AGENT.ts` |
 | `.github-minimum-intelligence/.pi/BOOTSTRAP.md` | First-run personality creation | `.issue-intelligence/.pi/BOOTSTRAP.md` |
@@ -132,7 +132,7 @@ GMI depends on exactly one npm package: `@mariozechner/pi-coding-agent`. This re
 ### 4.3 What GMI Does That This Repo Does Not (Yet)
 
 | GMI Feature | Status in This Repo | Required for GitHub Action? |
-|-------------|--------------------|-----------------------------|
+| --- | --- | --- |
 | Version file (`VERSION`) | ❌ Missing | ✅ Yes — enables upgrade detection |
 | GitHub Pages job | ❌ Missing | ⚠️ Optional — adds visibility |
 | Installer as separate workflow | ✅ Exists (`ISSUE-INTELLIGENCE-INSTALLER.yml`) | ✅ Yes — critical for distribution |
@@ -335,7 +335,7 @@ This is the minimal viable adoption path: one workflow file, one secret, zero lo
 ### 7.1 What Moves Into the Action
 
 | Current File/Folder | Action Equivalent | Migration Effort |
-|---------------------|-------------------|-----------------|
+| --- | --- | --- |
 | `.issue-intelligence/lifecycle/ISSUE-INTELLIGENCE-AGENT.ts` | `lifecycle/agent.ts` | Low — rename, parameterize inputs |
 | `.issue-intelligence/lifecycle/ISSUE-INTELLIGENCE-ENABLED.ts` | Built into `action.yml` conditional | Low — replace sentinel file with action input |
 | `.issue-intelligence/lifecycle/ISSUE-INTELLIGENCE-INDICATOR.ts` | Inline in `action.yml` pre/post steps | Low — reaction management in composite steps |
@@ -352,7 +352,7 @@ This is the minimal viable adoption path: one workflow file, one secret, zero lo
 These components are **not part of the action** but remain available as context:
 
 | Component | Reason for Exclusion |
-|-----------|---------------------|
+| --- | --- |
 | `agent.py`, `run_ui.py`, `models.py` | Requires persistent Python server — incompatible with ephemeral runners |
 | `python/tools/` (22 tools) | Many require Docker, persistent state, or inbound networking |
 | `python/api/` (74+ endpoints) | REST API requires hosted server |
@@ -364,7 +364,7 @@ These components are **not part of the action** but remain available as context:
 ### 7.3 What Could Be Optionally Included
 
 | Component | How It Could Be Included | Value |
-|-----------|-------------------------|-------|
+| --- | --- | --- |
 | `prompts/` | Bundled as agent read-context — the pi agent can reference them for style/behavior guidance | High — makes the action "Agent Zero-aware" |
 | `skills/` | SKILL.md files bundled in action, loaded by pi agent's skill system | High — portable capabilities |
 | `knowledge/` | Static knowledge files committed to consumer repo | Medium — domain-specific context |
@@ -377,7 +377,7 @@ These components are **not part of the action** but remain available as context:
 Every Githubified mechanism maps onto four universal primitives. Here is how the proposed action uses them:
 
 | Primitive | Traditional Agent Zero | Proposed GitHub Action |
-|-----------|----------------------|----------------------|
+| --- | --- | --- |
 | **Compute** | Docker container with Supervisord, Nginx, SearXNG, Flask server | GitHub Actions runner (ubuntu-latest, ephemeral, 6-hour max) |
 | **Storage** | FAISS vector DB, JSON files on disk, Docker volumes | Git commits (session state, memory logs, conversation history) |
 | **Interface** | Flask + Socket.IO web UI with WebSocket streaming | GitHub Issues (each issue = one persistent conversation thread) |
@@ -463,14 +463,14 @@ Every Githubified mechanism maps onto four universal primitives. Here is how the
 The primary user experience concern is response latency. Current cold-start times:
 
 | Step | Time (Cold) | Time (Cached) | Optimization |
-|------|-------------|---------------|-------------|
+| --- | --- | --- | --- |
 | Workflow boot | ~10s | ~10s | Unavoidable |
 | Checkout (fetch-depth: 0) | ~5-30s | ~5-30s | Use shallow clone if full history not needed |
 | Setup Bun | ~5s | ~2s | Bun is fast to install |
 | `bun install` | ~15-30s | ~3s | Use `actions/cache` for `node_modules` |
 | Agent execution | ~10-120s | ~10-120s | Depends on LLM response time |
 | Git commit + push | ~5-15s | ~5-15s | Retry loop handles conflicts |
-| **Total** | **~50-220s** | **~35-180s** | |
+| **Total** | **~50-220s** | **~35-180s** |  |
 
 **Recommendation:** Cache `node_modules` and Bun binary aggressively. Consider publishing a pre-built Docker image for the action to eliminate dependency installation entirely.
 
@@ -486,7 +486,7 @@ For the GitHub Action, these concurrency settings should be **documented but not
 ### 10.3 Security Model
 
 | Concern | Mitigation |
-|---------|-----------|
+| --- | --- |
 | Unauthorized access | Authorization check as first action step; reject non-write users |
 | Prompt injection via issue content | Agent system prompt should include injection defense guidelines |
 | Secret leakage in comments | Pi agent's output filtering prevents echoing env vars in replies |
@@ -499,7 +499,7 @@ For the GitHub Action, these concurrency settings should be **documented but not
 The action should support all providers that GMI supports:
 
 | Provider | Secret Name | Model Examples |
-|----------|------------|----------------|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | gpt-5.4, gpt-5.3-codex |
 | Anthropic | `ANTHROPIC_API_KEY` | claude-opus-4-6, claude-sonnet-4 |
 | Google Gemini | `GEMINI_API_KEY` | gemini-2.5-pro, gemini-2.5-flash |
@@ -513,7 +513,7 @@ The action should support all providers that GMI supports:
 ## 11. Comparison: Current vs. Proposed
 
 | Aspect | Current (`.issue-intelligence/`) | Proposed (GitHub Action) |
-|--------|----------------------------------|-------------------------|
+| --- | --- | --- |
 | **Installation** | Copy folder + workflow to repo | `uses: japer-technology/githubification-agent0@v1` in one YAML file |
 | **Updates** | Manual — re-copy folder | Automatic — update version tag reference |
 | **Configuration** | Edit `.pi/settings.json` inside repo | Action `with:` inputs — no files to manage |
@@ -528,7 +528,7 @@ The action should support all providers that GMI supports:
 ## 12. Risks and Mitigations
 
 | Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|-----------|
+| --- | --- | --- | --- |
 | Breaking changes in `pi-coding-agent` | Medium | High | Pin dependency version; test before bumping |
 | GitHub Actions runner environment changes | Low | Medium | Use specific Ubuntu version; Docker fallback |
 | LLM provider API changes/outages | Medium | Medium | Multi-provider support; graceful error messages |
@@ -558,7 +558,7 @@ The end state is a single line of YAML that gives any GitHub repository a persis
 ## Appendix A: Relevant Existing Analysis Documents
 
 | Document | Location | Relevance |
-|----------|----------|-----------|
+| --- | --- | --- |
 | `.ANALYSIS-Files-That-Effect-Execution-Only-Use-Of-This-Repo.md` | Root | Catalogs every runtime file — identifies what must vs. must not be included in the action |
 | `.WORKFLOW-DESIGN-THEORY.md` | Root | Analyzes the existing workflow architecture — foundation for the action's workflow template |
 | `.githubification/README.md` | `.githubification/` | Feasibility assessment — establishes the substitution strategy |
@@ -568,7 +568,7 @@ The end state is a single line of YAML that gives any GitHub repository a persis
 ## Appendix B: Reference Repositories
 
 | Repository | Role | Key Takeaway |
-|-----------|------|-------------|
+| --- | --- | --- |
 | [japer-technology/github-minimum-intelligence](https://github.com/japer-technology/github-minimum-intelligence) | Reference implementation | Three-file minimum, version tracking, installer workflow, single dependency |
 | [japer-technology/githubification](https://github.com/japer-technology/githubification) | Methodology & case studies | 20 lessons, three Githubification types, readiness spectrum, substitution strategy |
 | [agent0ai/agent-zero](https://github.com/agent0ai/agent-zero) | Upstream source | The agent framework this repo is based on |

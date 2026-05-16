@@ -17,7 +17,7 @@ Web UI integration provides an **accessible front door** for audiences who will 
 The source document proposes two use cases that should be evaluated independently:
 
 | Use Case | Decision Type | Reversibility |
-|---|---|---|
+| --- | --- | --- |
 | Interactive demo | Reversibility-neutral (can be removed without data loss) | High |
 | Session viewer | Reversibility-neutral (can be removed; sessions remain in Git) | High |
 
@@ -32,7 +32,7 @@ Both use cases are individually reversible — deleting the HTML files and build
 These are not triggers — they are preconditions. The session viewer should not be considered until all are satisfied:
 
 | ID | Prerequisite | Verification |
-|---|---|---|
+| --- | --- | --- |
 | P-01 | At least 3 representative sessions exist that are safe for public consumption | Sessions reviewed for sensitive content; no API keys, credentials, or PII |
 | P-02 | A content redaction process is documented | Written procedure for reviewing and sanitising session transcripts |
 | P-03 | public-fabric is stable and actively maintained | index.html and status.json are current; GitPages deployment is reliable |
@@ -44,7 +44,7 @@ Note: Feature completeness (P1/P2 from [implementation-plan.md](../implementatio
 Once all prerequisites are met, the following events should prompt an implementation evaluation:
 
 | ID | Trigger | Evidence Required |
-|---|---|---|
+| --- | --- | --- |
 | T-01 | Prospective adopters ask "can I see what the agent does?" | Three or more requests for a demo or example session |
 | T-02 | External documentation or blog posts need to link to example interactions | A concrete need for a stable URL showing agent behaviour |
 | T-03 | Governance review requires published evidence of agent behaviour | An audit, compliance check, or stakeholder review that needs visible session data |
@@ -55,7 +55,7 @@ Once all prerequisites are met, the following events should prompt an implementa
 These conditions, on their own, do not justify implementation:
 
 | Condition | Why It Is Not a Trigger |
-|---|---|
+| --- | --- |
 | "pi-web-ui has nice components" | Available tooling is not a reason to build features |
 | "Other projects have chat demos" | Competitive comparison does not override substance |
 | "Sessions are already in Git; why not publish them?" | Availability of data does not mean it should be published without curation |
@@ -71,7 +71,7 @@ Note: Some items previously listed as non-triggers have been reclassified. "The 
 The interactive demo should not be implemented unless the Experience Gap Problem (see [analysis.md §3.2](analysis.md)) is resolved. Resolution requires one of:
 
 | ID | Resolution Path | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | R-01 | Browser-based agent gains access to repository tools (bash, read, write) | Very Low — requires a backend or WebContainer runtime |
 | R-02 | A sandbox repository is created for the demo with pre-loaded content | Medium — reduces experience gap but still differs from real usage |
 | R-03 | The demo is replaced by a guided replay of a real session | High — no live LLM needed; accurate representation |
@@ -83,7 +83,7 @@ Without R-01, R-02, or R-03, the interactive demo will misrepresent the product.
 Even if the experience gap is resolved:
 
 | ID | Prerequisite | Verification |
-|---|---|---|
+| --- | --- | --- |
 | D-01 | A funding model exists for API costs (if using a shared key) | Budget allocated; cost monitoring in place |
 | D-02 | Rate limiting is implemented to prevent abuse | Per-session token limits; per-IP cooldown |
 | D-03 | The demo is clearly labelled as a limited preview, not the full experience | UI copy explicitly states: "This demo does not represent the full agent experience. See GitHub Issues for the complete interaction model." |
@@ -105,7 +105,7 @@ Check all prerequisites in §3.1 (for session viewer) or §4.1–4.2 (for intera
 ### Step 2: Assess Value Against Cost
 
 | Factor | Session Viewer | Interactive Demo |
-|---|---|---|
+| --- | --- | --- |
 | Estimated implementation effort | 4–8 hours | 8–16 hours |
 | Ongoing curation effort | 1–2 hours per published session | API cost monitoring; abuse prevention |
 | Value to prospective adopters | High (shows real capabilities) | Low-Medium (limited capabilities) |
@@ -116,7 +116,7 @@ Check all prerequisites in §3.1 (for session viewer) or §4.1–4.2 (for intera
 For the session viewer:
 
 | Approach | When to Choose |
-|---|---|
+| --- | --- |
 | Vanilla JS | Start here. Sufficient for text rendering, basic code blocks, and message threading |
 | pi-web-ui | Upgrade when vanilla JS cannot handle tool call visualisation, session tree navigation, or artifact display |
 | Jekyll integration | Consider if the session viewer should be part of a broader Jekyll-powered documentation site (see [github-jekyll-pages.md](../../github-jekyll-pages.md)) |
@@ -124,7 +124,7 @@ For the session viewer:
 For the interactive demo:
 
 | Approach | When to Choose |
-|---|---|
+| --- | --- |
 | Guided replay | Preferred approach. Pre-recorded session plays back in the browser |
 | Live demo with user API key | Only if R-01 or R-02 is resolved and the experience gap is addressed |
 | Sandbox repository demo | If a dedicated demo repository with pre-loaded content is available |
@@ -141,7 +141,7 @@ For the interactive demo:
 After 30 days of deployment:
 
 | Signal | Interpretation | Action |
-|---|---|---|
+| --- | --- | --- |
 | Sessions are being viewed (measurable via GitHub Pages analytics) | Value is being delivered | Continue; expand curated session library |
 | No measurable traffic | Value is not being consumed | Evaluate whether the sessions are linked, discoverable, or interesting |
 | Sensitive content incident | Curation process failed | Pause publishing; review and improve redaction process |

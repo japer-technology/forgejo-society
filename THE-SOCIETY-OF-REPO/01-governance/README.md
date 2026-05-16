@@ -3,7 +3,7 @@
 The governance layer defines the law, ideals, and constitutional stability of the Society of Repo.
 
 | Document | Contents |
-|---|---|
+| --- | --- |
 | [constitution.md](constitution.md) | Master constitution of this SOR — purpose, scope, limits, amendment tiers |
 | [authority-registry.md](authority-registry.md) | Which agencies hold which authority levels and what each level permits |
 | [approval-gate.md](approval-gate.md) | Actions that always require human approval |

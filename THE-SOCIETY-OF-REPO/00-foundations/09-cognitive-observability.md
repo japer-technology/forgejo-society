@@ -21,7 +21,7 @@ The following signals MUST be emitted by the runtime and surfaced through the me
 ### Activation surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `activation_rate_per_agency` | Wakes per agency per day | Stable; wild swings indicate frame drift or stimulus drift |
 | `inhibition_rate_per_agency` | Soft inhibitions per agency per day | Should grow as the society learns what *not* to do |
 | `frame_selection_distribution` | Share of stimuli per selected frame | Long tail expected; collapse to one frame indicates frame lock-in |
@@ -31,7 +31,7 @@ The following signals MUST be emitted by the runtime and surfaced through the me
 ### Memory surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `kline_hit_rate` | Share of activations where a K-line matched strongly | Should rise then plateau; falling indicates K-line decay or stimulus drift |
 | `kline_temperature_distribution` | Count of K-lines by `hot/warm/cold/probation` | Should not be all-hot (memory hoarding) and not all-cold (no compounding learning) |
 | `recognition_to_reconstruction_ratio` | Cheap recognition queries vs full reconstructions | Reconstructions should be the rare expensive case |
@@ -42,7 +42,7 @@ The following signals MUST be emitted by the runtime and surfaced through the me
 ### Conflict surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `critic_objection_rate` | Objections per critic per N settlements | Should be neither zero (toothless) nor 100% (noise) |
 | `critic_objection_usefulness` | Share of objections that changed the settlement outcome | Trend up; collapse signals critic conformism |
 | `censor_firing_rate` | Firings per censor per quarter | Stable or rising; absence over multiple quarters → staleness review (NOT silent removal) |
@@ -54,21 +54,21 @@ The following signals MUST be emitted by the runtime and surfaced through the me
 ### Credit-assignment surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `credit_attribution_coverage` | Share of closed settlements with a full credit-assignment record | 100% is the only acceptable target |
 | `helped_vs_harmed_per_role` | Stacked count of `helped`/`harmed`/`neutral` per agency, critic, censor | Used to drive reinforcement, differentiation, retirement |
 
 ### Bridge surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `bridge_round_trip_drift` | Diff between source → target → source on a sample | Within declared `lossiness`; growing → bridge probation |
 | `bridge_invariant_violation_count` | Failures of declared `invariants_preserved` tests | MUST be zero per quarter |
 
 ### Resource surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `budget_exhaustion_rate` | Settlements that closed with `outcome: budget_exhausted` | Trend down |
 | `cloud_escalation_rate` | Stimuli where cloud inference was authorised | Should be a small minority and explicitly justified each time |
 | `inference_cost_per_settlement` | Aggregated model cost per settlement, by agency | Used by `cost-critic` and quarterly review |
@@ -76,7 +76,7 @@ The following signals MUST be emitted by the runtime and surfaced through the me
 ### Self-model surface
 
 | Signal | Definition | Healthy direction |
-|---|---|---|
+| --- | --- | --- |
 | `self_model_confidence_vs_reality_gap` | Difference between a self-model's `confidence` and the credit-assignment record covering its scope | Trend toward zero; persistent gap opens a self-model drift review |
 | `narrative_cited_as_evidence_count` | Times a `is_narrative: true` self-model was cited as evidence in a settlement proposal | MUST be zero |
 

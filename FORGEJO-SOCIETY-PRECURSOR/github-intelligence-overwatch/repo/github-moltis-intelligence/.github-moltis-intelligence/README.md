@@ -18,7 +18,7 @@ Moltis Intelligence is activated by the `$` prefix on issues and comments. It le
 ## The Prefix Protocol
 
 | Prefix | Intelligence | Description |
-|--------|-------------|-------------|
+| --- | --- | --- |
 | `$` | Moltis Intelligence | Rust-native, secure, single-binary agent |
 | _(other)_ | None | No agent responds |
 
@@ -82,7 +82,7 @@ The lifecycle orchestrator reads this file and passes the provider and model set
 ### Supported Providers
 
 | Provider | Secret Name | Models |
-|----------|------------|--------|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | GPT-5.4 (default), GPT-4o, GPT-4o-mini |
 | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet, Claude Haiku, Claude Opus |
 | Google | `GEMINI_API_KEY` | Gemini 2.5 Pro, Gemini 2.0 Flash |
@@ -98,7 +98,7 @@ The lifecycle orchestrator reads this file and passes the provider and model set
 Moltis is a **Rust-native AI gateway** — one binary, sandboxed, secure, yours.
 
 | Feature | Details |
-|---------|---------|
+| --- | --- |
 | **Language** | Rust — zero `unsafe` code, memory-safe by default |
 | **Runtime** | Single binary (44 MB) — no Node.js, no npm, no runtime dependencies |
 | **Sandbox** | Docker + Apple Container — per-session isolation |
@@ -116,7 +116,7 @@ See the [full Moltis comparison](https://docs.moltis.org/comparison.html) for de
 ## Tool Surface
 
 | Capability | Available | Moltis Feature |
-|-----------|-----------|----------------|
+| --- | --- | --- |
 | File read/write/edit | ✅ | Built-in tools |
 | Code search (grep, glob) | ✅ | Built-in tools |
 | Bash execution | ✅ | Built-in exec tool |

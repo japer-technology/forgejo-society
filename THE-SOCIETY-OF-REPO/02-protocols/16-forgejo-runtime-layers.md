@@ -14,7 +14,7 @@ governance, settlement, and memory protocols.
 ## The three runtime layers
 
 | Prefix | Layer | SOR role | Examples |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `forgejo-intelligent-*` | Surface | Repository surface handlers; perception edge | `forgejo-intelligent-issue`, `forgejo-intelligent-pull-request`, `forgejo-intelligent-release` |
 | `forgejo-intelligence-*` | Coordination | Cross-surface support, normalization, guardrails, scheduling, knowledge, dashboards | `forgejo-intelligence-bridge`, `forgejo-intelligence-guardrail`, `forgejo-intelligence-cron`, `forgejo-intelligence-knowledge` |
 | `forgejo-ai-*` | Agent engine | Identities and execution styles for agent runs | `forgejo-ai-pi`, `forgejo-ai-nanoclaw`, `forgejo-ai-zeroclaw` |
@@ -52,7 +52,7 @@ getReactionTarget(event)   -> ReactionTarget
 ```
 
 | Function | Responsibility | SOR meaning |
-|---|---|---|
+| --- | --- | --- |
 | `buildPrompt` | Construct the agent-facing prompt from the normalized event | Frame and stimulus presentation |
 | `postResponse` | Post the agent reply through the platform adapter | Authorised action surface |
 | `getSessionKey` | Return a stable per-target key for session persistence | Episodic memory continuity key |
@@ -75,7 +75,7 @@ The Forgejo Intelligence runtime defines a known surface catalog. Each entry
 maps to a SOR cognitive role:
 
 | Folder | SOR role |
-|---|---|
+| --- | --- |
 | `forgejo-intelligent-issue` | Primary stimulus and dialogue surface |
 | `forgejo-intelligent-pull-request` | Proposed-action surface and review evidence |
 | `forgejo-intelligent-commit` | Memory trace input (push events) |
@@ -121,7 +121,7 @@ Coordination modules run cross-surface concerns. They MUST be small,
 single-purpose, and call the Forgejo API only through the platform adapter.
 
 | Module | Responsibility | SOR mapping |
-|---|---|---|
+| --- | --- | --- |
 | `forgejo-intelligence-bridge` | Normalize Forgejo events into a uniform internal record | Perception and representation discipline |
 | `forgejo-intelligence-guardrail` | Reject unknown surfaces, inactive surfaces, bot actors, oversized bodies | Pre-cognitive censor (see [05-censors](../05-censors/README.md)) |
 | `forgejo-intelligence-cron` | Schedule proactive runs through Forgejo Actions `schedule` triggers | Proactive activation timing |
@@ -152,7 +152,7 @@ Agent engines under `forgejo-ai-*` provide identity and execution style for
 agent runs. They are interchangeable execution backends; they are not policy.
 
 | Concern | Agent engine layer |
-|---|---|
+| --- | --- |
 | Identity, voice, persona | `AGENTS.md`, `forgejo-ai-*/README.md` |
 | Provider and model selection | `.pi/settings.json` or engine-equivalent config |
 | Tool surface and capability scope | engine configuration plus surface activation |

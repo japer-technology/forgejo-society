@@ -20,7 +20,7 @@ It is intended to be the maintained front door for:
 ## What the site does
 
 | Feature | Detail |
-|---|---|
+| --- | --- |
 | **Live data** | Fetches repositories from the GitHub API in the browser |
 | **Snapshot fallback** | Ships a committed JSON snapshot so the page always renders |
 | **Curated summaries** | Uses hand-written summaries and featured-repo metadata from `data/site.json` |

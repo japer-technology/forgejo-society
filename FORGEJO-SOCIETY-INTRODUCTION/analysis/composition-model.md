@@ -126,12 +126,12 @@ To remove ambiguity in the rest of the project, the four nouns map to four
 ID prefixes (consistent with
 [`../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)):
 
-| Noun         | What it is                                | ID prefix         | Created by      |
-|--------------|-------------------------------------------|-------------------|-----------------|
-| Society      | The container; one per deployment         | `sor.*`           | The human owner |
-| Mind         | A clever actor inside a Society           | `mind.*`          | The human owner |
-| Intelligence | A droppable component that joins a repo   | `intelligence.*`  | The Mind, on install |
-| Repo         | A unit of work owned by a Mind            | (Forgejo repo URL) | The Mind        |
+| Noun | What it is | ID prefix | Created by |
+| --- | --- | --- | --- |
+| Society | The container; one per deployment | `sor.*` | The human owner |
+| Mind | A clever actor inside a Society | `mind.*` | The human owner |
+| Intelligence | A droppable component that joins a repo | `intelligence.*` | The Mind, on install |
+| Repo | A unit of work owned by a Mind | (Forgejo repo URL) | The Mind |
 
 And the rules are short enough to remember:
 

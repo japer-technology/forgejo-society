@@ -273,7 +273,7 @@ The `-X theirs` strategy is correct for state files: if two agents commit differ
 Over time, state directories grow. Mitigation strategies:
 
 | Strategy | When | How |
-|----------|------|-----|
+| --- | --- | --- |
 | **Archive old sessions** | Sessions older than 90 days | Move to `state/archive/sessions/` — still in git history but not in working tree |
 | **Prune screenshots** | QA screenshots older than 30 days | Delete from working tree — still in git history |
 | **Compress retros** | After 52 weeks | Consolidate into yearly summary |

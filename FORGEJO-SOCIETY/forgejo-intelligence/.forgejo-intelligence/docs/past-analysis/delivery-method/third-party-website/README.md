@@ -133,7 +133,7 @@ After installation, the dashboard provides ongoing management:
 ### Technology Stack Options
 
 | Layer | Options |
-|-------|---------|
+| --- | --- |
 | **Frontend** | Next.js, Astro, SvelteKit, Remix |
 | **Backend** | Serverless Functions (Vercel, Cloudflare Workers, AWS Lambda) |
 | **Database** | Cloudflare D1, PlanetScale, Supabase, DynamoDB |
@@ -144,7 +144,7 @@ After installation, the dashboard provides ongoing management:
 ### API Endpoints
 
 | Endpoint | Method | Description |
-|----------|--------|-------------|
+| --- | --- | --- |
 | `/api/auth/github` | GET | Initiate GitHub OAuth flow |
 | `/api/auth/callback` | GET | Handle OAuth callback |
 | `/api/repos` | GET | List user's repositories with gitclaw status |
@@ -170,7 +170,7 @@ After installation, the dashboard provides ongoing management:
 The site can aggregate data from GitHub to provide insights:
 
 | Metric | Source |
-|--------|--------|
+| --- | --- |
 | Issues handled by gitclaw | GitHub Issues API (filtered by gitclaw labels) |
 | PRs created by gitclaw | GitHub PRs API (filtered by gitclaw author) |
 | Workflow run success rate | GitHub Actions API |

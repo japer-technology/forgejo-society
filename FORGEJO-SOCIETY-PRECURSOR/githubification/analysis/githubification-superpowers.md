@@ -11,7 +11,7 @@ The core insight: Superpowers currently lives *beside* the developer's workflow.
 ## The Three Repos at a Glance
 
 | Repository | What It Is | Role in This Analysis |
-|-----------|-----------|----------------------|
+| --- | --- | --- |
 | **githubification-superpowers** | 14 composable skills for AI agents (brainstorming, TDD, debugging, planning, etc.) | The subject — what gets githubified |
 | **github-minimum-intelligence** | Repo-native AI agent framework (Issues → Actions → Git) | The runtime — provides the execution chassis |
 | **githubification** | Framework + case studies for converting repos into GitHub-as-infrastructure | The playbook — patterns and lessons learned |
@@ -88,7 +88,7 @@ Each of the 14 superpowers maps to a GitHub Action trigger pattern:
 ### Tier 1: Issue-Triggered Skills (Conversational)
 
 | Skill | GitHub Trigger | How It Works |
-|-------|---------------|-------------|
+| --- | --- | --- |
 | **brainstorming** | Issue opened with `brainstorm` label | Agent enters Socratic dialogue in issue comments. Asks clarifying questions, proposes approaches, presents design. User approves via 👍 reaction or comment. |
 | **writing-plans** | Issue comment "write plan" on a brainstorm issue | Agent reads the approved design from the issue thread, generates a plan file, commits it to a branch, and posts the plan as a comment. |
 | **systematic-debugging** | Issue opened with `debug` label | Agent reads the bug description, executes the 4-phase debugging protocol (root cause → patterns → hypothesis → fix), posts findings as comments, optionally creates a fix PR. |
@@ -97,7 +97,7 @@ Each of the 14 superpowers maps to a GitHub Action trigger pattern:
 ### Tier 2: PR-Triggered Skills (Code-Aware)
 
 | Skill | GitHub Trigger | How It Works |
-|-------|---------------|-------------|
+| --- | --- | --- |
 | **test-driven-development** | PR comment "run tdd" or label `tdd` | Agent reads the PR description, writes failing tests first, then implements code, verifies GREEN state. All steps committed as separate commits on the PR branch. |
 | **requesting-code-review** | PR opened or label `review-requested` | Agent dispatches a code-reviewer subagent (from `agents/code-reviewer.md`), posts review comments on the PR. |
 | **receiving-code-review** | PR review submitted | Agent processes review feedback using the skill's framework: restate → verify → evaluate → respond. Posts responses as review comment replies. |
@@ -107,7 +107,7 @@ Each of the 14 superpowers maps to a GitHub Action trigger pattern:
 ### Tier 3: Workflow-Triggered Skills (Orchestration)
 
 | Skill | GitHub Trigger | How It Works |
-|-------|---------------|-------------|
+| --- | --- | --- |
 | **executing-plans** | Workflow dispatch with plan file path | Agent loads a plan from the repo, executes tasks sequentially, commits results, reports progress via issue comments. |
 | **subagent-driven-development** | Workflow dispatch with task list | Agent spawns parallel subagent runs (each as a separate Actions job), collects results, runs two-stage review. |
 | **dispatching-parallel-agents** | Workflow dispatch with domain specifications | Agent identifies independent work domains, creates focused task descriptions, dispatches parallel jobs. |
@@ -356,7 +356,7 @@ The brainstorming skill requires multi-turn dialogue (questions → answers → 
 Superpowers HARD-GATE markers map to workflow checkpoints:
 
 | HARD-GATE | GitHub Mechanism |
-|-----------|-----------------|
+| --- | --- |
 | "Do NOT implement until design approved" | Require 👍 reaction on design comment before triggering execution skills |
 | "Write failing test FIRST" | TDD skill commits test in separate commit; CI must show RED before GREEN commit is allowed |
 | "Run verification command" | Verification skill runs commands and posts output; merge blocked until evidence posted |
@@ -432,7 +432,7 @@ Add parallel execution and coordination:
 ## What Changes, What Stays
 
 | Aspect | Stays the Same | Changes |
-|--------|---------------|---------|
+| --- | --- | --- |
 | Skill content | SKILL.md files remain the source of truth | Loaded as system prompts instead of session hooks |
 | Skill structure | YAML frontmatter + Markdown instructions | Add `triggers:` field to frontmatter for event routing |
 | Hard gates | Same enforcement rules | Implemented via workflow conditions instead of prompt-only |
@@ -458,7 +458,7 @@ Add parallel execution and coordination:
 ## Risks and Mitigations
 
 | Risk | Mitigation |
-|------|-----------|
+| --- | --- |
 | **Actions compute costs** | Skill-scoped execution (not general chat); timeout limits per skill |
 | **LLM API costs** | Per-skill token budgets; compaction settings from minimum-intelligence |
 | **Race conditions** (parallel commits) | Git retry-with-backoff pattern from agent.ts (up to 10 retries) |

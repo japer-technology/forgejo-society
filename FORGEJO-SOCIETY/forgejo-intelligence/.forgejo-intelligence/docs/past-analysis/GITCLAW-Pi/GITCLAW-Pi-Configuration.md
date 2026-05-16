@@ -23,7 +23,7 @@ The default LLM configuration:
 ```
 
 | Field | Description | Default |
-|-------|-------------|---------|
+| --- | --- | --- |
 | `defaultProvider` | LLM provider | `anthropic` |
 | `defaultModel` | Model identifier | `claude-opus-4-6` |
 | `defaultThinkingLevel` | Reasoning depth (`low`, `medium`, `high`) | `high` |
@@ -52,7 +52,7 @@ To change the model, edit the `piArgs` array in `lifecycle/GITCLAW-AGENT.ts` or 
 Higher thinking levels give the agent more reasoning depth but use more tokens and time.
 
 | Level | Use case |
-|-------|----------|
+| --- | --- |
 | `low` | Simple tasks, quick responses |
 | `medium` | Standard work, balanced speed/quality |
 | `high` | Complex problems, multi-step reasoning |
@@ -117,7 +117,7 @@ Reduce permissions if your use case doesn't need them all. For a read-only agent
 ## Environment Variables
 
 | Variable | Required | Source | Purpose |
-|----------|----------|--------|---------|
+| --- | --- | --- | --- |
 | `ANTHROPIC_API_KEY` | Yes | Repository secret | LLM API authentication |
 | `GITHUB_TOKEN` | Auto | GitHub Actions | Repo access, issue comments, reactions |
 
@@ -132,7 +132,7 @@ Reduce permissions if your use case doesn't need them all. For a read-only agent
 These files shape behavior but aren't in `.pi/` itself:
 
 | File | Location | Purpose |
-|------|----------|---------|
+| --- | --- | --- |
 | `AGENTS.md` | `.GITCLAW/AGENTS.md` | Primary identity — name, nature, vibe, instructions |
 | `AGENTS.md` | repo root (optional) | Project-specific overrides/additions |
 

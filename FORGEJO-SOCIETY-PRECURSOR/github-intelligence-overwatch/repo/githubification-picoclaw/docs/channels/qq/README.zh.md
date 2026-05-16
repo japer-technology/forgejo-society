@@ -17,12 +17,12 @@ PicoClaw 通过 QQ 开放平台的官方机器人 API 提供对 QQ 的支持。
 }
 ```
 
-| 字段       | 类型   | 必填 | 描述                             |
-| ---------- | ------ | ---- | -------------------------------- |
-| enabled    | bool   | 是   | 是否启用 QQ Channel              |
-| app_id     | string | 是   | QQ 机器人应用的 App ID           |
-| app_secret | string | 是   | QQ 机器人应用的 App Secret       |
-| allow_from | array  | 否   | 用户ID白名单，空表示允许所有用户 |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| enabled | bool | 是 | 是否启用 QQ Channel |
+| app_id | string | 是 | QQ 机器人应用的 App ID |
+| app_secret | string | 是 | QQ 机器人应用的 App Secret |
+| allow_from | array | 否 | 用户ID白名单，空表示允许所有用户 |
 
 ## 设置流程
 

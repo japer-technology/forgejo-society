@@ -31,7 +31,7 @@ NullClaw uses a vtable-driven pluggable architecture. Most capabilities are exte
 ## Subsystems and Extension Points
 
 | Subsystem | Interface | Built-in implementations (partial) | Extension approach |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AI Models | `Provider` | OpenRouter, Anthropic, OpenAI, Azure OpenAI, Gemini, Vertex AI, Ollama, Groq, Mistral, xAI, DeepSeek, Together, Fireworks, Perplexity, Cohere, Bedrock, Venice, and 41+ OpenAI-compatible endpoints | Add provider implementation + register |
 | Channels | `Channel` | CLI, Telegram, Signal, Discord, Slack, Matrix, WhatsApp, Nostr, IRC, Lark, Line, DingTalk, Email, OneBot, QQ, MaixCam, Mattermost, iMessage, Web, Teams, Max | Add channel implementation + register |
 | Memory | `Memory` | SQLite (hybrid retrieval), Markdown, ClickHouse, PostgreSQL, Redis, LanceDB, Lucid, LRU, API, None | Add memory backend |
@@ -45,7 +45,7 @@ NullClaw uses a vtable-driven pluggable architecture. Most capabilities are exte
 ## Memory Stack
 
 | Layer | Implementation |
-|---|---|
+| --- | --- |
 | Vector retrieval | Embeddings as BLOB in SQLite, cosine similarity search |
 | Keyword retrieval | SQLite FTS5 with BM25 |
 | Hybrid merge | Weighted vector + keyword merge |

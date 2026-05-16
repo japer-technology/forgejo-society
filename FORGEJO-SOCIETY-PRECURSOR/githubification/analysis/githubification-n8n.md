@@ -35,7 +35,7 @@ flowchart TD
 ### Key Properties for Githubification
 
 | Property | Value | Impact on Githubification |
-|----------|-------|---------------------------|
+| --- | --- | --- |
 | **Language** | TypeScript (Node.js ≥22.16) | ✅ Runs natively on GitHub Actions runners |
 | **Package manager** | pnpm | ✅ Available on Actions runners |
 | **Database** | SQLite (dev) / PostgreSQL (prod) | ⚠️ SQLite works on ephemeral runners; PostgreSQL does not |
@@ -56,7 +56,7 @@ flowchart TD
 The Githubification invariant requires mapping the four GitHub primitives to n8n's architecture:
 
 | GitHub Primitive | Githubification Role | n8n Mapping |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Replaces the n8n server — workflows execute via `n8n execute` on an Actions runner |
 | **Git** | Storage and memory | Workflow JSON files committed to the repo replace the database; execution logs committed as history |
 | **GitHub Issues** | User interface | Replaces the Vue.js visual editor for triggering and interacting with workflows |
@@ -95,7 +95,7 @@ Each workflow is a self-contained JSON document with `nodes`, `connections`, and
 The existing `n8n-nodes-base.github` node supports:
 
 | Resource | Operations |
-|----------|-----------|
+| --- | --- |
 | **File** | create, delete, edit, get, list |
 | **Issue** | create, createComment, edit, get, lock |
 | **Repository** | get, getIssues, getLicense, getProfile, getPullRequests |
@@ -353,7 +353,7 @@ Does the agent exist yet?
 n8n's CLI execution mode (`n8n execute`) genuinely works on GitHub Actions runners. This is not a situation like Agent Zero where the runtime is fundamentally incompatible. The execution engine — which is the valuable part — runs headlessly. What doesn't work is:
 
 | Component | Works on Actions? | Strategy |
-|-----------|-------------------|----------|
+| --- | --- | --- |
 | **Workflow execution** | ✅ Yes | Wrap — use `n8n execute` CLI |
 | **Node runtime (400+ nodes)** | ✅ Yes | Wrap — nodes execute normally |
 | **Credential decryption** | ✅ Yes | Wrap — AES-256 via `N8N_ENCRYPTION_KEY` secret |
@@ -373,7 +373,7 @@ The result is a **Wrapping** strategy for the execution layer (the n8n engine ru
 n8n's GitHub Trigger node supports 40+ webhook events. Each maps to a GitHub Actions `on:` trigger:
 
 | n8n GitHub Trigger Event | GitHub Actions `on:` Equivalent |
-|---|---|
+| --- | --- |
 | `push` | `on: push` |
 | `pull_request` | `on: pull_request` |
 | `issues` | `on: issues` |
@@ -402,7 +402,7 @@ This mapping is nearly 1:1 — n8n's trigger vocabulary and GitHub Actions' trig
 ### For Users
 
 | Capability | Before (Server) | After (Githubified) |
-|---|---|---|
+| --- | --- | --- |
 | **Installation** | Docker, npm, database setup | Fork repo, add secrets |
 | **Runtime** | Persistent server + database | GitHub Actions (zero infrastructure) |
 | **Cost** | Server hosting ($5–100+/month) | Free tier (2,000 Actions minutes/month) or included in GitHub plan |
@@ -491,7 +491,7 @@ GitHub Actions has concurrency limits per repository and organization.
 ## Comparison with Existing Githubified Repos
 
 | Aspect | GMI (Native) | OpenClaw (Wrapping) | Agent Zero (Substitution) | **n8n (Hybrid)** |
-|--------|-------------|---------------------|---------------------------|-----------------|
+| --- | --- | --- | --- | --- |
 | **Lifecycle files** | 2 | 5 | 3 | **3–4** |
 | **Runtime deps** | 1 (pi-coding-agent) | 30+ | 1 (pi-coding-agent) | **1 (n8n npm package)** |
 | **New code** | None | Orchestration layer | Config + context | **Workflow templates + setup action** |

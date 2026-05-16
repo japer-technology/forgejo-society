@@ -31,7 +31,7 @@ The baseline policy is defined in `nemoclaw-blueprint/policies/openclaw-sandbox.
 ### Filesystem
 
 | Path | Access |
-|---|---|
+| --- | --- |
 | `/sandbox`, `/tmp`, `/dev/null` | Read-write |
 | `/usr`, `/lib`, `/proc`, `/dev/urandom`, `/app`, `/etc`, `/var/log` | Read-only |
 

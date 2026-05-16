@@ -60,7 +60,7 @@ Out of scope:
 ### Document and record agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies incoming documents: bills, warranties, insurance, school notices | propose |
 | `document-index-bee` | Indexes household documents, detects duplicates, answers retrieval queries | propose |
 | `warranty-bee` | Tracks appliance and product warranties, surfaces expiry dates | propose |
@@ -69,7 +69,7 @@ Out of scope:
 ### Finance agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `bills-bee` | Tracks recurring household bills, detects missed payments, flags overdue items | propose |
 | `budget-watch` | Monitors household spend against budget, flags overruns and anomalies | propose |
 | `subscription-bee` | Tracks active subscriptions, detects unused ones, surfaces renewal dates | propose |
@@ -77,14 +77,14 @@ Out of scope:
 ### Maintenance agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `maintenance-bee` | Manages scheduled home maintenance tasks (gutters, HVAC, pest control) | propose |
 | `vehicle-bee` | Tracks vehicle registrations, service schedules, and insurance | propose |
 
 ### Scheduling and task agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `calendar-bee` | Surfaces upcoming household events, deadlines, and conflicts | propose |
 | `task-bee` | Tracks open household tasks, overdue items, and blocked dependencies | propose |
 | `family-briefing` | Assembles and delivers a daily household briefing to the owner | act |
@@ -94,7 +94,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `cost-critic` | Is this spending consistent with budget? Is the proposed quote reasonable? |
 | `scope-critic` | Is this decision within what the SOR should be doing? |
 | `staleness-critic` | Is this document or record too old to act on? |
@@ -107,7 +107,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No household documents or financial records leave the local system without explicit approval |
 | `payment-censor` | No payment above the household spending limit is made without human approval |
 | `authority-censor` | No agency increases its own authority |
@@ -273,7 +273,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Household files in repos |
 | 1 | Memory | Bills, renewals, warranties as structured records |
 | **2** | **Agency** | **Agencies with roles, constitutions, and outputs** |

@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `index_coverage_rate` | % of documents in scope that are indexed |
 | `duplicate_detection_accuracy` | % of true duplicates correctly identified |
 | `retrieval_precision` | % of retrieved documents relevant to the query |

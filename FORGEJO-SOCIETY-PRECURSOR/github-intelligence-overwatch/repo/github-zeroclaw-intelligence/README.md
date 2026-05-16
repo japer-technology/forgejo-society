@@ -40,7 +40,7 @@ Your repository _is_ the AI workspace. The questions, the results, the code, the
 ## Why ZeroClaw Intelligence
 
 | Capability | Why it matters |
-|---|---|
+| --- | --- |
 | **Single workflow, any repo** | Add one workflow file, run it once, and the agent installs itself. Nothing to host or maintain. |
 | **Zero infrastructure** | Runs on GitHub Actions with your repo as the only backend. |
 | **Ultra-lightweight runtime** | Powered by ZeroClaw — <5MB RAM, <100ms cold start, 100% Rust. |
@@ -58,7 +58,7 @@ The entire system runs as a closed loop inside your GitHub repository. When you 
 ### Key Concepts
 
 | Concept | Description |
-|---|---|
+| --- | --- |
 | **Issue = Conversation** | Each GitHub issue maps to a persistent AI conversation. The issue title must start with `#` to activate the agent. Subsequent comments must also start with `#` to continue the conversation. |
 | **Git = Memory** | Session transcripts are committed to the repo. The agent has full recall of every prior exchange. |
 | **Actions = Runtime** | GitHub Actions is the only compute layer. No servers, no containers, no external services. |
@@ -235,7 +235,7 @@ Requires `OPENROUTER_API_KEY`. Browse available models at [openrouter.ai](https:
 ## Supported Providers
 
 | Provider | `defaultProvider` | Example model | API key env var |
-|----------|-------------------|---------------|-----------------|
+| --- | --- | --- | --- |
 | OpenAI | `openai` | `gpt-5.4` (default) | `OPENAI_API_KEY` |
 | Anthropic | `anthropic` | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
 | Google Gemini | `google` | `gemini-2.5-pro`, `gemini-2.5-flash` | `GEMINI_API_KEY` |
@@ -252,7 +252,7 @@ Requires `OPENROUTER_API_KEY`. Browse available models at [openrouter.ai](https:
 In your GitHub repo, go to **Settings → Secrets and variables → Actions** and create a secret for your chosen provider:
 
 | Provider | Secret name | Where to get it |
-|----------|------------|-----------------|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -276,7 +276,7 @@ If you plan to use ZeroClaw Intelligence for anything private, **make the repo p
 ZeroClaw is the fastest, smallest AI assistant — 100% Rust with zero overhead:
 
 | Metric | ZeroClaw | Others |
-|--------|----------|--------|
+| --- | --- | --- |
 | **Runtime Memory** | <5 MB | >1 GB |
 | **Cold Start** | <100ms | Seconds |
 | **Binary Size** | ~8.8 MB | 100+ MB |

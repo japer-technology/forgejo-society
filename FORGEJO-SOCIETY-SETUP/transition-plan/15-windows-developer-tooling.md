@@ -14,7 +14,7 @@ see [02 — Forgejo primary forge](02-forgejo-primary-forge.md).
 ## Overview: the Windows tool stack
 
 | Tool | Role | Required |
-|---|---|---|
+| --- | --- | --- |
 | Git for Windows | Git CLI + OpenSSH bundled | Yes |
 | Windows Terminal | Modern shell host | Recommended |
 | VS Code | Lightweight editor + Git UI | Yes (or Visual Studio) |

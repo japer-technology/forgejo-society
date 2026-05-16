@@ -71,7 +71,7 @@ All other features focus on what the agent *does*. This feature focuses on *how 
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Email-aware formatter** | Markdown sanitization for email compatibility | ~2 hours |
 | **Reply-To parser** | Strip quoted text, signatures, and email artifacts | ~1.5 hours |
 | **Targeted mention engine** | Decide when and who to @mention | ~2 hours |

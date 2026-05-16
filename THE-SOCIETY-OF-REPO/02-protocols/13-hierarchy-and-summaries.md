@@ -39,7 +39,7 @@ Escalation downward (to a lower tier) must be justified by uncertainty, disagree
 ## Summary tiers
 
 | Tier | Purpose |
-|---|---|
+| --- | --- |
 | `raw-evidence` | Source files, logs, direct citations |
 | `working-summary` | Local agency compression of raw evidence |
 | `assembly-summary` | Cross-agency synthesis before settlement |

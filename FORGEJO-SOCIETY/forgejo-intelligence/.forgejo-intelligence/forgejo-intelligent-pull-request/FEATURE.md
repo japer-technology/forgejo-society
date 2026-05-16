@@ -285,7 +285,7 @@ Posts the summary as a reply comment prefixed with "📝 PR Summary".
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | On PR Opened | `pull_request.opened` | PR Lifecycle |
 | 2 | On PR Synchronized | `pull_request.synchronize` | PR Lifecycle |
 | 3 | On PR Reopened | `pull_request.reopened` | PR Lifecycle |

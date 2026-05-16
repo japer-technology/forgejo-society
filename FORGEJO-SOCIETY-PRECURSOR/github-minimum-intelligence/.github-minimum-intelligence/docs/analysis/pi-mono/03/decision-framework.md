@@ -19,7 +19,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 2.1 Must-Have Criteria (All Required)
 
 | # | Criterion | Verification |
-|---|---|---|
+| --- | --- | --- |
 | C-01 | Works correctly in `--mode json` (headless) | Test with `pi --mode json` and verify tool/event behaviour |
 | C-02 | Does not break existing extensions | Load alongside `github-context.ts`; verify `github_repo_context` still works |
 | C-03 | Fails gracefully | Extension load failure must not prevent the agent from starting |
@@ -28,7 +28,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 2.2 Should-Have Criteria (Strongly Preferred)
 
 | # | Criterion | Verification |
-|---|---|---|
+| --- | --- | --- |
 | C-05 | Clear documentation of limitations | Block messages explain what is blocked and why; bypass path is documented |
 | C-06 | Tested with at least 3 representative issue comments | Manual test: trigger the agent with comments that exercise the extension |
 | C-07 | Minimal token cost when triggered | Block messages are concise; tool results are structured and compact |
@@ -40,7 +40,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 3.1 GitHub Issue Context Tools
 
 | Criterion | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | C-01 Headless | ✅ Ready | `registerTool` is proven via `github-context.ts` |
 | C-02 Compatibility | ✅ Ready | Independent tool registrations; no event interception |
 | C-03 Graceful failure | ✅ Ready | Try/catch wraps all `execSync` calls; returns error text on failure |
@@ -54,7 +54,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 3.2 Agent Metadata
 
 | Criterion | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | C-01 Headless | ✅ Ready | `before_agent_start` fires in all modes |
 | C-02 Compatibility | ✅ Ready | Modifies system prompt; does not interact with other extensions |
 | C-03 Graceful failure | ⚠️ Partial | Uses `process.env` which may be undefined; falls back to "unknown"/"local" |
@@ -68,7 +68,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 3.3 Permission Gate
 
 | Criterion | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | C-01 Headless | ✅ Ready | `tool_call` interception fires in all modes |
 | C-02 Compatibility | ✅ Ready | Intercepts `bash` tool only; no conflict with other tool types |
 | C-03 Graceful failure | ⚠️ Partial | If the extension throws, unclear whether pi blocks or allows the command |
@@ -82,7 +82,7 @@ Each extension should be evaluated against these criteria before implementation:
 ### 3.4 Path Protection
 
 | Criterion | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | C-01 Headless | ✅ Ready | `tool_call` interception fires in all modes |
 | C-02 Compatibility | ⚠️ Risk | Interacts with permission gate on overlapping bash commands (e.g., `bash 'rm -rf .env'`) |
 | C-03 Graceful failure | ⚠️ Partial | Same concern as permission gate regarding extension errors |
@@ -114,7 +114,7 @@ Each extension should be evaluated against these criteria before implementation:
 **Options:**
 
 | Option | Effort | Completeness | Risk |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | A. Block only `write`/`edit` (current proposal) | Low | Low | Incomplete protection creates false confidence |
 | B. Also intercept bash write operations | High | Medium | Complex regex; many false positives (`echo "test" > output.txt`) |
 | C. Defer path protection entirely | None | N/A | Accept the risk; rely on container-level isolation |
@@ -130,7 +130,7 @@ Each extension should be evaluated against these criteria before implementation:
 **Options:**
 
 | Option | Approach | Risk |
-|---|---|---|
+| --- | --- | --- |
 | A. Block all dangerous patterns (current proposal) | Conservative | More false positives; agent stuck on legitimate tasks |
 | B. Block only catastrophic patterns (`rm -rf /`, `rm -rf ~`) | Minimal | Fewer false positives; misses many dangerous commands |
 | C. Block and suggest alternative | Moderate | Block message includes a safe alternative command |
@@ -168,7 +168,7 @@ After each extension is deployed, validate with the following test protocol:
 ### 6.1 Positive Tests (Extension Works)
 
 | Extension | Test | Expected |
-|---|---|---|
+| --- | --- | --- |
 | Issue context | Comment: "What is issue #1 about?" | Agent uses `github_issue_context` tool; returns structured metadata |
 | Issue context | Comment: "What's the status of PR #1?" | Agent uses `github_pr_status` tool; returns status details |
 | Metadata | Any issue comment | System prompt includes current UTC time and repository name |
@@ -177,7 +177,7 @@ After each extension is deployed, validate with the following test protocol:
 ### 6.2 Negative Tests (Extension Doesn't Interfere)
 
 | Extension | Test | Expected |
-|---|---|---|
+| --- | --- | --- |
 | Issue context | Comment: "Create a new file at src/hello.ts" | Agent uses `write` or `bash` tool normally |
 | Metadata | Any issue comment | Agent's normal tool usage is unaffected |
 | Permission gate | Comment: "Install express" | `npm install express` is NOT blocked |
@@ -186,7 +186,7 @@ After each extension is deployed, validate with the following test protocol:
 ### 6.3 Regression Tests
 
 | Test | Expected |
-|---|---|
+| --- | --- |
 | `github_repo_context` tool still works | Existing extension is unaffected by new extensions |
 | Session resume works | Prior sessions can be resumed without errors |
 | Compaction works | Long conversations compact normally |

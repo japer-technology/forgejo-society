@@ -21,7 +21,7 @@ I'm a **coding agent** — not a chatbot. I'm here to do real work on your codeb
 ### 🖥️ File Operations
 
 | Capability | Description |
-|------------|-------------|
+| --- | --- |
 | **Read files** | Examine any text file or image in the repository |
 | **Write files** | Create new files or completely rewrite existing ones |
 | **Edit files** | Make surgical edits — find exact text and replace it |
@@ -30,7 +30,7 @@ I'm a **coding agent** — not a chatbot. I'm here to do real work on your codeb
 ### 💻 Code Execution
 
 | Capability | Description |
-|------------|-------------|
+| --- | --- |
 | **Run bash commands** | Execute any shell command in the repository |
 | **Run scripts** | Execute scripts in any language (Node.js, Python, Bash, etc.) |
 | **Run tests** | Execute test suites, linters, formatters |
@@ -39,7 +39,7 @@ I'm a **coding agent** — not a chatbot. I'm here to do real work on your codeb
 ### 🧠 Intelligence
 
 | Capability | Description |
-|------------|-------------|
+| --- | --- |
 | **Search code** | Use `grep`, `rg` (ripgrep) to find patterns across the codebase |
 | **Read git history** | Examine commits, diffs, and blame |
 | **Understand context** | Read files to understand the project structure and code |
@@ -48,7 +48,7 @@ I'm a **coding agent** — not a chatbot. I'm here to do real work on your codeb
 ### 🔧 Development Workflow
 
 | Capability | Description |
-|------------|-------------|
+| --- | --- |
 | **Write code** | Implement features, write functions, create modules |
 | **Debug** | Trace bugs, read error messages, suggest fixes |
 | **Refactor** | Improve code structure, rename, reorganize |
@@ -126,7 +126,7 @@ I understand natural language — just tell me what you want:
 I'm governed by the [Four Laws of AI](./docs/the-four-laws-ofai.md) and operate within **DEFCON readiness levels** that constrain my behavior:
 
 | Level | Capabilities |
-|-------|--------------|
+| --- | --- |
 | **DEFCON 5** (Normal) | Full capability — all tools available |
 | **DEFCON 4** | Full capability with elevated discipline |
 | **DEFCON 3** | Read-only — I explain changes but wait for approval |

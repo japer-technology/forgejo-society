@@ -25,7 +25,7 @@ Default gateway endpoint: `http://127.0.0.1:3000`
 ## Endpoints
 
 | Endpoint | Method | Auth | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `/health` | GET | None | Health check |
 | `/pair` | POST | `X-Pairing-Code` | Exchange one-time pairing code for bearer token |
 | `/webhook` | POST | `Authorization: Bearer <token>` | Send message payload: `{"message":"..."}` |

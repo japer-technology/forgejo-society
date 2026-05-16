@@ -44,7 +44,7 @@ cron(action="remove", job_id="abc123")
 ## Time Expressions
 
 | User says | Parameters |
-|-----------|------------|
+| --- | --- |
 | every 20 minutes | every_seconds: 1200 |
 | every hour | every_seconds: 3600 |
 | every day at 8am | cron_expr: "0 8 * * *" |

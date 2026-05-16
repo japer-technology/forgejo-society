@@ -11,7 +11,7 @@ GMI currently has one extension — `github-context.ts` — which registers a `g
 The proposal adds four extensions:
 
 | Extension | Mechanism | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Permission gate | `tool_call` interception | Block destructive bash commands |
 | Path protection | `tool_call` interception | Block writes to sensitive files |
 | GitHub issue context | `registerTool` (3 tools) | Structured GitHub issue/PR queries |
@@ -94,7 +94,7 @@ Benefits include:
 All four extensions use capabilities that are fully functional in `--mode json`:
 
 | Capability | Headless behaviour |
-|---|---|
+| --- | --- |
 | `on("tool_call")` | Fires before execution; `{ block: true }` prevents the call |
 | `registerTool` | Tool appears in the LLM's tool list; callable normally |
 | `on("before_agent_start")` | Fires at session start; return value modifies system prompt |
@@ -126,7 +126,7 @@ The permission gate relies on regex pattern matching against bash command string
 Examples of bypasses for the proposed patterns:
 
 | Blocked Command | Equivalent Bypass |
-|---|---|
+| --- | --- |
 | `rm -rf /` | `find / -delete` |
 | `rm -rf /` | `perl -e 'use File::Path; rmtree("/")'` |
 | `sudo apt install` | `pkexec apt install` (if available) |
@@ -155,7 +155,7 @@ If stakeholders rely on these extensions as security controls rather than conven
 Several blocked patterns interfere with legitimate agent operations:
 
 | Pattern | Legitimate Use Case Blocked |
-|---|---|
+| --- | --- |
 | `sudo` | `sudo apt-get install` for system dependency installation |
 | `git push --force` | Rebasing a branch that requires force-push |
 | `git reset --hard` | Cleaning a dirty working tree before switching tasks |
@@ -253,7 +253,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 ### 4.1 Permission Gate
 
 | Dimension | Assessment |
-|---|---|
+| --- | --- |
 | **Value** | Medium — catches accidental destructive commands but not intentional or creative bypasses |
 | **Risk** | Medium — false positives in headless mode are unrecoverable; regex bypasses undermine the value proposition |
 | **Verdict** | **Implement with caution.** Useful as an accident-prevention guardrail if clearly documented as non-security-critical. Should not be relied upon as a security control. |
@@ -261,7 +261,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 ### 4.2 Path Protection
 
 | Dimension | Assessment |
-|---|---|
+| --- | --- |
 | **Value** | Low-Medium — blocks `write`/`edit` but not `bash`, making the protection incomplete |
 | **Risk** | Medium — the bash bypass creates inconsistent behaviour; may confuse the LLM |
 | **Verdict** | **Defer unless extended to cover bash.** The incomplete protection creates more confusion than security. If implemented, should intercept bash commands containing `>`, `>>`, `tee`, or `cp` targeting protected paths — but this approaches the regex complexity problem of the permission gate. |
@@ -269,7 +269,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 ### 4.3 GitHub Issue Context
 
 | Dimension | Assessment |
-|---|---|
+| --- | --- |
 | **Value** | Medium — structured tools are more reliable than raw `gh` CLI construction, but the agent already handles `gh` well |
 | **Risk** | Low — purely additive; worst case is the tools go unused |
 | **Verdict** | **Implement selectively.** `github_pr_status` is the highest-value tool (PR status queries are complex with many JSON fields). `github_issue_context` and `github_issue_comments` are lower-value since `gh issue view` is straightforward. |
@@ -277,7 +277,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 ### 4.4 Agent Metadata
 
 | Dimension | Assessment |
-|---|---|
+| --- | --- |
 | **Value** | Low-Medium — environment awareness is nice but rarely critical; the agent can obtain most of this information via bash |
 | **Risk** | Low — timestamp staleness is the main concern, but the metadata is injected fresh at each agent invocation |
 | **Verdict** | **Implement last.** Low risk, low reward. Worth adding once higher-priority extensions are stable. |
@@ -287,7 +287,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 ## 5. Comparative Summary
 
 | Dimension | Permission Gate | Path Protection | Issue Context | Metadata |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Security value** | Medium | Low-Medium | None | None |
 | **Productivity value** | None | None | Medium | Low-Medium |
 | **Bypassability** | High | Very High | N/A | N/A |
@@ -302,7 +302,7 @@ For a single-maintainer project, every line of code is a future maintenance obli
 Assigning weights based on GMI's deployment context (headless CI, single-maintainer, early-stage):
 
 | Factor | Weight | Permission Gate | Path Protection | Issue Context | Metadata |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Accident prevention value | 25% | ★★★★☆ | ★★☆☆☆ | ☆☆☆☆☆ | ☆☆☆☆☆ |
 | Productivity improvement | 20% | ★☆☆☆☆ | ★☆☆☆☆ | ★★★★☆ | ★★★☆☆ |
 | Security robustness | 20% | ★★☆☆☆ | ★☆☆☆☆ | ☆☆☆☆☆ | ☆☆☆☆☆ |
@@ -331,7 +331,7 @@ The extension enhancements proposal is a **mixed bag**:
 The recommended implementation order differs from the proposal:
 
 | Proposal Order | Recommended Order | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | 1. Permission gate | 1. GitHub issue context | Highest weighted score; lowest risk |
 | 2. Path protection | 2. Agent metadata | Low risk; quick to implement |
 | 3. GitHub issue context | 3. Permission gate | Implement with explicit "guardrail, not sandbox" documentation |

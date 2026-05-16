@@ -21,7 +21,7 @@ This is a Type 1 — AI Agent Repo Githubification, but with a twist: the agent 
 GitClaw demonstrates that when you design an AI agent specifically for GitHub-as-infrastructure, you get a system that is radically simpler than wrapping an existing one. There is no impedance mismatch between the agent and its environment. The agent's input is an issue comment. Its output is an issue reply and a git commit. Its memory is the repository. Its compute is a GitHub Actions runner. Every design decision flows from that premise.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -103,7 +103,7 @@ Additionally, the workflow itself includes an authorization step that checks the
 Every agent interaction follows an ordered pipeline:
 
 | Step | Script | Purpose |
-|------|--------|---------|
+| --- | --- | --- |
 | 1 | `github-claw-ENABLED.ts` | Guard — is the agent allowed to run? |
 | 2 | `github-claw-INDICATOR.ts` | Feedback — show the user the agent is working (👀) |
 | 3 | `github-claw-AGENT.ts` | Execute — run the agent, post the reply, commit state |
@@ -168,7 +168,7 @@ When `.github-claw/` lives in its **fork parent**, the agent looks _inward_ at i
 This distinction matters for Githubification because it clarifies the intended relationship:
 
 | Dimension | Installation (Any Repo) | Fork Parent |
-|---|---|---|
+| --- | --- | --- |
 | **Agent's Role** | Tool serving the project | Subject of the project |
 | **Issues Focus** | The host project | The agent framework itself |
 | **Code Changes** | The host's codebase | The agent's own codebase |

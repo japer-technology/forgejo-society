@@ -47,7 +47,7 @@ These questions require a *librarian*, not a search engine. The knowledge base i
 Think of human organizational memory:
 
 | Level | Analogy | GitClaw Equivalent | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Raw recall** | "I remember we talked about databases" | Session files | ✅ Exists |
 | **Indexed recall** | "It was in the meeting on Tuesday" | Session index (feature 08) | Proposed |
 | **Curated knowledge** | "We chose PostgreSQL because of X, Y, Z" | **Knowledge Base** | **This feature** |
@@ -70,7 +70,7 @@ The knowledge base is also *different in kind* from documentation:
 ### Why It Compounds With Every Other Feature
 
 | Feature | How Knowledge Base Helps |
-|---|---|
+| --- | --- |
 | **Cross-Issue Context (08)** | Search finds raw sessions; KB provides curated summaries |
 | **Multi-Agent Personas (10)** | Each persona can read domain-specific KB articles |
 | **Guided Workflows (12)** | KB articles provide context for workflow steps |
@@ -107,7 +107,7 @@ The Idea doc says: *"Conversations are data — and they deserve the same versio
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Knowledge extractor** (new `GITCLAW-KNOWLEDGE.ts`) | Parse sessions, identify extractable knowledge | ~3 hours |
 | **Article generator** | Create/update Markdown articles from extracted knowledge | ~2.5 hours |
 | **Topic taxonomy** | Define and maintain a hierarchical topic structure | ~1 hour |

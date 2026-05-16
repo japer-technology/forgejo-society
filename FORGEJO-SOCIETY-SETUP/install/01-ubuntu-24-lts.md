@@ -13,7 +13,7 @@ None — this is the foundation guide. All other guides in this library depend o
 ## Hardware Reference
 
 | Host | CPU | RAM | Storage |
-|------|-----|-----|---------|
+| --- | --- | --- | --- |
 | Forge server | i9 20-core @ 5 GHz | 64 GB | 2 TB NVMe |
 | Runner nodes (×16) | i7 8-core @ 3 GHz | 8 GB | 60 GB SSD |
 | LLM inference host | i9 32-core @ 5 GHz | 64 GB | 1 TB NVMe |
@@ -74,7 +74,7 @@ The Ubuntu 24.04 server installer is a text-based curses interface. Navigate wit
 Static IP is mandatory for every Forgejo-Society host. The installer uses Netplan under the hood. Select your network interface and choose **Edit IPv4**. Switch from DHCP to **Manual** and fill in:
 
 | Field | Forge server | Runner node example | LLM host |
-|-------|-------------|---------------------|----------|
+| --- | --- | --- | --- |
 | Subnet | 192.168.0.0/24 | 192.168.0.0/24 | 192.168.0.0/24 |
 | Address | 192.168.0.10 | 192.168.0.2x | 192.168.0.50 |
 | Gateway | 192.168.0.1 | 192.168.0.1 | 192.168.0.1 |
@@ -99,7 +99,7 @@ On runner nodes (60 GB SSD), LVM encryption is optional but recommended. On the 
 Create the initial administrator account. This account is for initial setup only — after SSH hardening is complete, daily work is done as a named operator with sudo.
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Your name | Forge Admin |
 | Server name | forge (or runner01..runner16, llm-host) |
 | Username | forgeadmin |

@@ -5,7 +5,7 @@
 ## 与其他 WeCom 通道的对比
 
 | 特性 | WeCom Bot | WeCom App | **WeCom AI Bot** |
-|------|-----------|-----------|-----------------|
+| --- | --- | --- | --- |
 | 私聊 | ✅ | ✅ | ✅ |
 | 群聊 | ✅ | ❌ | ✅ |
 | 流式输出 | ❌ | ❌ | ✅ |
@@ -30,15 +30,15 @@
 }
 ```
 
-| 字段             | 类型   | 必填 | 描述                                               |
-| ---------------- | ------ | ---- | -------------------------------------------------- |
-| token            | string | 是   | 回调验证令牌，在 AI Bot 管理页面配置               |
-| encoding_aes_key | string | 是   | 43 字符 AES 密钥，在 AI Bot 管理页面随机生成       |
-| webhook_path     | string | 否   | Webhook 路径（默认：/webhook/wecom-aibot）         |
-| allow_from       | array  | 否   | 用户 ID 白名单，空数组表示允许所有用户             |
-| welcome_message  | string | 否   | 用户进入聊天时发送的欢迎语，留空则不发送           |
-| reply_timeout    | int    | 否   | 回复超时时间（秒，默认：5）                        |
-| max_steps        | int    | 否   | Agent 最大执行步骤数（默认：10）                   |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| token | string | 是 | 回调验证令牌，在 AI Bot 管理页面配置 |
+| encoding_aes_key | string | 是 | 43 字符 AES 密钥，在 AI Bot 管理页面随机生成 |
+| webhook_path | string | 否 | Webhook 路径（默认：/webhook/wecom-aibot） |
+| allow_from | array | 否 | 用户 ID 白名单，空数组表示允许所有用户 |
+| welcome_message | string | 否 | 用户进入聊天时发送的欢迎语，留空则不发送 |
+| reply_timeout | int | 否 | 回复超时时间（秒，默认：5） |
+| max_steps | int | 否 | Agent 最大执行步骤数（默认：10） |
 
 ## 设置流程
 

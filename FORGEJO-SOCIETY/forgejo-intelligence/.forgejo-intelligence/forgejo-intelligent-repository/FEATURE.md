@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Repository Dispatch Received | `repository_dispatch` | Repository Event Lifecycle |
 | 2 | Repository Made Public | `public` | Repository Event Lifecycle |
 | 3 | Member Added to Repository | `member.added` | Repository Event Lifecycle |

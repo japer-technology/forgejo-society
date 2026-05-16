@@ -65,5 +65,5 @@ Procedures are refined after each use if the owner identifies improvements or co
 ## Current procedures
 
 | Procedure | Purpose |
-|---|---|
+| --- | --- |
 | [forgejo-runtime-operations.md](forgejo-runtime-operations.md) | Enable, disable, validate, and govern the Forgejo runtime safely |

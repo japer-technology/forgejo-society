@@ -11,7 +11,7 @@
 The repo is organized as a dual-language system:
 
 | Layer | Technology | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | **TypeScript CLI plugin** (`nemoclaw/`) | Node.js 22 | User-facing commands: `onboard`, `connect`, `status`, `migrate`, `eject`, `logs` |
 | **Python blueprint** (`nemoclaw-blueprint/`) | Python 3.11 + PyYAML | Orchestration: sandbox lifecycle, inference routing, policy application |
 | **OpenShell runtime** | External binary | Enforcement: Landlock, seccomp, network namespaces, inference gateway |
@@ -37,7 +37,7 @@ Per [japer-technology/githubification](https://github.com/japer-technology/githu
 The reference pattern, established by [github-minimum-intelligence](https://github.com/japer-technology/github-minimum-intelligence), maps four GitHub primitives:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runtime that executes the agent |
 | **Git** | Memory — state, history, and configuration committed to the repo |
 | **GitHub Issues** | Interface — conversation threads, command triggers |
@@ -54,7 +54,7 @@ For most repos, this mapping is sufficient. For NemoClaw, it is necessary but in
 NemoClaw's five security pillars each present a distinct challenge on ephemeral GitHub Actions runners:
 
 | NemoClaw Capability | Githubification Challenge |
-|---|---|
+| --- | --- |
 | **Landlock + seccomp sandbox** | GitHub Actions runners provide container-level isolation (job boundaries), but not per-path filesystem policy. The same enforcement granularity requires running inside a Docker container with custom seccomp profiles. |
 | **Network namespace isolation** | GitHub Actions has no native network namespace. Outbound traffic is unrestricted unless iptables rules or a userspace proxy are applied at workflow start. |
 | **Declarative YAML network policy** | `openclaw-sandbox.yaml` lists every allowed endpoint. On an ephemeral runner, enforcement requires a policy enforcement step that applies and tears down rules within the workflow's lifetime. |
@@ -102,7 +102,7 @@ GitHub Actions Workflow (compute runtime)
 ### GitHub Primitive Mapping
 
 | NemoClaw Component | GitHub Primitive |
-|---|---|
+| --- | --- |
 | `nemoclaw onboard` wizard | Workflow dispatch with `inputs:` (provider, model, endpoint, profile) |
 | `nemoclaw <name> status` | Workflow triggered by issue comment `/nemoclaw status` |
 | `blueprint.yaml` | Committed file in repo, pinned version tracked in git |
@@ -361,7 +361,7 @@ The `.GITNEMOCLAW/` folder does not modify any file in `nemoclaw/` or `nemoclaw-
 ### Gained
 
 | Capability | Description |
-|---|---|
+| --- | --- |
 | **Zero host infrastructure** | No machine needs OpenShell or Node.js. GitHub is the runtime. |
 | **Audit trail** | Every plan, apply, and rollback is a git-committed event with full logs. |
 | **Policy-as-code review** | Network policy changes go through PR review before taking effect. |
@@ -372,7 +372,7 @@ The `.GITNEMOCLAW/` folder does not modify any file in `nemoclaw/` or `nemoclaw-
 ### Lost / Traded
 
 | Capability | Trade-off |
-|---|---|
+| --- | --- |
 | **Always-on sandbox** | GitHub Actions is event-driven and ephemeral. There is no persistent always-on OpenClaw instance. A Githubified NemoClaw is a lifecycle manager, not a persistent sandbox. |
 | **OpenShell TUI** | The interactive approval TUI (`openshell term`) cannot run in a headless CI environment. Policy approvals must be committed to the repo instead. |
 | **Native Landlock enforcement** | Landlock is a Linux kernel feature unavailable in GitHub Actions runners. The seccomp+Docker substitute provides comparable but not identical isolation. |
@@ -436,7 +436,7 @@ The closest analogue in the ecosystem is **OpenClaw** (github-openclaw, #5): a c
 ## 13. Summary
 
 | Dimension | Current State | Githubified State |
-|---|---|---|
+| --- | --- | --- |
 | **Trigger** | `nemoclaw` CLI on host | GitHub Issue comment or workflow dispatch |
 | **Runtime** | OpenShell on persistent host | GitHub Actions ephemeral runner |
 | **Sandbox** | Landlock + seccomp + netns via OpenShell | Docker + seccomp + iptables policy enforcement |

@@ -63,14 +63,14 @@ Out of scope:
 ### Capture and routing agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes incoming inputs: tasks, notes, documents, messages | propose |
 | `document-index-bee` | Indexes personal documents and notes, answers retrieval queries | propose |
 
 ### Task and scheduling agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `task-bee` | Tracks open tasks, overdue items, waiting-on states, and blocked dependencies | propose |
 | `calendar-bee` | Monitors calendar for upcoming events, preparation windows, and conflicts | propose |
 | `deadline-bee` | Watches for approaching deadlines across tasks, projects, and commitments | propose |
@@ -79,7 +79,7 @@ Out of scope:
 ### Knowledge and research agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `notes-bee` | Captures, indexes, and surfaces personal notes and knowledge fragments | propose |
 | `web-research-bee` | Issues web searches, retrieves content, and summarises findings | propose |
 | `context-bee` | Surfaces prior relevant context when a new task or topic arises | propose |
@@ -87,7 +87,7 @@ Out of scope:
 ### Briefing and output agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `daily-briefing` | Assembles and delivers a governed daily briefing focused on what matters | act |
 | `weekly-review-bee` | Prepares a weekly review: what was done, what is open, what needs attention | propose |
 
@@ -96,7 +96,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is this task or recommendation based on reliable information? |
 | `scope-critic` | Is this decision within what the SOR is authorised to do autonomously? |
 | `overconfidence-critic` | Is the proposed summary or conclusion overreaching the available evidence? |
@@ -109,7 +109,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No personal notes, documents, or sensitive data leave the local system without explicit approval |
 | `authority-censor` | No agency increases its own authority level |
 | `commitment-censor` | No commitment is made on behalf of the individual in an external system without explicit approval |
@@ -364,7 +364,7 @@ The briefing is not a dump of everything open. It is the governed judgement of w
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Notes and task lists in repos |
 | 1 | Memory | Structured task, calendar, and note records |
 | 2 | Agency | Agencies with roles, constitutions, and outputs |

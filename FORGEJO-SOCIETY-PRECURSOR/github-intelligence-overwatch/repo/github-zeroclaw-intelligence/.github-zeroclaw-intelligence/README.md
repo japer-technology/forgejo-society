@@ -64,7 +64,7 @@ Edit `.github-zeroclaw-intelligence/.pi/settings.json` to change the LLM provide
 ### Supported Providers
 
 | Provider | Secret Name | Models |
-|----------|------------|--------|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | GPT-5.4 (default), GPT-4o, GPT-4o-mini |
 | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet, Claude Haiku, Claude Opus |
 | Google | `GEMINI_API_KEY` | Gemini 2.5 Pro, Gemini 2.0 Flash |
@@ -125,7 +125,7 @@ Skills are configured in `config/skills.json`:
 ### Available Skills
 
 | Skill | Description |
-|-------|-------------|
+| --- | --- |
 | `gh-issues` | Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs |
 | `github` | GitHub operations via `gh` CLI: issues, PRs, CI runs, code review |
 | `weather` | Get current weather and forecasts via wttr.in |
@@ -142,7 +142,7 @@ Skills are configured in `config/skills.json`:
 ## Tool Surface
 
 | Capability | Available |
-|-----------|-----------|
+| --- | --- |
 | File read/write/edit | ✅ |
 | Code search (grep, glob) | ✅ |
 | Bash execution | ✅ |
@@ -161,7 +161,7 @@ Skills are configured in `config/skills.json`:
 ZeroClaw is the fastest, smallest AI assistant — 100% Rust with zero overhead:
 
 | Metric | ZeroClaw | Others |
-|--------|----------|--------|
+| --- | --- | --- |
 | **Runtime Memory** | <5 MB | >1 GB |
 | **Cold Start** | <100ms | Seconds |
 | **Binary Size** | ~8.8 MB | 100+ MB |

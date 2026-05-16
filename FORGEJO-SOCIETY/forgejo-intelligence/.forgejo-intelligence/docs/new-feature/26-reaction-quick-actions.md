@@ -66,7 +66,7 @@ Reactions work for:
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Reaction detector** | Check reactions on agent's previous comments | ~2 hours |
 | **Action mapper** | Map reactions to agent prompts or internal actions | ~1 hour |
 | **Retry action** | Re-run with same prompt, fresh attempt | ~30 min |

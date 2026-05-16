@@ -13,7 +13,7 @@
 ## Agent Identity
 
 | Property | Value |
-|----------|-------|
+| --- | --- |
 | **Name** | NanoClaw |
 | **Status** | Available — folder presence signals availability |
 

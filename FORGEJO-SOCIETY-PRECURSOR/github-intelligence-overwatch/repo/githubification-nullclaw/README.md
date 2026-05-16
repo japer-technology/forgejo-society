@@ -44,8 +44,8 @@ Docs: [English](docs/en/README.md) · [中文](docs/zh/README.md) · [Contributi
 
 Local machine benchmark (macOS arm64, Feb 2026), normalized for 0.8 GHz edge hardware.
 
-| | [OpenClaw](https://github.com/openclaw/openclaw) | [NanoBot](https://github.com/HKUDS/nanobot) | [PicoClaw](https://github.com/sipeed/picoclaw) | [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | **[🦞 NullClaw](https://github.com/nullclaw/nullclaw)** |
-|---|---|---|---|---|---|
+|  | [OpenClaw](https://github.com/openclaw/openclaw) | [NanoBot](https://github.com/HKUDS/nanobot) | [PicoClaw](https://github.com/sipeed/picoclaw) | [ZeroClaw](https://github.com/zeroclaw-labs/zeroclaw) | **[🦞 NullClaw](https://github.com/nullclaw/nullclaw)** |
+| --- | --- | --- | --- | --- | --- |
 | **Language** | TypeScript | Python | Go | Rust | **Zig** |
 | **RAM** | > 1 GB | > 100 MB | < 10 MB | < 5 MB | **~1 MB** |
 | **Startup (0.8 GHz)** | > 500 s | > 30 s | < 1 s | < 10 ms | **< 8 ms** |
@@ -73,7 +73,7 @@ Start here if you want the shortest path to install, configure, operate, or exte
 Localized documentation lives under `docs/en/` and `docs/zh/`. Use the links below to jump straight to the page you need.
 
 | Need | English | 中文 |
-|---|---|---|
+| --- | --- | --- |
 | Start here | [`docs/en/README.md`](docs/en/README.md) | [`docs/zh/README.md`](docs/zh/README.md) |
 | Install | [`docs/en/installation.md`](docs/en/installation.md) | [`docs/zh/installation.md`](docs/zh/installation.md) |
 | Configure | [`docs/en/configuration.md`](docs/en/configuration.md) | [`docs/zh/configuration.md`](docs/zh/configuration.md) |
@@ -89,7 +89,7 @@ Localized documentation lives under `docs/en/` and `docs/zh/`. Use the links bel
 ## Choose Your Path
 
 | Goal | Open this first | Then go to |
-|---|---|---|
+| --- | --- | --- |
 | First run in English | [`docs/en/README.md`](docs/en/README.md) | [`docs/en/installation.md`](docs/en/installation.md) → [`docs/en/configuration.md`](docs/en/configuration.md) → [`docs/en/usage.md`](docs/en/usage.md) |
 | Chinese Quick Start (中文快速上手) | [`docs/zh/README.md`](docs/zh/README.md) | [`docs/zh/installation.md`](docs/zh/installation.md) → [`docs/zh/configuration.md`](docs/zh/configuration.md) → [`docs/zh/usage.md`](docs/zh/usage.md) |
 | Find the right CLI command | [`docs/en/commands.md`](docs/en/commands.md) / [`docs/zh/commands.md`](docs/zh/commands.md) | `nullclaw help` → task-specific subcommand page |
@@ -211,7 +211,7 @@ This pattern keeps networking/secrets in the edge host and lets you swap/update 
 Every subsystem is a **vtable interface** — swap implementations with a config change, zero code changes.
 
 | Subsystem | Interface | Ships with | Extend |
-|-----------|-----------|------------|--------|
+| --- | --- | --- | --- |
 | **AI Models** | `Provider` | 50+ providers (OpenRouter, Anthropic, OpenAI, Azure OpenAI, Gemini, Vertex AI, Ollama, Venice, Groq, Mistral, xAI, DeepSeek, Together, Fireworks, Perplexity, Cohere, Bedrock, and many OpenAI-compatible endpoints) | `custom:https://your-api.com` — any OpenAI-compatible API |
 | **Channels** | `Channel` | CLI, Telegram, Signal, Discord, Slack, iMessage, Matrix, WhatsApp, Webhook, IRC, Lark/Feishu, OneBot, Line, DingTalk, Email, Nostr, QQ, MaixCam, Mattermost | Any messaging API |
 | **Memory** | `Memory` | SQLite with hybrid search (FTS5 + vector cosine similarity), Markdown, ClickHouse, PostgreSQL, Redis, LanceDB, Lucid, LRU, API | Any persistence backend |
@@ -231,7 +231,7 @@ Every subsystem is a **vtable interface** — swap implementations with a config
 All custom, zero external dependencies for the core path:
 
 | Layer | Implementation |
-|-------|---------------|
+| --- | --- |
 | **Vector DB** | Embeddings stored as BLOB in SQLite, cosine similarity search |
 | **Keyword Search** | FTS5 virtual tables with BM25 scoring |
 | **Hybrid Merge** | Weighted merge (configurable vector/keyword weights) |
@@ -259,7 +259,7 @@ All custom, zero external dependencies for the core path:
 nullclaw enforces security at **every layer**.
 
 | # | Item | Status | How |
-|---|------|--------|-----|
+| --- | --- | --- | --- |
 | 1 | **Gateway not publicly exposed** | Done | Binds `127.0.0.1` by default. Refuses `0.0.0.0` without tunnel or explicit `allow_public_bind`. |
 | 2 | **Pairing required** | Done | 6-digit one-time code on startup. Exchange via `POST /pair` for bearer token. |
 | 3 | **Filesystem scoped** | Done | `workspace_only = true` by default. Null byte injection blocked. Symlink escape detection. |
@@ -685,7 +685,7 @@ Use `channels.web` for browser UI events (WebChannel v1):
 ## Gateway API
 
 | Endpoint | Method | Auth | Description |
-|----------|--------|------|-------------|
+| --- | --- | --- | --- |
 | `/health` | GET | None | Health check (always public) |
 | `/pair` | POST | `X-Pairing-Code` header | Exchange one-time code for bearer token |
 | `/webhook` | POST | `Authorization: Bearer <token>` | Send message: `{"message": "your prompt"}` |
@@ -697,7 +697,7 @@ Use `channels.web` for browser UI events (WebChannel v1):
 ## Commands
 
 | Command | Description |
-|---------|-------------|
+| --- | --- |
 | `onboard --api-key sk-... --provider openrouter` | Quick setup with API key and provider |
 | `onboard --interactive` | Full interactive wizard |
 | `onboard --channels-only` | Reconfigure channels/allowlists only |

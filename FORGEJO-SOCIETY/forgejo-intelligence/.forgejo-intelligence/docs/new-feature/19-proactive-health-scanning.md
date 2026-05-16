@@ -48,7 +48,7 @@ No team achieves this consistently. The cognitive overhead of scanning for these
 ### 3. It Creates a Virtuous Feedback Loop With Every Other Feature
 
 | Feature | How Proactive Detection Composes |
-|---|---|
+| --- | --- |
 | **Knowledge Base (17)** | Findings become KB articles ("known technical debt", "recurring patterns") |
 | **Guided Workflows (12)** | Each finding type becomes a remediation workflow |
 | **Personas (10)** | A "code health" persona specializes in scanning |
@@ -93,7 +93,7 @@ This feature changes "the agent can read everything" from a passive capability t
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Detection framework** (new `GITCLAW-HEALTH.ts`) | Detector interface, runner, result aggregation | ~2 hours |
 | **Stale TODO detector** | Parse TODOs, cross-reference with git blame for age | ~1.5 hours |
 | **Skipped test detector** | Find `.skip`, `@pytest.mark.skip`, `#[ignore]` patterns | ~1 hour |

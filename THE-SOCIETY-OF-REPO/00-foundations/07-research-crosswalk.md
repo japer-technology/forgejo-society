@@ -3,7 +3,7 @@
 This appendix maps implemented cognitive mechanisms to their research origin and current location in the repo.
 
 | Mechanism | Research origin | Current repo location |
-|---|---|---|
+| --- | --- | --- |
 | Small interacting agents | Minsky 1986 | `00-foundations/01-society-of-mind.md`, `03-agencies/README.md` |
 | Frames | Minsky 1986 | `06-memory/frames/README.md`, `02-protocols/04-activation.md` |
 | K-lines | Minsky 1986 | `06-memory/klines/README.md`, `02-protocols/04-activation.md` |

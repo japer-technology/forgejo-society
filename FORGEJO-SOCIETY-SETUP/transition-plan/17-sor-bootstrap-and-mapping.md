@@ -9,7 +9,7 @@ and observable Forgejo-Society instance.
 ## SOR concept → Forgejo primitive
 
 | SOR concept | Forgejo primitive | Default location in Forgejo-Society | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Agency | Repository + service account + workflow | `agents/<agent-name>` | One bounded job per repo |
 | Critic | Repository + required review rule | `critics/<critic-name>` | Blocks unsafe or weak proposals |
 | Censor | Policy repo + protected workflow gate | `governance/censors` | Enforced before merge or cloud escalation |
@@ -26,7 +26,7 @@ and observable Forgejo-Society instance.
 ## Recommended organisation layout
 
 | Deployment stage | Organisations | Typical repository count | Purpose |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Minimal day one | 1 org (`mind`) | 6–8 repos | First governed action |
 | Stable local society | 4 orgs (`governance`, `agents`, `memory`, `workspace`) | 12–20 repos | Clear separation of duties |
 | Full Forgejo-Society | 4–6 orgs plus `public` and `services` | 40+ repos | Multiple agencies, mirrors, and external services |
@@ -110,7 +110,7 @@ Switch to discovered K-lines only after there are enough settled outcomes to com
 ## Where things live in the real forge
 
 | Concern | Primary home | Secondary trace |
-|---|---|---|
+| --- | --- | --- |
 | Settlements in progress | `workspace-active-settlements` | Source repo PR / issue |
 | Current attention | `workspace-current-focus` | Dashboard issue or board |
 | Long-term memory | `memory-klines`, `memory-decisions`, `memory-events` | Metrics export |

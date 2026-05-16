@@ -121,7 +121,7 @@ npx gitclaw init \
 ## CLI Commands
 
 | Command | Description |
-|---------|-------------|
+| --- | --- |
 | `gitclaw init` | Install gitclaw in the current repository |
 | `gitclaw update` | Update gitclaw to the latest version |
 | `gitclaw doctor` | Check the installation for common issues |
@@ -277,7 +277,7 @@ async function update() {
 The CLI handles common failure modes gracefully:
 
 | Error | Behavior |
-|-------|----------|
+| --- | --- |
 | Not in a git repository | Displays an error with instructions to run `git init` |
 | `.GITCLAW/` already exists | Suggests using `gitclaw update` instead |
 | Network failure | Falls back to a bundled version if available, or provides offline instructions |

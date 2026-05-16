@@ -34,7 +34,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** GMI runs on API credits. Without budget awareness, the agent can consume unlimited tokens on complex tasks. A budget tracker provides soft cost control without requiring the SDK migration.
 
 | Criterion | Assessment |
-|---|---|
+| --- | --- |
 | Headless compatible | ✅ |
 | Uses GitHub infra | Partially (budget stored in state directory via Git) |
 | Reduces LLM load | ✅ (self-awareness of budget reduces over-exploration) |
@@ -60,7 +60,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** The agent often makes changes across multiple files and needs to verify completeness before committing. Currently it runs `git diff` via bash and parses the raw output. A structured tool reduces tokens wasted on raw diff output and provides a consistent format.
 
 | Criterion | Assessment |
-|---|---|
+| --- | --- |
 | Headless compatible | ✅ |
 | Uses GitHub infra | ✅ (Git as version control) |
 | Reduces LLM load | ✅ (structured vs. raw diff output) |
@@ -82,7 +82,7 @@ An extension is a good fit for GMI if it:
 - Maps labels to prompt fragments:
 
 | Label | Injected Instruction |
-|---|---|
+| --- | --- |
 | `bug` | "Focus on reproducing the bug first. Create a failing test before fixing." |
 | `documentation` | "This is a documentation task. Do not modify source code." |
 | `security` | "Treat this as a security-sensitive issue. Do not expose details in public comments." |
@@ -94,7 +94,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** GMI currently treats all issues identically. Label-based routing allows repository owners to guide agent behaviour through GitHub's native classification system — consistent with the "GitHub as Infrastructure" principle.
 
 | Criterion | Assessment |
-|---|---|
+| --- | --- |
 | Headless compatible | ✅ |
 | Uses GitHub infra | ✅ (Labels as classification) |
 | Reduces LLM load | ✅ (pre-filtered instructions reduce decision-making) |
@@ -124,7 +124,7 @@ An extension is a good fit for GMI if it:
 **Caveat:** Uses `git stash`, which can conflict with the main Git workflow if not carefully managed. Must be thoroughly tested with the existing commit/push pipeline.
 
 | Criterion | Assessment |
-|---|---|
+| --- | --- |
 | Headless compatible | ✅ |
 | Uses GitHub infra | ✅ (Git as checkpoint mechanism) |
 | Reduces LLM load | ✅ (rollback vs. manual re-editing) |
@@ -155,7 +155,7 @@ An extension is a good fit for GMI if it:
 **Caveat:** This is architecturally tricky — the response is posted via `agent.ts` (which constructs the issue comment from the agent's text output), not via a tool call that the extension can intercept. This extension may require changes to `agent.ts` to expose a response validation hook.
 
 | Criterion | Assessment |
-|---|---|
+| --- | --- |
 | Headless compatible | ✅ |
 | Uses GitHub infra | ✅ (Issues as response surface) |
 | Reduces LLM load | ❌ (adds post-processing; doesn't reduce LLM work) |
@@ -177,7 +177,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** The agent often runs `find` or `ls -R` to understand project structure. A structured tool provides the same information in a compact, token-efficient format with relevant metadata.
 
 | Feasibility | Value | Priority |
-|---|---|---|
+| --- | --- | --- |
 | High | Medium | P2 |
 
 ---
@@ -191,7 +191,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** The agent sometimes generates code that doesn't match the project's conventions (tabs vs. spaces, single vs. double quotes, test file naming). Auto-detected conventions reduce style mismatches without requiring the user to document them.
 
 | Feasibility | Value | Priority |
-|---|---|---|
+| --- | --- | --- |
 | Medium | Medium | P2 |
 
 ---
@@ -205,7 +205,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** Duplicate or related issues are common. The agent currently has no way to search for related issues unless specifically instructed. This tool enables proactive discovery.
 
 | Feasibility | Value | Priority |
-|---|---|---|
+| --- | --- | --- |
 | High (uses `gh issue list` + filters) | Medium | P2 |
 
 ---
@@ -219,7 +219,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** Consistent commit messages improve project history readability. The agent generates commit messages that sometimes don't match the project's convention.
 
 | Feasibility | Value | Priority |
-|---|---|---|
+| --- | --- | --- |
 | Medium (regex matching on commit messages) | Low-Medium | P3 |
 
 ---
@@ -233,7 +233,7 @@ An extension is a good fit for GMI if it:
 **Why it makes sense:** When the agent resumes a session, it relies on session transcripts for context. A structured run history provides a compact, searchable summary that is cheaper than re-reading the full transcript.
 
 | Feasibility | Value | Priority |
-|---|---|---|
+| --- | --- | --- |
 | High (reads `state/issues/<N>.json` and Git log) | Medium | P2 |
 
 ---
@@ -261,7 +261,7 @@ Searches the web for code examples. Overlaps with the proposed [brave-search ski
 ## 5. Priority Summary
 
 | Priority | Extension | Type | Effort |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **P1** | Label-based routing | Context injection | 2–3h |
 | **P2** | Token budget tracker | Interception + tool | 2–3h |
 | **P2** | Diff summary | Tool | 1–2h |

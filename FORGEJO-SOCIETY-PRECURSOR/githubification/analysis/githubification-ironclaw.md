@@ -17,7 +17,7 @@ IronClaw is classified as a **Type 1 — AI Agent Repo** for Githubification. Th
 Every Githubification maps to the same four primitives. IronClaw's mapping:
 
 | GitHub Primitive | Role | IronClaw Mapping |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | The runner executes the IronClaw binary — downloaded from GitHub Releases, not compiled on the runner |
 | **Git** | Storage and memory | The libSQL database file, workspace documents, and session state are committed to the repository between runs |
 | **GitHub Issues** | User interface | Each issue is a conversation thread — the agent reads comments, posts replies, and resumes across sessions |
@@ -30,7 +30,7 @@ Every Githubification maps to the same four primitives. IronClaw's mapping:
 IronClaw was not designed for Githubification, but its architectural decisions provide every escape hatch needed:
 
 | Challenge | Escape Hatch | Details |
-|---|---|---|
+| --- | --- | --- |
 | PostgreSQL is heavy for ephemeral runners | **libSQL feature flag** | Compile with `--no-default-features --features libsql` for an embedded database with zero external dependencies. The CI matrix already validates this configuration. |
 | Rust must be compiled before it can run | **cargo-dist pre-built binaries** | Cross-platform binaries published to GitHub Releases for every release. The `x86_64-unknown-linux-gnu` target runs on standard Ubuntu Actions runners. Download time: ~30 seconds vs. ~5+ minutes for compilation. |
 | Tool execution needs Docker isolation | **WASM sandbox** | Tools run in Wasmtime-powered WASM containers with capability-based permissions, endpoint allowlisting, credential injection, and leak detection — all natively on the Actions runner without Docker. |
@@ -82,7 +82,7 @@ on:
 **Lifecycle pipeline:**
 
 | Step | Action | Details |
-|---|---|---|
+| --- | --- | --- |
 | 1. **Guard** | Authorize the user | Check that the actor has write access (or higher) to the repository. Reject unauthorized users silently. |
 | 2. **Indicate** | Add 🚀 reaction | Signal that the agent is processing the request. |
 | 3. **Download** | Fetch pre-built binary | Download `ironclaw` from GitHub Releases for `x86_64-unknown-linux-gnu`. Cache with `actions/cache` keyed on version. |
@@ -122,7 +122,7 @@ channels-src/
 **Channel behavior:**
 
 | Input | Output |
-|---|---|
+| --- | --- |
 | Issue opened event (JSON from GitHub webhook) | Parsed into `IncomingMessage` via channel trait |
 | Issue comment event (JSON from GitHub webhook) | Parsed into `IncomingMessage` with session context |
 | Agent response (`OutgoingResponse`) | Posted as GitHub Issue comment via GitHub API |
@@ -138,7 +138,7 @@ channels-src/
 ## Component-by-Component Feasibility
 
 | IronClaw Component | Feasibility on Actions | Approach |
-|---|---|---|
+| --- | --- | --- |
 | **Agent loop** (routing, scheduling, workers) | ✅ Full | Runs as-is — the core reasoning pipeline is compute-only |
 | **LLM providers** (NEAR AI, OpenAI, Anthropic, etc.) | ✅ Full | API calls work from Actions runners; keys via GitHub Secrets |
 | **libSQL database** | ✅ Full | Embedded, no external service; database file committed to git |
@@ -293,7 +293,7 @@ jobs:
 ## Comparison with GMI (GitHub Minimum Intelligence)
 
 | Aspect | GMI | IronClaw (Githubified) |
-|---|---|---|
+| --- | --- | --- |
 | **Agent runtime** | Node.js (`pi-coding-agent`) | Pre-built Rust binary |
 | **Dependencies** | 1 npm package + Bun | 0 runtime dependencies (single binary) |
 | **Database** | None (JSONL files) | libSQL (embedded SQLite) |
@@ -315,7 +315,7 @@ jobs:
 The [lesson-consolidation.md](https://github.com/japer-technology/githubification/blob/main/.githubification/lesson-consolidation.md) from the Githubification repo defines ten universal patterns. Here is how each applies to IronClaw:
 
 | # | Universal Pattern | IronClaw Application |
-|---|---|---|
+| --- | --- | --- |
 | 1 | **Lifecycle pipeline** (guard → indicate → execute → commit) | 7-step pipeline: authorize → react → download → configure → execute → respond → commit |
 | 2 | **Fail-closed security** | Workflow authorization (check collaborator permission level). IronClaw's own safety layer provides a second defense. |
 | 3 | **Issue-driven conversation** | Issue #N → `.gitironclaw/state/issues/N.json` → libSQL session. Resume by loading the database. |
@@ -367,7 +367,7 @@ However, building a WASM channel component requires agent-side development. For 
 ## Risks and Mitigations
 
 | Risk | Severity | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | libSQL database grows too large for git | Medium | Implement compaction on each workflow run; GitHub warns on files over 100 MB and soft-limits repos at 2 GB. Target keeping the database well under these thresholds; archive old sessions periodically. |
 | Binary download adds latency to each run | Low | Cache the binary with `actions/cache` keyed on release version. Download only on cache miss. |
 | GitHub Actions 6-hour job timeout | Low | IronClaw processes single messages, not long-running tasks. Typical execution: seconds to minutes. |
@@ -382,7 +382,7 @@ However, building a WASM channel component requires agent-side development. For 
 ### Phase 1 — Binary Wrapping (Minimal Viable Githubification)
 
 | Step | Task | Estimated Effort |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Create `.gitironclaw/` folder structure | 1 hour |
 | 2 | Write `ironclaw-agent.yml` workflow with all 7 lifecycle steps | 2–4 hours |
 | 3 | Write `lifecycle/agent.sh` — binary download, config, execute, capture output | 2–4 hours |
@@ -397,7 +397,7 @@ However, building a WASM channel component requires agent-side development. For 
 ### Phase 2 — Channel Addition (Native Integration)
 
 | Step | Task | Estimated Effort |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Design GitHub Issues channel interface against `channel.wit` | 2–4 hours |
 | 2 | Implement `channels-src/github-issues/` WASM component | 8–16 hours |
 | 3 | Add CLI subcommand for one-shot issue processing | 4–8 hours |

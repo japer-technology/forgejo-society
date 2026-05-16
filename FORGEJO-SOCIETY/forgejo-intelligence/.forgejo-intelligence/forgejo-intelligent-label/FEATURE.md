@@ -245,7 +245,7 @@ The agent deletes the qualifying labels and posts a cleanup audit comment listin
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Label Application Lifecycle | 1–2 | `issues.labeled`, `issues.unlabeled`, `pull_request.labeled`, `pull_request.unlabeled` | Comment (conditional), state |
 | Auto-Classification | 3–5 | `issues.opened`, `pull_request.opened`, `issues.edited` | Apply labels, comment, state |
 | Label Taxonomy Management | 6–7 | `/create-label`, `label.created` | Create label, tracking issue comment, state |
@@ -254,7 +254,7 @@ The agent deletes the qualifying labels and posts a cleanup audit comment listin
 | Scheduled / Cron | 12–13 | Time-based trigger (weekly/monthly) | Hygiene report comment, label deletion, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 8 |
 | Response surfaces | 0 | 7 |
 | Interaction models | 0 | 4 (auto-classification, slash command, cross-surface propagation, scheduled cron) |

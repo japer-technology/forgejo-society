@@ -9,7 +9,7 @@ designer, QA lead, release engineer, debugger, and more.
 Skills live in `.agents/skills/`. Invoke them by name (e.g., `/office-hours`).
 
 | Skill | What it does |
-|-------|-------------|
+| --- | --- |
 | `/office-hours` | Start here. Reframes your product idea before you write code. |
 | `/plan-ceo-review` | CEO-level review: find the 10-star product in the request. |
 | `/plan-eng-review` | Lock architecture, data flow, edge cases, and tests. |

@@ -108,7 +108,7 @@ pkg/identity/
 ### 1.3 关键设计原则
 
 | 原则 | 说明 |
-|------|------|
+| --- | --- |
 | **子包隔离** | 每个 channel 一个独立 Go 子包，依赖 `channels` 父包提供的 `BaseChannel` 和接口 |
 | **工厂注册** | 各子包通过 `init()` 自注册，Manager 通过名字查找工厂，消除 import 耦合 |
 | **能力发现** | 可选能力通过接口（`MediaSender`, `TypingCapable`, `ReactionCapable`, `PlaceholderCapable`, `MessageEditor`, `WebhookHandler`, `HealthChecker`）声明，Manager 运行时类型断言发现 |
@@ -135,7 +135,7 @@ pkg/identity/
 #### 步骤 2：理解结构变化映射
 
 | main 分支文件 | 重构分支位置 | 变化 |
-|---|---|---|
+| --- | --- | --- |
 | `pkg/channels/telegram.go` | `pkg/channels/telegram/telegram.go` + `init.go` | 包名从 `channels` 变为 `telegram` |
 | `pkg/channels/discord.go` | `pkg/channels/discord/discord.go` + `init.go` | 同上 |
 | `pkg/channels/manager.go` | `pkg/channels/manager.go` | 大幅重写 |
@@ -381,7 +381,7 @@ if !c.IsAllowed(senderID) { return }
 Manager 已被完全重写。你的修改需要理解新架构：
 
 | 旧 Manager 职责 | 新 Manager 职责 |
-|---|---|
+| --- | --- |
 | 直接构造 channel（switch/if-else） | 通过工厂注册表查找并构造 |
 | 直接调用 channel.Send | 通过 per-channel Worker 队列 + 速率限制 + 重试 |
 | 无消息分割 | 自动根据 MaxMessageLength 分割长消息 |
@@ -836,7 +836,7 @@ type MessageBus struct {
 **关键行为**：
 
 | 方法 | 行为 |
-|------|------|
+| --- | --- |
 | `PublishInbound(ctx, msg)` | 检查 closed → 发送到 inbound channel → 阻塞/超时/关闭 |
 | `ConsumeInbound(ctx)` | 从 inbound 读取 → 阻塞/关闭/取消 |
 | `PublishOutbound(ctx, msg)` | 发送到 outbound channel |
@@ -916,7 +916,7 @@ type MediaPart struct {
 BaseChannel 是所有 channel 的共享抽象层，提供以下能力：
 
 | 方法/特性 | 说明 |
-|---|---|
+| --- | --- |
 | `Name() string` | Channel 名称 |
 | `IsRunning() bool` | 原子读取运行状态 |
 | `SetRunning(bool)` | 原子设置运行状态 |
@@ -1150,7 +1150,7 @@ func MatchAllowed(sender bus.SenderInfo, allowed string) bool
 
 `MatchAllowed` 支持的允许列表格式：
 | 格式 | 匹配方式 |
-|------|----------|
+| --- | --- |
 | `"123456"` | 匹配 `sender.PlatformID` |
 | `"@alice"` | 匹配 `sender.Username` |
 | `"123456\|alice"` | 匹配 PlatformID 或 Username（旧格式兼容） |
@@ -1228,7 +1228,7 @@ make test                                       # 全量测试
 ### A.1 框架层文件
 
 | 文件 | 职责 |
-|------|------|
+| --- | --- |
 | `pkg/channels/base.go` | BaseChannel 结构体、Channel 接口、MessageLengthProvider、BaseChannelOption、HandleMessage |
 | `pkg/channels/interfaces.go` | TypingCapable、MessageEditor、ReactionCapable、PlaceholderCapable、PlaceholderRecorder 接口 |
 | `pkg/channels/media.go` | MediaSender 接口 |
@@ -1246,7 +1246,7 @@ make test                                       # 全量测试
 ### A.2 Channel 子包
 
 | 子包 | 注册名 | 可选接口 |
-|------|--------|----------|
+| --- | --- | --- |
 | `pkg/channels/telegram/` | `"telegram"` | TypingCapable, PlaceholderCapable, MessageEditor, MediaSender |
 | `pkg/channels/discord/` | `"discord"` | TypingCapable, PlaceholderCapable, MessageEditor, MediaSender |
 | `pkg/channels/slack/` | `"slack"` | ReactionCapable, MediaSender |
@@ -1357,7 +1357,7 @@ agentLoop.Stop()               // 停止 Agent
 ### A.5 Per-channel 速率限制参考
 
 | Channel | 速率 (msg/s) | Burst |
-|---------|-------------|-------|
+| --- | --- | --- |
 | telegram | 20 | 10 |
 | discord | 1 | 1 |
 | slack | 1 | 1 |

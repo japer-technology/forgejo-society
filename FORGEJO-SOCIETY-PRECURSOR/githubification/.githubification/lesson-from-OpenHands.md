@@ -23,7 +23,7 @@ The previous case studies treat the agent and the Githubification layer as separ
 OpenHands collapses this separation. The `openhands.resolver` module — part of the agent's own codebase — contains the logic to read GitHub issues, spin up an agent session, execute the resolution, and send a pull request. The `openhands-resolver.yml` workflow is not external scaffolding — it is the agent's own deployment mechanism for GitHub. The `.openhands/microagents/` directory is not a Githubification-specific configuration — it is the agent's native knowledge system, designed from the start to be loaded from the repository being worked on. The four GitHub primitives are not mapped by an orchestration layer — they are mapped by the agent itself.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that installs and executes the OpenHands agent to resolve issues and review PRs |
 | **Git** | Storage — the repository is both the agent's source code and the workspace it modifies; branches and PRs are the output |
 | **GitHub Issues** | User interface — each issue is a task; labels (`fix-me`) and mentions (`@openhands-agent`) trigger agent execution; comments carry progress and results |
@@ -210,7 +210,7 @@ This means OpenHands is not just a Githubified agent — it is a **Githubificati
 OpenHands uses **microagents** — specialized Markdown files loaded into the LLM context — to inject domain-specific knowledge into the agent at runtime:
 
 | Type | Location | Loading |
-|---|---|---|
+| --- | --- | --- |
 | **Public microagents** | `microagents/` (in OpenHands source) | Available to all users |
 | **Repository microagents** | `.openhands/microagents/` (in any repo) | Loaded when working on that repo |
 
@@ -227,7 +227,7 @@ This is the agent's native context mechanism. When the resolver workflow runs ag
 Unlike previous case studies that focus exclusively on GitHub, OpenHands' resolver supports multiple platforms:
 
 | Platform | Handler | Authentication |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub** | `issue_handler_factory.py` | PAT or GitHub token |
 | **GitLab** | `issue_handler_factory.py` | GitLab token |
 | **Bitbucket** | `issue_handler_factory.py` | App password |
@@ -240,7 +240,7 @@ The `issue_handler_factory.py` abstracts platform differences behind a common in
 The resolver workflow implements a **two-tier output strategy** that no other case study has:
 
 | Outcome | Action |
-|---|---|
+| --- | --- |
 | Resolution succeeds (`"success":true` in output) | Create a draft PR with the changes and comment the PR link on the issue |
 | Resolution fails | Push a branch with partial progress, comment failure details and a link to the branch |
 
@@ -251,7 +251,7 @@ This means the agent never silently fails. Even when it cannot resolve an issue,
 The resolver workflow supports two installation channels:
 
 | Channel | Trigger | Installation |
-|---|---|---|
+| --- | --- | --- |
 | **Stable** | `fix-me` label or `@openhands-agent` | `pip install openhands-ai==${LATEST_VERSION}` from PyPI |
 | **Experimental** | `fix-me-experimental` label or `@openhands-agent-exp` | `pip install git+https://github.com/openhands/openhands.git` from HEAD |
 

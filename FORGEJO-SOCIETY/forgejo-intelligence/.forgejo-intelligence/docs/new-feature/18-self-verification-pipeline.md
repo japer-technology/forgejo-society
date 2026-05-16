@@ -46,7 +46,7 @@ The pipeline auto-detects the project's tooling from `package.json` scripts, con
 ### 5. It Composes With Every Safety Feature
 
 | Feature | How Verification Helps |
-|---|---|
+| --- | --- |
 | **Branch-per-task (07)** | PRs created from verified branches have higher merge confidence |
 | **Guardrails (16)** | Guardrails block path violations; verification blocks logical violations |
 | **Undo (11)** | Fewer undo requests because fewer broken commits |
@@ -79,7 +79,7 @@ This repo has `.GITCLAW/tests/phase0.test.js` — 250 lines of structural valida
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Tooling detector** | Scan for config files, detect available commands | ~2 hours |
 | **Verification runner** | Execute each stage with timeout and output capture | ~2 hours |
 | **Iterative fix loop** | Feed failures to agent, re-run verification | ~2.5 hours |

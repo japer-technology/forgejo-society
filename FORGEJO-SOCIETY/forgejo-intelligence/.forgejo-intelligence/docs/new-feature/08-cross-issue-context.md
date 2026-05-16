@@ -46,7 +46,7 @@ A team member who remembers nothing from yesterday's meetings is useless, no mat
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Session index builder** (new `GITCLAW-INDEX.ts`) | Scan sessions, extract summaries and keywords, build index | ~2 hours |
 | **Search tool** | Grep-based search across sessions with result formatting | ~1.5 hours |
 | **Issue context loader** | Load a specific issue's session and extract key content | ~1 hour |

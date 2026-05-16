@@ -9,7 +9,7 @@ This document outlines the concrete changes required to implement Recommendation
 The infrastructure for reasoning transparency is partially in place. The following table summarizes what exists and what is missing:
 
 | Component | Current State | Gap |
-|---|---|---|
+| --- | --- | --- |
 | Thinking-level output from the model | Enabled — `defaultThinkingLevel: "high"` in `.pi/settings.json` | None |
 | Pi JSON mode event stream | Active — `--mode json` emits JSONL with `thinking` content blocks | None |
 | Capture of thinking blocks | **Missing** — `jq` pipeline in `agent.ts` filters to `type == "text"` only, discarding `type == "thinking"` blocks | Core gap |
@@ -49,7 +49,7 @@ jq -r 'select(.message.role == "assistant")
 The file should contain:
 
 | Section | Content |
-|---|---|
+| --- | --- |
 | **Header** | Issue number, timestamp, model, provider |
 | **Key Observations** | Extracted from thinking blocks — the codebase observations that informed the decision |
 | **Alternatives Considered** | Extracted or summarized from thinking — approaches evaluated and rejected |
@@ -216,7 +216,7 @@ The existing `git add -A` in `agent.ts` will automatically pick up new files in 
 After implementation, verify the following for a single agent run:
 
 | Check | Expected Result |
-|---|---|
+| --- | --- |
 | `/tmp/agent-raw.jsonl` contains `thinking` blocks | Confirm pi outputs them in JSON mode |
 | `state/reasoning/<issue>-<timestamp>.md` is created | File exists with structured content |
 | Issue comment includes reasoning section | Collapsible `<details>` block is visible |
@@ -226,7 +226,7 @@ After implementation, verify the following for a single agent run:
 ### 8.2 Size and Performance Considerations
 
 | Concern | Mitigation |
-|---|---|
+| --- | --- |
 | Thinking blocks can be very large (50k+ tokens) | Truncate the posted summary; store full transcript only in file |
 | Additional `jq` pass adds processing time | Negligible — JSONL file is already on disk |
 | `state/reasoning/` files accumulate over time | Define a retention policy (e.g., keep last 50 files, archive older ones) |
@@ -237,7 +237,7 @@ After implementation, verify the following for a single agent run:
 ## 9. Dependency and Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Pi does not emit thinking blocks in JSON mode | Low — documentation references them | High — feature is inoperable | Verify empirically before implementation; fall back to session file extraction |
 | Thinking content contains sensitive information | Medium — model may reference API keys or tokens in reasoning | High — committed to Git | Add a sanitization pass before persisting (strip patterns matching known secret formats) |
 | Large reasoning files slow down Git operations | Low — Markdown files compress well | Medium — degraded clone performance | Implement file rotation or move to a separate branch |

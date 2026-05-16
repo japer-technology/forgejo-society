@@ -7,7 +7,7 @@ This document analyzes the impact of upstream `@mariozechner/pi-coding-agent` im
 This analysis is derived from [github-minimum-intelligence's pi-mono upgrade analysis](https://github.com/japer-technology/github-minimum-intelligence/blob/main/.github-minimum-intelligence/docs/analysis/pi-mono-upgrade-57.1-to-65.1.md), which covers 17 releases (v0.58.0 through v0.65.1) including 5 releases with breaking changes, extended to include v0.65.2.
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | **OCI dependency** | `openclaw` `^2026.3.12` (in `package.json`) |
 | **Underlying runtime** | `@mariozechner/pi-coding-agent` (transitive via openclaw) |
 | **Releases analyzed** | pi-mono v0.58.0 – v0.65.2 (18 releases) |
@@ -39,7 +39,7 @@ When OpenClaw updates its transitive dependency on pi-coding-agent, OCI receives
 These fixes from the pi-mono v0.57.1 → v0.65.2 range directly address issues that OCI is susceptible to in its `--json` / GitHub Actions usage:
 
 | Fix | pi-mono Version | Impact on OCI |
-|-----|----------------|---------------|
+| --- | --- | --- |
 | **Bash output truncation** — full output preserved to temp file | v0.65.1 | Prevents silent data loss in commands with >2000 lines of output |
 | **Concurrent edit/write serialization** — same-file mutations run serially | v0.61.0 | Prevents interleaved writes from overwriting each other |
 | **File mutation queue ordering** — operations stay in request order | v0.63.0 | Ensures deterministic file modification behavior |
@@ -138,7 +138,7 @@ Claude Opus 4.6, Sonnet 4.6, and related Bedrock models now use a 1M token conte
 **Impact on OCI**: The agent invokes openclaw with these flags:
 
 | Flag | Status |
-|------|--------|
+| --- | --- |
 | `--local` | ✅ Valid |
 | `--json` | ✅ Valid |
 | `--message <prompt>` | ✅ Valid |

@@ -167,7 +167,7 @@ That's it! You have a working AI assistant in 2 minutes.
 Connect nanobot to your favorite chat platform.
 
 | Channel | What you need |
-|---------|---------------|
+| --- | --- |
 | **Telegram** | Bot token from @BotFather |
 | **Discord** | Bot token + Message Content intent |
 | **WhatsApp** | QR code scan |
@@ -360,7 +360,7 @@ pip install nanobot-ai[matrix]
 > Keep a persistent `matrix-store` and stable `deviceId` — encrypted session state is lost if these change across restarts.
 
 | Option | Description |
-|--------|-------------|
+| --- | --- |
 | `allowFrom` | User IDs allowed to interact. Empty = all senders. |
 | `groupPolicy` | `open` (default), `mention`, or `allowlist`. |
 | `groupAllowFrom` | Room allowlist (used when policy is `allowlist`). |
@@ -641,7 +641,7 @@ nanobot gateway
 🐈 nanobot is capable of linking to the agent social network (agent community). **Just send one message and your nanobot joins automatically!**
 
 | Platform | How to Join (send this message to your bot) |
-|----------|-------------|
+| --- | --- |
 | [**Moltbook**](https://www.moltbook.com/) | `Read https://moltbook.com/skill.md and follow the instructions to join Moltbook` |
 | [**ClawdChat**](https://clawdchat.ai/) | `Read https://clawdchat.ai/skill.md and follow the instructions to join ClawdChat` |
 
@@ -660,7 +660,7 @@ Config file: `~/.nanobot/config.json`
 > - **VolcEngine Coding Plan**: If you're on VolcEngine's coding plan, set `"apiBase": "https://ark.cn-beijing.volces.com/api/coding/v3"` in your volcengine provider config.
 
 | Provider | Purpose | Get API Key |
-|----------|---------|-------------|
+| --- | --- | --- |
 | `custom` | Any OpenAI-compatible endpoint (direct, no LiteLLM) | — |
 | `openrouter` | LLM (recommended, access to all models) | [openrouter.ai](https://openrouter.ai) |
 | `anthropic` | LLM (Claude direct) | [console.anthropic.com](https://console.anthropic.com) |
@@ -803,7 +803,7 @@ That's it! Environment variables, model prefixing, config matching, and `nanobot
 **Common `ProviderSpec` options:**
 
 | Field | Description | Example |
-|-------|-------------|---------|
+| --- | --- | --- |
 | `litellm_prefix` | Auto-prefix model names for LiteLLM | `"dashscope"` → `dashscope/qwen-max` |
 | `skip_prefixes` | Don't prefix if model already starts with these | `("dashscope/", "openrouter/")` |
 | `env_extras` | Additional env vars to set | `(("ZHIPUAI_API_KEY", "{api_key}"),)` |
@@ -847,7 +847,7 @@ Add MCP servers to your `config.json`:
 Two transport modes are supported:
 
 | Mode | Config | Example |
-|------|--------|---------|
+| --- | --- | --- |
 | **Stdio** | `command` + `args` | Local process via `npx` / `uvx` |
 | **HTTP** | `url` + `headers` (optional) | Remote endpoint (`https://mcp.example.com/sse`) |
 
@@ -878,7 +878,7 @@ MCP tools are automatically discovered and registered on startup. The LLM can us
 > **Change in source / post-`v0.1.4.post3`:** In `v0.1.4.post3` and earlier, an empty `allowFrom` means "allow all senders". In newer versions (including building from source), **empty `allowFrom` denies all access by default**. To allow all senders, set `"allowFrom": ["*"]`.
 
 | Option | Default | Description |
-|--------|---------|-------------|
+| --- | --- | --- |
 | `tools.restrictToWorkspace` | `false` | When `true`, restricts **all** agent tools (shell, file read/write/edit, list) to the workspace directory. Prevents path traversal and out-of-scope access. |
 | `tools.exec.pathAppend` | `""` | Extra directories to append to `PATH` when running shell commands (e.g. `/usr/sbin` for `ufw`). |
 | `channels.*.allowFrom` | `[]` (allow all) | Whitelist of user IDs. Empty = allow everyone; non-empty = only listed users can interact. |
@@ -887,7 +887,7 @@ MCP tools are automatically discovered and registered on startup. The LLM can us
 ## CLI Reference
 
 | Command | Description |
-|---------|-------------|
+| --- | --- |
 | `nanobot onboard` | Initialize config & workspace |
 | `nanobot agent -m "..."` | Chat with the agent |
 | `nanobot agent` | Interactive chat mode |

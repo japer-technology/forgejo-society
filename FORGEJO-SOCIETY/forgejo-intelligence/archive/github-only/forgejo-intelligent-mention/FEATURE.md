@@ -225,7 +225,7 @@ The summary is formatted as a collapsible `<details>` block to avoid cluttering 
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | @Mention Detection | 1–3 | `issue_comment.created`, `pull_request_review_comment.created`, `discussion_comment.created` (containing @agent) | Issue comment, PR review comment, discussion comment, state |
 | Cross-Surface Context Assembly | 4–5 | Any @mention event (sub-process) | Incorporated into mention reply, state |
 | CODEOWNERS Routing | 6–7 | @mention with file/path question or review request | Comment with @-routed experts, review request, state |
@@ -234,7 +234,7 @@ The summary is formatted as a collapsible `<details>` block to avoid cluttering 
 | Reaction-Driven | 12 | 👀 on agent mention-reply | State update, deferred check-in comment |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 4 |
 | Response surfaces | 0 | 6 |
 | Interaction models | 0 | 4 (conversational, slash command, reaction-driven, cross-surface assembly) |

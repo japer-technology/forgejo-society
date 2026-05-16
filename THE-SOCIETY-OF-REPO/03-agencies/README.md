@@ -9,20 +9,20 @@ Worker agency repos are the front-line cognitive units of the Society of Repo. E
 ### Perception and routing
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | [intake-bee](intake-bee/README.md) | Classifies and routes incoming documents and stimuli | propose |
 | [document-index-bee](document-index-bee/README.md) | Indexes local documents, detects duplicates, answers retrieval queries | propose |
 
 ### Internet operations
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | [web-research-bee](web-research-bee/README.md) | Issues web searches, retrieves content, monitors feeds and APIs | propose |
 
 ### Software research and development
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | [code-review-bee](code-review-bee/README.md) | Reviews code changes for quality, security, and test coverage | propose |
 | [dependency-bee](dependency-bee/README.md) | Tracks library vulnerabilities, version drift, and licence compliance | propose |
 | [build-monitor-bee](build-monitor-bee/README.md) | Monitors CI/CD runs for failures, regressions, and flaky tests | propose |
@@ -31,7 +31,7 @@ Worker agency repos are the front-line cognitive units of the Society of Repo. E
 ### Business operations
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | [contract-bee](contract-bee/README.md) | Extracts obligations, dates, risks, and questions from contracts | propose |
 | [tax-bee](tax-bee/README.md) | Surfaces tax obligations, deadlines, and compliance requirements | propose |
 | [staff-bee](staff-bee/README.md) | Monitors staff records for expiries, compliance, and onboarding needs | propose |
@@ -41,14 +41,14 @@ Worker agency repos are the front-line cognitive units of the Society of Repo. E
 ### Personal and scheduling operations
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | [calendar-bee](calendar-bee/README.md) | Monitors calendar data for upcoming events, conflicts, and deadline proximity | propose |
 | [task-bee](task-bee/README.md) | Tracks open tasks, overdue items, and blocked dependencies | propose |
 
 ### Assembly, briefing, and ecology roles
 
 | Role | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `assembly-bee` | Combines working summaries into assembly summaries before settlement | propose |
 | `directive-bee` | Breaks approved settlements into narrower downstream tasks | act |
 | [owner-briefing](owner-briefing/README.md) | Assembles and delivers governed briefings to the owner | act |

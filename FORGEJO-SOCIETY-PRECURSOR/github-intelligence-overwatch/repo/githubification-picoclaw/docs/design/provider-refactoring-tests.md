@@ -21,7 +21,7 @@ pkg/
 ### 1. `pkg/config/model_config_test.go` - Configuration Parsing Tests
 
 | Test Name | Purpose | PRD Reference |
-|-----------|---------|---------------|
+| --- | --- | --- |
 | `TestModelConfig_Parsing` | Verify ModelConfig JSON parsing | US-001 |
 | `TestModelConfig_ModelListInConfig` | Verify model_list parsing in Config | US-001 |
 | `TestModelConfig_Validation` | Verify required field validation | US-001 |
@@ -36,7 +36,7 @@ pkg/
 ### 2. `pkg/config/migration_test.go` - Migration Tests
 
 | Test Name | Purpose | PRD Reference |
-|-----------|---------|---------------|
+| --- | --- | --- |
 | `TestConvertProvidersToModelList_OpenAI` | OpenAI config conversion | US-003 |
 | `TestConvertProvidersToModelList_Anthropic` | Anthropic config conversion | US-003 |
 | `TestConvertProvidersToModelList_MultipleProviders` | Multiple provider conversion | US-003 |
@@ -52,7 +52,7 @@ pkg/
 ### 3. `pkg/providers/registry_test.go` - Load Balancing Tests
 
 | Test Name | Purpose | PRD Reference |
-|-----------|---------|---------------|
+| --- | --- | --- |
 | `TestModelRegistry_SingleConfig` | Single config returns same result | US-006 |
 | `TestModelRegistry_RoundRobinSelection` | 3-config round-robin selection | US-006 |
 | `TestModelRegistry_RoundRobinTwoConfigs` | 2-config round-robin selection | US-006 |
@@ -67,7 +67,7 @@ pkg/
 ### 4. `pkg/providers/factory/factory_test.go` - Provider Factory Tests
 
 | Test Name | Purpose | PRD Reference |
-|-----------|---------|---------------|
+| --- | --- | --- |
 | `TestCreateProviderFromConfig_OpenAI` | Create OpenAI provider | US-004 |
 | `TestCreateProviderFromConfig_OpenAIDefault` | Default openai protocol | US-004 |
 | `TestCreateProviderFromConfig_Anthropic` | Create Anthropic provider | US-004 |
@@ -85,7 +85,7 @@ pkg/
 ### 5. `pkg/providers/integration_test.go` - E2E Integration Tests
 
 | Test Name | Purpose | PRD Reference |
-|-----------|---------|---------------|
+| --- | --- | --- |
 | `TestE2E_OpenAICompatibleProvider_NoCodeChange` | Zero-code provider addition | Goal |
 | `TestE2E_LoadBalancing_RoundRobin` | Load balancing actual effect | US-006 |
 | `TestE2E_BackwardCompatibility_OldProvidersConfig` | Old config compatibility | US-003 |
@@ -99,7 +99,7 @@ pkg/
 ### 6. Performance Tests
 
 | Test Name | Purpose |
-|-----------|---------|
+| --- | --- |
 | `BenchmarkCreateProviderFromConfig` | Provider creation performance |
 | `BenchmarkGetModelConfig` | Model lookup performance |
 | `BenchmarkGetModelConfigParallel` | Concurrent lookup performance |
@@ -131,7 +131,7 @@ go test ./pkg/providers -bench=. -benchmem
 ## PRD Acceptance Criteria Mapping
 
 | PRD Acceptance Criteria | Test Cases |
-|------------------------|------------|
+| --- | --- |
 | US-001: Add ModelConfig struct | `TestModelConfig_Parsing`, `TestModelConfig_Validation` |
 | US-001: model_name unique | `TestConfig_ModelNameUniqueness` |
 | US-002: GetModelConfig method | `TestConfig_GetModelConfig_*` |

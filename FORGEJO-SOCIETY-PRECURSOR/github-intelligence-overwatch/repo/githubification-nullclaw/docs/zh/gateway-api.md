@@ -11,7 +11,7 @@
 ## 端点总览
 
 | Endpoint | Method | 鉴权 | 说明 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `/health` | GET | 无 | 健康检查 |
 | `/pair` | POST | `X-Pairing-Code` | 用一次性配对码换取 bearer token |
 | `/webhook` | POST | `Authorization: Bearer <token>` | 发送消息：`{"message":"..."}` |

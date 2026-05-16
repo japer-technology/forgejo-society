@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **`sponsorship` events** | Triggers on new sponsorships, cancellations, tier changes, and pending status updates |
 | **Sponsor profiles** | Reads sponsor identity, tier level, sponsorship duration, and cumulative contribution |
 | **Sponsorship tiers** | Reads tier definitions — pricing, descriptions, and associated perks or deliverables |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Sponsor recognition** | Automatically acknowledges new sponsors — updates README badges, SPONSORS.md, and thank-you comments |
 | **Tier benefit fulfillment** | Tracks sponsor tier perks and ensures promised deliverables are met — priority issue responses, feature requests |
 | **Sustainability reporting** | Generates periodic funding reports — revenue trends, sponsor retention, and runway estimates |

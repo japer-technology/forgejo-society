@@ -47,7 +47,7 @@ PR review adds `pull_request` triggers. Scheduled runs add `schedule` triggers. 
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow concurrency groups** | Add `concurrency:` blocks to workflow YAML | ~30 min |
 | **Session lock module** (new `GITCLAW-LOCK.ts`) | Acquire, release, detect stale locks | ~1.5 hours |
 | **Agent orchestrator** | Integrate lock acquire/release around session access | ~1 hour |

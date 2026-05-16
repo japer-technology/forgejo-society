@@ -18,7 +18,7 @@ This protocol turns the Forgejo operational model extracted from
 A Forgejo-hosted SOR uses these paths as separate control layers:
 
 | Path | SOR role |
-|---|---|
+| --- | --- |
 | `.forgejo/workflows/` | Event loop and runner entrypoints |
 | `.forgejo-intelligence/` | Forgejo runtime, surface handlers, coordination modules, agent engines, tests, and runtime state |
 | `.forgejo-intelligence/state/` | Operational session state, mappings, schema version, migrations, and runtime reports |
@@ -79,7 +79,7 @@ Forgejo event
 This maps to the SOR cognitive loop as:
 
 | Forgejo operation | SOR loop role |
-|---|---|
+| --- | --- |
 | Issue, PR, push, release, wiki, schedule, or dispatch event | Stimulus |
 | Bridge normalization | Perception and representation |
 | Surface routing | Frame and activation cue |
@@ -126,7 +126,7 @@ archived compatibility material.
 Forgejo Intelligence distinguishes three runtime folder classes:
 
 | Prefix | Meaning |
-|---|---|
+| --- | --- |
 | `forgejo-intelligent-*` | Repository surface handlers |
 | `forgejo-intelligence-*` | Cross-surface coordination modules |
 | `forgejo-ai-*` | Agent engines and execution styles |
@@ -152,7 +152,7 @@ human approval through governance.
 Forgejo surfaces provide the normal user interface for SOR cognition:
 
 | Forgejo surface | SOR interpretation |
-|---|---|
+| --- | --- |
 | Issues | Stimuli, owner requests, approval records, task threads |
 | Issue comments | Dialogue, approval or denial evidence, progress notes |
 | Labels | Activation signals, classifications, approval labels |
@@ -260,7 +260,7 @@ decision memory.
 Promotion rules:
 
 | Runtime state | SOR memory target |
-|---|---|
+| --- | --- |
 | Event payload or workflow log excerpt | `06-memory/events/` or failure memory, after redaction |
 | Completed conversation summary | episodic memory |
 | Accepted rule or operating procedure | procedural memory |
@@ -304,7 +304,7 @@ why it is safe, and which tests or preflights were run.
 A Forgejo-hosted SOR should maintain these checks:
 
 | Check | Purpose |
-|---|---|
+| --- | --- |
 | Surface inventory | Confirms active `forgejo-intelligent-*` folders match approved surfaces |
 | Sentinel check | Confirms runtime enablement state is intentional |
 | Workflow preflight | Confirms the runner, image, Bun, git, jq, node, tee, and tac are available |
@@ -324,7 +324,7 @@ explicitly authorises writes to the real repository.
 The SOR must not imply Forgejo-native support for GitHub-only features.
 
 | GitHub-only capability | Forgejo-native SOR outcome |
-|---|---|
+| --- | --- |
 | Discussions | Use issues, projects, or wiki RFC pages |
 | Sponsors | Retired unless an external funding integration is explicitly added |
 | Codespaces | Use committed development environment files |

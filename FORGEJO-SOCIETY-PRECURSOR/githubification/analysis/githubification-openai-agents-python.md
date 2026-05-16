@@ -15,7 +15,7 @@ This analysis outlines how the repo could become a GitHub Action based mechanism
 ## Classification
 
 | Dimension | Value |
-|---|---|
+| --- | --- |
 | **Githubification Type** | Type 1 — AI Agent Repo |
 | **Recommended Strategy** | Composition (build the Githubification agent using the SDK's own primitives) |
 | **Infrastructure Gap** | Zero — Python 3.10+ and `uv` are available on every GitHub Actions runner |
@@ -28,7 +28,7 @@ This analysis outlines how the repo could become a GitHub Action based mechanism
 The [Githubification invariant](https://github.com/japer-technology/githubification) maps every Githubified repo to four GitHub primitives. For this repo, the mapping requires no adaptation:
 
 | GitHub Primitive | Role in This Repo | Current State | Githubified State |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **GitHub Actions** | Compute | CI/CD workflows for lint, type-check, test (5 Python versions), docs build, publishing | Additionally executes OpenAI Agents SDK agents in response to Issue events |
 | **Git** | Storage and memory | Repository source code, `PLANS.md` for task tracking | Additionally stores agent sessions, conversation history, decision logs in `.githubification-openai-agents-python/state/` |
 | **GitHub Issues** | User interface | Bug reports, feature requests, model provider requests, questions | Becomes the conversational interface for interacting with SDK-built agents |
@@ -246,7 +246,7 @@ jobs:
 Following the universal Githubification lifecycle:
 
 | Step | Action |
-|---|---|
+| --- | --- |
 | **Guard** | Workflow-level authorization — check actor's repository permission level |
 | **Indicate** | Add 🚀 reaction to the triggering issue/comment |
 | **Execute** | Run the SDK-built agent — triage → specialist → response |
@@ -304,7 +304,7 @@ The nine existing workflows (tests, docs, publish, PR management) continue opera
 ### Phase 1 — Minimal Viable Githubification
 
 | Component | Description | Effort |
-|---|---|---|
+| --- | --- | --- |
 | `.githubification-openai-agents-python/` folder | Agent folder with lifecycle script, state directories, and configuration | Medium |
 | `lifecycle/agent.py` | Core orchestrator — reads issue, loads session, runs SDK agent, posts reply, commits state | Medium |
 | GitHub Actions workflow | Workflow triggered on issue events with authorization, setup, execution, and state commit | Low |
@@ -314,7 +314,7 @@ The nine existing workflows (tests, docs, publish, PR management) continue opera
 ### Phase 2 — Multi-Agent and Enhanced Capabilities
 
 | Component | Description | Effort |
-|---|---|---|
+| --- | --- | --- |
 | Multi-agent handoffs | Triage agent routing to specialist agents (code, docs, examples, setup) | Medium |
 | Guardrails | Input validation (no secret leakage, content safety) and output validation | Low |
 | Self-installer | `workflow_dispatch` job that installs the agent folder (following GMI's self-install pattern) | Medium |
@@ -323,7 +323,7 @@ The nine existing workflows (tests, docs, publish, PR management) continue opera
 ### Phase 3 — Advanced Features
 
 | Component | Description | Effort |
-|---|---|---|
+| --- | --- | --- |
 | RunState integration | Use the SDK's typed session persistence instead of ad-hoc JSONL | Medium |
 | Tracing integration | Send agent traces to the OpenAI dashboard for debugging | Low |
 | Skill-based extension | Allow users to define custom agent skills following `.agents/skills/` pattern | Medium |
@@ -381,7 +381,7 @@ The Githubification folder (`.githubification-openai-agents-python/`) and the si
 ## Comparison with Other Githubified Repos
 
 | Dimension | GMI (Native) | OpenClaw (Wrapping) | Agent Zero (Substitution) | **This Repo (Composition)** |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Strategy** | Native — agent designed for GitHub | Wrapping — existing agent wrapped | Substitution — different agent deployed | **Composition — agent built from SDK primitives** |
 | **Runtime** | Node.js (Bun) | Node.js + Python (30+ deps) | Python (54 deps, incompatible) | **Python (uv, SDK deps only)** |
 | **Dependencies** | 1 (pi-coding-agent) | 30+ tools, vector DB | 1 (pi-coding-agent) | **SDK's own dependencies (~7 core)** |

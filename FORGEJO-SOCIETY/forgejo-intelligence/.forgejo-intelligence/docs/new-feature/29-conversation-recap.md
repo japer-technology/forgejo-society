@@ -52,7 +52,7 @@ The recap is a micro-version of a knowledge base article (feature 17) — a cura
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Recap generator** | Produce structured recaps from conversation state | ~2.5 hours |
 | **Decision tracker** | Extract decisions from conversation turns | ~1.5 hours |
 | **Turn counter and threshold** | Track conversation depth, trigger recaps | ~30 min |
@@ -357,7 +357,7 @@ Add to `.GITCLAW/recap.json`:
 ```
 
 | Setting | Effect |
-|---|---|
+| --- | --- |
 | `turnThreshold` | Don't show recaps until this many turns |
 | `format` | `"short"` (3-5 lines), `"full"` (collapsible detail), `"decisions"` (decision list only) |
 | `collapsible` | If true, wrap in `<details>` tag (saves space but email-unfriendly) |

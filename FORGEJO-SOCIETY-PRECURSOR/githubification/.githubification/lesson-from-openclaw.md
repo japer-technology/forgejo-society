@@ -21,7 +21,7 @@ This is a textbook example of **Type 1 — AI Agent Repo** Githubification.
 The OpenClaw source code is untouched. Every file outside `.GITOPENCLAW/` remains exactly as the upstream project ships it. Githubification works by placing a self-contained orchestration layer alongside the existing agent that maps GitHub primitives to the agent's native interfaces:
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -89,7 +89,7 @@ This is a pattern every Githubified repo should adopt.
 Every agent interaction follows the same ordered pipeline:
 
 | Step | Script | Purpose |
-|------|--------|---------|
+| --- | --- | --- |
 | 1 | `GITOPENCLAW-ENABLED.ts` | Guard — is the agent allowed to run? |
 | 2 | `GITOPENCLAW-PREFLIGHT.ts` | Validation — is config present? Are secrets set? |
 | 3 | `GITOPENCLAW-INDICATOR.ts` | Feedback — show the user the agent is working (👀) |

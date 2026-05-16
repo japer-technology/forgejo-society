@@ -25,7 +25,7 @@ The OpenClaw lesson demonstrated wrapping: the `.GITOPENCLAW/` folder orchestrat
 The `.issue-intelligence/` folder does not invoke `python run_ui.py`. It does not start a Flask server. It does not initialize FAISS databases. Instead, it drops the pi coding agent into the repo, gives it read access to Agent Zero's entire source tree — every prompt template, every tool, every helper module — and lets users interact with that codebase through Issues. The agent can read Agent Zero's code, explain it, analyze it, suggest modifications, and even edit files — all through the GitHub-native primitives:
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the pi agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -124,7 +124,7 @@ The defining pattern of `github-agent0`. When OpenClaw was Githubified, the `.GI
 Agent Zero cannot be wrapped this way. Its runtime requires:
 
 | Requirement | GitHub Actions Constraint |
-|---|---|
+| --- | --- |
 | Persistent HTTP server (Flask + Socket.IO) | No inbound networking on runners |
 | WebSocket streaming for real-time UI | No persistent bidirectional connections |
 | FAISS vector database persistence | Ephemeral runners — state lost between runs |
@@ -150,7 +150,7 @@ This is not the same as running Agent Zero, but it provides genuine value: an AI
 Before building the Githubification layer, the repository contains a comprehensive feasibility assessment (`.githubification/README.md`) that evaluates every Agent Zero component against GitHub Actions' capabilities:
 
 | Component | Feasibility | Verdict |
-|---|---|---|
+| --- | --- | --- |
 | LLM reasoning loop | ✅ Highly feasible | External API calls fit the ephemeral model |
 | Tool system (code execution, search) | ⚠️ Partially feasible | Most tools work; browser and Docker are complex |
 | Memory/RAG (FAISS) | ⚠️ Partially feasible | Requires artifact-based persistence between runs |
@@ -171,7 +171,7 @@ The analysis answers the question: **"What exactly am I trying to Githubify?"** 
 The `.issue-intelligence/` layer follows the same lifecycle pattern seen in GitClaw and GMI:
 
 | Step | Script | Purpose |
-|------|--------|---------|
+| --- | --- | --- |
 | 1 | `ISSUE-INTELLIGENCE-ENABLED.ts` | Guard — fail-closed sentinel check |
 | 2 | `ISSUE-INTELLIGENCE-INDICATOR.ts` | Feedback — 👀 reaction while working |
 | 3 | `ISSUE-INTELLIGENCE-AGENT.ts` | Execute — run the agent, post reply, commit state |
@@ -215,7 +215,7 @@ This honesty is itself a lesson. The previous case studies — OpenClaw, GitClaw
 The reason is architectural. Agent Zero was designed around persistent state and real-time interaction:
 
 | Agent Zero Design Assumption | GitHub Actions Reality |
-|---|---|
+| --- | --- |
 | The agent runs continuously as a server | Each workflow run is an isolated, ephemeral job |
 | Users interact through a WebSocket-connected web UI | Users interact through Issues — text-in, text-out |
 | Memory persists in FAISS databases across sessions | All filesystem state is destroyed when the job ends |

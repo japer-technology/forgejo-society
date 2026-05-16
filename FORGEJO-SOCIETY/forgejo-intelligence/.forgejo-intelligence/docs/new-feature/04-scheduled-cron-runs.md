@@ -36,7 +36,7 @@ Add a `schedule` trigger to the GitClaw workflow so the agent can perform period
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow file** (`GITCLAW-WORKFLOW-AGENT.yml`) | Add `schedule` and `workflow_dispatch` triggers, handle missing issue context | ~45 min |
 | **Task configuration** (new `scheduled-tasks.json`) | Define schema for task list, prompts, and labels | ~30 min |
 | **Agent orchestrator** (`GITCLAW-AGENT.ts`) | New code path for schedule events: load tasks, create issue, run agent, post results | ~2.5 hours |

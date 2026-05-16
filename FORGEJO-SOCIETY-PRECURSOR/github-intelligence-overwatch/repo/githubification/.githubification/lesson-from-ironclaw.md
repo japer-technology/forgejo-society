@@ -23,7 +23,7 @@ OpenClaw was Githubified by wrapping it with TypeScript lifecycle scripts that r
 Yet every structural pattern from the OpenClaw Githubification still applies — sentinel guard, lifecycle pipeline, issue-driven conversation, git-as-memory. What changes is the mechanism, not the architecture. And IronClaw's own design decisions provide the escape hatches that make the mechanism viable:
 
 | Challenge | IronClaw's Escape Hatch |
-|---|---|
+| --- | --- |
 | PostgreSQL is heavy for ephemeral Actions runners | **libSQL feature** — compile with `--no-default-features --features libsql` for an embedded database with no external dependency |
 | Rust must be compiled before it can run | **cargo-dist releases** — pre-built binaries for Linux, macOS, and Windows are published to GitHub Releases; download and run, no compilation needed |
 | Tool execution needs isolation | **WASM sandbox** — runs natively on the Actions runner without Docker, with capability-based permissions |
@@ -172,7 +172,7 @@ These contracts mean that adding a new channel (like GitHub Issues) is a matter 
 IronClaw currently supports five channel types:
 
 | Channel | Transport | Implementation |
-|---|---|---|
+| --- | --- | --- |
 | REPL | stdin/stdout | Built-in (`src/channels/`) |
 | HTTP | Webhooks | Built-in (`src/channels/`) |
 | Web Gateway | SSE + WebSocket | Built-in (`src/channels/`) |
@@ -313,7 +313,7 @@ Implement a GitHub Issues channel as a WASM component that implements `channel.w
 This follows the channel addition pattern from MicroClaw but with a formal WASM plugin rather than a source-code module.
 
 | Phase | Strategy | Lifecycle Scripts | Agent Modification | GitHub Primitive Mapping |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Wrapping | Shell/TypeScript scripts invoke the binary | None — binary used as-is | Scripts translate between GitHub and CLI |
 | 2 | Channel Addition | Minimal — only guard and orchestration | New WASM channel component | Agent natively speaks GitHub Issues |
 

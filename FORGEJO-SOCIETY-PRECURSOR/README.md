@@ -125,7 +125,7 @@ governance layer.
 ## How the precursors map to *Society of Repo*
 
 | Precursor | Question it asked | Where the answer now lives |
-|---|---|---|
+| --- | --- | --- |
 | `githubification` | Can a repo *be* the runtime? | *Forgejo Society* — the forge as cognitive substrate |
 | `github-minimum-intelligence` | What is the smallest viable agent? | Folder-as-activation in `THE-SOCIETY-OF-REPO/` |
 | `github-openclaw-intelligence` | Can a real agent live in a repo? | `REPO/forgejo-intelligence/` (Forgejo-native) |

@@ -9,7 +9,7 @@ This document catalogues every installation path, upgrade procedure, and post-in
 All installation methods share the same baseline requirements.
 
 | Requirement | Purpose | How to get it |
-|---|---|---|
+| --- | --- | --- |
 | A GitHub repository (new or existing) | Host for the agent — issues as conversation, Git as memory, Actions as runtime | `git init my-repo && cd my-repo` or use an existing repo |
 | [Git](https://git-scm.com/) | Version control, state storage, conflict resolution | Pre-installed on most systems; `git --version` to verify |
 | [Bun](https://bun.sh) | TypeScript runtime for the installer, agent orchestrator, and dependency management | `curl -fsSL https://bun.sh/install \| bash` |
@@ -24,7 +24,7 @@ Bun is only required locally for methods 1 and 2. Once files are committed and p
 There are three ways to add Minimum Intelligence to a repository.
 
 | Method | Best for | GitHub App bot identity? | Approximate setup time |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Quick setup script | Fastest — one command | No (uses `GITHUB_TOKEN`) | < 5 minutes |
 | Manual copy | Full control, offline-friendly | No (uses `GITHUB_TOKEN`) | 5–10 minutes |
 | GitHub App | Multi-repo, centralised permissions | Yes | ~15 minutes |
@@ -49,7 +49,7 @@ bash setup.sh
 **What the script does (`.github-minimum-intelligence/script/setup.sh`):**
 
 | Step | Detail |
-|---|---|
+| --- | --- |
 | Preflight checks | Verifies `git` is installed, the current directory is inside a git repository, and `bun` is available |
 | Install vs. upgrade detection | Checks whether `.github-minimum-intelligence/` already exists and reads `VERSION` for comparison |
 | Download | Fetches the latest ZIP from `github.com/japer-technology/github-minimum-intelligence/archive/refs/heads/main.zip` into a temporary directory |
@@ -134,7 +134,7 @@ After registration you receive an **App ID** (numeric) and a **private key** (`.
 The manifest requests these permissions and events:
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | `issues` | write |
 | `contents` | write |
 | `actions` | write |
@@ -146,7 +146,7 @@ The manifest requests these permissions and events:
 In the repository where the agent workflow lives, go to **Settings → Secrets and variables → Actions** and add:
 
 | Secret name | Value |
-|---|---|
+| --- | --- |
 | `APP_ID` | The numeric App ID from the app's settings page |
 | `APP_PRIVATE_KEY` | The full contents of the downloaded `.pem` private key file |
 
@@ -189,7 +189,7 @@ bun .github-minimum-intelligence/install/MINIMUM-INTELLIGENCE-INSTALLER.ts --upg
 **What the installer creates or updates:**
 
 | Action | Source (in `install/`) | Destination | Fresh install | Upgrade |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Create directories | — | `.github/workflows/`, `.github/ISSUE_TEMPLATE/` | Created if missing | Created if missing |
 | Agent workflow | `github-minimum-intelligence-agent.yml` | `.github/workflows/github-minimum-intelligence-agent.yml` | Copied | Always overwritten |
 | Hatch issue template | `ISSUE_TEMPLATE/github-minimum-intelligence-hatch.md` | `.github/ISSUE_TEMPLATE/github-minimum-intelligence-hatch.md` | Copied | Always overwritten |
@@ -209,7 +209,7 @@ After installation, add at least one API key as a **GitHub repository secret**:
 3. Set the name and value from the table below.
 
 | Provider | Secret name | Where to get it |
-|---|---|---|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -237,7 +237,7 @@ Edit `.github-minimum-intelligence/.pi/settings.json`:
 ```
 
 | Field | Values | Default |
-|---|---|---|
+| --- | --- | --- |
 | `defaultProvider` | `openai`, `anthropic`, `google`, `xai`, `openrouter`, `mistral`, `groq` | `openai` |
 | `defaultModel` | Any model supported by the chosen provider | `gpt-5.4` |
 | `defaultThinkingLevel` | `low`, `medium`, `high` | `high` |
@@ -245,7 +245,7 @@ Edit `.github-minimum-intelligence/.pi/settings.json`:
 Example model choices per provider:
 
 | Provider | Example models |
-|---|---|
+| --- | --- |
 | OpenAI | `gpt-5.4`, `gpt-5.3-codex`, `gpt-5.3-codex-spark` |
 | Anthropic | `claude-sonnet-4-20250514` |
 | Google | `gemini-2.5-pro`, `gemini-2.5-flash` |
@@ -294,7 +294,7 @@ The script detects the existing installation, compares version numbers (from `.g
 ### 6.2 What the Upgrade Does
 
 | Step | Detail |
-|---|---|
+| --- | --- |
 | Back up user files | Copies `AGENTS.md`, `.pi/settings.json`, the entire `.pi/` directory, and `state/` to a temporary location |
 | Replace framework | Removes old `.github-minimum-intelligence/` and copies the new version from the downloaded archive |
 | Remove source state | Deletes the new version's `state/` directory (prevents inheriting the source repo's session history) |
@@ -304,7 +304,7 @@ The script detects the existing installation, compares version numbers (from `.g
 ### 6.3 Preservation Table
 
 | Component | Fresh install | Upgrade |
-|---|---|---|
+| --- | --- | --- |
 | `AGENTS.md` (agent identity) | Initialised from template | Preserved |
 | `.pi/settings.json` (model config) | Initialised from template | Preserved |
 | `.pi/` (skills, system prompt, bootstrap) | Copied from source | Preserved |
@@ -376,7 +376,7 @@ If the badge is still present, the workflow does nothing (the repo is still iner
 This is the core workflow that powers the AI agent and deploys GitHub Pages. It is installed by the installer (Section 3) and runs automatically.
 
 | Setting | Value |
-|---|---|
+| --- | --- |
 | Triggers | `issues: [opened]`, `issue_comment: [created]`, `push` to `main`, `workflow_dispatch` |
 | Permissions | `contents: write`, `issues: write`, `actions: write`, `pages: write`, `id-token: write` |
 | Concurrency | Agent: grouped by repository + issue number; Pages: grouped by `pages`; neither cancels in-progress runs |
@@ -461,7 +461,7 @@ repository-root/
 After completing any installation method, verify the setup is working:
 
 | Check | How |
-|---|---|
+| --- | --- |
 | Files are present | `ls .github-minimum-intelligence/VERSION` should show the version file |
 | Workflow is installed | `ls .github/workflows/github-minimum-intelligence-agent.yml` should exist |
 | Issue templates are installed | `ls .github/ISSUE_TEMPLATE/github-minimum-intelligence-*.md` should show hatch and chat templates |
@@ -478,7 +478,7 @@ After completing any installation method, verify the setup is working:
 GitHub Minimum Intelligence provides three installation paths, each targeting a different use case:
 
 | Method | Command | Preserves identity on upgrade | Multi-repo support |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Quick setup script | `curl ... \| bash` | Yes | One repo at a time |
 | Manual copy | Download ZIP + `bun ... INSTALLER.ts` | Yes | One repo at a time |
 | GitHub App | Register app + install on repos + `curl ... \| bash` per repo | Yes | Centralised |

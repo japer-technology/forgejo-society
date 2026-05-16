@@ -183,7 +183,7 @@ how: PR with threat model, fork policy, public-repo policy, and rollback path
 Human approval is always a **traceable event** in version control:
 
 | Method | When used |
-|---|---|
+| --- | --- |
 | PR merge by owner | Constitutional changes, policy changes, agency changes |
 | Issue comment with confirmation text | Payments, data egress, legal commitments |
 | Explicit label applied by owner | Routine approvals with lower stakes |

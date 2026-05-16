@@ -15,7 +15,7 @@
 At the moment, the agent handles exactly two event types and responds in exactly one way:
 
 | Event | What the agent does |
-|---|---|
+| --- | --- |
 | `issues.opened` | Reads the issue title + body and posts an AI reply as an issue comment |
 | `issue_comment.created` | Reads the new comment body and posts an AI reply as an issue comment |
 
@@ -30,7 +30,7 @@ These are all the GitHub event types that map to the `forgejo-intelligent-issue`
 ### Issue Lifecycle Events
 
 | Event (`issues.<action>`) | What it signals | What the agent could do |
-|---|---|---|
+| --- | --- | --- |
 | `issues.edited` | Title or body was changed | Re-read the updated spec, revise any prior analysis posted as a comment, flag if the edit invalidates a previous decision |
 | `issues.closed` | Issue was manually closed | Post a closing summary — what was decided, what was shipped, what was left open — and update the pinned dashboard |
 | `issues.reopened` | A closed issue was reopened | Re-read prior conversation, surface relevant prior context, and ask what changed |
@@ -44,28 +44,28 @@ These are all the GitHub event types that map to the `forgejo-intelligent-issue`
 ### Assignment Events
 
 | Event | What it signals | What the agent could do |
-|---|---|---|
+| --- | --- | --- |
 | `issues.assigned` | A user was assigned | Introduce the task to the assignee — what is needed, relevant context, prior decisions, suggested next steps |
 | `issues.unassigned` | A user was removed from the issue | Note the change in session state; if no assignee remains, post a nudge or request for a new owner |
 
 ### Label Events
 
 | Event | What it signals | What the agent could do |
-|---|---|---|
+| --- | --- | --- |
 | `issues.labeled` | A label was applied | Trigger label-specific skills — `bug` → root cause analysis, `feature` → requirements refinement, `good first issue` → contributor onboarding message, `needs-repro` → ask for reproduction steps |
 | `issues.unlabeled` | A label was removed | Reverse or pause label-triggered behavior; log the change in the session |
 
 ### Milestone Events
 
 | Event | What it signals | What the agent could do |
-|---|---|---|
+| --- | --- | --- |
 | `issues.milestoned` | Issue added to a milestone | Summarize the milestone goal and how this issue contributes; flag scope creep if the issue is out of place |
 | `issues.demilestoned` | Issue removed from a milestone | Note the removal; ask if there is a new target or if the issue is being deprioritized |
 
 ### Comment Lifecycle Events
 
 | Event (`issue_comment.<action>`) | What it signals | What the agent could do |
-|---|---|---|
+| --- | --- | --- |
 | `issue_comment.edited` | A comment (including a prior AI reply) was edited | If the actor edited a human comment that the agent previously responded to, re-evaluate whether the prior reply is still accurate |
 | `issue_comment.deleted` | A comment was deleted | Remove the deleted comment from the session context so future replies are not based on stale data |
 
@@ -78,7 +78,7 @@ Currently the agent only posts an issue comment. These are all the other surface
 ### Comment Surfaces
 
 | Response | How | When to use |
-|---|---|---|
+| --- | --- | --- |
 | **Issue comment** *(current)* | `gh issue comment <number> --body "..."` | Default conversational reply |
 | **Issue comment with suggested action** | Comment body with a Markdown task list pre-filled | Guiding the human through a multi-step process |
 | **Edited issue body** | `gh issue edit <number> --body "..."` | Updating a living spec, adding a decision log section, or checking off task list items as they complete |
@@ -87,7 +87,7 @@ Currently the agent only posts an issue comment. These are all the other surface
 ### Metadata Surfaces
 
 | Response | How | When to use |
-|---|---|---|
+| --- | --- | --- |
 | **Apply a label** | `gh issue edit <number> --add-label "..."` | AI-driven triage — classify the issue as bug/feature/question after reading the body |
 | **Remove a label** | `gh issue edit <number> --remove-label "..."` | Remove a `needs-repro` label once reproduction steps are confirmed |
 | **Assign a user** | `gh issue edit <number> --assignee "..."` | Route the issue to the right owner based on file ownership, expertise, or past history |
@@ -98,7 +98,7 @@ Currently the agent only posts an issue comment. These are all the other surface
 ### Linked-Content Surfaces
 
 | Response | How | When to use |
-|---|---|---|
+| --- | --- | --- |
 | **Create a sub-issue** | `gh issue create --title "..." --body "..."` with a parent reference | Decompose a large request into trackable work items with full context carried forward |
 | **Create a draft PR** | `gh pr create --draft --title "..." --body "..."` | When the issue contains enough spec to start implementation, open a draft PR and link it back |
 | **Create a linked discussion** | GitHub Discussions API | Move a broad question from an issue into a Discussion where it can be answered for a wider audience |
@@ -107,7 +107,7 @@ Currently the agent only posts an issue comment. These are all the other surface
 ### State and Memory Surfaces
 
 | Response | How | When to use |
-|---|---|---|
+| --- | --- | --- |
 | **Write to session state** | `state/issues/<number>.json` | Persist structured data from the conversation — decisions, open questions, referenced commits |
 | **Update the pinned dashboard issue** | Edit the pinned issue body | Reflect the latest status of open investigations, recent decisions, and active agents |
 | **Search closed issues as memory** | `gh issue list --state closed --search "..."` | Surface prior decisions and rejected approaches before generating a new recommendation |
@@ -119,7 +119,7 @@ Currently the agent only posts an issue comment. These are all the other surface
 These are concrete examples of how a trigger and a response surface combine into a real capability.
 
 | Trigger | Response | Scenario |
-|---|---|---|
+| --- | --- | --- |
 | `issues.opened` | Comment + label | Classify the issue as `bug` / `feature` / `question` and explain the classification in a comment |
 | `issues.opened` | Comment + assign | Route a bug to the team member who owns the affected area, explain why in the comment |
 | `issues.labeled` with `good first issue` | Comment | Post a contributor onboarding message — where to start, how to run tests, how to open a PR |
@@ -146,7 +146,7 @@ These are concrete examples of how a trigger and a response surface combine into
 A distinct interaction model worth calling out explicitly. When a human types a command in an issue comment, the agent interprets it as a direct instruction rather than a conversational prompt.
 
 | Command | Action |
-|---|---|
+| --- | --- |
 | `/close [reason]` | Post a closing summary and close the issue |
 | `/reopen` | Post a status reset comment and reopen the issue |
 | `/assign @user` | Assign the specified user and confirm |
@@ -166,7 +166,7 @@ A distinct interaction model worth calling out explicitly. When a human types a 
 Reactions on agent comments can act as lightweight structured inputs — avoiding the need for a full comment reply.
 
 | Reaction on an agent comment | What the agent could interpret it as |
-|---|---|
+| --- | --- |
 | 👍 | Positive signal — reinforce the approach, continue |
 | 👎 | Negative signal — reconsider, ask what was wrong |
 | 🎉 | Task completed — log success, update session state |
@@ -182,7 +182,7 @@ Reactions on agent comments can act as lightweight structured inputs — avoidin
 The current implementation handles 2 of the roughly 18 issue-related event types and posts to 1 of the available response surfaces. The full possibility space is:
 
 | Dimension | Current | Possible |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 2 (`issues.opened`, `issue_comment.created`) | 19 (16 `issues.*` + 3 `issue_comment.*` action types) |
 | Response surfaces | 1 (issue comment) | 10+ (comment, label, assign, milestone, close, reopen, edit body, sub-issue, draft PR, pinned dashboard, session state) |
 | Interaction models | 1 (conversational reply) | 4 (conversational, slash command, reaction-driven, scheduled cron) |

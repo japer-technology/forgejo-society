@@ -244,7 +244,7 @@ Browser extensions can't use the standard OAuth web flow directly because they d
 ### Solutions
 
 | Approach | How it works | Pros | Cons |
-|----------|-------------|------|------|
+| --- | --- | --- | --- |
 | **`chrome.identity.launchWebAuthFlow`** | Chrome's built-in OAuth support | Simplest, native flow | Chrome-only API |
 | **GitHub Device Flow** | Poll-based OAuth without redirect | Works in any browser | Slightly more complex UX |
 | **Background script proxy** | Extension opens a tab, captures the redirect | Works cross-browser | User sees a tab flash |
@@ -290,7 +290,7 @@ async function authenticateGitHub(): Promise<string> {
 The extension can show a status badge on the extension icon:
 
 | State | Badge | Meaning |
-|-------|-------|---------|
+| --- | --- | --- |
 | Not on GitHub | (none) | Extension inactive |
 | GitHub repo, no gitclaw | 🔴 | Installation available |
 | GitHub repo, gitclaw installed | 🟢 | gitclaw is active |

@@ -10,15 +10,15 @@ This document translates the core claims of GitHub Minimum Intelligence (GMI) in
 
 ## 1. The Framework
 
-| Concept             | Role                                                                 |
-|---------------------|----------------------------------------------------------------------|
-| **Proposition**     | A statement that is either true or false                              |
-| **Premise**         | A proposition assumed or asserted as true for the argument            |
-| **Conclusion**      | A proposition that is claimed to follow from the premises             |
-| **Validity**        | The conclusion follows necessarily from the premises                  |
-| **Soundness**       | The argument is valid *and* all premises are true                     |
-| **Hidden premise**  | An unstated assumption required for validity                          |
-| **Logical form**    | The abstract structure (modus ponens, disjunctive syllogism, etc.)    |
+| Concept | Role |
+| --- | --- |
+| **Proposition** | A statement that is either true or false |
+| **Premise** | A proposition assumed or asserted as true for the argument |
+| **Conclusion** | A proposition that is claimed to follow from the premises |
+| **Validity** | The conclusion follows necessarily from the premises |
+| **Soundness** | The argument is valid *and* all premises are true |
+| **Hidden premise** | An unstated assumption required for validity |
+| **Logical form** | The abstract structure (modus ponens, disjunctive syllogism, etc.) |
 
 A sound deductive argument reads: *"Given premises P₁, P₂, … Pₙ are true, conclusion C necessarily follows by rule R."*
 
@@ -48,10 +48,10 @@ P3: GMI's agent operates within the repository (the substrate of the work).
 ### Soundness Assessment
 
 | Premise | Status | Challenge |
-|---------|--------|-----------|
-| P1      | **Contestable** | "Direct access" conflates filesystem access with *comprehension*. An agent can read every file without understanding architectural intent. |
-| P2      | **Contestable** | "Eliminates" is absolute. Context gaps exist at multiple levels: syntactic (file contents), semantic (design rationale), pragmatic (user intent). Filesystem access addresses only the syntactic level. |
-| P3      | **True** | GMI runs in a full checkout on a GitHub Actions runner. This is verifiable. |
+| --- | --- | --- |
+| P1 | **Contestable** | "Direct access" conflates filesystem access with *comprehension*. An agent can read every file without understanding architectural intent. |
+| P2 | **Contestable** | "Eliminates" is absolute. Context gaps exist at multiple levels: syntactic (file contents), semantic (design rationale), pragmatic (user intent). Filesystem access addresses only the syntactic level. |
+| P3 | **True** | GMI runs in a full checkout on a GitHub Actions runner. This is verifiable. |
 
 ### Hidden Premises
 
@@ -92,10 +92,10 @@ P3: Dedicated AI infrastructure requires new components (backend,
 ### Soundness Assessment
 
 | Premise | Status | Challenge |
-|---------|--------|-----------|
-| P1      | **Contestable** | The premise assumes existing components are *fit for purpose*. Repurposing components for unintended use cases can introduce impedance mismatch, increasing rather than decreasing operational cost. A purpose-built system may have higher initial cost but lower long-term friction. |
-| P2      | **True** | Verifiable from the codebase. GMI uses no custom backend. |
-| P3      | **True** | Any equivalent dedicated system would require at minimum a compute layer and a state layer. |
+| --- | --- | --- |
+| P1 | **Contestable** | The premise assumes existing components are *fit for purpose*. Repurposing components for unintended use cases can introduce impedance mismatch, increasing rather than decreasing operational cost. A purpose-built system may have higher initial cost but lower long-term friction. |
+| P2 | **True** | Verifiable from the codebase. GMI uses no custom backend. |
+| P3 | **True** | Any equivalent dedicated system would require at minimum a compute layer and a state layer. |
 
 ### Hidden Premises
 
@@ -136,9 +136,9 @@ P2: Every action of GMI's agent is a Git commit — auditable,
 ### Soundness Assessment
 
 | Premise | Status | Challenge |
-|---------|--------|-----------|
-| P1      | **False as stated** | Auditability is *necessary* but not *sufficient* for trust. A system can be fully auditable and still untrustworthy if: (a) no one reviews the audit trail, (b) the audit trail records actions but not reasoning, (c) the system acts faster than humans can review. |
-| P2      | **Partially true** | Agent *code changes* are Git commits. But agent *reasoning* is not recorded. The commit is the conclusion; the derivation is opaque. |
+| --- | --- | --- |
+| P1 | **False as stated** | Auditability is *necessary* but not *sufficient* for trust. A system can be fully auditable and still untrustworthy if: (a) no one reviews the audit trail, (b) the audit trail records actions but not reasoning, (c) the system acts faster than humans can review. |
+| P2 | **Partially true** | Agent *code changes* are Git commits. But agent *reasoning* is not recorded. The commit is the conclusion; the derivation is opaque. |
 
 ### Logical Correction
 
@@ -191,10 +191,10 @@ P3: The repository is the substrate GMI operates on.
 ### Soundness Assessment
 
 | Premise | Status | Challenge |
-|---------|--------|-----------|
-| P1      | **Contestable** | "More likely to be maintained" is plausible for human-readable configuration. "More likely to be enforced" conflates *visibility* with *enforcement*. A visible constraint without a runtime enforcement mechanism is advisory, not enforced. |
-| P2      | **True** | Verifiable: ethical constraint files exist in the repo. |
-| P3      | **True** | The agent reads its configuration from the repo filesystem. |
+| --- | --- | --- |
+| P1 | **Contestable** | "More likely to be maintained" is plausible for human-readable configuration. "More likely to be enforced" conflates *visibility* with *enforcement*. A visible constraint without a runtime enforcement mechanism is advisory, not enforced. |
+| P2 | **True** | Verifiable: ethical constraint files exist in the repo. |
+| P3 | **True** | The agent reads its configuration from the repo filesystem. |
 
 ### Logical Distinction
 
@@ -240,10 +240,10 @@ P3: GMI's bootstrap protocol defines identity through human-agent
 ### Soundness Assessment
 
 | Premise | Status | Challenge |
-|---------|--------|-----------|
-| P1      | **Contestable** | Dialogue may produce an identity that reflects what the human *says* they want, not what they actually need. There is a well-documented gap between stated and revealed preferences. |
-| P2      | **Contestable** | Alignment of *identity* (tone, style) does not entail alignment of *outputs* (code quality, decision correctness). An agent with the "perfect" persona can still produce incorrect code. |
-| P3      | **True** | The bootstrap protocol is documented and observable. |
+| --- | --- | --- |
+| P1 | **Contestable** | Dialogue may produce an identity that reflects what the human *says* they want, not what they actually need. There is a well-documented gap between stated and revealed preferences. |
+| P2 | **Contestable** | Alignment of *identity* (tone, style) does not entail alignment of *outputs* (code quality, decision correctness). An agent with the "perfect" persona can still produce incorrect code. |
+| P3 | **True** | The bootstrap protocol is documented and observable. |
 
 ### Hidden Premises
 
@@ -284,13 +284,13 @@ Translating natural-language arguments into formal logic reveals structural weak
 
 Formal logic provides a strict lens for evaluating GMI's claims:
 
-| Argument                 | Valid? | Sound? | Key weakness                                      |
-|--------------------------|--------|--------|---------------------------------------------------|
-| Context through colocation | Yes    | No*    | "Eliminates" → should be "reduces"                |
-| Infrastructural superiority| Yes    | Partial| Scope-dependent; equivocates on "superior"         |
-| Trust through auditability | Yes    | No*    | Necessary ≠ sufficient; reasoning is opaque        |
-| Ethics as encoded constraints | Yes  | Partial| Valid for maintenance; invalid for enforcement     |
-| Identity through dialogue  | Yes    | Weak   | Identity alignment ≠ output alignment              |
+| Argument | Valid? | Sound? | Key weakness |
+| --- | --- | --- | --- |
+| Context through colocation | Yes | No* | "Eliminates" → should be "reduces" |
+| Infrastructural superiority | Yes | Partial | Scope-dependent; equivocates on "superior" |
+| Trust through auditability | Yes | No* | Necessary ≠ sufficient; reasoning is opaque |
+| Ethics as encoded constraints | Yes | Partial | Valid for maintenance; invalid for enforcement |
+| Identity through dialogue | Yes | Weak | Identity alignment ≠ output alignment |
 
 *\* Sound when claims are weakened to qualified versions.*
 

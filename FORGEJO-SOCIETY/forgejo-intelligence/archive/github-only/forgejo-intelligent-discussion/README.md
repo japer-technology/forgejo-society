@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **`discussion` events** | Triggers when new discussions are created |
 | **`discussion_comment` events** | Triggers when new comments are posted in discussion threads |
 | **Discussion categories** | Reads category context — General, Ideas, Q&A, Show and Tell, Polls |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Q&A responder** | In Q&A categories, answers questions by searching the codebase and citing specific files and functions |
 | **RFC summarizer** | For long design discussions, posts periodic summaries — key arguments, open questions, emerging consensus |
 | **Discussion-to-issue converter** | When a discussion reaches a decision, creates a tracked issue with the agreed-upon requirements |

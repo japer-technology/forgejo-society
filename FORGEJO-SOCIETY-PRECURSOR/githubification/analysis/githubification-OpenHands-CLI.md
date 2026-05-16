@@ -11,7 +11,7 @@
 The concept rests on four GitHub primitives used in new roles:
 
 | GitHub Primitive | Githubification Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread with the agent |
@@ -30,7 +30,7 @@ The [lesson-from-OpenHands-CLI](https://github.com/japer-technology/githubificat
 Every Githubification primitive is already actively in use in this repo — just not yet pointed at users:
 
 | Primitive | Current Use (Developer-Facing) | Githubification Use (User-Facing) |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Runs OpenHands in headless mode for PR reviews, code quality analysis, issue labeling | Would run OpenHands in headless mode for user conversations via Issues |
 | **Git** | The codebase the agent reads and modifies through PRs | Would additionally store conversation sessions and agent memory |
 | **GitHub Issues** | Traditional bug/feature tracking, auto-labeled by the agent | Would become the conversational surface for interacting with the agent |
@@ -77,7 +77,7 @@ openhands --headless --json -t "task"  # Structured JSON output
 The `.github/prompts/` directory contains reusable Markdown task specifications:
 
 | Prompt File | Purpose |
-|---|---|
+| --- | --- |
 | `auto-fix-low-hanging.md` | Fix trivial code quality issues, create branches, open PRs |
 | `code-quality-analysis.md` | Comprehensive code analysis: types, state, concerns, duplication |
 | `good-first-issue-labeler.md` | Identify and label good-first-issue candidates |
@@ -311,7 +311,7 @@ Combined with a git push retry loop (10 attempts with escalating backoff) to han
 Different issue labels could trigger different prompt files, extending the existing `.github/prompts/` pattern:
 
 | Label | Prompt File | Agent Behavior |
-|---|---|---|
+| --- | --- | --- |
 | `question` | `respond-to-question.md` | Explain code, architecture, usage |
 | `bug` | `investigate-bug.md` | Trace code paths, identify root cause |
 | `feature-request` | `assess-feature.md` | Evaluate feasibility, outline approach |
@@ -354,7 +354,7 @@ The CLI's MCP support allows the issue-driven agent to be extended with project-
 ## Comparison With GitHub Minimum Intelligence
 
 | Dimension | GMI Approach | OpenHands CLI Native Approach |
-|---|---|---|
+| --- | --- | --- |
 | **Runtime** | TypeScript (`pi-coding-agent`) | Python (OpenHands SDK) |
 | **Dependency** | 1 (`@anthropic/tokenizer`) | Multiple (openhands-sdk, textual, etc.) |
 | **Installation** | Copy 1 workflow file, run once | Add workflow + prompt files |

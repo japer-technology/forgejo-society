@@ -9,7 +9,7 @@ through long-form guides.
 ## Start here
 
 | If you need to... | Use this checklist |
-|---|---|
+| --- | --- |
 | Stand up the full Forgejo-Society stack | [Transition plan overview](transition-plan/00-overview.md) |
 | Install or rebuild a single host from scratch | [Install library index](install/00-index.md) |
 | Bring up Ubuntu quickly on any host | [Ubuntu Quick Start](quick-start/ubuntu.md#full-installation-checklist) |
@@ -21,7 +21,7 @@ through long-form guides.
 ## Platform rollout
 
 | Stage | Checklist |
-|---|---|
+| --- | --- |
 | Network infrastructure (pre-requisite for all phases) | [Phase 0 checklist](transition-plan/00-overview.md#phase-0-checklist) |
 | Governance and source-of-truth setup | [Phase 1 checklist](transition-plan/00-overview.md#phase-1-checklist) |
 | Runner fleet and execution layer | [Phase 2 checklist](transition-plan/00-overview.md#phase-2-checklist) |
@@ -34,7 +34,7 @@ through long-form guides.
 ## Role-based operations
 
 | Role | Best checklist entry point |
-|---|---|
+| --- | --- |
 | Forge server operator | [Forge server install order](install/00-index.md#forge-server-i9-20-core--64-gb-ram--2-tb-nvme) |
 | Runner fleet operator | [Runner fleet install order](install/00-index.md#runner-fleet-16--i7-8-core--8-gb-ram--60-gb-ssd) |
 | LLM infrastructure operator | [LLM inference server install order](install/00-index.md#llm-inference-server-i9-32-core--64-gb-ram--1-tb-nvme--rtx-4090) |
@@ -46,7 +46,7 @@ through long-form guides.
 ## Topic-specific checklists
 
 | Topic | Checklist |
-|---|---|
+| --- | --- |
 | Network infrastructure (fixed IPs, DNS, SSH) | [Network infrastructure checklist](transition-plan/16-network-infrastructure.md#phase-0-validation-checklist) |
 | Ubuntu base image and hardening | [Ubuntu foundation installation checklist](transition-plan/01-ubuntu-foundation.md#installation-checklist) |
 | GitKraken rollout | [GitKraken adoption checklist](transition-plan/05-gitkraken-tooling.md#adoption-checklist) |

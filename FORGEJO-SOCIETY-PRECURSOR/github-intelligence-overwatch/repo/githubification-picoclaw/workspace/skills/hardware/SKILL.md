@@ -53,7 +53,7 @@ AHT20, BME280, SSD1306 OLED, MPU6050 IMU, DS3231 RTC, INA219 power monitor, PCA9
 ## Troubleshooting
 
 | Problem | Solution |
-|---------|----------|
+| --- | --- |
 | No I2C buses found | `modprobe i2c-dev` and check device tree |
 | Permission denied | Run as root or add user to `i2c` group |
 | No devices on scan | Check wiring, pull-up resistors (4.7k typical), and pinmux |

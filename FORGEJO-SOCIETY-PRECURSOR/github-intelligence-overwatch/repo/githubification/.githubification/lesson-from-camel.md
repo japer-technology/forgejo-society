@@ -23,7 +23,7 @@ The Agent Zero lesson demonstrated substitution: when the agent's runtime cannot
 The `.camel/skills/` directory does not start a Python process. It does not invoke `ChatAgent.step()`. It does not install CAMEL's hundreds of dependencies. Instead, it provides a structured skill system — the SKILL.md standard — that captures the procedural knowledge, workflows, and patterns needed to build and extend agents. A GitHub-native agent with access to these skills can understand CAMEL's architecture, create new skills, and reason about multi-agent system design — all through the four GitHub primitives:
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that processes skill creation and agent interactions |
 | **Git** | Storage and memory — skills, references, scripts, and assets are version-controlled |
 | **GitHub Issues** | User interface — conversations about building, extending, or understanding agent capabilities |
@@ -167,7 +167,7 @@ This is a design pattern not seen in the previous lessons. Rather than defining 
 The SKILL.md standard introduces a three-level loading system:
 
 | Level | What Loads | When | Token Cost |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1. Metadata | `name` + `description` from frontmatter | Always in context | ~100 words |
 | 2. SKILL.md body | Full instructions and guidance | When skill triggers | <5,000 words |
 | 3. Bundled resources | Scripts, references, assets | On demand by the agent | Unlimited |
@@ -179,7 +179,7 @@ This addresses a fundamental constraint of AI agents operating in resource-limit
 The SKILL.md standard explicitly addresses how much autonomy to give the agent for different types of tasks:
 
 | Freedom Level | When to Use | Example |
-|---|---|---|
+| --- | --- | --- |
 | **High** (text instructions) | Multiple approaches valid, context-dependent decisions | Agent chooses its own approach |
 | **Medium** (pseudocode/parameterized scripts) | Preferred pattern exists, some variation acceptable | Agent follows a template with judgment |
 | **Low** (specific scripts, few parameters) | Fragile operations, consistency critical | Agent executes a deterministic script |
@@ -203,7 +203,7 @@ For Githubification, this principle extends beyond skills. Every file in a Githu
 The `skill-creator` skill is itself a skill — a recursive pattern where the system teaches agents how to extend the system. The creation process is structured as a six-step pipeline:
 
 | Step | Purpose |
-|------|---------|
+| --- | --- |
 | 1. Understand | Gather concrete examples of how the skill will be used |
 | 2. Plan | Identify reusable resources (scripts, references, assets) |
 | 3. Initialize | Run `init_skill.py` to scaffold the skill directory |
@@ -259,7 +259,7 @@ This research orientation means the framework evolves rapidly, the codebase is d
 CAMEL's Githubification reveals a structural distinction that the previous case studies hinted at but never confronted directly: **the difference between Githubifying an agent and Githubifying a framework.**
 
 | Dimension | Agent Githubification | Framework Githubification |
-|---|---|---|
+| --- | --- | --- |
 | **What you run** | A specific agent with defined behavior | No single thing to run — the framework builds agents |
 | **Entry point** | A command, script, or binary | Import a library, configure, compose |
 | **Value proposition** | "Use this agent through GitHub" | "Use this framework's knowledge through GitHub" |

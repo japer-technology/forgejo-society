@@ -47,7 +47,7 @@ Building a dashboard requires structured, consistent data. The process of making
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Dashboard generator** (new `GITCLAW-DASHBOARD.ts`) | Read state files, generate HTML | ~4 hours |
 | **Activity feed page** | Recent issues, agent responses, timeline view | ~1.5 hours |
 | **Session browser page** | List sessions with summaries, search, filter by issue | ~1.5 hours |

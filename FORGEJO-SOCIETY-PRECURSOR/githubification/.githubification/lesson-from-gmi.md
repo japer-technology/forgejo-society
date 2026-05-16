@@ -23,7 +23,7 @@ In the OpenClaw case, Githubification wraps an external agent — the `.GITOPENC
 GitHub Minimum Intelligence takes a different path. There is no separate agent to wrap. The `.github-minimum-intelligence/` folder _is_ the product. The lifecycle scripts don't translate between GitHub and some external runtime — they speak GitHub natively. The result is a dramatically simpler architecture that still maps to the same four GitHub primitives:
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent workflow |
 | **Git** | Storage and memory — sessions, conversations, and agent edits are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -90,7 +90,7 @@ Everything the agent needs to exist, run, and remember lives in this folder. The
 Where OpenClaw has a multi-step pipeline (enabled guard → preflight → indicator → agent), GMI compresses the lifecycle into just two TypeScript files:
 
 | Step | File | Purpose |
-|------|------|---------|
+| --- | --- | --- |
 | 1 | `indicator.ts` | Add 🚀 reaction to show the agent is working |
 | 2 | `agent.ts` | Run the AI agent, post the reply, commit state |
 
@@ -99,7 +99,7 @@ Authorization is handled by the workflow itself (a shell step that checks collab
 The workflow step order is:
 
 | # | Step | What Happens |
-|---|------|------|
+| --- | --- | --- |
 | 1 | Authorize | Shell — check collaborator permission via `gh api` |
 | 2 | Reject | Shell — add 👎 reaction if unauthorized (runs only on auth failure) |
 | 3 | Checkout | Clone the repo |
@@ -168,7 +168,7 @@ This is simpler (no file to manage) but trades the ability to disable the agent 
 GMI supports eight LLM providers out of the box through a single configuration file (`.pi/settings.json`):
 
 | Provider | Model Examples |
-|----------|------|
+| --- | --- |
 | OpenAI | `gpt-5.3-codex`, `gpt-5.3-codex-spark` |
 | Anthropic | `claude-sonnet-4-20250514` |
 | Google Gemini | `gemini-2.5-pro`, `gemini-2.5-flash` |
@@ -225,7 +225,7 @@ This documentation is not supplementary — it's structural. The DEFCON system p
 The OpenClaw lesson demonstrated that Githubification can wrap a complex, existing AI agent without modifying it. GMI demonstrates the other end of the spectrum: **what happens when the agent is designed for GitHub from day one.**
 
 | Dimension | OpenClaw (wrapped) | GMI (native) |
-|-----------|-------------------|--------------|
+| --- | --- | --- |
 | **Agent origin** | External project, ported to GitHub | Built for GitHub from scratch |
 | **Githubification layer** | Separate folder alongside agent source | The folder IS the agent |
 | **Lifecycle complexity** | 5-step pipeline with sentinel guard | 2-file lifecycle with workflow-level auth |

@@ -34,7 +34,7 @@ This configures the essential provider, model, thinking, compaction, and retry s
 ## 2. Available Settings Not Currently Configured
 
 | Setting | Type | Default | Description |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `thinkingBudgets` | object | Built-in defaults | Custom token budgets per thinking level |
 | `hideThinkingBlock` | boolean | `false` | Hide thinking blocks in output |
 | `quietStartup` | boolean | `false` | Hide startup header |
@@ -218,7 +218,7 @@ After deploying the changes, monitor:
 ## 6. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `PI_CACHE_RETENTION` not supported by provider | Low | None | Unsupported providers ignore the variable |
 | `quietStartup` hides useful debug info | Low | Low | Startup info is still in JSONL events; check `/tmp/agent-raw.jsonl` |
 | Thinking budget too low | Low | Medium | Monitor agent performance; increase budget if reasoning quality degrades |

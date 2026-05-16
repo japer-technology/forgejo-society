@@ -13,7 +13,7 @@ The crosswalk is the contract: when SOR uses a Minsky term, it means
 ## Mapping table
 
 | Minsky construct | SOR realisation | Lives in | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Agent | Smallest committed actor (function, script, prompt block) | inside an agency repo | Plural; not separately versioned |
 | Agency | A repository under `03-agencies/` with a constitution | [03-agencies/](../THE-SOCIETY-OF-REPO/03-agencies/README.md) | One agency = one repo |
 | Society | The whole `THE-SOCIETY-OF-REPO/` collection of agencies | [THE-SOCIETY-OF-REPO/](../THE-SOCIETY-OF-REPO/README.md) | The repo-of-repos |
@@ -65,7 +65,7 @@ The Society of Repo organises its content into *realms* (top-level
 directories). Each realm carries one or more Minsky constructs.
 
 | Realm | Lives in | Carries |
-|---|---|---|
+| --- | --- | --- |
 | Foundations | [00-foundations/](../THE-SOCIETY-OF-REPO/00-foundations/README.md) | Isonomes, axioms, maturity model |
 | Governance | [01-governance/](../THE-SOCIETY-OF-REPO/01-governance/README.md) | Self-models, self-ideals, change policy |
 | Protocols | [02-protocols/](../THE-SOCIETY-OF-REPO/02-protocols/README.md) | Settlement, memory, activation, insulation, hierarchy, representation, introspection, credit assignment, service channels, runtime layers, operational verification |

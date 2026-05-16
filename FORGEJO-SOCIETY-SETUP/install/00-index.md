@@ -69,7 +69,7 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 ### Server Infrastructure
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 01 | [Ubuntu 24.04 LTS](01-ubuntu-24-lts.md) | Foundation OS install for all hosts. Covers ISO download, USB burn, installer walkthrough, static IP, LVM+encryption, essential packages, SSH hardening, and automatic security updates. |
 | 02 | [UFW Firewall](02-ufw-firewall.md) | Per-role UFW configuration. Forge host opens 22/80/443; runner nodes open 22 only; LLM host opens 22 and 1234 to the local subnet. |
 | 03 | [fail2ban](03-fail2ban.md) | SSH brute-force protection. Configures the sshd jail to ban IPs after 5 failures within 10 minutes for 1 hour. |
@@ -80,13 +80,13 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 ### Database
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 07 | [PostgreSQL 16](07-postgresql-16.md) | Production-grade relational database for Forgejo. Covers installation, forgejo database/user creation, performance tuning for the 64 GB forge server, and nightly pg_dump backup. |
 
 ### Forge Stack
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 08 | [Caddy Web Server](08-caddy-web-server.md) | Reverse proxy with automatic TLS. Terminates HTTPS for git.yourdomain.com and proxies to Forgejo on port 3000. |
 | 09 | [Forgejo](09-forgejo.md) | The self-hosted Git forge. Full binary install, app.ini configuration, systemd service, SSH setup, and backup automation. |
 | 10 | [Forgejo Runner](10-forgejo-runner.md) | act_runner CI execution node. Registers with the forge, runs Docker-based workflow jobs. Deployed on all 16 runner nodes. |
@@ -94,14 +94,14 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 ### LLM Infrastructure
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 11 | [NVIDIA Drivers](11-nvidia-drivers.md) | RTX 4090 driver installation on Ubuntu 24.04. Covers driver selection, Secure Boot considerations, CUDA toolkit, and persistence mode. |
 | 12 | [LM Studio (Linux)](12-lm-studio-linux.md) | Headless LLM inference server via LM Studio AppImage. Serves the OpenAI-compatible API on port 1234 for use by Forgejo-Society agents. |
 
 ### Ubuntu Developer Tooling
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 13 | [Git and Git LFS (Linux)](13-git-linux.md) | Git and Large File Storage on Ubuntu. Global identity, sensible defaults, LFS initialisation, and a global .gitignore. |
 | 14 | [Visual Studio Code (Linux)](14-vscode-linux.md) | VS Code on Ubuntu via the Microsoft APT repo. Installs the core extension set: GitLens, Remote-SSH, Python, Go, Rust, YAML, Docker, spell-check. |
 | 15 | [Node.js via nvm](15-nodejs-nvm.md) | Node Version Manager for per-user Node.js management. Installs LTS and the yarn/pnpm package managers. |
@@ -115,7 +115,7 @@ Follow this order when provisioning a host from scratch. Dependencies are satisf
 ### Windows Developer Tooling
 
 | # | Guide | Description |
-|---|-------|-------------|
+| --- | --- | --- |
 | 22 | [Git for Windows](22-git-windows.md) | Git + Git LFS on Windows via WinGet. Covers global config, SSH key generation, ssh-agent, and Forgejo SSH connectivity. |
 | 23 | [Visual Studio Code (Windows)](23-vscode-windows.md) | VS Code on Windows via WinGet. Same extension set as the Linux guide; configures Remote-SSH to the forge host. |
 | 24 | [Visual Studio 2022](24-visual-studio-2022.md) | Full IDE for .NET/C++ development. Covers WinGet install, workload selection, GCM integration with Forgejo HTTPS auth. |

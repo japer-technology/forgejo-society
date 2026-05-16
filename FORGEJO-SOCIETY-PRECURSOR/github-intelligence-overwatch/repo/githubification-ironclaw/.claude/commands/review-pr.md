@@ -116,7 +116,7 @@ In addition to the general lenses below, check IronClaw conventions (see CLAUDE.
 Summarize findings to the user as a table:
 
 | # | Severity | Category | File:Line | Finding | Suggested Fix |
-|---|----------|----------|-----------|---------|---------------|
+| --- | --- | --- | --- | --- | --- |
 
 Severity levels:
 - **Critical**: Security vulnerability, data loss, or financial exploit

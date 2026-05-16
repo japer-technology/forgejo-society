@@ -9,7 +9,7 @@ protocol in `THE-SOCIETY-OF-REPO`.
 ## Runtime state machine
 
 | State | Meaning | Entry trigger | Exit trigger |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `discovered` | Activation candidate found | Label, webhook, schedule, or manual dispatch | Agent accepts or ignores |
 | `claimed` | One agent owns the work | Settlement ID created | Draft proposal or timeout |
 | `proposed` | Agent output is ready for review | PR opened and settlement file written | Critic review starts |
@@ -40,7 +40,7 @@ protocol in `THE-SOCIETY-OF-REPO`.
 ## Critic response windows
 
 | Gate type | Default response window | Failure mode |
-|---|---|---|
+| --- | --- | --- |
 | Local automated critic | 5 minutes | Retry once, then fail closed |
 | Repo-scoped critic service account | 30 minutes | Reassign to backup critic |
 | Human governor review | 24 hours | Hold open until explicit decision |
@@ -64,7 +64,7 @@ protocol in `THE-SOCIETY-OF-REPO`.
 ## Timeout, retry, and fail-closed rules
 
 | Event | Retry policy | Final state |
-|---|---|---|
+| --- | --- | --- |
 | Activation claim race | No retry; attach to existing settlement | `claimed` under original owner |
 | Local model inference failure | Retry once with same model, once with larger local model | `rejected` if still failing |
 | Critic timeout | Retry via backup critic if policy allows | `rejected` |
@@ -88,7 +88,7 @@ Fail closed by default for governance, privacy, credential, and publication task
 Classify repositories before automation begins:
 
 | Repo class | Cloud use | Rule |
-|---|---|---|
+| --- | --- | --- |
 | `core` | Forbidden by default | Human override only |
 | `governance` | Forbidden | No exception |
 | `memory` | Forbidden unless records are already public | Human override only |
@@ -128,7 +128,7 @@ Track each agent and K-line with the same minimum fields:
 ### K-line lifecycle
 
 | State | Promotion rule | Demotion rule |
-|---|---|---|
+| --- | --- | --- |
 | `experimental` | 5 successful uses with human confirmation | 1 harmful or 2 low-value uses |
 | `active` | 20 successful uses and false-positive rate under 10% | false-positive rate over 20% |
 | `preferred` | 50 successful uses and best latency in class | two monthly reviews below target |
@@ -137,7 +137,7 @@ Track each agent and K-line with the same minimum fields:
 ### Agency lifecycle
 
 | State | Promotion rule | Demotion rule |
-|---|---|---|
+| --- | --- | --- |
 | `experimental` | 10 settled actions, zero harmful merges | 1 severe incident |
 | `probation` | 30 days stable and false-positive rate under 10% | false-positive rate over 15% |
 | `trusted` | Governance approval after metrics review | 2 monthly reviews below target |
@@ -155,7 +155,7 @@ An agency is considered **too noisy** when either of these is true for 30 days:
 ### Per-task budget rules
 
 | Task class | Default model route | Hard budget |
-|---|---|---|
+| --- | --- | --- |
 | Triage and routing | Local small model | $0 cloud |
 | Code review | Local reasoning model | $0 unless security review is approved |
 | Architecture synthesis | Local first, cloud by approval | capped per settlement |

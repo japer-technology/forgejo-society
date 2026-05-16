@@ -44,7 +44,7 @@ propose, criticise, remember, and act.
 ## The key reinterpretation
 
 | Standard forge / CI/CD primitive | Cognitive meaning in Forgejo-Society |
-|---|---|
+| --- | --- |
 | Issue, webhook, schedule, failing build | Stimulus |
 | Label, routing rule, workflow trigger | Activation |
 | Runner | Execution body |

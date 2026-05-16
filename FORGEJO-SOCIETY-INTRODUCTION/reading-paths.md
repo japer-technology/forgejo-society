@@ -26,14 +26,14 @@ section and move on.
 Pick the row that best describes you. Most readers fit more than one;
 read the rows in the order they appear in the table.
 
-| If you are…                                            | Take this path                              |
-| ------------------------------------------------------ | ------------------------------------------- |
-| A curious reader with no technical background          | [Path A — Curious reader](#path-a--curious-reader) |
-| An end user who wants to install and run the society   | [Path B — End user / operator](#path-b--end-user--operator) |
-| A developer who will write or extend agencies          | [Path C — Developer](#path-c--developer) |
-| A full-stack developer who wants the whole picture     | [Path D — Full-stack developer](#path-d--full-stack-developer) |
-| A systems / infrastructure operator                    | [Path E — Systems / infrastructure operator](#path-e--systems--infrastructure-operator) |
-| A researcher or theorist                               | [Path F — Researcher / theorist](#path-f--researcher--theorist) |
+| If you are… | Take this path |
+| --- | --- |
+| A curious reader with no technical background | [Path A — Curious reader](#path-a--curious-reader) |
+| An end user who wants to install and run the society | [Path B — End user / operator](#path-b--end-user--operator) |
+| A developer who will write or extend agencies | [Path C — Developer](#path-c--developer) |
+| A full-stack developer who wants the whole picture | [Path D — Full-stack developer](#path-d--full-stack-developer) |
+| A systems / infrastructure operator | [Path E — Systems / infrastructure operator](#path-e--systems--infrastructure-operator) |
+| A researcher or theorist | [Path F — Researcher / theorist](#path-f--researcher--theorist) |
 | Someone evaluating governance, sovereignty, compliance | [Path G — Governance / policy reader](#path-g--governance--policy-reader) |
 
 Every path begins with the introduction `README.md` you came from, so it

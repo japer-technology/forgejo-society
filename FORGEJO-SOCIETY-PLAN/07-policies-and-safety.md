@@ -16,7 +16,7 @@ first-class code; danger zones; soul-file protection),
 ## Layered safety model
 
 | Layer | Where it lives | Who applies it | When it fires |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Kill switch | `forgejo-society-ENABLED.md` + `policies/kill-switch.yml` | workflow `guard` step | before anything else |
 | Guardrails | workflow `guardrail` step + `policies/*` | runtime, no model | after normalization, before perception |
 | Authority | `governance/authority-registry.yml` | `policy.ts` per agency | before tool grant for that agency |
@@ -98,7 +98,7 @@ danger_zones:
 First-ship danger zones (catalogue):
 
 | Zone | Paths | Required |
-|---|---|---|
+| --- | --- | --- |
 | `workflow_mutation` | `.forgejo/workflows/**`, `.github/workflows/**` | `human_confirmation`, `security_agency_pass`; remove `edit`/`write`/`bash` until granted |
 | `soul_mutation` | `.forgejo-society/AGENTS.md`, `.forgejo-society/APPEND_SYSTEM.md` | `explicit_user_request`, `final_diff_summary`, `identity_agency_pass` |
 | `governance_mutation` | `.forgejo-society/governance/**`, `.forgejo-society/policies/**` | `self-modification` frame, `human_confirmation` |

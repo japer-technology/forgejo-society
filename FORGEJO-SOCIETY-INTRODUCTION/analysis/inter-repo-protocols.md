@@ -54,7 +54,7 @@ Before adding any society-level vocabulary, the substrate already supplies all
 the mechanisms a distributed system needs.
 
 | Capability | What Forgejo provides |
-|---|---|
+| --- | --- |
 | Absolute addressing | Every host, repo, issue, PR, branch, tag, run, and artefact has a fully qualified URL |
 | Synchronous request/response | A complete REST API per repository (read and write) |
 | Authenticated calls | Personal access tokens, OAuth2, and Forgejo Actions secrets |
@@ -201,7 +201,7 @@ no "go around the side" path.
 Putting Forgejo and SOR together gives a clean two-layer picture.
 
 | Layer | Provided by | Answers |
-|---|---|---|
+| --- | --- | --- |
 | Transport | Forgejo (REST, webhooks, ActivityPub, runners, git) | *How* does the bit pattern get there? |
 | Identity | Forgejo URL space + SOR identity protocol | *Where* is the endpoint, and *who* is calling? |
 | Contract | SOR Service Channel Protocol | *What* may be sent, and what is owed in return? |

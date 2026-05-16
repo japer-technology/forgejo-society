@@ -9,7 +9,7 @@ Two intelligences in one repository. Minimum Intelligence answers on `!` — the
 The core mechanism is a one-character dispatch: the first character of an issue title or comment body determines which intelligence responds.
 
 | Prefix | Intelligence | Folder | Workflow |
-|--------|-------------|--------|----------|
+| --- | --- | --- | --- |
 | `!` | Minimum Intelligence (GMI) | `.github-minimum-intelligence/` | `.github/workflows/github-minimum-intelligence-agent.yml` |
 | `@` | OpenClaw Intelligence | `.github-openclaw-intelligence/` | `.github/workflows/.github-openclaw-intelligence-agent.yml` |
 | _(other)_ | Neither — no agent responds | — | — |
@@ -25,7 +25,7 @@ Prefixes keep the dispatch in the conversational layer (issue text) rather than 
 For a new issue (`issues.opened` event):
 
 | Condition | Result |
-|-----------|--------|
+| --- | --- |
 | Title starts with `!` | GMI workflow runs, OpenClaw workflow skips |
 | Title starts with `@` | OpenClaw workflow runs, GMI workflow skips |
 | Title starts with anything else | Both workflows skip |
@@ -33,7 +33,7 @@ For a new issue (`issues.opened` event):
 For a comment on an existing issue (`issue_comment.created` event):
 
 | Condition | Result |
-|-----------|--------|
+| --- | --- |
 | Comment body starts with `!` | GMI workflow runs, OpenClaw workflow skips |
 | Comment body starts with `@` | OpenClaw workflow runs, GMI workflow skips |
 | Comment body starts with anything else | Both workflows skip |
@@ -127,7 +127,7 @@ OpenClaw Intelligence lives in `.github-openclaw-intelligence/`, a sibling to `.
 ### 2.1 What Differs from GMI
 
 | Aspect | GMI (`.github-minimum-intelligence/`) | OpenClaw (`.github-openclaw-intelligence/`) |
-|--------|---------------------------------------|---------------------------------------------|
+| --- | --- | --- |
 | Agent runtime | `pi` CLI (7 tools, lightweight) | OpenClaw runtime (30+ tools, full platform) |
 | Dependencies | Single `pi` npm package | OpenClaw core + selected extensions + skills |
 | Build step | `bun install` (~10 s) | `bun install` + build pipeline (~1–3 min) |
@@ -176,7 +176,7 @@ Identical triggers to GMI. The prefix check in the `if:` guard on the `run-agent
 ### 3.2 Jobs
 
 | Job | Purpose | Trigger |
-|-----|---------|---------|
+| --- | --- | --- |
 | `run-install` | Download and install `.github-openclaw-intelligence/` from a template repo | `workflow_dispatch` |
 | `run-agent` | Process `@`-prefixed issues/comments through the OpenClaw runtime | `issues.opened` or `issue_comment.created` |
 | `run-gitpages` | Publish `public-fabric/` to GitHub Pages | `push` to main |
@@ -186,7 +186,7 @@ Identical triggers to GMI. The prefix check in the `if:` guard on the `run-agent
 The agent job mirrors GMI's structure with adjustments for OpenClaw's heavier build:
 
 | Step | GMI | OpenClaw |
-|------|-----|----------|
+| --- | --- | --- |
 | Authorize | Same — collaborator permission check + 🚀 reaction | Same |
 | Reject | Same — 👎 on auth failure | Same |
 | Checkout | `fetch-depth: 0` | `fetch-depth: 0` |
@@ -224,7 +224,7 @@ Both intelligences maintain independent session state in their respective folder
 ### 4.1 State Paths
 
 | Resource | GMI Path | OpenClaw Path |
-|----------|----------|---------------|
+| --- | --- | --- |
 | Issue mapping | `.github-minimum-intelligence/state/issues/42.json` | `.github-openclaw-intelligence/state/issues/42.json` |
 | Session transcript | `.github-minimum-intelligence/state/sessions/<id>.jsonl` | `.github-openclaw-intelligence/state/sessions/<id>.jsonl` |
 | Memory log | `.github-minimum-intelligence/state/memory.log` | `.github-openclaw-intelligence/state/memory.log` |
@@ -262,7 +262,7 @@ The [github-fabric OpenClaw analysis](https://github.com/japer-technology/github
 ### 5.1 Tool Surface Comparison
 
 | Capability | GMI (pi agent) | OpenClaw |
-|-----------|----------------|----------|
+| --- | --- | --- |
 | File read/write/edit | ✅ | ✅ |
 | Code search (grep, glob) | ✅ | ✅ |
 | Bash execution | ✅ | ✅ |
@@ -281,7 +281,7 @@ The [github-fabric OpenClaw analysis](https://github.com/japer-technology/github
 The two intelligences serve different purposes in the developer's workflow:
 
 | Role | Best Served By | Why |
-|------|---------------|-----|
+| --- | --- | --- |
 | Quick code review | GMI | Lightweight, fast startup (~18–30 s), focused tool surface |
 | Deep research with web context | OpenClaw | Web search, browser automation, sub-agent delegation |
 | Simple Q&A about the codebase | GMI | Low latency, minimal token consumption |
@@ -300,7 +300,7 @@ Running two intelligences doubles the potential Actions minutes consumption and 
 ### 6.1 Actions Minutes
 
 | Intelligence | Per-Invocation (warm cache) | Per-Invocation (cold) |
-|-------------|---------------------------|----------------------|
+| --- | --- | --- |
 | GMI | ~1.5–3 min | ~3–5 min |
 | OpenClaw | ~2.5–4 min | ~5–7 min |
 | Combined ceiling | ~4–7 min | ~8–12 min |
@@ -310,7 +310,7 @@ On the free tier (2 000 min/month), a mixed workload of ~60% GMI and ~40% OpenCl
 ### 6.2 Git Storage
 
 | Resource | GMI Growth/Month | OpenClaw Growth/Month | Combined |
-|----------|-----------------|----------------------|----------|
+| --- | --- | --- | --- |
 | Session transcripts | 1–20 MB | 2.5–50 MB | 3.5–70 MB |
 | Memory logs | 25–100 KB | 50–200 KB | 75–300 KB |
 | Issue mappings | ~25 KB | ~25 KB | ~50 KB |
@@ -328,7 +328,7 @@ Annual combined growth: ~42–840 MB. At the upper bound, periodic archival of o
 Each intelligence has its own provider and model configuration. A cost-optimized setup might use a cheaper model for GMI (routine tasks) and a more capable model for OpenClaw (complex tasks):
 
 | Intelligence | Model Example | Typical Cost per Invocation |
-|-------------|---------------|---------------------------|
+| --- | --- | --- |
 | GMI | GPT-4o-mini or Claude Haiku | $0.002–0.01 |
 | OpenClaw | Claude Sonnet or GPT-4o | $0.03–0.15 |
 
@@ -355,7 +355,7 @@ The `run-install` job in `.github-openclaw-intelligence-agent.yml` follows the s
 Each intelligence has its own `VERSION` file and its own template repository:
 
 | Intelligence | Version File | Template Source |
-|-------------|-------------|----------------|
+| --- | --- | --- |
 | GMI | `.github-minimum-intelligence/VERSION` | `japer-technology/github-minimum-intelligence` |
 | OpenClaw | `.github-openclaw-intelligence/VERSION` | A dedicated OpenClaw template repository |
 
@@ -414,7 +414,7 @@ The commit author and message distinguish which intelligence produced each chang
 ## 9. Summary
 
 | Dimension | Design Decision |
-|-----------|----------------|
+| --- | --- |
 | **Dispatch** | `!` prefix → GMI, `@` prefix → OpenClaw, no prefix → neither |
 | **Folder** | `.github-minimum-intelligence/` and `.github-openclaw-intelligence/` side by side |
 | **Workflow** | `github-minimum-intelligence-agent.yml` and `.github-openclaw-intelligence-agent.yml` |

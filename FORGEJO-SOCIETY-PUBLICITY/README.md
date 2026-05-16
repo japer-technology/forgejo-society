@@ -29,7 +29,7 @@ and reusable copy — see
 separate pillars with complementary jobs:
 
 | Pillar | Question it answers | Primary artefacts |
-|---|---|---|
+| --- | --- | --- |
 | `FORGEJO-SOCIETY-PROMOTION/` | *How do we describe ourselves?* | Positioning, narratives, taglines, visual identity, style guide, reusable copy. |
 | `FORGEJO-SOCIETY-PUBLICITY/` | *How does the world come to know us, and how do we keep that record honest?* | Announcements, milestones, media relationships, event appearances, coverage log, public statements, recognition. |
 
@@ -94,7 +94,7 @@ subfolders for the working materials those strategies produce.
 ### Strategy documents (read in order)
 
 | Document | Purpose |
-|---|---|
+| --- | --- |
 | [00-overview.md](00-overview.md) | What publicity means for this project, and the principles that govern it. |
 | [01-principles.md](01-principles.md) | Operating principles for honest, sustainable publicity. |
 | [02-announcements.md](02-announcements.md) | What constitutes an announcement, the format, and the approval path. |
@@ -109,7 +109,7 @@ subfolders for the working materials those strategies produce.
 ### Working subfolders
 
 | Folder | Contents |
-|---|---|
+| --- | --- |
 | [`announcements/`](announcements/README.md) | Dated public-facing announcements in the project's own voice. |
 | [`coverage/`](coverage/README.md) | Append-only log of external coverage, with links and notes. |
 | [`events/`](events/README.md) | Talk and event records: abstracts, recordings, follow-ups. |

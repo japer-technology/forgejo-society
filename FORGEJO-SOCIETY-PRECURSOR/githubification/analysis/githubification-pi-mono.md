@@ -11,7 +11,7 @@ Githubification is the act of converting a repository into GitHub-as-infrastruct
 The method rests on four primitives:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -26,7 +26,7 @@ These four primitives are universal across every Githubified repository. What ch
 Pi Mono is an open-source TypeScript monorepo containing tools for building AI agents and managing LLM deployments. Its seven packages compose into a full agent system:
 
 | Package | Role | Githubification Relevance |
-|---|---|---|
+| --- | --- | --- |
 | `pi-ai` | Multi-provider LLM API (OpenAI, Anthropic, Google, xAI, DeepSeek, Mistral, Groq, OpenRouter) | Abstraction layer — supports all major LLM providers |
 | `pi-agent-core` | Agent runtime with tool calling and state management | Execution engine — manages tool loops, state, message history |
 | `pi-coding-agent` | Interactive coding agent CLI | **The agent itself** — what a Githubification layer invokes |
@@ -46,7 +46,7 @@ The irony: **the agent enabling Githubification for everyone else has not been G
 Pi Mono already uses GitHub Actions for standard development infrastructure but does not use them as an agent execution environment:
 
 | Workflow | Trigger | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `ci.yml` | Push to `main`, PRs targeting `main` | Build, lint/format/typecheck, test — single sequential job |
 | `pr-gate.yml` | `pull_request_target: opened` | Contributor allowlist enforcement — auto-closes unauthorized PRs |
 | `approve-contributor.yml` | `issue_comment: created` | On `lgtm` from a maintainer, adds issue author to `APPROVED_CONTRIBUTORS` |
@@ -84,7 +84,7 @@ The agent should be designed to run on GitHub from its execution layer — not w
 ## The Four Primitives Mapping
 
 | GitHub Primitive | Maps To in Pi Mono |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner downloads and executes the pi coding agent binary (from GitHub Releases) or installs it via npm |
 | **Git** | Storage and memory — session transcripts (JSONL), issue-to-session mappings (JSON), and agent file edits are committed to the repository |
 | **GitHub Issues** | User interface — each issue maps to a persistent AI conversation; comment to continue where the agent left off |
@@ -130,7 +130,7 @@ The folder is the product. It can be copied, version-controlled, backed up, and 
 A single GitHub Actions workflow file (`.github/workflows/github-minimum-intelligence-agent.yml`) handles three jobs:
 
 | Job | Trigger | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `run-install` | `workflow_dispatch` (manual) | Self-installer and upgrader — downloads the agent folder from the template repo, commits it |
 | `run-agent` | `issues.opened`, `issue_comment.created` | Core AI agent — reads the issue, loads conversation session, calls LLM, posts reply, commits state |
 | `run-gitpages` | `push` to main | Publishes the agent's public-fabric site to GitHub Pages |
@@ -140,7 +140,7 @@ A single GitHub Actions workflow file (`.github/workflows/github-minimum-intelli
 The agent execution follows the universal Githubification pipeline — guard, indicate, execute, commit:
 
 | # | Step | What Happens |
-|---|------|---|
+| --- | --- | --- |
 | 1 | **Authorize** | Shell — query GitHub API for the actor's permission level; reject if not admin/maintain/write |
 | 2 | **Reject** | Shell — add thumbs-down reaction if unauthorized (runs only on auth failure) |
 | 3 | **Checkout** | Clone the repo with full history (agent needs prior sessions) |
@@ -182,7 +182,7 @@ The `build-binaries.yml` workflow already compiles standalone binaries for five 
 ```
 
 | Advantage | Detail |
-|---|---|
+| --- | --- |
 | **Speed** | Seconds to download vs. minutes to build from source |
 | **Reliability** | No build-time failures, no dependency resolution |
 | **Simplicity** | No Node.js, no npm, no monorepo build chain on the runner |
@@ -214,7 +214,7 @@ Install with Bun, invoke the agent via `bun` or `npx`. This is what GMI does tod
 The Githubification agent and the existing development infrastructure are orthogonal. They operate on different triggers and serve different purposes:
 
 | Workflow | Trigger | Concern | Interaction |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `ci.yml` | Push to `main`, PRs | Code quality | The agent's commits to `main` would trigger CI — acceptable if the agent only commits state (JSONL/JSON/Markdown). If the agent edits source code, its output must pass `npm run check` and `npm test`. |
 | `pr-gate.yml` | PR opened | Contributor gating | No interaction — the agent responds to issues, not PRs. The two concerns are orthogonal. |
 | `approve-contributor.yml` | Issue comment | Contributor approval | **Potential conflict** — both the agent workflow and `approve-contributor.yml` trigger on `issue_comment.created`. The agent workflow should filter by label (e.g., only respond to issues with a `chat` or `agent` label) to avoid processing `lgtm` comments meant for contributor approval. |
@@ -329,7 +329,7 @@ This is possible because the channel adapter exists (proven by `pi-mom`), the bi
 Whether this recursion is valuable depends on the use case:
 
 | Use Case | Value |
-|---|---|
+| --- | --- |
 | **Code explanation** | High — the agent can explain any package's architecture to new contributors |
 | **Issue triage** | High — the agent can analyze bug reports against the codebase |
 | **Documentation** | High — the agent can draft and update documentation with full codebase context |
@@ -342,7 +342,7 @@ Whether this recursion is valuable depends on the use case:
 ## Comparison with GMI Reference
 
 | Dimension | GMI (reference) | Pi Mono (this repo) |
-|---|---|---|
+| --- | --- | --- |
 | **Githubification type** | Type 1 — native, born Githubified | Type 1 — native, pre-Githubification |
 | **Lifecycle** | 2-file lifecycle (`indicator.ts` + `agent.ts`) | Same — reuses GMI's lifecycle |
 | **Runtime dependency** | 1 (`@mariozechner/pi-coding-agent`) | 1 (same package, or pre-built binary) |

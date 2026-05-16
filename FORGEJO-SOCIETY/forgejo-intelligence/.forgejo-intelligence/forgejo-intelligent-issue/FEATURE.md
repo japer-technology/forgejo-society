@@ -852,7 +852,7 @@ Reactions on agent comments act as lightweight structured inputs. The agent moni
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Issue Lifecycle | 1–11 | `issues.*` lifecycle events | Comment, body edit, close, reopen, state |
 | Assignment | 12–13 | `issues.assigned`, `issues.unassigned` | Comment, assign, state |
 | Labels | 14–21 | `issues.labeled`, `issues.unlabeled`, comment | Comment, label, close, state |
@@ -867,7 +867,7 @@ Reactions on agent comments act as lightweight structured inputs. The agent moni
 | Scheduled / Cron | 55–56 | Time-based trigger | Comment, close, body edit, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 2 | 19 |
 | Response surfaces | 1 | 10+ |
 | Interaction models | 1 (conversational) | 4 (conversational, slash command, reaction-driven, scheduled cron) |

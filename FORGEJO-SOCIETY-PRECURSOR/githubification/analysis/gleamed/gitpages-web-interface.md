@@ -25,7 +25,7 @@ Trigger: push to main OR schedule (every 15 min)
 #### Dashboard Pages Prescribed
 
 | Page | Content Source | Rebuild Frequency |
-|---|---|---|
+| --- | --- | --- |
 | `index.html` | Overview: run counts, success rates, next scheduled run | Every push + every 15 min |
 | `schedule.html` | Table of all cron expressions from `*.yml` files | Every push |
 | `history.html` | Recent workflow run log | Every push + every 15 min |
@@ -36,7 +36,7 @@ Trigger: push to main OR schedule (every 15 min)
 The Cronicle analysis notes that existing frontend assets can be directly reused on the Pages site, preserving brand continuity:
 
 | Asset | Source Path | Reuse |
-|---|---|---|
+| --- | --- | --- |
 | CSS stylesheet | `htdocs/css/style.css` | Direct copy |
 | Logo images | `htdocs/images/logo-*.png` | Direct copy |
 | Chart.js | `htdocs/js/chart.js` | Direct copy |
@@ -81,7 +81,7 @@ jobs:
 The pi-mono analysis describes the `run-gitpages` job as one of three jobs in the canonical GMI workflow:
 
 | Job | Trigger | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `run-install` | `workflow_dispatch` | Self-installer |
 | `run-agent` | `issues.opened`, `issue_comment.created` | Core AI agent |
 | `run-gitpages` | `push` to main | Publishes public-fabric site |
@@ -135,7 +135,7 @@ jobs:
 The core insight across all three modes is the **static-dynamic split**:
 
 | Concern | Mechanism | Technology |
-|---|---|---|
+| --- | --- | --- |
 | **Interactive user conversation** | GitHub Issues + Agent | LLM + GitHub API |
 | **Public-facing status and history** | GitHub Pages | Static HTML generated from Actions API |
 | **Scheduled maintenance** | GitHub Actions `schedule:` | Cron-triggered workflows |
@@ -190,7 +190,7 @@ Pages sites on private repos are only visible to authenticated users with repo a
 ## What GitHub Pages Cannot Do in Githubification
 
 | Limitation | Implication |
-|---|---|
+| --- | --- |
 | No server-side execution | Cannot serve real-time data without a scheduled rebuild |
 | No WebSocket or long-polling | Cannot show live job status; must refresh |
 | No write-back | Cannot replace interactive forms, buttons, or editors |

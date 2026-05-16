@@ -19,7 +19,7 @@ Since the agent can read and write files, you can build an evolving software pro
 ### Why GitClaw
 
 | Capability | Why it matters |
-|---|---|
+| --- | --- |
 | **Single folder, any repo** | Copy `.github-claw/` in and run the install script. Nothing to host or maintain. |
 | **Zero infrastructure** | Runs on GitHub Actions with your repo as the only backend. |
 | **Persistent memory** | Conversations are committed to git — the agent remembers everything across sessions. |
@@ -109,7 +109,7 @@ Use the **🥚 Hatch** issue template (or create an issue with the `hatch` label
 Set `defaultProvider` and `defaultModel` in `.github-claw/.pi/settings.json` and add the matching API key as a repository secret:
 
 | Provider | `defaultProvider` | Example model | API key secret |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Anthropic | `anthropic` | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
 | OpenAI | `openai` | `gpt-5.3-codex`, `gpt-5.3-codex-spark` | `OPENAI_API_KEY` |
 | Google Gemini | `google` | `gemini-2.5-pro`, `gemini-2.5-flash` | `GEMINI_API_KEY` |
@@ -150,7 +150,7 @@ If you plan to use gitclaw for anything private, **make the repo private**. Publ
 ## Documentation
 
 | Document | Description |
-|---|---|
+| --- | --- |
 | [Quick Start](github-claw-QUICKSTART.md) | Get running in under 5 minutes — setup, providers, and common tweaks |
 | [The Idea](docs/github-claw-The-Idea.md) | The philosophical vision — why a repo-native AI agent matters |
 | [Internal Mechanics](docs/github-claw-Internal-Mechanics.md) | Architecture, workflow steps, session management, and data model |

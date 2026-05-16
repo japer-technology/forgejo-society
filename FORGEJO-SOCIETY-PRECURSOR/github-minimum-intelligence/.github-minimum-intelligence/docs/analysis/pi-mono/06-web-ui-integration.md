@@ -84,7 +84,7 @@ GitHub Actions
 ### 2.3 Assessment
 
 | Use Case | Feasibility | Value | Recommendation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Interactive demo | Medium | Medium | Defer — API key requirement replaces one accessibility barrier with another |
 | Session viewer | High | High | Implement — makes programmerville disappear for non-developer audiences |
 | Chat interface replacement | Low | Low | Not recommended — GitHub Issues is the right interface for developers |
@@ -165,7 +165,7 @@ This avoids a new dependency and keeps the public-fabric minimal.
 ## 5. Decision Matrix
 
 | Factor | pi-web-ui | Vanilla JS |
-|---|---|---|
+| --- | --- | --- |
 | Rich rendering (code blocks, tool calls) | ✅ | ❌ (manual) |
 | Session tree navigation | ✅ | ❌ |
 | Dependency weight | ~50–100 KB | 0 |
@@ -179,7 +179,7 @@ This avoids a new dependency and keeps the public-fabric minimal.
 ## 6. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Session data contains sensitive information | High | High | Curate sessions manually; never auto-publish |
 | pi-web-ui API changes | Medium | Medium | Pin version; test before upgrading |
 | Increased build complexity | Medium | Low | Keep as optional build step; don't block deployment |

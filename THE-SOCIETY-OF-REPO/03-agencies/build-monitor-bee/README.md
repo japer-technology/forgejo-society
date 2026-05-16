@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `failure_detection_rate` | % of genuine CI failures surfaced within one run |
 | `false_alarm_rate` | % of alerts that are not genuine failures |
 | `mean_time_to_alert` | Time from run completion to alert in workspace |

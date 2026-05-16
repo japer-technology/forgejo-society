@@ -34,8 +34,8 @@ Each campaign lives as its own file under this folder once active, named
 created.
 
 | # | Name | Status | Owner | Closed |
-|---|------|--------|-------|--------|
-| _none yet_ | | | | |
+| --- | --- | --- | --- | --- |
+| _none yet_ |  |  |  |  |
 
 ## Editorial calendar
 

@@ -194,7 +194,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Repository Starred | `watch.started` | Star Event Lifecycle |
 | 2 | Repository Unstarred | Stars API reconciliation | Star Event Lifecycle |
 | 3 | Daily Star Velocity Snapshot | Cron daily 00:05 UTC | Star Velocity Tracking |

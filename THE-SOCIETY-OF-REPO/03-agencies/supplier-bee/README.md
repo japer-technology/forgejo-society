@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `price_anomaly_detection_rate` | % of real price anomalies surfaced |
 | `duplicate_detection_rate` | % of real duplicates detected |
 | `false_alarm_rate` | % of flagged issues that were not real concerns |

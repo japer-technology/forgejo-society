@@ -7,7 +7,7 @@ Workspace repos hold the society's current attention. They are the short-term wo
 ## Workspace repos
 
 | Repo | Contents |
-|---|---|
+| --- | --- |
 | [global-workspace/](global-workspace/README.md) | All active proposals and per-stimulus event files; visible to critics and censors |
 | [current-focus/](current-focus/README.md) | The single stimulus currently being processed |
 | [active-settlements/](active-settlements/README.md) | All settlements in progress (forming, pending, authorised, executing) |
@@ -28,7 +28,7 @@ Completed items are moved to memory (decisions, episodic records) and removed fr
 ## Workspace vs. memory
 
 | Workspace | Memory |
-|---|---|
+| --- | --- |
 | Current cognition | Past cognition |
 | Short-term | Long-term |
 | Active proposals | Completed decisions |

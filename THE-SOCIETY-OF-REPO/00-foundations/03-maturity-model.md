@@ -101,7 +101,7 @@ A SOR does not need Level 6 to be useful. The ladder describes what becomes poss
 ## Maturity summary
 
 | Level | Name | Key addition | Cognitive capability |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | Storage | Files in repos | None |
 | 1 | Memory | Structured records | Recall |
 | 2 | Agency | Constitutions and outputs | Specialised work |

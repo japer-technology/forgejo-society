@@ -25,7 +25,7 @@ LangChain.js presents the opposite scenario. It needs Node.js — which every Gi
 This means LangChain.js is a candidate not for substitution but for **native Githubification**: the framework's actual functionality could execute directly on GitHub Actions, not just be read as context by a substitute agent.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — CI/CD workflows for testing, building, compatibility checks, and publishing; could directly execute LangChain.js chains and agents |
 | **Git** | Storage — the monorepo itself, changesets for versioning, and potentially agent memory/state |
 | **GitHub Issues** | UI — currently used for bug reports, feature requests, and documentation issues; could become the interface for interacting with LangChain.js capabilities |
@@ -184,7 +184,7 @@ This is the most comprehensive CI/CD infrastructure of any Type 1 case study: 20
 The most distinctive pattern in `github-langchainjs` is the contrast with AutoGPT. Where AutoGPT is a **platform** that requires 10+ services to run, LangChain.js is a **framework** that requires only Node.js:
 
 | Dimension | AutoGPT (Platform) | LangChain.js (Framework) |
-|---|---|---|
+| --- | --- | --- |
 | **Runtime dependencies** | PostgreSQL, Redis, RabbitMQ, Supabase, ClamAV, Docker Compose | Node.js (or Deno or Bun) |
 | **To run unit tests** | Poetry, Docker, PostgreSQL (with Prisma for schema generation) | `pnpm install && pnpm test` |
 | **To build** | Docker Compose, multiple services | `pnpm build` |
@@ -232,7 +232,7 @@ For Githubification, this means the repository owner chooses the LLM provider by
 The `AGENTS.md` in `github-langchainjs` is a 12KB structured onboarding document for AI coding agents, covering:
 
 | Section | Purpose |
-|---|---|
+| --- | --- |
 | **Project Overview** | Framework description, supported environments, language (TypeScript) |
 | **Repository Structure** | Monorepo layout with package table — core, providers, internal tools |
 | **Development Setup** | Prerequisites (Node v24.x, pnpm v10.14.0), install and build commands |
@@ -254,7 +254,7 @@ This document answers every question an AI agent would ask when first encounteri
 The monorepo structure creates a natural modularity for Githubification:
 
 | Package Scope | Agent Context Use |
-|---|---|
+| --- | --- |
 | `@langchain/core` | Explains abstractions, type system, interface contracts |
 | `langchain` | Explains agent patterns, chain composition, memory management |
 | `@langchain/openai` | Explains OpenAI integration specifics, model capabilities |
@@ -271,7 +271,7 @@ A Githubified agent doesn't need to load the entire monorepo as context. Dependi
 With 20 GitHub Actions workflows, `github-langchainjs` has the most extensive CI/CD of any case study:
 
 | Workflow | Purpose | Githubification Relevance |
-|---|---|---|
+| --- | --- | --- |
 | `ci.yml` | Linting on PRs | Agent-generated code must pass lint |
 | `unit-tests-langchain-core.yml` | Core unit tests | Validates core abstraction changes |
 | `unit-tests-langchain.yml` | Main package tests | Validates orchestration changes |
@@ -330,7 +330,7 @@ LangChain.js suggests a fourth: **Composition**. Rather than wrapping an existin
 This is architecturally distinct from all previous strategies:
 
 | Strategy | What runs on GitHub Actions | Relationship to original code |
-|---|---|---|
+| --- | --- | --- |
 | Native | The original agent, unchanged | Identical |
 | Wrapping | A GitHub Actions wrapper around the agent | Encapsulates |
 | Substitution | A new, lightweight agent | Reads original as context |

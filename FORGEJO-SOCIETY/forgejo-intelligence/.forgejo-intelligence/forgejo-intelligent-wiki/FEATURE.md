@@ -182,7 +182,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Wiki Page Created | `gollum.created` | Wiki Page Lifecycle |
 | 2 | Wiki Page Edited | `gollum.edited` | Wiki Page Lifecycle |
 | 3 | Broken Internal Link Detection | Post-create / post-edit | Content Analysis |

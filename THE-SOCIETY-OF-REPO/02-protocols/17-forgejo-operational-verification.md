@@ -19,7 +19,7 @@ settlements or governance; it provides the proof those layers depend on.
 A Forgejo-hosted SOR MUST be able to produce, on demand, evidence of:
 
 | Surface | Evidence |
-|---|---|
+| --- | --- |
 | Runtime enablement | Sentinel file present, last modified, last governance settlement |
 | Surface inventory | Active `forgejo-intelligent-*` folders and their handler contract status |
 | Coordination inventory | Active `forgejo-intelligence-*` modules and their declared inputs/outputs |
@@ -63,7 +63,7 @@ For local development, tests, and replay analysis, the runtime MUST honour
 these environment variables:
 
 | Variable | Use |
-|---|---|
+| --- | --- |
 | `FORGEJO_EVENT_PATH` | Path to a Forgejo event fixture |
 | `FORGEJO_EVENT_NAME` | Event name (e.g. `issues`, `pull_request`) |
 | `FORGEJO_REPOSITORY` | Repository in `owner/repo` form |
@@ -85,7 +85,7 @@ MAY require any of the following before merging changes that touch the
 runtime body:
 
 | Phase | Verifies |
-|---|---|
+| --- | --- |
 | Phase 0 | Inventory and state preservation |
 | Phase 1 | Product and path identity |
 | Phase 2 | Forgejo Actions workflow shape |
@@ -111,7 +111,7 @@ MUST refuse to run unless explicitly opted in.
 Required environment:
 
 | Variable | Purpose |
-|---|---|
+| --- | --- |
 | `FORGEJO_SMOKE_RUN=1` | Explicit opt-in. Without it the harness MUST exit. |
 | `FORGEJO_SMOKE_URL` | Forgejo instance URL |
 | `FORGEJO_SMOKE_TOKEN` | Token with write access to the disposable test repo |
@@ -121,7 +121,7 @@ Required environment:
 Optional environment:
 
 | Variable | Purpose |
-|---|---|
+| --- | --- |
 | `FORGEJO_SMOKE_API_URL` | Override API URL |
 | `FORGEJO_SMOKE_GIT_REMOTE` | Override git remote URL |
 | `FORGEJO_SMOKE_GIT_USERNAME` | Username for HTTPS token remotes |
@@ -208,7 +208,7 @@ Promotion of runtime state into SOR memory follows
 Configuration files MUST be committed and reviewable. The known set is:
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `.forgejo-intelligence/config/install.json` | Installer selections: instance URL, token strategy, LLM secret names, enabled surfaces, runner label, template path |
 | `.forgejo-intelligence/.pi/settings.json` | Default LLM provider, model, and thinking level |
 | `.forgejo-intelligence/AGENTS.md` | Agent identity and project-specific instructions |
@@ -226,7 +226,7 @@ modifications to these files and confirm they trace to a settlement entry.
 ## Verification cadence
 
 | Verification | When |
-|---|---|
+| --- | --- |
 | Sentinel and surface inventory | Every runtime change PR; nightly scheduled run |
 | Workflow no-op preflight | After install, runner change, secret change, trigger change |
 | Phase 0–9 checks | On every PR that touches `.forgejo-intelligence/` or `.forgejo/workflows/` |

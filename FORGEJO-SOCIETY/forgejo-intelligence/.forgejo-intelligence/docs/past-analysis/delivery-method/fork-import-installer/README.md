@@ -65,7 +65,7 @@ npx tsx .GITCLAW/install/GITCLAW-INSTALLER.ts
 The installer performs the following actions:
 
 | Action | Description |
-|--------|-------------|
+| --- | --- |
 | Copy workflow files | Places GitHub Actions workflow YAML files into `.github/workflows/` |
 | Copy issue templates | Places issue template YAML files into `.github/ISSUE_TEMPLATE/` |
 | Copy PR templates | Places pull request template files into `.github/` |
@@ -140,7 +140,7 @@ Gitclaw is now live. Open an issue to interact with the agent.
 ## Requirements
 
 | Requirement | Details |
-|-------------|---------|
+| --- | --- |
 | **Runtime** | [Bun](https://bun.sh/) or [Node.js](https://nodejs.org/) with `tsx` |
 | **Git** | Git CLI installed locally |
 | **GitHub Account** | Repository write access |

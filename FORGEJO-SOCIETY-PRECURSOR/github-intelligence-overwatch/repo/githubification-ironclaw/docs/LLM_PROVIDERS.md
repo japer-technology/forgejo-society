@@ -7,7 +7,7 @@ configurations.
 ## Provider Overview
 
 | Provider | Backend value | Requires API key | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | NEAR AI | `nearai` | OAuth (browser) | Default; multi-model |
 | Anthropic | `anthropic` | `ANTHROPIC_API_KEY` | Claude models |
 | OpenAI | `openai` | `OPENAI_API_KEY` | GPT models |
@@ -87,7 +87,7 @@ LLM_MODEL=anthropic/claude-sonnet-4
 Popular OpenRouter model IDs:
 
 | Model | ID |
-|---|---|
+| --- | --- |
 | Claude Sonnet 4 | `anthropic/claude-sonnet-4` |
 | GPT-4o | `openai/gpt-4o` |
 | Llama 4 Maverick | `meta-llama/llama-4-maverick` |
@@ -110,7 +110,7 @@ LLM_MODEL=meta-llama/Llama-3.3-70B-Instruct-Turbo
 Popular Together AI model IDs:
 
 | Model | ID |
-|---|---|
+| --- | --- |
 | Llama 3.3 70B | `meta-llama/Llama-3.3-70B-Instruct-Turbo` |
 | DeepSeek R1 | `deepseek-ai/DeepSeek-R1` |
 | Qwen 2.5 72B | `Qwen/Qwen2.5-72B-Instruct-Turbo` |

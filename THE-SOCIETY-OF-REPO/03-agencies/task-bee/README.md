@@ -52,7 +52,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active critics and censors
 
 | Part | Why |
-|---|---|
+| --- | --- |
 | `privacy-critic` | Personal task data is high-sensitivity; sharing requires challenge |
 | `pii-exfiltration-censor` | Personal task content is PII — unconditionally enforced |
 | `authority-censor` | task-bee holds propose authority only; it may not act on tasks directly |
@@ -62,7 +62,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `overdue_detection_accuracy` | % of genuinely overdue tasks correctly identified |
 | `blocked_task_identification_rate` | % of blocked tasks surfaced before they become critical |
 | `false_alarm_rate` | % of alerts that are not genuine issues |

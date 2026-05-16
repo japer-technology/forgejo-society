@@ -155,7 +155,7 @@ Suggested template:
 ## High-Frequency Paths
 
 | Path | Purpose |
-|---|---|
+| --- | --- |
 | `src/main.zig` | CLI command routing |
 | `src/config.zig` | Config loading and environment overrides |
 | `src/gateway.zig` | Gateway and webhooks |

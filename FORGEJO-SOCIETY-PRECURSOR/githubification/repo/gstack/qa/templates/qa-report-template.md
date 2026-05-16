@@ -1,7 +1,7 @@
 # QA Report: {APP_NAME}
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | **Date** | {DATE} |
 | **URL** | {URL} |
 | **Branch** | {BRANCH} |
@@ -18,7 +18,7 @@
 ## Health Score: {SCORE}/100
 
 | Category | Score |
-|----------|-------|
+| --- | --- |
 | Console | {0-100} |
 | Links | {0-100} |
 | Visual | {0-100} |
@@ -36,13 +36,13 @@
 ## Console Health
 
 | Error | Count | First seen |
-|-------|-------|------------|
+| --- | --- | --- |
 | {error message} | {N} | {URL} |
 
 ## Summary
 
 | Severity | Count |
-|----------|-------|
+| --- | --- |
 | Critical | 0 |
 | High | 0 |
 | Medium | 0 |
@@ -54,7 +54,7 @@
 ### ISSUE-001: {Short title}
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | **Severity** | critical / high / medium / low |
 | **Category** | visual / functional / ux / content / performance / console / accessibility |
 | **URL** | {page URL} |
@@ -75,7 +75,7 @@
 ## Fixes Applied (if applicable)
 
 | Issue | Fix Status | Commit | Files Changed |
-|-------|-----------|--------|---------------|
+| --- | --- | --- | --- |
 | ISSUE-NNN | verified / best-effort / reverted / deferred | {SHA} | {files} |
 
 ### Before/After Evidence
@@ -89,7 +89,7 @@
 ## Regression Tests
 
 | Issue | Test File | Status | Description |
-|-------|-----------|--------|-------------|
+| --- | --- | --- | --- |
 | ISSUE-NNN | path/to/test | committed / deferred / skipped | description |
 
 ### Deferred Tests
@@ -105,7 +105,7 @@
 ## Ship Readiness
 
 | Metric | Value |
-|--------|-------|
+| --- | --- |
 | Health score | {before} → {after} ({delta}) |
 | Issues found | N |
 | Fixes applied | N (verified: X, best-effort: Y, reverted: Z) |
@@ -118,7 +118,7 @@
 ## Regression (if applicable)
 
 | Metric | Baseline | Current | Delta |
-|--------|----------|---------|-------|
+| --- | --- | --- | --- |
 | Health score | {N} | {N} | {+/-N} |
 | Issues | {N} | {N} | {+/-N} |
 

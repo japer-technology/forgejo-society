@@ -43,7 +43,7 @@ This requires persisting the execution plan in git state, then resuming from it.
 ### 5. It Composes With Every Risk-Bearing Feature
 
 | Feature | Approval Gate Integration |
-|---|---|
+| --- | --- |
 | **Branch-per-Task (07)** | Gate before creating a PR that modifies critical paths |
 | **Guided Workflows (12)** | Gate before executing destructive workflow steps |
 | **Health Scanning (19)** | Gate before auto-fixing findings |
@@ -72,7 +72,7 @@ This requires persisting the execution plan in git state, then resuming from it.
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Risk assessment engine** | Classify actions by risk based on file paths, scope, impact | ~2.5 hours |
 | **Approval request formatter** | Generate structured approval comments | ~1 hour |
 | **Cross-run state** | Persist/load approval plans in `state/approvals/` | ~1.5 hours |

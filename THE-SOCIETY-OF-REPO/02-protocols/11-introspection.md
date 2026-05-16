@@ -21,7 +21,7 @@ Non-trivial proposals and settlements record:
 ## Distinctions
 
 | Term | Meaning |
-|---|---|
+| --- | --- |
 | **Traceability** | Can we follow the steps and references? |
 | **Explainability** | Can the society describe why it made the choice? |
 | **Interpretability** | Can humans understand the underlying mechanism well enough to predict failure modes? |

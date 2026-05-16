@@ -22,16 +22,16 @@
 }
 ```
 
-| 字段             | 类型   | 必填 | 描述                                     |
-| ---------------- | ------ | ---- | ---------------------------------------- |
-| corp_id          | string | 是   | 企业 ID                                  |
-| corp_secret      | string | 是   | 应用程序密钥                             |
-| agent_id         | int    | 是   | 应用程序代理 ID                          |
-| token            | string | 是   | 回调验证令牌                             |
-| encoding_aes_key | string | 是   | 43 字符 AES 密钥                         |
-| webhook_path     | string | 否   | Webhook 路径（默认：/webhook/wecom-app） |
-| allow_from       | array  | 否   | 用户 ID 白名单                           |
-| reply_timeout    | int    | 否   | 回复超时时间（秒）                       |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| corp_id | string | 是 | 企业 ID |
+| corp_secret | string | 是 | 应用程序密钥 |
+| agent_id | int | 是 | 应用程序代理 ID |
+| token | string | 是 | 回调验证令牌 |
+| encoding_aes_key | string | 是 | 43 字符 AES 密钥 |
+| webhook_path | string | 否 | Webhook 路径（默认：/webhook/wecom-app） |
+| allow_from | array | 否 | 用户 ID 白名单 |
+| reply_timeout | int | 否 | 回复超时时间（秒） |
 
 ## 设置流程
 

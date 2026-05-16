@@ -188,12 +188,12 @@ When you are ready to actually run it:
 The full, ordered paths live in
 [`reading-paths.md`](reading-paths.md). The summary:
 
-| If you are…                                            | Take this path                                                                  |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| A curious reader with no technical background          | [Path A — Curious reader](reading-paths.md#path-a--curious-reader)              |
-| An end user who wants to install and run the society   | [Path B — End user / operator](reading-paths.md#path-b--end-user--operator)     |
-| A developer who will write or extend agencies          | [Path C — Developer](reading-paths.md#path-c--developer)                        |
-| A full-stack developer who wants the whole picture     | [Path D — Full-stack developer](reading-paths.md#path-d--full-stack-developer)  |
-| A systems / infrastructure operator                    | [Path E — Systems / infrastructure operator](reading-paths.md#path-e--systems--infrastructure-operator) |
-| A researcher or theorist                               | [Path F — Researcher / theorist](reading-paths.md#path-f--researcher--theorist) |
+| If you are… | Take this path |
+| --- | --- |
+| A curious reader with no technical background | [Path A — Curious reader](reading-paths.md#path-a--curious-reader) |
+| An end user who wants to install and run the society | [Path B — End user / operator](reading-paths.md#path-b--end-user--operator) |
+| A developer who will write or extend agencies | [Path C — Developer](reading-paths.md#path-c--developer) |
+| A full-stack developer who wants the whole picture | [Path D — Full-stack developer](reading-paths.md#path-d--full-stack-developer) |
+| A systems / infrastructure operator | [Path E — Systems / infrastructure operator](reading-paths.md#path-e--systems--infrastructure-operator) |
+| A researcher or theorist | [Path F — Researcher / theorist](reading-paths.md#path-f--researcher--theorist) |
 | Someone evaluating governance, sovereignty, compliance | [Path G — Governance / policy reader](reading-paths.md#path-g--governance--policy-reader) |

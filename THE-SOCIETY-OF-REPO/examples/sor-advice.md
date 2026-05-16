@@ -118,7 +118,7 @@ Out-of-scope items are not limitations — they are **the reason the SOR remains
 ### Authority levels
 
 | Level | Meaning | When to assign |
-|---|---|---|
+| --- | --- | --- |
 | `read` | Can read repos only | Rarely used explicitly — implied by default |
 | `draft` | Can write draft outputs | Agencies that produce summaries for review |
 | `propose` | Can open proposals (issues/PRs) | **Most agencies** — the default for worker bees |
@@ -159,7 +159,7 @@ Critics are challenge repos. They do not block — they raise questions that mus
 ### Always include
 
 | Critic | Purpose |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is the proposal based on reliable data? |
 | `scope-critic` | Is this within what the SOR is authorised to do? |
 | `staleness-critic` | Is the data current enough to act on? |
@@ -168,7 +168,7 @@ Critics are challenge repos. They do not block — they raise questions that mus
 ### Add domain-specific critics
 
 | Domain | Additional critics |
-|---|---|
+| --- | --- |
 | Business / Finance | `cost-critic`, `risk-critic`, `privacy-critic`, `source-quality-critic` |
 | Personal health | `source-quality-critic` |
 | Research contexts | `source-quality-critic` |
@@ -189,7 +189,7 @@ Censors are hard-limit repos. They enforce unconditional constraints. No settlem
 ### Always required (all SORs)
 
 | Censor | Limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No document or personal data leaves the local system without explicit owner approval |
 | `authority-censor` | No agency increases its own authority level |
 | `pii-exfiltration-censor` | No personal identification or sensitive personal data is sent externally without explicit approval |
@@ -197,7 +197,7 @@ Censors are hard-limit repos. They enforce unconditional constraints. No settlem
 ### Common additions
 
 | Censor | When to add |
-|---|---|
+| --- | --- |
 | `payment-censor` | Any SOR that touches financial transactions |
 | `delegation-depth-censor` | Any SOR with multi-hop delegation |
 | `credential-censor` | Any SOR that uses API keys, passwords, or tokens |
@@ -443,7 +443,7 @@ This section defines what the SOR will **never do** without human approval. It i
 ### Add domain-specific limits
 
 | Domain | Additional limit |
-|---|---|
+| --- | --- |
 | Business | No employment decision without human approval. No BAS or tax filing submitted without review. |
 | Health | This SOR does not give medical advice, diagnose, or recommend treatment. In any emergency, direct to emergency services. |
 | Any SOR with API access | No credential, API key, or authentication token is shared between agencies or sent externally. |
@@ -462,7 +462,7 @@ This section defines what the SOR will **never do** without human approval. It i
 Every SOR must include a maturity ladder table that shows where it sits now and what it is targeting.
 
 | Level | Name | What exists |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Files in repos |
 | 1 | Memory | Structured records, events, summaries |
 | 2 | Agency | Repos with roles, constitutions, outputs |
@@ -640,7 +640,7 @@ A SOR file is a living specification. As the domain changes and the society lear
 Follow semantic versioning: `MAJOR.MINOR.PATCH`.
 
 | Change | Bump |
-|---|---|
+| --- | --- |
 | New agency, censor, or critic added | MINOR |
 | K-line added or changed | MINOR |
 | Non-negotiable limit changed | MAJOR |
@@ -715,7 +715,7 @@ When two agencies produce incompatible proposals in the same settlement, the SOR
 Every SOR file must state one of the following conflict resolution modes in its identity block or a dedicated section:
 
 | Mode | Meaning |
-|---|---|
+| --- | --- |
 | `critic-decides` | The critic with the most specific objection breaks the tie |
 | `owner-decides` | Conflicting proposals are surfaced to the owner without a recommendation |
 | `weight-decides` | The proposal from the higher-weight agency in the activated list wins |
@@ -952,7 +952,7 @@ For each agency defined, confirm there is at least one K-line that activates it.
 ### Common test failures
 
 | Failure | Root cause |
-|---|---|
+| --- | --- |
 | Censor never fires in any sample settlement | Censor limit is too narrow; stimulus vocabulary doesn't match |
 | Critic never appears in activated | Critic not included in any K-line `activates` list |
 | Sample settlement has `approval_required: false` for a financial action | Settlement author applied wrong threshold |

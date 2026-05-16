@@ -28,7 +28,7 @@ issue comments). Nothing happens outside version control.
 ## Repository roles (cognitive organs)
 
 | Repository class | Cognitive role | Example |
-|---|---|---|
+| --- | --- | --- |
 | `core` | Body / skeleton — infrastructure the whole system depends on | Forgejo config, runner images |
 | `agent` | Micro-agency — a single bounded cognitive task | `agent-code-reviewer`, `agent-issue-triage` |
 | `memory` | K-lines and recalled activation patterns | `memory-patterns`, `memory-decisions` |
@@ -42,7 +42,7 @@ issue comments). Nothing happens outside version control.
 ## Local-first cognitive economy
 
 | Task class | Default model | Escalation condition |
-|---|---|---|
+| --- | --- | --- |
 | Issue triage, labelling | Local (Gemma 4B / 8B Q4) | Ambiguous after 2 passes |
 | Code review | Local (Gemma 27B Q4) | Security-critical change |
 | Documentation generation | Local (Gemma 27B Q4) | Final publication draft |
@@ -179,7 +179,7 @@ Every agent action commits a provenance record to a dedicated `memory` repositor
 Agent-created branches, workflows, and outputs are untrusted until promoted.
 
 | Stage | Description | Promotion gate |
-|---|---|---|
+| --- | --- | --- |
 | `experimental` | Untested agent work | Human review |
 | `probation` | Tested but not yet trusted at scale | 30-day monitoring |
 | `trusted` | Approved for autonomous operation within its scope | Governance approval |

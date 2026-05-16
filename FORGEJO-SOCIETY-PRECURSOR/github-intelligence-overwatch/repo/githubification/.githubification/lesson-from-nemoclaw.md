@@ -25,7 +25,7 @@ NemoClaw is not an AI agent itself. It is the **infrastructure that makes an AI 
 This creates a unique Githubification challenge. In every other case study in this directory, Githubification maps GitHub primitives to the agent's interfaces:
 
 | GitHub Primitive | Typical Mapping |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — state committed to the repository |
 | **GitHub Issues** | User interface — conversation threads |
@@ -34,7 +34,7 @@ This creates a unique Githubification challenge. In every other case study in th
 For NemoClaw, this mapping is necessary but insufficient. NemoClaw's value is not in *running* the agent — OpenClaw already does that — but in *constraining* it. The mapping must also account for:
 
 | NemoClaw Capability | Githubification Challenge |
-|---|---|
+| --- | --- |
 | **Landlock + seccomp sandbox** | GitHub Actions runners already provide container isolation, but not the same granularity. How do you replicate per-path filesystem policies on an ephemeral runner? |
 | **Network namespace isolation** | GitHub Actions has no native network namespace. Outbound traffic is unrestricted unless you add firewall rules inside the workflow. |
 | **Declarative YAML network policy** | The policy file (`openclaw-sandbox.yaml`) lists every allowed endpoint. On a GitHub runner, enforcement requires a userspace proxy or iptables rules applied at workflow start. |
@@ -163,7 +163,7 @@ This pattern has a direct Githubification implication: **the plugin and the blue
 The blueprint follows a four-stage lifecycle that provides supply chain safety and reproducibility:
 
 | Stage | What Happens |
-|---|---|
+| --- | --- |
 | **Resolve** | `blueprint/resolve.ts` — determines which blueprint version to use, resolving `latest` to a specific version from the registry |
 | **Verify** | `blueprint/verify.ts` — checks the artifact's digest against the expected value from `blueprint.yaml` |
 | **Plan** | `runner.py plan` — validates inputs, checks prerequisites (OpenShell CLI on PATH), resolves the inference profile, and emits a JSON plan |
@@ -213,7 +213,7 @@ This is a fundamentally different security model from anything seen in the other
 The `blueprint.yaml` defines four inference profiles, each mapping to a different deployment scenario:
 
 | Profile | Provider | Endpoint | Use Case |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `default` | NVIDIA cloud | `integrate.api.nvidia.com` | Production — requires NVIDIA API key from [build.nvidia.com](https://build.nvidia.com) |
 | `ncp` | NVIDIA cloud (NCP partner) | Dynamic | NVIDIA Cloud Partner deployments with dynamic endpoints |
 | `nim-local` | OpenAI-compatible | `nim-service.local:8000` | Local NVIDIA NIM deployment |
@@ -272,7 +272,7 @@ For Githubification, the onboard flow would be replaced by repository variables 
 NemoClaw provides two CLI surfaces:
 
 | Interface | Entry Point | Scope |
-|---|---|---|
+| --- | --- | --- |
 | `nemoclaw` (host CLI) | `bin/nemoclaw.js` | Host-side management — onboard, deploy, connect, start/stop services |
 | `openclaw nemoclaw` (plugin CLI) | Registered via `api.registerCli()` | Agent-side management — status, migrate, launch, connect, logs, eject |
 
@@ -302,7 +302,7 @@ For Githubification, this protocol maps naturally to GitHub Actions step outputs
 NemoClaw's test directory covers multiple layers:
 
 | Test File | What It Validates |
-|---|---|
+| --- | --- |
 | `cli.test.js` | CLI command structure — subcommands exist and have correct options |
 | `preflight.test.js` | Prerequisite checks — Node.js version, OpenShell availability |
 | `install-preflight.test.js` | Install-time validation — runtime requirements met |
@@ -339,7 +339,7 @@ In every other case study, security is a concern addressed by the Githubificatio
 NemoClaw operates at the **infrastructure level**. It doesn't just check who can talk to the agent — it controls what the agent can do once it's running:
 
 | Security Layer | Mechanism | Granularity |
-|---|---|---|
+| --- | --- | --- |
 | **Filesystem** | Landlock — kernel-level path restrictions | Per-directory read/write/none |
 | **Process** | seccomp — syscall filtering | Per-syscall allow/deny |
 | **Network** | Network namespace + policy engine | Per-host, per-port, per-binary, per-HTTP-method |

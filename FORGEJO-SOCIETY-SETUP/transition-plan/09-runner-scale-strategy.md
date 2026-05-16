@@ -9,7 +9,7 @@ results back to Forgejo Actions.
 ## Fleet overview
 
 | Role | Count | Spec |
-|---|---|---|
+| --- | --- | --- |
 | Forgejo forge server | 1 | i9 20-core · 64 GB · 2 TB NVMe |
 | Runner nodes | 16 | i7 8-core · 8 GB · 60 GB SSD |
 | LLM inference | 1 | i9 32-core · 64 GB · 1 TB NVMe · RTX 4090 |

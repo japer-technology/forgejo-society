@@ -11,7 +11,7 @@ This protocol pins down what a B-brain agency in SOR is allowed to see, allowed 
 ## Core asymmetry
 
 | A-brain agency | B-brain agency |
-|---|---|
+| --- | --- |
 | Inputs come from the world (issues, files, webhooks, owner requests) | Inputs come from settlements, activation records, memory, censor logs, suppressor logs |
 | Authority can be `act` | Authority is `propose` only — never `act` on the world |
 | Reasons about content | Reasons about *patterns of activity* |
@@ -48,7 +48,7 @@ What a B-brain *may not* read directly:
 The B-brain operates on *shape*, not *substance*. The patterns it recognises are deliberately content-blind:
 
 | Pattern | Diagnostic signal |
-|---|---|
+| --- | --- |
 | Loops | The same agency wakes for the same stimulus class repeatedly without converging |
 | Stalls | Settlements open and stay open past their budget without progress |
 | Repetition without learning | The same failure recurs across episodes with no failure-memory entry distinguishing them |
@@ -98,7 +98,7 @@ A "meta-meta" agency is not the answer. The B-brain layer is *plural by design*;
 ## Required cadence
 
 | Cadence | Action |
-|---|---|
+| --- | --- |
 | Per stimulus | Activation-steward records routing-quality observations |
 | Per settlement | Evaluation-steward attaches a credit-assignment review |
 | Weekly | Each steward emits a short observation digest |

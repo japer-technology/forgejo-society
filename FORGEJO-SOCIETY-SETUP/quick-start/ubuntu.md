@@ -15,7 +15,7 @@ LLM inference host. Role-specific differences are noted inline.
 ## What you need before you start
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | Target machine | Powered off, connected to the LAN via ethernet |
 | USB drive | ≥ 4 GB, empty (all data will be erased) |
 | Working machine | A laptop or workstation with internet access |
@@ -118,7 +118,7 @@ Choose **Ubuntu Server** (not Minimized). Press **Done**.
 3. Fill in the fields for your host role:
 
 | Field | Forge server | Runner node (example) | LLM host |
-|-------|-------------|----------------------|----------|
+| --- | --- | --- | --- |
 | Subnet | 192.168.0.0/24 | 192.168.0.0/24 | 192.168.0.0/24 |
 | Address | 192.168.0.10 | 192.168.0.21–36 | 192.168.0.50 |
 | Gateway | 192.168.0.1 | 192.168.0.1 | 192.168.0.1 |
@@ -146,7 +146,7 @@ Press **Done**, then confirm **Continue** on the destructive-action warning.
 ### 4.6 Profile setup — create the admin user
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Your name | Forge Admin |
 | Server name | `forge` / `runner01`…`runner16` / `llm-host` |
 | Username | `forgeadmin` |
@@ -657,7 +657,7 @@ This host is now a hardened Ubuntu 24.04 LTS base ready for the next layer of th
 Continue with the appropriate guide for the host's role:
 
 | Host role | Next guide |
-|-----------|-----------|
+| --- | --- |
 | Forge server | [Docker Engine](../install/04-docker-engine.md) → PostgreSQL → Forgejo |
 | Runner node | [Docker Engine](../install/04-docker-engine.md) → Forgejo Runner |
 | LLM inference host | [NVIDIA Drivers](../install/11-nvidia-drivers.md) → LM Studio |

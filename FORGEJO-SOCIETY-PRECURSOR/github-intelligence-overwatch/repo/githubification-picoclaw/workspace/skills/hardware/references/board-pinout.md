@@ -5,7 +5,7 @@
 ### I2C Buses
 
 | Bus | Pins | Notes |
-|-----|------|-------|
+| --- | --- | --- |
 | I2C-1 | P18 (SCL), P21 (SDA) | **Shared with WiFi SDIO** — must stop WiFi first |
 | I2C-3 | Available on header | Check device tree for pin assignment |
 | I2C-5 | Software (BitBang) | Slower but no pin conflicts |
@@ -13,7 +13,7 @@
 ### SPI Buses
 
 | Bus | Pins | Notes |
-|-----|------|-------|
+| --- | --- | --- |
 | SPI-2 | P18 (CS), P21 (MISO), P22 (MOSI), P23 (SCK) | **Shared with WiFi** — must stop WiFi first |
 | SPI-4 | Software (BitBang) | Slower but no pin conflicts |
 
@@ -61,7 +61,7 @@ ls /dev/spidev*
 ### I2C Buses
 
 | Bus | Pins | Notes |
-|-----|------|-------|
+| --- | --- | --- |
 | I2C-1 | Overlaps with WiFi | Not recommended |
 | I2C-3 | Overlaps with WiFi | Not recommended |
 | I2C-5 | A15 (SCL), A27 (SDA) | **Recommended** — software I2C, no conflicts |
@@ -87,7 +87,7 @@ ls /dev/i2c-*
 ### I2C Buses
 
 | Bus | Pins | Notes |
-|-----|------|-------|
+| --- | --- | --- |
 | I2C-6 | A1 (SCL), A0 (SDA) | Available on header |
 | I2C-7 | Available | Check device tree |
 

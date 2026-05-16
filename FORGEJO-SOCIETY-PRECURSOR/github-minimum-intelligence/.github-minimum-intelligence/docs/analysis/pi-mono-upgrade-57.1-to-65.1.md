@@ -5,7 +5,7 @@
 This document outlines the full scope of changes required to update GitHub Minimum Intelligence's core dependency — `@mariozechner/pi-coding-agent` — from **v0.57.1** to **v0.65.1**. The update spans **17 releases** (v0.58.0 through v0.65.1) and includes 5 releases with breaking changes, numerous bug fixes directly impacting GMI's non-interactive `--mode json` usage, and new features that unlock significant capability improvements.
 
 | Item | Detail |
-|------|--------|
+| --- | --- |
 | **Current version** | `0.57.1` (pinned in `.github-minimum-intelligence/package.json`) |
 | **Target version** | `0.65.1` |
 | **Releases spanned** | 17 (v0.58.0 – v0.65.1) |
@@ -253,7 +253,7 @@ The `-p` flag is the standard prompt flag and is a known flag. All other flags u
 These fixes directly address issues that GMI has experienced or is susceptible to in its `--mode json` / GitHub Actions usage:
 
 | Fix | Version | Impact |
-|-----|---------|--------|
+| --- | --- | --- |
 | **Bash output truncation** — full output preserved to temp file | v0.65.1 | Prevents silent data loss in commands with >2000 lines of output |
 | **Concurrent edit/write serialization** — same-file mutations run serially | v0.61.0 | Prevents interleaved writes from overwriting each other |
 | **File mutation queue ordering** — operations stay in request order | v0.63.0 | Ensures deterministic file modification behavior |
@@ -385,7 +385,7 @@ pi.registerTool({
 **Action**: Verify all CLI flags used are valid in v0.65.1. Current flags:
 
 | Flag | Status |
-|------|--------|
+| --- | --- |
 | `--mode json` | ✅ Valid |
 | `--tools read,bash,edit,write,grep,find,ls` | ✅ Valid |
 | `--provider <P>` | ✅ Valid |
@@ -483,7 +483,7 @@ Update version references from `v0.57.1` to `v0.65.1`.
 ## 9. Risk Assessment
 
 | Risk | Likelihood | Severity | Mitigation |
-|------|-----------|----------|------------|
+| --- | --- | --- | --- |
 | `promptSnippet` omission causes tool invisibility | **High** if not addressed | **High** — tool becomes unusable | Add `promptSnippet` to `github-context.ts` (§6.3) |
 | Transitive dependency conflicts | Low | Medium | `bun install` will surface any conflicts; pin versions if needed |
 | JSONL output format changes | Very Low | High | The `message_end` event structure is stable; verify `jq` filter works against v0.65.1 JSONL output |
@@ -499,7 +499,7 @@ Update version references from `v0.57.1` to `v0.65.1`.
 Based on the release notes, the following transitive dependency versions have likely changed:
 
 | Package | From (approx.) | To (approx.) | Notes |
-|---------|----------------|--------------|-------|
+| --- | --- | --- | --- |
 | `@anthropic-ai/sdk` | ^0.73.0 | Latest compatible | Anthropic API client |
 | `@aws-sdk/client-bedrock-runtime` | ^3.983.0 | Latest compatible | AWS Bedrock client |
 | `openai` | 6.26.0 | Latest compatible | OpenAI API client |

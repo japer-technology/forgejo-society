@@ -125,7 +125,7 @@ Bun auto-loads `.env` — no extra config. Conductor workspaces inherit `.env` f
 ### Test tiers
 
 | Tier | Command | Cost | What it tests |
-|------|---------|------|---------------|
+| --- | --- | --- | --- |
 | 1 — Static | `bun test` | Free | Command validation, snapshot flags, SKILL.md correctness, TODOS-format.md refs, observability unit tests |
 | 2 — E2E | `bun run test:e2e` | ~$3.85 | Full skill execution via `claude -p` subprocess |
 | 3 — LLM eval | `bun run test:evals` | ~$0.15 standalone | LLM-as-judge scoring of generated SKILL.md docs |
@@ -166,7 +166,7 @@ EVALS=1 bun test test/skill-e2e-*.test.ts
 When E2E tests run, they produce machine-readable artifacts in `~/.gstack-dev/`:
 
 | Artifact | Path | Purpose |
-|----------|------|---------|
+| --- | --- | --- |
 | Heartbeat | `e2e-live.json` | Current test status (updated per tool call) |
 | Partial results | `evals/_partial-e2e.json` | Completed tests (survives kills) |
 | Progress log | `e2e-runs/{runId}/progress.log` | Append-only text log |
@@ -255,7 +255,7 @@ bun run build
 ### What changes between hosts
 
 | Aspect | Claude | Codex |
-|--------|--------|-------|
+| --- | --- | --- |
 | Output directory | `{skill}/SKILL.md` | `.agents/skills/gstack-{skill}/SKILL.md` (generated at setup, gitignored) |
 | Frontmatter | Full (name, description, allowed-tools, hooks, version) | Minimal (name + description only) |
 | Paths | `~/.claude/skills/gstack` | `$GSTACK_ROOT` (`.agents/skills/gstack` in a repo, otherwise `~/.codex/skills/gstack`) |
@@ -293,7 +293,7 @@ When you add a new skill template, both hosts get it automatically:
 If you're using [Conductor](https://conductor.build) to run multiple Claude Code sessions in parallel, `conductor.json` wires up workspace lifecycle automatically:
 
 | Hook | Script | What it does |
-|------|--------|-------------|
+| --- | --- | --- |
 | `setup` | `bin/dev-setup` | Copies `.env` from main worktree, installs deps, symlinks skills |
 | `archive` | `bin/dev-teardown` | Removes skill symlinks, cleans up `.claude/` directory |
 

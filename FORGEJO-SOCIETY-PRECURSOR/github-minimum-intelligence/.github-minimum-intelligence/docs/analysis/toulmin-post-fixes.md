@@ -10,14 +10,14 @@ This document applies Toulmin's model to the core arguments advanced by GitHub M
 
 ## 1. The Model
 
-| Component     | Role                                                                 |
-|---------------|----------------------------------------------------------------------|
-| **Claim**     | The assertion being made                                             |
-| **Grounds**   | The evidence or data supporting the claim                            |
-| **Warrant**   | The reasoning principle that connects grounds to claim               |
-| **Backing**   | The authority, evidence, or convention that supports the warrant     |
-| **Qualifier** | The degree of certainty — *probably*, *necessarily*, *presumably*    |
-| **Rebuttal**  | Conditions under which the claim would not hold                      |
+| Component | Role |
+| --- | --- |
+| **Claim** | The assertion being made |
+| **Grounds** | The evidence or data supporting the claim |
+| **Warrant** | The reasoning principle that connects grounds to claim |
+| **Backing** | The authority, evidence, or convention that supports the warrant |
+| **Qualifier** | The degree of certainty — *probably*, *necessarily*, *presumably* |
+| **Rebuttal** | Conditions under which the claim would not hold |
 
 A complete Toulmin argument reads: *"Given **Grounds**, and since **Warrant** (because **Backing**), **Qualifier** **Claim** — unless **Rebuttal**."*
 
@@ -239,7 +239,7 @@ GMI's documentation previously made strong claims — *"the repository is the mi
 Every rebuttal identified in the original Toulmin analysis has been treated as a design requirement and addressed with concrete implementation:
 
 | Rebuttal | Implementation |
-|---|---|
+| --- | --- |
 | SEC-008: workflow self-replication | Diff scanning rejects modifications to `.github/workflows/` files |
 | SEC-002: unrestricted network egress | Outbound network restricted to LLM API endpoints via Actions firewall rules |
 | SEC-005: no branch protection | Branch protection documented and enforced as part of the install process |
@@ -254,7 +254,7 @@ Every rebuttal identified in the original Toulmin analysis has been treated as a
 Explicit scope qualifiers have been added to `README.md` and the `public-fabric/status.json` landing page, stating where GMI excels and where it does not:
 
 | Context | Suitability |
-|---|---|
+| --- | --- |
 | Single-repo, GitHub-native teams | **Strong** — full context fidelity, zero infrastructure |
 | Async code review and issue triage | **Strong** — fits the GitHub event model naturally |
 | Multi-repo orchestration | **Supported** — incremental cross-repo awareness via skills and issue linking |

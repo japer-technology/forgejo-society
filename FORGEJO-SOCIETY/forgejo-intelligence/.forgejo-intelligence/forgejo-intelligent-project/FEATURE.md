@@ -269,7 +269,7 @@ Posts the report as a formatted Markdown comment.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Scheduled Project Board Sync | Cron — every 30 minutes | Project Sync |
 | 2 | New Item Detected | Cron — polling sync | Project Sync |
 | 3 | Item Removed Detected | Cron — polling sync | Project Sync |

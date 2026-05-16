@@ -63,7 +63,7 @@ Tool trait impl (tools/builtin/*.rs or tools/mcp/client.rs or tools/wasm/wrapper
 ## Key Files Quick Reference
 
 | Area | File | Key Functions |
-|------|------|---------------|
+| --- | --- | --- |
 | Message dispatch | `src/agent/agent_loop.rs` | `handle_message`, `process_user_input`, `process_approval`, `run_agentic_loop` |
 | Input parsing | `src/agent/submission.rs` | `SubmissionParser::parse` |
 | LLM reasoning | `src/llm/reasoning.rs` | `respond_with_tools`, `select_tools`, `plan` |

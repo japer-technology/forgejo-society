@@ -9,7 +9,7 @@ runners live, and what the approval path is for privileged changes.
 ## Repository classes and their controls
 
 | Class | Runner policy | Secret access | Backup priority | Publication |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `core` | Dedicated runners only | Org-level secrets allowed | Daily + off-site | Private by default |
 | `agent` | Shared runners; sandboxed | Repo-level secrets only | Daily | Controlled |
 | `experimental` | Shared runners; 30-min timeout | No secrets | Weekly | Not published |
@@ -84,7 +84,7 @@ sudo systemctl restart forgejo
 ### 2.1 Secret scoping rules
 
 | Secret type | Where to store | Who can access |
-|---|---|---|
+| --- | --- | --- |
 | Database password | Forgejo org secret `DB_PASSWORD` | Core infra repos only |
 | API tokens for mirrors | Forgejo repo secret | That repository only |
 | Cloud model API key | Forgejo org secret `CLOUD_MODEL_KEY` | Agent repos with explicit policy |
@@ -190,7 +190,7 @@ Configure via the Forgejo web UI for each core repository:
 Document in `governance-policies/approval-gates.md`:
 
 | Change type | Approval required |
-|---|---|
+| --- | --- |
 | Merging to `main` in a core repo | 1 human reviewer |
 | Promoting an agent from `experimental` to `probation` | Lead maintainer |
 | Publishing a new repository publicly | Lead maintainer |

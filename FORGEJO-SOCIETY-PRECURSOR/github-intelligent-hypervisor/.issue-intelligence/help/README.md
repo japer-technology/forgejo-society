@@ -15,7 +15,7 @@ Welcome to the Issue Intelligence help center. Everything you need to install, c
 ## 📖 Help Topics
 
 | Topic | Description |
-|-------|-------------|
+| --- | --- |
 | [🔧 Install](install.md) | First-time setup — copy the folder, run the installer, add your API key, and go |
 | [🗑️ Uninstall](uninstall.md) | Completely remove Issue Intelligence from a repository |
 | [♻️ Reinstall](reinstall.md) | Reset or upgrade an existing Issue Intelligence installation |

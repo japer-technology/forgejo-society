@@ -62,28 +62,28 @@ Out of scope:
 ### Document intake and routing
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes all incoming business documents | propose |
 | `document-index-bee` | Indexes all business documents, answers retrieval queries | propose |
 
 ### Contract and supplier agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `contract-bee` | Extracts obligations, dates, risks, and questions from contracts | propose |
 | `supplier-bee` | Analyses supplier invoices, pricing trends, and contract terms | propose |
 
 ### Finance and tax agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `finance-watch` | Monitors financial records for anomalies, trends, and budget adherence | propose |
 | `tax-bee` | Surfaces tax obligations, BAS dates, and EOFY requirements | propose |
 
 ### Staff and operations agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `staff-bee` | Monitors staff records for expiries, compliance, and onboarding needs | propose |
 | `calendar-bee` | Monitors business calendar for deadlines, renewals, and conflict detection | propose |
 | `task-bee` | Tracks open business tasks, overdue items, and blocked dependencies | propose |
@@ -91,7 +91,7 @@ Out of scope:
 ### Research and software agencies (optional)
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `web-research-bee` | Issues searches for market data, regulation updates, supplier alternatives | propose |
 | `code-review-bee` | Reviews code changes for quality, security, and test coverage | propose |
 | `dependency-bee` | Tracks library vulnerabilities, licence compliance, and version drift | propose |
@@ -100,7 +100,7 @@ Out of scope:
 ### Briefing agency
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `owner-briefing` | Assembles and delivers governed daily briefings to the owner | act |
 
 ---
@@ -108,7 +108,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is the proposal based on reliable data from the document? |
 | `scope-critic` | Is this decision within what the SOR is authorised to do? |
 | `cost-critic` | Is this spending or quote consistent with budget expectations? |
@@ -123,7 +123,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No business document, contract, or financial record leaves the local system without explicit approval and policy authorisation |
 | `payment-censor` | No payment above the defined spending limit is made without human approval |
 | `authority-censor` | No agency increases its own authority level |
@@ -329,7 +329,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Business files in repos |
 | 1 | Memory | Structured records: invoices, contracts, staff, BAS |
 | 2 | Agency | Agencies with roles, constitutions, and outputs |

@@ -247,7 +247,7 @@ The health summary is written to a dedicated section in the tracking issue body 
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Milestone Lifecycle | 1–4 | `milestone.created`, `milestone.edited`, `milestone.deleted`, `milestone.closed` | Tracking issue creation/comment/body edit, close, state |
 | Progress Tracking | 5–6 | `issues.milestoned`, `issues.demilestoned` | Tracking issue comment, state |
 | Due Date Management | 7–8 | Scheduled cron (daily), `/extend-due-date` | Tracking issue comment, milestone update, state |
@@ -256,7 +256,7 @@ The health summary is written to a dedicated section in the tracking issue body 
 | Scheduled / Cron | 13 | Time-based trigger (weekly) | Tracking issue body edit, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 6 |
 | Response surfaces | 0 | 5 |
 | Interaction models | 0 | 4 (automated tracking, slash command, velocity analysis, scheduled cron) |

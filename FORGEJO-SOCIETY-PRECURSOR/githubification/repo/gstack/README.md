@@ -15,7 +15,7 @@ The analysis identifies gstack's **skill definitions** as the core value — the
 ### Root-Level Foundational Documents
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `ARCHITECTURE.md` | Why gstack is built the way it is — architectural decisions |
 | `ETHOS.md` | Builder principles (Boil the Lake, Search Before Building, User Sovereignty) — injected into every skill preamble |
 | `AGENTS.md` | Agent definitions and skill routing table |
@@ -32,7 +32,7 @@ The analysis identifies gstack's **skill definitions** as the core value — the
 Event-driven, no user interaction needed. These map directly to PR/push/schedule triggers.
 
 | Skill | Directory | What It Does |
-|-------|-----------|-------------|
+| --- | --- | --- |
 | `/review` | `review/` | Pre-landing PR review with structured checklists |
 | `/cso` | `cso/` | OWASP Top 10 + STRIDE security audit |
 | `/ship` | `ship/` | Run tests, review, push, open PR — full shipping workflow |
@@ -43,7 +43,7 @@ Event-driven, no user interaction needed. These map directly to PR/push/schedule
 ### Tier 2 Skills — Good Fit (URL or brief input via issues)
 
 | Skill | Directory | What It Does |
-|-------|-----------|-------------|
+| --- | --- | --- |
 | `/qa` | `qa/` | Browser-based QA testing with bug reporting |
 | `/qa-only` | `qa-only/` | QA report only — no code changes |
 | `/design-review` | `design-review/` | Design audit with before/after screenshots |
@@ -54,7 +54,7 @@ Event-driven, no user interaction needed. These map directly to PR/push/schedule
 ### Tier 3 Skills — Moderate Fit (multi-turn conversation)
 
 | Skill | Directory | What It Does |
-|-------|-----------|-------------|
+| --- | --- | --- |
 | `/office-hours` | `office-hours/` | Product idea refinement through conversation |
 | `/plan-ceo-review` | `plan-ceo-review/` | CEO-level feature review |
 | `/plan-eng-review` | `plan-eng-review/` | Architecture lock — data flow, edge cases, tests |
@@ -64,7 +64,7 @@ Event-driven, no user interaction needed. These map directly to PR/push/schedule
 ### Skill Supplementary Files
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `review/checklist.md` | Engineering review checklist |
 | `review/design-checklist.md` | Design review checklist |
 | `review/greptile-triage.md` | Greptile triage integration |
@@ -78,7 +78,7 @@ Event-driven, no user interaction needed. These map directly to PR/push/schedule
 The template system that generates SKILL.md files from `.tmpl` templates:
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `scripts/gen-skill-docs.ts` | Main generator — processes templates, resolves placeholders |
 | `scripts/skill-check.ts` | Health dashboard for all skills |
 | `scripts/discover-skills.ts` | Skill discovery utility |
@@ -87,7 +87,7 @@ The template system that generates SKILL.md files from `.tmpl` templates:
 ### Infrastructure
 
 | File | Purpose |
-|------|---------|
+| --- | --- |
 | `lib/worktree.ts` | Git worktree management for parallel skill execution |
 | `agents/openai.yaml` | OpenAI agent configuration |
 
@@ -96,7 +96,7 @@ The template system that generates SKILL.md files from `.tmpl` templates:
 Per the analysis, these resources are **not worth hauling** for a pi-mono implementation:
 
 | Resource | Reason |
-|----------|--------|
+| --- | --- |
 | `browse/` source | CI should use Playwright directly, not the persistent daemon model |
 | Tier 4 skills (`careful`, `freeze`, `guard`, `unfreeze`, `setup-browser-cookies`, `setup-deploy`, `gstack-upgrade`, `codex`, `land-and-deploy`) | Local-only safety/meta skills replaced by branch protection and CI equivalents |
 | `design/` binary tooling | Local-only design HTML generation |

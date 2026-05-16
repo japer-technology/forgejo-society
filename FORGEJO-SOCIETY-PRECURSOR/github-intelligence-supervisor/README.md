@@ -21,7 +21,7 @@ It does not replace the intelligence repositories. It governs them.
 These are the deployable AI agent frameworks that individual repositories install. Each brings a different runtime, personality, and capability set, all using GitHub as infrastructure:
 
 | Repository | Runtime | Description |
-|---|---|---|
+| --- | --- | --- |
 | [`github-zeroclaw-intelligence`](https://github.com/japer-technology/github-zeroclaw-intelligence) | Rust (<5MB RAM) | Zero-overhead, zero-compromise AI assistant via GitHub Issues |
 | [`github-nanoclaw-intelligence`](https://github.com/japer-technology/github-nanoclaw-intelligence) | Lightweight / Claude | Secure, customisable Claude assistant |
 | [`github-openclaw-intelligence`](https://github.com/japer-technology/github-openclaw-intelligence) | Open Claw | Open Claw AI agent, GitHub-native |
@@ -33,7 +33,7 @@ These are the deployable AI agent frameworks that individual repositories instal
 ### Platform Control Repositories
 
 | Repository | Role |
-|---|---|
+| --- | --- |
 | [`github-intelligence`](https://github.com/japer-technology/github-intelligence) | Canonical folder-based intelligence architecture. Defines naming conventions and the activation model. |
 | [`github-intelligence-overwatch`](https://github.com/japer-technology/github-intelligence-overwatch) | Organisation-wide repo control — full access to all repositories via a single unhindered PAT, with cron. |
 | [`github-intelligence-emergency`](https://github.com/japer-technology/github-intelligence-emergency) | Last-resort org-wide kill switch — reversibly disables or irreversibly destroys all intelligence workflows and folders across every repository. |
@@ -146,7 +146,7 @@ github-intelligence-supervisor  ←→  github-intelligence-overwatch
 ## What the Supervisor Should Always Know
 
 | Question | Where the answer lives |
-|---|---|
+| --- | --- |
 | Which repos have intelligences deployed? | Registry (maintained by supervisor, surfaced by dashboard) |
 | Which intelligence folders are active per repo? | `.github-intelligence/` scan across all repos |
 | What is the current version of each deployed framework? | `VERSION` file inside each intelligence folder |

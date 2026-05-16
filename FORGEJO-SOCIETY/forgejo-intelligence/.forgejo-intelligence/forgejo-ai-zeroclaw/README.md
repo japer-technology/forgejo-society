@@ -13,7 +13,7 @@
 ## Agent Identity
 
 | Property | Value |
-|----------|-------|
+| --- | --- |
 | **Name** | ZeroClaw |
 | **Status** | Available — folder presence signals availability |
 

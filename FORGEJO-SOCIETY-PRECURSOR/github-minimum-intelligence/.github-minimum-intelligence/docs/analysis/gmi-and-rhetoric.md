@@ -10,14 +10,14 @@ This document analyzes the core claims of GitHub Minimum Intelligence (GMI) as r
 
 ## 1. The Framework
 
-| Mode          | Function                                                                |
-|---------------|-------------------------------------------------------------------------|
-| **Ethos**     | Establishes the speaker's credibility, character, and authority          |
-| **Logos**     | Employs logical reasoning, evidence, and structured argument             |
-| **Pathos**    | Engages the audience's emotions, values, and identity                    |
-| **Kairos**    | Exploits the timeliness and appropriateness of the moment                |
-| **Topos**     | Draws on shared commonplaces, assumptions, and cultural beliefs          |
-| **Epideictic**| Praises or blames to establish shared values                             |
+| Mode | Function |
+| --- | --- |
+| **Ethos** | Establishes the speaker's credibility, character, and authority |
+| **Logos** | Employs logical reasoning, evidence, and structured argument |
+| **Pathos** | Engages the audience's emotions, values, and identity |
+| **Kairos** | Exploits the timeliness and appropriateness of the moment |
+| **Topos** | Draws on shared commonplaces, assumptions, and cultural beliefs |
+| **Epideictic** | Praises or blames to establish shared values |
 
 A complete rhetorical analysis asks: *"Who is speaking, to whom, through what appeals, at what moment, and to what effect?"*
 
@@ -27,12 +27,12 @@ A complete rhetorical analysis asks: *"Who is speaking, to whom, through what ap
 
 Before examining individual claims, the rhetorical situation must be established:
 
-| Element       | GMI's Position                                                          |
-|---------------|-------------------------------------------------------------------------|
-| **Rhetor**    | A small project positioning itself against an industry of well-funded AI platforms |
-| **Audience**  | Developers who value transparency, sovereignty, and simplicity — and who are skeptical of vendor lock-in |
-| **Exigence**  | The rapid adoption of AI coding tools has created anxiety about control, privacy, and dependency |
-| **Constraints**| Open-source norms (show your work), GitHub's platform limitations, the need to differentiate without a marketing budget |
+| Element | GMI's Position |
+| --- | --- |
+| **Rhetor** | A small project positioning itself against an industry of well-funded AI platforms |
+| **Audience** | Developers who value transparency, sovereignty, and simplicity — and who are skeptical of vendor lock-in |
+| **Exigence** | The rapid adoption of AI coding tools has created anxiety about control, privacy, and dependency |
+| **Constraints** | Open-source norms (show your work), GitHub's platform limitations, the need to differentiate without a marketing budget |
 
 This situation shapes every rhetorical choice GMI makes. The project must persuade without resources, differentiate without feature parity, and build trust without a track record.
 
@@ -203,24 +203,24 @@ GMI's rhetoric follows a consistent pattern: **establish credibility through wor
 
 ### 8.2 Audience Fit
 
-| Audience segment          | Persuasive strength | Primary appeal |
-|---------------------------|---------------------|----------------|
-| Solo developers, open-source contributors | Very high           | Pathos (sovereignty, simplicity) |
-| Small team leads          | High                | Logos (cost reduction, no infra) |
-| Enterprise architects     | Low                 | Missing: scale, compliance, SLA |
-| AI safety researchers     | Moderate            | Ethos (honest self-assessment) |
-| Vendor-ecosystem users    | Low                 | Counter-positioned as the "other" |
+| Audience segment | Persuasive strength | Primary appeal |
+| --- | --- | --- |
+| Solo developers, open-source contributors | Very high | Pathos (sovereignty, simplicity) |
+| Small team leads | High | Logos (cost reduction, no infra) |
+| Enterprise architects | Low | Missing: scale, compliance, SLA |
+| AI safety researchers | Moderate | Ethos (honest self-assessment) |
+| Vendor-ecosystem users | Low | Counter-positioned as the "other" |
 
 ### 8.3 Strengths and Vulnerabilities
 
-| Strength                                      | Corresponding vulnerability                      |
-|-----------------------------------------------|--------------------------------------------------|
-| Working code as proof (ethos)                  | Small scale limits generalizability               |
-| Honest vulnerability disclosure (prolepsis)    | Disclosed gaps are real and unmitigated            |
-| Sovereignty narrative (pathos)                 | Can shade into anti-establishment posturing        |
-| Simplicity argument (logos + topos)            | Omits the cost of constraints                      |
-| Asimov reference (cultural ethos)              | Asimov's Laws were designed to fail                |
-| Co-creation ideal (pathos)                     | Most users won't engage; defaults dominate         |
+| Strength | Corresponding vulnerability |
+| --- | --- |
+| Working code as proof (ethos) | Small scale limits generalizability |
+| Honest vulnerability disclosure (prolepsis) | Disclosed gaps are real and unmitigated |
+| Sovereignty narrative (pathos) | Can shade into anti-establishment posturing |
+| Simplicity argument (logos + topos) | Omits the cost of constraints |
+| Asimov reference (cultural ethos) | Asimov's Laws were designed to fail |
+| Co-creation ideal (pathos) | Most users won't engage; defaults dominate |
 
 ---
 

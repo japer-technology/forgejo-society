@@ -18,7 +18,7 @@ OpenClaw Intelligence is activated by the `@` prefix on issues and comments. It 
 ## The Prefix Protocol
 
 | Prefix | Intelligence | Description |
-|--------|-------------|-------------|
+| --- | --- | --- |
 | `@` | OpenClaw Intelligence | Tool-rich, complex multi-step tasks |
 | _(other)_ | None | No agent responds |
 
@@ -81,7 +81,7 @@ This is a fail-closed design — the agent never runs unless a human has deliber
 Every agent interaction follows an ordered pipeline of discrete, independently-testable scripts:
 
 | Step | Script | Purpose |
-|------|--------|---------|
+| --- | --- | --- |
 | 1 | `enabled.ts` | **Guard** — is the agent allowed to run? |
 | 2 | `preflight.ts` | **Validation** — is config present? Is the schema valid? |
 | 3 | _(bun install)_ | **Install** — prepare the runtime |
@@ -128,7 +128,7 @@ The `--model`, `--provider`, and `--thinking` flags are passed explicitly to the
 ### Supported Providers
 
 | Provider | Secret Name | Models |
-|----------|------------|--------|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | GPT-5.4 (default), GPT-4o, GPT-4o-mini |
 | Anthropic | `ANTHROPIC_API_KEY` | Claude Sonnet, Claude Haiku, Claude Opus |
 | Google | `GEMINI_API_KEY` | Gemini 2.5 Pro, Gemini 2.0 Flash |
@@ -142,7 +142,7 @@ The `--model`, `--provider`, and `--thinking` flags are passed explicitly to the
 The `trustPolicy` section controls per-actor capability gating:
 
 | Level | Capabilities |
-|-------|-------------|
+| --- | --- |
 | `trusted` | Full capabilities — all tools, mutation commands |
 | `semi-trusted` | Read-only tools — informational commands only |
 | `untrusted` | Blocked or read-only response (no agent invocation) |
@@ -234,7 +234,7 @@ OpenClaw ships with bundled skills that provide domain-specific capabilities. Sk
 ### Available Skills
 
 | Skill | Description |
-|-------|-------------|
+| --- | --- |
 | `gh-issues` | Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs |
 | `github` | GitHub operations via `gh` CLI: issues, PRs, CI runs, code review |
 | `weather` | Get current weather and forecasts via wttr.in |
@@ -287,7 +287,7 @@ To load skills from additional directories, add paths to the `load.extraDirs` ar
 ## Tool Surface
 
 | Capability | Available |
-|-----------|-----------|
+| --- | --- |
 | File read/write/edit | ✅ |
 | Code search (grep, glob) | ✅ |
 | Bash execution | ✅ |

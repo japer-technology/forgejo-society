@@ -52,7 +52,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active critics and censors
 
 | Part | Why |
-|---|---|
+| --- | --- |
 | `privacy-critic` | Scheduling data is personal; any proposal to share it is challenged |
 | `pii-exfiltration-censor` | Calendar data is PII — unconditionally enforced |
 | `authority-censor` | calendar-bee holds propose authority only; it may not act directly |
@@ -62,7 +62,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `event_detection_rate` | % of upcoming events correctly surfaced in time |
 | `conflict_identification_accuracy` | % of real scheduling conflicts correctly identified |
 | `false_alarm_rate` | % of alerts that are not genuine issues |

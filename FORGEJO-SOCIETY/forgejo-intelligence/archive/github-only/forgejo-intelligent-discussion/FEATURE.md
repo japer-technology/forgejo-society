@@ -287,7 +287,7 @@ Only the discussion author or a repo maintainer can trigger this command. The ag
 ## Summary
 
 | Group | Features | Triggers | Response Surfaces |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Discussion Lifecycle | 1–4 | `discussion.created`, `discussion.edited`, `discussion.closed`, `discussion.locked` | Comment, body edit, close, state |
 | Comment Analysis | 5–6 | `discussion_comment.created`, `discussion_comment.edited` | Comment, state |
 | Q&A Category Handling | 7–8 | `discussion.created`, `discussion_comment.created` (Q&A), `/answer` | Comment, mark answer, state |
@@ -297,7 +297,7 @@ Only the discussion author or a repo maintainer can trigger this command. The ag
 | Scheduled / Cron | 16 | Time-based trigger | Comment, close, state |
 
 | Dimension | Implemented | Specified in This Document |
-|---|---|---|
+| --- | --- | --- |
 | Event triggers | 0 | 7 |
 | Response surfaces | 0 | 6 |
 | Interaction models | 0 | 4 (conversational, slash command, reaction-driven, scheduled cron) |

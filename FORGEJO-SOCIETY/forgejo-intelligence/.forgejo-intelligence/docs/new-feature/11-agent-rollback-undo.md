@@ -47,7 +47,7 @@ When a user undoes a change, that's a strong negative signal. The undo event can
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Commit identification** | Find agent commits for the current issue | ~1 hour |
 | **Revert logic** | `git revert` for main-branch changes, PR close for branch-per-task | ~2 hours |
 | **Session rollback** | Restore the session JSONL to its state before the reverted turn | ~1.5 hours |

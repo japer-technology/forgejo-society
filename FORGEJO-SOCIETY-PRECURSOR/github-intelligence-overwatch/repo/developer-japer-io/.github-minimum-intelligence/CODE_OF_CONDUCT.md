@@ -33,7 +33,7 @@ This Code of Conduct applies to all project spaces: issues, pull requests, discu
 This project defines [Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md) that govern the system's behavior. Contributors — human and automated alike — are expected to uphold these principles:
 
 | Law | Principle | What it means for contributors |
-|-----|-----------|-------------------------------|
+| --- | --- | --- |
 | **Zeroth** | Protect Humanity | Do not use this project to concentrate power or undermine the commons. |
 | **First** | Do No Harm | Do not contribute code or content that endangers safety, privacy, or civil rights. |
 | **Second** | Obey the Human | Be transparent. Do not obscure intent, fabricate results, or override others' autonomy. |

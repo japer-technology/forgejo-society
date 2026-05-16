@@ -48,7 +48,7 @@ Then Playwright drives a headless Chromium browser against the gateway, making D
 ## Scenarios
 
 | File | What it tests |
-|------|--------------|
+| --- | --- |
 | `test_connection.py` | Auth, tab navigation, connection status |
 | `test_chat.py` | Send message, SSE streaming, response rendering |
 | `test_skills.py` | ClawHub search, skill install/remove |

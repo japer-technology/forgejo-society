@@ -9,7 +9,7 @@
 ## Decisions
 
 | Decision | Choice | Rationale |
-|----------|--------|-----------|
+| --- | --- | --- |
 | Assertion style | Deterministic DOM-first | Claude vision optional later; DOM assertions are fast, cheap, reliable |
 | Language | Python + pytest + Playwright | Rich browser automation ecosystem, async/await, separate from Rust tests |
 | LLM backend | Mock HTTP server | Canned OpenAI-compat responses; deterministic, fast, zero cost |
@@ -81,7 +81,7 @@ A minimal async HTTP server that speaks the OpenAI Chat Completions API.
 **Canned response table:**
 
 | Pattern (regex) | Response |
-|-----------------|----------|
+| --- | --- |
 | `hello\|hi\|hey` | `Hello! How can I help you today?` |
 | `2\+2\|2 \+ 2\|two plus two` | `The answer is 4.` |
 | `skill\|install` | `I can help you with skills management.` |

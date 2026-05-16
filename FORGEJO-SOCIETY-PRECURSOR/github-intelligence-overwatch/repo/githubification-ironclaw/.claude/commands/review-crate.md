@@ -227,7 +227,7 @@ Concrete suggestion with code if applicable.
 End with a summary table:
 
 | # | Severity | Category | File:Line | Finding |
-|---|----------|----------|-----------|---------|
+| --- | --- | --- | --- | --- |
 
 And a final tally: X Critical, Y High, Z Medium, W Low, V Nit.
 

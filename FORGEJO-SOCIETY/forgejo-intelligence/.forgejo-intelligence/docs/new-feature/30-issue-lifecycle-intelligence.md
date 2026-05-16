@@ -31,7 +31,7 @@ The agent knows when work is done — it just completed it. It can close the iss
 ### 5. It Composes With Every Issue-Oriented Feature
 
 | Feature | Issue Lifecycle Enhancement |
-|---|---|
+| --- | --- |
 | **Slash Commands (02)** | `/close` command with auto-summary |
 | **Health Scanning (19)** | Auto-label health findings by category |
 | **Approval Gates (21)** | Label issues as `pending-approval` during gate |
@@ -62,7 +62,7 @@ The agent knows when work is done — it just completed it. It can close the iss
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Content analyzer** | Classify issue content for labeling | ~1.5 hours |
 | **Auto-labeler** | Apply labels based on classification, create missing labels | ~1.5 hours |
 | **Title updater** | Detect topic drift, propose title updates | ~1.5 hours |

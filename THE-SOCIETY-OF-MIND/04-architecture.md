@@ -94,7 +94,7 @@ reason it is rare and expensive in minds.
 The two flows up and down the hierarchy are *not symmetric*.
 
 | Flow | Direction | Operation | Output |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Ascending | Up | Compression, summarisation, abstraction | Few high-bandwidth, high-meaning signals |
 | Descending | Down | Expansion, refinement, decomposition | Many low-bandwidth, low-meaning signals |
 

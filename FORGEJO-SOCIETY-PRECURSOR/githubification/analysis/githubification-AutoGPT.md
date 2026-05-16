@@ -9,7 +9,7 @@
 [Githubification](https://github.com/japer-technology/githubification) is the act of converting a repository into GitHub-as-infrastructure. Instead of cloning the repo and running the software elsewhere, the repo becomes something that runs on GitHub itself via GitHub Actions. Four GitHub primitives serve four fixed roles:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -43,7 +43,7 @@ The repository already contains AI agent functionality (it is a platform for bui
 AutoGPT's runtime requirements fundamentally conflict with GitHub Actions' ephemeral execution model:
 
 | AutoGPT Requirement | GitHub Actions Constraint |
-|---|---|
+| --- | --- |
 | PostgreSQL with pgvector | No persistent databases on runners |
 | Supabase (auth, Kong API gateway) | No persistent auth services |
 | Redis for caching | No persistent cache |
@@ -100,7 +100,7 @@ A `.github-autogpt/` folder would be added to the repository root containing a G
 Following the GMI pattern (the simplest proven lifecycle):
 
 | # | Step | What Happens |
-|---|------|------|
+| --- | --- | --- |
 | 1 | **Authorize** | Workflow shell step checks collaborator permission via `gh api` |
 | 2 | **Reject** | If unauthorized: add 👎 reaction, terminate |
 | 3 | **Checkout** | Clone the repo with full file tree |
@@ -164,7 +164,7 @@ jobs:
 Because the agent has the entire AutoGPT codebase as read context, it could:
 
 | Capability | How |
-|---|---|
+| --- | --- |
 | **Explain the platform architecture** | Read `autogpt_platform/backend/`, `schema.prisma`, Docker configs |
 | **Guide self-hosting setup** | Walk users through Docker Compose, env vars, database setup |
 | **Help design new blocks** | Read `backend/blocks/`, understand input/output schemas, suggest implementations |
@@ -213,7 +213,7 @@ The agent workflow is event-driven (issue events only) and uses a dedicated conc
 The repository already hosts multiple AI agents for development:
 
 | Agent | Purpose | Interaction Model |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Copilot** | Code completion and PR development | IDE integration |
 | **Claude Code** | Code review and feature development | PR comments and @claude mentions |
 | **Codex** | Autonomous code changes | Branch-based development |
@@ -284,7 +284,7 @@ The Githubification agent serves a fundamentally different audience (users via I
 ## What Changes vs. What Stays the Same
 
 | Aspect | Current State | After Githubification |
-|---|---|---|
+| --- | --- | --- |
 | **Running AutoGPT** | Docker Compose with 7+ services locally | Still requires Docker Compose — the platform itself is unchanged |
 | **Getting help with AutoGPT** | Read docs, ask on Discord, file GitHub Issues | Open an Issue and get AI-powered assistance from a domain-expert agent |
 | **Understanding the codebase** | Read copilot-instructions.md, AGENTS.md | Ask the agent — it has read and indexed the entire codebase |
@@ -301,7 +301,7 @@ The key insight: **Githubification does not replace the platform. It adds a GitH
 ## Why Substitution Over Other Strategies
 
 | Strategy | Feasibility for AutoGPT | Reason |
-|---|---|---|
+| --- | --- | --- |
 | **Native** | ❌ Not applicable | AutoGPT already exists — this is not a greenfield agent |
 | **Wrapping** | ❌ Infeasible | 10+ persistent services cannot run on ephemeral Actions runners |
 | **Substitution** | ✅ Recommended | Deploy a GitHub-native agent with the codebase as domain context |
@@ -331,7 +331,7 @@ A Githubification agent with this as context would not just explain code. It wou
 ### Required
 
 | Dependency | Purpose |
-|---|---|
+| --- | --- |
 | [`@mariozechner/pi-coding-agent`](https://github.com/badlogic/pi-mono) | Single runtime dependency — AI agent with LLM, tools, and session management |
 | [Bun](https://bun.sh) | JavaScript/TypeScript runtime for executing lifecycle scripts |
 | LLM API key (e.g., `OPENAI_API_KEY`) | Repository secret for LLM access |
@@ -339,7 +339,7 @@ A Githubification agent with this as context would not just explain code. It wou
 ### Already Present
 
 | Infrastructure | Status |
-|---|---|
+| --- | --- |
 | GitHub Actions | ✅ 30+ workflows already configured |
 | Git | ✅ Repository is the storage layer |
 | GitHub Issues | ✅ Issue templates already exist |
@@ -349,7 +349,7 @@ A Githubification agent with this as context would not just explain code. It wou
 ### Not Required
 
 | Infrastructure | Why Not |
-|---|---|
+| --- | --- |
 | Docker | The Githubification agent does not run the platform |
 | PostgreSQL / Redis / RabbitMQ | No persistent services needed |
 | Supabase | No authentication for the agent itself |

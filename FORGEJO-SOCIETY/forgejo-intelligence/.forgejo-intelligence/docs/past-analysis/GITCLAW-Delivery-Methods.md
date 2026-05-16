@@ -32,7 +32,7 @@ This document maps out every viable channel — from what exists today to ideas 
 ## 1. Current Method — Fork / Import + Installer
 
 | Step | What happens |
-|------|-------------|
+| --- | --- |
 | Copy `.GITCLAW/` folder into your repo | Manual or via fork/import |
 | Run `bun .GITCLAW/install/GITCLAW-INSTALLER.ts` | Copies workflows + templates into `.github/` |
 | Push changes | Bootstrap workflow picks up and creates a PR |
@@ -448,7 +448,7 @@ The package's `postinstall` script (or explicit `init` command) copies `.GITCLAW
 ## 15. Comparison Matrix
 
 | Method | New Repo | Existing Repo | No CLI | No Backend | Auto-Updates | One-Click | GitHub-Native |
-|--------|:--------:|:-------------:|:------:|:----------:|:------------:|:---------:|:-------------:|
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Current (Fork + Installer) | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ |
 | GitHub App | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ |
 | Marketplace Action | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |

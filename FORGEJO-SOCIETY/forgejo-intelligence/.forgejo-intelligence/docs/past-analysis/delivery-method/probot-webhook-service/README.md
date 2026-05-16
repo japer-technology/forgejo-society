@@ -27,7 +27,7 @@ A Probot app (or custom webhook service) is registered as a GitHub App and insta
 ### Trigger Events
 
 | Event | Trigger | Action |
-|-------|---------|--------|
+| --- | --- | --- |
 | **Label added** | `gitclaw:install` label on any issue | Install gitclaw on the repo |
 | **Issue opened** | Issue with title containing "[GitClaw Install]" | Install gitclaw on the repo |
 | **Repository created** | New repo created in an org | Auto-install gitclaw |
@@ -315,7 +315,7 @@ export function parseCommand(body: string): Command | null {
 Probot apps can be deployed to serverless platforms, eliminating server management:
 
 | Platform | Setup | Cost | Pros |
-|----------|-------|------|------|
+| --- | --- | --- | --- |
 | **Vercel** | `vercel deploy` | Free tier | Simple deployment, auto-scaling |
 | **Cloudflare Workers** | `wrangler deploy` | Free tier | Edge deployment, fast cold starts |
 | **AWS Lambda** | SAM/CDK deploy | Free tier (1M requests/month) | Mature, scalable |
@@ -372,7 +372,7 @@ The Probot service requires a registered GitHub App:
 ### Required Permissions
 
 | Permission | Access | Purpose |
-|------------|--------|---------|
+| --- | --- | --- |
 | **Contents** | Read & Write | Commit `.GITCLAW/` files |
 | **Pull Requests** | Read & Write | Open bootstrap PRs |
 | **Issues** | Read & Write | Read labels, post comments |
@@ -382,7 +382,7 @@ The Probot service requires a registered GitHub App:
 ### Webhook Events
 
 | Event | Purpose |
-|-------|---------|
+| --- | --- |
 | `issues` | Detect label additions |
 | `issue_comment` | Parse slash commands |
 | `repository` | Detect new repo creation |

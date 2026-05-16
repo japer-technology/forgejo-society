@@ -101,7 +101,7 @@ After installation, the app can:
 The app backend can be hosted on any serverless platform:
 
 | Platform | Pros | Cons |
-|----------|------|------|
+| --- | --- | --- |
 | **Cloudflare Workers** | Free tier, global edge, fast cold starts | Limited runtime (CPU time limits) |
 | **Vercel Serverless Functions** | Easy deployment, GitHub integration | Cold starts on free tier |
 | **AWS Lambda** | Mature, scalable, extensive ecosystem | More setup required |
@@ -130,7 +130,7 @@ This is more secure than personal access tokens because:
 The GitHub App needs the following permissions:
 
 | Permission | Access | Purpose |
-|------------|--------|---------|
+| --- | --- | --- |
 | **Contents** | Read & Write | Commit `.GITCLAW/` files and workflow definitions |
 | **Pull Requests** | Read & Write | Open bootstrap and update PRs |
 | **Workflows** | Read & Write | Commit workflow YAML files to `.github/workflows/` |
@@ -142,7 +142,7 @@ The GitHub App needs the following permissions:
 ### Webhook Events
 
 | Event | Purpose |
-|-------|---------|
+| --- | --- |
 | `installation` | Triggered when the app is installed — initiates repository setup |
 | `installation_repositories` | Triggered when repos are added/removed from an existing installation |
 | `push` | (Optional) Monitor for manual changes to `.GITCLAW/` files |

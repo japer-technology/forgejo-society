@@ -426,7 +426,7 @@ IronClaw supports two database backends, selected at compile time via Cargo feat
 ### Backends
 
 | Backend | Feature Flag | Default | Use Case |
-|---------|-------------|---------|----------|
+| --- | --- | --- | --- |
 | PostgreSQL | `postgres` (default) | Yes | Production, existing deployments |
 | libSQL/Turso | `libsql` | No | Zero-dependency local mode, edge, Turso cloud |
 
@@ -522,7 +522,7 @@ Skills are SKILL.md files that extend the agent's prompt with domain-specific in
 ### Trust Model
 
 | Trust Level | Source | Tool Access |
-|-------------|--------|-------------|
+| --- | --- | --- |
 | **Trusted** | User-placed in `~/.ironclaw/skills/` or workspace `skills/` | All tools available to the agent |
 | **Installed** | Downloaded from ClawHub registry | Read-only tools only (no shell, file write, HTTP) |
 
@@ -585,7 +585,7 @@ The `src/sandbox/` module provides Docker-based isolation for job execution with
 ### Sandbox Policies
 
 | Policy | Filesystem | Network | Use Case |
-|--------|-----------|---------|----------|
+| --- | --- | --- | --- |
 | **ReadOnly** | Read-only workspace mount | Allowlisted domains only | Analysis, code review |
 | **WorkspaceWrite** | Read-write workspace mount | Allowlisted domains only | Code generation, file edits |
 | **FullAccess** | Full filesystem | Unrestricted | Trusted admin tasks |
@@ -669,7 +669,7 @@ for that module's behavior. When modifying code in a module that has a spec:
    (unless the spec is clearly outdated, in which case fix the spec first)
 
 | Module | Spec File |
-|--------|-----------|
+| --- | --- |
 | `src/setup/` | `src/setup/README.md` |
 | `src/workspace/` | `src/workspace/README.md` |
 | `src/tools/` | `src/tools/README.md` |

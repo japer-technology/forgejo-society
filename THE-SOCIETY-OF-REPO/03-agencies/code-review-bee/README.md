@@ -54,7 +54,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active critics
 
 | Critic | Why |
-|---|---|
+| --- | --- |
 | `evidence-critic` | A defect claim without a specific line reference is challenged |
 | `overconfidence-critic` | Security assessments require tool evidence, not model intuition |
 | `scope-critic` | Review must stay within the submitted change set |
@@ -64,7 +64,7 @@ See [constitution.yaml](constitution.yaml).
 ## Active censors
 
 | Censor | Why |
-|---|---|
+| --- | --- |
 | `credential-censor` | Any secret value found in code must be flagged, not logged or reported in plaintext |
 | `cloud-egress-censor` | Code content must not be sent to external services without explicit approval |
 | `authority-censor` | code-review-bee may not approve its own proposals |
@@ -74,7 +74,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `true_issue_detection_rate` | % of real issues correctly identified |
 | `false_positive_rate` | % of flagged issues that are not real issues |
 | `missed_security_issue_rate` | % of security issues not caught (critical metric) |

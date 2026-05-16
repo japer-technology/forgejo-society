@@ -256,7 +256,7 @@ If no coverage record exists in state, the agent replies: "No coverage data foun
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | On Page Build Success | `page_build` (built) | Page Build Lifecycle |
 | 2 | On Page Build Failure | `page_build` (errored) | Page Build Lifecycle |
 | 3 | On Push to Pages Source Branch | `push` | Page Build Lifecycle |

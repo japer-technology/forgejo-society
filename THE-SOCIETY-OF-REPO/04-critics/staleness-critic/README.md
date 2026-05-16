@@ -39,7 +39,7 @@ The staleness-critic activates whenever:
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `objection_validity_rate` | % of staleness objections confirmed as valid |
 | `missed_stale_source_rate` | % of genuinely stale proposals not challenged |
 | `false_objection_rate` | % of objections raised against current evidence |

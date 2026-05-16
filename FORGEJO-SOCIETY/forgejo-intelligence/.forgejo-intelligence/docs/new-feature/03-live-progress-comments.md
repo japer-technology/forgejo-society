@@ -35,7 +35,7 @@ Replace the current "👀 reaction then silence for 30–120 seconds" UX with a 
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Progress comment lifecycle** (new module `GITCLAW-PROGRESS.ts`) | Create comment, update comment, finalize comment, error-replace comment | ~1.5 hours |
 | **Stream parser** (new module or inline in agent) | Read `pi` JSON stream in real-time, extract tool call events and assistant text starts | ~2 hours |
 | **Agent orchestrator** (`GITCLAW-AGENT.ts`) | Replace `tee` piping with a custom stream consumer that feeds both the JSONL file and the progress updater | ~2 hours |

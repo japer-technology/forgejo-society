@@ -32,7 +32,7 @@ specification (`THE-SOCIETY-OF-REPO/`) and the operational implementation
 ## How this folder is organised
 
 | Document | Purpose |
-|---|---|
+| --- | --- |
 | [00-overview.md](00-overview.md) | The synthesis. What we are building, why, and the two-target collapse rule. |
 | [01-target-layout.md](01-target-layout.md) | Final directory layout for `.forgejo-society/` and the workflow file. |
 | [02-workflow-design.md](02-workflow-design.md) | Design of the single `.forgejo/workflows/forgejo-society.yaml`: triggers, jobs, steps, env, concurrency, kill switch. |

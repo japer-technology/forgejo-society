@@ -98,7 +98,7 @@ nemoclaw onboard
 ## Known Issues
 
 | Issue | Status | Workaround |
-|-------|--------|------------|
+| --- | --- | --- |
 | cgroup v2 kills k3s in Docker | Fixed in `setup-spark` | `daemon.json` cgroupns=host |
 | Docker permission denied | Fixed in `setup-spark` | `usermod -aG docker` |
 | CoreDNS CrashLoop after setup | Fixed in `fix-coredns.sh` | Uses container gateway IP, not 127.0.0.11 |

@@ -72,7 +72,7 @@ event:
 ### Document events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `document.ingested` | A document was received into the intake directory |
 | `document.classified` | A document was classified by intake-bee |
 | `document.routed` | A document was routed to a specialist agency |
@@ -81,7 +81,7 @@ event:
 ### Invoice and financial events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `invoice.received` | A supplier invoice arrived |
 | `invoice.price-increase-detected` | Invoice price increased above threshold |
 | `invoice.duplicate-detected` | A potential duplicate invoice was identified |
@@ -90,7 +90,7 @@ event:
 ### Contract events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `contract.received` | A contract document arrived |
 | `contract.renewal-warning` | A contract renewal date is approaching |
 | `contract.obligation-extracted` | Obligations extracted from a contract |
@@ -99,7 +99,7 @@ event:
 ### Staff and compliance events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `staff.certificate-expiry-warning` | A staff certificate is approaching expiry |
 | `staff.compliance-check-completed` | A compliance check was completed |
 | `staff.onboarding-triggered` | A new staff onboarding process was started |
@@ -107,7 +107,7 @@ event:
 ### Cognitive loop events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `activation.kline-matched` | A K-line matched a stimulus and activated agencies |
 | `activation.novel-stimulus` | No K-line matched; novel stimulus processing started |
 | `proposal.submitted` | An agency submitted a proposal to the global workspace |
@@ -124,7 +124,7 @@ event:
 ### Forgejo runtime events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `forgejo.event.received` | A Forgejo Actions or webhook payload entered the SOR runtime |
 | `forgejo.event.normalized` | The bridge converted a Forgejo payload into the normalized event schema |
 | `forgejo.surface.routed` | A normalized event was mapped to an active `forgejo-intelligent-*` surface |
@@ -138,7 +138,7 @@ event:
 ### Governance events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `approval.requested` | A human approval was requested |
 | `approval.granted` | A human approval was granted |
 | `approval.denied` | A human approval was denied |
@@ -150,7 +150,7 @@ event:
 ### Service channel events
 
 | Type | Trigger |
-|---|---|
+| --- | --- |
 | `service.called` | An external SOR service was called |
 | `service.completed` | An external SOR service call completed |
 | `service.failed` | An external SOR service call failed |

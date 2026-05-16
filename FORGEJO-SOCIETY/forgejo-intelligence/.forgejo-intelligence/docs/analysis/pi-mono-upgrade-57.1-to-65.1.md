@@ -7,7 +7,7 @@ This document examines every change in pi-mono between v0.57.1 (2026-03-07) and 
 ## 1. Current State
 
 | Item | Value |
-|---|---|
+| --- | --- |
 | Package | `@mariozechner/pi-coding-agent` |
 | Declared in `package.json` | `^0.52.5` |
 | Resolved in `bun.lock` | `0.52.5` |
@@ -151,7 +151,7 @@ The repository uses pi-mono as a **CLI binary** invoked via `bun` from GitHub Ac
 Of the 12 breaking changes across this version range, only one has potential CLI impact:
 
 | Version | Breaking Change | Affects forgejo-intelligence? |
-|---|---|---|
+| --- | --- | --- |
 | v0.59.0 | `promptSnippet` required for custom tools | **No** — no custom tools |
 | v0.60.0 | No auto-update on startup | **No** — uses `bun install --frozen-lockfile` |
 | v0.61.0 | Namespaced keybinding ids | **No** — TUI-only |
@@ -226,7 +226,7 @@ Sessions created with v0.52.5 use the old single-edit `oldText`/`newText` schema
 All CLI flags used by the orchestrator and agent are valid in v0.65.1:
 
 | Flag | Used In | Status |
-|---|---|---|
+| --- | --- | --- |
 | `--mode json` | ORCHESTRATOR.ts, AGENT.ts | ✅ Valid |
 | `--provider <name>` | ORCHESTRATOR.ts, AGENT.ts | ✅ Valid |
 | `--model <name>` | ORCHESTRATOR.ts, AGENT.ts | ✅ Valid |
@@ -243,7 +243,7 @@ The QUICKSTART already lists multiple providers. The new `GOOGLE_CLOUD_API_KEY` 
 ## 6. Risk Assessment
 
 | Risk | Severity | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | Unknown CLI flag rejection (v0.65.0) | Low | Audited — all flags are valid |
 | Session schema migration | Low | Built-in `prepareArguments` shim handles it |
 | Provider API changes | None | SDK-only; CLI usage is stable |

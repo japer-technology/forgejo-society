@@ -75,7 +75,7 @@ Every new feature added to the core increases maintenance burden. Plugins let no
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Plugin manifest schema** | Define plugin.json format and validation | ~1 hour |
 | **Plugin loader** | Discover and validate plugins at startup | ~1.5 hours |
 | **Lifecycle hook runner** | Execute hooks at correct points in the pipeline | ~2.5 hours |

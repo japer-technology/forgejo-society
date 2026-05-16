@@ -52,7 +52,7 @@ This gives you a shell in the running container — inspect logs, debug nullclaw
 ## Files
 
 | File | Tracked | Purpose |
-|------|---------|---------|
+| --- | --- | --- |
 | `.env.example` | yes | Secret template |
 | `config.matrix.example.json` | yes | Config template (no secrets) |
 | `modal_app.py` | yes | Modal app definition |

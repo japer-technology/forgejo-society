@@ -49,7 +49,7 @@ edited by the society without a human-confirmed settlement.
 Operational knobs only. No cognitive content.
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | `society.yml` | top-level: mode, max_cycles, activation_threshold, default_frame, state_root, paths |
 | `tools.yml` | tool group catalogue: read/grep/find/ls, edit/write, bash, plus per-agency overrides referenced from manifests |
 | `providers.yml` | model provider settings; secrets referenced by name only |
@@ -64,7 +64,7 @@ Convention: every value here is a small leaf YAML; no embedded scripts.
 Direct, runtime-readable subset of `THE-SOCIETY-OF-REPO/01-governance/`.
 
 | File | Source spec | Format | Read by |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `constitution.md` | `01-governance/constitution.md` | prose | humans + audit only |
 | `authority-registry.yml` | `01-governance/authority-registry.md` | `agent_id → level` | `policy.ts` |
 | `approval-gate.yml` | `01-governance/approval-gate.md` | list of `requires_human_approval` action patterns | `act.ts` |
@@ -111,7 +111,7 @@ failure_conditions: [ ... ] # objections that block settlement
 Polynemic activators. One YAML per neme class:
 
 | File | Activated by |
-|---|---|
+| --- | --- |
 | `path-polynemes.yml` | file paths in the stimulus or in candidate diffs |
 | `label-polynemes.yml` | issue/PR labels |
 | `phrase-polynemes.yml` | natural-language phrases in the stimulus |
@@ -127,7 +127,7 @@ Each entry excites one or more agencies and may inhibit others. Optional
 Mechanically-applied policy. Read by `policy.ts`, **not** the model.
 
 | File | Effect |
-|---|---|
+| --- | --- |
 | `danger-zones.yml` | named zones with paths/patterns + censor + suppressor entries |
 | `tool-policy.yml` | tool defaults per agency, overridden by danger zones |
 | `write-policy.yml` | which agencies may ever request `write`/`edit`/`bash` and under which frames |
@@ -146,7 +146,7 @@ Canonical data shapes. JSON Schema for machine validation; the runtime
 validates every emitted artifact against the appropriate schema.
 
 | Schema | Validates |
-|---|---|
+| --- | --- |
 | `signal.schema.json` | one record in `signals.jsonl` |
 | `handoff.schema.json` | one agency return value |
 | `settlement.schema.json` | one `workspace/active-settlements/*.yml` |

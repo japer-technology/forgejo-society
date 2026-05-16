@@ -21,7 +21,7 @@ The following events should trigger a migration evaluation. Each trigger is a co
 These events indicate the subprocess approach has failed or become untenable:
 
 | ID | Trigger | Evidence Required |
-|---|---|---|
+| --- | --- | --- |
 | T-01 | `jq` filter produces incorrect output on valid JSONL | A specific JSONL event that is valid per pi's schema but is incorrectly filtered by the current `jq` expression |
 | T-02 | Pi JSONL schema change breaks the extraction pipeline | A pi-coding-agent release that changes the `message_end` event structure in a way the `jq` filter cannot handle |
 | T-03 | `tee`, `tac`, or `jq` removed from GitHub Actions runners | An Ubuntu runner image update that removes one of the required tools |
@@ -32,7 +32,7 @@ These events indicate the subprocess approach has failed or become untenable:
 These events indicate the subprocess approach is limiting GMI's capabilities. They warrant a cost-benefit evaluation but do not mandate immediate migration:
 
 | ID | Trigger | Evidence Required |
-|---|---|---|
+| --- | --- | --- |
 | T-05 | A planned feature requires real-time event access | A feature specification that cannot be implemented with post-hoc JSONL parsing |
 | T-06 | Token/cost tracking becomes a requirement | A budgeting or operational need that requires per-run token counts, not achievable through provider dashboards |
 | T-07 | Error handling inadequacy causes user-facing problems | Three or more incidents where the binary exit code produced a misleading error message that confused users |
@@ -44,7 +44,7 @@ These events indicate the subprocess approach is limiting GMI's capabilities. Th
 These conditions, on their own, do not justify migration:
 
 | Condition | Why It Is Not a Trigger |
-|---|---|
+| --- | --- |
 | "The SDK is cleaner" | Architectural preference is not a functional requirement |
 | "We should use the latest API" | Newness is not a benefit; stability is |
 | "Other projects use the SDK" | GMI's deployment context (headless, CI, non-interactive) differs from typical SDK consumers |
@@ -66,7 +66,7 @@ Record the specific event, the evidence, and the impact on GMI's functionality. 
 Before committing to the full SDK migration, evaluate whether the trigger can be addressed by a smaller change:
 
 | Trigger | Alternative Mitigation |
-|---|---|
+| --- | --- |
 | T-01, T-02 | Update the `jq` filter; add JSONL schema validation |
 | T-05 | Parse the existing JSONL file post-hoc for the specific event needed |
 | T-06 | Parse token usage from JSONL events without the full SDK |
@@ -80,7 +80,7 @@ If an alternative mitigation resolves the trigger with less effort and risk, pre
 If no alternative mitigation is sufficient, compare the migration cost against the cost of the workaround:
 
 | Factor | Migration | Workaround |
-|---|---|---|
+| --- | --- | --- |
 | Implementation effort | 4–8 hours (one-time) | Varies (per workaround) |
 | Ongoing maintenance | SDK version tracking | Workaround-specific maintenance |
 | Risk profile | See [risk-matrix.md](risk-matrix.md) | Lower (smaller change) |
@@ -91,7 +91,7 @@ If the accumulated workaround maintenance exceeds the one-time migration effort,
 ### Step 4: Decision
 
 | Outcome | Action |
-|---|---|
+| --- | --- |
 | Alternative mitigation resolves the trigger | Apply the mitigation; close the issue; do not migrate |
 | Migration is cost-effective | Proceed with the phased migration plan in [05-sdk-migration.md](../05-sdk-migration.md) |
 | Neither is clearly better | Defer for 30 days; re-evaluate if additional triggers accumulate |
@@ -103,7 +103,7 @@ If the accumulated workaround maintenance exceeds the one-time migration effort,
 If the decision is to proceed with migration, verify these prerequisites before starting:
 
 | # | Prerequisite | Status |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Pi-coding-agent SDK API is stable (no breaking changes in last 3 releases) | ☐ |
 | 2 | SDK documentation covers all features used by GMI (sessions, extensions, skills) | ☐ |
 | 3 | Local test environment can run the SDK with the same provider/model as production | ☐ |
@@ -120,7 +120,7 @@ If the decision is to proceed with migration, verify these prerequisites before 
 After migration, verify these conditions before removing the subprocess code:
 
 | # | Validation | Method |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Assistant text extraction matches subprocess output | Run both paths on 10+ issue comments; compare output |
 | 2 | Session files are compatible with existing mappings | Resume 3+ existing conversations; verify continuity |
 | 3 | Extensions load and register tools | Confirm `github_repo_context` tool appears in agent capabilities |

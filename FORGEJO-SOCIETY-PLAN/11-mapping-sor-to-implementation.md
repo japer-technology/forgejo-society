@@ -14,7 +14,7 @@ here, the mapping is out of date and must be updated.
 ## 00-foundations
 
 | SOR file | Implementation target |
-|---|---|
+| --- | --- |
 | `00-foundations/01-society-of-mind.md` | reference only — quoted in `.forgejo-society/README.md` and `protocols/identity.md` |
 | `00-foundations/02-cognitive-loop.md` | shape of the workflow; mapped step-by-step in `03-runtime-pipeline.md` |
 | `00-foundations/03-maturity-model.md` | reference; cited by `evolution/ecology-review.md` |
@@ -31,7 +31,7 @@ here, the mapping is out of date and must be updated.
 ## 01-governance
 
 | SOR file | Implementation target |
-|---|---|
+| --- | --- |
 | `01-governance/constitution.md` | `.forgejo-society/governance/constitution.md` |
 | `01-governance/authority-registry.md` | `.forgejo-society/governance/authority-registry.yml` |
 | `01-governance/approval-gate.md` | `.forgejo-society/governance/approval-gate.yml` and the `act` step |
@@ -46,7 +46,7 @@ here, the mapping is out of date and must be updated.
 ## 02-protocols
 
 | SOR file | Implementation target |
-|---|---|
+| --- | --- |
 | `02-protocols/01-identity.md` | `.forgejo-society/protocols/identity.md` + ID convention enforced by `schemas/manifest.schema.json` |
 | `02-protocols/02-constitution.md` | `.forgejo-society/protocols/constitution.md` (excerpt) + `governance/constitution.md` |
 | `02-protocols/03-events.md` | `.forgejo-society/protocols/events.md` + `normalize` step (Forgejo bridge) |
@@ -72,7 +72,7 @@ here, the mapping is out of date and must be updated.
 ## 03-agencies
 
 | SOR concept | Implementation target |
-|---|---|
+| --- | --- |
 | catalogue (perception/memory/code/safety/identity/integration/assembly/meta-admin) | `.forgejo-society/agencies/<family>/<name>.md` per `05-agencies-critics-censors.md` |
 | worker vs assembly vs meta-admin distinction | enforced by `agency:` and `kind:` fields in manifest schema |
 | forgejo-ops-steward | `.forgejo-society/agencies/meta-admin/forgejo-ops-steward.md` (Phase B) |
@@ -83,7 +83,7 @@ here, the mapping is out of date and must be updated.
 ## 04-critics
 
 | SOR critic | Implementation target |
-|---|---|
+| --- | --- |
 | evidence-critic | `.forgejo-society/critics/evidence-critic.md` |
 | scope-critic | `.forgejo-society/critics/scope-critic.md` |
 | cost-critic | `.forgejo-society/critics/cost-critic.md` |
@@ -100,7 +100,7 @@ All run in the `criticize` workflow step.
 ## 05-censors
 
 | SOR censor | Implementation target |
-|---|---|
+| --- | --- |
 | cloud-egress-censor | `.forgejo-society/censors/cloud-egress-censor.md` |
 | authority-censor | `.forgejo-society/censors/authority-censor.md` |
 | payment-censor | `.forgejo-society/censors/payment-censor.md` |
@@ -116,7 +116,7 @@ All run in the `criticize` workflow step.
 ## 06-memory
 
 | SOR memory class | Implementation target |
-|---|---|
+| --- | --- |
 | events/ | `.forgejo-society/memory/events/` (write: `normalize` + `act`) |
 | episodic/ | `.forgejo-society/memory/episodic/` (write: `archivist`) |
 | semantic/ | `.forgejo-society/memory/semantic/{decisions,preferences,project-laws}.log` |
@@ -136,7 +136,7 @@ All run in the `criticize` workflow step.
 ## 07-workspace
 
 | SOR workspace concept | Implementation target |
-|---|---|
+| --- | --- |
 | global-workspace/ | `.forgejo-society/workspace/global-workspace/<stimulus_id>.md` |
 | current-focus/ | `.forgejo-society/workspace/current-focus/current.md` |
 | active-settlements/ | `.forgejo-society/workspace/active-settlements/<settlement_id>.yml` |
@@ -148,7 +148,7 @@ All run in the `criticize` workflow step.
 ## 08-services
 
 | SOR concept | Implementation target |
-|---|---|
+| --- | --- |
 | services/README.md | `.forgejo-society/services/README.md` (stub for Phase A) |
 | individual service repos | `.forgejo-society/services/<service-id>/` (Phase C) |
 
@@ -157,7 +157,7 @@ All run in the `criticize` workflow step.
 ## 09-channels
 
 | SOR concept | Implementation target |
-|---|---|
+| --- | --- |
 | channels/README.md | `.forgejo-society/channels/README.md` (stub) |
 | reciprocal-agreement.example.md | `.forgejo-society/channels/<peer>/reciprocal-agreement.md` (Phase C) |
 | inter-society call model | `FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md` (incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`) |
@@ -167,7 +167,7 @@ All run in the `criticize` workflow step.
 ## 10-evolution
 
 | SOR concept | Implementation target |
-|---|---|
+| --- | --- |
 | reinforcement-log.md | `.forgejo-society/evolution/reinforcement-log.md` (write: `credit-assignment.ts`) |
 | retirement-log.md | `.forgejo-society/evolution/retirement-log.md` (write: `meta-admin.retirement-broker`) |
 | ecology review | `.forgejo-society/evolution/ecology-review.md` + scheduled cron pass |
@@ -180,7 +180,7 @@ All run in the `criticize` workflow step.
 Concepts from `possibility-2.md` that are not in `THE-SOCIETY-OF-REPO/`:
 
 | possibility-2 concept | Implementation target |
-|---|---|
+| --- | --- |
 | signals as the unit of internal communication | `schemas/signal.schema.json` + `state/.../signals.jsonl` |
 | polynemes | `.forgejo-society/nemes/{path,label,phrase}-polynemes.yml` + `symbols.yml` |
 | frames as repo-native expectations | `.forgejo-society/frames/*.frame.yml` + `schemas/frame.schema.json` |

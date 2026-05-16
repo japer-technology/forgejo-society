@@ -108,7 +108,7 @@ pkg/identity/
 ### 1.3 Key Design Principles
 
 | Principle | Description |
-|-----------|-------------|
+| --- | --- |
 | **Sub-package Isolation** | Each channel is a standalone Go sub-package, depending on `BaseChannel` and interfaces from the `channels` parent package |
 | **Factory Registration** | Sub-packages self-register via `init()`, Manager looks up factories by name, eliminating import coupling |
 | **Capability Discovery** | Optional capabilities are declared via interfaces (`MediaSender`, `TypingCapable`, `ReactionCapable`, `PlaceholderCapable`, `MessageEditor`, `WebhookHandler`, `HealthChecker`), discovered by Manager via runtime type assertions |
@@ -135,7 +135,7 @@ After refactoring, these files have been removed and code moved to corresponding
 #### Step 2: Understand the structural change mapping
 
 | main branch file | Refactored branch location | Changes |
-|---|---|---|
+| --- | --- | --- |
 | `pkg/channels/telegram.go` | `pkg/channels/telegram/telegram.go` + `init.go` | Package name changed from `channels` to `telegram` |
 | `pkg/channels/discord.go` | `pkg/channels/discord/discord.go` + `init.go` | Same as above |
 | `pkg/channels/manager.go` | `pkg/channels/manager.go` | Extensively rewritten |
@@ -381,7 +381,7 @@ if !c.IsAllowed(senderID) { return }
 The Manager has been completely rewritten. Your modifications will need to account for the new architecture:
 
 | Old Manager Responsibility | New Manager Responsibility |
-|---|---|
+| --- | --- |
 | Directly construct channels (switch/if-else) | Look up and construct via factory registry |
 | Directly call channel.Send | Per-channel Worker queues + rate limiting + retries |
 | No message splitting | Automatic splitting based on MaxMessageLength |
@@ -837,7 +837,7 @@ type MessageBus struct {
 **Key Behaviors**:
 
 | Method | Behavior |
-|--------|----------|
+| --- | --- |
 | `PublishInbound(ctx, msg)` | Check closed → send to inbound channel → block/timeout/close |
 | `ConsumeInbound(ctx)` | Read from inbound → block/close/cancel |
 | `PublishOutbound(ctx, msg)` | Send to outbound channel |
@@ -917,7 +917,7 @@ type MediaPart struct {
 BaseChannel is the shared abstraction layer for all channels, providing the following capabilities:
 
 | Method/Feature | Description |
-|---|---|
+| --- | --- |
 | `Name() string` | Channel name |
 | `IsRunning() bool` | Atomically read running state |
 | `SetRunning(bool)` | Atomically set running state |
@@ -1151,7 +1151,7 @@ func MatchAllowed(sender bus.SenderInfo, allowed string) bool
 
 `MatchAllowed` supported allow-list formats:
 | Format | Matching |
-|--------|----------|
+| --- | --- |
 | `"123456"` | Matches `sender.PlatformID` |
 | `"@alice"` | Matches `sender.Username` |
 | `"123456\|alice"` | Matches PlatformID or Username (legacy format compatibility) |
@@ -1229,7 +1229,7 @@ make test                                       # Full test suite
 ### A.1 Framework Layer Files
 
 | File | Responsibility |
-|------|---------------|
+| --- | --- |
 | `pkg/channels/base.go` | BaseChannel struct, Channel interface, MessageLengthProvider, BaseChannelOption, HandleMessage |
 | `pkg/channels/interfaces.go` | TypingCapable, MessageEditor, ReactionCapable, PlaceholderCapable, PlaceholderRecorder interfaces |
 | `pkg/channels/media.go` | MediaSender interface |
@@ -1247,7 +1247,7 @@ make test                                       # Full test suite
 ### A.2 Channel Sub-packages
 
 | Sub-package | Registered Name | Optional Interfaces |
-|-------------|----------------|-------------------|
+| --- | --- | --- |
 | `pkg/channels/telegram/` | `"telegram"` | TypingCapable, PlaceholderCapable, MessageEditor, MediaSender |
 | `pkg/channels/discord/` | `"discord"` | TypingCapable, PlaceholderCapable, MessageEditor, MediaSender |
 | `pkg/channels/slack/` | `"slack"` | ReactionCapable, MediaSender |
@@ -1358,7 +1358,7 @@ agentLoop.Stop()               // Stop Agent
 ### A.5 Per-channel Rate Limit Reference
 
 | Channel | Rate (msg/s) | Burst |
-|---------|-------------|-------|
+| --- | --- | --- |
 | telegram | 20 | 10 |
 | discord | 1 | 1 |
 | slack | 1 | 1 |

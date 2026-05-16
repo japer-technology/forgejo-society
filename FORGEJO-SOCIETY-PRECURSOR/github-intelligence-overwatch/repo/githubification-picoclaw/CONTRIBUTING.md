@@ -130,7 +130,7 @@ PicoClaw was built with substantial AI assistance, and we fully embrace AI-assis
 Every PR must disclose AI involvement using the PR template's **🤖 AI Code Generation** section. There are three levels:
 
 | Level | Description |
-|---|---|
+| --- | --- |
 | 🤖 Fully AI-generated | AI wrote the code; contributor reviewed and validated it |
 | 🛠️ Mostly AI-generated | AI produced the draft; contributor made significant modifications |
 | 👨‍💻 Mostly Human-written | Contributor led; AI provided suggestions or none at all |
@@ -266,19 +266,19 @@ Be constructive and specific. "This could have a race condition if two goroutine
 ### Reviewer List
 Once your PR is submitted, you can reach out to the assigned reviewers listed in the following table.
 
-|Function| Reviewer|
-|---     |---      |
-|Provider|@yinwm   |
-|Channel |@yinwm/@alexhoshina   |
-|Agent   |@lxowalle/@Zhaoyikaiii|
-|Tools   |@lxowalle|
-|SKill   ||
-|MCP     ||
-|Optimization|@lxowalle|
-|Security||
-|AI CI   |@imguoguo|
-|UX      ||
-|Document||
+| Function | Reviewer |
+| --- | --- |
+| Provider | @yinwm |
+| Channel | @yinwm/@alexhoshina |
+| Agent | @lxowalle/@Zhaoyikaiii |
+| Tools | @lxowalle |
+| SKill |  |
+| MCP |  |
+| Optimization | @lxowalle |
+| Security |  |
+| AI CI | @imguoguo |
+| UX |  |
+| Document |  |
 
 ---
 

@@ -18,7 +18,7 @@ active-settlements/
 ## Settlement states in this repo
 
 | State | Meaning |
-|---|---|
+| --- | --- |
 | `forming` | Proposals being submitted; criticism and censorship in progress |
 | `pending_approval` | Settlement formed; waiting for human approval |
 | `authorised` | Approved and ready for execution |

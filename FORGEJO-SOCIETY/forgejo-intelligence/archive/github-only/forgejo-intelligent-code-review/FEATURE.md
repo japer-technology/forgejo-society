@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Review Submitted | `pull_request_review.submitted` | Review Lifecycle |
 | 2 | Review Dismissed | `pull_request_review.dismissed` | Review Lifecycle |
 | 3 | Approval Threshold Reached | `pull_request_review.submitted` (approved, threshold met) | Review Lifecycle |

@@ -68,7 +68,7 @@ Resolution is by settlement, not by averaging. Implicit blending of self-models 
 ## Update rules
 
 | Change | Required process |
-|---|---|
+| --- | --- |
 | Update `confidence`, `last_reviewed`, blind-spot list | Authoring B-brain agency may update; logged as ordinary observation |
 | Add or supersede a self-model entry | Governance PR with stated rationale |
 | Promote a narrative to non-narrative status | Forbidden — narratives stay narratives; supersede with a non-narrative entry instead |
@@ -90,8 +90,8 @@ The `evaluation-steward` and `ecology-monitor` open a self-model drift review wh
 
 ## Relation to self-ideals
 
-| | Self-models | Self-ideals |
-|---|---|---|
+|  | Self-models | Self-ideals |
+| --- | --- | --- |
 | Question answered | "What do I think I am?" | "What do I think I should be?" |
 | Speed of change | Updated frequently | Updated very rarely (multi-cycle review) |
 | Allowed in evidence? | Yes for non-narratives, no for narratives | Yes — ideals are cited in major proposals |

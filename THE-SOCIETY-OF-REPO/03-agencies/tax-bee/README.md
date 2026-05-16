@@ -51,7 +51,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `missed_deadline_rate` | % of deadlines not flagged with sufficient lead time |
 | `false_alarm_rate` | % of flagged anomalies that were not real concerns |
 | `owner_usefulness_score` | Owner-reported usefulness rating (1–5) |

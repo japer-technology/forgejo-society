@@ -27,7 +27,7 @@ While `DELETE-TO-ACTIVATE.md` exists in the repository, **all operations are for
 Each emergency protocol is gated behind its own trigger file:
 
 | Trigger file | Protocol |
-|---|---|
+| --- | --- |
 | `DELETE-TO-DISABLE-ALL-INTELLIGENCES.md` | 🔒 Disable — moves workflows to `workflows-DISABLED/` (reversible) |
 | `DELETE-TO-KILL-ALL-INTELLIGENCES.md` | ☠️ Kill — deletes workflows and intelligence folders (irreversible) |
 

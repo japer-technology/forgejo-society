@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **Environments** | Reads named deployment targets (`staging`, `production`) with their protection rules and secrets |
 | **Required reviewers** | Monitors environment approval requirements before deployment proceeds |
 | **Deployment status** | Tracks deployment state — pending, in-progress, success, failure — via the Deployments API |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Staged agent rollout** | Uses environments to gate agent capability upgrades — test new skills in `staging` before `production` |
 | **Deployment tracking** | When the agent creates or approves a release, tracks the deployment through environments |
 | **Approval-gated operations** | Destructive agent actions (file deletion, release publishing) require environment approval from reviewers |

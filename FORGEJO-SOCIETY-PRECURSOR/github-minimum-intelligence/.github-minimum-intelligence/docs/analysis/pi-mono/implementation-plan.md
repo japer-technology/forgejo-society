@@ -11,7 +11,7 @@ This document outlines the implementation plan for features identified in [pi-mo
 The original feature utilization audit identified 9 feature categories. Seven were already in use at the time of the audit, and two more (P0) have since been implemented:
 
 | Feature | Priority | Status |
-|---|---|---|
+| --- | --- | --- |
 | CLI Invocation (`--mode json`) | — | ✅ In use |
 | Session Management (`--session-dir`, `--session`) | — | ✅ In use |
 | Settings (`.pi/settings.json`) | — | ✅ In use |
@@ -27,7 +27,7 @@ The original feature utilization audit identified 9 feature categories. Seven we
 ### 1.2 Unimplemented Features (from original audit)
 
 | Feature | Original Priority | Status |
-|---|---|---|
+| --- | --- | --- |
 | Pi Packages / pi-skills (web search) | P2 | ❌ Not implemented |
 | SDK Migration | P3 | ❌ Not implemented |
 | Web UI Integration | P3 | ❌ Not implemented |
@@ -39,7 +39,7 @@ The original feature utilization audit identified 9 feature categories. Seven we
 A review of the current pi-mono coding agent README and settings documentation reveals additional capabilities not covered in the original audit:
 
 | Feature | Category | Description |
-|---|---|---|
+| --- | --- | --- |
 | Additional built-in tools | CLI | `grep`, `find`, `ls` tools beyond the default `read,bash,edit,write` |
 | Thinking budgets | Settings | Custom token budgets per thinking level (`thinkingBudgets`) |
 | Shell command prefix | Settings | `shellCommandPrefix` for every bash command |
@@ -64,7 +64,7 @@ A review of the current pi-mono coding agent README and settings documentation r
 Incorporating both the original audit items and newly discovered features, prioritised for a headless GitHub Actions deployment:
 
 | Feature | Effort | Impact | Priority | Plan |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Additional built-in tools (`grep`, `find`, `ls`) | Low | High | **P1** | [01-additional-tools.md](01-additional-tools.md) |
 | Pi Skills — brave-search | Medium | High | **P1** | [02-pi-skills-web-search.md](02-pi-skills-web-search.md) |
 | Extension suite (permission gates, path protection) | Medium | High | **P2** | [03-extension-enhancements.md](03-extension-enhancements.md) |
@@ -105,7 +105,7 @@ Incorporating both the original audit items and newly discovered features, prior
 Each feature has a dedicated implementation plan document in this directory:
 
 | Document | Feature | Priority |
-|---|---|---|
+| --- | --- | --- |
 | [01-additional-tools.md](01-additional-tools.md) | Enable `grep`, `find`, `ls` built-in tools | P1 |
 | [02-pi-skills-web-search.md](02-pi-skills-web-search.md) | Install brave-search skill for web research | P1 |
 | [03-extension-enhancements.md](03-extension-enhancements.md) | Permission gates, path protection, metadata | P2 |
@@ -136,7 +136,7 @@ Pi supports JSON-RPC mode over stdin/stdout for non-Node.js integrations. Since 
 ## 6. Dependencies and Prerequisites
 
 | Feature | Prerequisites |
-|---|---|
+| --- | --- |
 | Additional tools | None (configuration-only) |
 | Pi Skills — brave-search | `BRAVE_API_KEY` secret, `npm install` in skill directory |
 | Extension enhancements | None (uses existing extension infrastructure) |
@@ -149,7 +149,7 @@ Pi supports JSON-RPC mode over stdin/stdout for non-Node.js integrations. Since 
 ## 7. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Additional tools increase attack surface | Low | Medium | Tools are read-only (`grep`, `find`, `ls`); no write capability |
 | brave-search API key exposure | Low | High | Use GitHub encrypted secrets; never log the key |
 | Permission gate false positives | Medium | Low | Start with conservative allowlist; tune based on agent behavior |
@@ -161,7 +161,7 @@ Pi supports JSON-RPC mode over stdin/stdout for non-Node.js integrations. Since 
 ## 8. Success Criteria
 
 | Feature | Metric |
-|---|---|
+| --- | --- |
 | Additional tools | Agent successfully uses `grep`/`find`/`ls` tools instead of bash equivalents |
 | brave-search | Agent can answer questions requiring current web information |
 | Extension enhancements | Dangerous operations are blocked; sensitive files are protected |

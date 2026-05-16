@@ -260,13 +260,13 @@ Phase `activate` computes a tuple
 over the perceived stimulus `σ`, where:
 
 | Symbol | Definition | Domain |
-|---|---|---|
-| `φ*`   | selected frame                              | `Φ(s) ∪ {NOVEL}` |
-| `K*`   | activated K-line set                        | `2^{K(s)}` |
-| `λ_a`  | activation weights, agency → ℝ              | `A(s) → [0,1]` |
-| `λ_i`  | soft inhibition deltas                      | `A(s) → [-1, 0]` |
-| `λ_s`  | suppressed agencies (hard exclude)          | `2^{A(s)}` |
-| `B`    | budget vector                               | ℕ⁵ |
+| --- | --- | --- |
+| `φ*` | selected frame | `Φ(s) ∪ {NOVEL}` |
+| `K*` | activated K-line set | `2^{K(s)}` |
+| `λ_a` | activation weights, agency → ℝ | `A(s) → [0,1]` |
+| `λ_i` | soft inhibition deltas | `A(s) → [-1, 0]` |
+| `λ_s` | suppressed agencies (hard exclude) | `2^{A(s)}` |
+| `B` | budget vector | ℕ⁵ |
 
 The algorithm
 ([`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`](../../THE-SOCIETY-OF-REPO/02-protocols/04-activation.md)
@@ -343,7 +343,7 @@ The protocol exposes exactly two primitive operations:
 Let `Q` denote the query space (a stimulus, signature, or key pattern).
 
 | Op | Signature | Cost class | Failure mode |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `recognize` | `Q → ℝ` | O(log N) index lookup | returns `0` if key absent |
 | `reconstruct` | `Q × Frame → PartialState` | O(N) replay over linked episodes | returns partial state, possibly with `unknown` slots |
 
@@ -439,7 +439,7 @@ Window ordering invariant:
 ### 7.3 Failure-mode matrix
 
 | Condition | Resulting outcome |
-|---|---|
+| --- | --- |
 | Required critic absent at window close | `failed_closed`; failure memory entry; B-brain alerted |
 | Required censor absent at window close | `failed_closed_unconditional`; no override exists |
 | Optional critic absent | `proceed`; objection recorded as `unavailable` with `recheck_required` |
@@ -648,7 +648,7 @@ state where one of them evaluates `false` is, by definition, a protocol
 violation:
 
 | # | Invariant |
-|---|---|
+| --- | --- |
 | I1 | `ENABLED(s, t) = false ⇒ no_writes_outside_state_runs(s, t)` |
 | I2 | `∀ write w ∈ T_memory : w.phase ∈ {settle, remember}` |
 | I3 | `∀ a ∈ A(s), ∀ x ∈ candidate_actions(a) : LEVEL_OK(a, x)` |

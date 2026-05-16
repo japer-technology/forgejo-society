@@ -224,7 +224,7 @@ runtime:
 ### Failure modes
 
 | Situation | Defined behaviour |
-|---|---|
+| --- | --- |
 | A required critic is offline at window close | Settlement **fails closed**: no action authorised. Failure memory entry created. The B-brain layer is alerted. |
 | A required censor is offline at window close | Settlement **fails closed unconditionally**. There is no override path. |
 | An optional critic is offline | Settlement may proceed; the missing critic is recorded in `objections` as `unavailable` with a `recheck_required` flag. |

@@ -13,7 +13,7 @@ Every section is self-contained. Jump directly to the section you need.
 ## Quick reference — which section do I need?
 
 | Situation | Go to |
-|-----------|-------|
+| --- | --- |
 | System feels sluggish / disk is filling up | [§1 System cleanup](#1--system-cleanup-and-update) |
 | Packages are out of date | [§2 System update](#2--system-update) |
 | UFW firewall is broken or misconfigured | [§3 UFW reset](#3--reset-ufw-firewall) |
@@ -703,7 +703,7 @@ sudo tail -30 /var/log/ufw.log
 ## Related guides
 
 | Guide | What it covers |
-|-------|---------------|
+| --- | --- |
 | [Ubuntu Quick Start](ubuntu.md) | Fresh install from bare metal |
 | [UFW Firewall](../install/02-ufw-firewall.md) | Full UFW documentation and advanced rules |
 | [fail2ban](../install/03-fail2ban.md) | Full fail2ban documentation including Forgejo HTTP jail |

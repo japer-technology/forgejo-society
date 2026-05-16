@@ -414,7 +414,7 @@ disciplined.
 ## 4. Per-policy summary
 
 | Policy clause / risk | Triggering files | Why |
-|---|---|---|
+| --- | --- | --- |
 | Codeberg "What Codeberg is not" — *CI is for SDLC of FOSS hosted on Codeberg* | All `run-agent` jobs under `FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/` | Runner is doing AI inference / chatbot, not building/testing the repo |
 | Codeberg ToU — *no excessive automated bulk activity* | All `run-agent` jobs; emergency-kill | Per-comment runner spawns; mass cross-repo deletes |
 | Codeberg ToU — *no interfering with other users* | `forgejo-intelligence-emergency-trigger-kill.yml` (deferred) | Deletes workflows in other repos owned by the account |

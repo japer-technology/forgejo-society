@@ -58,7 +58,7 @@ EOF
 **Parameter explanations:**
 
 | Parameter | Value | Meaning |
-|-----------|-------|---------|
+| --- | --- | --- |
 | `enabled` | `true` | Activate this jail |
 | `port` | `ssh` | Monitor the SSH port (22) |
 | `filter` | `sshd` | Use the built-in sshd filter pattern |

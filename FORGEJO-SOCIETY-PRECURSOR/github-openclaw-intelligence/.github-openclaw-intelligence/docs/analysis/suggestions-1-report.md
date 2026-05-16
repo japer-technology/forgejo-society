@@ -177,7 +177,7 @@ The current retry loop is not "over-engineered" — it's a robustness measure ap
 Based on the analysis above, here is a revised priority ordering:
 
 | Priority | Suggestion | Effort | Impact | Depends On | Status |
-|----------|-----------|--------|--------|------------|--------|
+| --- | --- | --- | --- | --- | --- |
 | **Done** | #1 Native Session Management | — | — | — | ✅ Already implemented |
 | **Done** | #5 Enable Bundled Skills | — | — | — | ✅ Already implemented |
 | **Done** | #8 AGENTS.md Infrastructure | — | — | — | ✅ Infrastructure ready |
@@ -265,7 +265,7 @@ These should be considered alongside the suggestions-1.md items when planning im
 All factual claims in this report have been verified against the live codebase. The verification covered:
 
 | Claim Category | Verification Method | Result |
-|---|---|---|
+| --- | --- | --- |
 | Session management implementation | Inspected `agent.ts` session-mapping logic and `OPENCLAW_STATE_DIR` usage | ✅ Confirmed |
 | `linkBundledSkills()` implementation | Inspected function definition and symlink logic in `agent.ts` | ✅ Confirmed |
 | `generateSoulFromAgentsMd()` bridge | Inspected SOUL generation and default-template detection in `agent.ts` | ✅ Confirmed |

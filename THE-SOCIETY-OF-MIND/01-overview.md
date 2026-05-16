@@ -38,7 +38,7 @@ is a **society**.
 Before Minsky, the dominant pictures of mind were:
 
 | Picture | What it claimed | What it left out |
-|---|---|---|
+| --- | --- | --- |
 | The unified rational agent | A single mind reasons over a single world model | How the mind is built, how it grows, how it fails |
 | Symbolic AI as logic engine | Intelligence is logical inference over formal facts | Defaults, analogy, common sense, frames, embodiment |
 | Connectionism alone | Intelligence is weighted activation in networks | Discrete structure, hierarchical control, explanation |
@@ -140,7 +140,7 @@ what they refuse to combine.
 It is important to be honest about scope.
 
 | Not | Because |
-|---|---|
+| --- | --- |
 | A formal theory | Minsky deliberately writes essays, not equations. The few formalisms (K-lines, frames, transframes) are sketched, not proved. |
 | A learning algorithm | The book describes *what* must be learned and *what* must be inhibited, but not a single training procedure. The 1988 ONR report is the closest thing to a learning programme, and it is a research agenda, not a method. |
 | A complete cognitive architecture | Many constructs (level-bands, paranomes, time-blinks) are gestured at and never fully specified. |

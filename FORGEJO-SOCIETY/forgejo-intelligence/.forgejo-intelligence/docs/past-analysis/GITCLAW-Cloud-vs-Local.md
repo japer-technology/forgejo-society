@@ -63,7 +63,7 @@ Both modes use the same underlying agent engine (pi), the same configuration (`.
 ### Conversation Flow
 
 | Aspect | Cloud (GitHub Actions) | Local (pi CLI) |
-|--------|----------------------|----------------|
+| --- | --- | --- |
 | **Start a conversation** | Open a GitHub issue | Run `pi` in the terminal |
 | **Continue a conversation** | Comment on the same issue | Continue typing in the same session, or resume with `--session` |
 | **Wait for a response** | 30–120+ seconds (Actions cold-start + LLM inference) | Seconds (LLM inference only, no CI overhead) |
@@ -92,7 +92,7 @@ In **Local** mode, the agent process stays alive for the entire conversation. Co
 The entire UI is GitHub itself:
 
 | Surface | Role |
-|---------|------|
+| --- | --- |
 | **Issue title** | Conversation topic / initial prompt |
 | **Issue body** | Detailed context, code snippets, images |
 | **Issue comments** | Turn-by-turn conversation (user messages and agent responses) |
@@ -113,7 +113,7 @@ The UI is inherently **collaborative** — multiple users can see, comment on, a
 The UI is a full terminal TUI (text user interface):
 
 | Surface | Role |
-|---------|------|
+| --- | --- |
 | **Text input** | Type prompts directly, with editor support for multi-line input |
 | **Streaming output** | Token-by-token response rendering in real time |
 | **Tool call display** | See exactly what the agent is doing (file reads, writes, bash commands) |
@@ -128,7 +128,7 @@ The local UI provides **deeper visibility** into what the agent is doing. You se
 ### Visibility Comparison
 
 | What You See | Cloud | Local |
-|-------------|-------|-------|
+| --- | --- | --- |
 | Agent's final text response | ✅ (issue comment) | ✅ (terminal output) |
 | Agent's tool calls (file edits, bash commands) | ❌ (hidden in Actions logs) | ✅ (displayed in real time) |
 | Agent's reasoning / thinking | ❌ | ✅ (visible with thinking-level config) |
@@ -143,7 +143,7 @@ The local UI provides **deeper visibility** into what the agent is doing. You se
 ### State Storage
 
 | Aspect | Cloud | Local |
-|--------|-------|-------|
+| --- | --- | --- |
 | **Session format** | JSONL files in `state/sessions/` | JSONL files (default: `~/.pi/sessions/` or `--session-dir`) |
 | **Session persistence** | Committed to git after every turn | Local filesystem; committed only if user runs `git add` |
 | **Issue mapping** | `state/issues/<n>.json` links issue # → session | Not applicable (no issue system) |
@@ -172,7 +172,7 @@ The local UI provides **deeper visibility** into what the agent is doing. You se
 Both modes run the same pi engine with the same tool set:
 
 | Capability | Cloud | Local |
-|-----------|-------|-------|
+| --- | --- | --- |
 | **Read files** | ✅ (entire checked-out repo) | ✅ (entire local filesystem) |
 | **Write/edit files** | ✅ (committed and pushed after each turn) | ✅ (written immediately to disk) |
 | **Run bash commands** | ✅ (in the Actions runner environment) | ✅ (in the user's local environment) |
@@ -208,7 +208,7 @@ Both modes run the same pi engine with the same tool set:
 ## 6. Security Model
 
 | Aspect | Cloud | Local |
-|--------|-------|-------|
+| --- | --- | --- |
 | **Who can trigger the agent** | Repo owners, members, and collaborators only | Anyone with local access to the machine |
 | **Kill switch** | `GITCLAW-ENABLED.md` sentinel file (fail-closed) | N/A — user controls execution directly |
 | **API key storage** | GitHub Secrets (encrypted, never logged) | Environment variable or local config file |
@@ -227,7 +227,7 @@ Both modes run the same pi engine with the same tool set:
 ## 7. Performance & Latency
 
 | Metric | Cloud | Local |
-|--------|-------|-------|
+| --- | --- | --- |
 | **Time to first response** | 30–120+ seconds | 2–15 seconds |
 | **Cold-start overhead** | Actions runner boot + checkout + `bun install` | None (pi binary is already installed) |
 | **LLM inference latency** | Same as local (same provider, same model) | Same as cloud |
@@ -244,7 +244,7 @@ For long-running agent tasks (complex code generation, multi-file refactoring), 
 ## 8. Cost
 
 | Factor | Cloud | Local |
-|--------|-------|-------|
+| --- | --- | --- |
 | **Compute** | GitHub Actions minutes (free tier: 2,000 min/month for private repos; unlimited for public) | User's local machine (free) |
 | **LLM API** | Billed per token to your provider account | Same — billed per token to your provider account |
 | **Storage** | Git repo size (session files accumulate) | Local disk (same session files, but not shared) |
@@ -324,7 +324,7 @@ The most effective workflow combines both modes:
 ## 11. Comparison Matrix
 
 | Dimension | Cloud (GitHub Actions) | Local (pi CLI) |
-|-----------|----------------------|----------------|
+| --- | --- | --- |
 | **Interface** | GitHub Issues (web/mobile/email) | Terminal TUI |
 | **Interaction mode** | Asynchronous | Synchronous |
 | **Response speed** | 30–120+ seconds | 2–15 seconds |

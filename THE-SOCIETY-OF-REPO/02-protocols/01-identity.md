@@ -19,7 +19,7 @@ All IDs use dot-separated hierarchical namespaces in lowercase with hyphens for 
 ## Scopes
 
 | Scope | Description | Example |
-|---|---|---|
+| --- | --- | --- |
 | `sor` | A Society of Repo | `sor.forgejo-society` |
 | `agency` | A worker agency | `agency.contract-bee` |
 | `critic` | A critic repo | `critic.evidence` |

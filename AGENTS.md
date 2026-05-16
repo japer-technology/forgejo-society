@@ -38,7 +38,7 @@ slugs, IDs, file paths, and URLs only.
 Top-level directories you will encounter, with what belongs in each:
 
 | Path | What it holds |
-|---|---|
+| --- | --- |
 | `README.md`, `WARNING.md` | Entry points. `WARNING.md` is mandatory reading before suggesting anything runtime-related. |
 | `forgejo-compliance.md`, `forgejo-warning.md`, `github-compliance.md`, `github-warning.md` | The four-document compliance set referenced from `WARNING.md`. Do not contradict these. |
 | `THE-SOCIETY-OF-REPO/` | The canonical specification. Source of truth for vocabulary, identity, governance, protocols, agencies, critics, censors, memory, workspace, services, channels, evolution. |

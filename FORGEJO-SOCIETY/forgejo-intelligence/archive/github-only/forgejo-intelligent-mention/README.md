@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **@mentions in issues** | Detects when the agent is @mentioned in issue comments |
 | **@mentions in PRs** | Detects when the agent is @mentioned in pull request comments or review threads |
 | **@mentions in discussions** | Detects when the agent is @mentioned in discussion replies |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Cross-surface responses** | Responds when @mentioned in any context — issues, PRs, discussions, or commit comments |
 | **On-demand invocation** | Users @mention the agent to explicitly request analysis, review, or assistance in any thread |
 | **Escalation routing** | When the agent detects high-priority issues, it @mentions the appropriate team or individual |

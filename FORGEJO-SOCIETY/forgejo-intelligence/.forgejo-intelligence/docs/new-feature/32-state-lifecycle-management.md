@@ -15,7 +15,7 @@ After **3 days** of usage, this repository has:
 Projected growth:
 
 | Period | Sessions | State Size | Git Pack Size |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 3 days (now) | 21 | 2.9 MB | 1.5 MB |
 | 1 month | ~200 | ~30 MB | ~20 MB |
 | 6 months | ~1,200 | ~180 MB | ~150 MB |
@@ -63,7 +63,7 @@ The repo's `.gitattributes` (checked during investigation) already has export-ig
 ### 6. It Composes With Every State-Producing Feature
 
 | Feature | State Lifecycle Impact |
-|---|---|
+| --- | --- |
 | **Session Compression (31)** | Compress before archiving for maximum space savings |
 | **Knowledge Base (17)** | Extract knowledge before archiving (don't lose insights) |
 | **Cross-Issue Context (08)** | Archive index enables search across archived sessions |
@@ -93,7 +93,7 @@ The repo's `.gitattributes` (checked during investigation) already has export-ig
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Lifecycle state detector** | Determine each session's lifecycle state | ~1.5 hours |
 | **Dormancy analyzer** | Check issue status and last activity | ~1 hour |
 | **Archive branch manager** | Create/maintain `gitclaw/archive`, move files | ~2 hours |

@@ -74,7 +74,7 @@ By default, environment variables like `LLM_API_KEY`, `LLM_MODEL`, and `LLM_BASE
 | [IDE Integration](https://docs.openhands.dev/openhands/usage/cli/ide/overview) | `openhands acp` | IDEs (Toad, Zed, VSCode, JetBrains, etc) |
 | [Headless](https://docs.openhands.dev/openhands/usage/cli/headless) | `openhands --headless -t "task"` | CI, scripts, and automation |
 | [Web Interface](https://docs.openhands.dev/openhands/usage/cli/web-interface) | `openhands web` | Browser-based TUI |
-| [GUI Server](https://docs.openhands.dev/openhands/usage/cli/gui-server) | `openhands serve` | [Full web GUI](https://github.com/OpenHands/OpenHands)|
+| [GUI Server](https://docs.openhands.dev/openhands/usage/cli/gui-server) | `openhands serve` | [Full web GUI](https://github.com/OpenHands/OpenHands) |
 
 ## Features
 

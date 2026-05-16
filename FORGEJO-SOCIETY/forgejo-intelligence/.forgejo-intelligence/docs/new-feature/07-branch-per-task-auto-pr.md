@@ -50,7 +50,7 @@ The agent does the work. A human reviews and merges. This is the "human-in-the-l
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Change detection** | After `pi` runs, diff `.GITCLAW/` changes vs other changes | ~1 hour |
 | **Branch creation & PR opening** | `git checkout -b`, selective `git add`, `gh pr create` | ~2 hours |
 | **Split commit logic** | Two commits: state to default branch, code to feature branch | ~2 hours |

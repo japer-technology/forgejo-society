@@ -24,7 +24,7 @@ This document analyzes the integration gaps between three nullclaw ecosystem pro
 ### Project Roles
 
 | Component | Responsibility | Key Files |
-|-----------|---------------|-----------|
+| --- | --- | --- |
 | **nulltickets** | Durable task state, FSM transitions, lease coordination | `src/api.zig`, `src/store.zig`, `src/domain.zig` |
 | **nullboiler** | DAG scheduling, worker dispatch, step orchestration | `src/engine.zig`, `src/dispatch.zig`, `src/callbacks.zig` |
 | **nullclaw** | AI agent runtime, tool execution, Telegram integration | `src/agent/root.zig`, `src/gateway.zig`, `src/session.zig` |
@@ -447,7 +447,7 @@ User sees:
 ## Files Modified
 
 | Project | File | Changes |
-|---------|------|---------|
+| --- | --- | --- |
 | nullclaw | `src/gateway.zig` | Add 3 new endpoints: /api/worker, /api/send, /api/callback |
 | nullclaw | `src/config.zig` | Add nullboiler config struct |
 | nullclaw | `src/daemon.zig` | Add self-registration startup hook |
@@ -481,7 +481,7 @@ User sees:
 ## Version History
 
 | Date | Author | Changes |
-|------|--------|---------|
+| --- | --- | --- |
 | 2026-03-13 | @vedmalex | Initial gap analysis based on codebase exploration |
 
 ---

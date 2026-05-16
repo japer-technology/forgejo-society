@@ -141,7 +141,7 @@ PR 描述至少写清楚：
 ## 代码结构（高频目录）
 
 | 路径 | 说明 |
-|---|---|
+| --- | --- |
 | `src/main.zig` | CLI 命令路由 |
 | `src/config.zig` | 配置加载与环境覆盖 |
 | `src/gateway.zig` | 网关与 webhook |

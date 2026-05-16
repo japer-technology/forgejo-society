@@ -38,7 +38,7 @@ https://github.com/settings/apps/new
 ### 1.2 Fill in Basic Information
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | **GitHub App name** | `gitclaw` |
 | **Description** | `AI agent that runs entirely through GitHub Issues and Actions. One-click install into any repository.` |
 | **Homepage URL** | `https://github.com/japer-technology/gitclaw` |
@@ -46,7 +46,7 @@ https://github.com/settings/apps/new
 ### 1.3 Configure the Callback and Webhook URLs
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | **Webhook URL** | `https://<your-backend-domain>/api/webhook` (the endpoint your backend will listen on) |
 | **Webhook secret** | Generate a strong random secret (save it — you will need it for your backend) |
 
@@ -61,7 +61,7 @@ openssl rand -hex 32
 Under **Repository permissions**, configure the following:
 
 | Permission | Access | Purpose |
-|------------|--------|---------|
+| --- | --- | --- |
 | **Contents** | Read & Write | Commit `.GITCLAW/` files and workflow definitions |
 | **Pull requests** | Read & Write | Open bootstrap and update PRs |
 | **Workflows** | Read & Write | Commit workflow YAML files to `.github/workflows/` |
@@ -75,7 +75,7 @@ Under **Repository permissions**, configure the following:
 Under **Subscribe to events**, check the following:
 
 | Event | Purpose |
-|-------|---------|
+| --- | --- |
 | **Installation** | Triggered when the app is installed — initiates repository setup |
 | **Installation repositories** | Triggered when repos are added to or removed from an existing installation |
 | **Push** *(optional)* | Monitor for manual changes to `.GITCLAW/` files |
@@ -93,7 +93,7 @@ Under **Where can this GitHub App be installed?**, choose:
 Click **Create GitHub App**. After creation, note the following values from the app's settings page — you will need them for your backend:
 
 | Value | Where to Find It |
-|-------|-------------------|
+| --- | --- |
 | **App ID** | Settings → General (shown at the top) |
 | **Client ID** | Settings → General |
 | **Webhook secret** | The secret you generated in step 1.3 |
@@ -123,7 +123,7 @@ npm install @octokit/app @octokit/rest
 Set the following environment variables on your hosting platform (or in a local `.env` file for development):
 
 | Variable | Value |
-|----------|-------|
+| --- | --- |
 | `APP_ID` | The App ID from step 1.7 |
 | `PRIVATE_KEY` | The full contents of the `.pem` file from step 1.8 (with newlines preserved) |
 | `WEBHOOK_SECRET` | The webhook secret from step 1.3 |
@@ -180,7 +180,7 @@ app.webhooks.on("installation_repositories.added", async ({ payload }) => {
 Deploy to your chosen platform. Ensure the public URL matches the **Webhook URL** you registered in step 1.3.
 
 | Platform | Deployment Command |
-|----------|--------------------|
+| --- | --- |
 | **Cloudflare Workers** | `npx wrangler deploy` |
 | **Vercel** | `npx vercel --prod` |
 | **AWS Lambda** | Deploy via SAM, CDK, or the AWS Console |
@@ -424,7 +424,7 @@ The opened PR should contain:
 On the app's settings page, go to **Marketplace listing** and fill in:
 
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | **Listing name** | `GitClaw` |
 | **Short description** | `AI agent that runs through GitHub Issues. One-click install.` |
 | **Full description** | Detailed explanation of gitclaw capabilities and how the app works |
@@ -474,7 +474,7 @@ The installation token expires after 1 hour. Request a new one before it expires
 ### Key API Endpoints
 
 | Operation | Endpoint |
-|-----------|----------|
+| --- | --- |
 | Get installation token | `POST /app/installations/{installation_id}/access_tokens` |
 | Get branch ref | `GET /repos/{owner}/{repo}/git/ref/heads/{branch}` |
 | Create blob | `POST /repos/{owner}/{repo}/git/blobs` |

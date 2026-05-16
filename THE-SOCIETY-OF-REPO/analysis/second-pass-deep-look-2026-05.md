@@ -67,7 +67,7 @@ SOR described the mature society. There was no document defining the smallest co
 ## What was added
 
 | Gap | File | Status |
-|---|---|---|
+| --- | --- | --- |
 | G1 | [THE-SOCIETY-OF-REPO/05-censors/README.md](../05-censors/README.md) (renamed and expanded) | New Suppressor catalogue with five concrete suppressors; comparison table; "Why suppressors exist separately"; required logging fields per catch |
 | G2 | [THE-SOCIETY-OF-REPO/02-protocols/09-representation.md](../02-protocols/09-representation.md) | New Representation primitives table; Cost of premature combination section quoting Minsky on additive opacity |
 | G2 (settlement side) | [THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md](../02-protocols/05-settlement.md) | New "Settlement is a transframe" section |
@@ -91,7 +91,7 @@ Crosswalk updates:
 The pass refused to add the following, even though SOM names them, because the substrate cannot honestly carry them yet:
 
 | Deferred construct | Reason |
-|---|---|
+| --- | --- |
 | C-brain (meta-meta) | Plural B-brain stewards must accumulate evidence first that a higher meta layer is needed. Adding one now is the meta-monarch failure D2 was created to prevent. |
 | Frame *formation* (frames learned from raw experience) | An open research problem; SOR's D1 divergence is honest about this. Authored frames are the load-bearing commitment. |
 | High-frequency K-line capture (sub-second) | Git substrate is the wrong granularity. Batching and consolidation are the deliberate compromise; D6 names the cost. |

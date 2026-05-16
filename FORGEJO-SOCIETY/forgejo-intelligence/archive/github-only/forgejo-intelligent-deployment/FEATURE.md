@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Deployment Created | `deployment` (created) | Deployment Lifecycle |
 | 2 | Deployment Status Updated | `deployment_status` | Deployment Lifecycle |
 | 3 | Deployment to Production Requires Approval | `deployment` (protected env) | Deployment Lifecycle |

@@ -45,7 +45,7 @@ nullclaw gateway
 ## Command Quick Reference
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw onboard --api-key sk-... --provider openrouter` | Quick setup for provider and API key |
 | `nullclaw onboard --interactive` | Full interactive setup |
 | `nullclaw onboard --channels-only` | Reconfigure channels and allowlists only |

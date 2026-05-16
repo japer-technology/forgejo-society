@@ -17,12 +17,12 @@
 }
 ```
 
-| 字段          | 类型   | 必填 | 描述                             |
-| ------------- | ------ | ---- | -------------------------------- |
-| enabled       | bool   | 是   | 是否启用钉钉频道                 |
-| client_id     | string | 是   | 钉钉应用的 Client ID             |
-| client_secret | string | 是   | 钉钉应用的 Client Secret         |
-| allow_from    | array  | 否   | 用户ID白名单，空表示允许所有用户 |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| enabled | bool | 是 | 是否启用钉钉频道 |
+| client_id | string | 是 | 钉钉应用的 Client ID |
+| client_secret | string | 是 | 钉钉应用的 Client Secret |
+| allow_from | array | 否 | 用户ID白名单，空表示允许所有用户 |
 
 ## 设置流程
 

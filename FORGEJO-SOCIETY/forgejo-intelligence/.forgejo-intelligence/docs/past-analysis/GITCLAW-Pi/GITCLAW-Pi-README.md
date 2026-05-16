@@ -23,7 +23,7 @@ When an issue is opened or commented on, gitclaw spins up a fresh agent session.
 ## Documentation Map
 
 | Document | What it covers |
-|----------|---------------|
+| --- | --- |
 | [GITCLAW-Pi-Architecture.md](GITCLAW-Pi-Architecture.md) | How `.pi` components connect — file structure, data flow, session lifecycle |
 | [GITCLAW-Pi-Capabilities.md](GITCLAW-Pi-Capabilities.md) | Everything `.pi` can do — conversations, file I/O, memory, self-modification |
 | [GITCLAW-Pi-Skills.md](GITCLAW-Pi-Skills.md) | The skill system — built-in skills, creating new ones, progressive disclosure |

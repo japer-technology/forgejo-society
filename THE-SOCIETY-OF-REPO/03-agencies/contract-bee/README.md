@@ -53,7 +53,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `missed_obligation_rate` | % of obligations not extracted that were later discovered |
 | `false_alarm_rate` | % of flagged risks that were not real concerns |
 | `owner_usefulness_score` | Owner-reported usefulness rating (1–5) |

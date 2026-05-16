@@ -175,5 +175,5 @@ tests = [
 ## Available Trajectories
 
 | Name | Description |
-|------|-------------|
+| --- | --- |
 | `simple_echo_hello_world` | Basic test: user asks to echo hello world |

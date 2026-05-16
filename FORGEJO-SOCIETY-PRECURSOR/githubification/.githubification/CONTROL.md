@@ -9,7 +9,7 @@
 There are exactly two places to control who interacts with the agent. They are not the same thing.
 
 | Gate | What it controls | Precision | Who owns it |
-|------|-----------------|-----------|-------------|
+| --- | --- | --- | --- |
 | **Platform gate** | Whether GitHub allows a user to create an issue or comment at all | Coarse | GitHub (repo settings, interaction limits) |
 | **Workflow gate** | Whether the agent processes the event after it fires | Precise | You (workflow YAML, variables, API calls) |
 
@@ -30,7 +30,7 @@ GitHub provides five classes of identity information that a workflow can inspect
 The strongest and simplest check. Compare the actor's login against a hardcoded or variable-driven allowlist.
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Source | `github.actor` (workflow context) |
 | Reliability | Exact match; no API call needed |
 | Failure mode | None (always available on every event) |
@@ -45,7 +45,7 @@ if: contains(fromJson('["alice","bob"]'), github.actor)
 The current approach used by this workflow. GitHub's collaborator permission endpoint returns both a base `permission` value and a `role_name`.
 
 | `permission` values | `role_name` values |
-|--------------------|--------------------|
+| --- | --- |
 | `admin` | `admin` |
 | `write` | `write`, `maintain`, or a custom role |
 | `read` | `read`, `triage`, or a custom role |
@@ -54,7 +54,7 @@ The current approach used by this workflow. GitHub's collaborator permission end
 Note: `maintain` and `triage` are collapsed into `write` and `read` respectively in the `permission` field, but appear correctly in `role_name`. For example, a user with the `maintain` role returns `permission: "write"` — indistinguishable from a plain write collaborator unless you also check `role_name: "maintain"`. A robust check must consult both fields when fine-grained role distinctions matter.
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Source | `gh api repos/{owner}/{repo}/collaborators/{actor}/permission` |
 | Reliability | High; uses the default `GITHUB_TOKEN` |
 | Failure mode | Returns `none` for non-collaborators; API returns 404 for users with no relationship |
@@ -65,7 +65,7 @@ Note: `maintain` and `triage` are collapsed into `write` and `read` respectively
 GitHub assigns every issue/comment author a relationship classification. This is available directly in the event payload — no API call required.
 
 | Value | Meaning |
-|-------|---------|
+| --- | --- |
 | `OWNER` | Repository owner |
 | `MEMBER` | Organization member (if org-owned repo) |
 | `COLLABORATOR` | Invited collaborator |
@@ -75,7 +75,7 @@ GitHub assigns every issue/comment author a relationship classification. This is
 | `NONE` | No prior relationship |
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Source | `github.event.comment.author_association` / `github.event.issue.author_association` |
 | Reliability | Good; embedded in the webhook payload |
 | Failure mode | `NONE` for unknown users; `CONTRIBUTOR` requires a merged PR — open PRs don't count |
@@ -86,7 +86,7 @@ GitHub assigns every issue/comment author a relationship classification. This is
 Checks whether the actor is an active member of a specific GitHub organization.
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Source | `gh api orgs/{org}/memberships/{actor}` |
 | Reliability | Good **if** the token has org membership read access |
 | Failure mode | Without proper token scope, only **public** membership is visible. Private membership returns 404 |
@@ -98,7 +98,7 @@ Checks whether the actor is an active member of a specific GitHub organization.
 Checks whether the actor belongs to a specific team within an organization.
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Source | `gh api orgs/{org}/teams/{team_slug}/memberships/{actor}` |
 | Reliability | Good **if** the token has org and team read access |
 | Failure mode | Same as org — requires explicit token scope; fails silently without it |
@@ -147,7 +147,7 @@ This is correct and fail-closed. It has three limitations:
 All variables are set in **Settings → Secrets and variables → Actions → Variables** at the repository or organization level. No code changes required to adjust policy.
 
 | Variable | Type | Default | Purpose |
-|----------|------|---------|---------|
+| --- | --- | --- | --- |
 | `MI_POLICY_MODE` | `any` / `all` | `any` | `any` = pass if any enabled check passes. `all` = pass only if every enabled check passes |
 | `MI_ALLOWED_USERS` | CSV of logins | *(empty)* | Exact username allowlist |
 | `MI_ALLOWED_ASSOCIATIONS` | CSV of associations | *(empty)* | Author association gate (e.g., `OWNER,MEMBER,COLLABORATOR`) |
@@ -159,7 +159,7 @@ All variables are set in **Settings → Secrets and variables → Actions → Va
 For org and team checks, one additional **secret** is required:
 
 | Secret | Purpose |
-|--------|---------|
+| --- | --- |
 | `MI_ORG_READ_TOKEN` | A PAT or GitHub App token with `read:org` scope. Only needed when `MI_ALLOWED_ORG` or `MI_ALLOWED_TEAMS` is set |
 
 ### 4.3 Check Evaluation Order
@@ -277,7 +277,7 @@ Only write-or-higher collaborators can trigger the agent, and only when their co
 ## 6. Control Strength by Class
 
 | Identity Class | Workflow Gate Strength | Platform Gate Strength | API Dependency | Token Requirement |
-|---------------|----------------------|----------------------|----------------|-------------------|
+| --- | --- | --- | --- | --- |
 | Exact username | ★★★★★ Excellent | N/A | None | Default `GITHUB_TOKEN` |
 | Collaborator role | ★★★★★ Excellent | ★★★★ Good | Collaborator API | Default `GITHUB_TOKEN` |
 | Author association | ★★★★ Good | N/A | None (payload) | Default `GITHUB_TOKEN` |
@@ -309,7 +309,7 @@ The migration is a single-step change to the `Authorize` step in the workflow YA
 ### What Changes
 
 | Component | Before | After |
-|-----------|--------|-------|
+| --- | --- | --- |
 | Job-level `if:` | No PR exclusion | Adds `&& !github.event.issue.pull_request` |
 | `Authorize` step | 7 lines: hardcoded permission check | Policy engine reading `vars.*` and `secrets.MI_ORG_READ_TOKEN` |
 | `Reject` step | No change | No change |

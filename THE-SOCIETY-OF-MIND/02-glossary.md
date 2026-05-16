@@ -302,7 +302,7 @@ metaphor from materials science.
 These appear in the book but are not what they look like.
 
 | Surface concept | What it actually is |
-|---|---|
+| --- | --- |
 | "The unconscious" | Just: the agencies the conscious self-model has no access to. Not a separate place, not a separate self. |
 | "The self" | The currently dominant self-model, plus the self-ideal, plus the agencies that defend both. There is no central self. |
 | "Free will" | The visible part of a settlement among censors, critics, and proposing agencies. Felt as choice; mechanically a process. |
@@ -317,7 +317,7 @@ Each of these mistakes is the move that the book is trying to undo.
 ## J. Vocabulary not from Minsky but used in this workspace
 
 | Term | Source | Use |
-|---|---|---|
+| --- | --- | --- |
 | **Settlement** (workspace sense) | Society of Repo | A governed visible decision record drawing on Minsky's record-of-formation idea. |
 | **Stimulus / activation / settlement / action / memory loop** | Society of Repo, generalising Minsky's chapter ordering | The recurring SOR cognitive loop. |
 | **Insulation** (engineering sense) | ONR 1988, extended | Protected independence between subsystems with controlled shared state. |

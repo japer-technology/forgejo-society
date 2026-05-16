@@ -48,7 +48,7 @@ Each persona (feature 10) can have its own workflow templates. The `@security` p
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow definition format** | Design Markdown-based schema, parser | ~2 hours |
 | **Workflow engine** (new `GITCLAW-WORKFLOW.ts`) | State machine: load workflow, track step, advance, branch | ~3 hours |
 | **Issue body updater** | Edit the issue body to update checkboxes as steps complete | ~1 hour |

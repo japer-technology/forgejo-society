@@ -53,7 +53,7 @@ The skill-creator skill teaches the agent how to make skills when asked. Auto-ge
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Pattern analyzer** (new `GITCLAW-PATTERNS.ts`) | Scan sessions, cluster similar tasks, score patterns | ~3 hours |
 | **Skill drafter** | Generate SKILL.md from a detected pattern using skill-creator conventions | ~2 hours |
 | **Proposal mechanism** | Create issue with draft skill, handle approval flow | ~1.5 hours |

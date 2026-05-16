@@ -166,7 +166,7 @@ env-var mode or skipped secrets.
 **Providers:**
 
 | Provider | Auth Method | Secret Name | Env Var |
-|----------|-------------|-------------|---------|
+| --- | --- | --- | --- |
 | NEAR AI Chat | Browser OAuth or session token | - | `NEARAI_SESSION_TOKEN` |
 | NEAR AI Cloud | API key | `llm_nearai_api_key` | `NEARAI_API_KEY` |
 | Anthropic | API key | `anthropic_api_key` | `ANTHROPIC_API_KEY` |
@@ -547,7 +547,7 @@ anthropic_api_key     → encrypted API key
 **Module:** `prompts.rs`
 
 | Function | Description |
-|----------|-------------|
+| --- | --- |
 | `select_one(label, options)` | Numbered single-choice menu |
 | `select_many(label, options, defaults)` | Checkbox multi-select (raw terminal mode) |
 | `input(label)` | Single line text input |

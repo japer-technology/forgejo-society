@@ -335,7 +335,7 @@ Max 说明：
 **支持的隧道：**
 
 | 隧道 | 说明 |
-|--------|------|
+| --- | --- |
 | `none` | 不使用隧道（默认） |
 | `cloudflare` | Cloudflare Tunnel |
 | `ngrok` | ngrok 隧道 |

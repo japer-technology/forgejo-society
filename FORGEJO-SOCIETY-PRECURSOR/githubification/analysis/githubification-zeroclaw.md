@@ -21,7 +21,7 @@ This analysis examines how ZeroClaw could be Githubified — converted from soft
 Every Githubification maps to four invariant GitHub primitives:
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -64,7 +64,7 @@ Strategy Selection:
 ### Why Not Other Strategies
 
 | Strategy | Why Not |
-|---|---|
+| --- | --- |
 | **Native** | ZeroClaw already exists as a full agent — it wasn't designed exclusively for GitHub |
 | **Wrapping** | Wrapping adds an orchestration layer around the agent. ZeroClaw can orchestrate itself. |
 | **Substitution** | ZeroClaw CAN run on GitHub Actions — it doesn't need a substitute agent |
@@ -77,7 +77,7 @@ Strategy Selection:
 ### How Each GitHub Primitive Maps
 
 | GitHub Primitive | ZeroClaw Equivalent | Integration Path |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute runtime | Workflow downloads pre-built binary from Releases, executes `zeroclaw github-agent` subcommand |
 | **Git** | Memory backend (`src/memory/`) | SQLite database + JSONL sessions committed between workflow runs. ZeroClaw already has SQLite memory via `src/memory/sqlite.rs` |
 | **GitHub Issues** | Channel adapter (`src/channels/`) | New `GitHubIssuesChannel` implementing the `Channel` trait. Issue #N = conversation thread |
@@ -88,7 +88,7 @@ Strategy Selection:
 ZeroClaw's existing architecture provides escape hatches at every point where Githubification typically encounters friction:
 
 | Challenge | ZeroClaw's Escape Hatch |
-|---|---|
+| --- | --- |
 | External databases required | **SQLite memory backend** — `src/memory/sqlite.rs` provides embedded persistence with no external process |
 | Must be compiled before running | **Pre-built binaries** — GitHub Releases publishes binaries for Linux x86_64/aarch64/armv7, macOS, and Windows |
 | Tool execution needs isolation | **Security policy engine** — `src/security/policy.rs` provides allowlists, domain filtering, and sandbox options (Landlock, Bubblewrap, Firejail) |
@@ -302,7 +302,7 @@ This is the `zeroclaw github-agent` subcommand — a constrained execution mode 
 ZeroClaw's existing memory backends map naturally to Git-based persistence:
 
 | ZeroClaw Component | GitHub Persistence | Format |
-|---|---|---|
+| --- | --- | --- |
 | SQLite memory (`src/memory/sqlite.rs`) | `.github-zeroclaw/state/zeroclaw.db` | Binary file committed to git |
 | Session history | `.github-zeroclaw/state/sessions/` | JSONL conversation transcripts |
 | Issue mapping | `.github-zeroclaw/state/issues/` | JSON files mapping issue # → session |
@@ -338,7 +338,7 @@ ZeroClaw's Githubification would have several unique strengths compared to exist
 Unlike GMI and GitClaw (which require Bun + npm + `pi-coding-agent`), ZeroClaw is a single compiled binary with zero runtime dependencies. The workflow downloads one file and runs it. No `bun install`, no `npm ci`, no `node_modules`, no lockfile conflicts.
 
 | Agent | Runtime Setup |
-|---|---|
+| --- | --- |
 | GMI / GitClaw | `setup-bun` → `bun install --frozen-lockfile` → TypeScript execution |
 | OpenClaw | `setup-node` → `npm ci` → TypeScript execution (30+ tools, vector DB) |
 | **ZeroClaw** | **Download binary → run** |
@@ -356,7 +356,7 @@ GMI and GitClaw are thin wrappers around the `pi-coding-agent` runtime. ZeroClaw
 ZeroClaw ships with security infrastructure that other Githubified agents lack:
 
 | Security Feature | ZeroClaw | GMI/GitClaw |
-|---|---|---|
+| --- | --- | --- |
 | Tool allowlists | ✓ `src/security/policy.rs` | ✗ (pi defaults) |
 | Domain filtering | ✓ URL/domain matcher | ✗ |
 | Credential leak detection | ✓ GitHub PAT, API key scanning | ✗ |
@@ -431,7 +431,7 @@ Multiple issues triggering simultaneously can cause git push conflicts when comm
 Following the universal Githubification pattern — guard → indicate → execute → commit — ZeroClaw's pipeline is:
 
 | Step | Mechanism | Purpose |
-|------|-----------|---------|
+| --- | --- | --- |
 | **Guard** | Workflow authorization step | Check actor's collaborator permission via GitHub API |
 | **Indicate** | GitHub API reaction | Add 👀 or 🚀 to show the agent is working |
 | **Execute** | `zeroclaw github-agent` | Download binary, run one-shot agent, post reply |
@@ -444,7 +444,7 @@ This is a three-step lifecycle (guard + indicate happen in the workflow, execute
 ## Comparison with Related Githubifications
 
 | Dimension | GMI (Native) | GitClaw (Native) | MicroClaw (Channel) | **ZeroClaw (Channel)** |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Language** | TypeScript | TypeScript | Rust | **Rust** |
 | **Agent runtime** | pi-coding-agent (npm) | pi-coding-agent (npm) | Self-contained binary | **Self-contained binary** |
 | **Runtime dependencies** | 1 (npm package) | 1 (npm package) | 0 (compiled) | **0 (compiled)** |
@@ -471,7 +471,7 @@ ZeroClaw and MicroClaw represent the same architectural class: compiled Rust age
 **Goal**: GitHub Issues as a new channel in ZeroClaw's existing architecture.
 
 | Task | Files | Effort |
-|------|-------|--------|
+| --- | --- | --- |
 | Implement `GitHubIssuesChannel` | `src/channels/github_issues.rs` | ~300 lines |
 | Add `GitHubIssuesConfig` to config schema | `src/config/schema.rs` | ~30 lines |
 | Register channel in factory | `src/channels/mod.rs` | ~15 lines |
@@ -485,7 +485,7 @@ ZeroClaw and MicroClaw represent the same architectural class: compiled Rust age
 **Goal**: A ready-to-use GitHub Actions workflow that any repo can adopt.
 
 | Task | Files | Effort |
-|------|-------|--------|
+| --- | --- | --- |
 | Create workflow template | `.github-zeroclaw/workflow-template.yml` | ~80 lines |
 | Create minimal GitHub-mode config | `.github-zeroclaw/zeroclaw.toml` | ~20 lines |
 | Create setup documentation | `.github-zeroclaw/README.md` | Documentation |
@@ -497,7 +497,7 @@ ZeroClaw and MicroClaw represent the same architectural class: compiled Rust age
 **Goal**: Persistent conversations across workflow runs.
 
 | Task | Files | Effort |
-|------|-------|--------|
+| --- | --- | --- |
 | Issue-to-session mapping logic | Inside `github_issues.rs` | ~50 lines |
 | Session resume from committed state | Inside `github-agent` subcommand | ~50 lines |
 | Human-readable session exports | Inside `github-agent` subcommand | ~50 lines |
@@ -508,7 +508,7 @@ ZeroClaw and MicroClaw represent the same architectural class: compiled Rust age
 **Goal**: Personality hatching, reactions, progressive responses.
 
 | Task | Files | Effort |
-|------|-------|--------|
+| --- | --- | --- |
 | Reaction-based progress indication (👀 → ✅) | `github_issues.rs` | ~30 lines |
 | Draft comment updates (progressive streaming) | `github_issues.rs` | ~50 lines |
 | Issue template for hatching | `.github/ISSUE_TEMPLATE/` | Template file |
@@ -519,7 +519,7 @@ ZeroClaw and MicroClaw represent the same architectural class: compiled Rust age
 **Goal**: One-command installation into any repository.
 
 | Task | Files | Effort |
-|------|-------|--------|
+| --- | --- | --- |
 | `zeroclaw github-install` subcommand | `src/main.rs` | ~100 lines |
 | Copy workflow, config, templates into target repo | Installer logic | ~100 lines |
 | State reset on distribution | Installer logic | ~20 lines |
@@ -543,7 +543,7 @@ This means a Githubified ZeroClaw doesn't lose capabilities. The same 50+ tools,
 GMI's approach — born native for GitHub, single dependency on `pi-coding-agent` — produces the simplest possible architecture. ZeroClaw's approach produces a more capable one. The tradeoff:
 
 | Dimension | GMI (Native) | ZeroClaw (Channel Addition) |
-|---|---|---|
+| --- | --- | --- |
 | **Simplicity** | Maximum — 2 files, 1 dependency | Moderate — compiled binary, rich config |
 | **Capability** | Good — pi provides ~10 tools | Maximum — 50+ tools, full security, vector memory |
 | **Portability** | High — TypeScript runs everywhere | High — pre-built binaries for all major platforms |

@@ -15,7 +15,7 @@ inter-repo channel/bridge/censor protocol defined by
 ## What lives here
 
 | File / Folder | Purpose |
-|---|---|
+| --- | --- |
 | [`society.yml`](society.yml) | The sub-society's identity, role, owning Federation, and the set of member repos that compose it. |
 | [`repos/`](repos/README.md) | One declarative file per member repo, naming the repo, its remit, its lead agency, the publicity strategy document it implements, and its inbound/outbound channel surface. |
 | [`wiring/`](wiring/README.md) | Channel declarations: how the member repos are wired to each other (`channels.yml`) and how the sub-society reports back to the Federation root (`federation-uplink.yml`). |
@@ -29,7 +29,7 @@ implements one numbered strategy document from
 [`FORGEJO-SOCIETY-PUBLICITY/`](../../../FORGEJO-SOCIETY-PUBLICITY/README.md).
 
 | Repo (planned) | Role | Implements |
-|---|---|---|
+| --- | --- | --- |
 | `forgejo-society-publicity-presenter` | Presenter & broker — the only repo that speaks back to the Federation. | [`00-overview.md`](../../../FORGEJO-SOCIETY-PUBLICITY/00-overview.md), [`01-principles.md`](../../../FORGEJO-SOCIETY-PUBLICITY/01-principles.md) |
 | `forgejo-society-publicity-announcements` | Owns dated public-facing announcements. | [`02-announcements.md`](../../../FORGEJO-SOCIETY-PUBLICITY/02-announcements.md) |
 | `forgejo-society-publicity-media-relations` | Owns the media list and outreach protocols. | [`03-media-relations.md`](../../../FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md) |

@@ -5,7 +5,7 @@ Censor and suppressor repos enforce hard limits. They do not argue on merit. The
 Following Minsky 1986, this realm distinguishes two firing stages:
 
 | Mechanism | Where it fires | What it stops | Cost |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Censor** | *Upstream* — before an agency runs, or before a known-bad reasoning path is entered | The path that would have produced the harmful output | Cheap once trained; requires recognising bad *patterns of activity*, not bad outputs |
 | **Suppressor** | *Output stage* — after an agency has produced a candidate output, before that output crosses an effect boundary | The candidate output itself | Cheap to add; reactive; requires only recognising the wrong output |
 
@@ -50,7 +50,7 @@ Suppressors are also the cheapest place to capture new failure data. When a supp
 ## Censor catalogue
 
 | Censor | What it blocks |
-|---|---|
+| --- | --- |
 | [cloud-egress-censor](cloud-egress-censor/README.md) | Data transmission to external services without policy authorisation |
 | [authority-censor](authority-censor/README.md) | Actions that exceed an agency's authority level or bypass the approval gate |
 | [payment-censor](payment-censor/README.md) | Payments and financial commitments above the defined spending limit |
@@ -65,7 +65,7 @@ Suppressors are also the cheapest place to capture new failure data. When a supp
 Suppressors live alongside censors. They mirror the censor catalogue but bind at the *output* boundary, not at the path.
 
 | Suppressor | What it catches | Boundary it guards |
-|---|---|---|
+| --- | --- | --- |
 | `cloud-egress-suppressor` | Outbound payloads that contain marked-sensitive content the cloud-egress censor failed to interdict upstream | Network egress |
 | `payment-suppressor` | Payment instructions whose final amount or recipient differs from the settlement record | Payment system call |
 | `pii-suppressor` | Outputs that contain unredacted PII before they reach a low-trust surface | Issue/PR/email/wiki write |

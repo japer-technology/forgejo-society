@@ -68,7 +68,7 @@ GitHub Minimum Intelligence (GMI) is the reference implementation for the simple
 possible Githubification. Key patterns extracted:
 
 | Pattern | Implementation |
-|---------|---------------|
+| --- | --- |
 | **Single dependency** | `@mariozechner/pi-coding-agent` — the only runtime dependency |
 | **Issue-driven conversation** | GitHub Issues = user interface; each issue maps to a persistent session |
 | **Git-as-memory** | All session state committed as JSONL files in `state/sessions/` |
@@ -93,7 +93,7 @@ into GitHub-as-infrastructure. Key frameworks extracted:
 Githubified repository:
 
 | GitHub Primitive | Role |
-|-----------------|------|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes code |
 | **Git** | Storage and memory — sessions, state, and decisions are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -125,7 +125,7 @@ the structure is invariant.
 NAT is a Python monorepo (30+ sub-packages) that provides:
 
 | Capability | Technology |
-|-----------|-----------|
+| --- | --- |
 | **Core Runtime** | Python 3.11–3.13, FastAPI, Uvicorn |
 | **CLI** | `nat` command for workflow execution, evaluation, optimization |
 | **Framework Plugins** | LangChain, LlamaIndex, CrewAI, Semantic Kernel, Google ADK, AutoGen, Strands, Agno |
@@ -143,7 +143,7 @@ NAT is a Python monorepo (30+ sub-packages) that provides:
 The repository already has significant GitHub infrastructure:
 
 | Component | Status |
-|----------|--------|
+| --- | --- |
 | **CI/CD pipeline** (`pr.yaml` → `ci_pipe.yml`) | ✅ Fully operational — lint, test (3×2 matrix), docs, wheels |
 | **GITCLAW agent** (`.GITCLAW/`, `GITCLAW-WORKFLOW-AGENT.yml`) | ✅ Operational — issue-driven AI agent using pi-coding-agent |
 | **Stale issue management** (`stale.yaml`) | ✅ Operational — automated hygiene |
@@ -202,7 +202,7 @@ Does the agent exist yet?
 **Recommended strategy: Hybrid (Native + Wrapping)**
 
 | Layer | Strategy | Implementation |
-|-------|----------|----------------|
+| --- | --- | --- |
 | **Conversational interface** | Native | GITCLAW agent (already exists) provides issue-driven interaction |
 | **NAT CLI operations** | Wrapping | Agent invokes `nat run`, `nat evaluate`, `nat optimize` on the runner |
 | **Production serving** | Substitution | Agent can discuss, analyze, and configure NAT; actual serving is external |
@@ -223,7 +223,7 @@ of what is already in place versus what needs to be built:
 ### Already Implemented
 
 | Component | File(s) | Status |
-|----------|---------|--------|
+| --- | --- | --- |
 | Issue-driven AI agent | `.GITCLAW/lifecycle/GITCLAW-AGENT.ts` | ✅ Working |
 | GitHub Actions workflow | `.github/workflows/GITCLAW-WORKFLOW-AGENT.yml` | ✅ Working |
 | Authorization gate | Workflow step + `GITCLAW-ENABLED.ts` | ✅ Working |
@@ -239,7 +239,7 @@ of what is already in place versus what needs to be built:
 ### Not Yet Implemented
 
 | Component | Description | Priority |
-|----------|-------------|----------|
+| --- | --- | --- |
 | NAT-specific agent skills | Skills that invoke `nat run`, `nat evaluate`, `nat optimize` via the agent | High |
 | Workflow configuration templates | Pre-built `workflow.yml` configs for common GitHub Issue-driven tasks | Medium |
 | Evaluation reporting workflow | Scheduled workflow that runs evaluations and commits reports | Medium |
@@ -255,7 +255,7 @@ of what is already in place versus what needs to be built:
 ### The Invariant Mapping
 
 | GitHub Primitive | NAT Role | Implementation |
-|-----------------|----------|----------------|
+| --- | --- | --- |
 | **GitHub Actions** | Compute for `nat` CLI, pytest, Sphinx, wheel builds, agent execution | Workflow jobs with `pip install nvidia-nat` |
 | **Git** | Storage for evaluation results, optimization reports, session transcripts, agent state | Committed artifacts in designated directories |
 | **GitHub Issues** | User interface for requesting workflow runs, asking questions, reviewing results | GITCLAW agent responds to issues/comments |
@@ -264,7 +264,7 @@ of what is already in place versus what needs to be built:
 ### NAT-Specific Extensions
 
 | NAT Capability | GitHub Mapping | Mechanism |
-|---------------|---------------|-----------|
+| --- | --- | --- |
 | `nat run --config_file workflow.yml --input "..."` | Issue comment → agent invokes `nat run` | Agent reads issue, constructs CLI invocation, posts output as comment |
 | `nat evaluate --config_file eval_config.yml` | Scheduled workflow or issue-triggered | Cron-based or on-demand evaluation with results committed to repo |
 | `nat optimize --config_file opt_config.yml` | `workflow_dispatch` or issue-triggered | Optimization job with results committed as versioned reports |
@@ -300,7 +300,7 @@ and produces structured output — all patterns that map cleanly to workflow ste
 **Runner requirements:**
 
 | NAT Workload | Runner Type | RAM | Timeout |
-|-------------|-------------|-----|---------|
+| --- | --- | --- | --- |
 | Simple API-backed agent (Hello World) | `ubuntu-latest` | 7 GB | ~5 min |
 | Evaluation suite | `ubuntu-latest` | 7 GB | ~30 min |
 | Optimization run | `ubuntu-latest` | 7 GB | ~2 hrs |
@@ -343,7 +343,7 @@ the repository:
 GitHub Issues replace NAT's built-in chat UI and CLI for conversational interaction:
 
 | Interaction Pattern | GitHub Issue Implementation |
-|--------------------|---------------------------|
+| --- | --- |
 | Run a workflow | Open issue with workflow config in body, agent executes and replies |
 | Evaluate an agent | Comment with evaluation parameters, agent runs `nat evaluate` and posts results |
 | Ask about the toolkit | Open issue with a question, agent reads the codebase and responds |
@@ -355,7 +355,7 @@ GitHub Issues replace NAT's built-in chat UI and CLI for conversational interact
 NAT requires API keys for LLM providers. These map directly to GitHub Secrets:
 
 | Secret Name | NAT Usage | Required For |
-|------------|-----------|--------------|
+| --- | --- | --- |
 | `NVIDIA_API_KEY` | NVIDIA NIM models | Agent workflow execution |
 | `OPENAI_API_KEY` | OpenAI GPT models | Agent workflow execution |
 | `ANTHROPIC_API_KEY` | Anthropic Claude models | GITCLAW agent + NAT workflows |
@@ -460,7 +460,7 @@ Following the Universal Lifecycle Pipeline from the Githubification playbook:
 ### Pipeline Stages
 
 | Stage | Script | Purpose |
-|-------|--------|---------|
+| --- | --- | --- |
 | **Guard** | `GITCLAW-ENABLED.ts` | Verify the agent system is active (sentinel file check) |
 | **Heart Guard** | `GITCLAW-HEART-GUARD.ts` | Optional moderation gate for public repos |
 | **Indicate** | `GITCLAW-INDICATOR.ts` | Add 👀 reaction for immediate visual feedback |
@@ -476,7 +476,7 @@ already present in this repository.
 ### Fail-Closed Guarantees
 
 | Failure Point | Behavior |
-|--------------|----------|
+| --- | --- |
 | Unauthorized actor | Workflow exits at step 1 (authorization) |
 | Sentinel file missing | Workflow exits at step 2 (guard) |
 | Heart not present (if required) | Workflow exits at step 3 (heart guard) |
@@ -644,7 +644,7 @@ format, enabling the agent to resume multi-turn conversations across workflow ru
 Beyond conversation transcripts, the agent may produce NAT-specific artifacts:
 
 | Artifact Type | Storage Location | Format |
-|--------------|-----------------|--------|
+| --- | --- | --- |
 | Evaluation results | `results/` or workflow artifacts | JSON, XML |
 | Optimization reports | Workflow artifacts or committed to repo | JSON |
 | Agent workflow output | Issue comment + workflow artifact | Text, JSON |
@@ -669,7 +669,7 @@ All state is committed to Git, providing:
 This repository employs three layers of security for the Githubification layer:
 
 | Layer | Mechanism | Implementation |
-|-------|-----------|----------------|
+| --- | --- | --- |
 | **Workflow authorization** | GitHub API permission check | Only `admin`/`maintain`/`write` actors can trigger the agent |
 | **Sentinel file** | `GITCLAW-ENABLED.md` must exist | Repository-level kill switch — `git rm` disables the agent |
 | **Heart guard** | Optional ❤️ reaction requirement | Issue-level moderation for public repositories |
@@ -703,7 +703,7 @@ These NAT capabilities are fully feasible on GitHub Actions:
 ### Tier 1: Direct Execution (Minimal Effort)
 
 | Capability | Trigger | Implementation |
-|-----------|---------|----------------|
+| --- | --- | --- |
 | **CI/CD** (lint, test, docs, wheels) | `push`, `pull_request` | Already implemented via `pr.yaml`/`ci_pipe.yml` |
 | **Issue-driven AI agent** | `issues`, `issue_comment` | Already implemented via GITCLAW |
 | **Agent workflow smoke tests** | `pull_request` | `nat run --config_file workflow.yml --input "..."` |
@@ -713,7 +713,7 @@ These NAT capabilities are fully feasible on GitHub Actions:
 ### Tier 2: Scheduled and On-Demand (Medium Effort)
 
 | Capability | Trigger | Implementation |
-|-----------|---------|----------------|
+| --- | --- | --- |
 | **Nightly evaluations** | `schedule` (cron) | `nat evaluate` with results committed or uploaded |
 | **Prompt optimization** | `workflow_dispatch` | `nat optimize` with matrix-parallel search |
 | **Release automation** | Tag push | Build wheels → PyPI + GHCR + GitHub Release |
@@ -726,7 +726,7 @@ These NAT capabilities are fully feasible on GitHub Actions:
 These capabilities work on GitHub Actions as orchestrators but need external compute:
 
 | Capability | GitHub Actions Role | External Infrastructure |
-|-----------|-------------------|----------------------|
+| --- | --- | --- |
 | **Fine-tuning orchestration** | Submit jobs, monitor progress, run post-evaluation | NeMo Customizer API, OpenPipe API |
 | **Data flywheel** | Pull traces, process data, store training datasets | External observability backend |
 | **Integration testing** | Run test suite with service containers | Larger runners (16-core, 64 GB RAM) |
@@ -740,7 +740,7 @@ These capabilities are fundamentally incompatible with GitHub Actions and requir
 external infrastructure:
 
 | Capability | Reason | Alternative |
-|-----------|--------|-------------|
+| --- | --- | --- |
 | **Production agent serving** (`nat serve`) | No inbound routing, ephemeral runners, 6-hour job limit | Deploy via CD workflow to cloud infrastructure |
 | **Built-in chat UI** (`nat ui`) | No inbound HTTP routing | GitHub Issues replaces the UI |
 | **Real-time observability** | Requires persistent monitoring services | Managed services (Datadog, Grafana Cloud) |
@@ -803,7 +803,7 @@ orchestration layer.
 ## 17. Comparison with Existing Githubifications
 
 | Dimension | GMI | GitClaw | This Repo (NeMo) |
-|-----------|-----|---------|-------------------|
+| --- | --- | --- | --- |
 | **Strategy** | Native | Native | Hybrid (Native + Wrapping) |
 | **Complexity** | Minimal (2 files) | Low (5-step lifecycle) | High (30+ packages, multiple workflows) |
 | **Runtime dependency** | 1 (pi-coding-agent) | 1 (pi-coding-agent) | 1 (pi-coding-agent) + Python ecosystem |
@@ -831,7 +831,7 @@ on GitHub while orchestrating what must run elsewhere.
 ### GitHub Actions Usage Estimate
 
 | Activity | Runner Type | Minutes/Month | Est. Cost |
-|----------|-----------|---------------|-----------|
+| --- | --- | --- | --- |
 | CI per PR (lint+test+docs+wheels) | Standard Linux | ~3,000 | ~$24 |
 | GITCLAW agent interactions | Standard Linux | ~500 | ~$4 |
 | Nightly evaluations | Standard Linux | ~1,500 | ~$12 |
@@ -839,7 +839,7 @@ on GitHub while orchestrating what must run elsewhere.
 | Integration tests (if migrated) | 16-core Linux | ~500 | ~$32 |
 | Documentation deployment | Standard Linux | ~100 | ~$1 |
 | Release automation | Standard Linux | ~50 | ~$0.50 |
-| **Total GitHub Actions** | | | **~$79/month** |
+| **Total GitHub Actions** |  |  | **~$79/month** |
 
 ### External API Costs
 
@@ -847,17 +847,17 @@ LLM API usage for the GITCLAW agent and NAT workflow execution is separate and
 depends on interaction volume. For a typical development team:
 
 | Provider | Usage Pattern | Est. Cost |
-|---------|--------------|-----------|
+| --- | --- | --- |
 | Anthropic (GITCLAW agent) | ~50 issue interactions/month | ~$25–$50 |
 | NVIDIA NIM (NAT workflows) | ~20 workflow runs/month | ~$10–$30 |
-| Total external APIs | | ~$35–$80/month |
+| Total external APIs |  | ~$35–$80/month |
 
 ---
 
 ## 19. Risks and Mitigations
 
 | Risk | Impact | Mitigation |
-|------|--------|------------|
+| --- | --- | --- |
 | **Agent modifies critical files** | Breaking changes pushed to default branch | Use branch protection + PR-based changes; consider read-only mode for public-facing deployment |
 | **LLM API costs escalate** | Unexpected budget impact from high interaction volume | Rate limiting via workflow concurrency groups; token usage monitoring |
 | **Session state grows unbounded** | Repository size inflation from JSONL transcripts | Periodic archival of old sessions; compaction settings in `.pi/settings.json` |

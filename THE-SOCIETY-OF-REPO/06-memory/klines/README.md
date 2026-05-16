@@ -65,7 +65,7 @@ The society needs concrete rules to stop "learning" being a matter of judgement.
 A K-line firing produces an update based on the *credit-assignment record* attached to the closing settlement (see [02-protocols/10-credit-assignment.md](../../02-protocols/10-credit-assignment.md)):
 
 | Credit-assignment outcome for `kline_activation` | Update |
-|---|---|
+| --- | --- |
 | `helped` | `reinforcement_count += 1`; refresh `last_reinforced_at` |
 | `neutral` | no count change; refresh `last_seen_at` |
 | `harmed` | `weakening_count += 1`; refresh `last_weakened_at` |
@@ -80,7 +80,7 @@ score = reinforcement_count - 2 * weakening_count
 ```
 
 | Score | Temperature |
-|---|---|
+| --- | --- |
 | score ≥ 8 | `hot` |
 | 3 ≤ score < 8 | `warm` |
 | 0 ≤ score < 3 | `cold` |

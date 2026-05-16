@@ -7,7 +7,7 @@ When feeding GitHub data (non-code) through LLM models, there are practical thre
 ## 1. Context Window Baselines
 
 | Model Family | Context Window | Effective Usable¹ | Approx. Characters² |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Claude 3.5 / 4 (Anthropic) | 200K tokens | ~160K tokens | ~640K chars |
 | GPT-4o (OpenAI) | 128K tokens | ~100K tokens | ~400K chars |
 | Gemini 1.5 / 2.0 (Google) | 1M–2M tokens | ~800K–1.6M tokens | ~3.2M–6.4M chars |
@@ -23,7 +23,7 @@ When feeding GitHub data (non-code) through LLM models, there are practical thre
 ### 2.1 Issues
 
 | Metric | Small Project | Medium Project | Large Project (e.g., kubernetes, rust) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Single issue (body + comments) | 1–5 KB | 5–50 KB | 50–500 KB |
 | 100 issues (titles + bodies) | 100–500 KB | 0.5–5 MB | 5–50 MB |
 | 1,000 issues (full thread) | 1–5 MB | 5–50 MB | 50–500 MB |
@@ -33,7 +33,7 @@ When feeding GitHub data (non-code) through LLM models, there are practical thre
 ### 2.2 Pull Requests (metadata, not diffs)
 
 | Component | Typical Size |
-|---|---|
+| --- | --- |
 | PR description | 0.5–10 KB |
 | Review comments (per PR) | 1–100 KB |
 | CI status / check metadata | 1–5 KB per PR |
@@ -48,7 +48,7 @@ GitHub Discussions tend to be longer-form than issues. A single active discussio
 ### 2.4 Commit History
 
 | Metric | Size |
-|---|---|
+| --- | --- |
 | Single commit message | 0.1–2 KB |
 | 1,000 commits (messages only) | 100 KB–2 MB |
 | 10,000 commits (messages only) | 1–20 MB |
@@ -59,7 +59,7 @@ GitHub Discussions tend to be longer-form than issues. A single active discussio
 ### 2.5 Release Notes / Changelogs
 
 | Metric | Size |
-|---|---|
+| --- | --- |
 | Single release (notes) | 1–20 KB |
 | 50 releases | 50 KB–1 MB |
 | 200+ releases (mature project) | 200 KB–4 MB |
@@ -69,7 +69,7 @@ GitHub Discussions tend to be longer-form than issues. A single active discussio
 ### 2.6 Wiki Pages
 
 | Metric | Size |
-|---|---|
+| --- | --- |
 | Single wiki page | 2–50 KB |
 | Small project wiki (10–20 pages) | 20–500 KB |
 | Large project wiki (100+ pages) | 500 KB–10 MB |
@@ -79,7 +79,7 @@ GitHub Discussions tend to be longer-form than issues. A single active discussio
 ### 2.7 CI/CD Logs
 
 | Metric | Size |
-|---|---|
+| --- | --- |
 | Single job log | 10 KB–10 MB |
 | Single workflow run (multiple jobs) | 50 KB–50 MB |
 | Flaky test output | 50 KB–5 MB per run |
@@ -105,7 +105,7 @@ Quality does not drop off as a clean cliff — it degrades progressively. The fo
 LLMs attend most strongly to the **beginning** and **end** of context. Data in the middle receives weaker attention. This is measurable and well-documented.
 
 | Context Fill | Effect |
-|---|---|
+| --- | --- |
 | 0–30% of window | Reliable analysis. Model attends to all content. |
 | 30–60% of window | Minor degradation. Some details in the middle may be overlooked. Summaries remain accurate. |
 | 60–80% of window | Noticeable degradation. The model starts missing specific items, conflating similar issues, and producing vaguer summaries. Cross-referencing between distant items becomes unreliable. |
@@ -115,7 +115,7 @@ LLMs attend most strongly to the **beginning** and **end** of context. Data in t
 ### 3.2 Practical Per-Model Limits for Reliable GitHub Data Analysis
 
 | Model | Reliable Limit | Degraded-but-Usable | Breakdown |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Claude 3.5/4 (200K) | ~80K tokens (~250 KB) | 80–160K tokens (250–550 KB) | >160K tokens |
 | GPT-4o (128K) | ~50K tokens (~170 KB) | 50–100K tokens (170–350 KB) | >100K tokens |
 | Gemini 2.0 (1M) | ~400K tokens (~1.3 MB) | 400K–800K tokens (1.3–2.6 MB) | >800K tokens |
@@ -126,7 +126,7 @@ LLMs attend most strongly to the **beginning** and **end** of context. Data in t
 Some tasks tolerate large context better than others:
 
 | Task | Tolerance | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Summarization | High | Models can scan-and-summarize large volumes reasonably well |
 | Trend analysis across issues | Medium | Works up to ~200 issues, degrades with more |
 | Finding a specific item | Low | "Needle in a haystack" degrades quickly past 50% context fill |
@@ -191,7 +191,7 @@ This converts a 50 MB problem into many 5 KB problems plus one 500 KB synthesis.
 For **reliable** single-pass analysis (staying within 30–40% of context):
 
 | Data Type | Claude 200K | GPT-4o 128K | Gemini 1M |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Full issue threads | 20–40 | 10–25 | 100–200 |
 | Issue titles + labels (no body) | 500–1,000 | 300–600 | 2,500–5,000 |
 | PR descriptions (no comments) | 50–100 | 30–60 | 250–500 |

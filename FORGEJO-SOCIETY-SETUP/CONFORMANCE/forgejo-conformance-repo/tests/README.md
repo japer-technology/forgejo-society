@@ -22,7 +22,7 @@ bash .forgejo-society/conformance/tests/10-fixtures-valid.sh
 ```
 
 | Script | What it proves |
-|---|---|
+| --- | --- |
 | `00-fixtures-present.sh` | The install workflow scaffolded every required fixture. |
 | `10-fixtures-valid.sh` | Fixtures parse as YAML or JSON and contain the keys that downstream agencies depend on. |
 | `20-forgejo-api-reachable.sh` | A workflow job can reach the Forgejo API with the token it was given. |

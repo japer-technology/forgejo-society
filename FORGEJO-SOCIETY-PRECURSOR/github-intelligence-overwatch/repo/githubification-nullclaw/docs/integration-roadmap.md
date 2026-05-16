@@ -19,7 +19,7 @@
 ## Gap Inventory
 
 | # | Gap | Priority | Status | Est. Effort |
-|---|-----|----------|--------|-------------|
+| --- | --- | --- | --- | --- |
 | 1 | External Message Send API (`POST /api/send`) | 🔴 HIGH | Not started | 1-2 days |
 | 2 | Callback Receiver (`POST /api/callback`) | 🔴 HIGH | Not started | 1-2 days |
 | 3 | Worker Endpoint (`POST /api/worker`) | 🔴 HIGH | Not started | 2-3 days |

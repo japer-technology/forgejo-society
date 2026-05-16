@@ -86,7 +86,7 @@ This means GitClaw cannot email arbitrary external addresses. It can only reach 
 Users can watch a repository at several levels:
 
 | Watch Level | What Triggers Email |
-|-------------|-------------------|
+| --- | --- |
 | **Participating and @mentions** (default) | Only events on threads the user has commented on, been assigned to, been @mentioned in, or manually subscribed to |
 | **All Activity** | Every event on the repository — issues, PRs, comments, pushes, releases, discussions |
 | **Releases Only** | Only published release events |
@@ -1091,7 +1091,7 @@ Every GitHub notification email follows a consistent structure. Understanding th
 ### Headers
 
 | Header | Value | Purpose |
-|--------|-------|---------|
+| --- | --- | --- |
 | `From` | `notifications@github.com` | Sender address — always the same |
 | `Reply-To` | `reply+<token>@reply.github.com` | Unique per-thread, per-recipient reply address |
 | `To` | `repo-name@noreply.github.com` | Repository-scoped address |
@@ -1120,7 +1120,7 @@ The email body is **multipart/alternative** with both:
 ### Subject Line Format
 
 | Event Type | Subject Format |
-|------------|---------------|
+| --- | --- |
 | Issue created | `[owner/repo] Title (#42)` |
 | Issue comment | `Re: [owner/repo] Title (#42)` |
 | PR created | `[owner/repo] Title (#17)` |
@@ -1197,7 +1197,7 @@ Users have fine-grained control over their notification preferences. Understandi
 ### Global Settings (Settings → Notifications)
 
 | Setting | Effect |
-|---------|--------|
+| --- | --- |
 | **Default notification email** | Which email address receives notifications |
 | **Custom routing** | Different repos can send to different email addresses |
 | **Participating** | Email for threads the user is directly involved in |
@@ -1209,7 +1209,7 @@ Users have fine-grained control over their notification preferences. Understandi
 ### Per-Repository Settings
 
 | Setting | Effect |
-|---------|--------|
+| --- | --- |
 | **Watch level** | All Activity / Participating / Releases Only / Ignoring / Custom |
 | **Custom watch: Issues** | Receive email for issue events |
 | **Custom watch: Pull Requests** | Receive email for PR events |
@@ -1220,7 +1220,7 @@ Users have fine-grained control over their notification preferences. Understandi
 ### Per-Thread Settings
 
 | Setting | Effect |
-|---------|--------|
+| --- | --- |
 | **Subscribe** | Receive all future notifications for this thread |
 | **Unsubscribe** | Stop receiving notifications for this thread |
 | **Mute** | Block ALL notifications for this thread, even @mentions |
@@ -1241,7 +1241,7 @@ The rest is up to the user's notification preferences.
 ### Hard Constraints
 
 | Constraint | Description |
-|------------|-------------|
+| --- | --- |
 | **GitHub users only** | Emails can only reach GitHub users. There is no mechanism to send to arbitrary email addresses. |
 | **Consent-based** | Users must have opted into notifications. The agent cannot force email delivery. |
 | **No custom From address** | All emails come from `notifications@github.com`. The agent cannot spoof a sender. |
@@ -1253,7 +1253,7 @@ The rest is up to the user's notification preferences.
 ### Rate Limits
 
 | Limit | Value | Notes |
-|-------|-------|-------|
+| --- | --- | --- |
 | **API rate limit** | 5,000 requests/hour (REST) or 5,000 points/hour (GraphQL) | Per authenticated user/token |
 | **Secondary rate limit** | ~80 content-creating requests/minute | Applies to creating issues, comments, reviews, etc. |
 | **Notification throttling** | Undocumented | GitHub may delay or suppress notifications for accounts generating excessive activity |
@@ -1262,7 +1262,7 @@ The rest is up to the user's notification preferences.
 ### Risks
 
 | Risk | Description | Mitigation |
-|------|-------------|------------|
+| --- | --- | --- |
 | **Notification fatigue** | If the agent sends too many notifications, users will unwatch the repo or mute threads | Rate-limit agent notifications; batch updates; use reactions instead of comments for minor updates |
 | **Spam perception** | Excessive @mentions or issue creation may be perceived as spam by users or by GitHub's abuse detection | Mention users only when truly necessary; prefer thread subscriptions over @mentions |
 | **Content visibility** | Issue and PR content is visible to anyone with repo access (or publicly, for public repos) | Use private repos for sensitive communications; use team discussions for private team comms |
@@ -1392,7 +1392,7 @@ Use case: Progressive escalation for critical issues, with each step reaching a 
 A quick reference for every mechanism, the API call that triggers it, and the resulting email.
 
 | # | Mechanism | API Call | Email Recipients |
-|---|-----------|----------|-----------------|
+| --- | --- | --- | --- |
 | 1 | Issue created | `POST /repos/{o}/{r}/issues` | Repo watchers |
 | 2 | Issue comment | `POST /repos/{o}/{r}/issues/{n}/comments` | Thread subscribers |
 | 3 | Issue closed | `PATCH /repos/{o}/{r}/issues/{n}` `state:closed` | Thread subscribers |

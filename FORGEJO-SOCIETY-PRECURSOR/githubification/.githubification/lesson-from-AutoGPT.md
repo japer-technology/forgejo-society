@@ -23,7 +23,7 @@ The previous case studies skip this phase. GitClaw and GMI were born legible —
 The `.github/copilot-instructions.md` in `github-AutoGPT` is not a README. It is a **structured intelligence briefing** for AI coding agents: repository overview, build commands, testing strategy, project layout, architecture, security guidelines, environment configuration, and development patterns — all written for a non-human reader that needs to understand the codebase from cold start. The `AGENTS.md` provides similar guidance for Codex and Claude. The `.claude/skills/` directory gives Claude Code persistent, reusable knowledge about the project's frontend patterns.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — CI/CD workflows for backend, frontend, and full-stack testing |
 | **Git** | Storage — the monorepo itself, plus plans/ for task tracking |
 | **GitHub Issues** | Not yet used as AI interface — still used for traditional bug/feature tracking |
@@ -152,7 +152,7 @@ This document answers the question that every AI agent asks on first encounterin
 The repository is configured for multiple AI coding agents simultaneously:
 
 | Agent | Configuration |
-|---|---|
+| --- | --- |
 | **GitHub Copilot** | `.github/copilot-instructions.md` — 12KB structured instructions |
 | **Claude Code** | `autogpt_platform/CLAUDE.md` + `docs/CLAUDE.md` for subfolder context, `.claude/skills/` for persistent knowledge |
 | **Codex** | Root `AGENTS.md` with directory overview, conventional commit rules, and testing commands |
@@ -167,7 +167,7 @@ This is not Githubification in the traditional sense — none of these agents re
 AutoGPT exposes the most extreme version of the impedance mismatch that Agent Zero introduced. Agent Zero required a persistent Flask server, FAISS databases, and Docker sandboxing — already incompatible with GitHub Actions. AutoGPT requires:
 
 | Requirement | GitHub Actions Constraint |
-|---|---|
+| --- | --- |
 | PostgreSQL with pgvector | No persistent databases on runners |
 | Supabase (auth, Kong API gateway) | No persistent auth services |
 | Redis for caching | No persistent cache |
@@ -230,7 +230,7 @@ This allows multiple AI agents (or multiple instances of the same agent) to work
 The `.pre-commit-config.yaml` defines 20+ hooks covering every component:
 
 | Tool | Scope | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Ruff | Backend Python | Linting and auto-fix |
 | Black | All Python | Code formatting |
 | isort | All Python | Import sorting |

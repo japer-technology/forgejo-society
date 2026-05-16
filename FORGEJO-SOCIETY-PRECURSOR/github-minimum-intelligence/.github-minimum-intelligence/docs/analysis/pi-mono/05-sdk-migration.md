@@ -192,7 +192,7 @@ Once the SDK path is validated, remove:
 ## 4. Key Differences
 
 | Aspect | Subprocess | SDK |
-|---|---|---|
+| --- | --- | --- |
 | Output extraction | `tac` + `jq` shell pipeline | Direct event listener |
 | Error handling | Exit code check | Typed exceptions |
 | Event access | None (JSONL post-processing only) | Full lifecycle events |
@@ -207,7 +207,7 @@ Once the SDK path is validated, remove:
 ## 5. Risks and Mitigations
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SDK API breaks between versions | Medium | High | Pin pi-coding-agent version; test before upgrading |
 | Session file format incompatibility | Low | High | Test with existing session files before migration |
 | Extension loading differences | Low | Medium | Verify extension discovery paths match CLI behaviour |

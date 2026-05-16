@@ -102,7 +102,7 @@ flowchart TB
 ## How approval is granted
 
 | Method | When used | How to grant |
-|---|---|---|
+| --- | --- | --- |
 | PR merge | Constitutional changes, policy changes, agency lifecycle | Owner merges the PR |
 | Issue comment | Financial, data egress, legal commitments | Owner writes a specific confirmation comment |
 | Label application | Routine approvals | Owner applies the `approved` label |
@@ -171,7 +171,7 @@ file edits.
 The following require a settlement or governance PR before execution:
 
 | Runtime change | Governance reason |
-|---|---|
+| --- | --- |
 | Restoring `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` | Re-enables all eligible automation |
 | Adding or restoring a `forgejo-intelligent-*` folder | Enables a new event surface |
 | Expanding `.forgejo/workflows/` triggers or loosening job conditions | Allows more stimuli to reach agents |

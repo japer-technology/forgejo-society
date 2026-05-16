@@ -13,7 +13,7 @@ Beyond the four core themes (cadence reduction, concurrency assurance, GitHub Pa
 Every analysis opens with the same invariant: Githubification maps software to exactly four GitHub primitives serving four fixed roles.
 
 | GitHub Primitive | Role |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -30,7 +30,7 @@ This model is the test: any repository that maps all four primitives cleanly is 
 The corpus identifies five strategies for how an existing repository becomes Githubified:
 
 | Strategy | When to Use | Example |
-|---|---|---|
+| --- | --- | --- |
 | **Native** | Agent designed for GitHub from the start | GMI, GitClaw, pi-mono |
 | **Wrapping** | Agent runs headlessly; add a thin orchestration layer | OpenHands-CLI, openai-codex |
 | **Substitution** | Agent requires persistent infrastructure incompatible with ephemeral runners | AutoGPT, Agent Zero |
@@ -69,7 +69,7 @@ The outcome is committed to `AGENTS.md` as the agent's permanent configuration. 
 The DEFCON system (from the GMI reference implementation) defines operational readiness levels for Githubified agents, analogous to military readiness conditions:
 
 | DEFCON Level | State | Meaning |
-|---|---|---|
+| --- | --- | --- |
 | 5 | **Installed** | Agent folder exists, workflow configured |
 | 4 | **Operational** | Agent responds to issues successfully |
 | 3 | **Tuned** | Agent has domain-specific skills and personality |
@@ -163,7 +163,7 @@ Self-referential Githubification is the highest expression of the concept: the i
 When the subject of Githubification is an AI agent **framework** rather than an agent, a sixth strategy emerges beyond the original five. The Githubification agent is built **from the framework's own components** — the agent that responds to Issues is a working instance of the framework it serves.
 
 | Framework | What the Agent IS |
-|---|---|
+| --- | --- |
 | LangChain.js | A LangChain.js chain and tool set |
 | pydantic-ai | A Pydantic AI `Agent` instance with tools |
 | CAMEL | A CAMEL `ChatAgent` with CAMEL tools |
@@ -244,7 +244,7 @@ The corpus identifies a universal solution: **publish pre-built binaries to GitH
 ```
 
 | Approach | Startup Time | Reliability |
-|---|---|---|
+| --- | --- | --- |
 | Build from source | 8–15 minutes (Rust) | Depends on dependency availability |
 | Download pre-built binary | 5–30 seconds | Depends on GitHub Releases availability |
 | npm install (TypeScript) | 30–90 seconds | Standard npm reliability |

@@ -136,7 +136,7 @@ Add at least one secret.
 You can use one of these instead:
 
 | Provider | Secret name |
-|---|---|
+| --- | --- |
 | OpenAI | `OPENAI_API_KEY` |
 | Anthropic | `ANTHROPIC_API_KEY` |
 | Google Gemini | `GEMINI_API_KEY` |

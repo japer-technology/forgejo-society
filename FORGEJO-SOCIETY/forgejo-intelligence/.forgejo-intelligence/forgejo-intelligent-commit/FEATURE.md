@@ -206,7 +206,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Push Received | `push` | Push & Commit Analysis |
 | 2 | Issue Reference Detected in Commit Message | `push` (closing keyword + issue ref) | Push & Commit Analysis |
 | 3 | Merge Commit Detected | `push` (merge/squash commit) | Push & Commit Analysis |

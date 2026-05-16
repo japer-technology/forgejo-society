@@ -10,16 +10,16 @@ This document subjects the core claims of GitHub Minimum Intelligence (GMI) to c
 
 ## 1. The Framework
 
-| Component          | Role                                                                    |
-|--------------------|-------------------------------------------------------------------------|
-| **Resolution**     | The proposition being debated                                            |
+| Component | Role |
+| --- | --- |
+| **Resolution** | The proposition being debated |
 | **Affirmative (Aff)** | The side advocating for the resolution; must prove the status quo should change |
 | **Negative (Neg)** | The side opposing the resolution; may defend the status quo or propose a counterplan |
-| **Clash**          | The specific point where Aff and Neg directly conflict                   |
-| **Impact**         | The magnitude, probability, and timeframe of the consequences claimed    |
-| **Uniqueness**     | Why the claimed impact only occurs under the proposed plan, not the status quo |
-| **Solvency**       | Whether the proposed plan actually resolves the identified problem        |
-| **Topicality**     | Whether the argument falls within the scope of the resolution            |
+| **Clash** | The specific point where Aff and Neg directly conflict |
+| **Impact** | The magnitude, probability, and timeframe of the consequences claimed |
+| **Uniqueness** | Why the claimed impact only occurs under the proposed plan, not the status quo |
+| **Solvency** | Whether the proposed plan actually resolves the identified problem |
+| **Topicality** | Whether the argument falls within the scope of the resolution |
 
 A debate round resolves: *"Weighing **Aff impacts** against **Neg impacts**, which world is preferable?"*
 
@@ -49,12 +49,12 @@ A debate round resolves: *"Weighing **Aff impacts** against **Neg impacts**, whi
 
 ### Clash Matrix
 
-| Issue              | Aff Position                             | Neg Position                              | Advantage |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|
-| Context quality    | Structural access to full repo           | RAG/indexing closes the gap sufficiently   | Aff (slight) |
-| Latency            | Inherent Actions cold-start delay        | Sub-second response in IDE                 | **Neg** |
-| Cost               | GitHub Actions minutes (variable)        | Fixed subscription or API cost             | Depends |
-| Maintenance        | No separate infra to maintain            | Index must be maintained and updated       | Aff |
+| Issue | Aff Position | Neg Position | Advantage |
+| --- | --- | --- | --- |
+| Context quality | Structural access to full repo | RAG/indexing closes the gap sufficiently | Aff (slight) |
+| Latency | Inherent Actions cold-start delay | Sub-second response in IDE | **Neg** |
+| Cost | GitHub Actions minutes (variable) | Fixed subscription or API cost | Depends |
+| Maintenance | No separate infra to maintain | Index must be maintained and updated | Aff |
 
 ### Impact Calculus
 
@@ -84,21 +84,21 @@ The Aff wins on **quality and maintenance** but loses on **latency**. For asynch
 
 **Disadvantage:** Repurposing primitives creates **hidden costs**:
 
-| Hidden cost                        | Example                                           |
-|------------------------------------|----------------------------------------------------|
-| Feature ceiling                    | Issues lack structured data; workarounds needed     |
-| Vendor lock-in                     | Entire system depends on GitHub's platform decisions |
-| Impedance mismatch                 | Actions' cold-start model is wrong for interactive AI |
-| Debugging difficulty               | Failures in repurposed primitives are harder to diagnose |
+| Hidden cost | Example |
+| --- | --- |
+| Feature ceiling | Issues lack structured data; workarounds needed |
+| Vendor lock-in | Entire system depends on GitHub's platform decisions |
+| Impedance mismatch | Actions' cold-start model is wrong for interactive AI |
+| Debugging difficulty | Failures in repurposed primitives are harder to diagnose |
 
 ### Clash Matrix
 
-| Issue              | Aff Position                             | Neg Position                              | Advantage |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|
-| Complexity         | Zero new components                      | Minimal additions, purpose-fit            | Aff |
-| Fitness for purpose| Sufficient for current needs             | Primitives are misused                    | **Neg** |
-| Vendor lock-in     | GitHub is already a dependency           | Dependency is deepened by repurposing     | **Neg** |
-| Adoption barrier   | `npm install` — done                     | Requires deployment of additional services| Aff |
+| Issue | Aff Position | Neg Position | Advantage |
+| --- | --- | --- | --- |
+| Complexity | Zero new components | Minimal additions, purpose-fit | Aff |
+| Fitness for purpose | Sufficient for current needs | Primitives are misused | **Neg** |
+| Vendor lock-in | GitHub is already a dependency | Dependency is deepened by repurposing | **Neg** |
+| Adoption barrier | `npm install` — done | Requires deployment of additional services | Aff |
 
 ### Impact Calculus
 
@@ -126,23 +126,23 @@ The Aff wins on **adoption simplicity** — the ability to install with a single
 
 **Disadvantage (Audit Theater):** Auditability without capacity to review creates *audit theater* — the appearance of oversight without the substance. If the agent commits faster than humans can review, the audit trail becomes a historical record, not a control mechanism.
 
-| Trust component       | Addressed by Git audit? | Gap                                   |
-|-----------------------|------------------------|---------------------------------------|
-| Action transparency   | ✓ Yes                  | —                                      |
-| Reasoning transparency| ✗ No                   | Commits record results, not derivations|
-| Real-time oversight   | ✗ No                   | Review is post-hoc, not pre-action     |
-| Safety guarantees     | ✗ No                   | Audit ≠ prevention                     |
+| Trust component | Addressed by Git audit? | Gap |
+| --- | --- | --- |
+| Action transparency | ✓ Yes | — |
+| Reasoning transparency | ✗ No | Commits record results, not derivations |
+| Real-time oversight | ✗ No | Review is post-hoc, not pre-action |
+| Safety guarantees | ✗ No | Audit ≠ prevention |
 
 **Counterplan:** Pair the Git audit trail with **pre-action review gates** — the agent proposes changes but does not commit until a human approves. This addresses the trust gap that pure post-hoc auditing cannot.
 
 ### Clash Matrix
 
-| Issue              | Aff Position                             | Neg Position                              | Advantage |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|
-| Action transparency| Git commits = full transparency          | Conceded                                   | Aff |
-| Reasoning opacity  | Not addressed                            | Commits miss the "why"                     | **Neg** |
-| Speed of review    | Async review is sufficient               | Agent speed > human review speed           | **Neg** |
-| Reversibility      | `git revert` is immediate                | Prevention > reversion                     | **Neg** |
+| Issue | Aff Position | Neg Position | Advantage |
+| --- | --- | --- | --- |
+| Action transparency | Git commits = full transparency | Conceded | Aff |
+| Reasoning opacity | Not addressed | Commits miss the "why" | **Neg** |
+| Speed of review | Async review is sufficient | Agent speed > human review speed | **Neg** |
+| Reversibility | `git revert` is immediate | Prevention > reversion | **Neg** |
 
 ### Impact Calculus
 
@@ -174,12 +174,12 @@ The Aff establishes a **necessary condition** for trust. The Neg demonstrates it
 
 ### Clash Matrix
 
-| Issue              | Aff Position                             | Neg Position                              | Advantage |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|
-| Transparency       | Ethics visible and diffable              | Conceded                                   | Aff |
-| Enforcement        | Prompt guidance is sufficient            | LLMs don't obey; runtime needed           | **Neg** |
-| User expectations  | Users understand prompt-level guidance   | Users may assume enforcement              | **Neg** |
-| Adaptability       | Users can modify constraints per-project | Runtime rules are harder to customize     | Aff |
+| Issue | Aff Position | Neg Position | Advantage |
+| --- | --- | --- | --- |
+| Transparency | Ethics visible and diffable | Conceded | Aff |
+| Enforcement | Prompt guidance is sufficient | LLMs don't obey; runtime needed | **Neg** |
+| User expectations | Users understand prompt-level guidance | Users may assume enforcement | **Neg** |
+| Adaptability | Users can modify constraints per-project | Runtime rules are harder to customize | Aff |
 
 ### Impact Calculus
 
@@ -211,12 +211,12 @@ The Neg's kritik is devastating: the central mechanism (Markdown file → LLM co
 
 ### Clash Matrix
 
-| Issue              | Aff Position                             | Neg Position                              | Advantage |
-|--------------------|------------------------------------------|-------------------------------------------|-----------|
-| User engagement    | Co-creation increases investment         | Most users won't engage                   | **Neg** |
-| Output quality     | Better alignment improves quality        | No empirical evidence                      | **Neg** |
-| Security           | Versioned config is auditable            | Editable config is an attack vector        | **Neg** |
-| Philosophical      | User agency over AI identity             | Conceded as a value                        | Aff |
+| Issue | Aff Position | Neg Position | Advantage |
+| --- | --- | --- | --- |
+| User engagement | Co-creation increases investment | Most users won't engage | **Neg** |
+| Output quality | Better alignment improves quality | No empirical evidence | **Neg** |
+| Security | Versioned config is auditable | Editable config is an attack vector | **Neg** |
+| Philosophical | User agency over AI identity | Conceded as a value | Aff |
 
 ### Impact Calculus
 
@@ -240,13 +240,13 @@ In three of five resolutions, the Neg wins not by rejecting the Aff's values but
 
 ### 7.4 Impact Weighing
 
-| Resolution               | Aff strongest impact             | Neg strongest impact              | Net |
-|--------------------------|----------------------------------|-----------------------------------|-----|
-| Context fidelity         | Quality (async workflows)        | Latency (sync workflows)          | Split |
-| Infrastructure reuse     | Adoption simplicity              | Long-term scalability             | Split |
-| Trust through transparency| Necessary trust condition        | Insufficient; need pre-action gates| Neg |
-| Encoded ethics           | Transparency                     | False security from unenforced rules| Neg |
-| Collaborative identity   | User agency (philosophical)      | No empirical functional benefit   | Neg |
+| Resolution | Aff strongest impact | Neg strongest impact | Net |
+| --- | --- | --- | --- |
+| Context fidelity | Quality (async workflows) | Latency (sync workflows) | Split |
+| Infrastructure reuse | Adoption simplicity | Long-term scalability | Split |
+| Trust through transparency | Necessary trust condition | Insufficient; need pre-action gates | Neg |
+| Encoded ethics | Transparency | False security from unenforced rules | Neg |
+| Collaborative identity | User agency (philosophical) | No empirical functional benefit | Neg |
 
 ---
 
@@ -256,13 +256,13 @@ Competitive debate reveals that GMI's arguments are **defensible on their own gr
 
 The Negative's most effective strategy is not *rejection* but *improvement*: accepting GMI's values while proposing strictly superior implementations. This is the most useful outcome of the debate framework — it transforms opposition into a development roadmap.
 
-| Resolution               | Debate verdict                    | Development implication                    |
-|--------------------------|-----------------------------------|--------------------------------------------|
-| Context fidelity         | Aff wins (async); Neg wins (sync)| Scope claims to async workflows             |
-| Infrastructure reuse     | Aff wins (adoption); Neg wins (scale)| Plan for scaling constraints            |
-| Trust through transparency| Neg wins (counterplan)           | Add pre-action review gates                 |
-| Encoded ethics           | Neg wins (kritik)                | Implement runtime enforcement               |
-| Collaborative identity   | Neg wins (empirics)              | Make co-creation optional, not default      |
+| Resolution | Debate verdict | Development implication |
+| --- | --- | --- |
+| Context fidelity | Aff wins (async); Neg wins (sync) | Scope claims to async workflows |
+| Infrastructure reuse | Aff wins (adoption); Neg wins (scale) | Plan for scaling constraints |
+| Trust through transparency | Neg wins (counterplan) | Add pre-action review gates |
+| Encoded ethics | Neg wins (kritik) | Implement runtime enforcement |
+| Collaborative identity | Neg wins (empirics) | Make co-creation optional, not default |
 
 The debate framework's unique contribution is forcing GMI to defend its claims against the *strongest* opposition — not a sympathetic reviewer but an adversary whose job is to find every weakness. What survives that test is genuinely robust.
 

@@ -7,7 +7,7 @@ A Society of Repo operates across six operational domains. Skills are constituti
 ## Skill domains
 
 | Domain | Description | Key roles |
-|---|---|---|
+| --- | --- | --- |
 | Internet operations | Searching, browsing, monitoring feeds and APIs | `web-research-bee` |
 | Local document management | Indexing, organising, retrieving local files | `document-index-bee`, `intake-bee` |
 | Software research and development | Code review, dependency analysis, build monitoring | `code-review-bee`, `dependency-bee`, `build-monitor-bee` |
@@ -22,7 +22,7 @@ A Society of Repo operates across six operational domains. Skills are constituti
 Some roles exist to manage scale rather than to do frontline work.
 
 | Role | Function | Default authority |
-|---|---|---|
+| --- | --- | --- |
 | `assembly-bee` | Compresses lower-level outputs into assembly summaries before settlement | propose |
 | `directive-bee` | Breaks approved settlements into narrower downstream tasks | act |
 | `activation-steward` | Reviews routing quality, congestion, and K-line coverage | propose |

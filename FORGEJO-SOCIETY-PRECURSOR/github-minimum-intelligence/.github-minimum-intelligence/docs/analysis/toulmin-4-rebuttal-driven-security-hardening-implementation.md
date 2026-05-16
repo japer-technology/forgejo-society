@@ -9,7 +9,7 @@ This document outlines the concrete changes required to implement Recommendation
 The [security assessment](../security-assessment.md) identifies ten findings. Section 4 of `toulmin-lessons.md` selects four and maps them to the Toulmin claims they weaken. None of the four mitigations are implemented today:
 
 | SEC Finding | Rebuts Claim | Current State | Gap |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SEC-008 (workflow self-replication) | Ethical — do no harm | `agent.ts` stages all changes via `git add -A` with no path filtering | No pre-commit check rejects modifications to `.github/workflows/` |
 | SEC-002 (network egress) | Trust — sovereignty through legibility | Workflow YAML has no `allowed-endpoints` or firewall rules | Runner has unrestricted outbound network access |
 | SEC-005 (no branch protection) | Trust — reversibility | Install process does not configure branch protection | Agent pushes directly to the default branch without review gates |
@@ -47,7 +47,7 @@ if (blockedPaths.length > 0) {
 Two approaches are possible:
 
 | Approach | Behavior | Trade-off |
-|---|---|---|
+| --- | --- | --- |
 | **Fail-soft** (recommended initially) | Unstage the blocked files, log a warning, commit remaining changes | Agent continues to be useful; the violation is recorded but not fatal |
 | **Fail-hard** | Abort the entire commit and push; post a violation notice as an issue comment | Stronger enforcement, but a false positive (e.g., agent legitimately asked to document a workflow) blocks all work |
 
@@ -58,7 +58,7 @@ Start with fail-soft and escalate to fail-hard once the detection has been valid
 The initial list should block `.github/workflows/` modifications. Consider extending it to other sensitive paths:
 
 | Blocked Pattern | Reason |
-|---|---|
+| --- | --- |
 | `.github/workflows/` | Prevents workflow injection and self-replication |
 | `.github/CODEOWNERS` | Prevents bypassing review requirements |
 | `.github-minimum-intelligence/lifecycle/agent.ts` | Prevents self-modification of the agent runtime |
@@ -113,7 +113,7 @@ For repositories not on Enterprise Cloud, add a section to the installation guid
 **Required endpoints to document**:
 
 | Endpoint | Port | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `api.openai.com` | 443 | LLM API calls (default provider) |
 | `api.github.com` | 443 | GitHub REST API (`gh` CLI, API calls) |
 | `github.com` | 443 | Git push/pull operations |
@@ -146,7 +146,7 @@ Regardless of `allowed-endpoints` availability, add a comment block to the workf
 **Required change**: Add a post-install documentation section (in the README or a dedicated install guide) that instructs the repository owner to enable branch protection:
 
 | Setting | Recommended Value | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Require pull request reviews | 1 reviewer | Prevents unreviewed agent pushes from persisting |
 | Require status checks | Enabled (CI must pass) | Ensures agent changes don't break the build |
 | Restrict who can push | Repository admins only | Blocks direct pushes; all changes go through PRs |
@@ -164,7 +164,7 @@ const push = await run(["git", "push", "origin", `HEAD:${defaultBranch}`]);
 Two resolution paths exist:
 
 | Path | Change Required | Impact |
-|---|---|---|
+| --- | --- | --- |
 | **A: Agent pushes to a PR branch** | Modify `agent.ts` to push to `gmi/issue-<N>` and open a PR via `gh pr create` | Agent changes become reviewable; requires significant `agent.ts` refactor |
 | **B: Agent bypasses protection via app token** | Use a GitHub App installation token with bypass permissions instead of `GITHUB_TOKEN` | Maintains current push model; weakens the protection rule |
 | **C: Document without enforcing** | Add branch protection instructions but mark them as optional for full-agent workflows | Honest about the trade-off; no code change required |
@@ -203,7 +203,7 @@ permissions:
 The workflow contains multiple jobs. Not every job needs every permission. Permissions should be scoped per job rather than at the workflow level:
 
 | Permission | `run-agent` needs | `run-install` needs | `run-gitpages` needs |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `contents: write` | Yes — commits and pushes | Yes — commits installed files | Yes — checks out code |
 | `issues: write` | Yes — posts comments, reactions | No | No |
 | `actions: write` | No | Yes — triggers subsequent workflows | No |
@@ -306,7 +306,7 @@ If branch protection instructions are added to the installation section, ensure 
 ### 8.1 Workflow Self-Modification Detection (SEC-008)
 
 | Test | Method | Expected Result |
-|---|---|---|
+| --- | --- | --- |
 | Agent asked to modify a workflow file | Trigger agent via issue comment requesting a workflow change | Workflow file is unstaged; warning logged; remaining changes committed |
 | Agent makes no workflow changes | Normal agent operation | No warning logged; commit proceeds normally |
 | Configuration file missing | Delete `restricted-paths.json` and trigger agent | Agent proceeds without path restrictions (fail-open) |
@@ -315,7 +315,7 @@ If branch protection instructions are added to the installation section, ensure 
 ### 8.2 Token Scope (SEC-003)
 
 | Test | Method | Expected Result |
-|---|---|---|
+| --- | --- | --- |
 | Agent job runs with reduced permissions | Move permissions to job level | Agent can still commit, push, and comment |
 | Pages job runs with read-only contents | Set `contents: read` on `run-gitpages` | Pages deployment succeeds |
 | Install job triggers subsequent workflows | Verify `actions: write` on `run-install` | Post-install workflows fire correctly |
@@ -323,14 +323,14 @@ If branch protection instructions are added to the installation section, ensure 
 ### 8.3 Branch Protection (SEC-005)
 
 | Test | Method | Expected Result |
-|---|---|---|
+| --- | --- | --- |
 | Branch protection enabled, agent pushes directly | Enable protection rules; trigger agent | Push is rejected (unless bypass is configured) |
 | Branch protection enabled, agent opens PR | After Path A refactor | PR is created; merge requires review |
 
 ### 8.4 Network Egress (SEC-002)
 
 | Test | Method | Expected Result |
-|---|---|---|
+| --- | --- | --- |
 | `allowed-endpoints` configured on Enterprise Cloud | Add the YAML key; trigger agent | Agent can reach LLM API and GitHub; all other egress blocked |
 | `allowed-endpoints` on non-Enterprise plan | Add the YAML key; trigger agent | Key is silently ignored; agent operates normally |
 
@@ -339,7 +339,7 @@ If branch protection instructions are added to the installation section, ensure 
 ## 9. Dependency and Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Path check has false positives (agent legitimately needs to document workflows) | Medium | Medium — blocks valid work | Start with fail-soft; review warnings before switching to fail-hard |
 | Job-level permissions break an implicit dependency | Low | High — job fails | Test each job individually after migration; keep workflow-level permissions as rollback |
 | Branch protection blocks agent entirely | High (if Path A not implemented) | High — agent becomes non-functional | Start with documentation-only (Path C); implement PR-based push (Path A) before enforcing protection |

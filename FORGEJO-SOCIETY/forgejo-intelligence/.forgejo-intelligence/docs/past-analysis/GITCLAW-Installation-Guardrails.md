@@ -71,7 +71,7 @@ Every session writes to `state/sessions/*.jsonl` and commits directly to the def
 Credit where it's due — the current design includes several thoughtful safety mechanisms:
 
 | Guardrail | Mechanism | Strength |
-|-----------|-----------|----------|
+| --- | --- | --- |
 | **Fail-closed sentinel** | `GITCLAW-ENABLED.md` must exist; workflow exits non-zero otherwise | ✅ Strong — explicit opt-in required |
 | **Actor authorization** | Workflow checks `admin`/`maintain`/`write` permission before running | ✅ Strong — blocks external/anonymous triggers |
 | **Bot-loop prevention** | Skips `issue_comment` events from `github-actions[bot]` | ✅ Strong — prevents infinite reply loops |
@@ -357,7 +357,7 @@ For future delivery methods beyond GitHub Actions (e.g., external webhook receiv
 ## Summary Matrix
 
 | # | Recommendation | Priority | Complexity | Impact |
-|---|---------------|----------|------------|--------|
+| --- | --- | --- | --- | --- |
 | R1 | PR-based workflow (no direct push) | 🔴 Tier 1 | Medium | Very High |
 | R2 | Workflow timeout | 🔴 Tier 1 | Low | Medium |
 | R3 | Concurrency control | 🔴 Tier 1 | Low | Medium |

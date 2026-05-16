@@ -17,12 +17,12 @@ Slack 是全球领先的企业级即时通讯平台。PicoClaw 采用 Slack 的 
 }
 ```
 
-| 字段       | 类型   | 必填 | 描述                                                     |
-| ---------- | ------ | ---- | -------------------------------------------------------- |
-| enabled    | bool   | 是   | 是否启用 Slack 频道                                      |
-| bot_token  | string | 是   | Slack 机器人的 Bot User OAuth Token (以 xoxb- 开头)      |
-| app_token  | string | 是   | Slack 应用的 Socket Mode App Level Token (以 xapp- 开头) |
-| allow_from | array  | 否   | 用户ID白名单，空表示允许所有用户                         |
+| 字段 | 类型 | 必填 | 描述 |
+| --- | --- | --- | --- |
+| enabled | bool | 是 | 是否启用 Slack 频道 |
+| bot_token | string | 是 | Slack 机器人的 Bot User OAuth Token (以 xoxb- 开头) |
+| app_token | string | 是 | Slack 应用的 Socket Mode App Level Token (以 xapp- 开头) |
+| allow_from | array | 否 | 用户ID白名单，空表示允许所有用户 |
 
 ## 设置流程
 

@@ -69,12 +69,12 @@
 
 🤖 **Auto-Construit par l'IA** : Implémentation native en Go de manière autonome — 95% du cœur généré par l'Agent avec affinement humain dans la boucle.
 
-|                               | OpenClaw      | NanoBot                  | **PicoClaw**                              |
-| ----------------------------- | ------------- | ------------------------ | ----------------------------------------- |
-| **Langage**                   | TypeScript    | Python                   | **Go**                                    |
-| **RAM**                       | >1 Go         | >100 Mo                  | **< 10 Mo**                               |
-| **Démarrage**</br>(cœur 0,8 GHz) | >500s     | >30s                     | **<1s**                                   |
-| **Coût**                      | Mac Mini 599$ | La plupart des SBC Linux </br>~50$ | **N'importe quelle carte Linux**</br>**À partir de 10$** |
+|  | OpenClaw | NanoBot | **PicoClaw** |
+| --- | --- | --- | --- |
+| **Langage** | TypeScript | Python | **Go** |
+| **RAM** | >1 Go | >100 Mo | **< 10 Mo** |
+| **Démarrage**</br>(cœur 0,8 GHz) | >500s | >30s | **<1s** |
+| **Coût** | Mac Mini 599$ | La plupart des SBC Linux </br>~50$ | **N'importe quelle carte Linux**</br>**À partir de 10$** |
 
 <img src="assets/compare.jpg" alt="PicoClaw" width="512">
 
@@ -281,14 +281,14 @@ Et voilà ! Vous avez un assistant IA fonctionnel en 2 minutes.
 
 Discutez avec votre PicoClaw via Telegram, Discord, DingTalk, LINE ou WeCom
 
-| Canal        | Configuration                          |
-| ------------ | -------------------------------------- |
-| **Telegram** | Facile (juste un token)                |
-| **Discord**  | Facile (token bot + intents)           |
-| **QQ**       | Facile (AppID + AppSecret)             |
-| **DingTalk** | Moyen (identifiants de l'application)  |
-| **LINE**     | Moyen (identifiants + URL de webhook)  |
-| **WeCom AI Bot** | Moyen (Token + clé AES)            |
+| Canal | Configuration |
+| --- | --- |
+| **Telegram** | Facile (juste un token) |
+| **Discord** | Facile (token bot + intents) |
+| **QQ** | Facile (AppID + AppSecret) |
+| **DingTalk** | Moyen (identifiants de l'application) |
+| **LINE** | Moyen (identifiants + URL de webhook) |
+| **WeCom AI Bot** | Moyen (Token + clé AES) |
 
 <details>
 <summary><b>Telegram</b> (Recommandé)</summary>
@@ -613,10 +613,10 @@ Fichier de configuration : `~/.picoclaw/config.json`
 
 Vous pouvez remplacer les chemins par défaut à l'aide de variables d'environnement. Ceci est utile pour les installations portables, les déploiements conteneurisés ou l'exécution de picoclaw en tant que service système. Ces variables sont indépendantes et contrôlent différents chemins.
 
-| Variable          | Description                                                                                                                             | Chemin par Défaut         |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------|---------------------------|
+| Variable | Description | Chemin par Défaut |
+| --- | --- | --- |
 | `PICOCLAW_CONFIG` | Remplace le chemin du fichier de configuration. Cela indique directement à picoclaw quel `config.json` charger, en ignorant tous les autres emplacements. | `~/.picoclaw/config.json` |
-| `PICOCLAW_HOME`   | Remplace le répertoire racine des données picoclaw. Cela modifie l'emplacement par défaut du `workspace` et des autres répertoires de données.          | `~/.picoclaw`             |
+| `PICOCLAW_HOME` | Remplace le répertoire racine des données picoclaw. Cela modifie l'emplacement par défaut du `workspace` et des autres répertoires de données. | `~/.picoclaw` |
 
 **Exemples :**
 
@@ -671,7 +671,7 @@ PicoClaw s'exécute dans un environnement sandboxé par défaut. L'agent ne peut
 ```
 
 | Option | Par défaut | Description |
-|--------|------------|-------------|
+| --- | --- | --- |
 | `workspace` | `~/.picoclaw/workspace` | Répertoire de travail de l'agent |
 | `restrict_to_workspace` | `true` | Restreindre l'accès fichiers/commandes au workspace |
 
@@ -680,7 +680,7 @@ PicoClaw s'exécute dans un environnement sandboxé par défaut. L'agent ne peut
 Lorsque `restrict_to_workspace: true`, les outils suivants sont restreints au bac à sable :
 
 | Outil | Fonction | Restriction |
-|-------|----------|-------------|
+| --- | --- | --- |
 | `read_file` | Lire des fichiers | Uniquement les fichiers dans le workspace |
 | `write_file` | Écrire des fichiers | Uniquement les fichiers dans le workspace |
 | `list_dir` | Lister des répertoires | Uniquement les répertoires dans le workspace |
@@ -740,7 +740,7 @@ export PICOCLAW_AGENTS_DEFAULTS_RESTRICT_TO_WORKSPACE=false
 Le paramètre `restrict_to_workspace` s'applique de manière cohérente sur tous les chemins d'exécution :
 
 | Chemin d'Exécution | Périmètre de Sécurité |
-|--------------------|----------------------|
+| --- | --- |
 | Agent Principal | `restrict_to_workspace` ✅ |
 | Sous-agent / Spawn | Hérite de la même restriction ✅ |
 | Tâches Heartbeat | Hérite de la même restriction ✅ |
@@ -779,7 +779,7 @@ Pour les tâches de longue durée (recherche web, appels API), utilisez l'outil 
 **Comportements clés :**
 
 | Fonctionnalité | Description |
-|----------------|-------------|
+| --- | --- |
 | **spawn** | Crée un sous-agent asynchrone, ne bloque pas le heartbeat |
 | **Contexte indépendant** | Le sous-agent a son propre contexte, sans historique de session |
 | **Outil message** | Le sous-agent communique directement avec l'utilisateur via l'outil message |
@@ -815,7 +815,7 @@ Le sous-agent a accès aux outils (message, web_search, etc.) et peut communique
 ```
 
 | Option | Par défaut | Description |
-|--------|------------|-------------|
+| --- | --- | --- |
 | `enabled` | `true` | Activer/désactiver le heartbeat |
 | `interval` | `30` | Intervalle de vérification en minutes (min : 5) |
 
@@ -829,17 +829,17 @@ Le sous-agent a accès aux outils (message, web_search, etc.) et peut communique
 > [!NOTE]
 > Groq fournit la transcription vocale gratuite via Whisper. Si configuré, les messages vocaux Telegram seront automatiquement transcrits.
 
-| Fournisseur              | Utilisation                              | Obtenir une Clé API                                    |
-| ------------------------ | ---------------------------------------- | ------------------------------------------------------ |
-| `gemini`                 | LLM (Gemini direct)                      | [aistudio.google.com](https://aistudio.google.com)     |
-| `zhipu`                  | LLM (Zhipu direct)                       | [bigmodel.cn](bigmodel.cn)                             |
-| `openrouter` (À tester)  | LLM (recommandé, accès à tous les modèles) | [openrouter.ai](https://openrouter.ai)               |
-| `anthropic` (À tester)   | LLM (Claude direct)                      | [console.anthropic.com](https://console.anthropic.com) |
-| `openai` (À tester)      | LLM (GPT direct)                         | [platform.openai.com](https://platform.openai.com)     |
-| `deepseek` (À tester)    | LLM (DeepSeek direct)                    | [platform.deepseek.com](https://platform.deepseek.com) |
-| `qwen`                   | LLM (Alibaba Qwen)                      | [dashscope.aliyuncs.com](https://dashscope.aliyuncs.com/compatible-mode/v1) |
-| `cerebras`               | LLM (Cerebras)                           | [cerebras.ai](https://api.cerebras.ai/v1)              |
-| `groq`                   | LLM + **Transcription vocale** (Whisper) | [console.groq.com](https://console.groq.com)           |
+| Fournisseur | Utilisation | Obtenir une Clé API |
+| --- | --- | --- |
+| `gemini` | LLM (Gemini direct) | [aistudio.google.com](https://aistudio.google.com) |
+| `zhipu` | LLM (Zhipu direct) | [bigmodel.cn](bigmodel.cn) |
+| `openrouter` (À tester) | LLM (recommandé, accès à tous les modèles) | [openrouter.ai](https://openrouter.ai) |
+| `anthropic` (À tester) | LLM (Claude direct) | [console.anthropic.com](https://console.anthropic.com) |
+| `openai` (À tester) | LLM (GPT direct) | [platform.openai.com](https://platform.openai.com) |
+| `deepseek` (À tester) | LLM (DeepSeek direct) | [platform.deepseek.com](https://platform.deepseek.com) |
+| `qwen` | LLM (Alibaba Qwen) | [dashscope.aliyuncs.com](https://dashscope.aliyuncs.com/compatible-mode/v1) |
+| `cerebras` | LLM (Cerebras) | [cerebras.ai](https://api.cerebras.ai/v1) |
+| `groq` | LLM + **Transcription vocale** (Whisper) | [console.groq.com](https://console.groq.com) |
 
 <details>
 <summary><b>Configuration Zhipu</b></summary>
@@ -964,7 +964,7 @@ Cette conception permet également le **support multi-agent** avec une sélectio
 #### 📋 Tous les Fournisseurs Supportés
 
 | Fournisseur | Préfixe `model` | API Base par Défaut | Protocole | Clé API |
-|-------------|-----------------|---------------------|----------|---------|
+| --- | --- | --- | --- | --- |
 | **OpenAI** | `openai/` | `https://api.openai.com/v1` | OpenAI | [Obtenir Clé](https://platform.openai.com) |
 | **Anthropic** | `anthropic/` | `https://api.anthropic.com/v1` | Anthropic | [Obtenir Clé](https://console.anthropic.com) |
 | **Zhipu AI (GLM)** | `zhipu/` | `https://open.bigmodel.cn/api/paas/v4` | OpenAI | [Obtenir Clé](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys) |
@@ -1120,15 +1120,15 @@ Pour le guide de migration détaillé, voir [docs/migration/model-list-migration
 
 ## Référence CLI
 
-| Commande                  | Description                           |
-| ------------------------- | ------------------------------------- |
-| `picoclaw onboard`        | Initialiser la configuration & le workspace |
-| `picoclaw agent -m "..."` | Discuter avec l'agent                 |
-| `picoclaw agent`          | Mode de discussion interactif         |
-| `picoclaw gateway`        | Démarrer la passerelle                |
-| `picoclaw status`         | Afficher le statut                    |
-| `picoclaw cron list`      | Lister toutes les tâches planifiées   |
-| `picoclaw cron add ...`   | Ajouter une tâche planifiée           |
+| Commande | Description |
+| --- | --- |
+| `picoclaw onboard` | Initialiser la configuration & le workspace |
+| `picoclaw agent -m "..."` | Discuter avec l'agent |
+| `picoclaw agent` | Mode de discussion interactif |
+| `picoclaw gateway` | Démarrer la passerelle |
+| `picoclaw status` | Afficher le statut |
+| `picoclaw cron list` | Lister toutes les tâches planifiées |
+| `picoclaw cron add ...` | Ajouter une tâche planifiée |
 
 ### Tâches Planifiées / Rappels
 
@@ -1197,9 +1197,9 @@ Cela se produit lorsqu'une autre instance du bot est en cours d'exécution. Assu
 
 ## 📝 Comparaison des Clés API
 
-| Service          | Offre Gratuite       | Cas d'Utilisation                     |
-| ---------------- | -------------------- | ------------------------------------- |
-| **OpenRouter**   | 200K tokens/mois     | Multiples modèles (Claude, GPT-4, etc.) |
-| **Zhipu**        | 200K tokens/mois     | Idéal pour les utilisateurs chinois   |
-| **Brave Search** | 2000 requêtes/mois   | Fonctionnalité de recherche web       |
-| **Groq**         | Offre gratuite dispo | Inférence ultra-rapide (Llama, Mixtral) |
+| Service | Offre Gratuite | Cas d'Utilisation |
+| --- | --- | --- |
+| **OpenRouter** | 200K tokens/mois | Multiples modèles (Claude, GPT-4, etc.) |
+| **Zhipu** | 200K tokens/mois | Idéal pour les utilisateurs chinois |
+| **Brave Search** | 2000 requêtes/mois | Fonctionnalité de recherche web |
+| **Groq** | Offre gratuite dispo | Inférence ultra-rapide (Llama, Mixtral) |

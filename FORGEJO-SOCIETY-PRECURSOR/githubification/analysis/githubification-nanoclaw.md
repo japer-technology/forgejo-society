@@ -17,7 +17,7 @@ NanoClaw is uniquely suited for Githubification. Its anti-complexity philosophy 
 Every Githubification maps the same four GitHub primitives to the same four roles. This is the invariant:
 
 | GitHub Primitive | Role | NanoClaw Equivalent |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Replaces the local Node.js process, `launchd`/`systemd`, and container runtime |
 | **Git** | Storage and memory | Replaces SQLite for messages, sessions, tasks, and `groups/*/CLAUDE.md` memory files |
 | **GitHub Issues** | User interface | Replaces WhatsApp, Telegram, Discord, Slack, and Gmail channels |
@@ -36,7 +36,7 @@ Channels → SQLite → Polling loop → Container (Claude Agent SDK) → Respon
 ### Key Components
 
 | Component | File | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Orchestrator | `src/index.ts` | State management, message loop, agent invocation |
 | Channel registry | `src/channels/registry.ts` | Self-registering channel abstraction — channels plug in at startup |
 | Container runner | `src/container-runner.ts` | Spawns isolated Claude agents in Docker/Apple Container |
@@ -115,7 +115,7 @@ Each issue interaction triggers a fresh workflow run. The agent loads state from
 ### Component Mapping
 
 | Local Mode | GitHub Mode | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `launchd`/`systemd` daemon | GitHub Actions `on: issues / issue_comment` | Webhook replaces polling |
 | SQLite database | Git-committed JSON/JSONL files | `state/issues/`, `state/sessions/` |
 | WhatsApp/Telegram/etc. | GitHub Issues | Each issue = one conversation thread |
@@ -345,7 +345,7 @@ for (let attempt = 1; attempt <= 10; attempt++) {
 ## Security Model Translation
 
 | NanoClaw Security Boundary | GitHub Actions Equivalent |
-|---|---|
+| --- | --- |
 | Container process isolation | Runner VM isolation (ephemeral, destroyed after use) |
 | Mount restrictions (allowlist) | Runner has no access to external filesystems |
 | Non-root execution (uid 1000) | Runner uses a non-root user |
@@ -416,7 +416,7 @@ A Githubified NanoClaw provides:
 ## Limitations and Tradeoffs
 
 | Limitation | Impact | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **No real-time messaging** | Responses take 30–120 seconds (workflow startup + execution) | Acceptable for async workflows; not suitable for chat-speed interactions |
 | **6-hour job limit** | Long agent tasks may be interrupted | Break complex tasks into smaller steps |
 | **No persistent state between runs** | SQLite cannot be used as-is | Git-committed JSON/JSONL replaces SQLite |
@@ -431,7 +431,7 @@ A Githubified NanoClaw provides:
 ## Comparison: NanoClaw vs. GMI vs. Githubified NanoClaw
 
 | Dimension | NanoClaw (Local) | GMI (Native GitHub) | Githubified NanoClaw |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Runtime** | Local Node.js daemon | GitHub Actions | GitHub Actions |
 | **AI engine** | Claude Agent SDK (in container) | pi-coding-agent | Claude Agent SDK (on runner) |
 | **Channels** | WhatsApp, Telegram, Discord, Slack, Gmail | GitHub Issues | GitHub Issues |

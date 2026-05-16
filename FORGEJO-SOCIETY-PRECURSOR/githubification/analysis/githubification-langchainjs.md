@@ -19,7 +19,7 @@ This analysis examines how `githubification-langchainjs` — a fork of [LangChai
 Githubification maps every repository to four GitHub primitives. For LangChain.js, all four map cleanly with no infrastructure gap:
 
 | GitHub Primitive | Role | LangChain.js Mapping |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Executes LangChain.js chains, agents, and tools directly on standard runners — no databases, containers, or persistent services required |
 | **Git** | Storage & Memory | The monorepo stores framework code, agent state, conversation history (JSONL sessions), and all outputs — versioned and auditable |
 | **GitHub Issues** | User Interface | Each issue becomes a conversation thread — users describe what they need, the agent responds using LangChain.js capabilities |
@@ -34,7 +34,7 @@ This is the most complete primitive mapping of any Githubification candidate. Wh
 ### 1. Zero Infrastructure Gap
 
 | Requirement | Available on GitHub Actions? |
-|---|---|
+| --- | --- |
 | Node.js v24.x | ✅ Yes (`actions/setup-node`) |
 | pnpm v10.14.0 | ✅ Yes (`pnpm/action-setup`) |
 | TypeScript compiler | ✅ Yes (dev dependency) |
@@ -82,7 +82,7 @@ The repository owner chooses the provider by setting the appropriate API key in 
 The monorepo's package structure provides natural context boundaries:
 
 | Package | Context Scope |
-|---|---|
+| --- | --- |
 | `@langchain/core` | Abstractions, type system, interface contracts |
 | `langchain` | Agent patterns, chain composition, memory |
 | `@langchain/openai` | OpenAI integration specifics |
@@ -98,7 +98,7 @@ A question about "how do I use structured output with OpenAI?" loads `@langchain
 With 20 GitHub Actions workflows already in place, the repo defines what "correct" looks like:
 
 | Workflow | Purpose |
-|---|---|
+| --- | --- |
 | `ci.yml` | Linting on PRs |
 | `unit-tests-langchain-core.yml` | Core unit tests |
 | `unit-tests-langchain.yml` | Main package tests |
@@ -119,7 +119,7 @@ Any code the agent generates or modifies would pass through these existing quali
 Previous Githubification case studies reveal five strategies:
 
 | Strategy | Description | Example |
-|---|---|---|
+| --- | --- | --- |
 | **Native** | Agent designed for GitHub from the start | GMI, GitClaw |
 | **Wrapping** | Existing agent wrapped without modification | OpenClaw |
 | **Substitution** | Incompatible agent replaced with GitHub-native one | Agent Zero |
@@ -129,7 +129,7 @@ Previous Githubification case studies reveal five strategies:
 LangChain.js introduces a sixth: **Composition**. Because the subject is a framework for building agents, the Githubification agent can be built from the framework's own components. The agent that responds to Issues would be built **with** LangChain.js — using its chat models, tools, memory, and chain abstractions — running on GitHub Actions.
 
 | Strategy | What runs on GitHub Actions | Relationship to original code |
-|---|---|---|
+| --- | --- | --- |
 | Native | The original agent, unchanged | Identical |
 | Wrapping | A wrapper around the agent | Encapsulates |
 | Substitution | A new, lightweight agent | Reads original as context |
@@ -290,7 +290,7 @@ This is the composition strategy in action: the agent IS LangChain.js, demonstra
 ### Immediate Capabilities (Issue-Driven)
 
 | User Action | Agent Response |
-|---|---|
+| --- | --- |
 | "How do I use structured output with GPT-4o?" | Generates working code using `@langchain/openai` with `withStructuredOutput()` |
 | "Show me how to build a RAG pipeline" | Composes a retrieval chain using document loaders, embeddings, and retrievers |
 | "What's the difference between `invoke` and `stream`?" | Explains with examples from `@langchain/core/runnables` |
@@ -300,7 +300,7 @@ This is the composition strategy in action: the agent IS LangChain.js, demonstra
 ### Advanced Capabilities
 
 | Capability | How It Works |
-|---|---|
+| --- | --- |
 | **Live code execution** | The agent can `invoke()` LangChain.js chains directly on the runner — not just describe them |
 | **Multi-provider demos** | Switch between OpenAI, Anthropic, Google by changing which Secret is set |
 | **Test validation** | Run specific test suites and report pass/fail in the Issue |
@@ -358,7 +358,7 @@ The agent becomes a living demonstration of LangChain.js:
 ## Comparison with Other Githubified Repos
 
 | Dimension | GMI (Native) | Agent Zero (Substitution) | AutoGPT (Preparation) | **LangChain.js (Composition)** |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Infrastructure needs** | Node.js (Bun) | Flask, FAISS, Docker | PostgreSQL, Redis, RabbitMQ, Docker | **Node.js, pnpm** |
 | **Runs on Actions?** | ✅ Yes | ❌ No (substituted) | ❌ No (not yet) | **✅ Yes** |
 | **Strategy** | Native | Substitution | TBD | **Composition** |
@@ -389,7 +389,7 @@ The agent becomes a living demonstration of LangChain.js:
 ## Risks and Mitigations
 
 | Risk | Mitigation |
-|---|---|
+| --- | --- |
 | **Monorepo build time** — Full `pnpm install` and build may be slow on Actions | Build only the required packages (`--filter @langchain/core`); cache `node_modules` with `actions/cache` |
 | **Actions timeout** — Complex LLM interactions may exceed the 6-hour job limit | Set reasonable token limits; break complex tasks into multi-turn conversations |
 | **API costs** — LLM API calls cost money per token | Owner controls which provider/model is used; cheaper models available for simple queries |

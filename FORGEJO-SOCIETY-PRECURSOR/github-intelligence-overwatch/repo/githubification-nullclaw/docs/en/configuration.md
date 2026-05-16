@@ -573,7 +573,7 @@ Tunnel providers for exposing the gateway to the public internet. Required for w
 **Providers:**
 
 | Provider | Description |
-|----------|-------------|
+| --- | --- |
 | `none` | No tunnel (default) |
 | `cloudflare` | Cloudflare Tunnel |
 | `ngrok` | ngrok tunnel |

@@ -32,7 +32,7 @@ type ProvidersConfig struct {
 Recent PRs demonstrate this issue:
 
 | PR | Provider | Code Changes |
-|----|----------|--------------|
+| --- | --- | --- |
 | #365 | Qwen | +17 lines to http_provider.go |
 | #333 | Cerebras | +17 lines to http_provider.go |
 | #368 | Volcengine | +18 lines to http_provider.go |
@@ -150,7 +150,7 @@ type ModelConfig struct {
 Identify protocol via prefix in `model` field:
 
 | Prefix | Protocol | Description |
-|--------|----------|-------------|
+| --- | --- | --- |
 | `openai/` | OpenAI-compatible | Most common, includes DeepSeek, Qwen, Groq, etc. |
 | `anthropic/` | Anthropic | Claude series specific |
 | `antigravity/` | Antigravity | Google Cloud Code Assist |
@@ -163,7 +163,7 @@ Identify protocol via prefix in `model` field:
 ### 3.1 Problems Solved
 
 | Problem | Old Approach | New Approach |
-|---------|--------------|--------------|
+| --- | --- | --- |
 | Add OpenAI-compatible Provider | Change 3 code locations | Add one config entry |
 | Agent specifies model | Need provider + model | Only need model |
 | Code duplication | Each Provider duplicates logic | Share protocol implementation |
@@ -320,7 +320,7 @@ func (c *Config) GetModelConfig(modelName string) (*ModelConfig, error) {
 ## 6. Risks and Mitigations
 
 | Risk | Mitigation |
-|------|------------|
+| --- | --- |
 | Breaking existing configs | Compatibility period keeps old config working |
 | User migration cost | Provide automatic migration script |
 | Special Provider incompatibility | Keep `auth_method` and other extension fields |

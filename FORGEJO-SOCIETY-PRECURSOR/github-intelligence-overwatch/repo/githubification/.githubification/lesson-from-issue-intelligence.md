@@ -21,7 +21,7 @@ This is a **Type 1 — AI Agent Repo** Githubification, and the most focused one
 Issue Intelligence demonstrates that GitHub Issues alone provide everything an AI agent needs to be useful: a user interface (issue comments), task identity (issue numbers), conversation threading (comment chains), labeling (issue labels), and event triggers (issue_comment webhook). By restricting the agent's surface to this single primitive, the system achieves maximum portability — it works in any repository, regardless of whether that repo uses Projects, Discussions, Pages, or any other GitHub feature.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes the agent |
 | **Git** | Storage and memory — sessions, conversations, and state are committed |
 | **GitHub Issues** | User interface — each issue is a conversation thread |
@@ -96,7 +96,7 @@ This proves that Githubification does not require engaging with every GitHub fea
 The runtime is three TypeScript files executed in sequence:
 
 | Step | File | Purpose |
-|------|------|---------|
+| --- | --- | --- |
 | 1 | `ISSUE-INTELLIGENCE-ENABLED.ts` | Fail-closed guard — checks sentinel file exists |
 | 2 | `ISSUE-INTELLIGENCE-INDICATOR.ts` | Feedback — adds 👀 reaction to show the agent is working |
 | 3 | `ISSUE-INTELLIGENCE-AGENT.ts` | Execute — runs the AI agent, posts reply, commits state |

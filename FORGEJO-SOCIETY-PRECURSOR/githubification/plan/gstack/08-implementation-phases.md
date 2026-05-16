@@ -7,7 +7,7 @@
 ## Phase Overview
 
 | Phase | Name | Skills | Deliverable |
-|-------|------|--------|-------------|
+| --- | --- | --- | --- |
 | 1 | Core Review + Refresh | `/review`, `/cso`, `run-refresh-gstack` | Working PR review + security audit + resource extraction mechanism |
 | 2 | QA + Investigation | `/qa`, `/qa-only`, `/investigate` | Browser-based QA testing and root-cause debugging |
 | 3 | Conversation Skills | `/office-hours`, `/plan-ceo-review`, `/plan-eng-review`, `/plan-design-review` | Multi-turn conversation via issue comments |
@@ -305,7 +305,7 @@ Phase 1 is the foundation. Phases 2 and 3 can proceed in parallel after Phase 1.
 ## Risk Register
 
 | Risk | Impact | Likelihood | Mitigation |
-|------|--------|-----------|------------|
+| --- | --- | --- | --- |
 | LLM costs exceed budget | High | Medium | Model tiering, label gating, rate limits (see 07-cost-and-controls.md) |
 | Playwright cold start too slow | Low | Low | Acceptable for CI; ~10s startup vs. gstack's ~3s persistent daemon |
 | Session files grow unbounded | Medium | Medium | Archive policy (90-day rotation) |
@@ -319,7 +319,7 @@ Phase 1 is the foundation. Phases 2 and 3 can proceed in parallel after Phase 1.
 ## Success Metrics
 
 | Metric | Target |
-|--------|--------|
+| --- | --- |
 | Review accuracy | Agent catches ≥80% of issues found by human reviewers |
 | False positive rate | <20% of flagged issues are false positives |
 | Time to first review comment | <3 minutes from PR opened |

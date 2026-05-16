@@ -52,7 +52,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `classification_accuracy` | % of documents correctly classified |
 | `misclassification_rate` | % of documents incorrectly classified |
 | `novel_stimulus_rate` | % of stimuli with no K-line match after two passes |

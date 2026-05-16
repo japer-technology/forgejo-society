@@ -45,7 +45,7 @@ Different teams want different agent behaviors. The security team wants a parano
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Persona configuration format** | Define schema, create example personas | ~1 hour |
 | **Label detection & dispatch** | Read issue labels, match to personas, load config | ~1.5 hours |
 | **Prompt augmentation** | Inject persona-specific system prompt and skill references | ~1.5 hours |

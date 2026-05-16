@@ -194,7 +194,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Code Scanning Alert Created | `code_scanning_alert.created` | Code Scanning Alert Lifecycle |
 | 2 | Code Scanning Alert Fixed | `code_scanning_alert.fixed` | Code Scanning Alert Lifecycle |
 | 3 | Code Scanning Alert Dismissed | `code_scanning_alert.dismissed` | Code Scanning Alert Lifecycle |

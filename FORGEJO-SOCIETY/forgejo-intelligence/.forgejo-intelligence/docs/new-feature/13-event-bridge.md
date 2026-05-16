@@ -47,7 +47,7 @@ The roadmap's Phase 5 envisions `repository_dispatch` with typed event routing. 
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow trigger** | Add `repository_dispatch` to workflow YAML | ~15 min |
 | **Event handler config** | Define schema, parser, variable substitution | ~1.5 hours |
 | **Agent orchestrator** | Dispatch event path: parse payload, match handler, create issue, run agent | ~2.5 hours |

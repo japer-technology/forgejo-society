@@ -192,7 +192,7 @@ A frame slot has:
 The cost structure makes defaults attractive:
 
 | Operation | Cost |
-|---|---|
+| --- | --- |
 | Query a slot, get the default | constant |
 | Query a slot, find one exception applies, return it | small linear in exception count |
 | Add a new exception | constant |
@@ -220,7 +220,7 @@ Principle (P7)**: no single representation is enough.
 Each representation has an irreducible job:
 
 | Representation | Irreducible job |
-|---|---|
+| --- | --- |
 | Microneme | Sub-symbolic distinction |
 | Polyneme | Cross-agency reference |
 | Frame | Structured stereotype with defaults |

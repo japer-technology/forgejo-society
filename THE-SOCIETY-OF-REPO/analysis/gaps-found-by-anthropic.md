@@ -9,7 +9,7 @@
 ## What was examined
 
 | Document | What it contains |
-|---|---|
+| --- | --- |
 | `THE-SOCIETY-OF-MIND/research/1986.md` | Minsky's original *Society of Mind* (1986) — agents, K-lines, critics, censors, global workspace, Investment Principle, humor as censor, memory, analogy, consciousness |
 | `THE-SOCIETY-OF-MIND/research/1988.md` | Minsky's 1988 ONR final report — insulation vs interaction, double-purpose deadlock, differentiation and specialisation, connectionist vs symbolic trade-offs, learning and representation |
 | `THE-SOCIETY-OF-MIND/research/2025-10-01.md` | Mikkilineni & Michaels (2025) — Society of Minds, graph-structured memory, epistemic provenance, digital genomes, cognizing oracles, Mind–Brain–Body triad, dialogical governance |
@@ -202,7 +202,7 @@ A constitutional stability gradient — a tiered classification of which constit
 ## Summary table
 
 | # | Gap | Primary source | What SOR has now | What is missing |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 | Insulation architecture | Minsky 1988 | K-line suppress fields | Insulation map; cross-agency learning isolation |
 | 2 | Differentiation and spawn | Minsky 1988 | Retire or reinforce only | Duplicate-and-specialise protocol for double-purpose drift |
 | 3 | Investment Principle bootstrap | Minsky 1986 | Uniform evaluation of all agencies | Maturity-adjusted evaluation protecting new agencies |

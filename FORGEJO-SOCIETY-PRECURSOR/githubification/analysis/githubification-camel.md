@@ -17,7 +17,7 @@ This analysis outlines the path from the current state (skill-based knowledge ex
 ### What already exists
 
 | Layer | Contents | Status |
-|-------|----------|--------|
+| --- | --- | --- |
 | **CAMEL Framework** | Python source (`camel/`), 25+ subpackages, examples, docs, tests | Untouched upstream code |
 | **Skill Layer** (`.camel/`) | `skills/skill-creator/SKILL.md`, scripts, references | Knowledge export — no runtime |
 | **CI/CD Workflows** (`.github/workflows/`) | 12 workflows: build, test, lint, security, docs, release, profiling | Fully operational for development |
@@ -28,7 +28,7 @@ This analysis outlines the path from the current state (skill-based knowledge ex
 ### What is missing
 
 | Component | Purpose | Why it's needed |
-|-----------|---------|-----------------|
+| --- | --- | --- |
 | **Agent workflow** | A GitHub Actions workflow triggered by issue events | The compute layer — makes GitHub the runtime |
 | **Lifecycle orchestrator** | A script that reads issues, invokes the agent, posts replies, commits state | The bridge between GitHub primitives and agent execution |
 | **Agent configuration** | Identity, system prompt, LLM provider/model settings | Gives the agent personality and behavior |
@@ -42,7 +42,7 @@ This analysis outlines the path from the current state (skill-based knowledge ex
 Every Githubification maps to the same four primitives. Here is how each would apply to this repository:
 
 | GitHub Primitive | Role in Githubified CAMEL |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — runs the agent on every issue event. Leverages the existing `camel_install` composite action for Python environment setup if CAMEL's runtime is needed, or uses Bun + `pi-coding-agent` for a lightweight GitHub-native agent. |
 | **Git** | Storage and memory — conversation sessions (JSONL), issue-to-session mappings (JSON), agent edits, and skill files are all committed to the repo. |
 | **GitHub Issues** | User interface — each issue is a conversation thread. Users ask about CAMEL, request skill creation, explore multi-agent patterns, or run specific CAMEL capabilities. |
@@ -59,7 +59,7 @@ Based on the five Githubification strategies documented in the [Githubification 
 Install [GitHub Minimum Intelligence](https://github.com/japer-technology/github-minimum-intelligence) alongside the existing codebase. GMI provides the complete GitHub Action mechanism out of the box:
 
 | Component | How GMI provides it |
-|-----------|-------------------|
+| --- | --- |
 | **Agent workflow** | `github-minimum-intelligence-agent.yml` — triggers on issue events, handles authorization, runs the agent |
 | **Lifecycle orchestrator** | `lifecycle/agent.ts` — reads issues, invokes `pi-coding-agent`, posts replies, commits state |
 | **Agent configuration** | `.pi/settings.json` + `AGENTS.md` — LLM provider, model, personality |
@@ -76,7 +76,7 @@ Install [GitHub Minimum Intelligence](https://github.com/japer-technology/github
 Combine GMI's agent infrastructure with selective execution of CAMEL's Python capabilities:
 
 | Component | Implementation |
-|-----------|---------------|
+| --- | --- |
 | **Agent workflow** | GMI workflow, extended with a step that activates the CAMEL Python environment via the existing `camel_install` composite action |
 | **Framework access** | The agent can invoke CAMEL Python code through bash tools — create agents, run role-playing scenarios, execute data generation pipelines |
 | **Skill bridge** | Skills in `.camel/skills/` provide instructions; the agent executes them using CAMEL's actual Python API |
@@ -92,7 +92,7 @@ Combine GMI's agent infrastructure with selective execution of CAMEL's Python ca
 Wrap the existing `services/agent_mcp/` MCP server as a GitHub Action:
 
 | Component | Implementation |
-|-----------|---------------|
+| --- | --- |
 | **Agent workflow** | Custom workflow that starts the MCP server, sends issue content as MCP tool calls, posts responses |
 | **MCP integration** | The `agent_mcp_server.py` already exposes `step`, `reset`, `get_agents_info`, `get_chat_history` tools |
 | **State** | MCP server handles in-memory state; git commits provide persistence |
@@ -168,7 +168,7 @@ Step 6: Open an issue
 Once the base mechanism is running:
 
 | Task | Description |
-|------|-------------|
+| --- | --- |
 | **Domain identity** | Configure `AGENTS.md` with deep knowledge of CAMEL's architecture — subpackages, model abstractions, tool integrations, multi-agent patterns |
 | **Custom skills** | Create skills for common CAMEL workflows: creating a ChatAgent, setting up role-playing societies, configuring memory systems, building data generation pipelines |
 | **Skill migration** | Move or symlink `.camel/skills/` content into `.pi/skills/` so the GMI agent can discover and use them natively |
@@ -179,7 +179,7 @@ Once the base mechanism is running:
 For advanced use cases where the agent needs to execute CAMEL Python code:
 
 | Task | Description |
-|------|-------------|
+| --- | --- |
 | **Workflow extension** | Add a conditional step to the agent workflow that sets up the Python environment using the existing `camel_install` composite action |
 | **Selective dependencies** | Use targeted dependency groups (`[rag]`, `[web_tools]`) instead of `[all]` to keep install times manageable |
 | **Execution skills** | Create skills that instruct the agent how to invoke specific CAMEL Python operations via bash |
@@ -192,7 +192,7 @@ For advanced use cases where the agent needs to execute CAMEL Python code:
 How the proposed Githubification compares to the existing infrastructure:
 
 | Dimension | Current State | After Githubification |
-|-----------|--------------|----------------------|
+| --- | --- | --- |
 | **Who can use it** | Developers who `pip install camel-ai` | Anyone with access to the GitHub repo |
 | **Where it runs** | Local machine, Docker, cloud VM | GitHub Actions runners |
 | **How you interact** | Python API, MCP server, CLI | GitHub Issues — open an issue, get a response |
@@ -235,7 +235,7 @@ How the proposed Githubification compares to the existing infrastructure:
 ## Risk Assessment
 
 | Risk | Impact | Mitigation |
-|------|--------|------------|
+| --- | --- | --- |
 | **CAMEL's dependency footprint on Actions runners** | Python environment setup could exceed time/storage limits | Phase 1 avoids Python entirely; Phase 3 uses selective dependency groups |
 | **Context window limits for a large codebase** | 25+ subpackages can't fit in a single agent context | The skill system's progressive disclosure (metadata → body → resources) manages context efficiently |
 | **Upstream CAMEL changes** | The original framework evolves rapidly | The Githubification layer (`.github-minimum-intelligence/` + `.camel/`) is additive — upstream changes don't conflict |

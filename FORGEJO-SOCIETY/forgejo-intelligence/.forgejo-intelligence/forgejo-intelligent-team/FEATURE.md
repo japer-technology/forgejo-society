@@ -194,7 +194,7 @@ Features are organized into logical groups. All features are planned.
 ## Summary Table
 
 | # | Feature | Trigger | Group |
-|---|---------|---------|-------|
+| --- | --- | --- | --- |
 | 1 | Team Created | `team.created` | Team Lifecycle |
 | 2 | Team Deleted | `team.deleted` | Team Lifecycle |
 | 3 | Team Edited | `team.edited` | Team Lifecycle |

@@ -7,7 +7,7 @@ This guide covers how to write, edit, and review documentation for NemoClaw. If 
 If you use an AI coding agent (Cursor, Claude Code, Codex, etc.), the repo includes skills that automate doc work. Use them before writing from scratch.
 
 | Skill | What it does | When to use |
-|---|---|---|
+| --- | --- | --- |
 | `update-docs-from-commits` | Scans recent commits for user-facing changes and drafts doc updates. | After landing features, before a release, or to find doc gaps. |
 
 The skills live in `.agents/skills/` and follow the style guide below automatically. To use one, ask your agent to run it. For example, ask it to "catch up the docs for everything merged since v0.2.0".
@@ -94,7 +94,7 @@ Write like you are explaining something to a colleague. Be direct, specific, and
 These patterns are common in LLM-generated text and erode trust with technical readers. Remove them during review.
 
 | Pattern | Problem | Fix |
-|---|---|---|
+| --- | --- | --- |
 | Unnecessary bold | "This is a **critical** step" on routine instructions. | Reserve bold for UI labels, parameter names, and genuine warnings. |
 | Em dashes everywhere | "The gateway — which runs in Docker — creates sandboxes." | Use commas or split into two sentences. Em dashes are fine sparingly but should not appear multiple times per paragraph. |
 | Superlatives | "OpenShell provides a powerful, robust, seamless experience." | Say what it does, not how great it is. |
@@ -123,7 +123,7 @@ These patterns are common in LLM-generated text and erode trust with technical r
 Use these consistently:
 
 | Use | Do not use |
-|---|---|
+| --- | --- |
 | gateway | Gateway (unless starting a sentence) |
 | sandbox | Sandbox (unless starting a sentence) |
 | CLI | cli, Cli |

@@ -34,7 +34,7 @@ Extend GitClaw to automatically review pull requests when they are opened or upd
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Workflow file** (`GITCLAW-WORKFLOW-AGENT.yml`) | Add PR triggers, add `pull-requests: write` permission, filter bot comments | ~30 min |
 | **Indicator script** (`GITCLAW-INDICATOR.ts`) | Handle `pull_request` event shape for reactions | ~30 min |
 | **Agent orchestrator** (`GITCLAW-AGENT.ts`) | New PR code path: detect event → fetch diff → build review prompt → resolve PR session → run `pi` → post as PR review | ~2–3 hours |

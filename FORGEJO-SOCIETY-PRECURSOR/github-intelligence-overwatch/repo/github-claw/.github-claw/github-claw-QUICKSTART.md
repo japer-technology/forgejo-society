@@ -37,7 +37,7 @@ cd .github-claw && bun install
 In your GitHub repo, go to **Settings → Secrets and variables → Actions** and create a secret for your chosen provider:
 
 | Provider | Secret name | Where to get it |
-|----------|------------|-----------------|
+| --- | --- | --- |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -83,7 +83,7 @@ This is optional. The agent works without hatching, but it's more fun with a per
 ## What's in the `.github-claw` folder
 
 | Path | Purpose |
-|------|---------|
+| --- | --- |
 | `AGENTS.md` | Agent identity — name, personality, instructions |
 | `lifecycle/github-claw-AGENT.ts` | Core orchestrator that runs on every issue |
 | `.pi/settings.json` | LLM provider, model, and thinking level |
@@ -272,7 +272,7 @@ Requires `OPENROUTER_API_KEY`. Browse available models at [openrouter.ai](https:
 `.pi` supports a wide range of LLM providers out of the box. Set `defaultProvider` and `defaultModel` in `.github-claw/.pi/settings.json` and add the matching API key to your workflow:
 
 | Provider | `defaultProvider` | Example model | API key env var |
-|----------|-------------------|---------------|-----------------|
+| --- | --- | --- | --- |
 | Anthropic | `anthropic` | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
 | OpenAI | `openai` | `gpt-5.3-codex`, `gpt-5.3-codex-spark` | `OPENAI_API_KEY` |
 | Google Gemini | `google` | `gemini-2.5-pro`, `gemini-2.5-flash` | `GEMINI_API_KEY` |

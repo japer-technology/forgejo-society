@@ -11,7 +11,7 @@ The entire installation reduces to a single file: `.github/workflows/github-mini
 No local tooling is required. Everything runs inside GitHub Actions.
 
 | Aspect | Detail |
-|---|---|
+| --- | --- |
 | Files to create | 1 — the workflow YAML |
 | Local tools required | None (Git and a browser are sufficient) |
 | GitHub Actions required | Yes |
@@ -22,7 +22,7 @@ No local tooling is required. Everything runs inside GitHub Actions.
 ## 2. Prerequisites
 
 | Requirement | Purpose |
-|---|---|
+| --- | --- |
 | A GitHub repository | Host for the agent — issues as conversation, Git as memory, Actions as runtime |
 | GitHub Actions enabled | The workflow runs as a GitHub Action (`workflow_dispatch` trigger) |
 | At least one LLM API key | Powers the AI agent (see Section 5) |
@@ -87,7 +87,7 @@ This triggers the `workflow_dispatch` event, which activates the `install` job.
 The `install` job runs automatically when the workflow is dispatched manually. It performs the following steps:
 
 | Step | What happens |
-|---|---|
+| --- | --- |
 | **Checkout** | Clones the repository at the default branch |
 | **Check for existing install** | Looks for the `.github-minimum-intelligence/` directory. If it already exists, the job exits — nothing is overwritten |
 | **Download template** | Fetches the latest ZIP archive from `github.com/japer-technology/github-minimum-intelligence/archive/refs/heads/main.zip` |
@@ -113,7 +113,7 @@ Create a new issue in your repository. The agent adds a 🚀 reaction within sec
 Once installed, the same workflow file serves three purposes — it never needs to be replaced or supplemented with additional workflows.
 
 | Trigger | Job | What it does |
-|---|---|---|
+| --- | --- | --- |
 | `workflow_dispatch` (manual) | `install` | Downloads and installs `.github-minimum-intelligence/` if not already present |
 | `issues: [opened]` | `run-agent` | Launches the AI agent when a new issue is created |
 | `issue_comment: [created]` | `run-agent` | Launches the AI agent when a comment is added to an issue (bot comments are ignored) |
@@ -135,7 +135,7 @@ When an issue or comment event fires, the `run-agent` job:
 The workflow declares these permissions at the top level:
 
 | Permission | Why |
-|---|---|
+| --- | --- |
 | `contents: write` | Agent commits files (state, conversation transcripts, code changes) |
 | `issues: write` | Agent posts reply comments and adds reactions |
 | `actions: write` | Required for workflow-level operations |
@@ -153,7 +153,7 @@ After the install job completes, add at least one API key as a **GitHub reposito
 3. Set the name and value from the table below.
 
 | Provider | Secret name | Where to get it |
-|---|---|---|
+| --- | --- | --- |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -185,7 +185,7 @@ See [How to Install and Update](how-to-install-and-update.md) for the full upgra
 After the install job finishes and you have added an API key, verify the setup:
 
 | Check | How |
-|---|---|
+| --- | --- |
 | Install job succeeded | **Actions** tab → the `github-minimum-intelligence-agent` run shows a green ✅ on the `install` job |
 | Files are present | The repository now contains `.github-minimum-intelligence/VERSION` |
 | Workflow is active | **Actions** tab → `github-minimum-intelligence-agent` appears in the workflow list |

@@ -9,7 +9,7 @@ A living society must prune, reinforce, spawn, differentiate, merge, and retire.
 ## Evolution cadence
 
 | Review | Frequency | What it covers |
-|---|---|---|
+| --- | --- | --- |
 | Post-outcome reinforcement | After every completed settlement | Credit assignment, K-line updates, failure logging |
 | Quarterly ecology review | Every 3 months | Agencies, frames, K-lines, budgets, dialogical quality, groupthink, memory temperature |
 | Annual constitution review | Once a year | Constitution tiers, self-ideals, authority, policy ledger |

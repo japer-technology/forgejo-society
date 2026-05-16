@@ -291,7 +291,7 @@ CHANGELOG.md is **for users**, not contributors. Write it like product release n
 When estimating or discussing effort, always show both human-team and CC+gstack time:
 
 | Task type | Human team | CC+gstack | Compression |
-|-----------|-----------|-----------|-------------|
+| --- | --- | --- | --- |
 | Boilerplate / scaffolding | 2 days | 15 min | ~100x |
 | Test writing | 1 day | 15 min | ~50x |
 | Feature implementation | 1 week | 30 min | ~30x |

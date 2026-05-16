@@ -79,7 +79,7 @@ Every developer reads diffs. A `- old / + new` format is the most universally un
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Diff generator** | Compare original vs modified files, produce diff blocks | ~2 hours |
 | **Suggestion formatter** | Format diffs as GitHub-compatible suggestion blocks | ~1.5 hours |
 | **Mode selector** | Choose between suggest/commit/hybrid based on config and risk | ~1 hour |

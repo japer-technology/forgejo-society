@@ -46,7 +46,7 @@ git log v0.1.0..HEAD --oneline --no-merges --name-only
 For each relevant commit, determine which doc page(s) it affects. Use this mapping as a starting point:
 
 | Code area | Likely doc page(s) |
-|---|---|
+| --- | --- |
 | `nemoclaw/src/commands/` (launch, connect, status, logs) | `docs/reference/commands.md` |
 | `nemoclaw/src/commands/` (new command) | May need a new page or entry in `docs/reference/commands.md` |
 | `nemoclaw/src/blueprint/` | `docs/about/architecture.md` |

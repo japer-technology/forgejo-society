@@ -20,7 +20,7 @@ The approach is **resource extraction and reimplementation**: identify the trans
 ## The Four Primitives
 
 | GitHub Primitive | Role in Githubified gstack |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — runners execute pi-coding-agent with gstack skills |
 | **Git** | Storage and memory — session transcripts, benchmark baselines, retro history committed to repo |
 | **GitHub Issues** | User interface — each issue is a conversation thread; PR comments for review findings |
@@ -45,7 +45,7 @@ gstack's value is in its **skill definitions** — the prompt engineering, workf
 ## Plan Documents
 
 | # | Document | What It Covers |
-|---|----------|----------------|
+| --- | --- | --- |
 | 01 | [Resource Extraction](01-resource-extraction.md) | What to extract from gstack, what to leave behind, and the `run-refresh-gstack` mechanism |
 | 02 | [Pi-Mono Integration](02-pi-mono-integration.md) | How pi-coding-agent provides the minimum intelligence runtime |
 | 03 | [Skill Adaptation](03-skill-adaptation.md) | How each of the twenty-five skills maps to GitHub Actions triggers and events |
@@ -62,7 +62,7 @@ gstack's value is in its **skill definitions** — the prompt engineering, workf
 This plan builds on analysis and resources already in this repository:
 
 | Resource | Location | Purpose |
-|----------|----------|---------|
+| --- | --- | --- |
 | gstack analysis | `analysis/githubification-gstack.md` | Detailed feasibility analysis and skill-tier mapping |
 | Pi-mono analysis | `analysis/githubification-pi-mono.md` | Runtime integration analysis |
 | Extracted gstack resources | `repo/gstack/` | Skill templates, checklists, ethos, architecture docs |

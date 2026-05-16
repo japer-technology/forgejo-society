@@ -35,7 +35,7 @@ Automatically summarize and compress old sessions to prevent unbounded repo grow
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Session analyzer** (new module `GITCLAW-SESSION.ts`) | Parse JSONL, count tokens/lines, identify old vs recent turns | ~1.5 hours |
 | **Summarizer** | Use `pi` or direct LLM call to summarize older turns | ~1.5 hours |
 | **Session rewriter** | Replace session file with summary + recent turns | ~1 hour |

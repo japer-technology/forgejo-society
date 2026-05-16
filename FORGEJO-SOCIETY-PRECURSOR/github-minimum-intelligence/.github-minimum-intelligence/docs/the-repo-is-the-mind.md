@@ -97,7 +97,7 @@ Continuity is a property of the repository, not of the agent process. As long as
 The practical case is straightforward:
 
 | Concern | How it's addressed |
-|---|---|
+| --- | --- |
 | **Data sovereignty** | Code never leaves your repo/runner infrastructure |
 | **Auditability** | Every agent action is a Git commit with full diff |
 | **Vendor lock-in** | npm dependency - pin, fork, or replace at will |

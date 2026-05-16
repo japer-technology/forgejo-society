@@ -9,7 +9,7 @@ Each example shows how to apply the SOR architecture — agencies, critics, cens
 ## Examples
 
 | File | Context | Description |
-|---|---|---|
+| --- | --- | --- |
 | [sor-family-home.md](sor-family-home.md) | Family household | Managing bills, maintenance, documents, calendars, and household obligations |
 | [sor-business.md](sor-business.md) | Small business | Contracts, invoices, staff, finance, compliance, and supplier management |
 | [sor-personal-health.md](sor-personal-health.md) | Personal health | Appointments, medications, test results, health records, and care reminders |

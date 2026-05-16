@@ -11,7 +11,7 @@ The GMI was designed as a single-agent system: one issue triggers one reasoning 
 Rather than replacing the GMI or merging the two systems, the design places them side by side in the same repository. Each intellect owns a distinct comment prefix:
 
 | Prefix | Intellect | Folder | Workflow |
-|--------|-----------|--------|----------|
+| --- | --- | --- | --- |
 | `!` | GitHub Minimum Intelligence | `.github-minimum-intelligence/` | `.github/workflows/github-minimum-intelligence-agent.yml` |
 | `~` | Agenticana Intelligence | `.github-agenticana-intelligence/` | `.github/workflows/.github-agenticana-intelligence-agent.yml` |
 
@@ -32,7 +32,7 @@ Agenticana is a specialist constellation — twenty agents with distinct domains
 ### 2.2 Different Cost Profiles
 
 | Dimension | GMI | Agenticana |
-|-----------|-----|------------|
+| --- | --- | --- |
 | Agents per invocation | 1 | 1–20 |
 | Actions minutes (typical) | 1.5–3 min | 3–25 min |
 | LLM calls per invocation | 1 | 1–13 (simulacrum) |
@@ -163,7 +163,7 @@ The Agenticana folder mirrors the GMI's folder convention but contains the addit
 ### 4.2 Key Differences from GMI
 
 | Aspect | GMI (`.github-minimum-intelligence/`) | Agenticana (`.github-agenticana-intelligence/`) |
-|--------|-------|------------|
+| --- | --- | --- |
 | Agents | 1 (generalist) | 20 (specialists) |
 | Identity | Single `AGENTS.md` | `AGENTS.md` + 20 YAML/MD pairs in `agents/` |
 | Skills | Built into pi agent | Three-tier hierarchy in `skills/` |
@@ -218,7 +218,7 @@ If no label matches, the orchestrator handles the request (or the Model Router a
 The workflow at `.github/workflows/.github-agenticana-intelligence-agent.yml` follows the same three-job structure as the GMI workflow:
 
 | Job | Purpose | Trigger |
-|-----|---------|---------|
+| --- | --- | --- |
 | `run-install` | Self-installer / upgrader | `workflow_dispatch` |
 | `run-agent` | Dispatch and execute specialist agents | `issues.opened` (title starts with `~`) or `issue_comment.created` (body starts with `~`) |
 | `run-gitpages` | Publish public-fabric to GitHub Pages | `push` to `main` |
@@ -308,7 +308,7 @@ Although state is isolated, both intellects can read the issue thread. When the 
 Each intellect uses a distinct git identity to avoid confusion in `git log`:
 
 | Intellect | Committer Name | Committer Email |
-|-----------|---------------|-----------------|
+| --- | --- | --- |
 | GMI | `github-minimum-intelligence[bot]` | `github-minimum-intelligence[bot]@users.noreply.github.com` |
 | Agenticana | `github-agenticana-intelligence[bot]` | `github-agenticana-intelligence[bot]@users.noreply.github.com` |
 
@@ -327,7 +327,7 @@ When both intellects finish simultaneously and attempt to push, the existing pus
 Agenticana's 20 specialist agents map to distinct domains. Each agent has a YAML specification (model tier, skills, behavioral constraints) and a Markdown persona file (priorities, style, operational guidelines):
 
 | Agent | Domain | Model Tier | Key Skills |
-|-------|--------|------------|------------|
+| --- | --- | --- | --- |
 | Orchestrator | Planning, delegation | Pro | Core + Architecture |
 | Frontend Specialist | UI, components, styling | Flash | Core + NextJS/React |
 | Backend Specialist | API, server, database | Flash | Core + Backend |
@@ -386,7 +386,7 @@ Embedding vectors (used for cosine similarity retrieval) are regenerated at runt
 Running two intellects doubles the baseline workflow triggers but not necessarily the cost, because each invocation is user-initiated (prefix-gated). A practical monthly budget on the free tier (2 000 minutes):
 
 | Allocation | Minutes | Estimated Invocations |
-|------------|---------|----------------------|
+| --- | --- | --- |
 | GMI (`!` comments) | 60% (1 200 min) | ~400–800 |
 | Agenticana single-agent (`~` comments) | 25% (500 min) | ~100–200 |
 | Agenticana swarm | 10% (200 min) | ~20–40 |
@@ -398,7 +398,7 @@ Running two intellects doubles the baseline workflow triggers but not necessaril
 The Model Router is what makes twenty agents economically feasible. It scores task complexity and selects the cheapest adequate model:
 
 | Complexity Score | Tier | Example Models | Cost per 1M Input Tokens |
-|-----------------|------|----------------|--------------------------|
+| --- | --- | --- | --- |
 | 0–30 | Lite | GPT-4o-mini, Claude 3 Haiku | $0.15–0.25 |
 | 31–60 | Flash | Gemini 2.0 Flash, Claude 3.5 Sonnet | $0.50–3.00 |
 | 61–85 | Pro | GPT-4o, Claude 3.5 Opus | $2.50–15.00 |
@@ -411,7 +411,7 @@ Without the router, defaulting every invocation to Pro would cost 3–10× more.
 Annual state growth for both intellects at moderate usage:
 
 | Data Type | GMI | Agenticana | Combined |
-|-----------|-----|------------|----------|
+| --- | --- | --- | --- |
 | Session transcripts | 15–150 MB | 15–150 MB | 30–300 MB |
 | ReasoningBank | — | 0.9–3.6 MB | 0.9–3.6 MB |
 | Attestations | — | 3–6 MB | 3–6 MB |
@@ -432,7 +432,7 @@ Both intellects use the same authorization model — only collaborators with `wr
 Agenticana layers additional governance atop the shared authorization:
 
 | Governance Layer | Mechanism | Source |
-|-----------------|-----------|--------|
+| --- | --- | --- |
 | Access control | Collaborator permissions | GitHub (shared) |
 | Prefix routing | `!` / `~` comment prefix | Workflow `if:` guard |
 | Pre-merge validation | Guardian Mode (Sentinel + lint + secret scan) | Agenticana |
@@ -502,7 +502,7 @@ Two intellects, one repository. The GMI answers on `!` — fast, cheap, conversa
 The implementation requires:
 
 | Component | Path | Purpose |
-|-----------|------|---------|
+| --- | --- | --- |
 | Agenticana folder | `.github-agenticana-intelligence/` | Specialist agents, skills, router, state, ReasoningBank |
 | Agenticana workflow | `.github/workflows/.github-agenticana-intelligence-agent.yml` | Dispatch and execute specialists on `~` |
 | GMI workflow update | `.github/workflows/github-minimum-intelligence-agent.yml` | Add `!` prefix guard to existing `if:` condition |

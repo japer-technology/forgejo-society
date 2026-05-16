@@ -54,7 +54,7 @@ git repository on day zero**, and then progressively factored out into separate
 repos as soon as the society can support it.
 
 | Logical role | What it carries | Where it eventually lives |
-|---|---|---|
+| --- | --- | --- |
 | **Mind template** | The `THE-SOCIETY-OF-REPO/` specification: principles, protocols, ideals, plurality contract, approval gate, identity rules. This is the cognitive blueprint. | `sor-constitution` + `sor-protocols` |
 | **Install workflow** | The `.forgejo/workflows/` and `.forgejo-intelligence/` runtime: the surface handlers, coordinators, the enable sentinel, the ability to call the Forgejo API, the ability to create new repositories. This is the body factory. | The orchestrator's runtime layer |
 | **Conversational surface** | The single point where a human can type "begin", answer questions, approve a spawn, or pull the kill switch. This is the mouth and ears of the society on day zero. | `sor-orchestrator` (until a dedicated `owner-briefing` channel is differentiated out) |
@@ -81,7 +81,7 @@ answer is **yes, exactly seven**, and it is justified by the architectural
 commitments themselves.
 
 | Repo | Organ role | Why it must exist on day one |
-|---|---|---|
+| --- | --- | --- |
 | `sor-constitution` | Principles, ideals, plurality contract, self-models | Without it, no proposal can cite ground; settlements have nothing to stand on. |
 | `sor-protocols` | The 19 protocol documents and the foundations | Without it, organs cannot interoperate; identity, events, settlement, memory all need a shared contract. |
 | `sor-orchestrator` | Activation, settlement and routing logic; reads stimuli, opens settlement PRs | Without it, nothing actually runs. This is plumbing, not authority. |
@@ -200,7 +200,7 @@ The orchestration story only makes sense once you keep the three layers
 distinct (`00-foundations/06-mind-brain-body.md`).
 
 | Layer | What install does to it |
-|---|---|
+| --- | --- |
 | **Body** | The installer creates Forgejo repositories, configures the runner, writes the workflows, scopes the token, plants the enable sentinel. This is what install mode is *literally* doing in physical terms. |
 | **Brain** | The installer points each agency's constitution at its declared models (local-first, cloud-by-policy). It does *not* call any cloud model during install, because the egress censor exists from second one. |
 | **Mind** | The installer copies the constitution, the protocols, and the ideals into `sor-constitution` and `sor-protocols`. It does not invent any cognition. The mind is *transferred*, not generated. |
@@ -272,7 +272,7 @@ organ. In practice the natural sequence after the seven looks like this,
 though the actual order is always evidence-driven:
 
 | Wave | Repos typically added | Triggering evidence |
-|---|---|---|
+| --- | --- | --- |
 | Wave 1: more workers | A second `agency.*-bee` for a domain the coder agency keeps being mis-routed to (e.g. `agency.contract-bee`, `agency.intake-bee`) | Repeated misrouting visible in activation traces |
 | Wave 2: more critics | `critic.scope`, `critic.cost`, `critic.privacy`, `critic.overconfidence` | Repeated settlements where the evidence critic alone was insufficient |
 | Wave 3: more censors | `censor.authority`, `censor.payment`, `censor.delegation-depth` | Boundary classes that the egress censor's firing log shows it cannot represent |

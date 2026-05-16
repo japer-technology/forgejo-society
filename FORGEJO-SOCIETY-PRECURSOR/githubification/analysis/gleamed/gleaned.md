@@ -87,7 +87,7 @@ done
 The corpus answer is decisive: **GitHub Pages serves as a static reporting surface; GitHub Issues serves as the interactive surface**. The UI is split along read/write lines.
 
 | Concern | Mechanism |
-|---|---|
+| --- | --- |
 | Interactive user commands | GitHub Issues + AI agent |
 | Public-facing status and history | GitHub Pages (static HTML, rebuilt on push/schedule) |
 | Real-time monitoring | Scheduled rebuild (every 10–15 min) |
@@ -173,7 +173,7 @@ The corpus identifies six distinct cross-repo patterns:
 Every analysis answers one diagnostic question: *Can the software run on an ephemeral GitHub Actions runner?*
 
 | Infrastructure Requirement | Githubification Impact |
-|---|---|
+| --- | --- |
 | Stateless CLI / headless mode | ✅ Natural Githubification (Codex, OpenHands CLI) |
 | Single binary, no deps | ✅ Download from Releases (ZeroClaw, IronClaw) |
 | Node.js / Bun | ✅ Available on every runner |
@@ -202,7 +202,7 @@ For Type 1 (AI Agent Repo) Githubification, the Githubified agent is often **not
 ## Index of Source Analyses
 
 | Analysis | Primary Lessons | Notable Features |
-|---|---|---|
+| --- | --- | --- |
 | githubification-pi-mono | Cadence, Concurrency, Pages | Binary distribution, self-referential, `run-gitpages` job |
 | githubification-NemoClaw | Cross-repo, Unique | Security infrastructure type, workflow_dispatch onboarding |
 | githubification-moltis | Concurrency, Cadence | SQLite + JSONL dual-format, Channel Addition strategy |

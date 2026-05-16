@@ -41,7 +41,7 @@ Your repository _is_ the AI workspace. The questions, the results, the code, the
 ## Why GitHub Minimum Intelligence
 
 | Capability | Why it matters |
-|---|---|
+| --- | --- |
 | **Single workflow, any repo** | Add one workflow file, run it once, and the agent installs itself. Nothing to host or maintain. |
 | **Zero infrastructure** | Runs on GitHub Actions with your repo as the only backend. |
 | **Persistent memory** | Conversations are committed to git - the agent remembers everything across sessions. |
@@ -92,7 +92,7 @@ A technical framework designed to integrate a repository-local AI agent directly
 ### Key Concepts
 
 | Concept | Description |
-|---|---|
+| --- | --- |
 | **Issue = Conversation** | Each GitHub issue maps to a persistent AI conversation. Comment again to continue where you left off. |
 | **Git = Memory** | Session transcripts are committed to the repo. The agent has full recall of every prior exchange. |
 | **Actions = Runtime** | GitHub Actions is the only compute layer. No servers, no containers, no external services. |
@@ -126,7 +126,7 @@ Each issue number is a stable conversation key - `issue #N` → `state/issues/N.
 In your GitHub repo, go to **Settings → Secrets and variables → Actions** and create a secret for your chosen provider:
 
 | Provider | Secret name | Where to get it |
-|----------|------------|-----------------|
+| --- | --- | --- |
 | Anthropic | `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com/) |
 | OpenAI | `OPENAI_API_KEY` | [platform.openai.com](https://platform.openai.com/) |
 | Google Gemini | `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com/) |
@@ -369,7 +369,7 @@ Requires `OPENROUTER_API_KEY`. Browse available models at [openrouter.ai](https:
 `.pi` supports a wide range of LLM providers out of the box. Set `defaultProvider` and `defaultModel` in `.github-minimum-intelligence/.pi/settings.json` and add the matching API key to your workflow:
 
 | Provider | `defaultProvider` | Example model | API key env var |
-|----------|-------------------|---------------|-----------------|
+| --- | --- | --- | --- |
 | OpenAI | `openai` | `gpt-5.4` (default), `gpt-5.3-codex`, `gpt-5.3-codex-spark` | `OPENAI_API_KEY` |
 | Anthropic | `anthropic` | `claude-sonnet-4-20250514` | `ANTHROPIC_API_KEY` |
 | Google Gemini | `google` | `gemini-2.5-pro`, `gemini-2.5-flash` | `GEMINI_API_KEY` |

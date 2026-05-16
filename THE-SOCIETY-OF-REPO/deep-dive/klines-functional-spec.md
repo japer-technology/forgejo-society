@@ -379,14 +379,14 @@ Rules:
 
 Activation multipliers by status:
 
-| Status    | activation_multiplier |
-|-----------|-----------------------|
-| candidate | 0.00 (shadow only)    |
-| probation | 0.40                  |
-| active    | 1.00                  |
-| strong    | 1.20                  |
-| stale     | 0.30                  |
-| retired   | 0.00                  |
+| Status | activation_multiplier |
+| --- | --- |
+| candidate | 0.00 (shadow only) |
+| probation | 0.40 |
+| active | 1.00 |
+| strong | 1.20 |
+| stale | 0.30 |
+| retired | 0.00 |
 
 ---
 
@@ -423,21 +423,21 @@ After every settlement that was influenced by a K-line, a reinforcement event is
 
 The following signals map to outcomes:
 
-| Signal                          | Outcome           |
-|---------------------------------|-------------------|
-| owner_marks_useful              | useful            |
-| saving_identified               | useful            |
-| contract_renegotiated           | useful            |
-| deadline_met                    | useful            |
-| error_prevented                 | useful            |
-| settlement_accepted             | useful            |
-| pr_accepted                     | useful            |
-| false_alarm                     | false_activation  |
-| owner_dismisses                 | false_activation  |
-| irrelevant_activation           | false_activation  |
-| price_change_was_tax_only       | false_activation  |
-| policy_violation                | policy_violation  |
-| no_signal                       | neutral           |
+| Signal | Outcome |
+| --- | --- |
+| owner_marks_useful | useful |
+| saving_identified | useful |
+| contract_renegotiated | useful |
+| deadline_met | useful |
+| error_prevented | useful |
+| settlement_accepted | useful |
+| pr_accepted | useful |
+| false_alarm | false_activation |
+| owner_dismisses | false_activation |
+| irrelevant_activation | false_activation |
+| price_change_was_tax_only | false_activation |
+| policy_violation | policy_violation |
+| no_signal | neutral |
 
 ## 10.2 Strength adjustment
 

@@ -35,7 +35,7 @@ Track and report LLM token usage, estimated cost, and session metrics for every 
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Token parser** (new module `GITCLAW-METRICS.ts`) | Extract input/output tokens from `pi` JSON stream | ~1 hour |
 | **Pricing table** | Hardcoded cost-per-token for supported providers/models | ~30 min |
 | **Per-run storage** | Write metrics JSON after each run, update cumulative summary | ~1 hour |
@@ -234,7 +234,7 @@ This renders as a collapsed `<details>` block at the bottom of every comment —
 > <summary>📊 Usage: 12,450 tokens · $0.0387 · 45s · 8 tool calls</summary>
 >
 > | Metric | Value |
-> |---|---|
+> | --- | --- |
 > | Provider | `anthropic` |
 > | Model | `claude-sonnet-4-20250514` |
 > | Input tokens | 8,200 |

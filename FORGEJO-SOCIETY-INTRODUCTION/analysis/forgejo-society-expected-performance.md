@@ -33,7 +33,7 @@ Every part of that arc has a performance profile. They are described below.
 ## Hardware baseline
 
 | Component | Spec |
-|---|---|
+| --- | --- |
 | Forge server | i9 20-core @ 5 GHz · 64 GB RAM · 2 TB NVMe |
 | Runner fleet | 16 × i7 8-core @ 3 GHz · 8 GB RAM · 60 GB SSD |
 | LLM inference server | i9 32-core @ 5 GHz · 64 GB RAM · 1 TB NVMe · RTX 4090 24 GB |
@@ -125,7 +125,7 @@ detectors, K-line activators, label appliers, provenance recorders, settlement
 matchers, and governance checkers.
 
 | Metric | Value |
-|---|---|
+| --- | --- |
 | Job duration | 0.5–5 seconds |
 | Concurrent slots | 64 (16 nodes × 4 jobs/node) |
 | Completions per minute | ~750–7,680 |
@@ -141,7 +141,7 @@ These agents call the local LLM server for task classes that have passed validat
 The RTX 4090 serves quantised models over LM Studio's OpenAI-compatible endpoint.
 
 | Model size | VRAM | Concurrent batch | Time per 1024-token output | Throughput |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | ≤ 8B (Q4 GGUF) | ~5 GB | 3–4 concurrent | ~8–12 s | ~15–25 requests/min |
 | ≤ 27B (Q4 GGUF) | ~15 GB | 1 | ~30–40 s | ~1.5–2 requests/min |
 
@@ -163,7 +163,7 @@ by API rate limits, which are configurable and can be raised through account tie
 management.
 
 | Task class | Provider preference | Typical latency | Scalable to |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Architecture synthesis | Frontier model (best available) | 10–60 s | Hundreds of concurrent API calls |
 | Security-critical review | Frontier model, second-provider cross-check | 10–60 s | Same |
 | Publication-quality writing | Frontier model | 10–60 s | Same |
@@ -178,7 +178,7 @@ controlled even at high agent volume.
 ## Stimulus-to-settlement latency by path
 
 | Path | Steps that execute | Expected wall-clock time |
-|---|---|---|
+| --- | --- | --- |
 | K-line hit, pure structural | Stimulus → K-line read → routing agent → settlement replay | **2–5 seconds** |
 | K-line hit, local inference | As above + one local model call (8B) | **12–20 seconds** |
 | Novel stimulus, local inference | Full arc + critics + local 27B model | **60–90 seconds** |
@@ -199,7 +199,7 @@ runner slots accept jobs immediately. All remaining jobs wait in the queue. The 
 is durable — a runner restart or forge restart does not lose queued work.
 
 | Simultaneous activations | Immediately active | Queued | Drain time (Class A) | Drain time (Class B 8B) |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 100 | 64 | 36 | < 1 minute | 5–8 minutes |
 | 500 | 64 | 436 | 5–10 minutes | 35–45 minutes |
 | 1,000 | 64 | 936 | 10–20 minutes | 70–90 minutes |
@@ -222,7 +222,7 @@ minutes for the majority of the load.
 ## Comparison to standard GitHub Actions performance
 
 | Metric | Forgejo-Society | GitHub Actions (hosted standard) |
-|---|---|---|
+| --- | --- | --- |
 | Job start latency | **< 1 second** (always-on daemon, local network) | 15–45 seconds (VM provision + image pull) |
 | Cognitive memory between runs | **Durable** (Git memory, K-lines, settlements) | None (each run starts from zero) |
 | Inference capability | Local + multi-cloud, governed | None built-in |
@@ -246,7 +246,7 @@ ecological self-improvement are the primary performance axes.
 The one hardware constraint that grows with agent volume is the local LLM server.
 
 | Constraint | Current limit | How to raise |
-|---|---|---|
+| --- | --- | --- |
 | Concurrent local 8B inference | ~4 slots on RTX 4090 | Add a second GPU node; register with `gpu` label |
 | Concurrent local 27B inference | 1 slot on RTX 4090 | Same; or accept cloud escalation for 27B bursts |
 | Concurrent runner slots | 64 (expandable to ~128 without new hardware) | Raise `capacity` per node from 4 to 6–8 for CPU-light jobs |

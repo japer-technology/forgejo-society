@@ -10,14 +10,14 @@ This document applies the scientific method to the core claims advanced by GitHu
 
 ## 1. The Method
 
-| Stage              | Role                                                                 |
-|--------------------|----------------------------------------------------------------------|
-| **Observation**    | A phenomenon or pattern noticed in the domain                        |
-| **Hypothesis**     | A proposed explanation or mechanism, stated in falsifiable form       |
-| **Prediction**     | A specific, measurable outcome that follows if the hypothesis holds  |
-| **Experiment**     | A procedure designed to test the prediction under controlled conditions |
-| **Falsification**  | The criteria that would disprove the hypothesis if the prediction fails |
-| **Revision**       | How the hypothesis changes in light of experimental results           |
+| Stage | Role |
+| --- | --- |
+| **Observation** | A phenomenon or pattern noticed in the domain |
+| **Hypothesis** | A proposed explanation or mechanism, stated in falsifiable form |
+| **Prediction** | A specific, measurable outcome that follows if the hypothesis holds |
+| **Experiment** | A procedure designed to test the prediction under controlled conditions |
+| **Falsification** | The criteria that would disprove the hypothesis if the prediction fails |
+| **Revision** | How the hypothesis changes in light of experimental results |
 
 A complete scientific argument reads: *"We observe **O**. We hypothesize **H**. If H is correct, we predict **P**. We test via **E**. If **P** fails, **H** is falsified and must be revised."*
 
@@ -37,12 +37,12 @@ An AI agent operating inside a repository checkout — with direct filesystem, G
 
 Given two identical tasks (bug fix, feature proposal, code review) across the same codebase, the repository-native agent will:
 
-| Metric                             | Predicted outcome                                   |
-|------------------------------------|-----------------------------------------------------|
-| Conflicting suggestions            | Fewer than the context-serialized agent              |
-| References to prior decisions      | More frequent, more accurate                         |
-| Token budget for context           | Lower (reads filesystem directly vs. packing context)|
-| Factual errors about project state | Lower rate                                           |
+| Metric | Predicted outcome |
+| --- | --- |
+| Conflicting suggestions | Fewer than the context-serialized agent |
+| References to prior decisions | More frequent, more accurate |
+| Token budget for context | Lower (reads filesystem directly vs. packing context) |
+| Factual errors about project state | Lower rate |
 
 ### Experiment
 
@@ -72,13 +72,13 @@ Repurposing existing GitHub primitives results in lower total operational cost (
 
 ### Prediction
 
-| Metric                          | Predicted outcome                                          |
-|---------------------------------|------------------------------------------------------------|
-| Components to maintain          | GMI: 1 npm package; dedicated system: ≥4 components       |
-| Authentication systems          | GMI: 0 (uses GITHUB_TOKEN); dedicated: ≥1 custom          |
-| Uptime dependency on third party| GMI: GitHub only; dedicated: GitHub + custom infra          |
-| Time to initial deployment      | GMI: <5 min (npm install); dedicated: hours to days         |
-| Attack surface area             | GMI: inherits GitHub's surface; dedicated: GitHub + custom  |
+| Metric | Predicted outcome |
+| --- | --- |
+| Components to maintain | GMI: 1 npm package; dedicated system: ≥4 components |
+| Authentication systems | GMI: 0 (uses GITHUB_TOKEN); dedicated: ≥1 custom |
+| Uptime dependency on third party | GMI: GitHub only; dedicated: GitHub + custom infra |
+| Time to initial deployment | GMI: <5 min (npm install); dedicated: hours to days |
+| Attack surface area | GMI: inherits GitHub's surface; dedicated: GitHub + custom |
 
 ### Experiment
 
@@ -108,12 +108,12 @@ Systems where every automated action is recorded as a version-controlled artifac
 
 ### Prediction
 
-| Metric                          | Predicted outcome                                          |
-|---------------------------------|------------------------------------------------------------|
-| Time to detect unintended change| Git diff: seconds; log-based: minutes to hours              |
-| Time to revert unintended change| `git revert`: seconds; log-based: manual reconstruction     |
-| Reviewer confidence             | Higher when reviewing diffs than log entries                 |
-| Post-incident analysis          | More complete when full history is traversable via `git log` |
+| Metric | Predicted outcome |
+| --- | --- |
+| Time to detect unintended change | Git diff: seconds; log-based: minutes to hours |
+| Time to revert unintended change | `git revert`: seconds; log-based: manual reconstruction |
+| Reviewer confidence | Higher when reviewing diffs than log entries |
+| Post-incident analysis | More complete when full history is traversable via `git log` |
 
 ### Experiment
 
@@ -143,12 +143,12 @@ Ethical constraints encoded as inspectable, versioned text and co-located with t
 
 ### Prediction
 
-| Metric                              | Predicted outcome                                     |
-|-------------------------------------|-------------------------------------------------------|
-| Constraint violation rate           | Lower when constraints are in-repo (inspectable)       |
-| Drift from intended behavior        | Lower over time when constraints are version-controlled |
-| User awareness of constraints       | Higher when constraints are readable files              |
-| Resistance to prompt injection      | **No difference** — both are prompt-level guidance       |
+| Metric | Predicted outcome |
+| --- | --- |
+| Constraint violation rate | Lower when constraints are in-repo (inspectable) |
+| Drift from intended behavior | Lower over time when constraints are version-controlled |
+| User awareness of constraints | Higher when constraints are readable files |
+| Resistance to prompt injection | **No difference** — both are prompt-level guidance |
 
 ### Experiment
 
@@ -178,12 +178,12 @@ Agents whose identity is collaboratively authored and stored as editable configu
 
 ### Prediction
 
-| Metric                          | Predicted outcome                                          |
-|---------------------------------|------------------------------------------------------------|
-| User satisfaction with tone     | Higher for co-created personas                              |
-| Alignment with project norms    | Higher when persona is project-specific                     |
-| Persona maintenance effort      | Low — most users will accept defaults                       |
-| Measurable output quality       | **No significant difference** in code correctness            |
+| Metric | Predicted outcome |
+| --- | --- |
+| User satisfaction with tone | Higher for co-created personas |
+| Alignment with project norms | Higher when persona is project-specific |
+| Persona maintenance effort | Low — most users will accept defaults |
+| Measurable output quality | **No significant difference** in code correctness |
 
 ### Experiment
 
@@ -227,13 +227,13 @@ Some of GMI's claims resist falsification: "The repository is the mind" is a met
 
 The scientific method transforms GMI's architectural assertions into testable hypotheses with explicit falsification criteria. Its verdict:
 
-| Hypothesis                   | Testability | Expected strength | Key risk                        |
-|------------------------------|-------------|-------------------|---------------------------------|
-| Context fidelity             | High        | Strong            | Serialization may be "good enough" |
-| Infrastructural reuse        | High        | Moderate          | Constraints may outweigh savings |
-| Auditability and trust       | High        | Strong            | Familiarity vs. structural advantage |
-| Encoded ethics               | High        | Weak              | Placement ≠ effectiveness        |
-| Collaborative identity       | Medium      | Weak              | Preference ≠ functional gain     |
+| Hypothesis | Testability | Expected strength | Key risk |
+| --- | --- | --- | --- |
+| Context fidelity | High | Strong | Serialization may be "good enough" |
+| Infrastructural reuse | High | Moderate | Constraints may outweigh savings |
+| Auditability and trust | High | Strong | Familiarity vs. structural advantage |
+| Encoded ethics | High | Weak | Placement ≠ effectiveness |
+| Collaborative identity | Medium | Weak | Preference ≠ functional gain |
 
 The strongest claims are those most amenable to empirical testing — context fidelity and auditability. The weakest are those that conflate governance transparency with behavioral effectiveness — encoded ethics and collaborative identity. The scientific method does not adjudicate which claims are *important*; it adjudicates which are *testable* and which survive testing.
 

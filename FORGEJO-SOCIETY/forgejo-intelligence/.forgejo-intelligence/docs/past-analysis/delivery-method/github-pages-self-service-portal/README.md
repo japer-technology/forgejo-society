@@ -121,7 +121,7 @@ portal/
 ### Technology Options
 
 | Framework | Pros | Cons |
-|-----------|------|------|
+| --- | --- | --- |
 | **Vanilla JS/TS** | No build step, fastest load, simplest deployment | More manual DOM management |
 | **Astro** | Static-first, island architecture, great for content + interactivity | Build step required |
 | **React/Preact** | Component model, rich ecosystem | Heavier bundle, overkill for a few forms |
@@ -152,7 +152,7 @@ For direct repository installation, the portal needs GitHub OAuth:
 **Solutions:**
 
 | Solution | Complexity | Hosting |
-|----------|-----------|---------|
+| --- | --- | --- |
 | **Cloudflare Worker** | Low | Free tier |
 | **Vercel Serverless Function** | Low | Free tier |
 | **GitHub OAuth App Proxy** (e.g., `oauth.gitclaw.dev`) | Low | Any serverless platform |

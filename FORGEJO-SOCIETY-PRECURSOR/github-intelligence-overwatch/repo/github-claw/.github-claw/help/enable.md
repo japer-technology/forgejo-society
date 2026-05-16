@@ -63,7 +63,7 @@ git push
 Check that all of the following are in place:
 
 | Check | How to Verify |
-|-------|---------------|
+| --- | --- |
 | Sentinel file exists | `ls .github-claw/github-claw-ENABLED.md` — file should be present |
 | Workflow exists | `ls .github/workflows/github-claw-WORKFLOW-AGENT.yml` — file should be present |
 | Workflow is active | Go to **Actions** tab — workflow should not show "This workflow is disabled" |

@@ -9,7 +9,7 @@ Critics and censors remain external controls. Self-ideals shape what the society
 ## Active ideals
 
 | Ideal | Meaning |
-|---|---|
+| --- | --- |
 | **Evidence before confidence** | Strong claims require visible grounding |
 | **Reversible change before irreversible change** | Prefer the path that keeps rollback available |
 | **Local-first where risk is comparable** | Use local tools and models unless a governed reason exists not to |

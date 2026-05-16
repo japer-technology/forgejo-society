@@ -9,7 +9,7 @@ The question is whether the current workflow implementation starts the agent as 
 When a user opens an issue or posts a comment, the workflow executes these steps in strict sequence before the `pi` agent begins its first LLM call:
 
 | Step | Workflow Phase | What Happens | Estimated Duration |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0 | **Queue** | GitHub receives the webhook, schedules the job, provisions a runner | 3–15s (uncontrollable) |
 | 1 | **Authorize** | Single `gh api` permission check + 🚀 reaction + write `/tmp/reaction-state.json` | 1–3s |
 | 2 | **Reject** | Conditional — only runs on auth failure, skipped on success | 0s (skip) |
@@ -38,7 +38,7 @@ The user receives visual feedback (🚀 reaction) at the very first step — wit
 **Can this be optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | Use `ubuntu-latest` (current) | GitHub's best-provisioned pool; fastest queue times | ✅ Already doing this |
 | Self-hosted runners | Eliminates queue time entirely (~0s provisioning) | ⚠️ Requires infrastructure, contradicts zero-infra design |
 | Larger runners (`ubuntu-latest-4-cores`, etc.) | No queue-time benefit; helps execution speed only | ❌ No startup improvement |
@@ -60,7 +60,7 @@ The user receives visual feedback (🚀 reaction) at the very first step — wit
 **Can this be further optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | Remove auth check | Saves 1–3s but allows any user to trigger the agent | ❌ Security requirement |
 | Use `curl` instead of `gh` | Eliminates `gh` CLI overhead (~0.3s) | ⚠️ More verbose; `gh` handles auth automatically |
 | Fire auth + reaction in parallel (background `&`) | Saves ~0.5s by overlapping the two API calls | ✅ Possible but adds shell complexity for marginal gain |
@@ -76,7 +76,7 @@ The user receives visual feedback (🚀 reaction) at the very first step — wit
 **Can this be optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | `fetch-depth: 1` (shallow clone) | Saves 2–50s on large repos | ⚠️ Breaks `git pull --rebase` conflict resolution |
 | `fetch-depth: 2` | Minimal history for simple push | ⚠️ May break rebase on conflicts |
 | Shallow clone + `git fetch --unshallow` only on push failure | Fast path: shallow; slow path: full fetch only when needed | ✅ Best remaining optimization (see §5.1) |
@@ -100,7 +100,7 @@ The treeless clone (`filter: blob:none`) downloads the commit graph and tree obj
 **Can this be further optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | Use Node.js instead of Bun | Node.js is pre-installed; zero setup time | ⚠️ Saves 3–10s on setup but loses Bun's faster install + execution (see §3.2) |
 | Pre-install Bun in a custom Docker image | Eliminates setup step entirely | ❌ Requires image registry + maintenance |
 | Pin to exact patch version (e.g., `"1.2.5"`) | Guarantees identical binary across runs | ⚠️ Requires manual bumps; marginal improvement over range pin |
@@ -120,7 +120,7 @@ The treeless clone (`filter: blob:none`) downloads the commit graph and tree obj
 **Can this be further optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | Also cache `~/.bun/install/cache` (Bun's global cache) | Faster installs on lockfile changes (partial re-download) | ✅ Minor improvement; only helps on cache miss |
 | Use `actions/cache/restore` (restore-only, no save) + explicit save on miss | Avoids save overhead on cache hit runs | ⚠️ More complex; saves ~1s |
 | Vendor `node_modules` into the repository | Zero install time always | ⚠️ Adds ~50–200 MB to repo; slows checkout more than it saves |
@@ -147,7 +147,7 @@ The treeless clone (`filter: blob:none`) downloads the commit graph and tree obj
 **Can this be further optimized?**
 
 | Option | Effect | Feasibility |
-|---|---|---|
+| --- | --- | --- |
 | Run both `git config` calls as a single shell command | Saves ~0.2s by avoiding one Bun.spawn round-trip | ✅ Trivial |
 | Pre-configure git identity in the workflow step | Moves git config out of agent.ts into the workflow YAML | ✅ Saves ~0.5s of Bun subprocess overhead |
 | Eagerly spawn `pi` while resolving session | Overlap session resolution with `pi` process initialization | ⚠️ `pi` needs session path as a CLI argument; can't start before resolution completes |
@@ -161,7 +161,7 @@ The treeless clone (`filter: blob:none`) downloads the commit graph and tree obj
 ### 3.1 Pre-compiled Binary Instead of Bun + TypeScript
 
 | Metric | Current (Bun + TypeScript) | Pre-compiled Binary (Go/Rust) |
-|---|---|---|
+| --- | --- | --- |
 | Runtime setup | 3–10s (Bun from tool cache) | 0s (static binary in repo) |
 | Dependency install | 0–5s (cache hit) | 0s (compiled in) |
 | Cold start | ~1–2s (Bun JIT) | ~0.1s |
@@ -175,7 +175,7 @@ A pre-compiled binary eliminates runtime setup and dependency installation entir
 ### 3.2 Node.js Instead of Bun
 
 | Metric | Current (Bun + cache) | Node.js Alternative |
-|---|---|---|
+| --- | --- | --- |
 | Runtime setup | 3–10s (Bun from tool cache) | 0s (pre-installed on runner) |
 | TypeScript execution | Native Bun support | Requires `npx tsx` or compilation step |
 | Dependency install (cache hit) | 0–5s | 2–10s (`npm ci` with cached `node_modules`) |
@@ -188,7 +188,7 @@ With caching in place, the Bun setup step is the only "extra" cost compared to N
 ### 3.3 Docker Container Action
 
 | Metric | Current (Workflow Steps) | Docker Container Action |
-|---|---|---|
+| --- | --- | --- |
 | Runner provisioning | Standard ubuntu runner | Same runner + Docker pull overhead |
 | Image pull | N/A | 5–30s (depends on image size and caching) |
 | Runtime setup | 3–10s | 0s (baked into image) |
@@ -201,7 +201,7 @@ A Docker container action pre-bakes Bun and `node_modules` into an image. With d
 ### 3.4 JavaScript GitHub Action (action.yml with runs.using: node20)
 
 | Metric | Current (Workflow Steps) | JS Action |
-|---|---|---|
+| --- | --- | --- |
 | Runtime setup | 3–10s (Bun) | 0s (Node.js is the Actions runtime) |
 | Dependency install | 0–5s (cache hit) | 0s (bundled into action) |
 | Step overhead | 6 steps (each has ~0.5–1s overhead) | 1 step (action entry point) |
@@ -217,7 +217,7 @@ A JavaScript action runs directly in the Actions runtime without provisioning a 
 Ranking the phases by latency contribution in the current (optimized) pipeline:
 
 | Rank | Phase | Typical Duration (cache hit) | Remaining Optimization Potential | Effort |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **1** | Checkout | 5–60s | **Medium-High** — shallow clone with deferred unshallow | Moderate (workflow + agent.ts changes) |
 | **2** | Queue/Provision | 3–15s | **None** — platform-controlled | N/A |
 | **3** | Bun Setup | 3–10s | **Low** — only eliminatable by switching to Node.js | High (migration) |
@@ -320,7 +320,7 @@ These could be combined into a single subprocess call or moved to the workflow Y
 The following optimizations from the initial analysis have been implemented. They are documented here for completeness and to establish the baseline for the current performance profile.
 
 | Optimization | When Applied | Savings Realized |
-|---|---|---|
+| --- | --- | --- |
 | **Dependency caching** (`actions/cache@v5` keyed on `bun.lock` hash) | Implemented | 8–25s on cache-hit runs |
 | **Bun version pinning** (`bun-version: "1.2"`) | Implemented | 1–3s (improved tool-cache hit rate) |
 | **Indicator merged into Authorize step** (inline shell `gh api` call) | Implemented | 2–4s (eliminated step boundary + Bun cold start); reaction fires ~10s earlier |
@@ -334,7 +334,7 @@ The following optimizations from the initial analysis have been implemented. The
 Some aspects of the startup pipeline are fixed costs imposed by the platform:
 
 | Constraint | Duration | Why It Cannot Be Reduced |
-|---|---|---|
+| --- | --- | --- |
 | Webhook delivery | 1–5s | GitHub's internal routing; no user control |
 | Runner provisioning | 3–15s | Pool allocation; only eliminatable with self-hosted runners |
 | `actions/checkout` overhead | 2–5s (minimum) | Even a shallow clone has fixed overhead from the action's setup |
@@ -369,7 +369,7 @@ Some aspects of the startup pipeline are fixed costs imposed by the platform:
 The only remaining optimization with significant impact is **checkout strategy** (shallow clone or treeless clone), which could save 3–55 seconds on large repositories but introduces moderate risk for the `pi` agent's git operations. For small repositories — where checkout already takes 2–5 seconds — this optimization has negligible impact.
 
 | Current Latency Profile | Small Repo (cache hit) | Large Repo (cache hit) |
-|---|---|---|
+| --- | --- | --- |
 | Queue + provision | 3–15s | 3–15s |
 | Authorize + indicator | 1–3s | 1–3s |
 | Checkout | 2–5s | 20–60s |

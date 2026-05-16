@@ -100,7 +100,7 @@ Check in this order:
 ## Example assets in this repository
 
 | Asset | Path | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Conformance library | [`../CONFORMANCE/README.md`](../CONFORMANCE/README.md) | Entry point for conformance assets |
 | Forgejo Conformance Repo | [`../CONFORMANCE/forgejo-conformance-repo/README.md`](../CONFORMANCE/forgejo-conformance-repo/README.md) | Drop-in workflows that prove a Forgejo install is ready for SOR |
 | Agent manifest fixture | [`../CONFORMANCE/forgejo-conformance-repo/fixtures/agent-manifest.example.yaml`](../CONFORMANCE/forgejo-conformance-repo/fixtures/agent-manifest.example.yaml) | Repo-local role and routing config |

@@ -30,7 +30,7 @@ Good error messages turn a frustrating experience into a learning moment:
 Not all errors are equal:
 
 | Category | Example | Recovery |
-|---|---|---|
+| --- | --- | --- |
 | **Transient** | Rate limit, network timeout, API 503 | Auto-retry with backoff |
 | **Auth** | Missing API key, expired token | Guide user to add/rotate secret |
 | **Context** | Session too large, token limit exceeded | Compress context, suggest new issue |
@@ -71,7 +71,7 @@ When an error can't be automatically resolved, the user needs to see the full lo
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Error classifier** | Categorize errors from exit codes, stderr, API responses | ~2 hours |
 | **Structured error formatter** | Generate diagnostic comments per category | ~1.5 hours |
 | **Automatic retry** | Exponential backoff for transient errors | ~1.5 hours |

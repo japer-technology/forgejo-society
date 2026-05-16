@@ -16,7 +16,7 @@ Sources: `THE-SOCIETY-OF-REPO/06-memory/`, `THE-SOCIETY-OF-REPO/07-workspace/`,
 ## The three trees
 
 | Tree | Lifetime | Write rule | Content |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `state/` | per-run, scratch, append-only | runtime only | episodic per-stimulus trace, run reports |
 | `workspace/` | short-term, swept after settlement | settlement layer + integration agencies | active attention, in-progress settlements, owner briefings |
 | `memory/` | durable, governed, append-only | `archivist` only, on settlement of relevant outcomes | episodic, semantic, procedural, failure, frames, analogies, concepts, K-lines, decisions |
@@ -138,7 +138,7 @@ memory/
 ### Write rules
 
 | Subtree | Written by | When |
-|---|---|---|
+| --- | --- | --- |
 | `events/` | `normalize` + `act` | every run, append |
 | `episodic/` | `archivist` | end of every settled stimulus |
 | `semantic/decisions.log` | `archivist` | when settlement carries a `durable_decision` slot |

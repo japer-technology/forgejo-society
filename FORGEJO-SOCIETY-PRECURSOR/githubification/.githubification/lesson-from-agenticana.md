@@ -30,7 +30,7 @@ This means Githubification cannot simply wrap a single entry point. It must crea
 This dispatch layer does not exist in Agenticana's current architecture. It is new code that the Githubification must create — making this the first case where Githubification adds significant new logic rather than simply wrapping or exposing what already exists.
 
 | GitHub Primitive | Maps To |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — the runner that executes agents, swarms, and simulacrum debates |
 | **Git** | Storage and memory — ReasoningBank decisions, session transcripts, attestations |
 | **GitHub Issues** | User interface — each issue routes to a specialist agent via labels |
@@ -125,7 +125,7 @@ This is not a single agent to wrap — it is an **ecosystem**. The Githubificati
 Every previous Githubified repo has a single agent entry point. One issue comment triggers one agent. Agenticana has 20 agents, each with a distinct domain, model tier, and skill set. The Githubification analysis in `applicability-to-agenticana.md` proposes label-based routing:
 
 | Issue Label | Agent | Action |
-|-------------|-------|--------|
+| --- | --- | --- |
 | `agenticana` | Auto-routed | Model Router selects the best agent |
 | `security` | security-auditor | Security review of the codebase |
 | `performance` | performance-optimizer | Performance audit |
@@ -141,7 +141,7 @@ This is new infrastructure. In the local VS Code experience, routing happens imp
 Agenticana was designed for a fundamentally different execution model than GitHub Actions:
 
 | Dimension | Local (Current) | Githubified (Target) |
-|-----------|----------------|---------------------|
+| --- | --- | --- |
 | **Trigger** | User types in VS Code | User opens issue or comments |
 | **Runtime** | Developer's machine | GitHub Actions runner (ubuntu-latest) |
 | **Context** | VS Code workspace, open files | Full repository checkout |
@@ -218,7 +218,7 @@ In the local workflow, attestations are stored in `.Agentica/attestations/` (git
 Agenticana's 36 skills are organized into three tiers:
 
 | Tier | Loading Rule | Token Impact | Examples |
-|------|-------------|-------------|---------|
+| --- | --- | --- | --- |
 | Tier 1 — Core | Always loaded | Baseline | `clean-code`, `error-handling`, `git-conventions` |
 | Tier 2 — Domain | Loaded when domain matches | Medium | `nextjs-react-expert`, `architecture`, `systematic-debugging` |
 | Tier 3 — Utility | Loaded only on explicit need | Variable | `vulnerability-scanner`, `tdd-workflow`, `red-team-tactics` |
@@ -246,7 +246,7 @@ This pattern — **design the workflows first, enable them when ready** — is w
 Every previous Githubification lesson involves a single agent. Agenticana introduces the question: **how do you Githubify a system of 20 specialist agents?**
 
 | Dimension | Single-Agent (OpenClaw, Claw, GMI) | Multi-Agent (Agenticana) |
-|-----------|-------------------------------------|--------------------------|
+| --- | --- | --- |
 | **Routing** | Not needed — one agent handles everything | Label-based dispatch to 20 specialists |
 | **Concurrency** | One agent per issue | Multiple agents per issue (swarm) |
 | **Memory** | Unified session history | Per-agent decisions + shared ReasoningBank |
@@ -261,7 +261,7 @@ The multi-agent architecture introduces routing as a first-class concern, swarm 
 Previous case studies either wrapped a locally-installable agent (OpenClaw) or started with a GitHub-native agent (Claw, GMI). Agenticana is uniquely **designed for a different runtime** (VS Code + CLI on a developer's machine) and must be transformed to run on an entirely different platform (GitHub Actions runners).
 
 | Dimension | OpenClaw (wrapped) | Claw / GMI (native) | Agenticana (transformed) |
-|-----------|--------------------|---------------------|--------------------------|
+| --- | --- | --- | --- |
 | **Agent origin** | Server/local agent, ported to GitHub | Built for GitHub from scratch | Built for VS Code/CLI, ported to GitHub |
 | **Githubification layer** | Wrapper around existing entry point | The folder IS the agent | New dispatch layer + adapted scripts |
 | **Runtime conversion** | Minimal (same Node.js runtime) | None (born on Actions) | Significant (Python scripts + Node.js MCP) |

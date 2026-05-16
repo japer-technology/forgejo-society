@@ -3,7 +3,7 @@
 Society of Repo distinguishes three interacting layers.
 
 | Layer | Meaning in SOR | Examples |
-|---|---|---|
+| --- | --- | --- |
 | **Body** | Infrastructure and interfaces | forge, runners, storage, tools, network, external services |
 | **Brain** | Learned and statistical systems | classifiers, local models, retrieval indexes, pattern matchers |
 | **Mind** | Governed cognition | settlements, critics, censors, constitutions, self-ideals, reasoning traces |
@@ -15,7 +15,7 @@ Society of Repo distinguishes three interacting layers.
 In the Forgejo-hosted form of this society, the body layer is concrete:
 
 | Body component | Operational responsibility |
-|---|---|
+| --- | --- |
 | `.forgejo/workflows/` | Receives Forgejo events and starts the runner lifecycle |
 | Forgejo Actions runner | Executes the runtime in the selected image or environment |
 | `.forgejo-intelligence/` | Holds runtime surfaces, coordinators, agent engines, tests, and state |

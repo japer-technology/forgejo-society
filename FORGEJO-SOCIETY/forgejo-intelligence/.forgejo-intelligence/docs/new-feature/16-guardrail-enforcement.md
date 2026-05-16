@@ -55,7 +55,7 @@ Teams won't give an AI agent write access to their repo unless they can define b
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Guardrail config format** | Schema, defaults, validation | ~30 min |
 | **Pre-commit validator** (new `GITCLAW-GUARDRAILS.ts`) | Path matching, size checking, violation detection | ~2.5 hours |
 | **Self-modification protection** | Hardcoded rules for critical agent files | ~30 min |

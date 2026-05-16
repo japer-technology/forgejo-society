@@ -9,7 +9,7 @@ Without representation discipline, memory becomes a pile of files rather than a 
 ## Representation classes
 
 | Class | Use when | Do not use when |
-|---|---|---|
+| --- | --- | --- |
 | `episodic` | Recording one event or one settlement outcome | Claiming a general rule |
 | `semantic` | Recording a durable fact | Describing a step-by-step method |
 | `procedural` | Recording a reusable method | Recording one-off history |
@@ -48,7 +48,7 @@ Every new long-lived artifact must declare:
 Beyond the durable storage classes above, SOR pins down Minsky's named representation primitives so that they have concrete, operational meaning in a Git-native society. None of them are storage classes; they are *uses* of representation that the protocols rely on.
 
 | Primitive | Operational meaning in SOR | Where it lives |
-|---|---|---|
+| --- | --- | --- |
 | **Microneme** | A sub-symbolic, agency-internal feature that has meaning *only* to its owning agency. Micronemes are not exported, not linked, and not citable from outside the agency. | Inside an agency; never a top-level artifact |
 | **Polyneme** | A typed event whose payload fields are interpreted *differently* by each receiving agency. Each agency reads only the slice that concerns it. The same polyneme can wake several agencies into different work. | Event taxonomy in `02-protocols/03-events.md` |
 | **Isonome** | A lifecycle signal whose meaning is *the same* across every receiving agency: `activate`, `inhibit`, `settle`, `commit`, `retract`, `escalate`. Isonomes are control signals, not content. | Orchestrator messages in `02-protocols/04-activation.md` and `05-settlement.md` |

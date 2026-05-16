@@ -35,7 +35,7 @@ This page groups the NullClaw CLI by task so you can find the right command quic
 ## Setup and interaction
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw help` | Show top-level help |
 | `nullclaw version` / `nullclaw --version` | Show CLI version |
 | `nullclaw onboard --interactive` | Run the interactive setup wizard |
@@ -59,7 +59,7 @@ This page groups the NullClaw CLI by task so you can find the right command quic
 ## Runtime and operations
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw gateway` | Start the long-running runtime using configured host and port |
 | `nullclaw gateway --port 8080` | Override the gateway port from the CLI |
 | `nullclaw gateway --host 0.0.0.0 --port 8080` | Override host and port from the CLI |
@@ -88,7 +88,7 @@ Notes:
 ### `channel`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw channel list` | List known and configured channels |
 | `nullclaw channel start` | Start the default available channel |
 | `nullclaw channel start telegram` | Start a specific channel |
@@ -99,7 +99,7 @@ Notes:
 ### `cron`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw cron list` | List scheduled tasks |
 | `nullclaw cron add "0 * * * *" "command"` | Add a recurring shell task |
 | `nullclaw cron add-agent "0 * * * *" "prompt" --model <model> [--announce] [--channel <name>] [--to <id>]` | Add a recurring agent task |
@@ -114,7 +114,7 @@ Notes:
 ### `skills`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw skills list` | List installed skills |
 | `nullclaw skills install <source>` | Install from a GitHub URL or local path |
 | `nullclaw skills remove <name>` | Remove a skill |
@@ -123,7 +123,7 @@ Notes:
 ### `history`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw history list [--limit N] [--offset N] [--json]` | List conversation sessions |
 | `nullclaw history show <session_id> [--limit N] [--offset N] [--json]` | Show messages for a session |
 
@@ -132,7 +132,7 @@ Notes:
 ### `memory`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw memory stats` | Show resolved memory config and counters |
 | `nullclaw memory count` | Show total number of memory entries |
 | `nullclaw memory reindex` | Rebuild the vector index |
@@ -145,7 +145,7 @@ Notes:
 ### `workspace`, `capabilities`, `models`, `migrate`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw workspace edit AGENTS.md` | Open a bootstrap markdown file in `$EDITOR` |
 | `nullclaw workspace reset-md --dry-run` | Preview workspace markdown reset |
 | `nullclaw workspace reset-md --include-bootstrap --clear-memory-md` | Reset bundled markdown files and optionally clear extra files |
@@ -168,7 +168,7 @@ Notes:
 ### `hardware`
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw hardware scan` | Scan connected hardware |
 | `nullclaw hardware flash <firmware_file> [--target <board>]` | Flash firmware to a device (currently a placeholder command) |
 | `nullclaw hardware monitor` | Monitor hardware devices (currently a placeholder command) |
@@ -178,7 +178,7 @@ Notes:
 These are more useful for automation, probing, or integrations than for normal day-to-day CLI use:
 
 | Command | Purpose |
-|---|---|
+| --- | --- |
 | `nullclaw --export-manifest` | Export the runtime manifest |
 | `nullclaw --list-models` | Print model information |
 | `nullclaw --probe-provider-health` | Probe provider health |

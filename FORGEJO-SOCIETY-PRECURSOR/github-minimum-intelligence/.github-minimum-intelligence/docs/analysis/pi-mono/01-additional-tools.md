@@ -18,7 +18,7 @@ ls -la .github-minimum-intelligence/
 Pi also ships three additional built-in tools that are not enabled by default:
 
 | Tool | Purpose | Equivalent bash |
-|---|---|---|
+| --- | --- | --- |
 | `grep` | Pattern search across files with structured output | `grep -rn` / `rg` |
 | `find` | File discovery by name, type, size, modification time | `find` |
 | `ls` | Directory listing with metadata | `ls -la` |
@@ -106,7 +106,7 @@ Compare token usage before and after enabling additional tools across several is
 ## 5. Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tool name conflicts with extensions | Low | Low | Built-in tool names (`grep`, `find`, `ls`) are standard; unlikely to conflict with custom extensions |
 | LLM confusion with more tool options | Low | Low | These tools have clear, distinct purposes; modern LLMs handle tool selection well |
 | Behaviour change in existing conversations | Low | Low | Session continuity preserves context; new tool availability is additive |

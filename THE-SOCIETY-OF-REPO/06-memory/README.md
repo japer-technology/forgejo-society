@@ -9,7 +9,7 @@ Memory is not a hidden chat log. It is versioned, inspectable, correctable, and 
 ## Memory systems
 
 | System | What it holds | Path |
-|---|---|---|
+| --- | --- | --- |
 | [events/](events/README.md) | Event records and audit traces | `06-memory/events/` |
 | [episodic/](episodic/README.md) | What happened in specific events | `06-memory/episodic/` |
 | [semantic/](semantic/README.md) | Durable general facts | `06-memory/semantic/` |

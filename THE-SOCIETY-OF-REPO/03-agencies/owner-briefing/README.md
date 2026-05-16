@@ -50,7 +50,7 @@ See [constitution.yaml](constitution.yaml).
 ## Evaluation
 
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `briefing_usefulness_score` | Owner-reported usefulness rating (1–5) |
 | `noise_rate` | % of briefings the owner marked as low-value or unnecessary |
 | `approval_request_accuracy` | % of approval requests that were genuinely required |

@@ -195,7 +195,7 @@ SKILL.md               (committed, auto-generated sections)
 Templates contain the workflows, tips, and examples that require human judgment. Placeholders are filled from source code at build time:
 
 | Placeholder | Source | What it generates |
-|-------------|--------|-------------------|
+| --- | --- | --- |
 | `{{COMMAND_REFERENCE}}` | `commands.ts` | Categorized command table |
 | `{{SNAPSHOT_FLAGS}}` | `snapshot.ts` | Flag reference with examples |
 | `{{PREAMBLE}}` | `gen-skill-docs.ts` | Startup block: update check, session tracking, contributor mode, AskUserQuestion format |
@@ -232,7 +232,7 @@ Three reasons:
 ### Template test tiers
 
 | Tier | What | Cost | Speed |
-|------|------|------|-------|
+| --- | --- | --- | --- |
 | 1 — Static validation | Parse every `$B` command in SKILL.md, validate against registry | Free | <2s |
 | 2 — E2E via `claude -p` | Spawn real Claude session, run each skill, check for errors | ~$3.85 | ~20min |
 | 3 — LLM-as-judge | Sonnet scores docs on clarity/completeness/actionability | ~$0.15 | ~30s |
@@ -346,7 +346,7 @@ The `EvalCollector` accumulates test results and writes them in two ways:
 ### Test tiers
 
 | Tier | What | Cost | Speed |
-|------|------|------|-------|
+| --- | --- | --- | --- |
 | 1 — Static validation | Parse `$B` commands, validate against registry, observability unit tests | Free | <5s |
 | 2 — E2E via `claude -p` | Spawn real Claude session, run each skill, scan for errors | ~$3.85 | ~20min |
 | 3 — LLM-as-judge | Sonnet scores docs on clarity/completeness/actionability | ~$0.15 | ~30s |

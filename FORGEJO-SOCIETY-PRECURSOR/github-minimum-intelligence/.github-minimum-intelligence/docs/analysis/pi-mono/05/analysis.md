@@ -51,7 +51,7 @@ The subprocess model discards all intermediate events. Tool calls, thinking bloc
 The SDK provides event listeners for the full agent lifecycle:
 
 | Event | Use Case |
-|---|---|
+| --- | --- |
 | `tool_call` | Log which tools the agent invoked; detect unsafe commands |
 | `thinking` | Capture chain-of-thought for reasoning transparency |
 | `compaction` | Monitor context window pressure; alert on frequent compaction |
@@ -232,7 +232,7 @@ This narrows GMI's optionality if a superior coding agent emerges or if pi-codin
 ## 4. Comparative Summary
 
 | Dimension | Subprocess (Status Quo) | SDK (Proposed) |
-|---|---|---|
+| --- | --- | --- |
 | **Reliability** | Proven; no known failures | Unproven in GMI context |
 | **Error specificity** | Binary (exit code) | Typed exceptions |
 | **Event visibility** | Post-hoc JSONL inspection | Real-time event listeners |
@@ -251,7 +251,7 @@ This narrows GMI's optionality if a superior coding agent emerges or if pi-codin
 Assigning weights based on GMI's current maturity and deployment context (early-stage, single-maintainer, GitHub Actions):
 
 | Factor | Weight | Subprocess | SDK |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Reliability (proven track record) | 30% | ★★★★★ | ★★★☆☆ |
 | Error handling quality | 15% | ★★☆☆☆ | ★★★★★ |
 | Future feature enablement | 15% | ★★☆☆☆ | ★★★★★ |

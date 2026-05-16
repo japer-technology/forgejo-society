@@ -21,7 +21,7 @@ This is a Type 1 — AI Agent Repo that reveals a phase of Githubification not s
 The previous case studies treat GitHub Actions as blank infrastructure that must be configured from scratch. GitClaw builds a lifecycle pipeline. Agent Zero requires substitution because its runtime conflicts with Actions. AutoGPT is still in the preparation phase, making the codebase legible. OpenHands CLI occupies a different position: the agent already executes on GitHub Actions runners, already reads the repository, already produces commits and PR comments, and already uses GitHub Secrets for LLM API keys. Every Githubification primitive is not just present but **actively in use** — just not for the purpose Githubification envisions.
 
 | GitHub Primitive | Current Use | Githubification Use |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute — runs the agent in headless mode for PR reviews, code quality analysis, issue labeling, and automated fixes | Compute — would run the agent in headless mode for user conversations via Issues |
 | **Git** | Storage — the codebase the agent reads and modifies through PRs | Storage — would additionally store conversation sessions and agent memory |
 | **GitHub Issues** | Human interface — used for traditional bug/feature tracking, auto-labeled by the agent | User interface — would become the conversational surface for interacting with the agent |
@@ -164,7 +164,7 @@ This workflow already demonstrates the complete Githubification execution model:
 The `.github/prompts/` directory introduces a pattern not seen in other case studies: **structured prompt files that define agent tasks as reusable Markdown documents**. Instead of embedding the agent's instructions in the workflow YAML, the task is defined in a separate file:
 
 | Prompt File | Size | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | `auto-fix-low-hanging.md` | 3.2KB | Instructions for fixing trivial code quality issues, including branch creation, testing, and PR submission |
 | `code-quality-analysis.md` | 3.8KB | Instructions for comprehensive code analysis: type checking, state management, separation of concerns, duplication |
 | `good-first-issue-labeler.md` | 1.3KB | Instructions for identifying and labeling good-first-issue candidates |
@@ -226,7 +226,7 @@ The `pr-review-by-openhands.yml` workflow is the closest thing to Githubificatio
 This is structurally similar to a Githubification workflow that triggers on issue events, runs the agent, and posts replies to the issue. The differences are:
 
 | Dimension | PR Review (Current) | Issue Conversation (Githubification) |
-|---|---|---|
+| --- | --- | --- |
 | **Trigger** | `pull_request` events | `issues` / `issue_comment` events |
 | **Input** | PR diff, title, body | Issue body, comment thread |
 | **Output** | Review comments on the PR | Reply comments on the issue |

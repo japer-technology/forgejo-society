@@ -13,7 +13,7 @@
 ## What It Acts On
 
 | Trigger / Data | Description |
-|---|---|
+| --- | --- |
 | **Codespace lifecycle** | Monitors codespace creation, start, stop, and deletion events across the repository |
 | **Dev container configuration** | Reads `.devcontainer/devcontainer.json` for environment specifications, extensions, and setup scripts |
 | **Codespace usage metrics** | Tracks compute hours, storage usage, and machine type selections across the team |
@@ -24,7 +24,7 @@
 ## What It Acts In
 
 | Surface | How the Agent Participates |
-|---|---|
+| --- | --- |
 | **Dev container optimization** | Analyzes dev container configurations and suggests improvements — faster builds, smaller images, better caching |
 | **Onboarding acceleration** | Generates and maintains dev container configurations that ensure new contributors can start coding immediately |
 | **Cost monitoring** | Tracks codespace compute and storage costs — alerts on unusual usage patterns and recommends right-sizing |

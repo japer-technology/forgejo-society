@@ -44,7 +44,7 @@ External Service → Webhook → Thin Relay → repository_dispatch → GitHub A
 The Cronicle analysis maps Cronicle's API-triggered execution (`POST /api/app/run_event`) directly to `repository_dispatch`:
 
 | Cronicle Feature | GitHub Native Equivalent |
-|---|---|
+| --- | --- |
 | `POST /api/app/run_event` | `repository_dispatch` |
 | On-demand job trigger | `workflow_dispatch` button |
 | API-triggered execution | `repository_dispatch` |
@@ -124,7 +124,7 @@ jobs:
 The Cronicle analysis maps Cronicle's plugin system directly to reusable workflows:
 
 | Cronicle Concept | GitHub Actions Equivalent |
-|---|---|
+| --- | --- |
 | Plugin (custom job type) | Composite action or reusable workflow |
 | Plugin registry | Workflow files in `.github/workflows/` |
 | Plugin invocation | `uses: org/repo/.github/workflows/plugin.yml@main` |
@@ -173,7 +173,7 @@ The agent0 analysis is the only one that explicitly maps the path from "a single
 ### The Three Distribution Layers
 
 | Layer | Purpose | Form |
-|---|---|---|
+| --- | --- | --- |
 | **Composite Action** (`action.yml`) | Reusable execution unit | Published to GitHub Marketplace |
 | **Self-Installing Workflow Template** | Bootstrap any consumer repo | Referenced via `workflow_dispatch` |
 | **Configuration-Driven Personality** | Consumer-specific agent identity | Inputs on the action |
@@ -291,7 +291,7 @@ This pattern is a form of cross-repo action usage: the installer workflow in the
 ## Summary
 
 | Pattern | Primary Use | Repos in Corpus |
-|---|---|---|
+| --- | --- | --- |
 | `repository_dispatch` | Webhooks and external triggers | n8n, Cronicle, agent0 |
 | `workflow_dispatch` cross-repo | Remote job triggering | n8n, NemoClaw, Cronicle |
 | Reusable workflows (`workflow_call`) | Shared plugin/step library | Cronicle, camel, renovate |

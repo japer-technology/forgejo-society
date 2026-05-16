@@ -68,14 +68,14 @@ Out of scope:
 ### Document intake and routing
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes incoming logs, metrics, and programme documents | propose |
 | `document-index-bee` | Indexes training logs, nutrition records, and programme files; answers retrieval queries | propose |
 
 ### Training agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `session-bee` | Records and tracks completed training sessions against the current programme | propose |
 | `programme-bee` | Monitors the current training programme schedule, identifies missed sessions and approaching deloads | propose |
 | `record-bee` | Tracks personal records and milestone achievements across all training disciplines | propose |
@@ -83,28 +83,28 @@ Out of scope:
 ### Nutrition agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `nutrition-bee` | Logs and summarises daily nutrition entries; tracks calories and macros against targets | propose |
 | `meal-planning-bee` | Surfaces upcoming meal plan requirements and flags days with no log entry | propose |
 
 ### Metrics and recovery agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `metrics-bee` | Tracks body weight, measurements, and body composition over time | propose |
 | `recovery-bee` | Monitors sleep logs, soreness notes, and rest day patterns for recovery signals | propose |
 
 ### Research and task agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `web-research-bee` | Issues searches for exercise research, food data, and general wellness information | propose |
 | `task-bee` | Tracks open programme tasks, unlogged sessions, and pending reviews | propose |
 
 ### Briefing agency
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `fitness-briefing` | Assembles and delivers governed weekly exercise and diet briefings to the owner | act |
 
 ---
@@ -112,7 +112,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is this pattern or trend based on sufficient data points to be meaningful? |
 | `scope-critic` | Is this SOR staying within its tracking and pattern role, not making clinical recommendations? |
 | `staleness-critic` | Is the data being acted on from recent enough logs to reflect current state? |
@@ -125,7 +125,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No body metrics, nutrition logs, health data, or personal records leave the local system without explicit owner approval |
 | `clinical-advice-censor` | No agency makes a clinical, dietary, or medical recommendation or implies a treatment |
 | `authority-censor` | No agency increases its own authority level |
@@ -386,7 +386,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Training logs and nutrition records in repos |
 | 1 | Memory | Structured session, nutrition, and metrics records |
 | **2** | **Agency** | **Agencies with roles, constitutions, and outputs** |

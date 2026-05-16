@@ -68,14 +68,14 @@ Out of scope:
 ### Document intake and routing
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `intake-bee` | Classifies and routes incoming documents, announcements, and stimuli | propose |
 | `document-index-bee` | Indexes trade records, announcements, and journal entries; answers retrieval queries | propose |
 
 ### Position and portfolio agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `position-bee` | Tracks open positions, entry prices, unrealised P&L, and cost basis | propose |
 | `portfolio-watch` | Monitors portfolio concentration, sector exposure, and cash balance | propose |
 | `tax-record-bee` | Tracks cost base, dividend receipts, and trade history for tax record purposes | propose |
@@ -83,7 +83,7 @@ Out of scope:
 ### Watchlist and market monitoring agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `watchlist-bee` | Monitors watchlist securities for price thresholds and volume anomalies | propose |
 | `corporate-action-bee` | Tracks earnings dates, ex-dividend dates, capital raises, and AGMs | propose |
 | `market-calendar-bee` | Monitors economic data release dates, central bank decisions, and index rebalance events | propose |
@@ -91,21 +91,21 @@ Out of scope:
 ### News and research agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `news-bee` | Aggregates and surfaces company announcements and news for held or watched securities | propose |
 | `web-research-bee` | Issues searches for sector data, regulatory updates, and company background | propose |
 
 ### Journal and task agencies
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `journal-bee` | Records trade rationale, execution notes, and post-trade review entries | propose |
 | `task-bee` | Tracks open trading tasks, pending reviews, and unactioned corporate action decisions | propose |
 
 ### Briefing agency
 
 | Agency | Job | Authority |
-|---|---|---|
+| --- | --- | --- |
 | `trading-briefing` | Assembles and delivers governed daily trading briefings to the owner | act |
 
 ---
@@ -113,7 +113,7 @@ Out of scope:
 ## Critics
 
 | Critic | Challenge |
-|---|---|
+| --- | --- |
 | `evidence-critic` | Is this proposal based on reliable, current data from a verified source? |
 | `scope-critic` | Is this SOR staying within its data-and-memory role, not making recommendations? |
 | `staleness-critic` | Is this price, news item, or announcement recent enough to act on? |
@@ -127,7 +127,7 @@ Out of scope:
 ## Censors
 
 | Censor | Hard limit |
-|---|---|
+| --- | --- |
 | `cloud-egress-censor` | No position data, trade history, cost base, or personal financial record leaves the local system without explicit owner approval |
 | `order-execution-censor` | No agency places, modifies, or cancels any order in any brokerage or trading system |
 | `authority-censor` | No agency increases its own authority level |
@@ -380,7 +380,7 @@ settlement:
 ## Maturity ladder target
 
 | Level | Name | What exists in this SOR |
-|---|---|---|
+| --- | --- | --- |
 | 0 | Storage | Trade records and documents in repos |
 | 1 | Memory | Structured position, journal, and corporate action records |
 | **2** | **Agency** | **Agencies with roles, constitutions, and outputs** |

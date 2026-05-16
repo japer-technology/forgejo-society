@@ -17,7 +17,7 @@ primary Forgejo server, all 16 runner nodes, and the LLM inference machine.
 ## System requirements
 
 | Host | Minimum | Recommended |
-|---|---|---|
+| --- | --- | --- |
 | Forge server | 4 cores · 8 GB RAM · 100 GB disk | i9 20-core · 64 GB · 2 TB NVMe |
 | Runner node | 2 cores · 4 GB RAM · 40 GB disk | i7 8-core · 8 GB · 60 GB SSD |
 | LLM server | 8 cores · 32 GB RAM · GPU 16 GB VRAM | i9 32-core · 64 GB · RTX 4090 |
@@ -254,7 +254,7 @@ For the forge host, use a layout that separates OS, database, and repository dat
 each can be expanded or backed up independently.
 
 | Mount | Purpose | Minimum |
-|---|---|---|
+| --- | --- | --- |
 | `/` | OS and packages | 40 GB |
 | `/var/lib/postgresql` | Database files | 20 GB |
 | `/var/lib/forgejo` | Repository storage and uploads | 500 GB |

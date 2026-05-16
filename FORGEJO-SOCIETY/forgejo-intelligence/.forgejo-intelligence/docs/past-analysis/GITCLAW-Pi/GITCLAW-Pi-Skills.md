@@ -92,7 +92,7 @@ The `description` is the primary triggering mechanism. It should include both wh
 ### Bundled Resources
 
 | Type | Purpose | When to use |
-|------|---------|-------------|
+| --- | --- | --- |
 | **scripts/** | Deterministic, repeatable code | Same code gets rewritten every time |
 | **references/** | Documentation loaded on demand | Schemas, API docs, domain knowledge |
 | **assets/** | Files used in output | Templates, images, boilerplate |

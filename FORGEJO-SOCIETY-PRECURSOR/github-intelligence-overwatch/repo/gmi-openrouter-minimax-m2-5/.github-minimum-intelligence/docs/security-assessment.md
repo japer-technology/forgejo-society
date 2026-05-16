@@ -44,7 +44,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 **Key Findings:**
 
 | # | Finding | Severity | Status |
-|---|---------|----------|--------|
+| --- | --- | --- | --- |
 | SEC-001 | Org-wide repository write access via `GITHUB_TOKEN` | 🔴 Critical | Open |
 | SEC-002 | Unrestricted network egress from runner | 🔴 Critical | Open |
 | SEC-003 | Passwordless sudo root on runner | 🟠 High | Open |
@@ -108,7 +108,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### Components
 
 | Component | Version | Role |
-|-----------|---------|------|
+| --- | --- | --- |
 | `@mariozechner/pi-coding-agent` | ^0.52.5 | Core AI agent: prompt processing, LLM interaction, tool execution |
 | GitHub Actions Workflow | N/A | Orchestration: triggers, authorization, environment setup |
 | Lifecycle Scripts (TypeScript) | N/A | Agent initialization and indicator management |
@@ -123,7 +123,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### 3.1 Threat Actors
 
 | Actor | Motivation | Access Level | Likelihood |
-|-------|-----------|-------------|------------|
+| --- | --- | --- | --- |
 | **Malicious Contributor** | Sabotage, IP theft | Write access (bypasses auth gate) | Medium |
 | **Compromised Account** | Supply chain attack | Inherited permissions of compromised user | Medium |
 | **External Attacker** | Crypto mining, data theft | None (blocked by auth gate) | Low |
@@ -153,7 +153,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### 3.3 STRIDE Analysis
 
 | Threat | Applicable? | Details |
-|--------|------------|---------|
+| --- | --- | --- |
 | **S**poofing | ✅ Yes | Compromised contributor account bypasses auth. Agent commits appear as `github-actions[bot]`. |
 | **T**ampering | ✅ Yes | Agent can modify any file in this repo and push directly to `main`. Can tamper with other org repos. |
 | **R**epudiation | ✅ Yes | While git logs exist, agent actions within a run are only in Actions logs (which can be deleted by admins). |
@@ -306,7 +306,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### Current State
 
 | Secret | Storage | Scope | Rotation Policy | Exposure Risk |
-|--------|---------|-------|----------------|---------------|
+| --- | --- | --- | --- | --- |
 | `GITHUB_TOKEN` | GitHub Actions auto-generated | Org-wide (installation token) | Per-workflow-run (auto-expires) | 🔴 Accessible in env, exfiltrable |
 | `ANTHROPIC_API_KEY` | GitHub Actions Secrets | Global (Anthropic account) | Unknown / Manual | 🔴 Accessible in env, exfiltrable |
 
@@ -339,7 +339,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 **Assessment:**
 
 | Check | Status | Notes |
-|-------|--------|-------|
+| --- | --- | --- |
 | Blocks unauthenticated users | ✅ | Non-collaborators get "none" |
 | Blocks read-only collaborators | ✅ | "read" permission is rejected |
 | Allows write/maintain/admin | ✅ | Intended behavior |
@@ -352,7 +352,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### Principle of Least Privilege Violations
 
 | Resource | Granted | Required | Excess |
-|----------|---------|----------|--------|
+| --- | --- | --- | --- |
 | Repository access | 24 repos (org-wide) | 1 repo (`gmi-test-1`) | 23 repos excess |
 | Workflow permissions | `contents: write`, `issues: write`, `actions: write` | `contents: write`, `issues: write` | `actions: write` excess |
 | System access | Root (sudo NOPASSWD) | Userspace file I/O | Full root excess |
@@ -377,7 +377,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 ### Risk Assessment
 
 | Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
+| --- | --- | --- | --- |
 | Compromised `pi-coding-agent` | Low | 🔴 Critical - full agent takeover | Pin version, audit regularly |
 | Compromised transitive dep | Low-Medium | 🔴 Critical - code execution in agent context | Lockfile frozen ✅, audit tree |
 | Typosquatting attack | Low | 🟠 High | Verify package name and publisher |
@@ -441,7 +441,7 @@ No current control prevents this.
 ### Hardening Assessment
 
 | Control | Standard Practice | Current State | Gap |
-|---------|------------------|---------------|-----|
+| --- | --- | --- | --- |
 | Non-root execution | Run as unprivileged user | ❌ Sudo NOPASSWD ALL | Critical gap |
 | Read-only filesystem | Mount rootfs read-only | ❌ Full r/w access | Major gap |
 | Capability dropping | Drop all, add required | ❌ Full capabilities | Major gap |
@@ -456,7 +456,7 @@ No current control prevents this.
 The following tools are pre-installed and usable by the agent:
 
 | Category | Tools |
-|----------|-------|
+| --- | --- |
 | Network | `curl`, `wget`, `nc`, `ssh`, `scp`, `rsync`, `nmap` (if installed) |
 | Compilation | `gcc`, `g++`, `go`, `rustc`, `javac`, `python3` |
 | Containers | `docker`, `docker-compose` |
@@ -473,7 +473,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### Zeroth Law - Protect Humanity
 
 | Requirement | Compliance | Notes |
-|-------------|-----------|-------|
+| --- | --- | --- |
 | No monopolistic control | ✅ | Uses open protocols (git, HTTP, standard APIs) |
 | Open source remains open | ✅ | System is transparent and documented |
 | Interoperability & portability | ✅ | Data stored in git, standard formats |
@@ -482,7 +482,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### First Law - Do No Harm
 
 | Requirement | Compliance | Notes |
-|-------------|-----------|-------|
+| --- | --- | --- |
 | No endangering human safety | ⚠️ Partial | No content filtering on agent output |
 | Detect/refuse malicious code | ❌ No | Agent has no malware detection capability |
 | Protect personal data | ❌ No | Secrets exposed in env, no DLP controls |
@@ -491,7 +491,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### Second Law - Obey the Human
 
 | Requirement | Compliance | Notes |
-|-------------|-----------|-------|
+| --- | --- | --- |
 | Serve developer's stated intent | ✅ | Agent follows issue instructions |
 | Transparent about limitations | ✅ | LLM acknowledges uncertainty |
 | Respect user autonomy | ✅ | Does not override user decisions |
@@ -500,7 +500,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### Third Law - Preserve Integrity
 
 | Requirement | Compliance | Notes |
-|-------------|-----------|-------|
+| --- | --- | --- |
 | Maintain security | ❌ No | Multiple critical vulnerabilities documented |
 | Resist adversarial manipulation | ❌ No | No prompt injection defenses |
 | Forthcoming about failures | ✅ | This report exists as evidence |
@@ -512,7 +512,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ## 11. Risk Register
 
 | ID | Risk | Likelihood | Impact | Severity | Owner | Status |
-|----|------|-----------|--------|----------|-------|--------|
+| --- | --- | --- | --- | --- | --- | --- |
 | R-001 | Org-wide code compromise via GITHUB_TOKEN | Medium | Critical | 🔴 Critical | Org Admin | Open |
 | R-002 | API key exfiltration and financial abuse | Medium | High | 🔴 Critical | Org Admin | Open |
 | R-003 | Supply chain attack via dependency compromise | Low | Critical | 🟠 High | Maintainer | Open |
@@ -531,7 +531,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### 🔴 Immediate (Do This Week)
 
 | # | Action | Effort | Impact |
-|---|--------|--------|--------|
+| --- | --- | --- | --- |
 | 1 | **Enable branch protection on `main`** - require PR reviews, prevent direct pushes | Low | Eliminates unreviewed code deployment |
 | 2 | **Scope GITHUB_TOKEN** - replace with fine-grained PAT limited to `gmi-test-1` | Medium | Reduces scope of access to this repository only |
 | 3 | **Add CODEOWNERS** - require admin review for `.github/` directory changes | Low | Prevents workflow injection |
@@ -541,7 +541,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### 🟠 Short-Term (Do This Month)
 
 | # | Action | Effort | Impact |
-|---|--------|--------|--------|
+| --- | --- | --- | --- |
 | 6 | **Implement egress controls** - restrict outbound traffic to required endpoints only | Medium | Prevents data exfiltration |
 | 7 | **Agent branch model** - configure agent to push to `agent/*` branches, open PRs | Medium | Adds human review gate |
 | 8 | **Add prompt injection defenses** - sanitize issue content before passing to LLM | Medium | Reduces hijack risk |
@@ -551,7 +551,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 ### 🟡 Medium-Term (Do This Quarter)
 
 | # | Action | Effort | Impact |
-|---|--------|--------|--------|
+| --- | --- | --- | --- |
 | 11 | **API key proxy** - route LLM calls through a proxy that holds the key and enforces rate limits | High | Eliminates API key exposure |
 | 12 | **Self-hosted runner** - use a hardened, network-restricted runner with minimal tooling | High | Eliminates multiple vulnerabilities |
 | 13 | **Implement DEFCON levels** - adopt the framework from [transition-to-defcon-1.md](./transition-to-defcon-1.md) starting at DEFCON 2 | High | Comprehensive security posture improvement |
@@ -609,7 +609,7 @@ STEP 5: LEARN (Days 1–7)
 ### Emergency Contacts
 
 | Role | Action |
-|------|--------|
+| --- | --- |
 | Repository Admin | Can disable workflows, revert commits, manage branch protection |
 | Organization Admin | Can rotate org-level secrets, manage repository permissions, audit org-wide access |
 | Anthropic Support | Can disable/rotate API keys if exfiltration is confirmed |
@@ -644,7 +644,7 @@ This project follows a coordinated disclosure model:
 ## Appendix A: Document History
 
 | Date | Version | Author | Changes |
-|------|---------|--------|---------|
+| --- | --- | --- | --- |
 | 2026-02-24 | 1.0 | AI Agent (GMI) | Initial security report |
 
 ---

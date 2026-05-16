@@ -13,7 +13,7 @@
 ## Agent Identity
 
 | Property | Value |
-|----------|-------|
+| --- | --- |
 | **Name** | Pi |
 | **Package** | `@mariozechner/pi-coding-agent` |
 | **Status** | Active — currently the primary agent |

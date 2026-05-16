@@ -11,7 +11,7 @@ This document catalogs every network-facing surface in IronClaw, its authenticat
 IronClaw operates across four trust boundaries:
 
 | Boundary | Trust Level | Examples |
-|----------|------------|---------|
+| --- | --- | --- |
 | **Local user** | Fully trusted | TUI, web gateway (loopback), CLI commands |
 | **Browser client** | Authenticated | Web UI connected via bearer token; subject to CORS, Origin validation, CSRF protections |
 | **Docker containers** | Untrusted (sandboxed) | Worker containers executing user jobs; isolated via per-job tokens, allowlisted egress, dropped capabilities |
@@ -29,7 +29,7 @@ IronClaw operates across four trust boundaries:
 ## Network Surface Inventory
 
 | Listener | Default Port | Default Bind | Auth Mechanism | Config Env Var | Source |
-|----------|-------------|-------------|----------------|----------------|--------|
+| --- | --- | --- | --- | --- | --- |
 | Web Gateway | 3000 | `127.0.0.1` | Bearer token (constant-time) | `GATEWAY_HOST`, `GATEWAY_PORT`, `GATEWAY_AUTH_TOKEN` | `server.rs` — `start_server()` |
 | HTTP Webhook Server | 8080 | `0.0.0.0` | Shared secret (body field) | `HTTP_HOST`, `HTTP_PORT`, `HTTP_WEBHOOK_SECRET` | `webhook_server.rs` — `start()` |
 | Orchestrator Internal API | 50051 | `127.0.0.1` (macOS/Win) / `0.0.0.0` (Linux) | Per-job bearer token (constant-time) | `ORCHESTRATOR_PORT` | `api.rs` — `OrchestratorApi::start()` |
@@ -64,7 +64,7 @@ If `GATEWAY_AUTH_TOKEN` is not set, a random hex token is generated at startup.
 ### Unauthenticated Routes
 
 | Route | Purpose | Response |
-|-------|---------|----------|
+| --- | --- | --- |
 | `/api/health` | Health check endpoint | `{"status":"healthy","channel":"gateway"}` — no version, uptime, or fingerprinting data |
 | `/` | Static HTML (embedded) | Single-page app shell |
 | `/style.css` | Static CSS (embedded) | Stylesheet |
@@ -174,7 +174,7 @@ The webhook endpoint uses axum's `Json<WebhookRequest>` extractor, which enforce
 ### Routes
 
 | Route | Auth | Purpose | Response |
-|-------|------|---------|----------|
+| --- | --- | --- | --- |
 | `/health` | None | Health check | `{"status":"healthy","channel":"http"}` — no fingerprinting data |
 | `/webhook` | Webhook secret | Receive messages | Webhook response |
 
@@ -239,7 +239,7 @@ The orchestrator can grant per-job access to specific secrets from the encrypted
 ### Routes
 
 | Route | Auth | Purpose | Response |
-|-------|------|---------|----------|
+| --- | --- | --- | --- |
 | `/health` | None | Health check | `"ok"` (plain text) — no fingerprinting data |
 | `/worker/{job_id}/job` | Per-job token | Get job description | Job JSON |
 | `/worker/{job_id}/llm/complete` | Per-job token | Proxy LLM completion | LLM response |
@@ -359,7 +359,7 @@ The proxy strips hop-by-hop headers to prevent header-based attacks: `connection
 Containers that use the proxy are configured with defense-in-depth:
 
 | Control | Setting | Reference |
-|---------|---------|-----------|
+| --- | --- | --- |
 | Capabilities | Drop ALL, add only CHOWN | `src/sandbox/container.rs` — `cap_drop` / `cap_add` |
 | Privilege escalation | `no-new-privileges:true` | `src/sandbox/container.rs` — `security_opt` |
 | Root filesystem | Read-only (except FullAccess policy) | `src/sandbox/container.rs` — `readonly_rootfs` |
@@ -410,7 +410,7 @@ WASM tools execute HTTP requests through the host runtime, subject to:
 The `http` tool (`src/tools/builtin/http.rs`) has its own SSRF protections:
 
 | Protection | Details | Reference |
-|-----------|---------|-----------|
+| --- | --- | --- |
 | HTTPS only | Rejects `http://` URLs | `http.rs` — scheme check |
 | Localhost blocked | Rejects `localhost` and `*.localhost` | `http.rs` — host check |
 | Private IP blocked | Rejects RFC 1918, loopback, link-local, multicast, unspecified | `http.rs` — `is_disallowed_ip()` |
@@ -445,7 +445,7 @@ Sandbox containers route all HTTP traffic through the proxy, which enforces a do
 ## Authentication Mechanisms Summary
 
 | Mechanism | Constant-Time | Used By | Reference |
-|-----------|:------------:|---------|-----------|
+| --- | :---: | --- | --- |
 | Gateway bearer token | Yes | Web gateway (header + query) | `src/channels/web/auth.rs` — `auth_middleware()` |
 | Webhook shared secret | Yes | HTTP webhook (`ct_eq` comparison) | `src/channels/http.rs` — `webhook_handler()` |
 | Per-job bearer token | Yes | Orchestrator worker API | `src/orchestrator/auth.rs` — `TokenStore::validate()` |

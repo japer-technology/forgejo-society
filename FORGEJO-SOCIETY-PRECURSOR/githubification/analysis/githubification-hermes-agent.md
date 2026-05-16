@@ -17,7 +17,7 @@ This analysis examines how to transform this repository from software that must 
 ### What Hermes Agent Is Today
 
 | Dimension | Detail |
-|---|---|
+| --- | --- |
 | **Language** | Python 3.11+ (~50+ source files, ~3,000 tests) |
 | **Core loop** | `AIAgent` class in `run_agent.py` — synchronous ReAct loop with OpenAI-format messages |
 | **Tool system** | `tools/registry.py` — 40+ tools self-register at import time; dispatched by `model_tools.py` |
@@ -34,7 +34,7 @@ This analysis examines how to transform this repository from software that must 
 ### What Already Maps to GitHub Primitives
 
 | GitHub Primitive | Current Hermes Equivalent | Gap |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** (compute) | Local process, VPS, Docker, Modal, Daytona | Hermes has no GitHub Actions backend today |
 | **Git** (memory) | SQLite FTS5, MEMORY.md, skills files | Session state is in SQLite, not git-committed |
 | **GitHub Issues** (UI) | Telegram, Discord, Slack, CLI | No GitHub Issues adapter exists |
@@ -83,7 +83,7 @@ This could be invoked from a workflow step after `pip install`-ing the package. 
 5. **Commit session state** to git
 
 | Advantage | Challenge |
-|---|---|
+| --- | --- |
 | Runs the actual Hermes agent — all 40+ tools available | Heavy dependency install (~30 Python packages) on every workflow run |
 | Skills, memory, delegation all work | SQLite session store doesn't persist across ephemeral runs — needs git-committed replacement |
 | Multi-provider LLM support already built | Interactive CLI features (spinner, TUI, prompt_toolkit) are meaningless on Actions |
@@ -110,7 +110,7 @@ A `github_issues.py` adapter would:
 - Commit session state to git
 
 | Advantage | Challenge |
-|---|---|
+| --- | --- |
 | Fits Hermes's existing multi-platform architecture | The gateway is a long-running daemon; GitHub Actions is event-driven and ephemeral |
 | Reuses all existing gateway infrastructure (session management, slash commands, hooks) | The `SessionStore` uses SQLite — needs git-backed storage for cross-run persistence |
 | Consistent behavior across all platforms | Platform adapters expect async message loops; GitHub Issues is request-response |
@@ -129,12 +129,12 @@ Following the proven pattern from the Githubification corpus:
 3. The GMI agent (powered by `pi-coding-agent`) provides issue-driven conversation, git-committed memory, and personality hatching — all with a single npm dependency and two TypeScript lifecycle files
 
 | Advantage | Challenge |
-|---|---|
+| --- | --- |
 | Proven, fully Githubified pattern | The conversational agent is pi, not Hermes — different capabilities |
 | Single dependency, ~30s install, two-file lifecycle | Users expecting Hermes's 40+ tools get a lighter agent |
 | Git-committed sessions, personality hatching, modular skills — all out of the box | Two agent systems in one repo increases conceptual complexity |
 | No modifications to Hermes source code needed | The GMI agent doesn't have Hermes's skill system, memory model, or delegation |
-| Coexists with Hermes codebase as read context | |
+| Coexists with Hermes codebase as read context |  |
 
 **Impedance mismatch:** None for GMI (it's native). But the substituted agent is not Hermes — it's a different agent operating on the Hermes codebase.
 
@@ -143,7 +143,7 @@ Following the proven pattern from the Githubification corpus:
 The strongest Githubification combines **Wrapping (Path A)** for heavyweight operations with **Substitution (Path C)** for lightweight, persistent conversation:
 
 | Concern | Mechanism |
-|---|---|
+| --- | --- |
 | **Conversational AI via Issues** | GMI agent — lightweight, immediate, persistent memory, personality |
 | **Hermes-powered task execution** | Hermes wrapper — full 40+ tool suite, invoked via label (`hermes-run`) or command |
 | **Persistent memory** | Git-committed session files (both agents) |
@@ -159,7 +159,7 @@ The GMI agent handles the conversational surface — questions, explanations, ar
 ### The Four Primitives — Mapped
 
 | GitHub Primitive | Role | Implementation |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub Actions** | Compute | Two workflows: GMI for conversation, Hermes wrapper for tool-heavy tasks |
 | **Git** | Storage & Memory | Session transcripts in `state/`, conversation history, skill files, memory entries — all git-committed |
 | **GitHub Issues** | User Interface | Each issue is a conversation thread. Labels route to the right agent. Issue templates for chat, hatching, and task requests |
@@ -253,7 +253,7 @@ The `hermes-github-runner.py` script would:
 Not all 40+ Hermes tools are appropriate for ephemeral runners. The GitHub Actions toolset should be curated:
 
 | Include | Exclude | Reason |
-|---|---|---|
+| --- | --- | --- |
 | `terminal` | `browser_*` | No browser on Actions runners (unless headless Chrome is installed) |
 | `read_file`, `write_file`, `patch`, `search_files` | `text_to_speech` | No audio output |
 | `web_search`, `web_extract` | `vision_analyze` (if no key) | Depends on API availability |
@@ -395,7 +395,7 @@ User opens an issue
 Hermes already has `ADDING_A_PLATFORM.md` in `gateway/platforms/` — a guide for creating new platform adapters. GitHub Issues is architecturally just another messaging platform:
 
 | Platform Concept | GitHub Issues Mapping |
-|---|---|
+| --- | --- |
 | Chat message | Issue comment |
 | Conversation thread | Issue (by number) |
 | User identity | GitHub username |
@@ -417,7 +417,7 @@ This is the **Channel Addition** strategy (Strategy 5) — treating GitHub as ju
 ## Comparison with Other Githubified Agents
 
 | Dimension | GMI (Native) | OpenClaw (Wrapped) | Agent Zero (Substituted) | **Hermes (Proposed)** |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Agent origin** | Born for GitHub | Python CLI agent | Python Flask + FAISS | Python CLI + gateway daemon |
 | **Strategy** | Native | Wrapping | Substitution | **Hybrid (Wrap + Substitute)** |
 | **Runtime dependencies** | 1 (npm) | 30+ (Python) | 1 (npm, substituted) | **30+ (Python) + 1 (npm)** |
@@ -455,7 +455,7 @@ Using the criteria from [winners.md](https://github.com/japer-technology/githubi
 ## Risk Assessment
 
 | Risk | Severity | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | **Actions minutes consumption** | Medium | GMI handles lightweight queries (~30s per run). Hermes wrapper reserved for labeled issues. Cache pip dependencies between runs via `actions/cache` |
 | **Dependency install time** | Medium | Use `actions/cache` for Python packages. Consider pre-built Docker image with dependencies. GMI's npm install is fast (~15s) |
 | **Git repo size growth** | Low | Session files are small text. Prune old sessions periodically. `.hermes-state/` is lightweight |
@@ -492,7 +492,7 @@ Hermes Agent can become a GitHub Action based mechanism through a **hybrid appro
 Together, these three layers map the four GitHub primitives into a complete Githubification:
 
 | Primitive | Mapping |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — ephemeral runners execute the agent on every issue event |
 | **Git** | Memory — session transcripts, skills, and memory entries are committed and versioned |
 | **GitHub Issues** | User Interface — each issue is a persistent conversation thread |

@@ -21,7 +21,7 @@ Before deploying this system, it helps to understand what the agent can access. 
 **Key areas to be aware of:**
 
 | Dimension | Level |
-|---|---|
+| --- | --- |
 | Code & Repository Access | 🔴 High priority |
 | Supply Chain Considerations | 🔴 High priority |
 | Secret Exposure | 🔴 High priority |
@@ -125,7 +125,7 @@ Like all powerful tools, this software may cause side effects. Not everybody exp
 ### Contents of the Package
 
 | Component | Purpose |
-|---|---|
+| --- | --- |
 | AI Model | Code generation, analysis, and assistance |
 | Human Operator | Judgment, accountability, and final authority |
 
@@ -138,7 +138,7 @@ Like all powerful tools, this software may cause side effects. Not everybody exp
 Six questions define the philosophical and architectural foundation of this project. Read them to understand not just *what* this software does, but *why* it exists and *how* it changes the relationship between developers and AI.
 
 | Question | Document | Core Inquiry |
-|----------|----------|--------------|
+| --- | --- | --- |
 | **What?** | [question-what.md](question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework — not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
 | **Who?** | [question-who.md](question-who.md) | Who speaks, executes, remembers, and governs when the repository itself becomes the mind? Identity as a layered stack of human, workflow, and model. |
 | **When?** | [question-when.md](question-when.md) | How does Git replace ephemeral sessions? Memory becomes durable, trust becomes auditable, and collaboration becomes resilient across time. |

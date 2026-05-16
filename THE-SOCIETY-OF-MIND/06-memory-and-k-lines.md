@@ -81,7 +81,7 @@ critic decisions). The K-line is purely the *cast list*.
 The two operations are different.
 
 | Operation | What it does | Cost | Failure mode |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Retrieval | Look up a stored copy of an artefact | Cheap | Returns nothing if the exact key is unknown |
 | Reconstruction | Re-evoke the agencies that produced the artefact, and let them produce something *like* it again | Expensive | Returns something plausible but not identical |
 
@@ -184,7 +184,7 @@ explicitly marked unknown rather than rejected.
 These are also different operations:
 
 | Operation | Question | Result |
-|---|---|---|
+| --- | --- | --- |
 | Recognition | "Have I seen this before?" | yes / no / similar to X |
 | Reconstruction | "Re-create the state I was in then." | a (partial) re-evocation |
 

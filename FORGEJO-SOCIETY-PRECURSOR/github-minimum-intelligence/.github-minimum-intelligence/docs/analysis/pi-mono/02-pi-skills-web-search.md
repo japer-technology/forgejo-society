@@ -19,7 +19,7 @@ Pi supports installing third-party skill packages that extend the agent's capabi
 ## 2. Available Skills from pi-skills
 
 | Skill | Description | Applicability to GMI |
-|---|---|---|
+| --- | --- | --- |
 | `brave-search` | Web search and content extraction | **High** — enables current information lookup |
 | `youtube-transcript` | Fetch YouTube video transcripts | Medium — useful for tutorial/demo references |
 | `browser-tools` | Interactive browser automation via CDP | Low — headless CI environment, requires Chrome |
@@ -212,7 +212,7 @@ The agent should use the brave-search skill to find and summarise current inform
 ## 6. Security Considerations
 
 | Concern | Assessment | Mitigation |
-|---|---|---|
+| --- | --- | --- |
 | API key exposure | The `BRAVE_API_KEY` is passed as an environment variable | Use GitHub encrypted secrets; never log the key |
 | Search result injection | Brave Search results could contain malicious content | The LLM processes results as context, not executable code |
 | Third-party code in repo | brave-search skill includes Node.js scripts | Review skill source code before committing; pin to a specific commit |
@@ -223,7 +223,7 @@ The agent should use the brave-search skill to find and summarise current inform
 ## 7. Cost Estimation
 
 | Usage Pattern | Monthly Queries | Cost |
-|---|---|---|
+| --- | --- | --- |
 | Light (5–10 issues/week, 20% need search) | ~8–16 | Free tier |
 | Moderate (20–30 issues/week, 30% need search) | ~24–36 | Free tier |
 | Heavy (50+ issues/week, 50% need search) | ~100+ | Free tier (up to 2,000/month) |

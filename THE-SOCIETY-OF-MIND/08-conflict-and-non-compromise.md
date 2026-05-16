@@ -70,7 +70,7 @@ Censors are more expensive to build (they require pattern recognition on
 ### When to use which
 
 | Situation | Use |
-|---|---|
+| --- | --- |
 | The output is wrong but the reasoning is mostly right | Suppressor |
 | The reasoning itself was a known dead-end | Censor |
 | The output is fine but the cost of producing it was wasteful | Censor |

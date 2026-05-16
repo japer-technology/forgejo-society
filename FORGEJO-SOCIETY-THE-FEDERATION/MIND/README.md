@@ -49,7 +49,7 @@ what*. Each subfolder names a pillar and contains:
 ## Pillars currently declared
 
 | Pillar | Status | Folder |
-|---|---|---|
+| --- | --- | --- |
 | Publicity | scaffold | [`PUBLICITY/`](PUBLICITY/README.md) |
 
 Additional pillars (Promotion, Setup, Introduction, Precursor, …) follow the
@@ -113,7 +113,7 @@ Every file in a `repos/` folder MUST declare a `decomposition:` field with
 exactly one of these values:
 
 | Value | Meaning |
-|---|---|
+| --- | --- |
 | `leaf` | This repo will not spawn a sub-society. Its `services_in` share one authority profile and one censor profile. |
 | `presenter` | This repo is the parent's single conscious voice. It MUST be `leaf` by rule — recursion stops here so the presenter cannot be presented by something else. The only legal value when `role: presenter`. |
 | `federated` | This repo is itself a sub-federation. It MUST contain a `MIND/<id>/society.yml` of the same shape as this folder, and that sub-society MUST itself name a presenter. |

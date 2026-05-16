@@ -328,7 +328,7 @@ A key challenge: gitclaw is useful for **any** GitHub repository, not just JavaS
 ### Solutions
 
 | Approach | Pros | Cons |
-|----------|------|------|
+| --- | --- | --- |
 | **Standalone CLI** (`npx gitclaw init`) | Works without adding a dependency; uses `npx` for one-time execution | Still requires Node.js |
 | **GitHub Package (universal)** | GitHub Packages supports non-npm ecosystems (Docker, Maven, etc.) | Less mature than npm for generic distribution |
 | **Optional devDependency** | Listed in `package.json` only for JS projects; other projects use the CLI directly | Two different installation paths |
@@ -343,7 +343,7 @@ A key challenge: gitclaw is useful for **any** GitHub repository, not just JavaS
 The package version should track the gitclaw version:
 
 | Package Version | gitclaw Version | Notes |
-|----------------|----------------|-------|
+| --- | --- | --- |
 | `1.0.0` | `v1.0.0` | Initial release |
 | `1.1.0` | `v1.1.0` | New features |
 | `1.1.1` | `v1.1.0` | Package-only fix (CLI bug) |

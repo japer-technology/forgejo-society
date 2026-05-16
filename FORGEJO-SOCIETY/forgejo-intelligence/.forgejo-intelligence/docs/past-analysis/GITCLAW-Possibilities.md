@@ -15,7 +15,7 @@ GitClaw is a zero-infrastructure AI coding agent that lives entirely inside a Gi
 **Current strengths worth noting:**
 
 | Capability | Why it matters |
-|---|---|
+| --- | --- |
 | Drop-in folder install | Lowest possible adoption barrier — copy one folder, push, done |
 | Issue-driven conversations | Meets developers where they already work |
 | Git-backed state | Full auditability; every session is a first-class commit |

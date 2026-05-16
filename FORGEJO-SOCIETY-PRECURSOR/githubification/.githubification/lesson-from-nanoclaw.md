@@ -23,7 +23,7 @@ NanoClaw's defining constraint is that the entire codebase must fit within an AI
 This matters for Githubification because the Githubification layer itself must understand the agent it wraps. When the agent is 500,000 lines of code with dozens of configuration files, the wrapping layer becomes complex — it must accommodate runtime variations, handle dependency matrices, and work around assumptions the agent makes about its environment. When the agent is 35,000 tokens with six dependencies, the wrapping layer can be minimal. The impedance mismatch between "what the agent expects" and "what GitHub provides" shrinks in proportion to the agent's complexity.
 
 | GitHub Primitive | NanoClaw Equivalent |
-|---|---|
+| --- | --- |
 | **GitHub Actions** | Compute — replaces the local Node.js process and launchd/systemd |
 | **Git** | Storage and memory — replaces SQLite for messages, sessions, and task state |
 | **GitHub Issues** | User interface — replaces WhatsApp/Telegram/Discord/Slack/Gmail channels |

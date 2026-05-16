@@ -9,7 +9,7 @@ This document analyses what the `github-minimum-intelligence` repository already
 The core system is a single self-contained folder (`.github-minimum-intelligence/`) that turns any GitHub repository into an AI-agent workspace with three active capabilities:
 
 | Capability | Trigger | Workflow Job | Flag Required? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Issue Agent** | `issues.opened`, `issue_comment.created` | `run-agent` | No — always on |
 | **GitHub Pages** | `push` to default branch | `run-gitpages` | Soft-flag: `public-fabric/` directory |
 | **Self-Installer / Upgrader** | `workflow_dispatch` | `run-install` | No — always available |
@@ -57,7 +57,7 @@ The system currently only listens to two GitHub event types (`issues` and `issue
 A flag file is a marker whose **existence alone** activates a feature. No configuration is required inside it (though a flag file may optionally contain YAML or JSON for feature-level settings). The benefits are:
 
 | Property | Explanation |
-|---|---|
+| --- | --- |
 | **Visible** | Anyone can `ls` the flags directory and immediately know what is live |
 | **Auditable** | Git history shows exactly when each capability was enabled or disabled |
 | **Reversible** | Deleting a flag file disables the feature — no workflow edits needed |
@@ -117,7 +117,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.1 `enable-pr-review`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `pull_request`: `opened`, `ready_for_review`, `synchronize` |
 | **What it does** | Agent reads the PR description, diff summary, and changed file list; posts a structured review comment covering intent, risks, and suggestions |
 | **Auth gate** | Same collaborator check as the issue agent |
@@ -128,7 +128,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.2 `enable-discussions`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `discussion_comment.created` |
 | **What it does** | Agent joins GitHub Discussions threads as a participant; answers questions, surfaces related issues/PRs, and updates the discussion answer if it has "answerable" category |
 | **Auth gate** | Open by default (Discussions are often public Q&A); optionally constrain to collaborators via flag file contents |
@@ -138,7 +138,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.3 `enable-wiki`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `gollum` (wiki page created or updated) |
 | **What it does** | Agent reads the new/updated wiki page, checks for inconsistencies with the codebase, and optionally creates a linked issue or posts a comment on any open issue that references the updated page |
 | **Auth gate** | Standard collaborator check |
@@ -148,7 +148,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.4 `enable-issue-triage`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `issues.opened` (runs alongside or before the issue agent) |
 | **What it does** | Agent classifies the issue (bug / feature / question / docs / security), applies the appropriate label, and sets priority based on description content — without necessarily posting a full LLM reply |
 | **Auth gate** | Runs regardless of actor (public repos need triage on all issues) |
@@ -158,7 +158,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.5 `enable-pr-summary`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `pull_request.opened`, `pull_request.edited` |
 | **What it does** | Agent generates a concise PR summary (what changed, why, risk level) and either posts it as a comment or edits a designated section of the PR description |
 | **Auth gate** | Collaborator check |
@@ -168,7 +168,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.6 `enable-release-notes`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `release.published`, `release.created` |
 | **What it does** | Agent reads the commits and merged PRs since the previous release, drafts structured release notes, and either updates the release body or posts them to the releases discussion |
 | **Auth gate** | Collaborator check |
@@ -178,7 +178,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.7 `enable-dependency-review`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `pull_request.opened` where actor is `dependabot[bot]` or `renovate[bot]` |
 | **What it does** | Agent reads the dependency diff, checks for known issues (changelog, semver bump type, breaking changes), and posts a structured assessment comment |
 | **Auth gate** | Triggered by bot actor — flag file is the only gate |
@@ -188,7 +188,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.8 `enable-commit-digest`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `schedule` (e.g. daily at 08:00 UTC) |
 | **What it does** | Agent reads commits from the past 24 hours (or since last digest), summarises activity by author and area, and posts the digest as a new issue (pinned) or updates a running "digest" issue |
 | **Auth gate** | No actor gate (scheduled, no human trigger) |
@@ -198,7 +198,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.9 `enable-stale-management`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `schedule` (e.g. weekly) |
 | **What it does** | Agent identifies issues and PRs with no activity for a configurable period, posts a "is this still relevant?" comment, and optionally applies a `stale` label; closes confirmed-stale items after a second inactivity period |
 | **Auth gate** | No actor gate (scheduled) |
@@ -208,7 +208,7 @@ The flag-file pattern pairs naturally with additional root-level capability fold
 ### 3.10 `enable-scheduled-reports`
 
 | Property | Detail |
-|---|---|
+| --- | --- |
 | **Trigger events** | `schedule` (e.g. monthly) |
 | **What it does** | Agent generates a repo health report (open issue trends, PR throughput, contributor activity, dependency age) and posts it as a new issue or commits it to `public-fabric/` for Pages display |
 | **Auth gate** | No actor gate (scheduled) |
@@ -281,7 +281,7 @@ The workflow step reads optional settings with a fallback to defaults when the f
 ## 5. Interaction Matrix
 
 | Flag | Conflicts With | Complements | Depends On |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `enable-pr-review` | — | `enable-pr-summary` | None |
 | `enable-pr-summary` | — | `enable-pr-review` | None |
 | `enable-discussions` | — | `enable-issue-triage` | None |
@@ -300,7 +300,7 @@ The workflow step reads optional settings with a fallback to defaults when the f
 Each new capability consumes GitHub Actions minutes and LLM API tokens. The table below gives indicative costs per activation at typical repo activity levels:
 
 | Flag | Actions minutes / activation | Typical LLM tokens / activation | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `enable-pr-review` | 1–3 min | 2 000–20 000 | Varies with diff size |
 | `enable-pr-summary` | 0.5–1 min | 500–3 000 | Lightweight |
 | `enable-discussions` | 1–2 min | 1 000–8 000 | Risk: public triggers on open repos |
@@ -324,7 +324,7 @@ Recommendations:
 Based on user impact, implementation complexity, and blast radius risk:
 
 | Priority | Flag | Rationale |
-|---|---|---|
+| --- | --- | --- |
 | 1 | `enable-pr-review` | Highest developer value; extends the proven issue-agent pattern to PRs with minimal new infrastructure |
 | 2 | `enable-pr-summary` | Low cost, high visibility; pairs naturally with PR review |
 | 3 | `enable-issue-triage` | Reduces maintainer overhead on busy repos; stateless (low risk) |

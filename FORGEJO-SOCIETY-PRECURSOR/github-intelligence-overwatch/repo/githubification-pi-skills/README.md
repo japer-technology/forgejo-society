@@ -72,7 +72,7 @@ ln -s ~/pi-skills/youtube-transcript .claude/skills/youtube-transcript
 ## Available Skills
 
 | Skill | Description |
-|-------|-------------|
+| --- | --- |
 | [brave-search](brave-search/SKILL.md) | Web search and content extraction via Brave Search |
 | [browser-tools](browser-tools/SKILL.md) | Interactive browser automation via Chrome DevTools Protocol |
 | [gccli](gccli/SKILL.md) | Google Calendar CLI for events and availability |

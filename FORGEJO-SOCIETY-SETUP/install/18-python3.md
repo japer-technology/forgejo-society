@@ -34,7 +34,7 @@ pip3 --version
 **Package explanations:**
 
 | Package | Purpose |
-|---------|---------|
+| --- | --- |
 | `python3` | The Python 3 interpreter (likely already installed) |
 | `python3-pip` | Package installer for Python |
 | `python3-venv` | Support for creating virtual environments with `python3 -m venv` |

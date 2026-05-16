@@ -35,7 +35,7 @@ Add a slash command system that parses `/command` patterns from issue and PR com
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Command parser** (new file `GITCLAW-COMMANDS.ts`) | Parse first line for `/command` pattern, extract command + args | ~1 hour |
 | **Agent orchestrator** (`GITCLAW-AGENT.ts`) | Import parser, route to command handler or augmented prompt | ~1.5 hours |
 | **Built-in command handlers** | `/help` (list commands+skills), `/remember` (append to memory.log), `/status` (session info) | ~1.5 hours |

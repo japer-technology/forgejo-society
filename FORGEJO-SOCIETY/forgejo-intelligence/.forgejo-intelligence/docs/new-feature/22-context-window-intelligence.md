@@ -78,7 +78,7 @@ When the context is 30% full, responses are sharp and focused. When it's 95% ful
 ## Effort Estimation
 
 | Component | Changes | Effort |
-|---|---|---|
+| --- | --- | --- |
 | **Token estimator** | Fast tiktoken-style estimation | ~1.5 hours |
 | **Session trimmer** | Compress old turns, preserve recent | ~2.5 hours |
 | **Context budget manager** | Allocate tokens across sources | ~2 hours |
