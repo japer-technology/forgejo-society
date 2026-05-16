@@ -57,6 +57,9 @@ running anything yet.*
 4. [`essay/forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
    — where the project is headed and why it is shaped that way, in one
    sitting.
+5. [`essay/forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
+   — the hypothesis that a Society emerges from a forge only when
+   Minds, Intelligences, and Skills act together as one.
 
 End point: you can explain *why* a forge is being treated as a mind, in
 your own words, to another curious reader.
@@ -193,8 +196,10 @@ you know where to look when any one of them is not.
    pillars.
 5. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
    then [`essay/sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
-   — the project's own argument about what may emerge and about the
-   structural limits of self-representation.
+   then [`essay/forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
+   — the project's own argument about what may emerge, about the
+   structural limits of self-representation, and about the conditions
+   under which a Society emerges from a forge at all.
 6. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](../THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
    — the honest limits.
 
