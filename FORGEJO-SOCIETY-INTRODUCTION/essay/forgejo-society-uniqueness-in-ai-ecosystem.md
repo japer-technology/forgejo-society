@@ -6,7 +6,7 @@ as an implementation, and why those differences matter in an AI ecosystem
 where almost every new project is some variant of "a chatbot wired to tools."
 
 It is written against the architecture in
-[`THE-SOCIETY-OF-REPO/README.md`](../../THE-SOCIETY-OF-REPO/README.md), the
+[`THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md), the
 introduction in [`../README.md`](../README.md), the planning bridge in
 [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md), and the
 runtime under [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/).
@@ -75,18 +75,18 @@ the process.
 ### 2.2 Society of agents, not a single model with tools
 
 Following Marvin Minsky's *Society of Mind* (see
-[`../../THE-SOCIETY-OF-MIND/README.md`](../../THE-SOCIETY-OF-MIND/README.md)),
+[`../../THE-SOCIETY-OF-MIND/README.md`](../THE-SOCIETY-OF-MIND/README.md)),
 intelligence is treated as compositional. The unit of cognition is not the
 model; it is the *agency*, and many small bounded agencies — together with
 *critics* that inhibit, *censors* that forbid, and *memory* that recalls —
 form the actual mind.
 
 This is not multi-agent-as-marketing. It is multi-agent-as-governance.
-[`THE-SOCIETY-OF-REPO/02-protocols/`](../../THE-SOCIETY-OF-REPO/02-protocols/)
+[`THE-SOCIETY-OF-REPO/02-protocols/`](../THE-SOCIETY-OF-REPO/02-protocols/)
 defines identity, events, and settlement so that every non-trivial action
 leaves a credit-assignment trace, and authority levels are a closed set
 (`read`, `draft`, `propose`, `act`, `govern`, `human`) declared in
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).
 No agency can act above its declared level, and the registry is a file in
 the repo, not a setting in a vendor console.
 
@@ -122,7 +122,7 @@ behind for human work:
 - **Settlements** are merges, plus a written record under
   `07-workspace/active-settlements/` that, once decided, archives into
   `06-memory/decisions/`
-  ([`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md)).
+  ([`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md)).
 - **Memory** is K-lines and frames, stored as files, recalled by name, and
   reinforced by reuse.
 
@@ -142,10 +142,10 @@ contractual:
 - The production runtime target is **self-hosted Forgejo on Ubuntu hardware
   the maintainers physically own** ([`../README.md`](../README.md)).
 - GitHub is treated explicitly as a development environment and a mirror,
-  governed by [`../../github-compliance.md`](../../github-compliance.md) and
-  [`../../github-warning.md`](../../github-warning.md).
+  governed by [`../../github-compliance.md`](../warning/github-compliance.md) and
+  [`../../github-warning.md`](../warning/github-warning.md).
 - The Forgejo posture is the symmetric document
-  [`../../forgejo-compliance.md`](../../forgejo-compliance.md).
+  [`../../forgejo-compliance.md`](../warning/forgejo-compliance.md).
 - The federation and hardware substrate are first-class concerns under
   [`../../FORGEJO-SOCIETY-THE-FEDERATION/`](../../FORGEJO-SOCIETY-THE-FEDERATION/).
 
@@ -202,22 +202,22 @@ being moved, surface by surface, to Forgejo on owned hardware.
 The conversion itself is part of the uniqueness. Most projects in the AI
 ecosystem assume the cloud is forever. This one treats moving off it as a
 planned, file-by-file engineering activity, with sibling experiments under
-[`../../FORGEJO-SOCIETY-PRECURSOR/`](../../FORGEJO-SOCIETY-PRECURSOR/) tracking that
+[`../precursors/`](../precursors/) tracking that
 journey.
 
 ### 3.3 Governance is the same artefact as the code
 
 The protocols in
-[`THE-SOCIETY-OF-REPO/02-protocols/`](../../THE-SOCIETY-OF-REPO/02-protocols/)
+[`THE-SOCIETY-OF-REPO/02-protocols/`](../THE-SOCIETY-OF-REPO/02-protocols/)
 are not policy documents that sit beside the system; they are the system's
 spec. Identity rules
-([`01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md))
+([`01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md))
 say that identifiers must be dot-separated, lowercase, hyphenated, and
 prefixed by scope (`agency.*`, `critic.*`, `censor.*`, `kline.*`,
 `settlement.*`, `event.*`). Event identifiers must follow
 `event.{domain}.{type}.{sequence}` and the owning society sits in
 `event.metadata.sor_id`, not in the event ID itself
-([`03-events.md`](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
+([`03-events.md`](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
 
 These rules are enforceable by the same review machinery that enforces any
 other code style. There is no separate "AI safety team" in a different

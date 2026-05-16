@@ -298,7 +298,7 @@ The workflow gate controls **who can wake the agent**. It does not address these
 
 3. **Token scope.** The `GITHUB_TOKEN` used by the workflow has org-wide scope determined by the organization's default token permissions. Access control on the agent does not reduce the blast radius of what the agent can do once authorized. That requires fine-grained PATs, environment-scoped secrets, or repository-scoped GitHub App tokens.
 
-4. **Network and runtime security.** The runner has unrestricted network egress and passwordless sudo. These are GitHub Actions platform properties, not access control concerns. They are documented in the existing [Security Assessment](/.github-minimum-intelligence/docs/security-assessment.md).
+4. **Network and runtime security.** The runner has unrestricted network egress and passwordless sudo. These are GitHub Actions platform properties, not access control concerns. They are documented in the existing [Security Assessment](../.github-minimum-intelligence/docs/security-assessment.md).
 
 ---
 

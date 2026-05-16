@@ -399,18 +399,18 @@ This method is ideal when:
 Consider a different delivery method when:
 
 - Your **team or contributors are unfamiliar** with submodules and the added complexity would cause confusion.
-- You want a **one-click or zero-CLI** experience (consider [GitHub App](./github-application.md) or [template repo](./github-template-repository.md)).
+- You want a **one-click or zero-CLI** experience (consider [GitHub App](../github-application/README.md) or [template repo](../github-template-repository/README.md)).
 - Your CI/CD uses **shallow clones** that don't work well with submodules.
-- You want **interactive configuration** during installation (consider [CLI tool](./cli-tool.md)).
+- You want **interactive configuration** during installation (consider [CLI tool](../cli-tool/README.md)).
 
 ---
 
 ## Related Methods
 
-- [Fork / Import + Installer](./fork-import-installer.md) — The manual copy approach that submodules/subtrees replace.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — A CLI that could use subtree-add under the hood.
-- [Package Registry](./package-registry.md) — Another versioned distribution approach, using npm instead of git.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — An alternative that handles updates via GitHub Actions instead of git commands.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The manual copy approach that submodules/subtrees replace.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — A CLI that could use subtree-add under the hood.
+- [Package Registry](../package-registry/README.md) — Another versioned distribution approach, using npm instead of git.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — An alternative that handles updates via GitHub Actions instead of git commands.
 
 ---
 

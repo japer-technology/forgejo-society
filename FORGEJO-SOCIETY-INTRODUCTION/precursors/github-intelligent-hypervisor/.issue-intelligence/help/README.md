@@ -51,5 +51,5 @@ All conversations are committed to git. The agent has long-term memory, full aud
 
 ## Need More?
 
-- Check the [full documentation](../docs/README.md) for architecture deep-dives, the roadmap, and design philosophy.
+- Check the [full documentation](../../../github-intelligence-overwatch/repo/githubification-nullclaw/docs/README.md) for architecture deep-dives, the roadmap, and design philosophy.
 - Powered by the [pi coding agent](https://github.com/badlogic/pi-mono).

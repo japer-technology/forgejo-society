@@ -1018,6 +1018,6 @@ These cannot travel across a delegation boundary regardless of maturity level.
 ## See also
 
 - [SOR Examples](README.md) — worked examples for business, household, health, and personal assistant
-- [THE-SOCIETY-OF-REPO/](../THE-SOCIETY-OF-REPO/README.md) — full specification
-- [THE-SOCIETY-OF-REPO/02-protocols/](../THE-SOCIETY-OF-REPO/02-protocols/) — protocol definitions for identity, events, activation, settlement, and memory
-- [THE-SOCIETY-OF-REPO/00-foundations/04-anti-patterns.md](../THE-SOCIETY-OF-REPO/00-foundations/04-anti-patterns.md) — what not to build
+- [THE-SOCIETY-OF-REPO/](../README.md) — full specification
+- [THE-SOCIETY-OF-REPO/02-protocols/](../02-protocols/) — protocol definitions for identity, events, activation, settlement, and memory
+- [THE-SOCIETY-OF-REPO/00-foundations/04-anti-patterns.md](../00-foundations/04-anti-patterns.md) — what not to build

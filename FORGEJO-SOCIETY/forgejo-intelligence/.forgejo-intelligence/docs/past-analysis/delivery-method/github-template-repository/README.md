@@ -244,10 +244,10 @@ Consider a different delivery method when:
 
 ## Related Methods
 
-- [Fork / Import + Installer](./fork-import-installer.md) — For adding gitclaw to existing repos.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — Complements templates by handling the "existing repo" case.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — Another way to add gitclaw to existing repos.
-- [GitHub Application](./github-application.md) — Provides automatic updates that templates lack.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — For adding gitclaw to existing repos.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — Complements templates by handling the "existing repo" case.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — Another way to add gitclaw to existing repos.
+- [GitHub Application](../github-application/README.md) — Provides automatic updates that templates lack.
 
 ---
 

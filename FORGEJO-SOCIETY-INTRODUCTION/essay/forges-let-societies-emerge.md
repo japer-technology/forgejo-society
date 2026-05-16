@@ -9,9 +9,9 @@ composition model in
 the central thesis in
 [`../analysis/ci-cd-capabilities-become-agent-capabilities.md`](../analysis/ci-cd-capabilities-become-agent-capabilities.md),
 the foundations in
-[`../../THE-SOCIETY-OF-REPO/00-foundations/`](../../THE-SOCIETY-OF-REPO/00-foundations/README.md),
+[`../../THE-SOCIETY-OF-REPO/00-foundations/`](../THE-SOCIETY-OF-REPO/00-foundations/README.md),
 and the skills catalogue in
-[`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md).
+[`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md).
 Where it makes a claim that is not obvious, it points at the file that
 earns the claim.
 
@@ -37,7 +37,7 @@ insists on their canonical meanings.
   substrate; it is not, by itself, a society.
 - **Mind** — the unit of cleverness inside a Society. A Mind has a
   purpose, an authority level from the registry in
-  [`../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md),
+  [`../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md),
   a memory of its own, and the right to decide which repos it needs in
   order to do its work. A Society may have one Mind or many.
 - **Intelligence** — the installable component that turns an otherwise
@@ -50,7 +50,7 @@ insists on their canonical meanings.
   document management, software research and development, business
   operations, personal operations, meta-administration) plus assembly
   and meta-admin roles, all catalogued in
-  [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md).
+  [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md).
   A Skill is what a Mind is *allowed and able* to do; it is not what a
   model happens to produce on a given day.
 
@@ -86,8 +86,8 @@ Three properties of a Forgejo forge do the work:
 3. **The runtime is owned.** A self-hosted forge on owned hardware
    means the substrate cannot be silently withdrawn or re-priced. The
    sovereignty posture is documented in
-   [`../../forgejo-compliance.md`](../../forgejo-compliance.md) and
-   [`../../github-compliance.md`](../../github-compliance.md);
+   [`../../forgejo-compliance.md`](../warning/forgejo-compliance.md) and
+   [`../../github-compliance.md`](../warning/github-compliance.md);
    together they fix the rule that the production runtime is always
    the owned Forgejo, and that GitHub and shared Forgejo instances are
    mirrors only.
@@ -135,7 +135,7 @@ A Mind with an Intelligence installed in a repo can perceive, propose,
 and settle — but if it has no Skills, it has nothing principled to
 *do*. It can echo stimuli, raise empty pull requests, and accumulate
 labelled noise. Without the constitutional capabilities listed in
-[`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md),
+[`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md),
 there is no governed competence to argue about, no domain in which the
 Mind can be held to a standard, and no meta-admin role to notice that
 the Society is drifting. The Society has citizens and roads but no
@@ -160,7 +160,7 @@ operational rather than rhetorical.
 Every Mind, Intelligence, Skill activation, K-line, settlement, and
 event lives under the same `sor.*` identity scope, with the dotted,
 lowercase, hyphenated form fixed in
-[`../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md).
+[`../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md).
 Acting together means being addressable together. Without a shared
 identity grammar, the parts cannot cite one another, and emergence
 cannot be traced.
@@ -168,7 +168,7 @@ cannot be traced.
 ### 4.2 One cognitive loop
 
 Every stimulus that enters the Society travels the arc described in
-[`../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`](../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md):
+[`../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`](../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md):
 activation, memory read, cognition, proposed action, critic gate,
 settlement, evolution. A Mind chooses how to enter the loop; an
 Intelligence wires the loop into a particular repo; a Skill is what
@@ -181,11 +181,11 @@ loops in private.
 K-lines, frames, prior settlements, and decisions live in a memory
 spine that all three contributors read and reinforce. The conventions
 are fixed in
-[`../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md);
+[`../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md);
 in-progress settlements live in
-[`../../THE-SOCIETY-OF-REPO/07-workspace/active-settlements/`](../../THE-SOCIETY-OF-REPO/07-workspace/),
+[`../../THE-SOCIETY-OF-REPO/07-workspace/active-settlements/`](../THE-SOCIETY-OF-REPO/07-workspace/),
 and archived decisions move into
-[`../../THE-SOCIETY-OF-REPO/06-memory/decisions/`](../../THE-SOCIETY-OF-REPO/06-memory/).
+[`../../THE-SOCIETY-OF-REPO/06-memory/decisions/`](../THE-SOCIETY-OF-REPO/06-memory/).
 Acting together means remembering together. A Skill that succeeds in
 one repo, under one Mind, leaves a trace another Mind can recognise
 the next time a similar stimulus arrives.
@@ -219,7 +219,7 @@ emerges in three observable ways.
    sharpened. A Skill that was used well becomes easier to invoke
    correctly next time. The Society does not just produce outputs; it
    accumulates competence in a form the meta-admin roles in
-   [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
+   [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
    can review.
 
 These three are the strict reading of *emergence* used throughout the
@@ -252,8 +252,8 @@ it does not say are worth saying out loud.
   about a forge the maintainers own and operate. Running the same
   pieces on shared infrastructure does not make the same Society; it
   makes something the
-  [`../../forgejo-compliance.md`](../../forgejo-compliance.md) and
-  [`../../github-compliance.md`](../../github-compliance.md) documents
+  [`../../forgejo-compliance.md`](../warning/forgejo-compliance.md) and
+  [`../../github-compliance.md`](../warning/github-compliance.md) documents
   explicitly refuse to call a Society of Repo runtime.
 
 Within those limits, the hypothesis is the design's load-bearing
@@ -269,10 +269,10 @@ that can be argued with, audited, and improved.
 - [`../analysis/composition-model.md`](../analysis/composition-model.md)
   — the four nouns (Society, Mind, Intelligence, Repo) and the layering
   used throughout this essay.
-- [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
+- [`../../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
   — the Skills catalogue: the operational domains and the meta-admin
   roles that watch them.
-- [`../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`](../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md)
+- [`../../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md`](../THE-SOCIETY-OF-REPO/00-foundations/02-cognitive-loop.md)
   — the cognitive loop the three contributors share.
 - [`sor-emergent-possibilities.md`](sor-emergent-possibilities.md)
   — *what* may emerge, in the strict sense of emergence used here.

@@ -20,9 +20,9 @@ in the forge.
 This note cross-checks that language against:
 
 - [`society-minds-intelligence-skills-language-check.md`](society-minds-intelligence-skills-language-check.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md`](../THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md`](../THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
+- [`THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
+- [`THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
+- [`THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
 - [`FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md)
 - [`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
 - [`FORGEJO-SOCIETY/forgejo-labour/`](../FORGEJO-SOCIETY/forgejo-labour/)
@@ -73,7 +73,7 @@ brand, or a group chat. It means a governed whole with:
 - durable records of action and revision.
 
 The central claim in
-[`00-foundations/01-society-of-mind.md`](../THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
+[`00-foundations/01-society-of-mind.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
 is that intelligence emerges from structured **interaction,
 insulation, representation, and revision**. SOR is that claim rebuilt on
 forge primitives:
@@ -341,7 +341,7 @@ The Society is the governed loop made durable.
 
 ## 6. The Mind–Brain–Body check
 
-[`06-mind-brain-body.md`](../THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
+[`06-mind-brain-body.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
 separates three layers:
 
 | Layer | SOR meaning | Language rule |

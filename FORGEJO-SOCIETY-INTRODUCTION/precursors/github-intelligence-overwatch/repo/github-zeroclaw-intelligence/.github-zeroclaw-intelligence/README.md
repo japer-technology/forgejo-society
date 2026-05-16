@@ -172,4 +172,4 @@ ZeroClaw is the fastest, smallest AI assistant — 100% Rust with zero overhead:
 
 ## License
 
-[MIT](LICENSE.md) — © 2026
+[MIT](../../developer-japer-io/LICENSE.md) — © 2026

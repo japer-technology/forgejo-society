@@ -2,7 +2,7 @@
 
 `FORGEJO-SOCIETY-SETUP/CONFORMANCE/` is the library of conformance assets
 that prove a Forgejo installation is ready for advanced use by
-[THE-SOCIETY-OF-REPO](../../THE-SOCIETY-OF-REPO/README.md).
+[THE-SOCIETY-OF-REPO](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
 
 Where the `install/` library covers per-component installs and the
 `transition-plan/` library covers the full rollout, this folder answers a

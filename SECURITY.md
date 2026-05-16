@@ -58,8 +58,8 @@ The following are usually out of scope for private security handling:
   forge platforms unless this repository adds a project-specific unsafe
   configuration.
 - Historical precursor material under
-  [FORGEJO-SOCIETY-PRECURSOR/](FORGEJO-SOCIETY-PRECURSOR/) unless it is being
-  reactivated or copied into the Forgejo runtime.
+  [FORGEJO-SOCIETY-INTRODUCTION/precursors/](FORGEJO-SOCIETY-INTRODUCTION/precursors/)
+  unless it is being reactivated or copied into the Forgejo runtime.
 - Reports based only on social engineering, spam, denial-of-service, or testing
   against infrastructure you do not own or have explicit permission to test.
 - Findings that require enabling prohibited runtime surfaces on GitHub or shared

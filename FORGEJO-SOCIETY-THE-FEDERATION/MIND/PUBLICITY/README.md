@@ -43,7 +43,7 @@ implements one numbered strategy document from
 ## How the wiring is shaped
 
 The wiring follows the **single-presenter** rule from
-[`THE-REPO-IS-THE-MIND/possibility-2.md`](../../../THE-REPO-IS-THE-MIND/README.md)
+[`THE-REPO-IS-THE-MIND/possibility-2.md`](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/README.md)
 applied at the federation scale:
 
 - **Inbound** to the sub-society: the Federation calls

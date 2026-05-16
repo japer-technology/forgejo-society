@@ -377,18 +377,18 @@ This method is ideal when:
 
 Consider a different delivery method when:
 
-- Your users are **developer-focused** and prefer the command line (consider the [CLI tool](./cli-tool.md)).
-- You need a **fully automated, one-click** experience without any configuration (consider a [GitHub App](./github-application.md)).
+- Your users are **developer-focused** and prefer the command line (consider the [CLI tool](../cli-tool/README.md)).
+- You need a **fully automated, one-click** experience without any configuration (consider a [GitHub App](../github-application/README.md)).
 - You want to avoid **any backend** at all (the ZIP and CLI-command paths work without one, but direct install doesn't).
 
 ---
 
 ## Related Methods
 
-- [CLI Tool (npx / bunx)](./cli-tool.md) — The portal can generate CLI commands as one of its output options.
-- [Third-Party Website](./third-party-website.md) — A richer version of this portal with additional features (analytics, dashboard).
-- [GitHub Application](./github-application.md) — The direct install path is essentially a lightweight version of the GitHub App approach.
-- [Fork / Import + Installer](./fork-import-installer.md) — The ZIP download path simplifies this process with pre-configuration.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — The portal can generate CLI commands as one of its output options.
+- [Third-Party Website](../third-party-website/README.md) — A richer version of this portal with additional features (analytics, dashboard).
+- [GitHub Application](../github-application/README.md) — The direct install path is essentially a lightweight version of the GitHub App approach.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The ZIP download path simplifies this process with pre-configuration.
 
 ---
 

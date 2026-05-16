@@ -34,7 +34,7 @@ against the repository.
 Membership in any of `A`, `K`, `Φ`, `C`, `Z`, `M` is decided by file presence
 under `F(s)` at `HEAD(R(s))`. This is the *presence-is-permission* invariant,
 defined operationally in
-[`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`](../../THE-SOCIETY-OF-REPO/02-protocols/04-activation.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`](../THE-SOCIETY-OF-REPO/02-protocols/04-activation.md)
 § "Forgejo surface activation" and in
 [`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
 § "Three rules govern these folders".
@@ -44,7 +44,7 @@ defined operationally in
 ## 1. Identifier algebra
 
 The identifier protocol
-([`THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md))
+([`THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md))
 defines a context-free grammar over the alphabet `Σ = [a-z0-9-]`:
 
 ```
@@ -75,13 +75,13 @@ Mathematical properties enforced by the protocol:
    over time. For any two distinct entities `e₁ ≠ e₂` ever assigned in `s`,
    `id(e₁) ≠ id(e₂)` and the set of historical IDs is monotone-growing.
    Retirement does not free an ID
-   ([01-identity.md § Stability requirement](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)).
+   ([01-identity.md § Stability requirement](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)).
 2. **Scope projection.** The first segment is a total function
    `scope : ID → SCOPE`. Routing logic in the bridge keys on `scope(id)` only;
    no scope inference from `NAME` is permitted.
 3. **Society membership.** For events, society ownership is read from
    `event.metadata.sor_id`, *not* from any `sor.*` prefix on the event ID
-   itself ([03-events.md § Event schema](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
+   itself ([03-events.md § Event schema](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
 
 ---
 
@@ -217,7 +217,7 @@ Define the bridge
 ```
 
 where `Ŝ` is the schema of normalised stimuli specified in
-[`THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)
 § "forgejo.event.normalized":
 
 ```
@@ -269,7 +269,7 @@ over the perceived stimulus `σ`, where:
 | `B` | budget vector | ℕ⁵ |
 
 The algorithm
-([`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`](../../THE-SOCIETY-OF-REPO/02-protocols/04-activation.md)
+([`THE-SOCIETY-OF-REPO/02-protocols/04-activation.md`](../THE-SOCIETY-OF-REPO/02-protocols/04-activation.md)
 § "Activation algorithm") is:
 
 ```
@@ -314,7 +314,7 @@ and the analogy pass is mandatory rather than optional.
 ## 6. Memory: a typed store with two query operations
 
 The memory subsystem
-([`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md))
+([`THE-SOCIETY-OF-REPO/02-protocols/06-memory.md`](../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md))
 defines ten typed stores under `06-memory/`:
 
 ```
@@ -376,7 +376,7 @@ workspace.
 ### 6.3 Decay table
 
 Forgetting is governed by class-specific decay predicates (full table in
-[06-memory.md § Forgetting and decay](../../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md)).
+[06-memory.md § Forgetting and decay](../THE-SOCIETY-OF-REPO/02-protocols/06-memory.md)).
 Key invariants:
 
 - **Failure memory** has decay rate `0`. It is only superseded by an explicit
@@ -392,7 +392,7 @@ Key invariants:
 ## 7. Settlement: the only authority for non-trivial action
 
 The settlement protocol
-([`THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md`](../../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md))
+([`THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md`](../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md))
 defines the predicate
 
 ```
@@ -423,7 +423,7 @@ A settlement is a structured change record with seven explicit slots:
 ```
 
 This is not metaphorical phrasing; the schema of
-[05-settlement.md § Settlement schema](../../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md)
+[05-settlement.md § Settlement schema](../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md)
 *is* a transframe schema.
 
 ### 7.2 Critic and censor windows
@@ -471,7 +471,7 @@ existing one as additional input rather than spawning a parallel settlement.
 ## 8. Authority registry: a closed lattice
 
 Authority levels are a *closed* totally-ordered set declared in
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md):
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md):
 
 ```
 read  <  draft  <  propose  <  act  <  govern  <  human
@@ -584,7 +584,7 @@ forgejo-intelligent-team,          forgejo-intelligent-wiki
 
 The event set `E_internal` produced by the runtime is the disjoint union of
 ten subdomains
-([03-events.md § Event taxonomy](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)):
+([03-events.md § Event taxonomy](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)):
 
 ```
 E_internal =
@@ -748,7 +748,7 @@ The architecture does not *claim* `SOVEREIGN(s, t) = true`; it makes
 `SOVEREIGN` a computable predicate by collapsing the runtime to
 `(W(s), F(s))` in `R(s)` and pinning the deployment target to self-hosted
 Forgejo on owned hardware
-([`forgejo-compliance.md`](../../forgejo-compliance.md);
+([`forgejo-compliance.md`](../warning/forgejo-compliance.md);
 [`../README.md`](../README.md)). The truth value of `SOVEREIGN` is therefore
 a function of where `R(s)` is hosted and where the Forgejo instance runs;
 both are inspectable, neither is asserted-by-vendor.

@@ -6,7 +6,7 @@
 the runners, the agent lifecycle, the LLM server, the storage, the public
 surface — is a self-hosted [Forgejo](https://forgejo.org/) installation on
 Ubuntu hardware owned and operated by the project maintainers (see
-[`README.md`](README.md) and [`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/)).
+[`README.md`](../README.md) and [`FORGEJO-SOCIETY-SETUP/`](../../FORGEJO-SOCIETY-SETUP/)).
 
 **GitHub is used as a development environment only.** Specifically, github.com
 is used for:
@@ -16,15 +16,15 @@ is used for:
 - Issue-based collaboration during development.
 - Acting as one of several **mirrors** of the canonical Forgejo repository
   (alongside Codeberg, GitLab, and Bitbucket — see
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md),
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md`](FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md),
-  and [`FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md`](FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md)).
+  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md),
+  [`FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md),
+  and [`FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md)).
 
 Nothing in this repository is intended to run as a production service on
 github.com infrastructure. The cognitive ecology described in
-[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/),
-[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/), and
-[`THE-REPO-IS-THE-MIND/`](THE-REPO-IS-THE-MIND/) is designed to live inside
+[`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/),
+[`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/), and
+[`THE-REPO-IS-THE-MIND/`](../THE-REPO-IS-THE-MIND/) is designed to live inside
 Forgejo, not GitHub.
 
 ## How that posture maps onto GitHub's terms
@@ -49,13 +49,13 @@ This project's posture aligns with that rule because:
 ## Specific subprojects: `FORGEJO-SOCIETY-PAST/` and `REPO/forgejo-intelligence/`
 
 The directory [`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/) contains earlier or sibling experiments —
-notably [`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/`](FORGEJO-SOCIETY-PAST/github-minimum-intelligence/) —
-and [`REPO/forgejo-intelligence/`](REPO/forgejo-intelligence/) (formerly
+notably [`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/`](../precursors/github-minimum-intelligence/) —
+and [`REPO/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/) (formerly
 top-level `.forgejo-intelligence/`, originally `FORGEJO-SOCIETY-PAST/forgejo-intelligence/`)
 holds the runnable Forgejo runtime that is
 being converted from a GitHub-runtime design to a Forgejo-runtime design. The
 conversion is tracked in
-[`REPO/forgejo-intelligence/CONVERSION/`](REPO/forgejo-intelligence/CONVERSION/).
+[`REPO/forgejo-intelligence/CONVERSION/`](../../FORGEJO-SOCIETY/forgejo-intelligence/CONVERSION/).
 
 Within `forgejo-society`, those subprojects are **source under development**:
 
@@ -68,8 +68,8 @@ Within `forgejo-society`, those subprojects are **source under development**:
   stand-alone or integrated application or service to third parties.
 - The intended runtime for all "intelligence" / agent behaviour is the
   Forgejo-side equivalent under
-  [`REPO/forgejo-intelligence/.forgejo-intelligence/`](REPO/forgejo-intelligence/.forgejo-intelligence/),
-  triggered by [`.forgejo/`](.forgejo/) workflows on the self-hosted
+  [`REPO/forgejo-intelligence/.forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/),
+  triggered by [`.forgejo/`](../../.forgejo/) workflows on the self-hosted
   Forgejo instance.
 
 If at any point you (a maintainer) intend to enable one of the

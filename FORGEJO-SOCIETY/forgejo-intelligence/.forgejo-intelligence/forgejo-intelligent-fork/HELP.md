@@ -40,6 +40,6 @@ git push
 
 ## Related
 
-- [../../help/security.md](../../help/security.md)
-- [../../help/surfaces.md](../../help/surfaces.md)
-- [../../help/local-development.md](../../help/local-development.md)
+- [../../help/security.md](../help/security.md)
+- [../../help/surfaces.md](../help/surfaces.md)
+- [../../help/local-development.md](../help/local-development.md)

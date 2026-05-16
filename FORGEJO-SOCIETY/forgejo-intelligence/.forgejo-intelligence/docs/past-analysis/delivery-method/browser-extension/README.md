@@ -433,16 +433,16 @@ Consider a different delivery method when:
 
 - Your users **don't install browser extensions** or use browsers where extensions aren't available.
 - You want to **minimize maintenance** (extensions require cross-browser maintenance and store reviews).
-- You need to reach users who work primarily in the **terminal** (use [CLI tool](./cli-tool.md)) or **GitHub Actions** (use [Marketplace Action](./github-marketplace-action.md)).
+- You need to reach users who work primarily in the **terminal** (use [CLI tool](../cli-tool/README.md)) or **GitHub Actions** (use [Marketplace Action](../github-marketplace-action/README.md)).
 
 ---
 
 ## Related Methods
 
-- [GitHub Application](./github-application.md) — Provides similar one-click functionality without requiring a browser extension.
-- [GitHub Pages Portal](./github-pages-self-service-portal.md) — A web-based alternative that doesn't require an extension.
-- [Third-Party Website](./third-party-website.md) — A richer web experience that complements the extension.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — An alternative for users who prefer GitHub-native tools.
+- [GitHub Application](../github-application/README.md) — Provides similar one-click functionality without requiring a browser extension.
+- [GitHub Pages Portal](../github-pages-self-service-portal/README.md) — A web-based alternative that doesn't require an extension.
+- [Third-Party Website](../third-party-website/README.md) — A richer web experience that complements the extension.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — An alternative for users who prefer GitHub-native tools.
 
 ---
 

@@ -56,6 +56,6 @@ git push
 
 ## Related
 
-- [../../help/action-management.md](../../help/action-management.md)
-- [../../help/security.md](../../help/security.md)
-- [../../help/surfaces.md](../../help/surfaces.md)
+- [../../help/action-management.md](../help/action-management.md)
+- [../../help/security.md](../help/security.md)
+- [../../help/surfaces.md](../help/surfaces.md)

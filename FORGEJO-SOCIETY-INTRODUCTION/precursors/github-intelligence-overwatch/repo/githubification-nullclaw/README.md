@@ -832,7 +832,7 @@ nullclaw is a pure open-source software project. It has **no token, no cryptocur
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT — see [LICENSE](../../../githubification/repo/gstack/LICENSE)
 
 ---
 

@@ -339,4 +339,4 @@ The recommended implementation order differs from the proposal:
 
 ---
 
-*Analysis derived from [03-extension-enhancements.md](../03-extension-enhancements.md), [implementation-plan.md](../implementation-plan.md), [github-context.ts](../../../.pi/extensions/github-context.ts), and [toulmin-4-rebuttal-driven-security-hardening-implementation.md](../../toulmin-4-rebuttal-driven-security-hardening-implementation.md). Applies to GMI's pi extension ecosystem as of 2026-03-30.*
+*Analysis derived from [03-extension-enhancements.md](../03-extension-enhancements.md), [implementation-plan.md](../implementation-plan.md), [github-context.ts](../../../../.pi/extensions/github-context.ts), and [toulmin-4-rebuttal-driven-security-hardening-implementation.md](../../toulmin-4-rebuttal-driven-security-hardening-implementation.md). Applies to GMI's pi extension ecosystem as of 2026-03-30.*

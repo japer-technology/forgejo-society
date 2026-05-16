@@ -178,7 +178,7 @@ Bridges have specific properties:
    bridge between them silently produces nonsense.
 
 **SOR mapping.** The Forgejo bridge module
-([forgejo-intelligence-bridge](../REPO/forgejo-intelligence/.forgejo-intelligence/forgejo-intelligence-bridge/README.md))
+([forgejo-intelligence-bridge](../../FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/forgejo-intelligence-bridge/README.md))
 is exactly this: a bridge from the Forgejo event realm to the SOR
 normalised event realm. The protocol treats it as lossy, directional, and
 testable on its own.

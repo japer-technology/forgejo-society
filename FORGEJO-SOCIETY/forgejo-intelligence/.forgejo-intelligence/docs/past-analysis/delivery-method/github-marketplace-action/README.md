@@ -284,17 +284,17 @@ This method is ideal when:
 Consider a different delivery method when:
 
 - Your users are **not familiar with GitHub Actions** and would struggle to create the initial YAML file.
-- You need a **one-click** experience with no file creation required (consider a [GitHub App](./github-application.md)).
-- You want to install gitclaw **without any git operations** (consider the [CLI tool](./cli-tool.md) or [GitHub Pages portal](./github-pages-self-service-portal.md)).
+- You need a **one-click** experience with no file creation required (consider a [GitHub App](../github-application/README.md)).
+- You want to install gitclaw **without any git operations** (consider the [CLI tool](../cli-tool/README.md) or [GitHub Pages portal](../github-pages-self-service-portal/README.md)).
 
 ---
 
 ## Related Methods
 
-- [Fork / Import + Installer](./fork-import-installer.md) — The manual process this action automates.
-- [GitHub Application](./github-application.md) — A one-click alternative that requires a backend.
-- [GitHub Template Repository](./github-template-repository.md) — Pairs well with this action (template for new repos, action for existing repos).
-- [Package Registry](./package-registry.md) — An alternative distribution mechanism for the gitclaw files.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The manual process this action automates.
+- [GitHub Application](../github-application/README.md) — A one-click alternative that requires a backend.
+- [GitHub Template Repository](../github-template-repository/README.md) — Pairs well with this action (template for new repos, action for existing repos).
+- [Package Registry](../package-registry/README.md) — An alternative distribution mechanism for the gitclaw files.
 
 ---
 

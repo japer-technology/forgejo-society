@@ -331,10 +331,10 @@ Consider a different delivery method when:
 
 ## Related Methods
 
-- [Fork / Import + Installer](./fork-import-installer.md) — The manual approach this method automates.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — Another GitHub-native approach that doesn't require a backend.
-- [Third-Party Website](./third-party-website.md) — A richer UI that could use a GitHub App under the hood.
-- [Probot / Webhook Service](./probot-webhook-service.md) — An event-driven alternative built on the Probot framework.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The manual approach this method automates.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — Another GitHub-native approach that doesn't require a backend.
+- [Third-Party Website](../third-party-website/README.md) — A richer UI that could use a GitHub App under the hood.
+- [Probot / Webhook Service](../probot-webhook-service/README.md) — An event-driven alternative built on the Probot framework.
 
 ---
 

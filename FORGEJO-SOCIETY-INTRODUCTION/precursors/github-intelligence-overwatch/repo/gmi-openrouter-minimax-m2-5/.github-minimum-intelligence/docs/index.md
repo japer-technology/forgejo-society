@@ -11,9 +11,9 @@
 | Document | Description |
 | --- | --- |
 | [README](../../README.md) | Project overview, quick start, installation methods, configuration, and supported providers. |
-| [CONTRIBUTING](../../CONTRIBUTING.md) | How to report bugs, suggest features, submit changes, and set up a development environment. |
-| [CODE OF CONDUCT](../../CODE_OF_CONDUCT.md) | Community standards, expected behavior, and alignment with the Four Laws. |
-| [LICENSE](../../LICENSE.md) | MIT License. |
+| [CONTRIBUTING](../CONTRIBUTING.md) | How to report bugs, suggest features, submit changes, and set up a development environment. |
+| [CODE OF CONDUCT](../CODE_OF_CONDUCT.md) | Community standards, expected behavior, and alignment with the Four Laws. |
+| [LICENSE](../LICENSE.md) | MIT License. |
 
 ---
 

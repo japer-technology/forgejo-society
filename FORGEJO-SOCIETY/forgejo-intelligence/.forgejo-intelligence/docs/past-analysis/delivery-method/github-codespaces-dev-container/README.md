@@ -381,16 +381,16 @@ Consider a different delivery method when:
 
 - Your team works **locally** and doesn't use Codespaces or Dev Containers.
 - You need gitclaw on **existing repositories** that don't have Dev Container configurations.
-- You want the **simplest possible method** and your team is comfortable with CLI (use [CLI tool](./cli-tool.md)).
+- You want the **simplest possible method** and your team is comfortable with CLI (use [CLI tool](../cli-tool/README.md)).
 
 ---
 
 ## Related Methods
 
-- [GitHub Template Repository](./github-template-repository.md) — Combine with a Dev Container for the ultimate "one-click" experience.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — What the `postCreateCommand` runs under the hood.
-- [Package Registry](./package-registry.md) — The Feature could install gitclaw from npm during container build.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — The workflows that gitclaw installs still run via Actions, regardless of how the files were delivered.
+- [GitHub Template Repository](../github-template-repository/README.md) — Combine with a Dev Container for the ultimate "one-click" experience.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — What the `postCreateCommand` runs under the hood.
+- [Package Registry](../package-registry/README.md) — The Feature could install gitclaw from npm during container build.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — The workflows that gitclaw installs still run via Actions, regardless of how the files were delivered.
 
 ---
 

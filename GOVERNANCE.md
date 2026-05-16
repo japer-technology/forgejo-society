@@ -2,7 +2,7 @@
 
 This file is the contributor-facing summary of Forgejo Society governance. The
 full governance model lives in
-[THE-SOCIETY-OF-REPO/01-governance/](THE-SOCIETY-OF-REPO/01-governance/).
+[THE-SOCIETY-OF-REPO/01-governance/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/).
 
 Forgejo Society is governed as a Society of Repo: proposals are made through
 issues and pull requests, reviewed by human maintainers and the relevant
@@ -19,7 +19,7 @@ The current human maintainers named by the repository are:
 - Sawyer Hood, maintainer.
 
 The master constitution records the Society identity and owner in
-[constitution.md](THE-SOCIETY-OF-REPO/01-governance/constitution.md). If this
+[constitution.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/constitution.md). If this
 list changes, update this file and the relevant ownership surfaces in the same
 change.
 
@@ -33,10 +33,10 @@ review and merge.
 Changes that affect governance, authority, runtime capability, secrets, data
 egress, compliance posture, public positioning, or the warning documents require
 explicit human maintainer review. Some categories always require owner approval
-under [approval-gate.md](THE-SOCIETY-OF-REPO/01-governance/approval-gate.md).
+under [approval-gate.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/approval-gate.md).
 
 Authority levels are defined in
-[authority-registry.md](THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
+[authority-registry.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
 and are limited to `read`, `draft`, `propose`, `act`, `govern`, and `human`.
 No agency, critic, censor, workflow, or contributor may invent another
 authority level in a proposal.
@@ -56,9 +56,9 @@ The review model has four practical layers:
   merged, revised, deferred, or closed.
 
 Active work that needs a formal settlement belongs under
-[THE-SOCIETY-OF-REPO/07-workspace/active-settlements/](THE-SOCIETY-OF-REPO/07-workspace/active-settlements/).
+[THE-SOCIETY-OF-REPO/07-workspace/active-settlements/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/07-workspace/active-settlements/).
 Archived decisions belong under
-[THE-SOCIETY-OF-REPO/06-memory/decisions/](THE-SOCIETY-OF-REPO/06-memory/decisions/).
+[THE-SOCIETY-OF-REPO/06-memory/decisions/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/06-memory/decisions/).
 
 ---
 
@@ -85,9 +85,9 @@ reports follow [SECURITY.md](SECURITY.md).
 
 ## Governance References
 
-- [constitution.md](THE-SOCIETY-OF-REPO/01-governance/constitution.md)
-- [authority-registry.md](THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
-- [approval-gate.md](THE-SOCIETY-OF-REPO/01-governance/approval-gate.md)
-- [rights-registry.md](THE-SOCIETY-OF-REPO/01-governance/rights-registry.md)
-- [policy-ledger.md](THE-SOCIETY-OF-REPO/01-governance/policy-ledger.md)
-- [governance-log/](THE-SOCIETY-OF-REPO/01-governance/governance-log/)
+- [constitution.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/constitution.md)
+- [authority-registry.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
+- [approval-gate.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/approval-gate.md)
+- [rights-registry.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/rights-registry.md)
+- [policy-ledger.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/policy-ledger.md)
+- [governance-log/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/governance-log/)

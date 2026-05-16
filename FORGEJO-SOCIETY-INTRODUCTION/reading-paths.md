@@ -13,7 +13,7 @@ and what they intend to do.
 The paths are deliberately small. Each one names a handful of files in
 order, says *why* they are in that order, and ends at the natural next
 action for that reader. Nothing here replaces the canonical
-specification in [`../THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md);
+specification in [`../THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md);
 these are routes *into* it.
 
 If a path lists a file you have already read, skim it for the named
@@ -52,7 +52,7 @@ running anything yet.*
 2. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
    — what *emergence* honestly means inside a Society of Repo, written
    for a general audience.
-3. [`../THE-SOCIETY-OF-MIND/01-overview.md`](../THE-SOCIETY-OF-MIND/01-overview.md)
+3. [`../THE-SOCIETY-OF-MIND/01-overview.md`](THE-SOCIETY-OF-MIND/01-overview.md)
    — the Minsky idea the project rests on, in summary form.
 4. [`essay/forgejo-society-uniqueness-in-ai-ecosystem.md`](essay/forgejo-society-uniqueness-in-ai-ecosystem.md)
    — where the project is headed and why it is shaped that way, in one
@@ -99,14 +99,14 @@ land it through pull requests.*
 
 1. [`analysis/ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
    — so the primitives you reach for in code map to the right concepts.
-2. [`../THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
+2. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    — the formal vocabulary you will use in identifiers, commits, and
    docs.
-3. [`../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
+3. [`../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
    — identifier rules. Get these right before writing anything.
-4. [`../THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)
+4. [`../THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](THE-SOCIETY-OF-REPO/02-protocols/03-events.md)
    — the event shapes your code will emit and consume.
-5. [`../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
+5. [`../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
    — the fixed authority levels (`read`, `draft`, `propose`, `act`,
    `govern`, `human`) that gate what an agency may do.
 6. [`../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md`](../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md)
@@ -128,11 +128,11 @@ substrate — coherent in their head before touching anything.*
    how Society, Mind, Intelligence, and Repo layer.
 2. [`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
    — what the cognitive arc looks like at full flight, end to end.
-3. [`../THE-SOCIETY-OF-MIND/04-architecture.md`](../THE-SOCIETY-OF-MIND/04-architecture.md)
-   and [`../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)
+3. [`../THE-SOCIETY-OF-MIND/04-architecture.md`](THE-SOCIETY-OF-MIND/04-architecture.md)
+   and [`../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)
    — the architecture and its translation into this project's
    vocabulary.
-4. [`../THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
+4. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    then walk the numbered pillars (`01-governance` through
    `10-evolution`) at skim depth.
 5. [`../FORGEJO-SOCIETY-PLAN/00-overview.md`](../FORGEJO-SOCIETY-PLAN/00-overview.md)
@@ -169,8 +169,8 @@ federation — not for writing agencies.*
 5. [`../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md`](../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md)
    then [`../FORGEJO-SOCIETY-THE-FEDERATION/README.md`](../FORGEJO-SOCIETY-THE-FEDERATION/README.md)
    — the substrate and federation around it.
-6. [`../github-compliance.md`](../github-compliance.md) and
-   [`../forgejo-compliance.md`](../forgejo-compliance.md) — the
+6. [`../github-compliance.md`](warning/github-compliance.md) and
+   [`../forgejo-compliance.md`](warning/forgejo-compliance.md) — the
    sovereignty posture you are enforcing.
 
 End point: the hardware, host, forge, and federation are healthy, and
@@ -182,16 +182,16 @@ you know where to look when any one of them is not.
 
 *For someone interested in the ideas first, the implementation second.*
 
-1. [`../THE-SOCIETY-OF-MIND/README.md`](../THE-SOCIETY-OF-MIND/README.md)
+1. [`../THE-SOCIETY-OF-MIND/README.md`](THE-SOCIETY-OF-MIND/README.md)
    — the Minsky foundation, in this repository's framing.
-2. [`../THE-SOCIETY-OF-MIND/03-principles.md`](../THE-SOCIETY-OF-MIND/03-principles.md),
-   [`../THE-SOCIETY-OF-MIND/06-memory-and-k-lines.md`](../THE-SOCIETY-OF-MIND/06-memory-and-k-lines.md),
-   [`../THE-SOCIETY-OF-MIND/08-conflict-and-non-compromise.md`](../THE-SOCIETY-OF-MIND/08-conflict-and-non-compromise.md)
+2. [`../THE-SOCIETY-OF-MIND/03-principles.md`](THE-SOCIETY-OF-MIND/03-principles.md),
+   [`../THE-SOCIETY-OF-MIND/06-memory-and-k-lines.md`](THE-SOCIETY-OF-MIND/06-memory-and-k-lines.md),
+   [`../THE-SOCIETY-OF-MIND/08-conflict-and-non-compromise.md`](THE-SOCIETY-OF-MIND/08-conflict-and-non-compromise.md)
    — the principles, K-lines, and the non-compromise stance that shape
    the design.
-3. [`../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)
+3. [`../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)
    — the bridge from theory into this project.
-4. [`../THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
+4. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    then the `00-foundations/`, `02-protocols/`, and `10-evolution/`
    pillars.
 5. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
@@ -200,7 +200,7 @@ you know where to look when any one of them is not.
    — the project's own argument about what may emerge, about the
    structural limits of self-representation, and about the conditions
    under which a Society emerges from a forge at all.
-6. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](../THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
+6. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
    — the honest limits.
 
 End point: you can locate any claim the project makes against either
@@ -213,17 +213,17 @@ Minsky's framework or the project's own specification.
 *For someone evaluating sovereignty, auditability, compliance, and the
 governance model — without needing to build or operate the system.*
 
-1. [`../github-compliance.md`](../github-compliance.md) and
-   [`../github-warning.md`](../github-warning.md) — the GitHub posture
+1. [`../github-compliance.md`](warning/github-compliance.md) and
+   [`../github-warning.md`](warning/github-warning.md) — the GitHub posture
    and its limits.
-2. [`../forgejo-compliance.md`](../forgejo-compliance.md) and
-   [`../forgejo-warning.md`](../forgejo-warning.md) — the Forgejo
+2. [`../forgejo-compliance.md`](warning/forgejo-compliance.md) and
+   [`../forgejo-warning.md`](warning/forgejo-warning.md) — the Forgejo
    counterpart, which is the production target.
-3. [`../THE-SOCIETY-OF-REPO/01-governance/`](../THE-SOCIETY-OF-REPO/01-governance/)
+3. [`../THE-SOCIETY-OF-REPO/01-governance/`](THE-SOCIETY-OF-REPO/01-governance/)
    — governance pillar, including the authority registry.
-4. [`../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
+4. [`../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
    — identity rules that make every action attributable.
-5. [`../THE-SOCIETY-OF-REPO/05-censors/`](../THE-SOCIETY-OF-REPO/05-censors/)
+5. [`../THE-SOCIETY-OF-REPO/05-censors/`](THE-SOCIETY-OF-REPO/05-censors/)
    — the censor layer that enforces policy at the forge boundary.
 6. [`analysis/ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md)
    — to see *why* every cognitive act lands as an auditable Git or

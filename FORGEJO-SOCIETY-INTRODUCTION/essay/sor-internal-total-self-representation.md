@@ -5,7 +5,7 @@
 
 This essay takes that statement seriously and reads it against the architecture
 of a Society of Repo (SOR) as defined in
-[THE-SOCIETY-OF-REPO/README.md](../../THE-SOCIETY-OF-REPO/README.md). The
+[THE-SOCIETY-OF-REPO/README.md](../THE-SOCIETY-OF-REPO/README.md). The
 statement is not a slogan against ambition. It is a structural fact about any
 system that tries to be, at the same time, the thing represented, the
 representation, and the apparatus doing the representing. SOR is exactly such a
@@ -87,7 +87,7 @@ description adds to the thing described.
 SOR makes peace with this by being explicitly *hierarchical*: raw events
 compress upward into settlements, settlements into briefings, briefings into
 quarterly ecology reviews (see
-[10-evolution/](../../THE-SOCIETY-OF-REPO/10-evolution/README.md)). Each level
+[10-evolution/](../THE-SOCIETY-OF-REPO/10-evolution/README.md)). Each level
 is smaller than the one below, on purpose. The price of compression is loss.
 The benefit of compression is that the upper levels actually fit.
 
@@ -113,13 +113,13 @@ not itself a place in the society.
 If totality is unreachable, the design question changes from *how do we
 finally see ourselves whole* to *how do we operate well given that we cannot*.
 Almost every protocol in
-[02-protocols/](../../THE-SOCIETY-OF-REPO/02-protocols/README.md) can be read
+[02-protocols/](../THE-SOCIETY-OF-REPO/02-protocols/README.md) can be read
 as an answer to that question.
 
 ### 3.1 Representation discipline accepts partiality up front
 
 The representation protocol
-([02-protocols/09-representation.md](../../THE-SOCIETY-OF-REPO/02-protocols/09-representation.md))
+([02-protocols/09-representation.md](../THE-SOCIETY-OF-REPO/02-protocols/09-representation.md))
 forces every long-lived artifact to declare *what kind of representation it is*
 — episodic, semantic, procedural, failure, frame, analogy, concept-candidate,
 K-line, decision, or self-ideal. The taxonomy exists because no single class
@@ -133,7 +133,7 @@ representation class. That is one of the cleaner signs that it does not exist.
 ### 3.2 Introspection records the unknowns instead of denying them
 
 The introspection protocol
-([02-protocols/11-introspection.md](../../THE-SOCIETY-OF-REPO/02-protocols/11-introspection.md))
+([02-protocols/11-introspection.md](../THE-SOCIETY-OF-REPO/02-protocols/11-introspection.md))
 distinguishes traceability, explainability, and interpretability, and requires
 that non-trivial proposals record confidence, unknowns, blind spots,
 observability limits, explanation quality, and model opacity dependencies.
@@ -163,7 +163,7 @@ is one of the most common ways a SOR begins to believe its own marketing.
 ### 3.4 Insulation is the refusal of a single global frame
 
 The insulation protocol
-([02-protocols/12-insulation.md](../../THE-SOCIETY-OF-REPO/02-protocols/12-insulation.md))
+([02-protocols/12-insulation.md](../THE-SOCIETY-OF-REPO/02-protocols/12-insulation.md))
 keeps subsystems from collapsing into a single shared substrate. Branches
 hold experiments. Critics are independent of agencies. Censors are
 deliberately outside the learning loop. The architecture refuses to consolidate
@@ -176,7 +176,7 @@ frames, each with bounded scope, communicating through protocols.
 
 ### 3.5 Critics that cannot be silenced by success
 
-Critics ([04-critics/](../../THE-SOCIETY-OF-REPO/04-critics/)) — evidence,
+Critics ([04-critics/](../THE-SOCIETY-OF-REPO/04-critics/)) — evidence,
 scope, cost, privacy, risk, overconfidence, source-quality, staleness — keep
 firing even when a pattern has been winning. This matters precisely because
 no internal vantage can certify a pattern *globally* correct. The society
@@ -189,7 +189,7 @@ mistook a compressed view for the whole.
 
 ### 3.6 Censors that do not learn
 
-Censors ([05-censors/](../../THE-SOCIETY-OF-REPO/05-censors/)) — cloud egress,
+Censors ([05-censors/](../THE-SOCIETY-OF-REPO/05-censors/)) — cloud egress,
 authority, payment, delegation, credential, PII exfiltration — are
 deliberately *outside* the learning loop. They are the part of the society
 that does not negotiate with emergent self-descriptions. Censors are the
@@ -251,7 +251,7 @@ practice.
 
 **Recoverable provenance.** Every representation can be traced to the
 events, agencies, critics, and censors that produced it
-([02-protocols/03-events.md](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
+([02-protocols/03-events.md](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md)).
 The whole cannot be seen, but any part can be reconstructed. That is enough
 for accountability without requiring omniscience.
 
@@ -261,7 +261,7 @@ the closest legitimate analogue of a total self-description: not the
 description itself, but a faithful account of its absence.
 
 **External anchors.** Constitution, rights registry, censors, and human
-authorities ([01-governance/](../../THE-SOCIETY-OF-REPO/01-governance/README.md))
+authorities ([01-governance/](../THE-SOCIETY-OF-REPO/01-governance/README.md))
 provide reference points the internal representations cannot generate from
 themselves. The wall is the reason these external anchors must exist. They
 substitute for the view from nowhere that the system cannot produce on its
@@ -270,8 +270,8 @@ own.
 **Channels to other societies.** Because no SOR can fully represent itself,
 the most powerful self-knowledge a SOR can acquire is often the description
 of itself produced by *another* SOR through the channel protocol
-([02-protocols/07-service-channel.md](../../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
-and [09-channels/](../../THE-SOCIETY-OF-REPO/09-channels/README.md)). The
+([02-protocols/07-service-channel.md](../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
+and [09-channels/](../THE-SOCIETY-OF-REPO/09-channels/README.md)). The
 other society's description is also partial, also positional, and still
 incomplete in aggregate — but it is *from somewhere else*, and that is
 exactly the vantage the original society structurally lacks.

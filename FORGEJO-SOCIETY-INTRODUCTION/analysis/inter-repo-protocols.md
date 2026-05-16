@@ -91,7 +91,7 @@ POST https://forge.b.example/api/v1/repos/society-b/contract-checker/issues
 
 This is an "API call to that particular machine" in the most literal sense.
 The Forgejo API boundary
-([SOR §15 Forgejo Environment](../../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md))
+([SOR §15 Forgejo Environment](../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md))
 makes this the **only** sanctioned write path: surface handlers must not
 shell out to `gh`, must not open ad hoc fetch calls, and must not bypass the
 adapter. So even the *internal* runtime treats every write as a direct,
@@ -106,7 +106,7 @@ arrival of the issue into a runner job. The reply is a comment, a label
 change, or a merged PR.
 
 This is the pattern the SOR uses inside one society
-([SOR §15 surface map](../../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md));
+([SOR §15 surface map](../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md));
 nothing prevents the same pattern from crossing society boundaries.
 
 ### 3. Webhook-driven event delivery
@@ -143,7 +143,7 @@ Three SOR protocols carry this load.
 
 ### Service Channels — the contract layer
 
-[SOR §07 Service Channel Protocol](../../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
+[SOR §07 Service Channel Protocol](../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
 defines the lifecycle of a call from one society to another:
 
 ```text
@@ -163,7 +163,7 @@ sides have signed, and the call leaves a permanent, dual-sided trace.
 
 ### Bridges — the translation layer
 
-[SOR §18 Bridges Protocol](../../THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
+[SOR §18 Bridges Protocol](../THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
 recognises that two societies will not share an internal vocabulary. A bridge
 agency converts representations across realm boundaries, declares its
 lossiness, ships round-trip drift tests, and runs under its own constitution.
@@ -180,14 +180,14 @@ is explicit, versioned, and tested.
 
 ### Channels registry and the API boundary — the enforcement layer
 
-[SOR §09 Channels](../../THE-SOCIETY-OF-REPO/09-channels/README.md) is the
+[SOR §09 Channels](../THE-SOCIETY-OF-REPO/09-channels/README.md) is the
 registry of every external society this SOR is permitted to call. Adding a
 channel requires reading the partner's published service contract, verifying
 privacy terms, opening a PR with human approval, configuring the
 cloud-egress-censor, and registering a spending limit with the
 payment-censor.
 
-[SOR §15](../../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
+[SOR §15](../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
 already requires that *all* Forgejo writes go through a single adapter
 (`platform/forgejo-api.ts`). The same discipline extends naturally to
 inter-society calls: every outbound call to another forge is mediated by a

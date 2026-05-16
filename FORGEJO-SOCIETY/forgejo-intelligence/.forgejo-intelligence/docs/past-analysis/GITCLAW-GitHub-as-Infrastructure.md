@@ -334,11 +334,11 @@ The thesis holds at both levels: GitHub is viable infrastructure for AI agents a
 
 ## References
 
-- [.GITCLAW README](../../.GITCLAW/README.md) — Drop-in AI agent documentation
-- [.GITCLAW: The Idea](../../.GITCLAW/docs/GITCLAW-The-Idea.md) — Philosophical vision for repo-native agents
-- [.GITCLAW: Possibilities](../../.GITCLAW/docs/GITCLAW-Possibilities.md) — Design space and expansion axes
-- [.GITCLAW Loves Pi](../../.GITCLAW/docs/GITCLAW-Loves-Pi.md) — How Pi powers .GITCLAW
-- [.GITCLAW: The GitHub Possibilities](../../.GITCLAW/docs/GITCLAW-The-GitHub-Possibilities.md) — Analysis of every GitHub platform feature
+- [.GITCLAW README](delivery-method/README.md) — Drop-in AI agent documentation
+- [.GITCLAW: The Idea](GITCLAW-The-Idea.md) — Philosophical vision for repo-native agents
+- [.GITCLAW: Possibilities](GITCLAW-Possibilities.md) — Design space and expansion axes
+- [.GITCLAW Loves Pi](GITCLAW-Loves-Pi.md) — How Pi powers .GITCLAW
+- [.GITCLAW: The GitHub Possibilities](GITCLAW-The-GitHub-Possibilities.md) — Analysis of every GitHub platform feature
 - [.GITOPENCLAW README](../README.md) — Full-featured agent powered by OpenClaw
 - [.GITOPENCLAW: The Idea](GITOPENCLAW-The-Idea.md) — Vision for OpenClaw-powered repo agents
 - [.GITOPENCLAW: Possibilities](../GITOPENCLAW-Possibilities.md) — Parity plan and beyond

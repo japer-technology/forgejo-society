@@ -28,7 +28,7 @@ Beyond the CLI binary, OCI uses the following OpenClaw feature categories:
 | Compaction | `.pi/settings.json` `compaction` | Automatic context compaction for long conversations (`keepRecentTokens: 32000`) |
 | Retry | `.pi/settings.json` `retry` | Automatic retry with exponential backoff for transient LLM errors (`maxRetries: 3`) |
 
-See [docs/analysis/openclaw-feature-utilization.md](docs/analysis/openclaw-feature-utilization.md) for a full audit of used vs. available features.
+See [docs/analysis/openclaw-feature-utilization.md](../../github-openclaw-intelligence/.github-openclaw-intelligence/docs/analysis/openclaw-feature-utilization.md) for a full audit of used vs. available features.
 
 ## Infrastructure Dependencies
 

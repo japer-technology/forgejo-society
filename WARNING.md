@@ -14,16 +14,16 @@ alone are not a defence.
 
 ## The four documents
 
-- [`forgejo-compliance.md`](forgejo-compliance.md) — how this system is
+- [`forgejo-compliance.md`](FORGEJO-SOCIETY-INTRODUCTION/warning/forgejo-compliance.md) — how this system is
   *intended* to be deployed on Forgejo (self-hosted only; shared Forgejo
   instances such as Codeberg are source mirrors only, never runtimes).
-- [`forgejo-warning.md`](forgejo-warning.md) — what breaks, clause by
+- [`forgejo-warning.md`](FORGEJO-SOCIETY-INTRODUCTION/warning/forgejo-warning.md) — what breaks, clause by
   clause, if you run the agent on Codeberg or any shared Forgejo, and the
   failure modes that remain even when self-hosted.
-- [`github-compliance.md`](github-compliance.md) — how this system is
+- [`github-compliance.md`](FORGEJO-SOCIETY-INTRODUCTION/warning/github-compliance.md) — how this system is
   *intended* to be deployed when GitHub is involved (mirror-only, no
   Actions, no agent traffic against github.com).
-- [`github-warning.md`](github-warning.md) — what breaks, clause by
+- [`github-warning.md`](FORGEJO-SOCIETY-INTRODUCTION/warning/github-warning.md) — what breaks, clause by
   clause, if you enable Actions, bots, or agent traffic against GitHub.
 
 ## The rule

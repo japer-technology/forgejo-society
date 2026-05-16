@@ -3,7 +3,7 @@
 This file tells contributors who owns each part of the repository for review
 purposes. It does not replace [GOVERNANCE.md](GOVERNANCE.md) or the deeper
 governance specification under
-[THE-SOCIETY-OF-REPO/01-governance/](THE-SOCIETY-OF-REPO/01-governance/).
+[THE-SOCIETY-OF-REPO/01-governance/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/).
 
 ## Human Maintainers
 

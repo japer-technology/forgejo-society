@@ -13,7 +13,7 @@
 | **Pages visited** | {COUNT} |
 | **Screenshots** | {COUNT} |
 | **Framework** | {DETECTED or "Unknown"} |
-| **Index** | [All QA runs](./index.md) |
+| **Index** | [All QA runs](../../../../.github-minimum-intelligence/docs/index.md) |
 
 ## Health Score: {SCORE}/100
 

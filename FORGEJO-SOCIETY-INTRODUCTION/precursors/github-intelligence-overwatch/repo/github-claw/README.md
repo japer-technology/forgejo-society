@@ -8,6 +8,6 @@
   </picture>
 </p>
 
-### [🦞Home](/.github-claw/README.md) [🦞Quick Start](/.github-claw/github-claw-QUICKSTART.md) [🦞The Repo is the Mind](/THE-REPO-IS-THE-MIND.md)
+### [🦞Home](README.md) [🦞Quick Start](.github-claw/github-claw-QUICKSTART.md) [🦞The Repo is the Mind](THE-REPO-IS-THE-MIND.md)
 
 > The key innovation is _github-claw_: a self-contained AI agent that processes GitHub issues in CI/CD, maintains persistent conversation state in git, and integrates the full OpenClaw runtime into GitHub's native infrastructure.

@@ -18,7 +18,7 @@ If you are looking for the project itself, start with the
 [repository overview](../README.md) and the
 [introduction](../FORGEJO-SOCIETY-INTRODUCTION/README.md). For the
 specification of the mind being promoted, see
-[`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md).
+[`THE-SOCIETY-OF-REPO/`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
 
 ---
 

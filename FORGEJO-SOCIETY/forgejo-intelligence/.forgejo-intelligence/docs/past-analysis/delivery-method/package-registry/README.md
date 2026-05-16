@@ -334,7 +334,7 @@ A key challenge: gitclaw is useful for **any** GitHub repository, not just JavaS
 | **Optional devDependency** | Listed in `package.json` only for JS projects; other projects use the CLI directly | Two different installation paths |
 | **Docker image** | `docker run ghcr.io/japer-technology/gitclaw init` | Requires Docker |
 
-**Recommendation:** Position the npm package primarily for **JavaScript/TypeScript projects** where a `package.json` already exists. For other languages, recommend the [CLI tool](./cli-tool.md) (which uses `npx` without adding a dependency) or other delivery methods.
+**Recommendation:** Position the npm package primarily for **JavaScript/TypeScript projects** where a `package.json` already exists. For other languages, recommend the [CLI tool](../cli-tool/README.md) (which uses `npx` without adding a dependency) or other delivery methods.
 
 ---
 
@@ -403,18 +403,18 @@ This method is ideal when:
 Consider a different delivery method when:
 
 - Your project is **not a JavaScript project** and adding `package.json` feels wrong.
-- You want a **one-click** experience without CLI commands (consider [GitHub App](./github-application.md)).
-- You want a **git-native** update mechanism (consider [submodule/subtree](./git-submodule-subtree.md)).
-- You prefer to avoid **npm's supply-chain risks** and want a self-contained approach (consider [fork/import installer](./fork-import-installer.md)).
+- You want a **one-click** experience without CLI commands (consider [GitHub App](../github-application/README.md)).
+- You want a **git-native** update mechanism (consider [submodule/subtree](../git-submodule-subtree/README.md)).
+- You prefer to avoid **npm's supply-chain risks** and want a self-contained approach (consider [fork/import installer](../fork-import-installer/README.md)).
 
 ---
 
 ## Related Methods
 
-- [CLI Tool (npx / bunx)](./cli-tool.md) — Uses npm as distribution but without adding a dependency. Ideal for non-JS projects.
-- [Git Submodule / Subtree](./git-submodule-subtree.md) — A git-native alternative for versioned inclusion.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — Another distribution channel that avoids local dependencies.
-- [Fork / Import + Installer](./fork-import-installer.md) — The manual approach this method improves upon.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — Uses npm as distribution but without adding a dependency. Ideal for non-JS projects.
+- [Git Submodule / Subtree](../git-submodule-subtree/README.md) — A git-native alternative for versioned inclusion.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — Another distribution channel that avoids local dependencies.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The manual approach this method improves upon.
 
 ---
 

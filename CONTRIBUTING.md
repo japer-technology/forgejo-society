@@ -18,7 +18,7 @@ Use the project forge as the primary collaboration surface.
 1. Open an issue or draft proposal that states the problem, the affected
    directories, and the intended reader or operator.
 2. Link the relevant specification or planning documents. For governance terms,
-   start with [THE-SOCIETY-OF-REPO/01-governance/](THE-SOCIETY-OF-REPO/01-governance/).
+   start with [THE-SOCIETY-OF-REPO/01-governance/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/).
 3. Keep the change small enough to review as one decision. Separate prose,
    governance, runtime, and publicity changes when they need different review.
 4. Mark planned behaviour as planned. Do not describe planned workflows,
@@ -45,10 +45,10 @@ Forgejo Society uses the Society of Repo review model internally:
 
 For the full model, see the Society of Repo specification:
 
-- [Governance](THE-SOCIETY-OF-REPO/01-governance/README.md)
-- [Agencies](THE-SOCIETY-OF-REPO/03-agencies/README.md)
-- [Critics](THE-SOCIETY-OF-REPO/04-critics/README.md)
-- [Censors](THE-SOCIETY-OF-REPO/05-censors/README.md)
+- [Governance](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/README.md)
+- [Agencies](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/03-agencies/README.md)
+- [Critics](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/04-critics/README.md)
+- [Censors](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/05-censors/README.md)
 
 Contributors do not need to reproduce the whole model in every pull request.
 They should make the reviewable claim clear: what changed, why it belongs here,
@@ -96,11 +96,11 @@ A pull request should include:
 Pull requests are settled when the relevant review concerns have been answered
 and a human maintainer merges or closes the proposal. Governance and authority
 changes may require explicit approval under
-[approval-gate.md](THE-SOCIETY-OF-REPO/01-governance/approval-gate.md). Active
+[approval-gate.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/approval-gate.md). Active
 settlements live in
-[THE-SOCIETY-OF-REPO/07-workspace/active-settlements/](THE-SOCIETY-OF-REPO/07-workspace/active-settlements/);
+[THE-SOCIETY-OF-REPO/07-workspace/active-settlements/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/07-workspace/active-settlements/);
 archived decisions live under
-[THE-SOCIETY-OF-REPO/06-memory/decisions/](THE-SOCIETY-OF-REPO/06-memory/decisions/).
+[THE-SOCIETY-OF-REPO/06-memory/decisions/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/06-memory/decisions/).
 
 Do not merge changes that weaken the warning or compliance documents, rename
 canonical project terms, add authority levels, add identifier scopes, or cause

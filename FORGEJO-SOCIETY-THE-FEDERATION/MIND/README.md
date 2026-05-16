@@ -88,7 +88,7 @@ a child sub-society is always a single endpoint.
 Spawn a sub-society from a member repo only when its remit decomposes into
 two or more *independently governed* responsibilities — i.e. they need
 different **authority levels** (per
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)),
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)),
 different **censors**, or different **lead agencies**, and a single repo
 would have to pretend they are the same.
 

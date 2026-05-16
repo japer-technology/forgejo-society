@@ -50,7 +50,7 @@
 
 ## 📢 Novidades
 
-2026-02-16 🎉 PicoClaw atingiu 12K stars em uma semana! Obrigado a todos pelo apoio! O PicoClaw está crescendo mais rápido do que jamais imaginamos. Dado o alto volume de PRs, precisamos urgentemente de maintainers da comunidade. Nossos papéis de voluntários e roadmap foram publicados oficialmente [aqui](docs/ROADMAP.md) — estamos ansiosos para ter você a bordo!
+2026-02-16 🎉 PicoClaw atingiu 12K stars em uma semana! Obrigado a todos pelo apoio! O PicoClaw está crescendo mais rápido do que jamais imaginamos. Dado o alto volume de PRs, precisamos urgentemente de maintainers da comunidade. Nossos papéis de voluntários e roadmap foram publicados oficialmente [aqui](ROADMAP.md) — estamos ansiosos para ter você a bordo!
 
 2026-02-13 🎉 PicoClaw atingiu 5000 stars em 4 dias! Obrigado à comunidade! Estamos finalizando o **Roadmap do Projeto** e configurando o **Grupo de Desenvolvedores** para acelerar o desenvolvimento do PicoClaw.
 
@@ -828,7 +828,7 @@ O subagente tem acesso às ferramentas (message, web_search, etc.) e pode se com
 | Provedor | Finalidade | Obter API Key |
 | --- | --- | --- |
 | `gemini` | LLM (Gemini direto) | [aistudio.google.com](https://aistudio.google.com) |
-| `zhipu` | LLM (Zhipu direto) | [bigmodel.cn](bigmodel.cn) |
+| `zhipu` | LLM (Zhipu direto) | [bigmodel.cn](https://bigmodel.cn) |
 | `openrouter` (Em teste) | LLM (recomendado, acesso a todos os modelos) | [openrouter.ai](https://openrouter.ai) |
 | `anthropic` (Em teste) | LLM (Claude direto) | [console.anthropic.com](https://console.anthropic.com) |
 | `openai` (Em teste) | LLM (GPT direto) | [platform.openai.com](https://platform.openai.com) |

@@ -2,7 +2,7 @@
 
 The Forgejo Conformance Repo is a drop-in workflow set that proves a
 Forgejo installation is conforming for advanced use by
-[THE-SOCIETY-OF-REPO](../../../THE-SOCIETY-OF-REPO/README.md).
+[THE-SOCIETY-OF-REPO](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
 
 It is **not** a Society agency. It owns no settlements and never writes
 provenance. It exists only to answer one question:

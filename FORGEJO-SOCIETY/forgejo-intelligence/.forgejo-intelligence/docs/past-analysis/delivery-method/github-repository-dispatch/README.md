@@ -391,17 +391,17 @@ This method is ideal when:
 Consider a different delivery method when:
 
 - Your users are **uncomfortable granting write access tokens** to external systems.
-- You want a **simpler setup** without mothership secrets and workflow management (use [template repo](./github-template-repository.md) or [CLI tool](./cli-tool.md)).
+- You want a **simpler setup** without mothership secrets and workflow management (use [template repo](../github-template-repository/README.md) or [CLI tool](../cli-tool/README.md)).
 - You need **real-time feedback** during installation (the async nature of dispatches adds latency).
 
 ---
 
 ## Related Methods
 
-- [GitHub Application](./github-application.md) — Can provide the installation tokens needed by the mothership workflow.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — Similar automation, but runs within the target repo instead of a mothership.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — Can use dispatch events as its backend installation mechanism.
-- [Probot / Webhook Service](./probot-webhook-service.md) — Another event-driven approach that responds to GitHub events.
+- [GitHub Application](../github-application/README.md) — Can provide the installation tokens needed by the mothership workflow.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — Similar automation, but runs within the target repo instead of a mothership.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — Can use dispatch events as its backend installation mechanism.
+- [Probot / Webhook Service](../probot-webhook-service/README.md) — Another event-driven approach that responds to GitHub events.
 
 ---
 

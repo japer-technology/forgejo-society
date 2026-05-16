@@ -8,4 +8,4 @@
   </picture>
 </p>
 
-### [🦞Quick Start](ISSUE-INTELLIGENCE-QUICKSTART.md) · [🦞Internals](docs/ISSUE-INTELLIGENCE-Internal-Mechanics.md) · [🦞Possibilities](docs/ISSUE-INTELLIGENCE-Possibilities.md) · [🦞Road Map](docs/ISSUE-INTELLIGENCE-Roadmap.md) · [🦞The Idea](docs/ISSUE-INTELLIGENCE-The-Idea.md)
+### [🦞Quick Start](.issue-intelligence/ISSUE-INTELLIGENCE-QUICKSTART.md) · [🦞Internals](docs/ISSUE-INTELLIGENCE-Internal-Mechanics.md) · [🦞Possibilities](docs/ISSUE-INTELLIGENCE-Possibilities.md) · [🦞Road Map](docs/ISSUE-INTELLIGENCE-Roadmap.md) · [🦞The Idea](docs/ISSUE-INTELLIGENCE-The-Idea.md)

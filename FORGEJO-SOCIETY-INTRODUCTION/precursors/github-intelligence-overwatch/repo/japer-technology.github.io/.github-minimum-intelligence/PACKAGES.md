@@ -26,7 +26,7 @@ Beyond the CLI binary, GMI uses the following pi-mono feature categories:
 | Prompt templates | `.pi/prompts/` | Reusable prompts for recurring workflows (`code-review`, `issue-triage`) |
 | Extensions | `.pi/extensions/` | Custom tools registered for LLM use (`github_repo_context`) |
 
-See [docs/analysis/pi-mono-feature-utilization.md](docs/analysis/pi-mono-feature-utilization.md) for a full audit of used vs. available features.
+See [docs/analysis/pi-mono-feature-utilization.md](../../github-minimum-intelligence/.github-minimum-intelligence/docs/analysis/pi-mono-feature-utilization.md) for a full audit of used vs. available features.
 
 ## Infrastructure Dependencies
 

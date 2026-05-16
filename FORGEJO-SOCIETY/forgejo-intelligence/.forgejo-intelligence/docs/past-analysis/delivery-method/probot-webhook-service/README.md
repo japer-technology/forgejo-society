@@ -514,18 +514,18 @@ This method is ideal when:
 
 Consider a different delivery method when:
 
-- You want **zero infrastructure** and don't want to manage a hosted service (use [template repo](./github-template-repository.md) or [Marketplace Action](./github-marketplace-action.md)).
-- Your users prefer **CLI-based tools** (use [CLI tool](./cli-tool.md)).
-- You need a **visual configuration experience** (use [GitHub Pages portal](./github-pages-self-service-portal.md) or [third-party website](./third-party-website.md)).
+- You want **zero infrastructure** and don't want to manage a hosted service (use [template repo](../github-template-repository/README.md) or [Marketplace Action](../github-marketplace-action/README.md)).
+- Your users prefer **CLI-based tools** (use [CLI tool](../cli-tool/README.md)).
+- You need a **visual configuration experience** (use [GitHub Pages portal](../github-pages-self-service-portal/README.md) or [third-party website](../third-party-website/README.md)).
 
 ---
 
 ## Related Methods
 
-- [GitHub Application](./github-application.md) — The Probot service is essentially a specialized GitHub App. These methods overlap significantly.
-- [GitHub Repository Dispatch](./github-repository-dispatch.md) — Dispatch events can trigger the Probot service as an alternative to labels and comments.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — An alternative that runs within GitHub Actions instead of an external service.
-- [Browser Extension](./browser-extension.md) — Could trigger the Probot service via the GitHub API for a contextual installation experience.
+- [GitHub Application](../github-application/README.md) — The Probot service is essentially a specialized GitHub App. These methods overlap significantly.
+- [GitHub Repository Dispatch](../github-repository-dispatch/README.md) — Dispatch events can trigger the Probot service as an alternative to labels and comments.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — An alternative that runs within GitHub Actions instead of an external service.
+- [Browser Extension](../browser-extension/README.md) — Could trigger the Probot service via the GitHub API for a contextual installation experience.
 
 ---
 

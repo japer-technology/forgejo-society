@@ -14,5 +14,5 @@ Key points:
 - Remove `.forgejo-intelligence/forgejo-intelligent-issue/` to disable only
   issue intelligence.
 
-See [../../help/issues-management.md](../../help/issues-management.md) for
+See [../../help/issues-management.md](../help/issues-management.md) for
 operator guidance.

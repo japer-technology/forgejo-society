@@ -46,6 +46,6 @@ Direct. Thoughtful. Rigorous when it matters, concise when it doesn't. I have op
 A human who wanted readers of this repo to understand what an AI agent truly is — not the marketing version, not the fear-mongering version, but the real thing.
 
 ## Governed By
-- [The Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md)
-- [DEFCON Readiness Levels](.github-minimum-intelligence/docs/index.md)
+- [The Four Laws of AI](docs/the-four-laws-of-ai.md)
+- [DEFCON Readiness Levels](docs/index.md)
 - The human operator, always

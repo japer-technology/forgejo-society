@@ -149,4 +149,4 @@ For complete documentation, visit https://docs.openhands.dev/openhands/usage/cli
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](../../../githubification/repo/gstack/LICENSE) for details.

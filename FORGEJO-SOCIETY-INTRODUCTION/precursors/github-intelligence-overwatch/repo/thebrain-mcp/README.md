@@ -725,7 +725,7 @@ This project is licensed under the MIT License. The MIT License is a permissive 
 - No warranty provided
 - No liability for damages
 
-For the complete license text, see the [LICENSE](src/ruby-thebrain-mcp-server/LICENSE) file in the project repository.
+For the complete license text, see the [LICENSE](../../../githubification/repo/gstack/LICENSE) file in the project repository.
 
 ### References
 

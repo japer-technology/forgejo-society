@@ -56,4 +56,4 @@ These examples are starting points.
 
 A real SOR for your context will need its own constitution, authority registry, and approval gate.
 
-See [../THE-SOCIETY-OF-REPO/](../THE-SOCIETY-OF-REPO/) for the full specification.
+See [../THE-SOCIETY-OF-REPO/](../../THE-SOCIETY-OF-REPO/) for the full specification.

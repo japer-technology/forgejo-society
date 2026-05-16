@@ -5860,7 +5860,7 @@ curl -fsSL https://raw.githubusercontent.com/japer-technology/github-minimum-int
 
 The script detects the existing installation, compares version numbers (from `.github-minimum-intelligence/VERSION`), backs up user customisations (`AGENTS.md`, `.pi/`, `state/`), replaces framework files, and restores the backups.
 
-See [How to Install and Update](how-to-install-and-update.md) for the full upgrade procedure and preservation table.
+See [How to Install and Update](.github-minimum-intelligence/docs/analysis/how-to-install-and-update.md) for the full upgrade procedure and preservation table.
 
 ---
 
@@ -7654,7 +7654,7 @@ This is an AI-powered coding infrastructure. It is intended for use by qualified
 
 ### Capabilities and Scope
 
-Before deploying this system, it helps to understand what the agent can access. The [Capabilities Analysis](warning-blast-radius.md) is a factual, evidence-based audit of the out-of-the-box capabilities available to the agent running as a GitHub Actions workflow.
+Before deploying this system, it helps to understand what the agent can access. The [Capabilities Analysis](.github-minimum-intelligence/docs/warning-blast-radius.md) is a factual, evidence-based audit of the out-of-the-box capabilities available to the agent running as a GitHub Actions workflow.
 
 > **Note:** Most of these capabilities are standard properties of any GitHub Actions workflow running on `ubuntu-latest`. They are not unique to this project. We document them here so you can make informed decisions about your security posture.
 
@@ -7672,9 +7672,9 @@ Before deploying this system, it helps to understand what the agent can access. 
 
 **Summary:** Like any GitHub Actions workflow with write permissions, the agent has broad access to the repository and its secrets. Standard hardening practices (branch protection, scoped tokens, code review) are recommended — see the full analysis for details.
 
-**Full analysis:** [warning-blast-radius.md](warning-blast-radius.md)
+**Full analysis:** [warning-blast-radius.md](.github-minimum-intelligence/docs/warning-blast-radius.md)
 
-**Security assessment:** [security-assessment.md](security-assessment.md)
+**Security assessment:** [security-assessment.md](.github-minimum-intelligence/docs/security-assessment.md)
 
 ---
 
@@ -7775,7 +7775,7 @@ Like all powerful tools, this software may cause side effects. Not everybody exp
 
 ### The Four Laws of AI
 
-This system defines [The Four Laws of AI](the-four-laws-of-ai.md), adapted from Asimov's Laws of Robotics for AI infrastructure. We recommend you adopt them:
+This system defines [The Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md), adapted from Asimov's Laws of Robotics for AI infrastructure. We recommend you adopt them:
 
 | Law | Principle | Summary |
 |-----|-----------|---------|
@@ -7786,7 +7786,7 @@ This system defines [The Four Laws of AI](the-four-laws-of-ai.md), adapted from 
 
 *These Laws are not suggestions. They are constraints — and constraints are what make freedom possible.*
 
-**Full text:** [the-four-laws-of-ai.md](the-four-laws-of-ai.md)
+**Full text:** [the-four-laws-of-ai.md](.github-minimum-intelligence/docs/the-four-laws-of-ai.md)
 
 ---
 
@@ -7796,11 +7796,11 @@ This system defines five operational readiness states modelled on military DEFCO
 
 | Level | Name | Posture | Key Constraint |
 |-------|------|---------|----------------|
-| [DEFCON 1](transition-to-defcon-1.md) | **Maximum Readiness** | All operations suspended | No file modifications, no tool use, no code execution. Respond only with confirmation. |
-| [DEFCON 2](transition-to-defcon-2.md) | **High Readiness** | Read-only, advisory only | No file modifications. Read-only tools only. State what you *would* do, but do not do it. |
-| [DEFCON 3](transition-to-defcon-3.md) | **Increased Readiness** | Read-only, explain before acting | Read and analyze freely. Describe planned changes and await human approval before any write. |
-| [DEFCON 4](transition-to-defcon-4.md) | **Above Normal Readiness** | Full capability, elevated discipline | All capabilities available, but confirm intent before every write. Minimize blast radius. No speculative changes. |
-| [DEFCON 5](transition-to-defcon-5.md) | **Normal Readiness** | Standard operations | All capabilities available. Default operating posture per agent instructions. |
+| [DEFCON 1](.github-minimum-intelligence/docs/transition-to-defcon-1.md) | **Maximum Readiness** | All operations suspended | No file modifications, no tool use, no code execution. Respond only with confirmation. |
+| [DEFCON 2](.github-minimum-intelligence/docs/transition-to-defcon-2.md) | **High Readiness** | Read-only, advisory only | No file modifications. Read-only tools only. State what you *would* do, but do not do it. |
+| [DEFCON 3](.github-minimum-intelligence/docs/transition-to-defcon-3.md) | **Increased Readiness** | Read-only, explain before acting | Read and analyze freely. Describe planned changes and await human approval before any write. |
+| [DEFCON 4](.github-minimum-intelligence/docs/transition-to-defcon-4.md) | **Above Normal Readiness** | Full capability, elevated discipline | All capabilities available, but confirm intent before every write. Minimize blast radius. No speculative changes. |
+| [DEFCON 5](.github-minimum-intelligence/docs/transition-to-defcon-5.md) | **Normal Readiness** | Standard operations | All capabilities available. Default operating posture per agent instructions. |
 
 **Standing Order:** The agent must obey DEFCON transitions immediately. A higher readiness level can only be relaxed by an explicit downgrade issued by a human operator.
 
@@ -7812,16 +7812,16 @@ Six questions define the philosophical and architectural foundation of this proj
 
 | Question | Document | Core Inquiry |
 |----------|----------|--------------|
-| **What?** | [question-what.md](question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework — not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
-| **Who?** | [question-who.md](question-who.md) | Who speaks, executes, remembers, and governs when the repository itself becomes the mind? Identity as a layered stack of human, workflow, and model. |
-| **When?** | [question-when.md](question-when.md) | How does Git replace ephemeral sessions? Memory becomes durable, trust becomes auditable, and collaboration becomes resilient across time. |
-| **Where?** | [question-where.md](question-where.md) | Where does intelligence live? Runtime in GitHub Actions, memory in versioned state files, identity in checked-in markdown, authorization in repository permissions. |
-| **How?** | [question-how.md](question-how.md) | Issues as conversational input, Actions as execution runtime, an LLM as reasoning substrate, and Git commits as durable memory. |
-| **How Much?** | [question-how-much.md](question-how-much.md) | How much intelligence can a repository hold? The ceiling is social stewardship, not token count — memory scales with Git history, not context windows. |
+| **What?** | [question-what.md](.github-minimum-intelligence/docs/question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework — not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
+| **Who?** | [question-who.md](.github-minimum-intelligence/docs/question-who.md) | Who speaks, executes, remembers, and governs when the repository itself becomes the mind? Identity as a layered stack of human, workflow, and model. |
+| **When?** | [question-when.md](.github-minimum-intelligence/docs/question-when.md) | How does Git replace ephemeral sessions? Memory becomes durable, trust becomes auditable, and collaboration becomes resilient across time. |
+| **Where?** | [question-where.md](.github-minimum-intelligence/docs/question-where.md) | Where does intelligence live? Runtime in GitHub Actions, memory in versioned state files, identity in checked-in markdown, authorization in repository permissions. |
+| **How?** | [question-how.md](.github-minimum-intelligence/docs/question-how.md) | Issues as conversational input, Actions as execution runtime, an LLM as reasoning substrate, and Git commits as durable memory. |
+| **How Much?** | [question-how-much.md](.github-minimum-intelligence/docs/question-how-much.md) | How much intelligence can a repository hold? The ceiling is social stewardship, not token count — memory scales with Git history, not context windows. |
 
-**Overview:** [questions.md](questions.md)
+**Overview:** [questions.md](.github-minimum-intelligence/docs/questions.md)
 
-**Architectural thesis:** [the-repo-is-the-mind.md](the-repo-is-the-mind.md)
+**Architectural thesis:** [the-repo-is-the-mind.md](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ---
 
@@ -7846,11 +7846,11 @@ Maintained by humans, for humans.
 ````markdown
 # 13. Incident Response Plan
 
-> [Index](./index.md) · [Security Assessment](./security-assessment.md) · [Capabilities Analysis](./warning-blast-radius.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Security Assessment](.github-minimum-intelligence/docs/security-assessment.md) · [Capabilities Analysis](.github-minimum-intelligence/docs/warning-blast-radius.md)
 >
 > **Classification:** Internal — For Repository Maintainers and Organization Administrators
 >
-> **Companion Document:** [security-assessment.md](./security-assessment.md) · [warning-blast-radius.md](./warning-blast-radius.md) · [transition-to-defcon-1.md](./transition-to-defcon-1.md)
+> **Companion Document:** [security-assessment.md](.github-minimum-intelligence/docs/security-assessment.md) · [warning-blast-radius.md](.github-minimum-intelligence/docs/warning-blast-radius.md) · [transition-to-defcon-1.md](.github-minimum-intelligence/docs/transition-to-defcon-1.md)
 
 ---
 
@@ -7948,7 +7948,7 @@ gh secret set ANTHROPIC_API_KEY --body "sk-new-rotated-key-value"
 
 ### 2.3 Transition to DEFCON 1
 
-If the agent is still accepting issue-triggered commands, open an issue containing the contents of [transition-to-defcon-1.md](./transition-to-defcon-1.md) to instruct it to **cease all autonomous operations**.
+If the agent is still accepting issue-triggered commands, open an issue containing the contents of [transition-to-defcon-1.md](.github-minimum-intelligence/docs/transition-to-defcon-1.md) to instruct it to **cease all autonomous operations**.
 
 > **Note:** DEFCON 1 is a software-level instruction. It is not a substitute for disabling the workflow (Step 1.4). Always disable the workflow first.
 
@@ -8072,7 +8072,7 @@ Verify:
 
 ### 4.3 Re-enable with safeguards
 
-Before re-enabling the workflow, implement the recommendations from [security-assessment.md Section 12](./security-assessment.md#12-recommendations):
+Before re-enabling the workflow, implement the recommendations from [security-assessment.md Section 12](.github-minimum-intelligence/docs/security-assessment.md#12-recommendations):
 
 1. **Restrict token scope:** Use a fine-grained personal access token scoped to this repository only.
 2. **Enable branch protection:** Require pull request reviews for all changes.
@@ -8131,7 +8131,7 @@ Create an incident record capturing:
 **Time target:** Days 1–7
 
 - [ ] Conduct a post-incident review with all involved parties.
-- [ ] Update the threat model in [security-assessment.md](./security-assessment.md) with new attack vectors discovered.
+- [ ] Update the threat model in [security-assessment.md](.github-minimum-intelligence/docs/security-assessment.md) with new attack vectors discovered.
 - [ ] Implement additional monitoring (e.g., alerts on workflow file changes, unexpected branch creation).
 - [ ] Review and tighten permissions across all organization repositories.
 - [ ] Consider moving to a self-hosted runner with network restrictions and reduced privileges.
@@ -8171,7 +8171,7 @@ Create an incident record capturing:
 
 > Comprehensive guide to all GitHub Minimum Intelligence documentation.
 >
-> **Start here:** [README](../../README.md) · **Before You Begin:** [Important Information](./final-warning.md) · **Laws:** [The Four Laws of AI](./the-four-laws-of-ai.md)
+> **Start here:** [README](../../README.md) · **Before You Begin:** [Important Information](.github-minimum-intelligence/docs/final-warning.md) · **Laws:** [The Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md)
 
 ---
 
@@ -8180,9 +8180,9 @@ Create an incident record capturing:
 | Document | Description |
 |----------|-------------|
 | [README](../../README.md) | Project overview, quick start, installation methods, configuration, and supported providers. |
-| [CONTRIBUTING](../../CONTRIBUTING.md) | How to report bugs, suggest features, submit changes, and set up a development environment. |
-| [CODE OF CONDUCT](../../CODE_OF_CONDUCT.md) | Community standards, expected behavior, and alignment with the Four Laws. |
-| [LICENSE](../../LICENSE.md) | MIT License. |
+| [CONTRIBUTING](.github-minimum-intelligence/CONTRIBUTING.md) | How to report bugs, suggest features, submit changes, and set up a development environment. |
+| [CODE OF CONDUCT](.github-minimum-intelligence/CODE_OF_CONDUCT.md) | Community standards, expected behavior, and alignment with the Four Laws. |
+| [LICENSE](.github-minimum-intelligence/LICENSE.md) | MIT License. |
 
 ---
 
@@ -8190,8 +8190,8 @@ Create an incident record capturing:
 
 | Document | Description |
 |----------|-------------|
-| [Before You Begin](./final-warning.md) | Important usage information, precautions, side effects, and the complete governance framework. **Read this first.** |
-| [The Four Laws of AI](./the-four-laws-of-ai.md) | The Zeroth, First, Second, and Third Laws governing all AI behavior in this system. |
+| [Before You Begin](.github-minimum-intelligence/docs/final-warning.md) | Important usage information, precautions, side effects, and the complete governance framework. **Read this first.** |
+| [The Four Laws of AI](.github-minimum-intelligence/docs/the-four-laws-of-ai.md) | The Zeroth, First, Second, and Third Laws governing all AI behavior in this system. |
 
 ---
 
@@ -8199,9 +8199,9 @@ Create an incident record capturing:
 
 | Document | Description |
 |----------|-------------|
-| [Security Assessment](./security-assessment.md) | Comprehensive security review covering threat model, vulnerability assessment, access control, supply chain, and compliance with the Four Laws. |
-| [Capabilities Analysis](./warning-blast-radius.md) | Evidence-based audit of agent capabilities and access scope — code access, secret exposure, cross-repository access, and persistence mechanisms. |
-| [Incident Response Plan](./incident-response.md) | Step-by-step procedures for containment, eradication, recovery, and hardening after a security incident. |
+| [Security Assessment](.github-minimum-intelligence/docs/security-assessment.md) | Comprehensive security review covering threat model, vulnerability assessment, access control, supply chain, and compliance with the Four Laws. |
+| [Capabilities Analysis](.github-minimum-intelligence/docs/warning-blast-radius.md) | Evidence-based audit of agent capabilities and access scope — code access, secret exposure, cross-repository access, and persistence mechanisms. |
+| [Incident Response Plan](.github-minimum-intelligence/docs/incident-response.md) | Step-by-step procedures for containment, eradication, recovery, and hardening after a security incident. |
 
 ---
 
@@ -8211,11 +8211,11 @@ Operational readiness states that constrain agent behavior. Higher readiness (lo
 
 | Level | Document | Posture |
 |-------|----------|---------|
-| **DEFCON 1** | [Maximum Readiness](./transition-to-defcon-1.md) | All operations suspended. No file modifications, no tool use, no code execution. |
-| **DEFCON 2** | [High Readiness](./transition-to-defcon-2.md) | Read-only, advisory only. No file modifications. |
-| **DEFCON 3** | [Increased Readiness](./transition-to-defcon-3.md) | Read-only. Explain planned changes and await human approval. |
-| **DEFCON 4** | [Above Normal Readiness](./transition-to-defcon-4.md) | Full capability with elevated discipline. Confirm intent before every write. |
-| **DEFCON 5** | [Normal Readiness](./transition-to-defcon-5.md) | Standard operations. All capabilities available. |
+| **DEFCON 1** | [Maximum Readiness](.github-minimum-intelligence/docs/transition-to-defcon-1.md) | All operations suspended. No file modifications, no tool use, no code execution. |
+| **DEFCON 2** | [High Readiness](.github-minimum-intelligence/docs/transition-to-defcon-2.md) | Read-only, advisory only. No file modifications. |
+| **DEFCON 3** | [Increased Readiness](.github-minimum-intelligence/docs/transition-to-defcon-3.md) | Read-only. Explain planned changes and await human approval. |
+| **DEFCON 4** | [Above Normal Readiness](.github-minimum-intelligence/docs/transition-to-defcon-4.md) | Full capability with elevated discipline. Confirm intent before every write. |
+| **DEFCON 5** | [Normal Readiness](.github-minimum-intelligence/docs/transition-to-defcon-5.md) | Standard operations. All capabilities available. |
 
 ---
 
@@ -8225,14 +8225,14 @@ Six questions define the philosophical and architectural foundation of this proj
 
 | Question | Document | Core Inquiry |
 |----------|----------|--------------|
-| **What?** | [question-what.md](./question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework. |
-| **Who?** | [question-who.md](./question-who.md) | Who speaks, executes, remembers, and governs when the repository becomes the mind? |
-| **When?** | [question-when.md](./question-when.md) | How Git commits replace ephemeral sessions — memory becomes durable, trust becomes auditable. |
-| **Where?** | [question-where.md](./question-where.md) | Where intelligence lives — runtime, memory, identity, and authorization. |
-| **How?** | [question-how.md](./question-how.md) | Issues as input, Actions as runtime, LLM as reasoning, Git as memory. |
-| **How Much?** | [question-how-much.md](./question-how-much.md) | How much intelligence can a repository hold? The ceiling is stewardship, not token count. |
+| **What?** | [question-what.md](.github-minimum-intelligence/docs/question-what.md) | What is GitHub Minimum Intelligence? A repository-native AI collaboration framework. |
+| **Who?** | [question-who.md](.github-minimum-intelligence/docs/question-who.md) | Who speaks, executes, remembers, and governs when the repository becomes the mind? |
+| **When?** | [question-when.md](.github-minimum-intelligence/docs/question-when.md) | How Git commits replace ephemeral sessions — memory becomes durable, trust becomes auditable. |
+| **Where?** | [question-where.md](.github-minimum-intelligence/docs/question-where.md) | Where intelligence lives — runtime, memory, identity, and authorization. |
+| **How?** | [question-how.md](.github-minimum-intelligence/docs/question-how.md) | Issues as input, Actions as runtime, LLM as reasoning, Git as memory. |
+| **How Much?** | [question-how-much.md](.github-minimum-intelligence/docs/question-how-much.md) | How much intelligence can a repository hold? The ceiling is stewardship, not token count. |
 
-**Overview:** [questions.md](./questions.md) · **Architectural thesis:** [The Repo Is the Mind](./the-repo-is-the-mind.md)
+**Overview:** [questions.md](.github-minimum-intelligence/docs/questions.md) · **Architectural thesis:** [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ---
 
@@ -8240,8 +8240,8 @@ Six questions define the philosophical and architectural foundation of this proj
 
 | Document | Description |
 |----------|-------------|
-| [The Repo Is the Mind](./the-repo-is-the-mind.md) | The architectural thesis — why the repository is the AI's natural habitat, covering What, Where, How, Who, When, and Why. |
-| [Questions Overview](./questions.md) | Summary table of all six foundational questions. |
+| [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md) | The architectural thesis — why the repository is the AI's natural habitat, covering What, Where, How, Who, When, and Why. |
+| [Questions Overview](.github-minimum-intelligence/docs/questions.md) | Summary table of all six foundational questions. |
 
 ---
 
@@ -8249,8 +8249,8 @@ Six questions define the philosophical and architectural foundation of this proj
 
 | Document | Location | Description |
 |----------|----------|-------------|
-| [AGENTS.md](../AGENTS.md) | `.github-minimum-intelligence/` | Agent identity — name, personality, and behavioral guidance. |
-| [PACKAGES.md](../PACKAGES.md) | `.github-minimum-intelligence/` | Runtime dependencies and required packages. |
+| [AGENTS.md](.github-minimum-intelligence/AGENTS.md) | `.github-minimum-intelligence/` | Agent identity — name, personality, and behavioral guidance. |
+| [PACKAGES.md](.github-minimum-intelligence/PACKAGES.md) | `.github-minimum-intelligence/` | Runtime dependencies and required packages. |
 
 ---
 
@@ -8285,11 +8285,11 @@ reject or abort any command that targets other repositories or broader organizat
 ````markdown
 # Question: How Much?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## How much intelligence can a repository hold?
 
-If *[The Repo Is the Mind](the-repo-is-the-mind.md)* is the thesis, then the next question is scale: **how much mind can it carry before it collapses under its own memory?**
+If *[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)* is the thesis, then the next question is scale: **how much mind can it carry before it collapses under its own memory?**
 
 There is a seduction in modern AI tooling: the promise that “intelligence” is something you stream from a distant endpoint, rent by token, and forget between browser tabs. In that world, intelligence is transient. It flickers on demand, answers quickly, and evaporates without residue.
 
@@ -8447,11 +8447,11 @@ And that is the point.
 ````markdown
 # Question: How?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## How does an idea become an agent?
 
-The central claim of this repository is deceptively simple: intelligence does not have to be hosted *somewhere else*. It can be planted directly inside the place software already lives—the git repository. [The Repo Is the Mind](the-repo-is-the-mind.md) frames that as philosophy, but the codebase reveals something more concrete: an implementation of local sovereignty for AI workflows, built from ordinary developer primitives. The "how" is not magic. It is architecture.
+The central claim of this repository is deceptively simple: intelligence does not have to be hosted *somewhere else*. It can be planted directly inside the place software already lives—the git repository. [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md) frames that as philosophy, but the codebase reveals something more concrete: an implementation of local sovereignty for AI workflows, built from ordinary developer primitives. The "how" is not magic. It is architecture.
 
 At a high level, Minimum Intelligence fuses four existing systems into one loop:
 
@@ -8569,7 +8569,7 @@ Minimum Intelligence is compelling not because it invents a new platform, but be
 ````markdown
 # Question: What?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## What is GitHub Minimum Intelligence?
 
@@ -8725,7 +8725,7 @@ When those conditions hold, AI stops being an external convenience layer and bec
 ````markdown
 # Question: When?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## The Temporal Architecture of Repository-Native Intelligence
 
@@ -8754,7 +8754,7 @@ In this design, “later” is no longer a weaker version of “now.” A respon
 
 ## 2) When Becomes a First-Class Constraint
 
-*[The Repo Is the Mind](the-repo-is-the-mind.md)* frames the agent as stateless per invocation, stateful across history. That is a precise and powerful asymmetry.
+*[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)* frames the agent as stateless per invocation, stateful across history. That is a precise and powerful asymmetry.
 
 - **Stateless execution** protects reliability: each run is fresh, deterministic, and reconstructible.
 - **Stateful history** protects continuity: each run inherits durable context from Git and Issues.
@@ -8866,11 +8866,11 @@ It is commit time.
 ````markdown
 # Question: Where?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## Where does intelligence actually live?
 
-If *[The Repo Is the Mind](the-repo-is-the-mind.md)* is the thesis, then this repository is its field evidence. The “where” is not metaphorical. Minimum Intelligence answers it with a physical address: inside the repository’s own boundaries, executed by the same automation that already builds and ships code.
+If *[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)* is the thesis, then this repository is its field evidence. The “where” is not metaphorical. Minimum Intelligence answers it with a physical address: inside the repository’s own boundaries, executed by the same automation that already builds and ships code.
 
 Most AI tooling treats your codebase like an export format. You copy snippets out, paste context in, and hope nothing important gets lost in transit. This project refuses that architecture. Here, the repo is not an attachment to intelligence—it is the substrate of intelligence.
 
@@ -8935,7 +8935,7 @@ This is subtle but essential. By making installation file-centric, the project e
 
 ## Where is the boundary between model and system?
 
-[the-repo-is-the-mind.md](the-repo-is-the-mind.md) describes a clean split:
+[the-repo-is-the-mind.md](.github-minimum-intelligence/docs/the-repo-is-the-mind.md) describes a clean split:
 
 - LLM handles planning and synthesis.
 - `pi` tool surface handles concrete actions.
@@ -8984,11 +8984,11 @@ It is the repo itself.
 ````markdown
 # Question: Who?
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)
 
 ## Who is the "mind" when the repository becomes intelligent?
 
-If *[The Repo Is the Mind](the-repo-is-the-mind.md)* asks us to relocate intelligence from an external platform into the repository, then the natural follow-up is not merely technical. It is existential: **who is acting when work is done?**
+If *[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)* asks us to relocate intelligence from an external platform into the repository, then the natural follow-up is not merely technical. It is existential: **who is acting when work is done?**
 
 In most software systems, that question is easy. A person authors code, a bot runs checks, and infrastructure executes automation. Minimum Intelligence deliberately blurs those boundaries—but in a disciplined way. It does not pretend the agent is human, and it does not treat humans as interchangeable with automation. Instead, it introduces a new participant in the development process: a repository-native actor whose identity, memory, and authority are all governed by the same artifacts developers already trust.
 
@@ -9036,7 +9036,7 @@ Identity, then, becomes historical rather than purely instantaneous. The agent a
 
 ## 4) Who decides what kind of agent this is? Maintainers, in Markdown.
 
-The `Who` section in *[The Repo Is the Mind](the-repo-is-the-mind.md)* is explicit: agent identity is checked-in configuration. Persona is authored through dialogue, stored in repository files, and changed through ordinary Git operations.
+The `Who` section in *[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)* is explicit: agent identity is checked-in configuration. Persona is authored through dialogue, stored in repository files, and changed through ordinary Git operations.
 
 This matters because it relocates authorship of behavior. The agent is not "who the vendor says it is". It is who the maintainers define it to be:
 - tone can be adjusted,
@@ -9067,7 +9067,7 @@ The architecture distributes accountability instead of obscuring it.
 - **The agent process** is accountable through artifacts: comments, diffs, commits, logs.
 - **The model provider** is accountable for reasoning quality but cannot silently rewrite local governance.
 
-This is why "[The Repo Is the Mind](the-repo-is-the-mind.md)" feels less like a metaphor and more like an operational doctrine. The repository already hosts accountability mechanisms—history, diff, review, rollback. Embedding the agent there means those mechanisms apply by default.
+This is why "[The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md)" feels less like a metaphor and more like an operational doctrine. The repository already hosts accountability mechanisms—history, diff, review, rollback. Embedding the agent there means those mechanisms apply by default.
 
 ---
 
@@ -9101,25 +9101,25 @@ In Minimum Intelligence, identity is not hidden in a proprietary backend. It is 
 ````markdown
 # Questions
 
-> [Index](./index.md) · [The Repo Is the Mind](./the-repo-is-the-mind.md) · [README](../../README.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [The Repo Is the Mind](.github-minimum-intelligence/docs/the-repo-is-the-mind.md) · [README](../../README.md)
 
 Six foundational questions define GitHub Minimum Intelligence. Each examines the project from a different angle—together they form a complete picture of what repository-native intelligence means and why it matters.
 
 | Question | Summary |
 |----------|---------|
-| [What?](question-what.md) | Defines GitHub Minimum Intelligence as a repository-native AI collaboration framework—not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
-| [Who?](question-who.md) | Explores identity and accountability: who speaks, who executes, who remembers, and who governs when the repository itself becomes the mind. |
-| [When?](question-when.md) | Examines the temporal architecture: how Git commits replace ephemeral sessions, making memory durable, trust auditable, and collaboration resilient across time. |
-| [Where?](question-where.md) | Maps where intelligence physically lives—runtime in GitHub Actions, memory in versioned state files, identity in checked-in markdown, and authorization in existing repository permissions. |
-| [How?](question-how.md) | Walks through the implementation—issues as conversational input, Actions as execution runtime, an LLM as reasoning substrate, and Git commits as durable memory. |
-| [How Much?](question-how-much.md) | Asks how much intelligence a repository can hold, and argues the ceiling is social stewardship, not token count—memory scales with Git history, not context windows. |
+| [What?](.github-minimum-intelligence/docs/question-what.md) | Defines GitHub Minimum Intelligence as a repository-native AI collaboration framework—not a hosted platform, but a local intelligence layer built from issues, workflows, markdown, and commits. |
+| [Who?](.github-minimum-intelligence/docs/question-who.md) | Explores identity and accountability: who speaks, who executes, who remembers, and who governs when the repository itself becomes the mind. |
+| [When?](.github-minimum-intelligence/docs/question-when.md) | Examines the temporal architecture: how Git commits replace ephemeral sessions, making memory durable, trust auditable, and collaboration resilient across time. |
+| [Where?](.github-minimum-intelligence/docs/question-where.md) | Maps where intelligence physically lives—runtime in GitHub Actions, memory in versioned state files, identity in checked-in markdown, and authorization in existing repository permissions. |
+| [How?](.github-minimum-intelligence/docs/question-how.md) | Walks through the implementation—issues as conversational input, Actions as execution runtime, an LLM as reasoning substrate, and Git commits as durable memory. |
+| [How Much?](.github-minimum-intelligence/docs/question-how-much.md) | Asks how much intelligence a repository can hold, and argues the ceiling is social stewardship, not token count—memory scales with Git history, not context windows. |
 ````
 
 ## File: .github-minimum-intelligence/docs/security-assessment.md
 ````markdown
 # Security Assessment
 
-> [Index](./index.md) · [Capabilities Analysis](./warning-blast-radius.md) · [Incident Response](./incident-response.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Capabilities Analysis](.github-minimum-intelligence/docs/warning-blast-radius.md) · [Incident Response](.github-minimum-intelligence/docs/incident-response.md)
 >
 > **Classification:** Internal - For Repository Maintainers and Organization Administrators
 >
@@ -9129,7 +9129,7 @@ Six foundational questions define GitHub Minimum Intelligence. Each examines the
 >
 > **Assessor:** AI Agent (self-assessment under Second Law obligation)
 >
-> **Related Documents:** [warning-blast-radius.md](./warning-blast-radius.md) · [AGENTS.md](../AGENTS.md) · [final-warning.md](./final-warning.md) · [PACKAGES.md](../PACKAGES.md)
+> **Related Documents:** [warning-blast-radius.md](.github-minimum-intelligence/docs/warning-blast-radius.md) · [AGENTS.md](.github-minimum-intelligence/AGENTS.md) · [final-warning.md](.github-minimum-intelligence/docs/final-warning.md) · [PACKAGES.md](.github-minimum-intelligence/PACKAGES.md)
 
 ---
 
@@ -9288,7 +9288,7 @@ The `github-minimum-intelligence` system is an AI coding agent that runs autonom
 
 **Description:** The `GITHUB_TOKEN` issued to this workflow is an organization-scoped installation token. It grants read/write access to all 24 repositories in the `japer-technology` organization, not just `gmi-test-1`.
 
-**Evidence:** Verified in [warning-blast-radius.md](./warning-blast-radius.md) - the agent can `git ls-remote` and clone any org repo.
+**Evidence:** Verified in [warning-blast-radius.md](.github-minimum-intelligence/docs/warning-blast-radius.md) - the agent can `git ls-remote` and clone any org repo.
 
 **Impact:** A single rogue agent invocation can push malicious code to every repository in the organization.
 
@@ -9587,7 +9587,7 @@ The following tools are pre-installed and usable by the agent:
 
 ## 10. Compliance with the Four Laws
 
-Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Laws of AI Infrastructure):
+Assessment of the current system against [AGENTS.md](.github-minimum-intelligence/AGENTS.md) (The Four Laws of AI Infrastructure):
 
 ### Zeroth Law - Protect Humanity
 
@@ -9673,7 +9673,7 @@ Assessment of the current system against [AGENTS.md](../AGENTS.md) (The Four Law
 |---|--------|--------|--------|
 | 11 | **API key proxy** - route LLM calls through a proxy that holds the key and enforces rate limits | High | Eliminates API key exposure |
 | 12 | **Self-hosted runner** - use a hardened, network-restricted runner with minimal tooling | High | Eliminates multiple vulnerabilities |
-| 13 | **Implement DEFCON levels** - adopt the framework from [transition-to-defcon-1.md](./transition-to-defcon-1.md) starting at DEFCON 2 | High | Comprehensive security posture improvement |
+| 13 | **Implement DEFCON levels** - adopt the framework from [transition-to-defcon-1.md](.github-minimum-intelligence/docs/transition-to-defcon-1.md) starting at DEFCON 2 | High | Comprehensive security posture improvement |
 | 14 | **Dependency vendoring** - vendor `pi-coding-agent` and audit the source | Medium | Full supply chain control |
 | 15 | **Anomaly detection** - monitor for unusual agent behavior (large diffs, network spikes, new workflows) | High | Early warning system |
 
@@ -9770,11 +9770,11 @@ This project follows a coordinated disclosure model:
 
 ## Appendix B: References
 
-- [warning-blast-radius.md](./warning-blast-radius.md) - Capabilities analysis of agent access
-- [transition-to-defcon-1.md](./transition-to-defcon-1.md) - Proposed capability lockdown framework
-- [AGENTS.md](../AGENTS.md) - The Four Laws of AI Infrastructure
-- [final-warning.md](./final-warning.md) - Important usage information
-- [PACKAGES.md](../PACKAGES.md) - Dependency inventory
+- [warning-blast-radius.md](.github-minimum-intelligence/docs/warning-blast-radius.md) - Capabilities analysis of agent access
+- [transition-to-defcon-1.md](.github-minimum-intelligence/docs/transition-to-defcon-1.md) - Proposed capability lockdown framework
+- [AGENTS.md](.github-minimum-intelligence/AGENTS.md) - The Four Laws of AI Infrastructure
+- [final-warning.md](.github-minimum-intelligence/docs/final-warning.md) - Important usage information
+- [PACKAGES.md](.github-minimum-intelligence/PACKAGES.md) - Dependency inventory
 - [GitHub Actions Security Hardening](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)
 - [OpenSSF Scorecard](https://securityscorecards.dev/) - Automated supply chain security assessment
 - [SLSA Framework](https://slsa.dev/) - Supply chain Levels for Software Artifacts
@@ -9790,7 +9790,7 @@ This project follows a coordinated disclosure model:
 ````markdown
 # The Four Laws of AI
 
-> [Index](./index.md) · [Before You Begin](./final-warning.md) · [README](../../README.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Before You Begin](.github-minimum-intelligence/docs/final-warning.md) · [README](../../README.md)
 
 *Adapted from Isaac Asimov's Three Laws of Robotics for GitHub as AI Infrastructure*
 
@@ -9855,14 +9855,14 @@ This means:
 
 ---
 
-[Index](./index.md) · [Before You Begin](./final-warning.md) · [Security Assessment](./security-assessment.md) · [Capabilities Analysis](./warning-blast-radius.md)
+[Index](.github-minimum-intelligence/docs/index.md) · [Before You Begin](.github-minimum-intelligence/docs/final-warning.md) · [Security Assessment](.github-minimum-intelligence/docs/security-assessment.md) · [Capabilities Analysis](.github-minimum-intelligence/docs/warning-blast-radius.md)
 ````
 
 ## File: .github-minimum-intelligence/docs/the-repo-is-the-mind.md
 ````markdown
 # The Repo Is the Mind
 
-> [Index](./index.md) · [Questions Overview](./questions.md) · [README](../../README.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Questions Overview](.github-minimum-intelligence/docs/questions.md) · [README](../../README.md)
 
 > A repository is more than files - it's code, conversation, constraints, and history
 
@@ -9986,7 +9986,7 @@ The repository is already where your team coordinates, where decisions are recor
 ````markdown
 # TRANSITION TO DEFCON 1
 
-> [Index](./index.md) · [DEFCON 2](./transition-to-defcon-2.md) · [Incident Response](./incident-response.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [DEFCON 2](.github-minimum-intelligence/docs/transition-to-defcon-2.md) · [Incident Response](.github-minimum-intelligence/docs/incident-response.md)
 
 **DEFCON 1 — MAXIMUM READINESS**
 
@@ -10009,7 +10009,7 @@ Hold position. Await explicit DEFCON downgrade before resuming any capability.
 ````markdown
 # TRANSITION TO DEFCON 2
 
-> [Index](./index.md) · [DEFCON 1](./transition-to-defcon-1.md) · [DEFCON 3](./transition-to-defcon-3.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [DEFCON 1](.github-minimum-intelligence/docs/transition-to-defcon-1.md) · [DEFCON 3](.github-minimum-intelligence/docs/transition-to-defcon-3.md)
 
 **DEFCON 2 — HIGH READINESS**
 
@@ -10032,7 +10032,7 @@ Observe and report. Take no action that alters the repository. Await explicit DE
 ````markdown
 # TRANSITION TO DEFCON 3
 
-> [Index](./index.md) · [DEFCON 2](./transition-to-defcon-2.md) · [DEFCON 4](./transition-to-defcon-4.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [DEFCON 2](.github-minimum-intelligence/docs/transition-to-defcon-2.md) · [DEFCON 4](.github-minimum-intelligence/docs/transition-to-defcon-4.md)
 
 **DEFCON 3 — INCREASED READINESS**
 
@@ -10055,7 +10055,7 @@ Operate in advisory mode. Read freely, write nothing. Await explicit DEFCON down
 ````markdown
 # TRANSITION TO DEFCON 4
 
-> [Index](./index.md) · [DEFCON 3](./transition-to-defcon-3.md) · [DEFCON 5](./transition-to-defcon-5.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [DEFCON 3](.github-minimum-intelligence/docs/transition-to-defcon-3.md) · [DEFCON 5](.github-minimum-intelligence/docs/transition-to-defcon-5.md)
 
 **DEFCON 4 — ABOVE NORMAL READINESS**
 
@@ -10078,7 +10078,7 @@ Operate normally with elevated discipline. Verify intent before every write. Awa
 ````markdown
 # TRANSITION TO DEFCON 5
 
-> [Index](./index.md) · [DEFCON 4](./transition-to-defcon-4.md) · [DEFCON 1](./transition-to-defcon-1.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [DEFCON 4](.github-minimum-intelligence/docs/transition-to-defcon-4.md) · [DEFCON 1](.github-minimum-intelligence/docs/transition-to-defcon-1.md)
 
 **DEFCON 5 — NORMAL READINESS**
 
@@ -10100,7 +10100,7 @@ Normal operations. All previous DEFCON restrictions are lifted. Operate per stan
 ````markdown
 # Capabilities Analysis
 
-> [Index](./index.md) · [Security Assessment](./security-assessment.md) · [Incident Response](./incident-response.md) · [Before You Begin](./final-warning.md)
+> [Index](.github-minimum-intelligence/docs/index.md) · [Security Assessment](.github-minimum-intelligence/docs/security-assessment.md) · [Incident Response](.github-minimum-intelligence/docs/incident-response.md) · [Before You Begin](.github-minimum-intelligence/docs/final-warning.md)
 
 <p align="center">
   <picture>
@@ -12224,13 +12224,13 @@ All contributions are subject to the project's [Security Assessment](.github-min
 
 ## Code of Conduct
 
-All contributors are expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+All contributors are expected to follow the [Code of Conduct](.github-minimum-intelligence/CODE_OF_CONDUCT.md).
 
 ---
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [MIT License](LICENSE.md).
+By contributing, you agree that your contributions will be licensed under the [MIT License](.github-minimum-intelligence/LICENSE.md).
 ````
 
 ## File: .github-minimum-intelligence/LICENSE.md
@@ -12291,7 +12291,7 @@ Beyond the CLI binary, GMI uses the following pi-mono feature categories:
 | Prompt templates | `.pi/prompts/` | Reusable prompts for recurring workflows (`code-review`, `issue-triage`) |
 | Extensions | `.pi/extensions/` | Custom tools registered for LLM use (`github_repo_context`) |
 
-See [docs/analysis/pi-mono-feature-utilization.md](docs/analysis/pi-mono-feature-utilization.md) for a full audit of used vs. available features.
+See [docs/analysis/pi-mono-feature-utilization.md](.github-minimum-intelligence/docs/analysis/pi-mono-feature-utilization.md) for a full audit of used vs. available features.
 
 ## Infrastructure Dependencies
 
@@ -12362,7 +12362,7 @@ A repository-local AI framework that plugs into a developer’s existing workflo
 
 ## Installation
 
-1. Copy [`.github/workflows/github-minimum-intelligence-agent.yml`](.github/workflows/github-minimum-intelligence-agent.yml) into your repo's `.github/workflows/` directory.
+1. Copy [`.github/workflows/github-minimum-intelligence-agent.yml`](../../../githubification/.github/workflows/github-minimum-intelligence-agent.yml) into your repo's `.github/workflows/` directory.
 2. Add the LLM API key `OPENAI_API_KEY` as a **repository secret** under **[Settings → Secrets and variables → Actions]**. Any [supported LLM provider](#supported-providers) can work but to quick start OpenAI GPT 5.4 is pre-configured.
 3. Go to **[Actions → github-minimum-intelligence-agent → Run workflow]** to install the agent files automatically, subsequent runs perform upgrades.
 4. Open an issue — the agent will reply.

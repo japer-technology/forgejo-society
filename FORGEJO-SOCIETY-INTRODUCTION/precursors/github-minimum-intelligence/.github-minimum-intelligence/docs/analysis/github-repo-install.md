@@ -176,7 +176,7 @@ curl -fsSL https://raw.githubusercontent.com/japer-technology/github-minimum-int
 
 The script detects the existing installation, compares version numbers (from `.github-minimum-intelligence/VERSION`), backs up user customisations (`AGENTS.md`, `.pi/`, `state/`), replaces framework files, and restores the backups.
 
-See [How to Install and Update](how-to-install-and-update.md) for the full upgrade procedure and preservation table.
+See [How to Install and Update](../../../../github-intelligence-overwatch/repo/github-minimum-intelligence/.github-minimum-intelligence/docs/analysis/how-to-install-and-update.md) for the full upgrade procedure and preservation table.
 
 ---
 

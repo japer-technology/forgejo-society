@@ -23,7 +23,7 @@ paths in [Suggested reading order](#suggested-reading-order) below.
 For the operational, command-level installation guide, see
 [`FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md).
 For the formal specification of the mind, see
-[`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md).
+[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md).
 
 ---
 
@@ -59,7 +59,7 @@ The project starts from three convictions:
    runs on Ubuntu hardware that the maintainers physically own. GitHub is
    used only as a development environment and as one of several mirrors; the
    production runtime target is always self-hosted Forgejo. See
-   [`../github-compliance.md`](../github-compliance.md) for the full posture.
+   [`../github-compliance.md`](warning/github-compliance.md) for the full posture.
 
 2. **Auditability.** Every thought a society has should leave a trace. In a
    forge, every activation, every proposal, every critic decision, and every
@@ -70,9 +70,9 @@ The project starts from three convictions:
    Mind*, intelligence here is not a monolith. It is a society of small,
    specialised agencies that argue, defer, inhibit, and cooperate under
    explicit governance. See
-   [`../THE-SOCIETY-OF-MIND/README.md`](../THE-SOCIETY-OF-MIND/README.md)
+   [`../THE-SOCIETY-OF-MIND/README.md`](THE-SOCIETY-OF-MIND/README.md)
    for the theoretical foundation, and
-   [`../THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
+   [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    for how that theory is mapped onto the forge.
 
 ## The cognitive arc
@@ -104,10 +104,10 @@ directory is the doorway; the others are the rooms it opens onto.
   Ubuntu, the Forgejo forge, runners, and the LLM server up from clean
   hardware to a fully running cognitive ecology. Careful setup is critical
   to everything else working.
-- **[`../THE-SOCIETY-OF-MIND/`](../THE-SOCIETY-OF-MIND/README.md)** — the
+- **[`../THE-SOCIETY-OF-MIND/`](THE-SOCIETY-OF-MIND/README.md)** — the
   theoretical foundation, derived from Minsky's *Society of Mind*, with a
   crosswalk into this project's vocabulary.
-- **[`../THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md)** — the
+- **[`../THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md)** — the
   formal specification: governance, protocols, agencies, critics, censors,
   memory, and workspace that turn the forge into a governed mind.
 - **[`../FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md)** — the
@@ -117,7 +117,7 @@ directory is the doorway; the others are the rooms it opens onto.
 - **[`../FORGEJO-SOCIETY/forgejo-intelligence/`](../FORGEJO-SOCIETY/forgejo-intelligence/)** —
   the runnable Forgejo runtime surface: surface handlers, coordinators, agent
   engines, tests, and runtime state.
-- **[`../FORGEJO-SOCIETY-PRECURSOR/`](../FORGEJO-SOCIETY-PRECURSOR/)** —
+- **[`./precursors/`](./precursors/)** —
   earlier and sibling experiments being converted from a GitHub-runtime
   design to a Forgejo-runtime design.
 - **[`../FORGEJO-SOCIETY-THE-FEDERATION/`](../FORGEJO-SOCIETY-THE-FEDERATION/)**
@@ -175,8 +175,8 @@ If you have ten minutes:
 
 If you have an hour:
 
-3. [`../THE-SOCIETY-OF-MIND/README.md`](../THE-SOCIETY-OF-MIND/README.md).
-4. [`../THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md).
+3. [`../THE-SOCIETY-OF-MIND/README.md`](THE-SOCIETY-OF-MIND/README.md).
+4. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md).
 5. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md).
 
 When you are ready to actually run it:

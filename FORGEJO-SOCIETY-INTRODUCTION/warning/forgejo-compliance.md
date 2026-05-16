@@ -7,8 +7,8 @@ is its production runtime, not a mirror.** The forge, the runners, the
 agent lifecycle, the LLM server, the storage, and the public surface are
 all designed to run inside a self-hosted [Forgejo](https://forgejo.org/)
 installation on Ubuntu hardware owned and operated by the project
-maintainers (see [`README.md`](README.md) and
-[`FORGEJO-SOCIETY-SETUP/`](FORGEJO-SOCIETY-SETUP/)).
+maintainers (see [`README.md`](../README.md) and
+[`FORGEJO-SOCIETY-SETUP/`](../../FORGEJO-SOCIETY-SETUP/)).
 
 The relationship between the project and the wider Forgejo ecosystem is
 therefore split across three distinct kinds of host:
@@ -22,7 +22,7 @@ therefore split across three distinct kinds of host:
   / network rules at the operator's site.
 - **A shared public Forgejo instance, primarily
   [Codeberg](https://codeberg.org/), used as a federation mirror.** See
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md).
+  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md).
   On Codeberg, the project is bound by the
   [Codeberg Terms of Use][codeberg-tos] and the
   [Codeberg "What Codeberg is not"][codeberg-not] policy in addition to
@@ -34,9 +34,9 @@ therefore split across three distinct kinds of host:
 Nothing in this repository is intended to use a *shared* Forgejo instance
 (Codeberg, or anyone else's public Forgejo) as a free general-purpose
 compute, storage, or hosting backend. The cognitive ecology described in
-[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/),
-[`FORGEJO-SOCIETY-PLAN/`](FORGEJO-SOCIETY-PLAN/), and
-[`THE-REPO-IS-THE-MIND/`](THE-REPO-IS-THE-MIND/) is designed to live
+[`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/),
+[`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/), and
+[`THE-REPO-IS-THE-MIND/`](../THE-REPO-IS-THE-MIND/) is designed to live
 inside the maintainers' own Forgejo, with shared instances treated only
 as read-mostly mirrors of source code.
 
@@ -50,7 +50,7 @@ addresses explicitly:
 1. **The Forgejo source licence (GPLv3+).** The project does not modify
    and redistribute Forgejo itself; it consumes upstream Forgejo
    binaries / packages and runs its own code (under
-   [`FORGEJO-SOCIETY/forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/)
+   [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/)
    and elsewhere) on top. The project's own code is published under the
    licence(s) declared in its source tree and inherits no GPL obligation
    from being co-located with Forgejo on the same host.
@@ -81,16 +81,16 @@ This project's posture aligns with all three layers as follows:
 ## Specific subprojects: `FORGEJO-SOCIETY/forgejo-intelligence/` and `FORGEJO-SOCIETY-PRECURSOR/`
 
 The directory
-[`FORGEJO-SOCIETY/forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/)
+[`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/)
 holds the runnable Forgejo runtime — including the workflows under
-[`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/`](FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/)
+[`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/`](../../FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/)
 and the agent payload under
-[`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/).
+[`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/.forgejo-intelligence/).
 These are the workflows that *are intended* to run as a service, and they
 are intended to run only on the maintainers' self-hosted Forgejo
 instance, with self-hosted Forgejo Runners.
 
-The directory [`FORGEJO-SOCIETY-PRECURSOR/`](FORGEJO-SOCIETY-PRECURSOR/)
+The directory [`../precursors/`](../precursors/)
 contains the earlier github.com-targeted incarnations of the same agent
 (under `**/.github/workflows/`). Those are **historical artefacts being
 migrated**; their compliance posture is governed by
@@ -103,7 +103,7 @@ on the self-hosted instance and **source under development** everywhere
 else:
 
 - On the maintainers' Forgejo: the workflows under
-  [`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/`](FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/)
+  [`FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/`](../../FORGEJO-SOCIETY/forgejo-intelligence/.forgejo/workflows/)
   may be enabled with secrets wired up, because the maintainers own the
   runners, the bandwidth, the LLM credentials, and the policy.
 - On Codeberg or any other shared Forgejo: those same workflows are

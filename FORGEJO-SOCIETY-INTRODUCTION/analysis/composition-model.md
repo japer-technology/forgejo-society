@@ -6,7 +6,7 @@
 This note fixes the vocabulary that the rest of the project uses when it
 talks about *what is created*, *what is dropped in*, and *what is governed*.
 It is deliberately short. The protocol detail lives in
-[`../../THE-SOCIETY-OF-REPO/02-protocols/`](../../THE-SOCIETY-OF-REPO/02-protocols/);
+[`../../THE-SOCIETY-OF-REPO/02-protocols/`](../THE-SOCIETY-OF-REPO/02-protocols/);
 this file just nails down the layering and the words.
 
 ---
@@ -45,7 +45,7 @@ kinds, and the distinction is structural:
 - **Intelligent repo** — has an Intelligence installed (see below). It
   participates in the cognitive loop: it can perceive stimuli, propose,
   criticise, remember, and settle. It is an *agency* in the sense of
-  [`../../THE-SOCIETY-OF-REPO/idea.md`](../../THE-SOCIETY-OF-REPO/idea.md).
+  [`../../THE-SOCIETY-OF-REPO/idea.md`](../THE-SOCIETY-OF-REPO/idea.md).
 - **Plain repo** — has no Intelligence installed. It exists only to *hold
   code*, *start*, *run*, and *stop*. It is governed by its owning Mind, but
   it does not think. Most repos in a healthy Society are plain repos; this
@@ -124,7 +124,7 @@ other; this is a deliberate, recorded act, not a flag.
 
 To remove ambiguity in the rest of the project, the four nouns map to four
 ID prefixes (consistent with
-[`../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)):
+[`../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)):
 
 | Noun | What it is | ID prefix | Created by |
 | --- | --- | --- | --- |

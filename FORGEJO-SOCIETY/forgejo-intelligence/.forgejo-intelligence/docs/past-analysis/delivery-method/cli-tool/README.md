@@ -339,7 +339,7 @@ npx @japer-technology/gitclaw init
 - **Requires Node.js or Bun** — The CLI needs a JavaScript runtime installed on the developer's machine. This is the same requirement as the current installer.
 - **Not a one-click experience** — Still requires opening a terminal and running a command. Less accessible than a GitHub App or template.
 - **npm dependency** — Adds a dependency on the npm registry (or GitHub Packages). If the registry is down, `npx` won't work.
-- **No GUI** — Purely terminal-based. Developers who prefer visual interfaces should use the [GitHub Pages portal](./github-pages-self-service-portal.md) or [third-party website](./third-party-website.md).
+- **No GUI** — Purely terminal-based. Developers who prefer visual interfaces should use the [GitHub Pages portal](../github-pages-self-service-portal/README.md) or [third-party website](../third-party-website/README.md).
 - **Package maintenance** — The npm package must be kept in sync with gitclaw releases. This is an additional release step.
 
 ---
@@ -369,18 +369,18 @@ This method is ideal when:
 
 Consider a different delivery method when:
 
-- Your users are **not comfortable with the terminal** (consider a [GitHub App](./github-application.md) or [template repository](./github-template-repository.md)).
-- You need a **zero-install, browser-only** experience (consider [GitHub Pages portal](./github-pages-self-service-portal.md)).
-- You want **automatic updates** without any user action (consider a [GitHub App](./github-application.md)).
+- Your users are **not comfortable with the terminal** (consider a [GitHub App](../github-application/README.md) or [template repository](../github-template-repository/README.md)).
+- You need a **zero-install, browser-only** experience (consider [GitHub Pages portal](../github-pages-self-service-portal/README.md)).
+- You want **automatic updates** without any user action (consider a [GitHub App](../github-application/README.md)).
 
 ---
 
 ## Related Methods
 
-- [Fork / Import + Installer](./fork-import-installer.md) — The manual process this CLI automates.
-- [Package Registry](./package-registry.md) — Uses npm as a distribution channel, but as a dependency rather than a CLI.
-- [GitHub Marketplace Action](./github-marketplace-action.md) — Similar automation, but runs in GitHub Actions instead of locally.
-- [GitHub Pages Portal](./github-pages-self-service-portal.md) — A visual alternative that could generate CLI commands.
+- [Fork / Import + Installer](../fork-import-installer/README.md) — The manual process this CLI automates.
+- [Package Registry](../package-registry/README.md) — Uses npm as a distribution channel, but as a dependency rather than a CLI.
+- [GitHub Marketplace Action](../github-marketplace-action/README.md) — Similar automation, but runs in GitHub Actions instead of locally.
+- [GitHub Pages Portal](../github-pages-self-service-portal/README.md) — A visual alternative that could generate CLI commands.
 
 ---
 

@@ -71,7 +71,7 @@ auditable cognitive ecology.
 - **Runners and workflows** — the operational substrate that activates
   the society.
 
-<sub>Definitions: [`THE-SOCIETY-OF-REPO/`](../../THE-SOCIETY-OF-REPO/README.md).</sub>
+<sub>Definitions: [`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).</sub>
 
 ---
 
@@ -83,7 +83,7 @@ human or agency — holds one of six levels:
 `read` · `draft` · `propose` · `act` · `govern` · `human`
 
 <sub>Source:
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).</sub>
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).</sub>
 
 ---
 
@@ -105,7 +105,7 @@ compliance set referenced from it.</sub>
 - **Overview** — [root `README.md`](../../README.md)
 - **Compliance posture** — [`WARNING.md`](../../WARNING.md)
 - **Specification** —
-  [`THE-SOCIETY-OF-REPO/`](../../THE-SOCIETY-OF-REPO/README.md)
+  [`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md)
 - **Introduction essays** —
   [`FORGEJO-SOCIETY-INTRODUCTION/`](../../FORGEJO-SOCIETY-INTRODUCTION/README.md)
 - **Plan** — [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md)

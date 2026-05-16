@@ -6,7 +6,7 @@
 The Society of Repo (SOR) draws openly on Marvin Minsky's *Society of Mind*
 (1986) and *The Emotion Machine* (1988), and on the 2025 "Society of Minds"
 research the project's own
-[research crosswalk](../../THE-SOCIETY-OF-REPO/00-foundations/07-research-crosswalk.md)
+[research crosswalk](../THE-SOCIETY-OF-REPO/00-foundations/07-research-crosswalk.md)
 cites. Most of the cognitive vocabulary — agents, frames, K-lines, critics,
 censors, hierarchy, insulation, analogy, credit assignment, introspection,
 representation primitives, the A-brain / B-brain split — is **not** new. SOR's
@@ -39,7 +39,7 @@ repos          → agencies and organs
 the forge      → the mind
 ```
 
-(See [`THE-SOCIETY-OF-REPO/README.md`](../../THE-SOCIETY-OF-REPO/README.md)
+(See [`THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
 lines 115–125.)
 
 Minsky's society of mind is substrate-neutral; he never specifies *where* the
@@ -60,7 +60,7 @@ A repository in SOR is not a folder of files, an autonomous agent, or an
 `requires_approval_for` list, model policy, declared `outputs`, and
 `evaluation` metrics, expressed as YAML inside the repo itself.
 
-(See [`THE-SOCIETY-OF-REPO/idea.md`](../../THE-SOCIETY-OF-REPO/idea.md)
+(See [`THE-SOCIETY-OF-REPO/idea.md`](../THE-SOCIETY-OF-REPO/idea.md)
 lines 363–404.)
 
 The novel claim is that an AI agent only earns the right to act because a
@@ -85,7 +85,7 @@ unit of cognition is the **settlement**: an immutable YAML record that names
 - and the memory updates that resulted.
 
 (See
-[`THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md`](../../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md`](../THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md)
 lines 47–80.)
 
 Minsky describes how decisions emerge from competing agencies; he does not
@@ -136,8 +136,8 @@ Channel between two SORs is not a REST call; it is a contract carrying:
 - and a reputation update fed back into a public ledger.
 
 (See
-[`THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md`](../../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
-and [`THE-SOCIETY-OF-REPO/idea.md`](../../THE-SOCIETY-OF-REPO/idea.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md`](../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
+and [`THE-SOCIETY-OF-REPO/idea.md`](../THE-SOCIETY-OF-REPO/idea.md)
 lines 559–705.)
 
 The reciprocal-credit barter mechanism is original: two SORs may grant each
@@ -152,7 +152,7 @@ SOR proposes a six-rung ladder — **Storage, Memory, Agency, Society,
 Reflective learning society, Networked society, Economic society** — and
 explicitly warns that *network reach and commercial sophistication do not by
 themselves imply deeper cognition*. (See
-[`THE-SOCIETY-OF-REPO/README.md`](../../THE-SOCIETY-OF-REPO/README.md)
+[`THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md)
 lines 261–273.)
 
 Capability-maturity ladders exist for software processes (CMM, DevOps),
@@ -164,7 +164,7 @@ This ladder is original to SOR.
 
 SOR pins authority to exactly six levels: **read, draft, propose, act,
 govern, human** — no other values are permitted. (See
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
 lines 11–18.)
 
 The novelty is not that authority levels exist, but that the lattice is
@@ -180,9 +180,9 @@ with a scope prefix: `agency.*`, `critic.*`, `censor.*`, `kline.*`,
 `settlement.*`, `event.*`, `service.*`, `transaction.*`. The owning Society
 is recorded in `event.metadata.sor_id`, **not** baked into the event ID
 itself. (See
-[`THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/01-identity.md`](../THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
 and
-[`THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](../../THE-SOCIETY-OF-REPO/02-protocols/03-events.md).)
+[`THE-SOCIETY-OF-REPO/02-protocols/03-events.md`](../THE-SOCIETY-OF-REPO/02-protocols/03-events.md).)
 
 The separation of *kind* (in the prefix) from *ownership* (in metadata) means
 events can be quoted, replayed, and federated across SORs without identity
@@ -201,7 +201,7 @@ each bridge **its own constitutional agency** with:
   round-trip drift exceeds the envelope.
 
 (See
-[`THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md`](../../THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md`](../THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
 lines 1–60.)
 
 The crosswalk credits Minsky and 2025 research for the *idea* of bridges; the
@@ -221,7 +221,7 @@ families by prefix:
 
 Three rules govern the layout: *presence is permission*, *absence is denial*,
 *state lives in git*. (See
-[`THE-SOCIETY-OF-REPO/02-protocols/16-forgejo-runtime-layers.md`](../../THE-SOCIETY-OF-REPO/02-protocols/16-forgejo-runtime-layers.md).)
+[`THE-SOCIETY-OF-REPO/02-protocols/16-forgejo-runtime-layers.md`](../THE-SOCIETY-OF-REPO/02-protocols/16-forgejo-runtime-layers.md).)
 
 This is a wholly SOR-original convention — prior prefix-based plugin systems
 exist (Kubernetes CRDs, Vim plugin folders), but none use the prefix to
@@ -234,7 +234,7 @@ when a sentinel file —
 `.forgejo-intelligence/forgejo-intelligence-ENABLED.md` — exists in the repo.
 Removing the file in a commit shuts the cognitive runtime down through normal
 git history; turning it on requires a reviewable change. (See
-[`THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`](../../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`](../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
 lines 32–50.)
 
 Software has had kill switches for decades. The novelty is making the kill
@@ -251,7 +251,7 @@ censor-firing rates, K-line reinforcement, frame lock-in, bridge drift,
 suppressor escalations, and dialogical-quality scores. Cognitive
 observability has its own protocol and is explicitly forbidden from being
 collapsed into the host's APM dashboards. (See
-[`THE-SOCIETY-OF-REPO/00-foundations/09-cognitive-observability.md`](../../THE-SOCIETY-OF-REPO/00-foundations/09-cognitive-observability.md).)
+[`THE-SOCIETY-OF-REPO/00-foundations/09-cognitive-observability.md`](../THE-SOCIETY-OF-REPO/00-foundations/09-cognitive-observability.md).)
 
 The separation, and the specific catalogue of cognitive signals, is original.
 
@@ -262,7 +262,7 @@ A-brain). SOR's contribution is the explicit authority rule: a B-brain
 agency's authority is **`propose` only, never `act`**. Reaching into world-
 effects (Forgejo writes, payments, external messages) automatically
 disqualifies the agency from being a B-brain. (See
-[`THE-SOCIETY-OF-REPO/02-protocols/19-b-brain-observation.md`](../../THE-SOCIETY-OF-REPO/02-protocols/19-b-brain-observation.md)
+[`THE-SOCIETY-OF-REPO/02-protocols/19-b-brain-observation.md`](../THE-SOCIETY-OF-REPO/02-protocols/19-b-brain-observation.md)
 lines 12–22.)
 
 This is a small, sharp invention: reflection is permitted without giving
@@ -276,7 +276,7 @@ agent literature, the first system to operationalise the distinction with
 its own catalogue, separate firing log, separate authority rules, and an
 escalation pattern (repeated suppressor firings on a class the censor layer
 should have caught becomes a B-brain signal). (See
-[`THE-SOCIETY-OF-REPO/05-censors/README.md`](../../THE-SOCIETY-OF-REPO/05-censors/README.md).)
+[`THE-SOCIETY-OF-REPO/05-censors/README.md`](../THE-SOCIETY-OF-REPO/05-censors/README.md).)
 
 This is more "operationalising a forgotten Minsky distinction" than "a brand
 new idea" — but it is operational, and the operationalisation is original.
@@ -285,7 +285,7 @@ new idea" — but it is operational, and the operationalisation is original.
 
 In SOR, work-in-progress lives in `07-workspace/active-settlements/` and
 archived decisions move to `06-memory/decisions/`. (See
-[`THE-SOCIETY-OF-REPO/07-workspace/README.md`](../../THE-SOCIETY-OF-REPO/07-workspace/README.md).)
+[`THE-SOCIETY-OF-REPO/07-workspace/README.md`](../THE-SOCIETY-OF-REPO/07-workspace/README.md).)
 The split enforces that a settlement is **either** competing for current
 attention **or** memory — never both. This prevents the very common failure
 mode in agent systems where the working set is also the record.
@@ -298,7 +298,7 @@ working-attention from durable-decision storage in this way.
 SOR specifies the smallest set of agencies, critics, censors, and protocols a
 society must contain to be considered a society at all — below that line the
 artefact is "an agent" or "a script", not a society. (See
-[`THE-SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`](../../THE-SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md).)
+[`THE-SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md`](../THE-SOCIETY-OF-REPO/00-foundations/10-bootstrap-minimum-viable-sor.md).)
 
 The crosswalk admits this is a "practical extension," but the threshold —
 and the requirement that a system below it not call itself a society — is
@@ -348,7 +348,7 @@ Stripped to the minimum, SOR's genuine inventions are:
 
 Everything else in `THE-SOCIETY-OF-REPO/` is — by the project's own
 admission in
-[`00-foundations/07-research-crosswalk.md`](../../THE-SOCIETY-OF-REPO/00-foundations/07-research-crosswalk.md)
+[`00-foundations/07-research-crosswalk.md`](../THE-SOCIETY-OF-REPO/00-foundations/07-research-crosswalk.md)
 — inherited, renamed, or recombined from Minsky and the 2025 Society of
 Minds literature. That inheritance is the foundation; the sixteen items
 above are what SOR adds on top of it.

@@ -230,9 +230,9 @@ npx tsx .GITCLAW/install/GITCLAW-INSTALLER.ts
 
 ## Related Methods
 
-- [GitHub Template Repository](./github-template-repository.md) — For new repos, avoids the fork/copy step entirely.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — Wraps this same process into a single command.
-- [Git Submodule / Subtree](./git-submodule-subtree.md) — Alternative to copying files, with built-in update support.
+- [GitHub Template Repository](../github-template-repository/README.md) — For new repos, avoids the fork/copy step entirely.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — Wraps this same process into a single command.
+- [Git Submodule / Subtree](../git-submodule-subtree/README.md) — Alternative to copying files, with built-in update support.
 
 ---
 

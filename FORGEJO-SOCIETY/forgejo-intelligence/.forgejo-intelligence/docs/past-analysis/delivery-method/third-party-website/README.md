@@ -14,7 +14,7 @@
 
 The Third-Party Website delivery method goes beyond a simple installation portal. It is a fully hosted web application — running on a dedicated domain like `gitclaw.dev` — that provides a comprehensive experience: GitHub OAuth sign-in, repository browsing, visual configuration, one-click installation, a management dashboard for installed repos, analytics, community showcase, and documentation.
 
-While the [GitHub Pages portal](./github-pages-self-service-portal.md) is a lightweight, static-site version of this idea, the third-party website is the full-featured evolution with server-side capabilities, database storage, and richer functionality.
+While the [GitHub Pages portal](../github-pages-self-service-portal/README.md) is a lightweight, static-site version of this idea, the third-party website is the full-featured evolution with server-side capabilities, database storage, and richer functionality.
 
 ---
 
@@ -324,18 +324,18 @@ This method is ideal when:
 
 Consider a different delivery method when:
 
-- You are in the **early stages** and don't need a full web application (start with [GitHub Pages portal](./github-pages-self-service-portal.md)).
-- Your users prefer **self-hosted, zero-dependency** approaches (use the [fork/import installer](./fork-import-installer.md)).
-- You want to **minimize maintenance** overhead (consider [GitHub Marketplace Action](./github-marketplace-action.md) or [template repo](./github-template-repository.md)).
+- You are in the **early stages** and don't need a full web application (start with [GitHub Pages portal](../github-pages-self-service-portal/README.md)).
+- Your users prefer **self-hosted, zero-dependency** approaches (use the [fork/import installer](../fork-import-installer/README.md)).
+- You want to **minimize maintenance** overhead (consider [GitHub Marketplace Action](../github-marketplace-action/README.md) or [template repo](../github-template-repository/README.md)).
 
 ---
 
 ## Related Methods
 
-- [GitHub Pages Portal](./github-pages-self-service-portal.md) — The lightweight, free predecessor to a full website.
-- [GitHub Application](./github-application.md) — Could be the backend powering the website's installation feature.
-- [CLI Tool (npx / bunx)](./cli-tool.md) — The website could generate customized CLI commands.
-- [Browser Extension](./browser-extension.md) — A complementary tool that provides contextual installation from GitHub.
+- [GitHub Pages Portal](../github-pages-self-service-portal/README.md) — The lightweight, free predecessor to a full website.
+- [GitHub Application](../github-application/README.md) — Could be the backend powering the website's installation feature.
+- [CLI Tool (npx / bunx)](../cli-tool/README.md) — The website could generate customized CLI commands.
+- [Browser Extension](../browser-extension/README.md) — A complementary tool that provides contextual installation from GitHub.
 
 ---
 

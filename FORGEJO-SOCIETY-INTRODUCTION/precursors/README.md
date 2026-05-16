@@ -39,7 +39,7 @@ None of the precursors are the canonical specification of *Forgejo
 Society*. For the canonical mind, see
 [`../THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md). For the
 runnable Forgejo surface, see
-[`../REPO/forgejo-intelligence/`](../REPO/forgejo-intelligence/).
+[`../REPO/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/).
 
 ---
 
@@ -141,6 +141,6 @@ governance layer.
 All precursors here target **GitHub** as their runtime. *Forgejo Society*
 targets **self-hosted Forgejo** on Ubuntu hardware (see the top-level
 [`README.md`](../README.md) and
-[`../github-compliance.md`](../github-compliance.md)). The precursors are
+[`../github-compliance.md`](../warning/github-compliance.md)). The precursors are
 preserved as historical reference material; new work happens in the other
 top-level directories of this repository.

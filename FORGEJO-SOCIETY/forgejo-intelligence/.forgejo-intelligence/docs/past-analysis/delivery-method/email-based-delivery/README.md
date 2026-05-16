@@ -268,18 +268,18 @@ This method is ideal when:
 
 Consider a different delivery method when:
 
-- Your users are **active GitHub users** who would find email delivery slow or unusual (use [GitHub App](./github-application.md) or [Marketplace Action](./github-marketplace-action.md)).
-- You want **instant, self-service installation** without waiting for emails (use [CLI tool](./cli-tool.md) or [template repo](./github-template-repository.md)).
-- You want to **avoid managing an email service** and token system (use [fork/import installer](./fork-import-installer.md)).
+- Your users are **active GitHub users** who would find email delivery slow or unusual (use [GitHub App](../github-application/README.md) or [Marketplace Action](../github-marketplace-action/README.md)).
+- You want **instant, self-service installation** without waiting for emails (use [CLI tool](../cli-tool/README.md) or [template repo](../github-template-repository/README.md)).
+- You want to **avoid managing an email service** and token system (use [fork/import installer](../fork-import-installer/README.md)).
 
 ---
 
 ## Related Methods
 
-- [GitHub Pages Portal](./github-pages-self-service-portal.md) — The sign-up form that captures user information for email delivery.
-- [GitHub Repository Dispatch](./github-repository-dispatch.md) — The API-driven installation that magic links trigger behind the scenes.
-- [GitHub Application](./github-application.md) — A more direct, real-time alternative to email-based installation.
-- [Third-Party Website](./third-party-website.md) — Could incorporate email delivery as one of its channels.
+- [GitHub Pages Portal](../github-pages-self-service-portal/README.md) — The sign-up form that captures user information for email delivery.
+- [GitHub Repository Dispatch](../github-repository-dispatch/README.md) — The API-driven installation that magic links trigger behind the scenes.
+- [GitHub Application](../github-application/README.md) — A more direct, real-time alternative to email-based installation.
+- [Third-Party Website](../third-party-website/README.md) — Could incorporate email delivery as one of its channels.
 
 ---
 
