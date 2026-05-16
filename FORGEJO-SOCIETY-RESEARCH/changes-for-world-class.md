@@ -32,7 +32,7 @@ have one obvious next click.
    of the README). The map must say, for every top-level folder, in one
    sentence: *what it is*, *who it is for*, and *whether it is normative
    or descriptive*.
-3. **Move `SOCIETY-OF-REPO.png` and any future imagery into
+3. **Move `logo.png` and any future imagery into
    `assets/` (or `docs/assets/`).** Root should not contain binary
    media.
 4. **Adopt a documented "reading paths" link from the README.** The
@@ -277,7 +277,7 @@ The project promises auditable cognition. Make that promise checkable.
     `translations/` convention even if empty. World-class projects
     invite translators rather than discovering them.
 54. **Run an accessibility pass** on the published docs site (alt
-    text on every image — including `SOCIETY-OF-REPO.png`, sufficient
+    text on every image — including `logo.png`, sufficient
     contrast, no colour-only signalling, headings in order).
 
 ## 13. Identity and brand
