@@ -56,7 +56,9 @@ filled in:
 
 A minimal set of assets — logo variants, a hero image, a one-page PDF —
 that the press kit references, all sourced from
-[`assets/`](assets/README.md).
+[`assets/`](assets/README.md). The canonical text content of the
+project poster (the source for the one-page PDF) lives in
+[`press/poster.md`](press/poster.md).
 
 ## Status
 

@@ -20,6 +20,9 @@ Top-level structure and rules live in
   maintainers.
 - **Contact protocol** — how external parties reach the project, who
   responds, and the expected turnaround.
+- **Project poster** — the canonical single-page description of the
+  project, suitable for printing or rendering as a one-page PDF; see
+  [`poster.md`](poster.md).
 
 ## What does not belong here
 
@@ -34,6 +37,7 @@ Top-level structure and rules live in
 - `fact-sheet.md`
 - `quotes.md`
 - `contact.md`
+- `poster.md`
 - `release-YYYY-MM-DD-*.md`
 
 ## Status
