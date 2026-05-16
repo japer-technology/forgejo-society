@@ -80,6 +80,7 @@ Representation class is mandatory for every new long-lived artifact.
 ## Memory temperature
 
 Every memory record has a temperature:
+
 - `hot`
 - `warm`
 - `cold`
@@ -92,12 +93,15 @@ Temperature affects routing priority but does not replace representation or link
 ## Additional record classes
 
 ### Frames
+
 Store expected roles, default assumptions, failure conditions, linked procedures, linked K-lines, and linked analogies.
 
 ### Analogies
+
 Store structural similarity claims between domains, with transfer notes and confidence.
 
 ### Concept candidates
+
 Store proposed abstractions, examples, non-examples, predicted use, and governance disposition.
 
 ---
@@ -105,6 +109,7 @@ Store proposed abstractions, examples, non-examples, predicted use, and governan
 ## Retrieval
 
 Memory is read by:
+
 1. frame selection
 2. K-line activation
 3. analogy lookup
@@ -223,6 +228,7 @@ sensitive payloads are never memory artifacts.
 Durable records may be corrected when they are factually wrong, superseded, duplicated, or misrepresented.
 
 The representation protocol determines whether to:
+
 - correct in place with preserved history
 - supersede with a new artifact
 - merge duplicates

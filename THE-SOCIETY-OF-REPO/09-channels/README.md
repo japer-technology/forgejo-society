@@ -73,6 +73,7 @@ When a channel is established, a YAML file is added here for each partner SOR.
 ## Adding a channel
 
 Adding a new Society Channel requires:
+
 1. Reviewing the partner SOR's published service contract
 2. Verifying privacy terms are acceptable
 3. Registering the channel in this directory (PR with human approval)

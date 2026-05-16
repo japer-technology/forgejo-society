@@ -64,6 +64,7 @@ Owner-briefing compresses that result for human review.
 High-level settlements may be decomposed into narrower directives.
 
 A descending directive records:
+
 - parent settlement
 - delegated scope
 - authority boundary
