@@ -27,3 +27,96 @@ infrastructure. In an AI world chasing demonstrations, it pursues something
 rarer: durable, governed, sovereign intelligence.
 
 > The Forge makes Minds, Intelligences, Skills, and Labour accountable to one Society.
+
+---
+
+## Read this first
+
+Before running, mirroring, or extending anything in this repository, read
+[WARNING.md](WARNING.md) and the four compliance documents it references.
+They define where this project is allowed to *execute*, where it is only
+allowed to be *mirrored*, and what must never be done on shared
+infrastructure.
+
+- Runtime target: **self-hosted Forgejo on owned Ubuntu hardware**.
+- Shared Forgejo instances (e.g. Codeberg): **source mirrors only, never
+  runtimes**.
+- GitHub: **development mirror only**. No agent execution, no runners,
+  no agent secrets.
+
+## The five quiet reversals
+
+1. **The forge is the mind.** Repositories, runners, issues, and pull
+   requests are the substrate of cognition — not a place that merely
+   stores it.
+2. **Intelligence is a governed society.** Agencies, critics, and
+   censors act under explicit authority, not as a single opaque model.
+3. **Capability is granted by files and audited by Git.** Authority
+   lives in versioned policy, not in runtime configuration.
+4. **Cognition persists as Git objects.** Memory, decisions, K-lines,
+   and settlements are commits, not hidden state.
+5. **Sovereignty is structural.** Owned hardware, owned forge, owned
+   files — not a posture, a topology.
+
+## Repository map
+
+| Pillar | Purpose |
+| --- | --- |
+| [FORGEJO-SOCIETY-INTRODUCTION/](FORGEJO-SOCIETY-INTRODUCTION/README.md) | Essays, reading paths, and the canonical reference texts ([Society of Repo](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/), [Society of Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND/), [Repo is the Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/)). Start here. |
+| [FORGEJO-SOCIETY/](FORGEJO-SOCIETY/README.md) | The Forgejo-flavoured instance. Contains the only runnable subtree: [`forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md). |
+| [FORGEJO-SOCIETY-PLAN/](FORGEJO-SOCIETY-PLAN/README.md) | Forward-looking design, target layout, runtime pipeline, agencies/critics/censors, frames and K-lines, bootstrap checklist. |
+| [FORGEJO-SOCIETY-SETUP/](FORGEJO-SOCIETY-SETUP/README.md) | Operational install, quick-start, conformance, and transition plan. |
+| [FORGEJO-SOCIETY-PROMOTION/](FORGEJO-SOCIETY-PROMOTION/README.md) | Public voice. [`08-style-guide.md`](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md) is the authoritative style guide. |
+| [FORGEJO-SOCIETY-PUBLICITY/](FORGEJO-SOCIETY-PUBLICITY/README.md) | Outward-facing publicity collateral: announcements, media, events, statements. |
+| [FORGEJO-SOCIETY-RESEARCH/](FORGEJO-SOCIETY-RESEARCH/) | Research notes and critique. |
+| [FORGEJO-SOCIETY-THE-FEDERATION/](FORGEJO-SOCIETY-THE-FEDERATION/README.md) | Federation-scope material and local hardware notes. |
+
+## Reading paths
+
+- **Newcomer:** [README](FORGEJO-SOCIETY-INTRODUCTION/README.md) →
+  [reading-paths.md](FORGEJO-SOCIETY-INTRODUCTION/reading-paths.md) →
+  the essays under
+  [`FORGEJO-SOCIETY-INTRODUCTION/essay/`](FORGEJO-SOCIETY-INTRODUCTION/essay/).
+- **Specification:** Society of Repo under
+  [`FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/`](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/)
+  for vocabulary, governance, protocols, agencies, critics, censors,
+  memory, workspace, services, channels, and evolution.
+- **Operator:** [FORGEJO-SOCIETY-SETUP/](FORGEJO-SOCIETY-SETUP/README.md)
+  for install and transition; [FORGEJO-SOCIETY-PLAN/](FORGEJO-SOCIETY-PLAN/README.md)
+  for the runtime pipeline and bootstrap checklist.
+- **Implementer:** [FORGEJO-SOCIETY/forgejo-intelligence/](FORGEJO-SOCIETY/forgejo-intelligence/README.md)
+  for the Bun/TypeScript installer and Forgejo Actions workflows.
+
+## Scope and status
+
+This repository is **mostly documentation** — a specification, planning,
+and promotion corpus written in Markdown. There is no build, test, or
+lint tooling at the root, and none is planned. The only runnable code
+lives under
+[`FORGEJO-SOCIETY/forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md),
+which carries its own Bun/TypeScript toolchain and its own area-specific
+agent guidance.
+
+Sections marked as planned are planned. Sections describing existing
+artifacts describe what is already in the tree. The
+[style guide](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md) requires this
+distinction be kept honest.
+
+## Governance, contributing, security
+
+- Governance model: [GOVERNANCE.md](GOVERNANCE.md)
+- Maintainers: [MAINTAINERS.md](MAINTAINERS.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- Contributing guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Security policy: [SECURITY.md](SECURITY.md)
+- Glossary of canonical terms: [GLOSSARY.md](GLOSSARY.md)
+- Citation: [CITATION.cff](CITATION.cff)
+
+Agent assistants working in this repository must read
+[AGENTS.md](AGENTS.md) (vendor-neutral) or
+[CLAUDE.md](CLAUDE.md) (Anthropic). The two files are kept in sync and
+define the binding rules for voice, vocabulary, identifiers, and scope.
+
+## License
+
+Released under the [MIT License](LICENSE).
