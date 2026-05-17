@@ -16,7 +16,6 @@ decision.
 The current human maintainers named by the repository are:
 
 - Eric Mourant, owner and final decision authority for the Society of Repo.
-- Sawyer Hood, maintainer.
 
 The master constitution records the Society identity and owner in
 [constitution.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/constitution.md). If this
