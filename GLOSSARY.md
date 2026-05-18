@@ -100,3 +100,9 @@ for the full identity protocol.
   memory, workspace, K-line, settlement, signal, handoff, bridge.
 - Do not introduce new authority levels or identifier scopes without amending
   the relevant Society of Repo protocol.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="80" title="Forgejo Society">
+  </picture>
+</p>
