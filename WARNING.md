@@ -1,6 +1,6 @@
 # WARNING
 
-**Read this before you push, fork, mirror, or run anything from this repository.**
+**Read this before you push, fork, mirror, or run anything from this repository!**
 
 This repository describes an autonomous, LLM-driven agent system that opens
 issues, edits files, and runs workflows on a Git forge. Running it on the
@@ -35,8 +35,8 @@ compliant path is narrow and every other path causes harm.
 
 **When in doubt: do not run it.**
 
-<p align="center">
+<p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="80" title="Forgejo Society">
   </picture>
 </p>
