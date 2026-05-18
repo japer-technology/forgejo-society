@@ -64,6 +64,10 @@ running anything yet.*
 5. [`essay/forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
    — the hypothesis that a Society emerges from a forge only when
    Minds, Intelligences, and Skills act together as one.
+6. [`essay/paper-publishing-and-the-forge.md`](essay/paper-publishing-and-the-forge.md)
+   — the publishing-world analogue: preprints, peer review, editors,
+   journals, citations, replication, and retraction, mapped onto the
+   forge.
 
 End point: you can explain *why* a forge is being treated as a mind, in
 your own words, to another curious reader.
@@ -208,9 +212,11 @@ you know where to look when any one of them is not.
 6. [`essay/sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md)
    then [`essay/sor-internal-total-self-representation.md`](essay/sor-internal-total-self-representation.md)
    then [`essay/forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
+   then [`essay/paper-publishing-and-the-forge.md`](essay/paper-publishing-and-the-forge.md)
    — the project's own argument about what may emerge, about the
-   structural limits of self-representation, and about the conditions
-   under which a Society emerges from a forge at all.
+   structural limits of self-representation, about the conditions
+   under which a Society emerges from a forge at all, and about how
+   the academic publishing ecology maps onto the forge.
 7. [`../THE-SOCIETY-OF-MIND/11-objections-and-limits.md`](THE-SOCIETY-OF-MIND/11-objections-and-limits.md)
    — the honest limits.
 

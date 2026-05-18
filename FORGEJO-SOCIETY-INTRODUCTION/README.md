@@ -166,6 +166,12 @@ directory is the doorway; the others are the rooms it opens onto.
   - [`forges-let-societies-emerge.md`](essay/forges-let-societies-emerge.md)
     — defends the hypothesis that forges let Societies emerge when
     Minds, Intelligences, and Skills act together as one.
+  - [`paper-publishing-and-the-forge.md`](essay/paper-publishing-and-the-forge.md)
+    — maps the academic paper-publishing world (preprints, peer
+    review, editorial decisions, journals, citations, replication,
+    retraction) onto the Society of Repo primitives, and notes where
+    the forge sharpens publishing and where it deliberately stops
+    short of replacing it.
 
 ## Suggested reading order
 
