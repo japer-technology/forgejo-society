@@ -188,7 +188,7 @@ forgejo-society/                    forgejo-society/
 ├── forgejo-warning.md              │   └── introduction/
 ├── github-compliance.md            ├── build/             (operates)
 ├── github-warning.md               │   ├── forgejo-society/        (runnable)
-└── logo.png                        │   ├── setup/
+└── (logo lives under FORGEJO-SOCIETY/) │   ├── setup/
                                     │   └── plan/
                                     ├── outreach/          (speaks)
                                     │   ├── promotion/
@@ -463,8 +463,8 @@ The project promises auditable cognition. Make that promise checkable.
     `translations/` convention even if empty. World-class projects
     invite translators rather than discovering them.
 54. **Run an accessibility pass** on the published docs site (alt
-    text on every image — including `logo.png`, sufficient
-    contrast, no colour-only signalling, headings in order).
+    text on every image — including `FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`,
+    sufficient contrast, no colour-only signalling, headings in order).
 
 ## 13. Identity and brand
 

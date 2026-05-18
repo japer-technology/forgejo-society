@@ -13,7 +13,7 @@ auditable cognitive ecology.
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
   </picture>
 </p>
 

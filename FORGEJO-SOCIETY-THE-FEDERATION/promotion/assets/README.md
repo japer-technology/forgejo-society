@@ -42,10 +42,10 @@ Use lowercase, hyphenated names that describe content, not context:
 
 External surfaces should link to assets using the raw URL on the
 default branch, mirroring the pattern already used by the root
-`README.md` for `logo.png`.
+`README.md` for `FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`.
 
 ## Status
 
-Scaffold. The current canonical primary mark is `logo.png` at the
-repository root; variants and additional assets are added here as they
-are produced and approved.
+Scaffold. The current canonical primary mark is
+`FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`; variants and additional assets
+are added here as they are produced and approved.
