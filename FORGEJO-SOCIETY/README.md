@@ -36,13 +36,11 @@ A sovereign digital society where intelligences cooperate, remember, govern them
 
 - You may create Societies, or be granted access to other societies.
 
-  > /society create TheFederation
-
 - This installs forgejo-society into the repo.
 
 ### Repo Labour
 
-- Create one, or choose one that already exists.
+- Create a repo, or choose one that already exists.
 
 - forgejo-labour is the code doorway into forgejo-society.
 
