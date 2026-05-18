@@ -1,24 +1,14 @@
 # Forgejo Society
 
-<p align="center">
-  <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="320">
-  </picture>
-</p>
+### Select a Server
 
-A sovereign digital society where intelligences cooperate, remember, govern themselves, carry out work, and preserve purpose without surrendering control to vendors.
+- Install or arrange access to an unrestricted Forgejo Server.
 
-### Forgejo
+### Select a Repo
 
-- Setup a Forgejo Server
+- Create a repo, or choose one that already exists.
 
-### Repo
-
-- Begin with a repo.
-
-- Create one, or choose one that already exists.
-
-### Intelligence
+### Install an Intelligence
 
 - forgejo-intelligence is the human doorway into forgejo-society.
 
@@ -28,7 +18,7 @@ A sovereign digital society where intelligences cooperate, remember, govern them
 
 - A repo may possess Intelligence.
 
-### Society
+### Join a Society
 
 - Do not install forgejo-society by hand.
 
@@ -38,7 +28,7 @@ A sovereign digital society where intelligences cooperate, remember, govern them
 
 - This installs forgejo-society into the repo.
 
-### Repo Labour
+### Employ some Labour
 
 - Create a repo, or choose one that already exists.
 
@@ -47,3 +37,10 @@ A sovereign digital society where intelligences cooperate, remember, govern them
 - Copy the forgejo-labour workflow into the repo and run it.
 
 - Once awake, forgejo-labour provides a command system to intelligences/societies.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
+
