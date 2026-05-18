@@ -119,4 +119,4 @@ define the binding rules for voice, vocabulary, identifiers, and scope.
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE.md).
