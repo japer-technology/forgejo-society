@@ -112,3 +112,9 @@ public understanding should remain private.
 - Stop testing and report privately if you encounter credentials, personal data,
   or a plausible authority bypass.
 - Preserve enough detail for reproduction, but redact secrets and personal data.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/logo.png" alt="Forgejo Society" width="80" title="Forgejo Society">
+  </picture>
+</p>
