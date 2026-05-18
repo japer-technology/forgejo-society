@@ -132,3 +132,9 @@ Authority levels are only `read`, `draft`, `propose`, `act`, `govern`, and
 
 By contributing, you agree that your contribution is licensed under the
 [MIT License](LICENSE).
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
