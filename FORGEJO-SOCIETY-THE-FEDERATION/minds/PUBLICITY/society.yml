@@ -5,7 +5,7 @@
 # is mirrored into runtime wiring under each participating society's
 # .forgejo-society/channels/ at activation time.
 #
-# Schema follows the conventions of FORGEJO-SOCIETY-PLAN (see 04-folder-spec.md
+# Schema follows the conventions of FORGEJO-SOCIETY-IMPLEMENTATION (see 04-folder-spec.md
 # and 13-inter-repo-communication.md).
 
 id: sor.publicity

@@ -35,8 +35,8 @@ Forgejo Society. Top-level rules and the announcement format live in
   within the same file.
 - **One topic per file.** Each announcement covers a single milestone.
 - **Linked to substance.** Every claim cites a document under
-  `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-PLAN/`,
-  `FORGEJO-SOCIETY-SETUP/`, or `REPO/forgejo-intelligence/`.
+  `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`,
+  `FORGEJO-SOCIETY-INSTALLATION/`, or `REPO/forgejo-intelligence/`.
 
 ## Status
 

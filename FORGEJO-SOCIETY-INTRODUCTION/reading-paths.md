@@ -80,13 +80,13 @@ hardware, without yet writing any agencies.*
 2. [`analysis/composition-model.md`](analysis/composition-model.md) —
    the four nouns (Society, Mind, Intelligence, Repo), and the
    `develop` vs. `run` modes you will choose between when installing.
-3. [`../FORGEJO-SOCIETY-SETUP/README.md`](../FORGEJO-SOCIETY-SETUP/README.md)
+3. [`../FORGEJO-SOCIETY-INSTALLATION/README.md`](../FORGEJO-SOCIETY-INSTALLATION/README.md)
    — orientation to the setup library.
-4. [`../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu.md)
+4. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md)
    — bring the Ubuntu host up.
-5. [`../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-minimum.md)
+5. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md)
    — a minimum Forgejo, enough to host repositories and runners.
-6. [`../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-society.md`](../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-society.md)
+6. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-society.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-society.md)
    — bring the society itself up on top of that Forgejo.
 7. [`../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md`](../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md)
    — the hardware substrate the society expects to live on.
@@ -113,7 +113,7 @@ land it through pull requests.*
 5. [`../THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)
    — the fixed authority levels (`read`, `draft`, `propose`, `act`,
    `govern`, `human`) that gate what an agency may do.
-6. [`../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md`](../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md)
+6. [`../FORGEJO-SOCIETY-IMPLEMENTATION/12-agent-implementation-playbook.md`](../FORGEJO-SOCIETY-IMPLEMENTATION/12-agent-implementation-playbook.md)
    — the concrete recipe for building an agency.
 7. [`../FORGEJO-SOCIETY/forgejo-intelligence/README.md`](../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
    — the runnable Forgejo Intelligence surface you will be extending.
@@ -142,11 +142,11 @@ substrate — coherent in their head before touching anything.*
 5. [`../THE-SOCIETY-OF-REPO/README.md`](THE-SOCIETY-OF-REPO/README.md)
    then walk the numbered pillars (`01-governance` through
    `10-evolution`) at skim depth.
-6. [`../FORGEJO-SOCIETY-PLAN/00-overview.md`](../FORGEJO-SOCIETY-PLAN/00-overview.md)
-   then [`../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
+6. [`../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`](../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md)
+   then [`../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md`](../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
    — how the specification is mapped onto workflows and configuration.
 7. [`analysis/inter-repo-protocols.md`](analysis/inter-repo-protocols.md)
-   and [`../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`](../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md)
+   and [`../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`](../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md)
    — how multiple repositories talk to one another.
 8. [`../FORGEJO-SOCIETY/forgejo-intelligence/README.md`](../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
    — the runtime surface.
@@ -166,12 +166,12 @@ federation — not for writing agencies.*
 
 1. [`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
    — capacity, throughput, and where the hardware will be loaded.
-2. [`../FORGEJO-SOCIETY-SETUP/README.md`](../FORGEJO-SOCIETY-SETUP/README.md)
+2. [`../FORGEJO-SOCIETY-INSTALLATION/README.md`](../FORGEJO-SOCIETY-INSTALLATION/README.md)
    — the operations library.
-3. [`../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu.md)
-   then [`../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu-refresh.md`](../FORGEJO-SOCIETY-SETUP/quick-start/ubuntu-refresh.md)
+3. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md)
+   then [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu-refresh.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu-refresh.md)
    — the baseline and refresh procedures for the host.
-4. [`../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-SETUP/quick-start/forgejo-minimum.md)
+4. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md)
    — the Forgejo install you will run runners against.
 5. [`../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md`](../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md)
    then [`../FORGEJO-SOCIETY-THE-FEDERATION/README.md`](../FORGEJO-SOCIETY-THE-FEDERATION/README.md)

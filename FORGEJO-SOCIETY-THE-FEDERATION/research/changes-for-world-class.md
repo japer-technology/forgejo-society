@@ -23,7 +23,7 @@ have one obvious next click.
    order:
    - One-paragraph "what this is" (already present).
    - "Read first" (3–5 links into `FORGEJO-SOCIETY-INTRODUCTION/`).
-   - "Operate" (link to `FORGEJO-SOCIETY-SETUP/quick-start/`).
+   - "Operate" (link to `FORGEJO-SOCIETY-INSTALLATION/quick-start/`).
    - "Build / contribute" (link to `CONTRIBUTING.md`).
    - "Govern" (link to `THE-SOCIETY-OF-REPO/01-governance/`).
    - "Repository map" (a single annotated tree of the top-level folders,
@@ -110,9 +110,9 @@ Design rules that make the atrium feel inhabited rather than corporate:
 ## 2. Reduce top-level sprawl
 
 The root currently has **10+ all-caps folders** (`FORGEJO-SOCIETY`,
-`FORGEJO-SOCIETY-INTRODUCTION`, `FORGEJO-SOCIETY-PLAN`,
+`FORGEJO-SOCIETY-INTRODUCTION`, `FORGEJO-SOCIETY-IMPLEMENTATION`,
 `FORGEJO-SOCIETY-PRECURSOR`, `FORGEJO-SOCIETY-PROMOTION`,
-`FORGEJO-SOCIETY-PUBLICITY`, `FORGEJO-SOCIETY-SETUP`,
+`FORGEJO-SOCIETY-PUBLICITY`, `FORGEJO-SOCIETY-INSTALLATION`,
 `FORGEJO-SOCIETY-THE-FEDERATION`, `THE-REPO-IS-THE-MIND`,
 `THE-SOCIETY-OF-MIND`, `THE-SOCIETY-OF-REPO`) plus 5 root markdown
 warning/compliance files. This is hostile to navigation.
@@ -122,7 +122,7 @@ warning/compliance files. This is hostile to navigation.
    - `theory/` — `THE-SOCIETY-OF-MIND/`, `THE-REPO-IS-THE-MIND/`,
      `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-INTRODUCTION/`.
    - `build/` — `FORGEJO-SOCIETY/` (runnable code/workflows),
-     `FORGEJO-SOCIETY-SETUP/`, `FORGEJO-SOCIETY-PLAN/`.
+     `FORGEJO-SOCIETY-INSTALLATION/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`.
    - `outreach/` — `FORGEJO-SOCIETY-PROMOTION/`,
      `FORGEJO-SOCIETY-PUBLICITY/`, `FORGEJO-SOCIETY-THE-FEDERATION/`.
    - `archive/` — `FORGEJO-SOCIETY-PRECURSOR/` (historical
@@ -130,7 +130,7 @@ warning/compliance files. This is hostile to navigation.
    Use `git mv` so history is preserved. Add forwarding stubs for any
    path referenced by external posts.
 6. **Pick one casing convention.** Today the repo mixes
-   `THE-SOCIETY-OF-REPO` (article + caps), `FORGEJO-SOCIETY-PLAN`
+   `THE-SOCIETY-OF-REPO` (article + caps), `FORGEJO-SOCIETY-IMPLEMENTATION`
    (project-prefixed caps), and `forgejo-intelligence` (lowercase
    hyphenated). Standardise on **lowercase hyphenated** for every
    directory and file path; reserve "Forgejo Society" (title case) for
@@ -157,7 +157,7 @@ verbs in the third person singular: they describe what the estate
 | Estate       | Charter      | Holds                                                                                                | Audience              | Status      |
 | ------------ | ------------ | ---------------------------------------------------------------------------------------------------- | --------------------- | ----------- |
 | `theory/`    | *contemplates* | `the-society-of-mind/`, `the-repo-is-the-mind/`, `the-society-of-repo/`, `forgejo-society-introduction/` | readers, researchers  | normative + descriptive |
-| `build/`     | *operates*   | `forgejo-society/` (code + workflows), `forgejo-society-setup/`, `forgejo-society-plan/`               | operators, contributors | normative + aspirational |
+| `build/`     | *operates*   | `forgejo-society/` (code + workflows), `forgejo-society-installation/`, `forgejo-society-implementation/`               | operators, contributors | normative + aspirational |
 | `outreach/`  | *speaks*     | `forgejo-society-promotion/`, `forgejo-society-publicity/`, `forgejo-society-the-federation/`          | the public, mirrors    | descriptive |
 | `archive/`   | *remembers*  | `forgejo-society-precursor/`, retired settlements, superseded plans                                    | historians, auditors   | historical  |
 | `compliance/`| *binds*      | the five root warning/compliance files (item 7)                                                       | every contributor      | normative   |
@@ -174,11 +174,11 @@ BEFORE                              AFTER
 forgejo-society/                    forgejo-society/
 ├── FORGEJO-SOCIETY/                ├── README.md          (the atrium)
 ├── FORGEJO-SOCIETY-INTRODUCTION/   ├── REPO-MAP.md
-├── FORGEJO-SOCIETY-PLAN/           ├── assets/
+├── FORGEJO-SOCIETY-IMPLEMENTATION/           ├── assets/
 ├── FORGEJO-SOCIETY-PRECURSOR/      │   ├── branding/
 ├── FORGEJO-SOCIETY-PROMOTION/      │   └── atrium/today.md
 ├── FORGEJO-SOCIETY-PUBLICITY/      ├── compliance/        (the lintel)
-├── FORGEJO-SOCIETY-SETUP/          │   ├── INDEX.md
+├── FORGEJO-SOCIETY-INSTALLATION/          │   ├── INDEX.md
 ├── FORGEJO-SOCIETY-THE-FEDERATION/ │   ├── forgejo/
 ├── THE-REPO-IS-THE-MIND/           │   └── github/
 ├── THE-SOCIETY-OF-MIND/            ├── theory/            (contemplates)
@@ -211,8 +211,8 @@ small and mechanical.
 | `THE-SOCIETY-OF-REPO/`                | `theory/society-of-repo/`           | `README.md` redirect                 |
 | `FORGEJO-SOCIETY-INTRODUCTION/`       | `theory/introduction/`              | `README.md` redirect                 |
 | `FORGEJO-SOCIETY/`                    | `build/forgejo-society/`            | `README.md` redirect                 |
-| `FORGEJO-SOCIETY-SETUP/`              | `build/setup/`                      | `README.md` redirect                 |
-| `FORGEJO-SOCIETY-PLAN/`               | `build/plan/` (later `build/rfcs/`) | `README.md` redirect                 |
+| `FORGEJO-SOCIETY-INSTALLATION/`              | `build/setup/`                      | `README.md` redirect                 |
+| `FORGEJO-SOCIETY-IMPLEMENTATION/`               | `build/plan/` (later `build/rfcs/`) | `README.md` redirect                 |
 | `FORGEJO-SOCIETY-PROMOTION/`          | `outreach/promotion/`               | `README.md` redirect                 |
 | `FORGEJO-SOCIETY-PUBLICITY/`          | `outreach/publicity/`               | `README.md` redirect                 |
 | `FORGEJO-SOCIETY-THE-FEDERATION/`     | `outreach/federation/`              | `README.md` redirect                 |
@@ -375,7 +375,7 @@ documentation. It must be operated as a real package.
     inconsistently.
 35. **Add Dependabot / Renovate** for the TypeScript package, the
     workflow `actions/*` pins, and any Docker images referenced in
-    `FORGEJO-SOCIETY-SETUP/install/`.
+    `FORGEJO-SOCIETY-INSTALLATION/install/`.
 36. **Add a "stale link / orphan page" check** — fail CI if a Markdown
     file is not reachable from any navigation entry or sibling link.
 37. **Add a CI check for the casing/naming convention** chosen in
@@ -394,7 +394,7 @@ documentation. It must be operated as a real package.
 41. **Mirror policy** — document the canonical home (Forgejo on
     project-owned hardware), the public mirrors (Codeberg, GitHub),
     and the precedence rules. Reference the existing
-    `FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`.
+    `FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md`.
 
 ## 9. Tighten the conceptual boundary
 
@@ -414,7 +414,7 @@ reader cannot tell which is which.
     `FORGEJO-SOCIETY-INTRODUCTION/essay/` and
     `THE-SOCIETY-OF-REPO/analysis/`. Keep one essay collection; the
     other becomes pointers.
-44. **Promote `FORGEJO-SOCIETY-PLAN/` to a numbered RFC stream**
+44. **Promote `FORGEJO-SOCIETY-IMPLEMENTATION/` to a numbered RFC stream**
     (`rfcs/0001-target-layout.md`, `rfcs/0002-workflow-design.md`, …)
     once the structural changes above are in. Plans become
     long-lived, citable artefacts rather than a flat numbered list.
@@ -432,7 +432,7 @@ reader cannot tell which is which.
 47. **Add a "hello, society" 5-minute path**: clone, run one workflow,
     see a single agency emit a single settlement. No Ubuntu install
     required for the first taste. Today the shortest path
-    (`FORGEJO-SOCIETY-SETUP/quick-start/forgejo-society.md`) still
+    (`FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-society.md`) still
     requires standing up a forge.
 48. **Include a `Dockerfile`/`compose.yaml`** for a disposable demo
     Forgejo + runner + intelligence stack so that evaluators can try
@@ -506,7 +506,7 @@ restructuring:
 - The audience-aware reading paths in
   `FORGEJO-SOCIETY-INTRODUCTION/reading-paths.md`.
 - The discipline of one workflow + one folder for the runtime
-  (`FORGEJO-SOCIETY-PLAN/00-overview.md`).
+  (`FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`).
 - The honesty of the analysis docs
   (`THE-SOCIETY-OF-REPO/analysis/suggestions.md`,
   `gaps-found-by-anthropic.md`, `gaps-found-by-openai.md`,

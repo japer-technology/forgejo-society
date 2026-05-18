@@ -7,7 +7,7 @@ subscriptions the sub-society actually permits, under which bridge, with
 which censor budget.
 
 The shape mirrors the runtime
-[`channels/<peer>/`](../../../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md)
+[`channels/<peer>/`](../../../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md)
 contract from the plan: every channel has an id, a host, a service id, a
 bridge, an authority level, and an explicit censor budget. At activation
 time, each declared channel becomes a directory under the runtime

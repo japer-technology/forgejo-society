@@ -8,7 +8,7 @@ agent lifecycle, the LLM server, the storage, and the public surface are
 all designed to run inside a self-hosted [Forgejo](https://forgejo.org/)
 installation on Ubuntu hardware owned and operated by the project
 maintainers (see [`README.md`](../README.md) and
-[`FORGEJO-SOCIETY-SETUP/`](../../FORGEJO-SOCIETY-SETUP/)).
+[`FORGEJO-SOCIETY-INSTALLATION/`](../../FORGEJO-SOCIETY-INSTALLATION/)).
 
 The relationship between the project and the wider Forgejo ecosystem is
 therefore split across three distinct kinds of host:
@@ -22,7 +22,7 @@ therefore split across three distinct kinds of host:
   / network rules at the operator's site.
 - **A shared public Forgejo instance, primarily
   [Codeberg](https://codeberg.org/), used as a federation mirror.** See
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md).
+  [`FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md).
   On Codeberg, the project is bound by the
   [Codeberg Terms of Use][codeberg-tos] and the
   [Codeberg "What Codeberg is not"][codeberg-not] policy in addition to
@@ -35,7 +35,7 @@ Nothing in this repository is intended to use a *shared* Forgejo instance
 (Codeberg, or anyone else's public Forgejo) as a free general-purpose
 compute, storage, or hosting backend. The cognitive ecology described in
 [`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/),
-[`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/), and
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/), and
 [`THE-REPO-IS-THE-MIND/`](../THE-REPO-IS-THE-MIND/) is designed to live
 inside the maintainers' own Forgejo, with shared instances treated only
 as read-mostly mirrors of source code.

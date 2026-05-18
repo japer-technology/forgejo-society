@@ -118,7 +118,7 @@ also in the picture.
 The infractions in this section are described against
 [Codeberg's terms][codeberg-tos] because Codeberg is the most likely
 shared Forgejo destination for this project (see
-[`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md)).
+[`FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md)).
 Any other public Forgejo instance will have substantially similar rules
 because the underlying scarcity (donated compute, donated bandwidth,
 donated storage, shared abuse surface) is the same.

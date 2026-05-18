@@ -21,7 +21,7 @@ know and what they intend to do. Pick the one that matches you in
 paths in [Suggested reading order](#suggested-reading-order) below.
 
 For the operational, command-level installation guide, see
-[`FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md).
+[`FORGEJO-SOCIETY-INSTALLATION/`](../FORGEJO-SOCIETY-INSTALLATION/README.md).
 For the formal specification of the mind, see
 [`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md).
 
@@ -99,7 +99,7 @@ analysed in
 The repository is organised as a small set of pillars. This `INTRODUCTION/`
 directory is the doorway; the others are the rooms it opens onto.
 
-- **[`../FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md)** — the
+- **[`../FORGEJO-SOCIETY-INSTALLATION/`](../FORGEJO-SOCIETY-INSTALLATION/README.md)** — the
   practical, command-level installation and operations library: bringing
   Ubuntu, the Forgejo forge, runners, and the LLM server up from clean
   hardware to a fully running cognitive ecology. Careful setup is critical
@@ -110,7 +110,7 @@ directory is the doorway; the others are the rooms it opens onto.
 - **[`../THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md)** — the
   formal specification: governance, protocols, agencies, critics, censors,
   memory, and workspace that turn the forge into a governed mind.
-- **[`../FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md)** — the
+- **[`../FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md)** — the
   planning documents that map the Society of Repo specification onto the
   two operational targets in this repository: the workflows (the body) and
   the `.forgejo-society/` configuration (the mind).
@@ -146,7 +146,7 @@ directory is the doorway; the others are the rooms it opens onto.
     workspace, and memory without changing the design.
   - [`git-as-reality-model-plan-impact.md`](analysis/git-as-reality-model-plan-impact.md)
     — the companion note: what the same framing implies for the
-    implementation plan in [`../FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md),
+    implementation plan in [`../FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md),
     summarised as a small concrete edit list.
 - **[`essay/`](essay/)** — longer essays that situate the project:
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
@@ -189,7 +189,7 @@ If you have an hour:
 
 When you are ready to actually run it:
 
-6. [`../FORGEJO-SOCIETY-SETUP/README.md`](../FORGEJO-SOCIETY-SETUP/README.md).
+6. [`../FORGEJO-SOCIETY-INSTALLATION/README.md`](../FORGEJO-SOCIETY-INSTALLATION/README.md).
 
 ### By reader profile
 

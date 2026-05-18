@@ -23,12 +23,12 @@ governance specification under
 | `FORGEJO-SOCIETY/forgejo-intelligence/` | Eric Mourant | Owner review required for runnable Forgejo runtime, workflows, authority boundaries, secrets, and runner behaviour. Read the nested guidance before editing. |
 | `FORGEJO-SOCIETY/forgejo-society/`, `FORGEJO-SOCIETY/forgejo-labour/`, `FORGEJO-SOCIETY/forgejo-workflows/` | Eric Mourant | Maintainer review for Forgejo-flavoured instance material. Owner review for runtime or authority changes. |
 | `FORGEJO-SOCIETY-INTRODUCTION/` | Eric Mourant | Maintainer review for essays and reading paths; new essays must be linked from the introduction README and reading paths. |
-| `FORGEJO-SOCIETY-PLAN/` | Eric Mourant | Maintainer review for forward design and migration plans; owner review for runtime, policy, or authority implications. |
+| `FORGEJO-SOCIETY-IMPLEMENTATION/` | Eric Mourant | Maintainer review for forward design and migration plans; owner review for runtime, policy, or authority implications. |
 | `FORGEJO-SOCIETY-PRECURSOR/` | Eric Mourant | Maintainer review for historical material; owner review before reactivating, copying, or migrating precursor runtime behaviour. |
 | `FORGEJO-SOCIETY-PROMOTION/` | Eric Mourant | Maintainer review against the public style guide. Owner review for positioning that affects project identity or compliance. |
 | `FORGEJO-SOCIETY-PUBLICITY/` | Eric Mourant | Maintainer review for announcements, media, events, statements, coverage, and recognition surfaces. |
 | `FORGEJO-SOCIETY-RESEARCH/` | Eric Mourant | Maintainer review for research, critique, and language analysis. |
-| `FORGEJO-SOCIETY-SETUP/` | Eric Mourant | Owner review for operational setup, hardware, mirror, transition, and conformance material. |
+| `FORGEJO-SOCIETY-INSTALLATION/` | Eric Mourant | Owner review for operational setup, hardware, mirror, transition, and conformance material. |
 | `FORGEJO-SOCIETY-THE-FEDERATION/` | Eric Mourant | Owner review for Federation-scope hardware, mind, and publication material. |
 | `logo.png`, `FORGEJO-SOCIETY-PROMOTION/assets/` | Eric Mourant | Maintainer review for visual identity and public assets. |
 

@@ -42,12 +42,12 @@ the maintainer rather than guessing.
 | `THE-REPO-IS-THE-MIND/` | "The repo is the mind" framing. |
 | `FORGEJO-SOCIETY/` | The Forgejo-flavoured instance. `forgejo-intelligence/` is the runnable subtree. |
 | `FORGEJO-SOCIETY-INTRODUCTION/` | Essays and reading paths. |
-| `FORGEJO-SOCIETY-PLAN/` | Forward-looking design and migration planning. |
+| `FORGEJO-SOCIETY-IMPLEMENTATION/` | Forward-looking design and migration planning. |
 | `FORGEJO-SOCIETY-PRECURSOR/` | Pre-cursor / historical material. |
 | `FORGEJO-SOCIETY-PROMOTION/` | Public voice. `08-style-guide.md` is authoritative. |
 | `FORGEJO-SOCIETY-PUBLICITY/` | Publicity collateral. |
 | `FORGEJO-SOCIETY-RESEARCH/` | Research and critique. |
-| `FORGEJO-SOCIETY-SETUP/` | Operational setup and transition plans (mirrors to Codeberg, GitLab, Bitbucket). |
+| `FORGEJO-SOCIETY-INSTALLATION/` | Operational setup and transition plans (mirrors to Codeberg, GitLab, Bitbucket). |
 | `FORGEJO-SOCIETY-THE-FEDERATION/` | Federation-scope material. |
 
 Do not invent new top-level directories without explicit human

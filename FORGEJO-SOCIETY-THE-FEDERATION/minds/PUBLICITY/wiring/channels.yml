@@ -3,7 +3,7 @@
 # Every channel between Publicity member repos and out to the public web.
 # Each entry mirrors a runtime channels/<peer>/channel.yml file that will be
 # placed under the .forgejo-society/ of every participating society at
-# activation time, per FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md.
+# activation time, per FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md.
 
 version: 1
 society: sor.publicity

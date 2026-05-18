@@ -10,7 +10,7 @@ sub-society that, once launched, owns the responsibilities described in
 The Publicity sub-society is itself a small federation: a set of Forgejo
 repositories, each a society in its own right, wired together through the
 inter-repo channel/bridge/censor protocol defined by
-[`FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`](../../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md).
+[`FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md).
 
 ## What lives here
 
@@ -57,7 +57,7 @@ applied at the federation scale:
 - **Lateral** between members: members exchange settlements (e.g. an event
   becomes an announcement becomes a coverage entry) through named channels in
   the same file. Every lateral call is a settlement, not a free action, per
-  [`13-inter-repo-communication.md`](../../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md).
+  [`13-inter-repo-communication.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md).
 - **Uplink** to the Federation: declared in
   [`wiring/federation-uplink.yml`](wiring/federation-uplink.yml). The presenter
   reports settled publicity events back to the Federation's `memory/events/`
@@ -71,7 +71,7 @@ not yet provisioned. Activation requires:
 
 1. Creating the named repos under `japer-technology/` on the Federation forge.
 2. Bootstrapping each with `.forgejo-society/` and the single workflow per
-   [`FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md`](../../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md).
+   [`FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md).
 3. Adding a matching `channels/<peer>/` directory under the runtime
    `.forgejo-society/` of every participating society (Federation and each
    member), with a human-approved reciprocal agreement.

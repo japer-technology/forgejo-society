@@ -38,7 +38,7 @@ It contains, in order:
 2. **Date and author of record.** ISO date and a human name.
 3. **Summary.** Two or three sentences readable on its own.
 4. **What changed.** Specifics: links into `THE-SOCIETY-OF-REPO/`,
-   `FORGEJO-SOCIETY-PLAN/`, `FORGEJO-SOCIETY-SETUP/`, or
+   `FORGEJO-SOCIETY-IMPLEMENTATION/`, `FORGEJO-SOCIETY-INSTALLATION/`, or
    `REPO/forgejo-intelligence/` that back the announcement.
 5. **What it means.** Plain-language interpretation for a reader who is
    not already inside the project.

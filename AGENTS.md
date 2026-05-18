@@ -46,12 +46,12 @@ Top-level directories you will encounter, with what belongs in each:
 | `THE-REPO-IS-THE-MIND/` | The "the repo is the mind" framing used throughout. |
 | `FORGEJO-SOCIETY/` | The Forgejo-flavoured instance: `forgejo-intelligence/` (runnable), `forgejo-society/`, `forgejo-labour/`, `forgejo-workflows/`. |
 | `FORGEJO-SOCIETY-INTRODUCTION/` | Introduction essays and reading paths. New essays must be linked from the introduction `README.md` and the relevant `reading-paths.md`. |
-| `FORGEJO-SOCIETY-PLAN/` | Forward-looking design and migration planning. |
+| `FORGEJO-SOCIETY-IMPLEMENTATION/` | Forward-looking design and migration planning. |
 | `FORGEJO-SOCIETY-PRECURSOR/` | Historical / pre-cursor material. |
 | `FORGEJO-SOCIETY-PROMOTION/` | Public voice. **`FORGEJO-SOCIETY-PROMOTION/08-style-guide.md` is the authoritative style guide.** |
 | `FORGEJO-SOCIETY-PUBLICITY/` | Outward-facing publicity collateral. |
 | `FORGEJO-SOCIETY-RESEARCH/` | Research notes, analyses, "changes for world-class" style critique. |
-| `FORGEJO-SOCIETY-SETUP/` | Operational setup, hardware, transition plans (Codeberg / GitLab / Bitbucket mirrors). |
+| `FORGEJO-SOCIETY-INSTALLATION/` | Operational setup, hardware, transition plans (Codeberg / GitLab / Bitbucket mirrors). |
 | `FORGEJO-SOCIETY-THE-FEDERATION/` | Federation-scope material. |
 
 When in doubt about *where* something belongs, prefer the most specific

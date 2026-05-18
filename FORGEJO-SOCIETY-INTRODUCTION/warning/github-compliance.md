@@ -6,7 +6,7 @@
 the runners, the agent lifecycle, the LLM server, the storage, the public
 surface — is a self-hosted [Forgejo](https://forgejo.org/) installation on
 Ubuntu hardware owned and operated by the project maintainers (see
-[`README.md`](../README.md) and [`FORGEJO-SOCIETY-SETUP/`](../../FORGEJO-SOCIETY-SETUP/)).
+[`README.md`](../README.md) and [`FORGEJO-SOCIETY-INSTALLATION/`](../../FORGEJO-SOCIETY-INSTALLATION/)).
 
 **GitHub is used as a development environment only.** Specifically, github.com
 is used for:
@@ -16,14 +16,14 @@ is used for:
 - Issue-based collaboration during development.
 - Acting as one of several **mirrors** of the canonical Forgejo repository
   (alongside Codeberg, GitLab, and Bitbucket — see
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/03-codeberg-mirror.md),
-  [`FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/07-gitlab-secondary-forge.md),
-  and [`FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md`](../../FORGEJO-SOCIETY-SETUP/transition-plan/06-bitbucket-fallback.md)).
+  [`FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md`](../../FORGEJO-SOCIETY-INSTALLATION/transition-plan/03-codeberg-mirror.md),
+  [`FORGEJO-SOCIETY-INSTALLATION/transition-plan/07-gitlab-secondary-forge.md`](../../FORGEJO-SOCIETY-INSTALLATION/transition-plan/07-gitlab-secondary-forge.md),
+  and [`FORGEJO-SOCIETY-INSTALLATION/transition-plan/06-bitbucket-fallback.md`](../../FORGEJO-SOCIETY-INSTALLATION/transition-plan/06-bitbucket-fallback.md)).
 
 Nothing in this repository is intended to run as a production service on
 github.com infrastructure. The cognitive ecology described in
 [`THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/),
-[`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/), and
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/), and
 [`THE-REPO-IS-THE-MIND/`](../THE-REPO-IS-THE-MIND/) is designed to live inside
 Forgejo, not GitHub.
 

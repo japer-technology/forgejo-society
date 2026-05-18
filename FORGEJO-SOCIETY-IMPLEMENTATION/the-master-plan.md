@@ -1,7 +1,7 @@
 # The Master Plan
 
 > The originating pitch that would have had to be presented — and accepted —
-> for `FORGEJO-SOCIETY-PLAN/` to have been conceived at all.
+> for `FORGEJO-SOCIETY-IMPLEMENTATION/` to have been conceived at all.
 >
 > This document is written retrospectively, in the voice it would have had
 > *before* any of `00-overview.md` through `13-inter-repo-communication.md`
@@ -43,14 +43,14 @@ These two surfaces are the only places where the society is permitted to
 *run*. They are present, they are empty, and nothing in the repository
 currently explains how they will be filled.
 
-`FORGEJO-SOCIETY-PLAN/` is proposed to close that gap — and only that
+`FORGEJO-SOCIETY-IMPLEMENTATION/` is proposed to close that gap — and only that
 gap.
 
 ---
 
 ## 2. What is being proposed
 
-A new top-level folder, `FORGEJO-SOCIETY-PLAN/`, containing **planning
+A new top-level folder, `FORGEJO-SOCIETY-IMPLEMENTATION/`, containing **planning
 documents only**: no runtime code, no agency manifests, no runtime state,
 no schemas that ship to production. The folder is a bridge between the
 specification and the two operational targets that already exist.
@@ -99,7 +99,7 @@ folder.
 
 ---
 
-## 4. Scope boundaries (what `FORGEJO-SOCIETY-PLAN/` is not)
+## 4. Scope boundaries (what `FORGEJO-SOCIETY-IMPLEMENTATION/` is not)
 
 The planning folder is explicitly **not** any of the following, and the
 plan will be considered to have failed if it drifts into them:
@@ -148,7 +148,7 @@ priority order:
 4. **Capability** — last. Capability is granted by files and audited by
    git; it is never the reason a safety, scope, or audit rule bends.
 
-Any document in `FORGEJO-SOCIETY-PLAN/` that inverts this order is to be
+Any document in `FORGEJO-SOCIETY-IMPLEMENTATION/` that inverts this order is to be
 revised before merge.
 
 ---
@@ -246,7 +246,7 @@ is not load-bearing in the runtime; removing it is always safe.
 
 This pitch asks for one decision and nothing more:
 
-> Permission to create `FORGEJO-SOCIETY-PLAN/` as a planning-only
+> Permission to create `FORGEJO-SOCIETY-IMPLEMENTATION/` as a planning-only
 > folder, bound by the two-target collapse rule, scoped by the
 > exclusions in §4, posture-ordered as in §5, and shaped as in §6.
 

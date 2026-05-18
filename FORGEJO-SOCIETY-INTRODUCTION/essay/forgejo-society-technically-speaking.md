@@ -88,7 +88,7 @@ Mathematical properties enforced by the protocol:
 ## 2. The runtime as a finite-state pipeline
 
 The workflow specified in
-[`FORGEJO-SOCIETY-PLAN/02-workflow-design.md`](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)
+[`FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)
 § "Job topology" defines a deterministic linear pipeline of twelve phases:
 
 ```
@@ -105,7 +105,7 @@ Each phase `πᵢ ∈ Π` is a transition function
 
 where `Σᵢ` is the per-run state vector at phase entry, `Iᵢ` is the immutable
 input set the phase is permitted to read (specified in
-[`FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
+[`FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
 § "Pipeline mapping table"), and `Oᵢ` is the set of write targets it is
 permitted to mutate.
 
@@ -122,11 +122,11 @@ state/runs/<run_id>/stimulus.json
 ```
 
 with required fields `stimulus_id, surface, event, actor, target, provenance,
-budget` ([02-workflow-design.md § The normalize step](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)).
+budget` ([02-workflow-design.md § The normalize step](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)).
 
 ### 2.2 Three write trees with disjoint lifetimes
 
-[`FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
+[`FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
 § "Two parallel write paths" defines a partition:
 
 ```
@@ -155,7 +155,7 @@ G = "forgejo-society/" ⊕ event_name ⊕ "/" ⊕ k
 where `k` is the first defined value in the ordered tuple
 `(issue.number, pull_request.number, comment.id, ref, run_id)` and
 `cancel-in-progress = false`
-([02-workflow-design.md § Concurrency](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)).
+([02-workflow-design.md § Concurrency](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)).
 Cardinality: at most one in-flight run per equivalence class
 `[event × stimulus_key]`. Existing runs are never preempted; second arrivals
 queue.
@@ -178,7 +178,7 @@ Job-level escalation is the only path to write capability and is conditional
 on a censor predicate evaluating `true` against
 `.forgejo-society/policies/tool-policy.yml` and
 `.forgejo-society/policies/write-policy.yml`
-([02-workflow-design.md § Permissions](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)).
+([02-workflow-design.md § Permissions](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)).
 
 ---
 
@@ -195,7 +195,7 @@ ENABLED(s, t) ≡
 
 at run-time `t`. If `ENABLED(s, t) = false` the workflow exits with status `0`
 and writes nothing
-([02-workflow-design.md § The guard step](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md);
+([02-workflow-design.md § The guard step](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md);
 [`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
 § "The Enable Sentinel"). The runtime convention names the equivalent file
 
@@ -305,7 +305,7 @@ Default first-ship instance from the protocol:
 
 Frame match scoring is computed over four signal classes — `any_signals`,
 `any_labels`, `any_paths`, `any_phrases` — defined in
-[`FORGEJO-SOCIETY-PLAN/06-frames-polynemes-klines.md`](../../FORGEJO-SOCIETY-PLAN/06-frames-polynemes-klines.md)
+[`FORGEJO-SOCIETY-IMPLEMENTATION/06-frames-polynemes-klines.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/06-frames-polynemes-klines.md)
 § "Frames". Selection requires `score(φ, σ) ≥ θ_frame`; otherwise `φ* = NOVEL`
 and the analogy pass is mandatory rather than optional.
 
@@ -494,7 +494,7 @@ with `≤` taken in the lattice above. The registry is a checked-in file, so
 
 For any candidate action `x` whose write set intersects
 `policies/danger-zones.yml`, phase `act` MUST execute the procedure
-([`FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
+([`FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
 § "Branches as imagination"):
 
 ```

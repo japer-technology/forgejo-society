@@ -1,6 +1,6 @@
 # Forgejo Conformance
 
-`FORGEJO-SOCIETY-SETUP/CONFORMANCE/` is the library of conformance assets
+`FORGEJO-SOCIETY-INSTALLATION/CONFORMANCE/` is the library of conformance assets
 that prove a Forgejo installation is ready for advanced use by
 [THE-SOCIETY-OF-REPO](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
 

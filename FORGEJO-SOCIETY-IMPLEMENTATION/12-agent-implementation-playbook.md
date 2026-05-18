@@ -1,6 +1,6 @@
 # 12 — AI Agent Implementation Playbook
 
-This is the execution playbook for an AI agent turning `FORGEJO-SOCIETY-PLAN/`
+This is the execution playbook for an AI agent turning `FORGEJO-SOCIETY-IMPLEMENTATION/`
 into the running `.forgejo-society/` mind and
 `.forgejo/workflows/forgejo-society.yaml` body.
 

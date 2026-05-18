@@ -61,8 +61,8 @@ It contains:
 ## How this folder is organised
 
 The folder follows the same convention as
-[`FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md) and
-[`FORGEJO-SOCIETY-SETUP/`](../FORGEJO-SOCIETY-SETUP/README.md): a numbered
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md) and
+[`FORGEJO-SOCIETY-INSTALLATION/`](../FORGEJO-SOCIETY-INSTALLATION/README.md): a numbered
 sequence of strategy documents at the top level, plus a small set of topic
 subfolders for the working materials those strategies produce.
 
@@ -104,8 +104,8 @@ subfolders for the working materials those strategies produce.
   the introduction, external sites) link or quote from here, not the other
   way around.
 - **No unverified claims.** Every promotional claim must be traceable to a
-  document under `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-PLAN/`,
-  `FORGEJO-SOCIETY-SETUP/`, or `REPO/forgejo-intelligence/`.
+  document under `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`,
+  `FORGEJO-SOCIETY-INSTALLATION/`, or `REPO/forgejo-intelligence/`.
 - **Voice.** The project speaks in a calm, precise, slightly literary
   register. Specifics over slogans. Mechanisms over mystique. See
   [`08-style-guide.md`](08-style-guide.md).

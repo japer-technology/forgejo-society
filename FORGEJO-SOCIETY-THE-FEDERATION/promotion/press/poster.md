@@ -14,8 +14,8 @@ context for this poster is described in
 [`../07-press-kit.md`](../07-press-kit.md).
 
 Every claim below is traceable to an existing document under
-`THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-PLAN/`,
-`FORGEJO-SOCIETY-SETUP/`, or the runtime subtree under
+`THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`,
+`FORGEJO-SOCIETY-INSTALLATION/`, or the runtime subtree under
 `FORGEJO-SOCIETY/forgejo-intelligence/`.
 
 ---
@@ -108,8 +108,8 @@ compliance set referenced from it.</sub>
   [`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md)
 - **Introduction essays** —
   [`FORGEJO-SOCIETY-INTRODUCTION/`](../../FORGEJO-SOCIETY-INTRODUCTION/README.md)
-- **Plan** — [`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md)
-- **Setup** — [`FORGEJO-SOCIETY-SETUP/`](../../FORGEJO-SOCIETY-SETUP/README.md)
+- **Plan** — [`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
+- **Setup** — [`FORGEJO-SOCIETY-INSTALLATION/`](../../FORGEJO-SOCIETY-INSTALLATION/README.md)
 - **Runtime** —
   [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
 

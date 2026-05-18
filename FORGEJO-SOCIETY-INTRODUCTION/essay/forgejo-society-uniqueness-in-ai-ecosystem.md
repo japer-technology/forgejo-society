@@ -8,7 +8,7 @@ where almost every new project is some variant of "a chatbot wired to tools."
 It is written against the architecture in
 [`THE-SOCIETY-OF-REPO/README.md`](../THE-SOCIETY-OF-REPO/README.md), the
 introduction in [`../README.md`](../README.md), the planning bridge in
-[`FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md), and the
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md), and the
 runtime under [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/).
 Where it makes a claim that is not obvious, it points at the file that earns
 the claim.
@@ -68,7 +68,7 @@ That re-reading is not metaphor. The plan collapses the entire running
 cognition of any single repository into one workflow file
 (`.forgejo/workflows/forgejo-society.yaml`) and one root folder
 (`.forgejo-society/`) — see
-[`FORGEJO-SOCIETY-PLAN/00-overview.md`](../../FORGEJO-SOCIETY-PLAN/00-overview.md).
+[`FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md).
 There is no separate agent process living beside the forge. The forge *is*
 the process.
 
@@ -176,7 +176,7 @@ hosts a society:
 
 There is no second daemon, no sidecar service, no out-of-tree state. The
 agent implementation playbook
-([`FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md`](../../FORGEJO-SOCIETY-PLAN/12-agent-implementation-playbook.md))
+([`FORGEJO-SOCIETY-IMPLEMENTATION/12-agent-implementation-playbook.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/12-agent-implementation-playbook.md))
 treats this collapse as a hard constraint: if a feature cannot live inside
 those two paths, it does not ship.
 

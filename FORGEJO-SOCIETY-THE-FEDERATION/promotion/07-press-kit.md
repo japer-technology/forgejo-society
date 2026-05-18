@@ -27,7 +27,7 @@ A bulleted list of stable facts about the project:
 - Governance posture (authority levels per
   `THE-SOCIETY-OF-REPO/01-governance/`).
 - Federation posture (per
-  `FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`).
+  `FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`).
 
 ## Quotes
 

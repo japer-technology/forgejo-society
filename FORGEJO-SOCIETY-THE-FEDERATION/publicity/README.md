@@ -87,7 +87,7 @@ It contains:
 
 The folder follows the same convention as
 [`FORGEJO-SOCIETY-PROMOTION/`](../FORGEJO-SOCIETY-PROMOTION/README.md) and
-[`FORGEJO-SOCIETY-PLAN/`](../FORGEJO-SOCIETY-PLAN/README.md): a numbered
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md): a numbered
 sequence of strategy documents at the top level, plus a small set of topic
 subfolders for the working materials those strategies produce.
 
@@ -128,8 +128,8 @@ subfolders for the working materials those strategies produce.
   piece of coverage has exactly one canonical location in this folder.
   Other surfaces link or quote from here, not the other way around.
 - **No unverified claims.** Every publicity claim must be traceable to a
-  document under `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-PLAN/`,
-  `FORGEJO-SOCIETY-SETUP/`, or `REPO/forgejo-intelligence/`. Promotional
+  document under `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`,
+  `FORGEJO-SOCIETY-INSTALLATION/`, or `REPO/forgejo-intelligence/`. Promotional
   voice is governed by
   [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md);
   publicity inherits that voice.

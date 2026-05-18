@@ -13,7 +13,7 @@ Section numbers below follow the order of the target layout.
 Visible self-description of the running mind. One file. Points readers at:
 
 - `AGENTS.md` — Spock’s self-model
-- `FORGEJO-SOCIETY-PLAN/` — these planning documents
+- `FORGEJO-SOCIETY-IMPLEMENTATION/` — these planning documents
 - `THE-SOCIETY-OF-REPO/` — the specification of record
 
 Convention: under 200 lines.

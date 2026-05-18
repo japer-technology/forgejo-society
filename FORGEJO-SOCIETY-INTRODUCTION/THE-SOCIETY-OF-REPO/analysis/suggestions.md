@@ -7,7 +7,7 @@ This repo is strong on vision and structure. The main thing it appears to miss i
 Right now the conceptual model and the deployment model are both present, but the join between them is still implicit.
 
 - `THE-SOCIETY-OF-REPO/README.md` explains agencies, critics, censors, memory, workspace, and services.
-- `FORGEJO-SOCIETY-SETUP/transition-plan/08-ai-agent-architecture.md` explains Forgejo repository classes, service accounts, and API-driven agent behaviour.
+- `FORGEJO-SOCIETY-INSTALLATION/transition-plan/08-ai-agent-architecture.md` explains Forgejo repository classes, service accounts, and API-driven agent behaviour.
 
 What still seems missing is one document that says, plainly:
 
@@ -33,7 +33,7 @@ What seems absent is:
 
 ## 3. Add runnable examples, not just patterns
 
-`FORGEJO-SOCIETY-SETUP/transition-plan/08-ai-agent-architecture.md` gives API examples, but the repo does not yet seem to include starter implementations or live workflow templates. Both `.forgejo/` and `.github/` currently only expose `workflows-disabled/`.
+`FORGEJO-SOCIETY-INSTALLATION/transition-plan/08-ai-agent-architecture.md` gives API examples, but the repo does not yet seem to include starter implementations or live workflow templates. Both `.forgejo/` and `.github/` currently only expose `workflows-disabled/`.
 
 What would help:
 
@@ -49,7 +49,7 @@ That would reduce the current “blueprint but not yet kit” feeling.
 The settlement spec is good, but it still reads more like a data model than a full runtime contract.
 
 - `THE-SOCIETY-OF-REPO/02-protocols/05-settlement.md` defines the settlement schema and state flow.
-- `FORGEJO-SOCIETY-SETUP/transition-plan/08-ai-agent-architecture.md` shows a four-step agent workflow.
+- `FORGEJO-SOCIETY-INSTALLATION/transition-plan/08-ai-agent-architecture.md` shows a four-step agent workflow.
 
 Still missing or not fully explicit:
 
@@ -63,9 +63,9 @@ Still missing or not fully explicit:
 
 The FORGEJO docs are good install guides, but they are lighter on failure handling than on initial setup.
 
-- `FORGEJO-SOCIETY-SETUP/install/09-forgejo.md` covers install and backup creation.
-- `FORGEJO-SOCIETY-SETUP/transition-plan/12-security-quotas-and-governance.md` starts disaster recovery and governance controls.
-- `FORGEJO-SOCIETY-SETUP/install/06-prometheus-node-exporter.md` covers metrics exposure and basic continuity controls.
+- `FORGEJO-SOCIETY-INSTALLATION/install/09-forgejo.md` covers install and backup creation.
+- `FORGEJO-SOCIETY-INSTALLATION/transition-plan/12-security-quotas-and-governance.md` starts disaster recovery and governance controls.
+- `FORGEJO-SOCIETY-INSTALLATION/install/06-prometheus-node-exporter.md` covers metrics exposure and basic continuity controls.
 
 What still feels missing:
 
@@ -92,8 +92,8 @@ This matters because the repo aims at a long-lived cognitive infrastructure, not
 
 The local-first principle is clear, but the actual enforcement path is still under-described.
 
-- `FORGEJO-SOCIETY-SETUP/transition-plan/08-ai-agent-architecture.md` says cloud escalation is policy-controlled.
-- `FORGEJO-SOCIETY-SETUP/transition-plan/12-security-quotas-and-governance.md` defines secret scoping and approvals.
+- `FORGEJO-SOCIETY-INSTALLATION/transition-plan/08-ai-agent-architecture.md` says cloud escalation is policy-controlled.
+- `FORGEJO-SOCIETY-INSTALLATION/transition-plan/12-security-quotas-and-governance.md` defines secret scoping and approvals.
 - `THE-SOCIETY-OF-REPO/05-censors/` includes cloud-egress, credential, and PII exfiltration censors.
 
 What seems missing is the technical control layer:
@@ -105,7 +105,7 @@ What seems missing is the technical control layer:
 
 ## 8. Make observability about cognition, not just hosts
 
-`FORGEJO-SOCIETY-SETUP/install/06-prometheus-node-exporter.md` gives host monitoring, which is useful, but the system you describe also needs cognitive observability.
+`FORGEJO-SOCIETY-INSTALLATION/install/06-prometheus-node-exporter.md` gives host monitoring, which is useful, but the system you describe also needs cognitive observability.
 
 What seems worth adding:
 

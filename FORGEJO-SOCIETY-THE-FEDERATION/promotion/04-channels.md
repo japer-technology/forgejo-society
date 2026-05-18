@@ -37,7 +37,7 @@ For each channel, record:
   from `press/` and `07-press-kit.md`.
 - **Sibling societies / federation** — announcements and invitations
   posted to federated peer repositories per the
-  inter-repo communication plan in `FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`.
+  inter-repo communication plan in `FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`.
 
 ## Channels we deliberately avoid
 

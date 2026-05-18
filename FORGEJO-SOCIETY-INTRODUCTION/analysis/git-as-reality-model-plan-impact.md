@@ -1,10 +1,10 @@
-# Git as a reality model: impact on FORGEJO-SOCIETY-PLAN
+# Git as a reality model: impact on FORGEJO-SOCIETY-IMPLEMENTATION
 
 > Companion to [`./git-as-reality-model.md`](git-as-reality-model.md).
 > What the *main = accepted reality, branches = possible futures,
 > merge = revision of reality* framing changes — and does not change —
 > in the implementation plan under
-> [`../../FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md).
+> [`../../FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md).
 
 The first note examined the framing against the specification in
 [`../THE-SOCIETY-OF-REPO/`](../THE-SOCIETY-OF-REPO/README.md). This note
@@ -43,22 +43,22 @@ Each of these has a small, concrete consequence in the plan.
 The plan already implements the framing for the danger-zone subset of
 writes. The relevant statements:
 
-- [`../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md)
   — *Branches as imagination*: for any candidate action that touches a
   path listed in `policies/danger-zones.yml`, the `act` phase MUST work
   on `society/<stimulus_id>/candidate-<n>` and then either fast-forward,
   open a PR, or leave the branch for human inspection.
-- [`../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md`](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)
   — the `act` job opens an imagination branch, applies the diff, runs
   validation, and only then merges or PRs.
-- [`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)
   — the *Imagination branches* layer of the safety model, gated by
   `policies/write-policy.yml`, fires *for any write touching a danger
   zone*.
-- [`../../FORGEJO-SOCIETY-PLAN/05-agencies-critics-censors.md`](../../FORGEJO-SOCIETY-PLAN/05-agencies-critics-censors.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md)
   — `agency.code.patch-imaginer` "drafts a candidate diff on an
   imagination branch".
-- [`../../FORGEJO-SOCIETY-PLAN/11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-PLAN/11-mapping-sor-to-implementation.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/11-mapping-sor-to-implementation.md)
   — *branches as imagination → `act` step's
   `society/<stimulus_id>/candidate-<n>` branch protocol*.
 
@@ -70,7 +70,7 @@ adjustment.
 
 ### 2.1 Default write posture: branch-by-default, not only-for-danger
 
-Today, [`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)
+Today, [`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)
 defines imagination branches as a *layer of the safety model* triggered
 "for any write touching a danger zone". Direct commit to `main` is the
 implicit default for everything outside a danger zone.
@@ -84,10 +84,10 @@ auto-generated changelog appends, mechanical formatting passes from a
 linter that the society itself does not author).
 
 The concrete change is a one-line policy default and a small
-restructuring of [`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)'s
+restructuring of [`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)'s
 *Imagination branches* section so that it reads as the default path
 rather than a danger-zone special case. The workflow job topology in
-[`../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md`](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md)
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)
 does not need to change: the `act` job already knows how to open a
 branch and a PR; it only needs its `if` condition broadened.
 
@@ -112,7 +112,7 @@ Identifier strings (`society/<stimulus_id>/candidate-<n>`) already use
 
 ### 2.3 Settlement schema: name the reality revision
 
-[`../../FORGEJO-SOCIETY-PLAN/09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-PLAN/09-handoff-and-signal-schemas.md)
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/09-handoff-and-signal-schemas.md)
 defines the settlement record. Under the reality-model framing, a
 settlement that resulted in a merge is the audit record of a
 *reality revision*, and the record should make that revision
@@ -128,14 +128,14 @@ reality_revision:
 ```
 
 This is a documentation change to the schema sketch in
-[`../../FORGEJO-SOCIETY-PLAN/09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-PLAN/09-handoff-and-signal-schemas.md)
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/09-handoff-and-signal-schemas.md)
 and a corresponding entry in
-[`../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md)'s
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md)'s
 *Schemas* block. No new authority level, no new identifier scope.
 
 ### 2.4 Memory: rejected branches are a memory class
 
-[`../../FORGEJO-SOCIETY-PLAN/08-state-and-memory.md`](../../FORGEJO-SOCIETY-PLAN/08-state-and-memory.md)
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md)
 lists the memory classes: events, episodic, semantic, procedural,
 failure, frames, analogies, concepts, K-lines, decisions. Closed-
 without-merge branches are not listed.
@@ -149,15 +149,15 @@ new top-level memory class is required; the existing schema for
 `memory/failure/` already accommodates pointers and short rationale.
 
 The retention rule in
-[`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)'s
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)'s
 *Audit and observability* section should then say that
 rejected-candidate branches are not auto-deleted — a stance that
-[`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)'s
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)'s
 *Imagination branches* lifecycle already implies but does not name.
 
 ### 2.5 Mapping table: rename the row
 
-[`../../FORGEJO-SOCIETY-PLAN/11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-PLAN/11-mapping-sor-to-implementation.md)
+[`../../FORGEJO-SOCIETY-IMPLEMENTATION/11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/11-mapping-sor-to-implementation.md)
 contains the row:
 
 > *branches as imagination → `act` step's
@@ -178,13 +178,13 @@ clarifications proposed in [`./git-as-reality-model.md`](git-as-reality-model.md
 The plan's load-bearing decisions stand:
 
 - **One workflow file, one mind folder.** The two-target collapse rule
-  in [`../../FORGEJO-SOCIETY-PLAN/00-overview.md`](../../FORGEJO-SOCIETY-PLAN/00-overview.md)
+  in [`../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md)
   is untouched. Reality-modelling is implemented inside the existing
   `act` job; it does not require new workflow files.
 - **Fail-closed posture.** The kill switch, guardrails, authority
   registry, censors, approval gate, suppressors, imagination branches,
   and reversion guarantee in
-  [`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)
+  [`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)
   remain as they are. Reality-modelling sits *inside* this stack, not
   beside it.
 - **Conscious bottleneck.** Only
@@ -193,14 +193,14 @@ The plan's load-bearing decisions stand:
   changes what writes to `main`.
 - **Three trees with different lifetimes.** `state/`, `workspace/`,
   `memory/` keep their write rules from
-  [`../../FORGEJO-SOCIETY-PLAN/08-state-and-memory.md`](../../FORGEJO-SOCIETY-PLAN/08-state-and-memory.md).
+  [`../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md).
   Rejected-candidate retention lands inside `memory/failure/`, not as
   a new tree.
 - **Authority ladder.** `read → draft → propose → act → govern →
   human` is unchanged. An agency at `propose` may articulate a
   candidate future; only `act` (or higher) may merge it.
 - **Bootstrap scope.** The Phase A checklist in
-  [`../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md)
+  [`../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md)
   does not grow. The reality-model framing only changes a default flag
   inside `policies/write-policy.yml` and a few lines of schema; it
   does not introduce a new bootstrap artefact.
@@ -208,17 +208,17 @@ The plan's load-bearing decisions stand:
 ## 4. Concrete list of plan edits implied
 
 For ease of review, the full set of changes the reality-model framing
-suggests inside `FORGEJO-SOCIETY-PLAN/`:
+suggests inside `FORGEJO-SOCIETY-IMPLEMENTATION/`:
 
 | File | Change |
 | --- | --- |
-| [`02-workflow-design.md`](../../FORGEJO-SOCIETY-PLAN/02-workflow-design.md) | broaden the `act` job's branch-and-PR path to be the default; document direct-commit as the explicit exception |
-| [`03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-PLAN/03-runtime-pipeline.md) | retitle *Branches as imagination* to *Branches as candidate futures*; keep the imagination-branch wording as a parenthetical synonym |
-| [`07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md) | move *Imagination branches* out of the danger-zone-only context; document branch-by-default for writes to `main`; name rejected-candidate retention |
-| [`08-state-and-memory.md`](../../FORGEJO-SOCIETY-PLAN/08-state-and-memory.md) | add a `memory/failure/rejected-candidates/` convention |
-| [`09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-PLAN/09-handoff-and-signal-schemas.md) | extend the settlement schema with a `reality_revision` block (`base_sha`, `proposed_sha`, `merge_sha`, `branch`, `outcome`) |
-| [`10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md) | add the `reality_revision` schema field to the Phase A schema checklist; add `write-policy.yml: default: branch-and-pr` to Phase A policies |
-| [`11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-PLAN/11-mapping-sor-to-implementation.md) | tighten the *branches as imagination* row to *branches as candidate futures of reality* and link the merge to the settlement-as-reality-revision |
+| [`02-workflow-design.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md) | broaden the `act` job's branch-and-PR path to be the default; document direct-commit as the explicit exception |
+| [`03-runtime-pipeline.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/03-runtime-pipeline.md) | retitle *Branches as imagination* to *Branches as candidate futures*; keep the imagination-branch wording as a parenthetical synonym |
+| [`07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md) | move *Imagination branches* out of the danger-zone-only context; document branch-by-default for writes to `main`; name rejected-candidate retention |
+| [`08-state-and-memory.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md) | add a `memory/failure/rejected-candidates/` convention |
+| [`09-handoff-and-signal-schemas.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/09-handoff-and-signal-schemas.md) | extend the settlement schema with a `reality_revision` block (`base_sha`, `proposed_sha`, `merge_sha`, `branch`, `outcome`) |
+| [`10-bootstrap-checklist.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md) | add the `reality_revision` schema field to the Phase A schema checklist; add `write-policy.yml: default: branch-and-pr` to Phase A policies |
+| [`11-mapping-sor-to-implementation.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/11-mapping-sor-to-implementation.md) | tighten the *branches as imagination* row to *branches as candidate futures of reality* and link the merge to the settlement-as-reality-revision |
 
 None of these edits introduce a new authority level, a new identifier
 scope, a new top-level memory class, a new workflow file, or a new
@@ -234,7 +234,7 @@ and memory layers speak the language of *belief*, *evidence*, and
 *audit*. Adopting *reality* / *candidate future* / *reality revision*
 across the plan does three things at once:
 
-1. it gives readers of [`../../FORGEJO-SOCIETY-PLAN/`](../../FORGEJO-SOCIETY-PLAN/README.md)
+1. it gives readers of [`../../FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
    the same backbone proposed in
    [`./git-as-reality-model.md`](git-as-reality-model.md) §6 for
    readers of the specification;
@@ -258,9 +258,9 @@ more consistently with itself.
 - [`./ci-cd-capabilities-become-agent-capabilities.md`](ci-cd-capabilities-become-agent-capabilities.md)
   — the thesis under which "the act of merging" is already a
   cognitive primitive supplied by the forge.
-- [`../../FORGEJO-SOCIETY-PLAN/00-overview.md`](../../FORGEJO-SOCIETY-PLAN/00-overview.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md)
   — the two-target collapse rule the edits above respect.
-- [`../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-PLAN/07-policies-and-safety.md)
+- [`../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md)
   — the safety stack that already contains imagination branches and
   that the framing asks to read in reality-model terms.
 - [`../THE-REPO-IS-THE-MIND/possibility-2.md`](../THE-REPO-IS-THE-MIND/possibility-2.md)

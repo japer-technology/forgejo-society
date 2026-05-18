@@ -10,7 +10,7 @@
 #   - one in sor.federation's runtime .forgejo-society/channels/sor.publicity.presenter/
 #   - one in sor.publicity.presenter's runtime .forgejo-society/channels/sor.federation/
 # with a matching reciprocal-agreement.md, channel.yml, and bridges.md, per
-# FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md.
+# FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md.
 
 version: 1
 society: sor.publicity
@@ -87,7 +87,7 @@ uplink:
 
   reciprocal_agreement:
     status: draft
-    file: ../../../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md
+    file: ../../../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md
     notes: |
       A real reciprocal-agreement.md is created at activation time and must
       be human-approved on both sides before the uplink is opened. Until then

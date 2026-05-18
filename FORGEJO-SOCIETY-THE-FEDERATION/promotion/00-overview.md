@@ -34,10 +34,10 @@ In scope:
 Out of scope:
 
 - Project decisions. Those live in `THE-SOCIETY-OF-REPO/01-governance/` and
-  `FORGEJO-SOCIETY-PLAN/`.
+  `FORGEJO-SOCIETY-IMPLEMENTATION/`.
 - Teaching the project to readers already inside the repo. That is the job
   of `FORGEJO-SOCIETY-INTRODUCTION/`.
-- Operational instructions. Those live in `FORGEJO-SOCIETY-SETUP/`.
+- Operational instructions. Those live in `FORGEJO-SOCIETY-INSTALLATION/`.
 - Runtime behaviour. That lives in `.forgejo-society/` and
   `REPO/forgejo-intelligence/`.
 

@@ -64,8 +64,8 @@ infrastructure.
 | --- | --- |
 | [FORGEJO-SOCIETY-INTRODUCTION/](FORGEJO-SOCIETY-INTRODUCTION/README.md) | Essays, reading paths, and the canonical reference texts ([Society of Repo](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/), [Society of Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND/), [Repo is the Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/)). Start here. |
 | [FORGEJO-SOCIETY/](FORGEJO-SOCIETY/README.md) | The Forgejo-flavoured instance. Contains the only runnable subtree: [`forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md). |
-| [FORGEJO-SOCIETY-PLAN/](FORGEJO-SOCIETY-PLAN/README.md) | Forward-looking design, target layout, runtime pipeline, agencies/critics/censors, frames and K-lines, bootstrap checklist. |
-| [FORGEJO-SOCIETY-SETUP/](FORGEJO-SOCIETY-SETUP/README.md) | Operational install, quick-start, conformance, and transition plan. |
+| [FORGEJO-SOCIETY-IMPLEMENTATION/](FORGEJO-SOCIETY-IMPLEMENTATION/README.md) | Forward-looking design, target layout, runtime pipeline, agencies/critics/censors, frames and K-lines, bootstrap checklist. |
+| [FORGEJO-SOCIETY-INSTALLATION/](FORGEJO-SOCIETY-INSTALLATION/README.md) | Operational install, quick-start, conformance, and transition plan. |
 | [FORGEJO-SOCIETY-PROMOTION/](FORGEJO-SOCIETY-PROMOTION/README.md) | Public voice. [`08-style-guide.md`](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md) is the authoritative style guide. |
 | [FORGEJO-SOCIETY-PUBLICITY/](FORGEJO-SOCIETY-PUBLICITY/README.md) | Outward-facing publicity collateral: announcements, media, events, statements. |
 | [FORGEJO-SOCIETY-RESEARCH/](FORGEJO-SOCIETY-RESEARCH/) | Research notes and critique. |
@@ -81,8 +81,8 @@ infrastructure.
   [`FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/`](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/)
   for vocabulary, governance, protocols, agencies, critics, censors,
   memory, workspace, services, channels, and evolution.
-- **Operator:** [FORGEJO-SOCIETY-SETUP/](FORGEJO-SOCIETY-SETUP/README.md)
-  for install and transition; [FORGEJO-SOCIETY-PLAN/](FORGEJO-SOCIETY-PLAN/README.md)
+- **Operator:** [FORGEJO-SOCIETY-INSTALLATION/](FORGEJO-SOCIETY-INSTALLATION/README.md)
+  for install and transition; [FORGEJO-SOCIETY-IMPLEMENTATION/](FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
   for the runtime pipeline and bootstrap checklist.
 - **Implementer:** [FORGEJO-SOCIETY/forgejo-intelligence/](FORGEJO-SOCIETY/forgejo-intelligence/README.md)
   for the Bun/TypeScript installer and Forgejo Actions workflows.

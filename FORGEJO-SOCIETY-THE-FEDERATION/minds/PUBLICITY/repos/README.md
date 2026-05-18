@@ -6,7 +6,7 @@ One file per member repo of the Publicity sub-society. Each file declares:
 - the Forgejo repository path (`japer-technology/<repo-name>`),
 - the publicity strategy document the repo implements,
 - the lead agency family inside the repo (per
-  [`FORGEJO-SOCIETY-PLAN/05-agencies-critics-censors.md`](../../../../FORGEJO-SOCIETY-PLAN/05-agencies-critics-censors.md)),
+  [`FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md`](../../../../FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md)),
 - a `decomposition:` field — `leaf`, `presenter`, or `federated` — recording
   whether the repo spawns its own sub-society (per the recursion rule in
   [`../../README.md`](../../README.md#recursion-when-a-member-spawns-its-own-sub-society)),

@@ -14,7 +14,7 @@ The model, in one paragraph:
 > minds* — a small federation of Forgejo repositories wired together through
 > the same channel/bridge/censor protocol the Federation uses for any other
 > inter-society call (see
-> [`FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md`](../../FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md)).
+> [`FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md)).
 > The files in this folder are the **wiring diagram** for those sub-societies:
 > which repos belong, what role each plays, and how they connect to one
 > another and back to the Federation root.

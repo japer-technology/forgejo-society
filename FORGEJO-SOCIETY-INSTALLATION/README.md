@@ -8,7 +8,7 @@
   </picture>
 </p>
 
-`FORGEJO-SOCIETY-SETUP/` is the primary documentation library for this repository.
+`FORGEJO-SOCIETY-INSTALLATION/` is the primary documentation library for this repository.
 It is organised so operators can either move fast from curated entry points or drill down into
 deep, command-level procedures.
 

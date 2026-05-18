@@ -24,7 +24,7 @@ here, the mapping is out of date and must be updated.
 | `00-foundations/07-research-crosswalk.md` | reference only |
 | `00-foundations/08-unified-gap-incorporation.md` | reference only |
 | `00-foundations/09-cognitive-observability.md` | enforced by `state/`, `report` step, and `evolution/reinforcement-log.md` |
-| `00-foundations/10-bootstrap-minimum-viable-sor.md` | concretised in `FORGEJO-SOCIETY-PLAN/10-bootstrap-checklist.md` |
+| `00-foundations/10-bootstrap-minimum-viable-sor.md` | concretised in `FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md` |
 
 ---
 
@@ -160,7 +160,7 @@ All run in the `criticize` workflow step.
 | --- | --- |
 | channels/README.md | `.forgejo-society/channels/README.md` (stub) |
 | reciprocal-agreement.example.md | `.forgejo-society/channels/<peer>/reciprocal-agreement.md` (Phase C) |
-| inter-society call model | `FORGEJO-SOCIETY-PLAN/13-inter-repo-communication.md` (incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`) |
+| inter-society call model | `FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md` (incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`) |
 
 ---
 
