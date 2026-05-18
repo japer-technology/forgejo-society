@@ -111,6 +111,7 @@ distinction be kept honest.
 - Security policy: [SECURITY.md](SECURITY.md)
 - Glossary of canonical terms: [GLOSSARY.md](GLOSSARY.md)
 - Citation: [CITATION.cff](CITATION.cff)
+- Project pillars index: [PROJECTS.md](PROJECTS.md)
 
 Agent assistants working in this repository must read
 [AGENTS.md](AGENTS.md) (vendor-neutral) or
