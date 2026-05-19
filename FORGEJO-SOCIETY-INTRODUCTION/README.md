@@ -205,3 +205,9 @@ The full, ordered paths live in
 | A systems / infrastructure operator | [Path E — Systems / infrastructure operator](reading-paths.md#path-e--systems--infrastructure-operator) |
 | A researcher or theorist | [Path F — Researcher / theorist](reading-paths.md#path-f--researcher--theorist) |
 | Someone evaluating governance, sovereignty, compliance | [Path G — Governance / policy reader](reading-paths.md#path-g--governance--policy-reader) |
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
