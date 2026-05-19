@@ -455,6 +455,8 @@ anywhere near a public GitLab project.
   [`gitlab-compliance.md`](gitlab-compliance.md)
 - Sibling counterparts — [`github-compliance.md`](github-compliance.md),
   [`github-warning.md`](github-warning.md),
+  [`bitbucket-compliance.md`](bitbucket-compliance.md),
+  [`bitbucket-warning.md`](bitbucket-warning.md),
   [`forgejo-compliance.md`](forgejo-compliance.md),
   [`forgejo-warning.md`](forgejo-warning.md)
 
