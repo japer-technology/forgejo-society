@@ -121,8 +121,8 @@ explaining why the use is in fact permitted.
 [aup]: https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies
 [actions-tos]: https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions
 
-<p align="center">
+<p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
