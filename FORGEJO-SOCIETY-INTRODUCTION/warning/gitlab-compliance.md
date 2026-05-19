@@ -139,8 +139,8 @@ in fact permitted.
 [gitlab-tos]: https://about.gitlab.com/terms/
 [gitlab-aup]: https://handbook.gitlab.com/handbook/legal/acceptable-use-policy/
 
-<p align="center">
+<p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
