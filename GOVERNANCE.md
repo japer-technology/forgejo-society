@@ -90,3 +90,9 @@ reports follow [SECURITY.md](SECURITY.md).
 - [rights-registry.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/rights-registry.md)
 - [policy-ledger.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/policy-ledger.md)
 - [governance-log/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/governance-log/)
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>

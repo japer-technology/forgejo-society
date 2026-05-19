@@ -1,4 +1,4 @@
-# Forgejo Society: Plan
+# Forgejo Society: Implementation
 
 <p align="center">
   <picture>

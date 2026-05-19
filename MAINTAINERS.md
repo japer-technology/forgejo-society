@@ -39,3 +39,9 @@ more than one area, include all relevant owners in the review. If a change could
 affect governance, compliance, runtime authority, secrets, data egress, or the
 warning documents, owner review is required even when the changed file appears
 to be documentation-only.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>

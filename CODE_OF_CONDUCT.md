@@ -120,3 +120,9 @@ or memory surface without exposing private details unnecessarily.
 
 This Code of Conduct is adapted from the Contributor Covenant, version 2.1,
 available at <https://www.contributor-covenant.org/version/2/1/code_of_conduct/>.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>

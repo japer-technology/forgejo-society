@@ -1,14 +1,14 @@
 # Forgejo Society
 
-### Select a Server
+### 1) Select a Server
 
 - Install or arrange access to an unrestricted Forgejo Server.
 
-### Select a Repo
+### 2) Select a Repo
 
 - Create a repo, or choose one that already exists.
 
-### Install an Intelligence
+### 3) Install an Intelligence
 
 - forgejo-intelligence is the human doorway into forgejo-society.
 
@@ -18,7 +18,7 @@
 
 - A repo may possess Intelligence.
 
-### Join a Society
+### 4) Create or Join a Society
 
 - Do not install forgejo-society by hand.
 
@@ -28,7 +28,7 @@
 
 - This installs forgejo-society into the repo.
 
-### Employ some Labour
+### 5) Employ some Labour
 
 - Create a repo, or choose one that already exists.
 

@@ -1,5 +1,11 @@
 # Forgejo Society
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
+  </picture>
+</p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![AI](https://img.shields.io/badge/Assisted-Development-2b2bff?logo=openai&logoColor=white)](https://www.japer.technology)
 
@@ -11,6 +17,7 @@ the operational substrate for a *society of agents*: governed AI agencies,
 critics, censors, and memory systems that together form a transparent,
 auditable cognitive ecology.
 
+<<<<<<< HEAD
 <p align="center">
   <picture>
     <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
@@ -26,6 +33,8 @@ file and one root folder, while moving runtime authority away from hosted
 infrastructure. In an AI world chasing demonstrations, it pursues something
 rarer: durable, governed, sovereign intelligence.
 
+=======
+>>>>>>> 2fe7fe9316f997ec2d917a407827c73d75cd36c5
 > The Forge makes Minds, Intelligences, Skills, and Labour accountable to one Society.
 
 ---
@@ -117,3 +126,9 @@ define the binding rules for voice, vocabulary, identifiers, and scope.
 ## License
 
 Released under the [MIT License](LICENSE.md).
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
