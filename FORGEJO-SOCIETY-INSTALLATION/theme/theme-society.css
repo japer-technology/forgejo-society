@@ -1,0 +1,2 @@
+@import "theme-society-dark.css";
+@import "theme-society-light.css" (prefers-color-scheme: light);
