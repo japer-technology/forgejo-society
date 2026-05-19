@@ -82,13 +82,17 @@ The detailed mapping is in `11-mapping-sor-to-implementation.md`.
 The current repository already has the right shape:
 
 ```
-.forgejo/workflows/forgejo-society.yaml   ← seed workflow exists
-.forgejo-society/README.md                ← seed folder exists
-THE-SOCIETY-OF-REPO/                          ← full specification
-THE-REPO-IS-THE-MIND/possibility-2.md     ← cognitive thesis
+.forgejo/workflows/forgejo-society.yaml                                       ← seed workflow exists
+.forgejo-society/README.md                                                    ← seed folder exists
+FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/                             ← full specification
+FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/possibility-2.md            ← cognitive thesis
 ```
 
-The plan in this folder fills both targets without inventing a third location.
+The plan in this folder fills both runtime targets — `.forgejo-society/`
+and `.forgejo/workflows/forgejo-society.yaml` — without inventing a
+third location. The two reference texts under
+`FORGEJO-SOCIETY-INTRODUCTION/` remain specification of record and are
+never executed.
 
 ---
 
