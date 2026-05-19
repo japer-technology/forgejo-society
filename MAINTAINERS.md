@@ -1,4 +1,4 @@
-# Maintainers
+# Forgejo Society: Maintainers
 
 This file tells contributors who owns each part of the repository for review
 purposes. It does not replace [GOVERNANCE.md](GOVERNANCE.md) or the deeper
