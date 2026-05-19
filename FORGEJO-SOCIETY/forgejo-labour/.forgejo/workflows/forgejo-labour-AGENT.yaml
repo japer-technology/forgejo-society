@@ -1,0 +1,50 @@
+name: minimal-labour-cycle
+
+on:
+  workflow_dispatch:
+    inputs:
+      call_id:
+        description: Call identifier
+        required: true
+      labour_id:
+        description: Labour unit identifier
+        required: true
+      caller:
+        description: Calling party identifier
+        required: true
+  issues:
+    types:
+      - labeled
+
+jobs:
+  run-labour:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'issues' && github.event.label.name == 'labour:run') }}
+    runs-on: ubuntu-standard
+    env:
+      CALL_ID: ${{ inputs.call_id }}
+      LABOUR_ID: ${{ inputs.labour_id }}
+      CALLER: ${{ inputs.caller }}
+    steps:
+      - name: Materialize result envelope
+        run: |
+          : "${CALL_ID:=call.local.labour.repo.noop.0001}"
+          : "${LABOUR_ID:=labour.repo.noop}"
+          : "${CALLER:=human.local}"
+          mkdir -p out
+          cat > out/result.yaml <<EOF2
+          id: result.${CALL_ID#call.}
+          call: ${CALL_ID}
+          target: ${LABOUR_ID}
+          caller: ${CALLER}
+          status: succeeded
+          outputs: {}
+          artefacts: []
+          evidence:
+            runner: ${RUNNER_NAME:-local}
+            commit: ${GITHUB_SHA:-unknown}
+          events: []
+          EOF2
+          cat out/result.yaml
+      - name: Next action
+        run: |
+          echo "Copy this file into .forgejo-labour/state/results/, open a PR, and notify the caller."
