@@ -11,8 +11,8 @@
 
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
 [Forgejo](https://forgejo.org/), running on Ubuntu hardware owned and governed
-by the project maintainers. It treats the forge â€” repositories, runners,
-issues, pull requests, and CI/CD â€” not merely as a place to store code, but as
+by the project maintainers. It treats the forge repositories, runners,
+issues, pull requests, and CI/CD not merely as a place to store code, but as
 the operational substrate for a *society of agents*: governed AI agencies,
 critics, censors, and memory systems that together form a transparent,
 auditable cognitive ecology.
@@ -38,7 +38,7 @@ infrastructure.
 ## The five quiet reversals
 
 1. **The forge is the mind.** Repositories, runners, issues, and pull
-   requests are the substrate of cognition â€” not a place that merely
+   requests are the substrate of cognition not a place that merely
    stores it.
 2. **Intelligence is a governed society.** Agencies, critics, and
    censors act under explicit authority, not as a single opaque model.
@@ -47,7 +47,7 @@ infrastructure.
 4. **Cognition persists as Git objects.** Memory, decisions, K-lines,
    and settlements are commits, not hidden state.
 5. **Sovereignty is structural.** Owned hardware, owned forge, owned
-   files â€” not a posture, a topology.
+   files not a posture, a topology.
 
 ## Repository map
 
@@ -77,7 +77,7 @@ infrastructure.
 
 ## Scope and status
 
-This repository is **mostly documentation** â€” a specification, planning,
+This repository is **mostly documentation** a specification, planning,
 and promotion corpus written in Markdown. There is no build, test, or
 lint tooling at the root, and none is planned. The only runnable code
 lives under
