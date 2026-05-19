@@ -11,7 +11,7 @@ this document records the rules that govern them.
 ## Logo
 
 - **Primary mark.** The current primary mark is
-  `FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`, used in the header of the root
+  `LOGO.png`, used in the header of the root
   `README.md` and most pillar READMEs.
 - **Usage.** Use the primary mark unmodified; do not recolour, distort,
   or composite over busy backgrounds without an approved variant.

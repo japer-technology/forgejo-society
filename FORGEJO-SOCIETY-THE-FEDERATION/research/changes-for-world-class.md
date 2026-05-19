@@ -463,7 +463,7 @@ The project promises auditable cognition. Make that promise checkable.
     `translations/` convention even if empty. World-class projects
     invite translators rather than discovering them.
 54. **Run an accessibility pass** on the published docs site (alt
-    text on every image — including `FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`,
+    text on every image — including `LOGO.png`,
     sufficient contrast, no colour-only signalling, headings in order).
 
 ## 13. Identity and brand

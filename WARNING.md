@@ -48,6 +48,6 @@ to the integrity of the society itself.
 
 <p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80" title="Forgejo Society">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80" title="Forgejo Society">
   </picture>
 </p>

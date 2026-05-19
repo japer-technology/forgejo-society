@@ -30,7 +30,7 @@ governance specification under
 | `FORGEJO-SOCIETY-RESEARCH/` | Eric Mourant | Maintainer review for research, critique, and language analysis. |
 | `FORGEJO-SOCIETY-INSTALLATION/` | Eric Mourant | Owner review for operational setup, hardware, mirror, transition, and conformance material. |
 | `FORGEJO-SOCIETY-THE-FEDERATION/` | Eric Mourant | Owner review for Federation-scope hardware, mind, and publication material. |
-| `FORGEJO-SOCIETY/FORGEJO-SOCIETY.png`, `FORGEJO-SOCIETY-PROMOTION/assets/` | Eric Mourant | Maintainer review for visual identity and public assets. |
+| `LOGO.png`, `FORGEJO-SOCIETY-PROMOTION/assets/` | Eric Mourant | Maintainer review for visual identity and public assets. |
 
 ## Escalation
 
@@ -42,6 +42,6 @@ to be documentation-only.
 
 <p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
