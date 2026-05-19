@@ -1,4 +1,4 @@
-# Forgejo Society: Setup
+# Forgejo Society: Installation
 
 > Time is the most valuable commodity in the universe
 
@@ -114,3 +114,10 @@ Work through the phases below in order. Each document is self-contained and comm
 The [overview document](transition-plan/00-overview.md) has the complete four-phase
 installation checklist. Use it to track progress from clean hardware to a fully running
 cognitive ecology.
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
+
