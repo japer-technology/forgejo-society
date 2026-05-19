@@ -1,4 +1,4 @@
-# Forgejo Society: MIT License
+# MIT License
 
 **Copyright © 2026 Eric Mourant**
 
