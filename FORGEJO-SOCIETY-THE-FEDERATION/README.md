@@ -2,6 +2,12 @@
 
 > The root Forgejo Society for and by the creator in the spirit of Star Trek.
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
+
 ## What the Federation is
 
 The Federation is the first Forgejo Society Eric Mourant brings up on his own
@@ -95,6 +101,6 @@ own `society.yml` and in
 
 <p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
