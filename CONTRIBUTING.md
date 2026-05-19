@@ -1,4 +1,4 @@
-# Contributing to Forgejo Society
+# Contributing to the Forgejo Society
 
 Thank you for taking the time to contribute. Forgejo Society is a
 documentation-first project with one runnable subtree under
