@@ -1,6 +1,6 @@
-# Society for [Forgejo](https://forgejo.org/)
+# The Forgejo Society Theme for [Forgejo](https://forgejo.org/)
 
-A brand-inspired theme for Forgejo.
+Our brand-inspired theme for Forgejo.
 
 ![Dark Screenshot](./society-dark.png)
 
@@ -27,4 +27,4 @@ Check out the [install document](./INSTALL.md) for installation instructions. Bu
 
 ## Credits
 
-Society is adapted from the [Melosso/forgejo-theme-melosso](https://github.com/melosso/forgejo-theme-melosso) is adapted from the [Dracula/Alucard theme](https://forge.axfive.net/Taylor/forgejo-theme-dracula) originally created by [Taylor C. Richberger](https://forge.axfive.net/Taylor).
+Our Society is adapted from the [Melosso/forgejo-theme-melosso](https://github.com/melosso/forgejo-theme-melosso) is adapted from the [Dracula/Alucard theme](https://forge.axfive.net/Taylor/forgejo-theme-dracula) originally created by [Taylor C. Richberger](https://forge.axfive.net/Taylor).
