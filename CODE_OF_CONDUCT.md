@@ -1,4 +1,4 @@
-# Code of Conduct
+# Forgejo Society: Code of Conduct
 
 ## Our Pledge
 
