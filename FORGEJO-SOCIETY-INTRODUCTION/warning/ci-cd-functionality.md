@@ -22,19 +22,6 @@
 | **Amazon CodeCatalyst**                       | It had integrated repos and CI/CD workflows, but AWS closed new customer access from **7 November 2025** and says it does not plan new features. Treat as legacy, not a greenfield choice. ([AWS Documentation][11])                                                                                                                                              |
 | **Launchpad**                                 | Has a build farm that can run package/snap-related builds from Git changes, but it is not a general-purpose GitHub Actions-like runner platform. ([Ubuntu Documentation][12])                                                                                                                                                                                     |
 
-## Not a strong match
-
-These are Git/repo hosting or forge-adjacent platforms, but I would **not** count them as having native GitHub-like runners:
-
-| Platform                        | Reason                                                                                                                                                                             |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SourceForge**                 | Git hosting/project hosting, but no current native GitHub Actions-like runner model verified.                                                                                      |
-| **GNU Savannah**                | Free-software forge, but no native general CI/CD runner layer verified. ([Savannah][13])                                                                                           |
-| **RhodeCode**                   | Supports CI integrations via Jenkins, Bamboo, TeamCity, Travis CI, CircleCI-style webhooks, but that is integration with external CI rather than native runners. ([RhodeCode][14]) |
-| **Assembla**                    | Repo/project hosting, but no native GitHub Actions-like runner system verified.                                                                                                    |
-| **Perforce Helix TeamHub**      | Git/SVN/Mercurial repository hosting, but no native runner model verified. ([Perforce][15])                                                                                        |
-| **JetBrains Space / SpaceCode** | Space had CI/CD historically, but JetBrains discontinued Space/SpaceCode paths; not a current candidate. ([devclass][16])                                                          |
-
 ## Clean definitive shortlist
 
 For a Forgejo Society-style architecture, the meaningful set is:
