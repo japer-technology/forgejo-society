@@ -28,7 +28,7 @@ agent traffic.**
 | [Bitbucket](https://bitbucket.org/) | [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/) | **No** | **Tertiary push-mirror only.** No Pipelines, no runners, no agent traffic. | [`bitbucket-compliance.md`](bitbucket-compliance.md) | [`bitbucket-warning.md`](bitbucket-warning.md) |
  [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) | [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/) | **No** | **Not part of this project.** Not a runtime, not a mirror, not a development surface. The pair exists so the refusal is explicit and auditable. | [`azure-devops-compliance.md`](azure-devops-compliance.md) | [`azure-devops-warning.md`](azure-devops-warning.md) |
 | [AWS CodeCommit](https://aws.amazon.com/codecommit/) | [AWS CodeBuild](https://aws.amazon.com/codebuild/) / [CodePipeline](https://aws.amazon.com/codepipeline/) | **No** | **Not part of this project.** Not a runtime, not a mirror, not a development surface. The pair exists for the same reason. | [`aws-codecommit-compliance.md`](aws-codecommit-compliance.md) | [`aws-codecommit-warning.md`](aws-codecommit-warning.md) |
-| [SourceForge](https://sourceforge.net/) | None native for agents | **No** | **Further mirror, if used at all.** No build services, no agent traffic. | [`sourceforge-compliance.md`](sourceforge-compliance.md) | [`sourceforge-warning.md`](sourceforge-warning.md) |
+| [SourceForge](https://sourceforge.net/) | None | **No** | **Further mirror, if used at all.** No build services, no agent traffic. | [`sourceforge-compliance.md`](sourceforge-compliance.md) | [`sourceforge-warning.md`](sourceforge-warning.md) |
 |
 
 ---
