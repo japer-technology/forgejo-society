@@ -4,13 +4,6 @@ Platform-specific compliance posture and adversarial warnings for every
 Git host the project either runs on, mirrors to, or deliberately
 refuses to touch.
 
-This directory is the long-form companion to the top-level
-[`WARNING.md`](../../WARNING.md). `WARNING.md` names the four
-load-bearing documents an operator must read before pushing, forking,
-mirroring, or running anything from this repository. The other files
-collected here extend that same discipline to every other forge the
-project has been asked about.
-
 ---
 
 ## How the documents are organised
