@@ -1,5 +1,11 @@
 # Forgejo Society
 
+<p align="center">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
+  </picture>
+</p>
+
 ### 1) Select a Server
 
 - Install or arrange access to an unrestricted Forgejo Server.
