@@ -24,7 +24,7 @@ auditable cognitive ecology.
 ## Read this first
 
 Before running, mirroring, or extending anything in this repository, read
-[WARNING.md](WARNING.md) and the four compliance documents it references.
+[WARNING.md](WARNING.md) and the compliance documents it references.
 They define where this project is allowed to *execute*, where it is only
 allowed to be *mirrored*, and what must never be done on shared
 infrastructure.
