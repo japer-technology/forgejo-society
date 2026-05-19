@@ -19,7 +19,7 @@ agent traffic.**
 
 ## The platforms
 
-| Platform | CI/CD system | Safe? | Posture | Compliance | Warning |
+| Platform | CI/CD system | Viable | Posture | Compliance | Warning |
 | -------- | ------------ | ------------------- | ------- | ---------- | ------- |
 | [Forgejo](https://forgejo.org/) | [Forgejo Actions](https://forgejo.org/docs/latest/admin/actions/) + [Forgejo Runner](https://forgejo.org/docs/latest/admin/runner-installation/) | **Yes** | **Production runtime.** Self-hosted on the maintainers' Ubuntu hardware. Shared Forgejo instances are never runtimes. | [`forgejo-compliance.md`](forgejo-compliance.md) | [`forgejo-warning.md`](forgejo-warning.md) |
 | [GitHub](https://github.com/) | [GitHub Actions](https://docs.github.com/en/actions) | **No** | **Development mirror only.** No Actions for agent workloads, no runners attached, no agent traffic against github.com. | [`github-compliance.md`](github-compliance.md) | [`github-warning.md`](github-warning.md) |
