@@ -29,7 +29,7 @@ maintainers' posture for environments that already have an Azure DevOps
 organization is: **do not host this project on Azure Repos, and do not
 translate the agent workflows into Azure Pipelines.** This is
 distinct from the
-[`ci-cd-functionality.md`](ci-cd-functionality.md) shortlist, which
+[`ci-cd-functionality`](README.md#git-hosts-with-native-cicd-execution-capability) shortlist, which
 catalogues Azure DevOps as a *capability* match for the architectural
 pattern; capability is not endorsement.
 
