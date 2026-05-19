@@ -101,6 +101,6 @@ own `society.yml` and in
 
 <p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="80">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society: The Federation" width="80" title="Forgejo Society: The Federation">
   </picture>
 </p>
