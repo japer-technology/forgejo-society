@@ -1,6 +1,6 @@
-# The Forgejo Society Theme for [Forgejo](https://forgejo.org/)
+# A Theme for [Forgejo](https://forgejo.org/)
 
-Our brand-inspired theme for Forgejo.
+Our Forgejo Society theme for Forgejo. Strong #AC43D9 Basis with all calculated colour combinations.
 
 ![Dark Screenshot](./society-dark.png)
 
