@@ -49,6 +49,18 @@ about runners, workflows, and execution.
   attached for the agent system, no agent traffic against
   github.com infrastructure.
 
+### Shared Forgejo, source mirror only
+
+- [`codeberg-compliance.md`](codeberg-compliance.md) /
+  [`codeberg-warning.md`](codeberg-warning.md) — Codeberg runs Forgejo,
+  but it is a *shared* Forgejo operated by Codeberg e.V. and is used
+  here as a **source mirror only**. The pair exists because Codeberg
+  speaking Forgejo Actions makes the temptation to enable the agent
+  workflows on it particularly acute, and the line has to be drawn
+  explicitly: no Woodpecker CI for agent workloads, no Forgejo
+  Actions runners attached for the agent system, no Codeberg Pages
+  used as the agent's public surface.
+
 ### Secondary or tertiary mirror only
 
 - [`gitlab-compliance.md`](gitlab-compliance.md) /
