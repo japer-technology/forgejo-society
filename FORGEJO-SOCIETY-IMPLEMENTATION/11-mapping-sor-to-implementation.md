@@ -11,6 +11,27 @@ here, the mapping is out of date and must be updated.
 
 ---
 
+## Specification root
+
+`THE-SOCIETY-OF-REPO/` is used throughout this table as the canonical
+*name* of the specification. In this repository it lives at:
+
+- [`FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/)
+
+The repo-native cognitive thesis referenced as `possibility-2.md` lives at:
+
+- [`FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/possibility-2.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/possibility-2.md)
+
+A SOR file referenced below as `02-protocols/07-service-channel.md` is
+therefore the file at
+`FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md`.
+Implementation targets named `.forgejo-society/...` are paths that will
+exist under the runtime folder once Phase A is committed; today they are
+specified by this folder and the bootstrap checklist
+([`10-bootstrap-checklist.md`](10-bootstrap-checklist.md)).
+
+---
+
 ## 00-foundations
 
 | SOR file | Implementation target |
@@ -104,7 +125,7 @@ All run in the `criticize` workflow step.
 | cloud-egress-censor | `.forgejo-society/censors/cloud-egress-censor.md` |
 | authority-censor | `.forgejo-society/censors/authority-censor.md` |
 | payment-censor | `.forgejo-society/censors/payment-censor.md` |
-| delegation-censor | `.forgejo-society/censors/delegation-censor.md` |
+| delegation-depth-censor | `.forgejo-society/censors/delegation-censor.md` |
 | credential-censor | `.forgejo-society/censors/credential-censor.md` |
 | pii-exfiltration-censor | `.forgejo-society/censors/pii-exfiltration-censor.md` |
 | (added) workflow-danger-censor | `.forgejo-society/censors/workflow-danger-censor.md` |

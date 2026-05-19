@@ -205,9 +205,9 @@ landing explicit.
 ## Cross-references
 
 - Analysis source: [`../FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md)
-- Service Channel Protocol: [`../THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
-- Bridges Protocol: [`../THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
-- Forgejo Environment Protocol (single-adapter rule): [`../THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
-- Channels registry: [`../THE-SOCIETY-OF-REPO/09-channels/README.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/09-channels/README.md)
+- Service Channel Protocol: [`../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/07-service-channel.md)
+- Bridges Protocol: [`../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/18-bridges.md)
+- Forgejo Environment Protocol (single-adapter rule): [`../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/15-forgejo-environment.md)
+- Channels registry: [`../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/09-channels/README.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/09-channels/README.md)
 - Plan mapping table: [`11-mapping-sor-to-implementation.md`](11-mapping-sor-to-implementation.md)
 - Folder spec for `services/` and `channels/`: [`04-folder-spec.md`](04-folder-spec.md)
