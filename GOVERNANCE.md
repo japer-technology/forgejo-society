@@ -1,4 +1,4 @@
-# Governance
+# Forgejo Society: Governance
 
 This file is the contributor-facing summary of Forgejo Society governance. The
 full governance model lives in
