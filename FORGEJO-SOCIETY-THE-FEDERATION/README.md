@@ -2,12 +2,6 @@
 
 > The root Forgejo Society for and by the creator in the spirit of Star Trek.
 
-<p align="center">
-  <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
-  </picture>
-</p>
-
 ## What the Federation is
 
 The Federation is the first Forgejo Society Eric Mourant brings up on his own
@@ -98,3 +92,9 @@ this directory describe the work the Federation is responsible for; the
 Activation of any individual pillar Mind requires the steps listed in its
 own `society.yml` and in
 [`FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md`](../FORGEJO-SOCIETY-IMPLEMENTATION/10-bootstrap-checklist.md).
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
