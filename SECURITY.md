@@ -1,4 +1,4 @@
-# Security Policy
+# Forgejo Society: Security Policy
 
 Forgejo Society is documentation-first, but it describes and contains a
 write-capable Forgejo runtime. Security reports are therefore handled carefully,
