@@ -111,7 +111,7 @@ agent code to execute on GitHub or shared Forgejo infrastructure.
 ## Style
 
 Repository prose follows
-[FORGEJO-SOCIETY-PROMOTION/08-style-guide.md](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md):
+[FORGEJO-SOCIETY-PROMOTION/08-style-guide.md](FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md):
 specifics over slogans, mechanisms over mystique, restraint over hype, and
 honest scope.
 
@@ -131,4 +131,4 @@ Authority levels are only `read`, `draft`, `propose`, `act`, `govern`, and
 ## License
 
 By contributing, you agree that your contribution is licensed under the
-[MIT License](LICENSE).
+[MIT License](LICENSE.md).

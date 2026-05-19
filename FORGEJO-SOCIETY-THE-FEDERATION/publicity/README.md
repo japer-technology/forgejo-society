@@ -16,10 +16,10 @@ seen and discussed beyond its own repository.
 
 If you are looking for the project itself, start with the
 [repository overview](../README.md) and the
-[introduction](../FORGEJO-SOCIETY-INTRODUCTION/README.md). For the outbound
-*voice* of the project — positioning, narratives, taglines, visual identity,
-and reusable copy — see
-[`FORGEJO-SOCIETY-PROMOTION/`](../FORGEJO-SOCIETY-PROMOTION/README.md).
+[introduction](../../FORGEJO-SOCIETY-INTRODUCTION/README.md). For the outbound
+*voice* of the project â€” positioning, narratives, taglines, visual identity,
+and reusable copy â€” see
+[`FORGEJO-SOCIETY-PROMOTION/`](../promotion/README.md).
 
 ---
 
@@ -50,19 +50,19 @@ project receives.
 
 It contains:
 
-- **Strategy** — what publicity means for this project, what we will and
+- **Strategy** â€” what publicity means for this project, what we will and
   will not do, and how we measure honesty over reach.
-- **Announcements** — the canonical record of public-facing milestones, in
+- **Announcements** â€” the canonical record of public-facing milestones, in
   the project's own voice, dated and reviewable.
-- **Media relations** — the media list, outreach protocols, embargo policy,
+- **Media relations** â€” the media list, outreach protocols, embargo policy,
   and inquiry handling.
-- **Events** — talks, demos, panels, podcasts, and other appearances, with
+- **Events** â€” talks, demos, panels, podcasts, and other appearances, with
   their abstracts, recordings, and follow-up notes.
-- **Coverage** — an honest, append-only log of how the project is described
+- **Coverage** â€” an honest, append-only log of how the project is described
   by others, with corrections where needed.
-- **Public statements** — the project's official responses to questions,
+- **Public statements** â€” the project's official responses to questions,
   controversies, or significant external events.
-- **Recognition** — awards, mentions, citations, and inclusions that the
+- **Recognition** â€” awards, mentions, citations, and inclusions that the
   project has received.
 
 ## What this folder is not
@@ -71,7 +71,7 @@ It contains:
   substance and governance, not the other way around.
 - It is **not** the place for taglines, narratives, or visual identity.
   Those live in
-  [`FORGEJO-SOCIETY-PROMOTION/`](../FORGEJO-SOCIETY-PROMOTION/README.md).
+  [`FORGEJO-SOCIETY-PROMOTION/`](../promotion/README.md).
 - It is **not** runtime code or agent manifests. Nothing in this folder is
   executed by `.forgejo/workflows/forgejo-society.yaml` or read by agencies.
 - It is **not** the introduction. The introduction is the on-ramp for new
@@ -86,8 +86,8 @@ It contains:
 ## How this folder is organised
 
 The folder follows the same convention as
-[`FORGEJO-SOCIETY-PROMOTION/`](../FORGEJO-SOCIETY-PROMOTION/README.md) and
-[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md): a numbered
+[`FORGEJO-SOCIETY-PROMOTION/`](../promotion/README.md) and
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md): a numbered
 sequence of strategy documents at the top level, plus a small set of topic
 subfolders for the working materials those strategies produce.
 
@@ -131,7 +131,7 @@ subfolders for the working materials those strategies produce.
   document under `THE-SOCIETY-OF-REPO/`, `FORGEJO-SOCIETY-IMPLEMENTATION/`,
   `FORGEJO-SOCIETY-INSTALLATION/`, or `REPO/forgejo-intelligence/`. Promotional
   voice is governed by
-  [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md);
+  [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../promotion/08-style-guide.md);
   publicity inherits that voice.
 - **Append-only history.** Once an announcement, statement, or coverage
   entry is published, it is amended through clearly dated follow-ups

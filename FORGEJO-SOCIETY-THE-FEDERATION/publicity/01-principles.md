@@ -1,4 +1,4 @@
-# 01 — Principles
+# 01 â€” Principles
 
 > Operating principles for honest, sustainable publicity.
 
@@ -57,7 +57,7 @@ conflicts with project governance in
 
 9. **Voice continuity.**
    - The publicity voice inherits the style guide in
-     [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md).
+     [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../promotion/08-style-guide.md).
    - Where publicity needs additional voice rules (for example for
      statements during incidents), they are added there, not duplicated
      here.
@@ -75,8 +75,8 @@ The following are explicitly out of scope for this folder:
 - Pre-announcements of features that are not yet specified or merged.
 - Vanity metrics presented as project health.
 - Press outreach that promises exclusivity we cannot honour.
-- Any framing that obscures the project's substance — its specifications,
-  governance, and runtime — behind generic language about "AI agents".
+- Any framing that obscures the project's substance â€” its specifications,
+  governance, and runtime â€” behind generic language about "AI agents".
 
 ## Status
 

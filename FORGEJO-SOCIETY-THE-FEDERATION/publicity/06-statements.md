@@ -1,4 +1,4 @@
-# 06 — Statements
+# 06 â€” Statements
 
 > How the project issues official public statements and responds to questions.
 
@@ -46,22 +46,22 @@ It contains:
 4. **Position.** The project's position, in the calm register of the
    style guide. Specifics over slogans.
 5. **What this changes.** Any concrete consequences for the
-   specification, plan, setup, runtime, or governance — with links.
+   specification, plan, setup, runtime, or governance â€” with links.
 6. **What this does not change.** Explicit limits.
 7. **Pointers.** Where to read more, and how to contact the project.
 8. **Follow-ups.** Append-only section for related developments.
 
 ## Approval path
 
-1. **Draft** — opened as a pull request adding the file to
+1. **Draft** â€” opened as a pull request adding the file to
    `statements/`. Authority required: `propose`.
-2. **Review** — at least one maintainer review, with extra scrutiny of
+2. **Review** â€” at least one maintainer review, with extra scrutiny of
    any claim about a third party.
-3. **Voice check** — verified against
-   [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md).
-4. **Publication** — merging the pull request constitutes publication.
+3. **Voice check** â€” verified against
+   [`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../promotion/08-style-guide.md).
+4. **Publication** â€” merging the pull request constitutes publication.
    Authority required: `act`.
-5. **Crisis exception** — statements issued under the crisis protocol
+5. **Crisis exception** â€” statements issued under the crisis protocol
    in [`07-crisis.md`](07-crisis.md) require `govern` authority and
    may be published before exhaustive review, with a follow-up review
    immediately after.

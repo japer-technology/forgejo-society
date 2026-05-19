@@ -1,4 +1,4 @@
-# 08 — Recognition
+# 08 â€” Recognition
 
 > How we record awards, mentions, citations, and inclusions.
 
@@ -10,12 +10,12 @@ receives. The canonical recognition log lives in
 
 ## What we record
 
-- **Awards** — formal recognition by an organisation.
-- **Citations** — citations of the project in academic papers,
+- **Awards** â€” formal recognition by an organisation.
+- **Citations** â€” citations of the project in academic papers,
   technical reports, books, or standards.
-- **Inclusions** — inclusion of the project in curated lists,
+- **Inclusions** â€” inclusion of the project in curated lists,
   showcases, or directories that have an editorial standard.
-- **Notable mentions** — substantive references by recognised people
+- **Notable mentions** â€” substantive references by recognised people
   or projects in the relevant communities.
 
 We do **not** record:
@@ -49,7 +49,7 @@ It contains:
 
 Recognition is recorded for the historical record, not used as a
 billboard. Use of recognition in promotional copy is governed by
-[`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md):
+[`../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../promotion/08-style-guide.md):
 specifics over slogans. We do not stack badges; we cite specific,
 attributable recognition where it is materially relevant.
 

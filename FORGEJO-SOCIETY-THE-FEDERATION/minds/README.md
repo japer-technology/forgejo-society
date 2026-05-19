@@ -10,8 +10,8 @@ the root society.
 The model, in one paragraph:
 
 > The Federation is the root society. Each top-level pillar of the project
-> (publicity, promotion, setup, …) is, in turn, run by its own *society of
-> minds* — a small federation of Forgejo repositories wired together through
+> (publicity, promotion, setup, â€¦) is, in turn, run by its own *society of
+> minds* â€” a small federation of Forgejo repositories wired together through
 > the same channel/bridge/censor protocol the Federation uses for any other
 > inter-society call (see
 > [`FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/13-inter-repo-communication.md)).
@@ -38,7 +38,7 @@ what*. Each subfolder names a pillar and contains:
   (`.forgejo-society/` and `.forgejo/workflows/forgejo-society.yaml`).
 - It is **not** a duplicate of the pillar specifications. The publicity
   *strategy* lives in
-  [`FORGEJO-SOCIETY-PUBLICITY/`](../../FORGEJO-SOCIETY-PUBLICITY/README.md);
+  [`FORGEJO-SOCIETY-PUBLICITY/`](../publicity/README.md);
   this folder names the *society of repos* that will, once launched, carry out
   that strategy on the Federation's behalf.
 - It is **not** a finished deployment. Each `society.yml` is a planning
@@ -52,7 +52,7 @@ what*. Each subfolder names a pillar and contains:
 | --- | --- | --- |
 | Publicity | scaffold | [`PUBLICITY/`](PUBLICITY/README.md) |
 
-Additional pillars (Promotion, Setup, Introduction, Precursor, …) follow the
+Additional pillars (Promotion, Setup, Introduction, Precursor, â€¦) follow the
 same shape and are added incrementally as the Federation delegates them.
 
 ## Conventions
@@ -79,21 +79,21 @@ MAY in turn declare its own `MIND/<id>/` folder using the *same* shape:
 recursion just reuses this one at the next level down.
 
 The Federation only ever talks to a sub-society's presenter. What lives
-behind that presenter is the sub-society's own concern — including whether
+behind that presenter is the sub-society's own concern â€” including whether
 it is itself a federation of further repos. From any parent's point of view,
 a child sub-society is always a single endpoint.
 
 ### When to spawn (the heterogeneity test)
 
 Spawn a sub-society from a member repo only when its remit decomposes into
-two or more *independently governed* responsibilities — i.e. they need
+two or more *independently governed* responsibilities â€” i.e. they need
 different **authority levels** (per
 [`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md)),
 different **censors**, or different **lead agencies**, and a single repo
 would have to pretend they are the same.
 
 Stay a single repo when the work is one remit, one authority profile, one
-censor profile — even if it has many files. **Federate for governance
+censor profile â€” even if it has many files. **Federate for governance
 heterogeneity, not for size.**
 
 ### Two failure modes to avoid
@@ -115,24 +115,24 @@ exactly one of these values:
 | Value | Meaning |
 | --- | --- |
 | `leaf` | This repo will not spawn a sub-society. Its `services_in` share one authority profile and one censor profile. |
-| `presenter` | This repo is the parent's single conscious voice. It MUST be `leaf` by rule — recursion stops here so the presenter cannot be presented by something else. The only legal value when `role: presenter`. |
+| `presenter` | This repo is the parent's single conscious voice. It MUST be `leaf` by rule â€” recursion stops here so the presenter cannot be presented by something else. The only legal value when `role: presenter`. |
 | `federated` | This repo is itself a sub-federation. It MUST contain a `MIND/<id>/society.yml` of the same shape as this folder, and that sub-society MUST itself name a presenter. |
 
 Lint rule (planned, by the same adapter that reads `channels/`):
 
-- `role: presenter` ⇒ `decomposition: presenter`.
-- `decomposition: federated` ⇒ a `MIND/<id>/society.yml` exists in the
+- `role: presenter` â‡’ `decomposition: presenter`.
+- `decomposition: federated` â‡’ a `MIND/<id>/society.yml` exists in the
   member repo and lists at least one member with `role: presenter`.
-- `decomposition: leaf` ⇒ no `MIND/` folder is present in the member repo.
+- `decomposition: leaf` â‡’ no `MIND/` folder is present in the member repo.
 
 ### Naming under recursion
 
-Dotted IDs simply append a segment per level — no new convention is needed:
+Dotted IDs simply append a segment per level â€” no new convention is needed:
 
-- `sor.publicity` — pillar sub-society
-- `sor.publicity.crisis` — member of the pillar
-- `sor.publicity.crisis.legal-gate` — member of `crisis`'s own sub-society
-- `sor.publicity.crisis.presenter` — the one voice `crisis` exposes upward
+- `sor.publicity` â€” pillar sub-society
+- `sor.publicity.crisis` â€” member of the pillar
+- `sor.publicity.crisis.legal-gate` â€” member of `crisis`'s own sub-society
+- `sor.publicity.crisis.presenter` â€” the one voice `crisis` exposes upward
   to Publicity's presenter
 
 The **uplink rule** that keeps this readable at any depth: *a sub-society's

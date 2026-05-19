@@ -20,12 +20,12 @@ in the forge.
 This note cross-checks that language against:
 
 - [`society-minds-intelligence-skills-language-check.md`](society-minds-intelligence-skills-language-check.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
-- [`THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
-- [`FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md`](../FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md)
-- [`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
-- [`FORGEJO-SOCIETY/forgejo-labour/`](../FORGEJO-SOCIETY/forgejo-labour/)
+- [`THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
+- [`THE-SOCIETY-OF-REPO/00-foundations/05-skills.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/05-skills.md)
+- [`THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
+- [`FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md`](../../FORGEJO-SOCIETY-INTRODUCTION/analysis/composition-model.md)
+- [`FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md)
+- [`FORGEJO-SOCIETY/forgejo-labour/`](../../FORGEJO-SOCIETY/forgejo-labour/)
 
 ---
 
@@ -73,7 +73,7 @@ brand, or a group chat. It means a governed whole with:
 - durable records of action and revision.
 
 The central claim in
-[`00-foundations/01-society-of-mind.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
+[`00-foundations/01-society-of-mind.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/01-society-of-mind.md)
 is that intelligence emerges from structured **interaction,
 insulation, representation, and revision**. SOR is that claim rebuilt on
 forge primitives:
@@ -339,9 +339,9 @@ The Society is the governed loop made durable.
 
 ---
 
-## 6. The Mind–Brain–Body check
+## 6. The Mindâ€“Brainâ€“Body check
 
-[`06-mind-brain-body.md`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
+[`06-mind-brain-body.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/00-foundations/06-mind-brain-body.md)
 separates three layers:
 
 | Layer | SOR meaning | Language rule |
@@ -352,13 +352,13 @@ separates three layers:
 
 The proposed sentence passes this check if Labour is included:
 
-- **Mind decides what matters** — mind layer.
-- **Intelligence connects a repo to the loop** — body/coordination
+- **Mind decides what matters** â€” mind layer.
+- **Intelligence connects a repo to the loop** â€” body/coordination
   doorway plus protocol binding.
-- **Skills define what can be done** — mind layer, expressed as
+- **Skills define what can be done** â€” mind layer, expressed as
   constitutional capability.
-- **Labour executes bounded work** — body layer.
-- **The forge records, governs, and settles** — body substrate plus mind
+- **Labour executes bounded work** â€” body layer.
+- **The forge records, governs, and settles** â€” body substrate plus mind
   governance made durable.
 
 The important warning from the decomposition is that technical

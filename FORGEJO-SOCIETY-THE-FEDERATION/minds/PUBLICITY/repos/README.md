@@ -7,7 +7,7 @@ One file per member repo of the Publicity sub-society. Each file declares:
 - the publicity strategy document the repo implements,
 - the lead agency family inside the repo (per
   [`FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md`](../../../../FORGEJO-SOCIETY-IMPLEMENTATION/05-agencies-critics-censors.md)),
-- a `decomposition:` field — `leaf`, `presenter`, or `federated` — recording
+- a `decomposition:` field â€” `leaf`, `presenter`, or `federated` â€” recording
   whether the repo spawns its own sub-society (per the recursion rule in
   [`../../README.md`](../../README.md#recursion-when-a-member-spawns-its-own-sub-society)),
 - the inbound services the repo exposes to the rest of the sub-society
@@ -15,8 +15,8 @@ One file per member repo of the Publicity sub-society. Each file declares:
 - the outbound channels the repo expects to call (mirrors the runtime
   `channels/` folder).
 
-The actual wiring — which call goes through which bridge under which censor
-budget — lives one level up in
+The actual wiring â€” which call goes through which bridge under which censor
+budget â€” lives one level up in
 [`../wiring/channels.yml`](../wiring/channels.yml). These per-repo files
 declare what each repo *publishes and consumes*; the wiring file declares
 which subscriptions the sub-society actually permits.
@@ -25,12 +25,12 @@ which subscriptions the sub-society actually permits.
 
 | Member | File | Decomposition | Implements |
 | --- | --- | --- | --- |
-| Presenter | [`presenter.yml`](presenter.yml) | `presenter` | [`00-overview.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/00-overview.md), [`01-principles.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/01-principles.md) |
-| Announcements | [`announcements.yml`](announcements.yml) | `leaf` | [`02-announcements.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/02-announcements.md) |
-| Media relations | [`media-relations.yml`](media-relations.yml) | `leaf` (candidate to spawn) | [`03-media-relations.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md) |
-| Events | [`events.yml`](events.yml) | `leaf` (candidate to spawn) | [`04-events.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/04-events.md) |
-| Coverage | [`coverage.yml`](coverage.yml) | `leaf` | [`05-coverage.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/05-coverage.md) |
-| Statements | [`statements.yml`](statements.yml) | `leaf` | [`06-statements.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/06-statements.md) |
-| Crisis | [`crisis.yml`](crisis.yml) | `leaf` (strong candidate to spawn) | [`07-crisis.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/07-crisis.md) |
-| Recognition | [`recognition.yml`](recognition.yml) | `leaf` | [`08-recognition.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/08-recognition.md) |
-| Metrics | [`metrics.yml`](metrics.yml) | `leaf` | [`09-metrics.md`](../../../../FORGEJO-SOCIETY-PUBLICITY/09-metrics.md) |
+| Presenter | [`presenter.yml`](presenter.yml) | `presenter` | [`00-overview.md`](../../../publicity/00-overview.md), [`01-principles.md`](../../../publicity/01-principles.md) |
+| Announcements | [`announcements.yml`](announcements.yml) | `leaf` | [`02-announcements.md`](../../../publicity/02-announcements.md) |
+| Media relations | [`media-relations.yml`](media-relations.yml) | `leaf` (candidate to spawn) | [`03-media-relations.md`](../../../publicity/03-media-relations.md) |
+| Events | [`events.yml`](events.yml) | `leaf` (candidate to spawn) | [`04-events.md`](../../../publicity/04-events.md) |
+| Coverage | [`coverage.yml`](coverage.yml) | `leaf` | [`05-coverage.md`](../../../publicity/05-coverage.md) |
+| Statements | [`statements.yml`](statements.yml) | `leaf` | [`06-statements.md`](../../../publicity/06-statements.md) |
+| Crisis | [`crisis.yml`](crisis.yml) | `leaf` (strong candidate to spawn) | [`07-crisis.md`](../../../publicity/07-crisis.md) |
+| Recognition | [`recognition.yml`](recognition.yml) | `leaf` | [`08-recognition.md`](../../../publicity/08-recognition.md) |
+| Metrics | [`metrics.yml`](metrics.yml) | `leaf` | [`09-metrics.md`](../../../publicity/09-metrics.md) |

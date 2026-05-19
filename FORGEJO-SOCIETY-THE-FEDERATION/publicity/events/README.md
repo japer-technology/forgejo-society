@@ -5,9 +5,9 @@
 This folder holds the canonical record of **public events** at which
 Forgejo Society has been represented. Top-level rules and the event
 format live in [`../04-events.md`](../04-events.md). The talk
-*artefacts* themselves — abstracts, slide outlines, demo scripts —
+*artefacts* themselves â€” abstracts, slide outlines, demo scripts â€”
 live in
-[`../../FORGEJO-SOCIETY-PROMOTION/talks/`](../../FORGEJO-SOCIETY-PROMOTION/talks/README.md).
+[`../../FORGEJO-SOCIETY-PROMOTION/talks/`](../../promotion/talks/README.md).
 
 ---
 
@@ -21,7 +21,7 @@ live in
 Each event record links out to:
 
 - The talk artefacts in
-  [`../../FORGEJO-SOCIETY-PROMOTION/talks/`](../../FORGEJO-SOCIETY-PROMOTION/talks/README.md).
+  [`../../FORGEJO-SOCIETY-PROMOTION/talks/`](../../promotion/talks/README.md).
 - Any resulting coverage in [`../coverage/`](../coverage/README.md).
 - Any resulting announcement in
   [`../announcements/`](../announcements/README.md).

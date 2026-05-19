@@ -28,7 +28,7 @@ Every claim below is traceable to an existing document under
 
 > The forge is the mind. The repo is an agency. The society thinks.
 
-<sub>Canonical tagline — use verbatim, per
+<sub>Canonical tagline â€” use verbatim, per
 [`../01-positioning.md`](../01-positioning.md).</sub>
 
 ---
@@ -37,8 +37,8 @@ Every claim below is traceable to an existing document under
 
 Forgejo Society is a self-hosted, local-first cognitive forge built on
 [Forgejo](https://forgejo.org/), running on Ubuntu hardware owned and
-governed by the project maintainers. It treats the forge —
-repositories, runners, issues, pull requests, and CI/CD — as the
+governed by the project maintainers. It treats the forge â€”
+repositories, runners, issues, pull requests, and CI/CD â€” as the
 operational substrate for a society of agents: governed AI agencies,
 critics, censors, and memory systems that together form a transparent,
 auditable cognitive ecology.
@@ -53,37 +53,37 @@ auditable cognitive ecology.
 2. **Intelligence is a governed society.**
 3. **Capability is granted by files and audited by Git.**
 4. **Cognition persists as Git objects.**
-5. **Sovereignty is structural** — owned hardware, owned forge, owned files.
+5. **Sovereignty is structural** â€” owned hardware, owned forge, owned files.
 
 <sub>Source: root [`README.md`](../../README.md) and
-[`AGENTS.md`](../../AGENTS.md).</sub>
+[`AGENTS.md`](../../../AGENTS.md).</sub>
 
 ---
 
 ## The parts of the society
 
-- **Agencies** — units of work that propose changes through the forge.
-- **Critics** — review and challenge proposals before they settle.
-- **Censors** — enforce safety and policy boundaries.
-- **Memory** — persists decisions, K-lines, and settlements as Git
+- **Agencies** â€” units of work that propose changes through the forge.
+- **Critics** â€” review and challenge proposals before they settle.
+- **Censors** â€” enforce safety and policy boundaries.
+- **Memory** â€” persists decisions, K-lines, and settlements as Git
   objects.
-- **Workspace** — where in-progress settlements live.
-- **Runners and workflows** — the operational substrate that activates
+- **Workspace** â€” where in-progress settlements live.
+- **Runners and workflows** â€” the operational substrate that activates
   the society.
 
-<sub>Definitions: [`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).</sub>
+<sub>Definitions: [`THE-SOCIETY-OF-REPO/`](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).</sub>
 
 ---
 
 ## Governance at a glance
 
-Authority is granted by files and audited by Git. Every actor —
-human or agency — holds one of six levels:
+Authority is granted by files and audited by Git. Every actor â€”
+human or agency â€” holds one of six levels:
 
-`read` · `draft` · `propose` · `act` · `govern` · `human`
+`read` Â· `draft` Â· `propose` Â· `act` Â· `govern` Â· `human`
 
 <sub>Source:
-[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).</sub>
+[`THE-SOCIETY-OF-REPO/01-governance/authority-registry.md`](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/01-governance/authority-registry.md).</sub>
 
 ---
 
@@ -95,29 +95,29 @@ human or agency — holds one of six levels:
 - **GitHub** is a development mirror only; agent workloads never
   execute against github.com infrastructure.
 
-<sub>Source: [`WARNING.md`](../../WARNING.md) and the four-document
+<sub>Source: [`WARNING.md`](../../../WARNING.md) and the four-document
 compliance set referenced from it.</sub>
 
 ---
 
 ## Where to read more
 
-- **Overview** — [root `README.md`](../../README.md)
-- **Compliance posture** — [`WARNING.md`](../../WARNING.md)
-- **Specification** —
-  [`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md)
-- **Introduction essays** —
-  [`FORGEJO-SOCIETY-INTRODUCTION/`](../../FORGEJO-SOCIETY-INTRODUCTION/README.md)
-- **Plan** — [`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
-- **Setup** — [`FORGEJO-SOCIETY-INSTALLATION/`](../../FORGEJO-SOCIETY-INSTALLATION/README.md)
-- **Runtime** —
-  [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
+- **Overview** â€” [root `README.md`](../../README.md)
+- **Compliance posture** â€” [`WARNING.md`](../../../WARNING.md)
+- **Specification** â€”
+  [`THE-SOCIETY-OF-REPO/`](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md)
+- **Introduction essays** â€”
+  [`FORGEJO-SOCIETY-INTRODUCTION/`](../../../FORGEJO-SOCIETY-INTRODUCTION/README.md)
+- **Plan** â€” [`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
+- **Setup** â€” [`FORGEJO-SOCIETY-INSTALLATION/`](../../../FORGEJO-SOCIETY-INSTALLATION/README.md)
+- **Runtime** â€”
+  [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../../FORGEJO-SOCIETY/forgejo-intelligence/README.md)
 
 ---
 
 ## Footer
 
-Forgejo Society · MIT-licensed · maintained by the project's human
+Forgejo Society Â· MIT-licensed Â· maintained by the project's human
 authority holders. Logo and visual identity per
 [`../06-visual-identity.md`](../06-visual-identity.md).
 

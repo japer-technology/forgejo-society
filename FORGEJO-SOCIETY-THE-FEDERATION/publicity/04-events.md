@@ -1,11 +1,11 @@
-# 04 — Events
+# 04 â€” Events
 
 > Talks, demos, podcasts, panels: how we choose them, prepare for them, and follow up.
 
 This document describes how Forgejo Society participates in public events.
 The canonical event records live in [`events/`](events/README.md). Talk
 abstracts and slide outlines themselves are drafted in
-[`../FORGEJO-SOCIETY-PROMOTION/talks/`](../FORGEJO-SOCIETY-PROMOTION/talks/README.md);
+[`../FORGEJO-SOCIETY-PROMOTION/talks/`](../promotion/talks/README.md);
 this folder records the *appearances* and what came of them.
 
 ---
@@ -52,7 +52,7 @@ For each accepted event:
    ```
 
 2. **Draft the talk artefacts** (abstract, outline, demo script) in
-   [`../FORGEJO-SOCIETY-PROMOTION/talks/`](../FORGEJO-SOCIETY-PROMOTION/talks/README.md)
+   [`../FORGEJO-SOCIETY-PROMOTION/talks/`](../promotion/talks/README.md)
    and link them from the event record.
 3. **Identify the speaker(s)** and the author of record for the event
    entry.

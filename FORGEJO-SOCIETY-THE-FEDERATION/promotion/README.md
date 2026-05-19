@@ -16,9 +16,9 @@ public.
 
 If you are looking for the project itself, start with the
 [repository overview](../README.md) and the
-[introduction](../FORGEJO-SOCIETY-INTRODUCTION/README.md). For the
+[introduction](../../FORGEJO-SOCIETY-INTRODUCTION/README.md). For the
 specification of the mind being promoted, see
-[`THE-SOCIETY-OF-REPO/`](../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
+[`THE-SOCIETY-OF-REPO/`](../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md).
 
 ---
 
@@ -32,13 +32,13 @@ the setup (which installs), and the runtime code (which runs).
 
 It contains:
 
-- **Strategy** — positioning, audiences, narratives, channels, campaigns.
-- **Reusable copy** — taglines, blurbs, abstracts, social posts, press
+- **Strategy** â€” positioning, audiences, narratives, channels, campaigns.
+- **Reusable copy** â€” taglines, blurbs, abstracts, social posts, press
   boilerplate.
-- **Visual identity** — logo usage, palette, typography, diagram conventions,
+- **Visual identity** â€” logo usage, palette, typography, diagram conventions,
   and the source-of-truth assets that other surfaces reuse.
-- **Press and outreach** — press kit, FAQ, talk abstracts, slide outlines.
-- **Style** — voice, tone, terminology, and the rules that keep the project's
+- **Press and outreach** â€” press kit, FAQ, talk abstracts, slide outlines.
+- **Style** â€” voice, tone, terminology, and the rules that keep the project's
   public language coherent across surfaces.
 
 ## What this folder is not
@@ -61,8 +61,8 @@ It contains:
 ## How this folder is organised
 
 The folder follows the same convention as
-[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md) and
-[`FORGEJO-SOCIETY-INSTALLATION/`](../FORGEJO-SOCIETY-INSTALLATION/README.md): a numbered
+[`FORGEJO-SOCIETY-IMPLEMENTATION/`](../../FORGEJO-SOCIETY-IMPLEMENTATION/README.md) and
+[`FORGEJO-SOCIETY-INSTALLATION/`](../../FORGEJO-SOCIETY-INSTALLATION/README.md): a numbered
 sequence of strategy documents at the top level, plus a small set of topic
 subfolders for the working materials those strategies produce.
 

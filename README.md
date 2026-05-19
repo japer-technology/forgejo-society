@@ -5,8 +5,8 @@
 
 **Forgejo Society** is a self-hosted, local-first **cognitive forge** built on
 [Forgejo](https://forgejo.org/), running on Ubuntu hardware owned and governed
-by the project maintainers. It treats the forge — repositories, runners,
-issues, pull requests, and CI/CD — not merely as a place to store code, but as
+by the project maintainers. It treats the forge â€” repositories, runners,
+issues, pull requests, and CI/CD â€” not merely as a place to store code, but as
 the operational substrate for a *society of agents*: governed AI agencies,
 critics, censors, and memory systems that together form a transparent,
 auditable cognitive ecology.
@@ -20,7 +20,7 @@ auditable cognitive ecology.
 Forgejo Society is distinctive because it makes five quiet reversals: the forge
 becomes the mind, intelligence becomes a governed society, capability is granted
 by files and audited by Git, cognition persists as Git objects, and sovereignty
-becomes structural — rooted in owned hardware, owned forge, and owned files. Its
+becomes structural â€” rooted in owned hardware, owned forge, and owned files. Its
 implementation honours this by reducing repository cognition to one workflow
 file and one root folder, while moving runtime authority away from hosted
 infrastructure. In an AI world chasing demonstrations, it pursues something
@@ -47,7 +47,7 @@ infrastructure.
 ## The five quiet reversals
 
 1. **The forge is the mind.** Repositories, runners, issues, and pull
-   requests are the substrate of cognition — not a place that merely
+   requests are the substrate of cognition â€” not a place that merely
    stores it.
 2. **Intelligence is a governed society.** Agencies, critics, and
    censors act under explicit authority, not as a single opaque model.
@@ -56,7 +56,7 @@ infrastructure.
 4. **Cognition persists as Git objects.** Memory, decisions, K-lines,
    and settlements are commits, not hidden state.
 5. **Sovereignty is structural.** Owned hardware, owned forge, owned
-   files — not a posture, a topology.
+   files â€” not a posture, a topology.
 
 ## Repository map
 
@@ -66,15 +66,12 @@ infrastructure.
 | [FORGEJO-SOCIETY/](FORGEJO-SOCIETY/README.md) | The Forgejo-flavoured instance. Contains the only runnable subtree: [`forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md). |
 | [FORGEJO-SOCIETY-IMPLEMENTATION/](FORGEJO-SOCIETY-IMPLEMENTATION/README.md) | Forward-looking design, target layout, runtime pipeline, agencies/critics/censors, frames and K-lines, bootstrap checklist. |
 | [FORGEJO-SOCIETY-INSTALLATION/](FORGEJO-SOCIETY-INSTALLATION/README.md) | Operational install, quick-start, conformance, and transition plan. |
-| [FORGEJO-SOCIETY-PROMOTION/](FORGEJO-SOCIETY-PROMOTION/README.md) | Public voice. [`08-style-guide.md`](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md) is the authoritative style guide. |
-| [FORGEJO-SOCIETY-PUBLICITY/](FORGEJO-SOCIETY-PUBLICITY/README.md) | Outward-facing publicity collateral: announcements, media, events, statements. |
-| [FORGEJO-SOCIETY-RESEARCH/](FORGEJO-SOCIETY-RESEARCH/) | Research notes and critique. |
-| [FORGEJO-SOCIETY-THE-FEDERATION/](FORGEJO-SOCIETY-THE-FEDERATION/README.md) | Federation-scope material and local hardware notes. |
+| [FORGEJO-SOCIETY-THE-FEDERATION/](FORGEJO-SOCIETY-THE-FEDERATION/README.md) | Federation-scope material and local hardware notes. Houses [`promotion/`](FORGEJO-SOCIETY-THE-FEDERATION/promotion/README.md) (public voice; [`08-style-guide.md`](FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md) is authoritative), [`publicity/`](FORGEJO-SOCIETY-THE-FEDERATION/publicity/README.md) (announcements, media, events, statements), and [`research/`](FORGEJO-SOCIETY-THE-FEDERATION/research/) (research notes and critique). |
 
 ## Reading paths
 
-- **Newcomer:** [README](FORGEJO-SOCIETY-INTRODUCTION/README.md) →
-  [reading-paths.md](FORGEJO-SOCIETY-INTRODUCTION/reading-paths.md) →
+- **Newcomer:** [README](FORGEJO-SOCIETY-INTRODUCTION/README.md) â†’
+  [reading-paths.md](FORGEJO-SOCIETY-INTRODUCTION/reading-paths.md) â†’
   the essays under
   [`FORGEJO-SOCIETY-INTRODUCTION/essay/`](FORGEJO-SOCIETY-INTRODUCTION/essay/).
 - **Specification:** Society of Repo under
@@ -89,7 +86,7 @@ infrastructure.
 
 ## Scope and status
 
-This repository is **mostly documentation** — a specification, planning,
+This repository is **mostly documentation** â€” a specification, planning,
 and promotion corpus written in Markdown. There is no build, test, or
 lint tooling at the root, and none is planned. The only runnable code
 lives under
@@ -99,7 +96,7 @@ agent guidance.
 
 Sections marked as planned are planned. Sections describing existing
 artifacts describe what is already in the tree. The
-[style guide](FORGEJO-SOCIETY-PROMOTION/08-style-guide.md) requires this
+[style guide](FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md) requires this
 distinction be kept honest.
 
 ## Governance, contributing, security

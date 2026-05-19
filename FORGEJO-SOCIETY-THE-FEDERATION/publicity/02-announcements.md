@@ -1,4 +1,4 @@
-# 02 — Announcements
+# 02 â€” Announcements
 
 > What constitutes an announcement, the format, and the approval path.
 
@@ -50,17 +50,17 @@ It contains, in order:
 
 ## Approval path
 
-1. **Draft** — opened as a pull request adding the file to
+1. **Draft** â€” opened as a pull request adding the file to
    `announcements/`. Authority required: `propose`.
-2. **Review** — at least one maintainer review verifying every claim
+2. **Review** â€” at least one maintainer review verifying every claim
    against the cited specification, plan, setup, or runtime.
-3. **Voice check** — verifies the draft against the
-   [promotion style guide](../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md).
-4. **Publication** — merging the pull request constitutes publication.
+3. **Voice check** â€” verifies the draft against the
+   [promotion style guide](../promotion/08-style-guide.md).
+4. **Publication** â€” merging the pull request constitutes publication.
    Authority required: `act`.
-5. **Distribution** — links to the merged file are then shared on the
+5. **Distribution** â€” links to the merged file are then shared on the
    channels described in
-   [`../FORGEJO-SOCIETY-PROMOTION/04-channels.md`](../FORGEJO-SOCIETY-PROMOTION/04-channels.md).
+   [`../FORGEJO-SOCIETY-PROMOTION/04-channels.md`](../promotion/04-channels.md).
 
 ## Cadence
 

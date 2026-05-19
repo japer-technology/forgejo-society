@@ -1,4 +1,4 @@
-# 03 — Media Relations
+# 03 â€” Media Relations
 
 > How we build and maintain relationships with journalists and publications.
 
@@ -6,8 +6,8 @@ This document describes how Forgejo Society relates to the press: who we
 talk to, how we talk to them, and how those relationships are recorded.
 The canonical media list lives in
 [`media-list/`](media-list/README.md); the press-kit content itself lives
-in [`../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md`](../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md)
-and [`../FORGEJO-SOCIETY-PROMOTION/press/`](../FORGEJO-SOCIETY-PROMOTION/press/README.md).
+in [`../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md`](../promotion/07-press-kit.md)
+and [`../FORGEJO-SOCIETY-PROMOTION/press/`](../promotion/press/README.md).
 
 ---
 
@@ -15,12 +15,12 @@ and [`../FORGEJO-SOCIETY-PROMOTION/press/`](../FORGEJO-SOCIETY-PROMOTION/press/R
 
 We engage primarily with three kinds of media:
 
-1. **Technical press** — publications and independent writers covering
+1. **Technical press** â€” publications and independent writers covering
    forge software, AI agents, governance, and self-hosting.
-2. **Community publications** — newsletters, podcasts, and aggregators
+2. **Community publications** â€” newsletters, podcasts, and aggregators
    that serve the Forgejo, Gitea, AI agents, and broader free-software
    communities.
-3. **Academic and research outlets** — venues that cover work on
+3. **Academic and research outlets** â€” venues that cover work on
    multi-agent systems, software engineering with AI, and cognitive
    architectures. Forgejo Society is not a research lab, but it is in
    conversation with this work.
@@ -42,7 +42,7 @@ not for that audience.
 ## Inquiry handling
 
 External inquiries are routed through the contact protocol defined in
-[`../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md`](../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md).
+[`../FORGEJO-SOCIETY-PROMOTION/07-press-kit.md`](../promotion/07-press-kit.md).
 The publicity-specific rules are:
 
 1. **Acknowledge within two business days**, even if the substantive

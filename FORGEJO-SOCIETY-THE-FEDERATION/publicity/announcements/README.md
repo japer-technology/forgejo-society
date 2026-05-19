@@ -5,7 +5,7 @@
 This folder holds the canonical record of **announcements** issued by
 Forgejo Society. Top-level rules and the announcement format live in
 [`../02-announcements.md`](../02-announcements.md); voice rules live in
-[`../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md).
+[`../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../promotion/08-style-guide.md).
 
 ---
 
@@ -20,13 +20,13 @@ Forgejo Society. Top-level rules and the announcement format live in
 ## What does not belong here
 
 - Drafts of taglines, narratives, or slogans (those live in
-  [`../../FORGEJO-SOCIETY-PROMOTION/messaging/`](../../FORGEJO-SOCIETY-PROMOTION/messaging/README.md)).
+  [`../../FORGEJO-SOCIETY-PROMOTION/messaging/`](../../promotion/messaging/README.md)).
 - Internal status updates, sprint notes, or work-in-progress reports.
 - Statements responding to external events (those live in
   [`../statements/`](../statements/README.md)).
 - Press releases written for distribution to specific outlets (those
   live in
-  [`../../FORGEJO-SOCIETY-PROMOTION/press/`](../../FORGEJO-SOCIETY-PROMOTION/press/README.md)).
+  [`../../FORGEJO-SOCIETY-PROMOTION/press/`](../../promotion/press/README.md)).
 
 ## Conventions
 

@@ -1,4 +1,4 @@
-# 09 — Metrics
+# 09 â€” Metrics
 
 > What we measure, how we learn, and how publicity feeds the cognitive loop.
 
@@ -60,7 +60,7 @@ Forgejo Society treats publicity as one of its sensors. What the
 outside world says about the project is information about how the
 project's own materials are landing. Patterns in coverage corrections
 should produce changes in
-[`../FORGEJO-SOCIETY-PROMOTION/`](../FORGEJO-SOCIETY-PROMOTION/README.md)
+[`../FORGEJO-SOCIETY-PROMOTION/`](../promotion/README.md)
 and, where appropriate, in the project's own specification. The metric
 of last resort is whether the project, over time, becomes easier and
 more honest to describe.

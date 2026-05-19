@@ -48,7 +48,7 @@ This project's posture aligns with that rule because:
 
 ## Specific subprojects: `FORGEJO-SOCIETY-PAST/` and `REPO/forgejo-intelligence/`
 
-The directory [`FORGEJO-SOCIETY-PAST/`](FORGEJO-SOCIETY-PAST/) contains earlier or sibling experiments —
+The directory [`FORGEJO-SOCIETY-PAST/`](../precursors/) contains earlier or sibling experiments —
 notably [`FORGEJO-SOCIETY-PAST/github-minimum-intelligence/`](../precursors/github-minimum-intelligence/) —
 and [`REPO/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/) (formerly
 top-level `.forgejo-intelligence/`, originally `FORGEJO-SOCIETY-PAST/forgejo-intelligence/`)

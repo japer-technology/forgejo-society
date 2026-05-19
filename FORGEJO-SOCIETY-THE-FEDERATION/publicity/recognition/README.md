@@ -28,7 +28,7 @@ Forgejo Society. Top-level rules and the entry format live in
 - **Restraint.** Recognition is recorded for the historical record,
   not used as a billboard. Use of recognition in promotional copy is
   governed by
-  [`../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md).
+  [`../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../promotion/08-style-guide.md).
 - **Citable.** Each entry includes a stable URL or DOI where one
   exists.
 - **Honest framing.** The "Why it matters" section names what the

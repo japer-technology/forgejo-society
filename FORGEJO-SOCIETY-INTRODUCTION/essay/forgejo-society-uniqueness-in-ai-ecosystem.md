@@ -1,7 +1,7 @@
 # How Forgejo Society design and implementation are unique in today's fast paced AI ecosystem
 
-This essay is an attempt to state — without slogans, and without comparative
-swagger — what is *actually* different about Forgejo Society as a design and
+This essay is an attempt to state â€” without slogans, and without comparative
+swagger â€” what is *actually* different about Forgejo Society as a design and
 as an implementation, and why those differences matter in an AI ecosystem
 where almost every new project is some variant of "a chatbot wired to tools."
 
@@ -25,12 +25,12 @@ here?*
 ## 1. The shape of the current AI ecosystem
 
 The current ecosystem has a recognisable shape. Most systems being shipped in
-2024–2026 share four properties:
+2024â€“2026 share four properties:
 
 1. **A model at the centre.** Architecture is organised around a foundation
    model. Capability is whatever the model can be coaxed to do.
-2. **Tools bolted on the side.** Everything the model cannot do — reading a
-   file, hitting an API, running a command — is wrapped as a "tool" the model
+2. **Tools bolted on the side.** Everything the model cannot do â€” reading a
+   file, hitting an API, running a command â€” is wrapped as a "tool" the model
    may call. The model is the subject; the world is its object.
 3. **Hosted runtime.** The execution surface is somebody else's cloud, behind
    somebody else's terms of service, using somebody else's hardware and
@@ -39,8 +39,8 @@ The current ecosystem has a recognisable shape. Most systems being shipped in
    work product is a transcript, optionally with side-effects. When the
    window closes, most of the cognition evaporates.
 
-Inside that shape the ecosystem moves fast — new models, new orchestration
-frameworks, new agent libraries, new IDEs — but the shape itself rarely
+Inside that shape the ecosystem moves fast â€” new models, new orchestration
+frameworks, new agent libraries, new IDEs â€” but the shape itself rarely
 changes. Forgejo Society is unusual because it changes the shape.
 
 ---
@@ -67,7 +67,7 @@ is a state on a thought.
 That re-reading is not metaphor. The plan collapses the entire running
 cognition of any single repository into one workflow file
 (`.forgejo/workflows/forgejo-society.yaml`) and one root folder
-(`.forgejo-society/`) — see
+(`.forgejo-society/`) â€” see
 [`FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md`](../../FORGEJO-SOCIETY-IMPLEMENTATION/00-overview.md).
 There is no separate agent process living beside the forge. The forge *is*
 the process.
@@ -77,8 +77,8 @@ the process.
 Following Marvin Minsky's *Society of Mind* (see
 [`../../THE-SOCIETY-OF-MIND/README.md`](../THE-SOCIETY-OF-MIND/README.md)),
 intelligence is treated as compositional. The unit of cognition is not the
-model; it is the *agency*, and many small bounded agencies — together with
-*critics* that inhibit, *censors* that forbid, and *memory* that recalls —
+model; it is the *agency*, and many small bounded agencies â€” together with
+*critics* that inhibit, *censors* that forbid, and *memory* that recalls â€”
 form the actual mind.
 
 This is not multi-agent-as-marketing. It is multi-agent-as-governance.
@@ -129,8 +129,8 @@ behind for human work:
 Every thought has a body, and every body is a Git object. That property is
 what allows the companion essay
 [`sor-emergent-possibilities.md`](sor-emergent-possibilities.md) to use the
-word *emergence* in its strict sense — compositional cause, durable trace,
-reusable shape — rather than the marketing sense of "we did not predict
+word *emergence* in its strict sense â€” compositional cause, durable trace,
+reusable shape â€” rather than the marketing sense of "we did not predict
 this output."
 
 ### 2.5 Sovereignty by construction, not by promise
@@ -149,7 +149,7 @@ contractual:
 - The federation and hardware substrate are first-class concerns under
   [`../../FORGEJO-SOCIETY-THE-FEDERATION/`](../../FORGEJO-SOCIETY-THE-FEDERATION/).
 
-The point is not that self-hosting is novel — it isn't — but that the
+The point is not that self-hosting is novel â€” it isn't â€” but that the
 *cognitive architecture* and the *hosting posture* are designed together.
 The mind only runs where the maintainers can audit the substrate it runs
 on.
@@ -168,9 +168,9 @@ seriously at once.
 The implementation collapses to a single canonical surface in any repo that
 hosts a society:
 
-- **`.forgejo/workflows/forgejo-society.yaml`** — the heartbeat, the only
+- **`.forgejo/workflows/forgejo-society.yaml`** â€” the heartbeat, the only
   scheduled and event-driven entry point.
-- **`.forgejo-society/`** — the only configuration root, holding the
+- **`.forgejo-society/`** â€” the only configuration root, holding the
   sentinel, governance, frames, K-lines, agencies, critics, censors,
   memory, and workspace.
 
@@ -180,8 +180,8 @@ agent implementation playbook
 treats this collapse as a hard constraint: if a feature cannot live inside
 those two paths, it does not ship.
 
-This is unusual. Most agent stacks grow a second tree of state — vector
-stores, queues, scheduler databases, web UIs — that drifts away from the
+This is unusual. Most agent stacks grow a second tree of state â€” vector
+stores, queues, scheduler databases, web UIs â€” that drifts away from the
 repository. Here, the repository is the system of record for everything,
 including the mind itself.
 
@@ -189,7 +189,7 @@ including the mind itself.
 
 It would be easy to write a manifesto like this without an implementation
 behind it. There is one. [`FORGEJO-SOCIETY/forgejo-intelligence/`](../../FORGEJO-SOCIETY/forgejo-intelligence/)
-contains the runnable Forgejo-native runtime — a Bun/TypeScript installer,
+contains the runnable Forgejo-native runtime â€” a Bun/TypeScript installer,
 surface handlers, coordinators, agent engines, tests, and `.forgejo`
 workflows. Its [`README.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/README.md),
 [`WHAT.md`](../../FORGEJO-SOCIETY/forgejo-intelligence/WHAT.md),
@@ -226,7 +226,7 @@ office; the governance reviewer is whoever reviews the pull request.
 ### 3.4 Style and voice are part of the engineering
 
 The promotional surface is held to the same discipline as the runtime. The
-style guide ([`FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md))
+style guide ([`FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md))
 forbids "AGI", "AI brain", "autonomous developer", manufactured drama, and
 comparative claims about other named projects unless explicitly documented
 and reviewed. *Forgejo Society* is title case, two words, no hyphen.
@@ -251,7 +251,7 @@ specific costs are visible:
    ephemeral. Insights produced by long agent runs are typically lost the
    moment the session ends.
 3. **Unauditable autonomy.** "Agentic" systems take real actions in the
-   world — file edits, API calls, deployments — with reasoning chains that
+   world â€” file edits, API calls, deployments â€” with reasoning chains that
    are at best logged and at worst summarised away.
 
 Forgejo Society is unusual because each of its five design inversions
@@ -290,7 +290,7 @@ A serious essay about uniqueness must also say what the design is *not*.
 
 Marking the limits is part of the design. The style guide requires that
 what exists is described as existing and what is planned is marked as
-planned ([`FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-PROMOTION/08-style-guide.md)).
+planned ([`FORGEJO-SOCIETY-PROMOTION/08-style-guide.md`](../../FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md)).
 The same rule applies to this essay.
 
 ---
@@ -302,8 +302,8 @@ agent loop, but because it makes five quiet inversions at once: the forge
 is the mind rather than a tool of the mind; intelligence is a governed
 society rather than a single model with tools; capability is granted by the
 filesystem and audited by `git log`; cognition is durable as Git objects
-rather than ephemeral as chat; and sovereignty is structural — owned
-hardware, owned forge, owned files — rather than promised by a vendor. The
+rather than ephemeral as chat; and sovereignty is structural â€” owned
+hardware, owned forge, owned files â€” rather than promised by a vendor. The
 implementation honours those inversions by collapsing the entire running
 cognition of a repository into one workflow file and one root folder, by
 shipping a real runnable runtime that is being moved file-by-file off

@@ -5,7 +5,7 @@
 This folder declares the **society of minds in charge of publicity** for the
 Forgejo Society project. It is the Federation's wiring diagram for the
 sub-society that, once launched, owns the responsibilities described in
-[`FORGEJO-SOCIETY-PUBLICITY/`](../../../FORGEJO-SOCIETY-PUBLICITY/README.md).
+[`FORGEJO-SOCIETY-PUBLICITY/`](../../publicity/README.md).
 
 The Publicity sub-society is itself a small federation: a set of Forgejo
 repositories, each a society in its own right, wired together through the
@@ -26,19 +26,19 @@ The Publicity sub-society is composed of one repo per top-level publicity
 pillar, plus a coordinating "presenter" repo that holds the public voice and
 brokers calls between the member repos and the Federation. Each member repo
 implements one numbered strategy document from
-[`FORGEJO-SOCIETY-PUBLICITY/`](../../../FORGEJO-SOCIETY-PUBLICITY/README.md).
+[`FORGEJO-SOCIETY-PUBLICITY/`](../../publicity/README.md).
 
 | Repo (planned) | Role | Implements |
 | --- | --- | --- |
-| `forgejo-society-publicity-presenter` | Presenter & broker — the only repo that speaks back to the Federation. | [`00-overview.md`](../../../FORGEJO-SOCIETY-PUBLICITY/00-overview.md), [`01-principles.md`](../../../FORGEJO-SOCIETY-PUBLICITY/01-principles.md) |
-| `forgejo-society-publicity-announcements` | Owns dated public-facing announcements. | [`02-announcements.md`](../../../FORGEJO-SOCIETY-PUBLICITY/02-announcements.md) |
-| `forgejo-society-publicity-media-relations` | Owns the media list and outreach protocols. | [`03-media-relations.md`](../../../FORGEJO-SOCIETY-PUBLICITY/03-media-relations.md) |
-| `forgejo-society-publicity-events` | Owns talks, demos, podcasts, panels. | [`04-events.md`](../../../FORGEJO-SOCIETY-PUBLICITY/04-events.md) |
-| `forgejo-society-publicity-coverage` | Owns the append-only external coverage log. | [`05-coverage.md`](../../../FORGEJO-SOCIETY-PUBLICITY/05-coverage.md) |
-| `forgejo-society-publicity-statements` | Owns official public statements. | [`06-statements.md`](../../../FORGEJO-SOCIETY-PUBLICITY/06-statements.md) |
-| `forgejo-society-publicity-crisis` | Owns crisis communications. | [`07-crisis.md`](../../../FORGEJO-SOCIETY-PUBLICITY/07-crisis.md) |
-| `forgejo-society-publicity-recognition` | Owns awards, mentions, citations. | [`08-recognition.md`](../../../FORGEJO-SOCIETY-PUBLICITY/08-recognition.md) |
-| `forgejo-society-publicity-metrics` | Owns publicity metrics and learning. | [`09-metrics.md`](../../../FORGEJO-SOCIETY-PUBLICITY/09-metrics.md) |
+| `forgejo-society-publicity-presenter` | Presenter & broker â€” the only repo that speaks back to the Federation. | [`00-overview.md`](../../publicity/00-overview.md), [`01-principles.md`](../../publicity/01-principles.md) |
+| `forgejo-society-publicity-announcements` | Owns dated public-facing announcements. | [`02-announcements.md`](../../publicity/02-announcements.md) |
+| `forgejo-society-publicity-media-relations` | Owns the media list and outreach protocols. | [`03-media-relations.md`](../../publicity/03-media-relations.md) |
+| `forgejo-society-publicity-events` | Owns talks, demos, podcasts, panels. | [`04-events.md`](../../publicity/04-events.md) |
+| `forgejo-society-publicity-coverage` | Owns the append-only external coverage log. | [`05-coverage.md`](../../publicity/05-coverage.md) |
+| `forgejo-society-publicity-statements` | Owns official public statements. | [`06-statements.md`](../../publicity/06-statements.md) |
+| `forgejo-society-publicity-crisis` | Owns crisis communications. | [`07-crisis.md`](../../publicity/07-crisis.md) |
+| `forgejo-society-publicity-recognition` | Owns awards, mentions, citations. | [`08-recognition.md`](../../publicity/08-recognition.md) |
+| `forgejo-society-publicity-metrics` | Owns publicity metrics and learning. | [`09-metrics.md`](../../publicity/09-metrics.md) |
 
 ## How the wiring is shaped
 
@@ -83,14 +83,14 @@ intent** for the Publicity sub-society and its wiring.
 
 ## Can a member repo spawn its own sub-society?
 
-Yes — by the recursion rule declared in
+Yes â€” by the recursion rule declared in
 [`../README.md`](../README.md#recursion-when-a-member-spawns-its-own-sub-society).
 The shape used in this folder (`society.yml` + `repos/` + `wiring/`) is
 fractal: any member listed here may, in turn, declare its own `MIND/<id>/`
 folder using the same shape.
 
 Each `repos/<member>.yml` file in this folder declares a `decomposition:`
-field — `leaf`, `presenter`, or `federated` — that records whether that
+field â€” `leaf`, `presenter`, or `federated` â€” that records whether that
 member is expected to spawn a sub-society. Today every Publicity member is
 declared `leaf` (with `presenter` reserved for the presenter), and the files
 for `crisis`, `events`, and `media-relations` carry an inline note marking
