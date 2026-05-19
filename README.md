@@ -77,7 +77,7 @@ infrastructure.
 
 ## Scope and status
 
-This repository is **mostly documentation** â€” a specification, planning,
+This repository is **mostly documentation** a specification, planning,
 and promotion corpus written in Markdown. There is no build, test, or
 lint tooling at the root, and none is planned. The only runnable code
 lives under
