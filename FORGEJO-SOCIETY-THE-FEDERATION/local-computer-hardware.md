@@ -1,6 +1,6 @@
-# The Federation Computer Hardware
+# The Federation: Computer Hardware
 
-Hardware available for the root Forgejo Society installation.
+Hardware available for the first Forgejo Society.
 
 ## Primary forge server
 
@@ -32,3 +32,9 @@ Forge and runners use **Ubuntu 24.04 LTS (Noble Numbat)**.
 | GPU | NVIDIA RTX 4090 |
 | Software | Windows 11 LM Studio — Google Gemma 4 and 100+ models |
 | Count | 1 |
+
+<p align="right">
+  <picture>
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="80">
+  </picture>
+</p>
