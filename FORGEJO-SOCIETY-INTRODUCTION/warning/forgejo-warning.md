@@ -490,8 +490,8 @@ near a public mirror.
 [forgejo-coc]: https://codeberg.org/forgejo/code-of-conduct
 [forgejo-license]: https://codeberg.org/forgejo/forgejo/src/branch/forgejo/LICENSE
 
-<p align="center">
+<p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
