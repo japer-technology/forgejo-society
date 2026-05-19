@@ -1,10 +1,10 @@
 # Forgejo Society: The Federation
 
-> The root Forgejo Society for and by the creator in the spirit of Star Trek.
+> The first Forgejo Society for and by the creator in the spirit of Star Trek.
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-THE-FEDERATION/THE-FEDERATION.png" alt="Forgejo Society" width="320" title="Forgejo Society: The Federation">
   </picture>
 </p>
 
