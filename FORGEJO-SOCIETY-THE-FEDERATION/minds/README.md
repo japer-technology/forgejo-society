@@ -7,6 +7,14 @@ delegates pillar-shaped responsibilities to, once
 [`FORGEJO-SOCIETY-THE-FEDERATION/`](../README.md) is successfully launched as
 the root society.
 
+It is also the Federation's **design bureau for Minds**. A Mind in this
+project is not a single repository — it is a coordinated set of repositories
+in declared roles, with a single presenter as their voice. The wiring shape
+worked out here (`society.yml` + `repos/` + `wiring/`, the single-presenter
+rule, the `leaf` / `presenter` / `federated` decomposition vocabulary) is
+the template that later Minds will be rolled out from when a human, through
+an intelligence, asks the forge for a new one.
+
 The model, in one paragraph:
 
 > The Federation is the root society. Each top-level pillar of the project
