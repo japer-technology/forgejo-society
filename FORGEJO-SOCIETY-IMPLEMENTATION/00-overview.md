@@ -94,6 +94,17 @@ third location. The two reference texts under
 `FORGEJO-SOCIETY-INTRODUCTION/` remain specification of record and are
 never executed.
 
+The society repo is one of **three implementation-target repos**
+described in [`FORGEJO-SOCIETY/README.md`](../FORGEJO-SOCIETY/README.md):
+`forgejo-intelligence` (the human doorway, installed first),
+`forgejo-society` (installed by a fully functioning intelligence, never
+by hand), and `forgejo-labour` (the code doorway / execution layer).
+Each repo is itself a folder/workflow pair on the same model, so the
+two-target collapse rule applies *per repo*. The documents in this
+folder plan the `forgejo-society` target in depth; see
+`14-three-repo-implementation-targets.md` for how the rule generalises
+across all three.
+
 ---
 
 ## What “done” looks like
