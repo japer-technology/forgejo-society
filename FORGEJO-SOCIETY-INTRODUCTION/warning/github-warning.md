@@ -396,8 +396,8 @@ Forgejo before going anywhere near a public repo.
 [pages-tos]: https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#pages
 [gh-tokens]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 
-<p align="center">
+<p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="320">
+    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY/FORGEJO-SOCIETY.png" alt="Forgejo Society" width="80">
   </picture>
 </p>
