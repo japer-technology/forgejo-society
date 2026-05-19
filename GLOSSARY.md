@@ -1,4 +1,4 @@
-# Glossary
+# Forgejo Society: Glossary
 
 This is the newcomer-facing glossary for Forgejo Society. It gives short,
 working definitions for the terms most often used in the repository and points
