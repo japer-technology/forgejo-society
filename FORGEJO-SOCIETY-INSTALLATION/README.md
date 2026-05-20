@@ -19,6 +19,7 @@ deep, command-level procedures.
 | Area | Purpose | Start here |
 | --- | --- | --- |
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
+| `easy-install/` | Two-script installer (Forgejo + runner, PostgreSQL-backed) for demos and disposable VMs | [easy-install](easy-install/README.md) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
 | `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
 | `CONFORMANCE/` | Drop-in conformance assets that prove a Forgejo installation is ready for advanced use by THE-SOCIETY-OF-REPO | [Conformance library](CONFORMANCE/README.md) |
