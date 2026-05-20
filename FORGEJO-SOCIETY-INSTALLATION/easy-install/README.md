@@ -6,9 +6,9 @@ Forgejo Actions runner on Ubuntu in a few minutes. Unlike the upstream
 database backend rather than SQLite.
 
 This folder is the fastest possible path to a working forge for
-demos, evaluation, and disposable VMs. It is **not** the production
-path for a Forgejo-Society deployment — for that, follow the
-component-by-component guides in
+demos, evaluation, and short-lived test hosts. It is **not** the
+production path for a Forgejo-Society deployment — for that, follow
+the component-by-component guides in
 [`../install/`](../install/00-index.md) and the rollout plan in
 [`../transition-plan/`](../transition-plan/00-overview.md).
 
@@ -84,7 +84,7 @@ sudo bash install.sh purge
 
 ---
 
-## Why PostgreSQL and not SQLite
+## Database backend: PostgreSQL instead of SQLite
 
 SQLite is fine for a single developer poking at one repository. The
 moment you have multiple concurrent CI runners writing job logs,
