@@ -93,6 +93,11 @@ with Society-aware fields.
 
 The shape is intentionally close to `pages-server` so existing `.pages`
 files can be reused unchanged; the Society-specific fields are additive.
+The mixed naming style of the inherited fields (snake_case for
+`enable_branches`, camelCase for `branchesPassword`) is preserved
+deliberately so that an unmodified `.pages` file works on both
+`pages-server` and this Labour; new Society-specific fields use
+snake_case.
 
 ### 3.2 Custom domain verification
 
@@ -102,6 +107,12 @@ The verification record is:
 ```
 _forgejo-society-webpages.<custom_domain>  TXT  "labour.repo.webpages owner=<owner-id>"
 ```
+
+`<owner-id>` is the dot-separated, lowercase, hyphenated identifier of the
+Repo's owning party as defined by
+[`02-protocols/01-identity.md`](../../../FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/02-protocols/01-identity.md)
+(for example `agency.documentation-hive` or `human.alice`). The TXT
+record's value must match exactly, including the scope prefix.
 
 Verification result is recorded as an event of type
 `event.webpages.domain-verified.<n>` and persists in memory. Removing the
