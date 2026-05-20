@@ -1,0 +1,28 @@
+Forgejo Society: easy-install
+=============================
+
+The scripts in this directory (install.sh and install-runner.sh) are a
+derivative work of:
+
+    easyforgejo
+    https://github.com/wkoszek/easyforgejo
+    Copyright (c) Adam Koszek
+    Licensed under the MIT License
+
+The substantive changes made for the Forgejo-Society port are:
+
+  - The database backend is PostgreSQL 16 instead of SQLite.
+  - A PostgreSQL role and database are created with a randomly
+    generated password, written into app.ini, and dropped cleanly on
+    purge.
+  - The script runs under `set -euo pipefail` and is idempotent
+    against re-runs.
+  - Hard-coded values are exposed as environment variables (PORT,
+    DB_NAME, DB_USER, ADMIN_USER, ADMIN_EMAIL, IP) for overrideability.
+  - Banner output, summary block, and accompanying prose follow the
+    Forgejo-Society style guide.
+
+The upstream MIT License terms apply to the derived scripts. See the
+upstream LICENSE at:
+
+    https://github.com/wkoszek/easyforgejo/blob/main/LICENSE
