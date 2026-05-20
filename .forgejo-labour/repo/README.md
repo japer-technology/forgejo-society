@@ -1,6 +1,6 @@
 # Forgejo Society Labour: Marketplace
 
-**The forge as a sovereign cognitive engine**
+**The forge is a sovereign cognitive engine**
 
 Forgejo Society is not merely a self-hosted Git service. The repository defines it as a **local-first cognitive forge**: Forgejo, runners, issues, pull requests, workflows, policies, agents, critics, censors, and memory systems arranged as a transparent, auditable “society of agents.” Its own framing is explicit: the forge becomes the mind; intelligence becomes governed society; capability is granted by files and audited by Git; cognition persists as Git objects; sovereignty is structural, rooted in owned hardware, owned forge, and owned files. ([GitHub][1])
 
