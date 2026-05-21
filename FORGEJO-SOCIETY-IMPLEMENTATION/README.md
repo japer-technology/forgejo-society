@@ -102,6 +102,12 @@ If any implementation instruction appears ambiguous, preserve these priorities:
 fail-closed safety first, Phase A scope second, auditability third, and
 capability last.
 
+---
+
+## Similiar Projects
+
+[Nous](https://github.com/tfatykhov/nous)
+
 <p align="right">
   <picture>
     <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80">
