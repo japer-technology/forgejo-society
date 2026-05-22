@@ -461,7 +461,7 @@ is default assumptions, not certainties.
 
 ### Interaction-square
 
-(14.9; section file not yet copied under [book/](book/README.md))
+([14.9](book/README.md) — section file not yet copied into `book/`)
 
 > **Minsky:** "The idea of representing the interaction between two
 > processes by linking pairs of examples to direction-nemes."
@@ -794,8 +794,8 @@ category.
 
 > **Minsky:** "An episode in the growth of a mind."
 
-Minds change in episodes rather than smoothly. [Chapter 17](book/som-17.1.md)
-gives the structural reasons: investment, exception, and Papert's
+Minds change in episodes rather than smoothly.
+[Chapter 17 (§17.1)](book/som-17.1.md) gives the structural reasons: investment, exception, and Papert's
 principle all conspire to make growth lumpy.
 
 ---
