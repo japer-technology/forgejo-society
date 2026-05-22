@@ -1,6 +1,29 @@
 # Research Crosswalk
 
-This appendix maps implemented cognitive mechanisms to their research origin and current location in the repo.
+This appendix maps implemented cognitive mechanisms to their research
+origin and current location in the repo.
+
+The three sources cited below are held in full under
+[`../../THE-SOCIETY-OF-MIND/`](../../THE-SOCIETY-OF-MIND/README.md):
+
+- **Minsky 1986** — Marvin Minsky, *The Society of Mind*, Simon &
+  Schuster. The full text is at
+  [`../../THE-SOCIETY-OF-MIND/book/`](../../THE-SOCIETY-OF-MIND/book/README.md);
+  a thematic companion (overview, principles, architecture, memory,
+  frames, conflict, self, deep insights, objections) lives in the
+  same folder as `01-overview.md` … `11-objections-and-limits.md`.
+- **Minsky 1988** — Marvin Minsky, *ONR Final Report*, reproduced at
+  [`../../THE-SOCIETY-OF-MIND/research/1988.md`](../../THE-SOCIETY-OF-MIND/research/1988.md).
+- **2025 Society of Minds** — Mikkilineni & Michaels, *Society of
+  Minds: The Architecture of Mindful Machines* (2025), reproduced at
+  [`../../THE-SOCIETY-OF-MIND/research/2025-10-01.md`](../../THE-SOCIETY-OF-MIND/research/2025-10-01.md).
+
+The authoritative term-by-term map and the nine deliberate
+divergences (D1–D9) are in
+[`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md).
+Per-section implementation analyses live beside each book section as
+`som-{chapter}.{section}-sor.md` under
+[`../../THE-SOCIETY-OF-MIND/book/`](../../THE-SOCIETY-OF-MIND/book/README.md).
 
 | Mechanism | Research origin | Current repo location |
 | --- | --- | --- |
@@ -29,5 +52,11 @@ This appendix maps implemented cognitive mechanisms to their research origin and
 | K-line reinforcement, decay, probation, retirement thresholds | Minsky 1986 (K-line dynamics) + 2025 credit assignment | `06-memory/klines/README.md` |
 | Cognitive observability (separate from host metrics) | Minsky 1986 (censor invisibility / I5) + 2025 dialogical quality | `00-foundations/09-cognitive-observability.md` |
 | Bootstrap minimum-viable society | Practical extension; Minsky 1988 developmental protection | `00-foundations/10-bootstrap-minimum-viable-sor.md` |
+| Five recurring Minsky moves | Minsky 1986 + Minsky 1988 (distilled in upstream archive) | [`../../THE-SOCIETY-OF-MIND/README.md`](../../THE-SOCIETY-OF-MIND/README.md), `00-foundations/01-society-of-mind.md` |
+| Deliberate divergences D1–D9 | This workspace (engineering choices made against Minsky) | [`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md), `00-foundations/01-society-of-mind.md` |
 
-The crosswalk should be updated whenever a major cognitive mechanism is added, superseded, or relocated.
+The crosswalk should be updated whenever a major cognitive mechanism
+is added, superseded, or relocated. When a new mechanism is added,
+the corresponding entry in the upstream crosswalk
+([`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md))
+should also be updated in the same change.

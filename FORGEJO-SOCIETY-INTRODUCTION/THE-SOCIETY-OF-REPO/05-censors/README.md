@@ -104,3 +104,24 @@ Censors hold `act` authority, but their write scope is tightly restricted: censo
 Other agencies that hold `act` authority (such as `owner-briefing`, memory agencies, and workspace agencies) are scoped to different write targets, declared in the [authority registry](../01-governance/authority-registry.md).
 
 Censors may not modify governance documents.
+
+---
+
+## Upstream theoretical archive
+
+The two-stage censor/suppressor architecture above is the SOR
+realisation of Minsky's censor construct (group E of
+[`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md))
+plus the principles named in
+[`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md):
+
+| SOM construct | Realm-level realisation |
+| --- | --- |
+| **Censor** | The censor catalogue — fires *upstream*, suppresses the process that would have produced the bad output. Quotation source: [`../../THE-SOCIETY-OF-MIND/book/som-27.2.md`](../../THE-SOCIETY-OF-MIND/book/som-27.2.md) |
+| **Suppressor** | The suppressor catalogue — fires at the *output boundary*, with a mandatory `learning_proposal` field naming the censor that should have caught the path earlier |
+| **Insight I5 — Censor invisibility** | The realm explicitly states that a working censor leaves no trace; this is why suppressors exist as a separate catalogue |
+| **Humour-as-Censor Principle** | The pattern caught by a repeatedly-firing suppressor is the structural learning event that promotes a new censor; failure memory ([`../06-memory/failure/`](../06-memory/)) is the durable side of the same loop |
+
+The runtime contract for how censors and suppressors participate in
+settlement lives in
+[`../02-protocols/05-settlement.md`](../02-protocols/05-settlement.md).

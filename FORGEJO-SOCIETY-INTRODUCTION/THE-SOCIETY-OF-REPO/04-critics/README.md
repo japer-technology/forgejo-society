@@ -51,3 +51,23 @@ A censor says: "This path is forbidden — full stop."
 Critics should be activatable independently of the workers they challenge.
 
 A critic that is co-located with a worker loses its independence. The critic must be able to challenge any worker's proposal, including a worker in the same domain.
+
+---
+
+## Upstream theoretical archive
+
+The critic catalogue realises Minsky's *critic* construct (group E of
+[`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md))
+and the architectural principles named in
+[`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md):
+
+| SOM construct | Critic-layer realisation |
+| --- | --- |
+| **Puzzle Principle** | Critics, not generators, are the rate-limiting investment; the catalogue above is where the society spends its audit weight |
+| **Significance Principle** | Every critic verdict declares its observer — no anonymous metrics |
+| **P5 — Insulation** | "Critics should be activatable independently of the workers they challenge"; structural independence is the realm-level rule |
+| **Generate-and-test** | Critics are the recognisers in the deliberate → criticise → censor → settle chain ([`../00-foundations/02-cognitive-loop.md`](../00-foundations/02-cognitive-loop.md)) |
+
+The runtime contract for how critics participate in settlement
+(windows, required vs optional, fail-closed behaviour) lives in
+[`../02-protocols/05-settlement.md`](../02-protocols/05-settlement.md).

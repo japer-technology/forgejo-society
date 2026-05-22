@@ -238,6 +238,28 @@ The representation protocol determines whether to:
 
 ## Source notes
 
-- **Minsky 1986** grounds differentiated memory structures such as frames and K-lines.
-- **Minsky 1988** motivates protected learning loops and careful retirement.
-- **2025 Society of Minds research** motivates relational memory and concept-level abstraction tracking.
+- **D4 — Memory is multiple distinct kinds.** Minsky's memory is
+  conceptually unified but practically scattered; SOR makes the
+  kinds explicit and separate (K-line, frame, episodic, semantic,
+  procedural, failure, analogy, concept, event, decision). Each kind
+  has its own access pattern, TTL, and promotion rule. See
+  [`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md).
+- **Recognition vs reconstruction** follows Minsky 1986. Reconstruction
+  is gated by recognition; see
+  [`../../THE-SOCIETY-OF-MIND/book/som-15.10.md`](../../THE-SOCIETY-OF-MIND/book/som-15.10.md)
+  and
+  [`../../THE-SOCIETY-OF-MIND/book/som-19.8.md`](../../THE-SOCIETY-OF-MIND/book/som-19.8.md).
+- **K-lines.** First proposed in Minsky 1980 and developed in the
+  book; see
+  [`../../THE-SOCIETY-OF-MIND/book/som-8.1.md`](../../THE-SOCIETY-OF-MIND/book/som-8.1.md).
+  Recorded *activation pattern*, not stored content.
+- **Cache-Transfer Principle.** The consolidation window is
+  deliberately slow; promotion is a settled decision, not
+  write-through. Quotation source:
+  [`../../THE-SOCIETY-OF-MIND/research/1988.md`](../../THE-SOCIETY-OF-MIND/research/1988.md).
+  Stated in
+  [`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md).
+- **Time-blinks and partial returns** follow Minsky 1986; partial
+  reconstruction with marked unknowns is first-class.
+- **2025 Society of Minds research** motivates relational memory and
+  concept-level abstraction tracking.

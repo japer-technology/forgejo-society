@@ -296,6 +296,24 @@ proposals:
 
 ## Source notes
 
-- **Minsky 1986** grounds visible settlements and competing proposals.
-- **Minsky 1988** motivates better inhibition, alternatives, and developmental caution.
-- **2025 Society of Minds research** motivates introspection, provenance depth, and dialogical quality metrics.
+- **D5 — Settlement is the universal decision construct.** This
+  protocol carries all decision flavours (critic verdicts, censor
+  firings, frame default demotions, agency differentiations,
+  self-ideal revisions) under one substrate, with kinds preserving
+  the distinctions. See
+  [`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md).
+- **P3 — Non-Compromise Principle.** Contradictory verdicts escalate;
+  implicit blending is a protocol violation. Stated in
+  [`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md);
+  source text in
+  [`../../THE-SOCIETY-OF-MIND/book/som-3.2.md`](../../THE-SOCIETY-OF-MIND/book/som-3.2.md).
+- **D3 — Pronomes are settlement-scoped.** A pronome is bound when a
+  settlement opens and dissolved when it closes; long-running
+  attentional structures use frames, not pronomes.
+- **"Settlement is a transframe."** Structural shape after Minsky's
+  transframe in [`../../THE-SOCIETY-OF-MIND/book/som-21.3.md`](../../THE-SOCIETY-OF-MIND/book/som-21.3.md)
+  (actor, action, object, before-state, after-state, instrument,
+  cause).
+- **2025 Society of Minds research** motivates the introspection
+  fields, provenance depth, and dialogical metrics; see
+  [`../../THE-SOCIETY-OF-MIND/research/2025-10-01.md`](../../THE-SOCIETY-OF-MIND/research/2025-10-01.md).

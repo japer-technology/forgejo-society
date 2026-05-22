@@ -91,3 +91,25 @@ See [reciprocal-agreement.example.md](reciprocal-agreement.example.md) for the f
 ## Full channel protocol
 
 See [../02-protocols/07-service-channel.md](../02-protocols/07-service-channel.md).
+
+---
+
+## Upstream theoretical archive
+
+Channels extend the Exploitation Principle (P10) across society
+boundaries. Where [`../08-services/`](../08-services/README.md) declares
+what *this* SOR exposes for governed use, this realm registers the
+governed agreements that let *other* SORs use it — and that let this
+SOR call theirs.
+
+| SOM construct | Channels-realm realisation |
+| --- | --- |
+| **P10 — Exploitation Principle (cross-society)** | A channel is a service contract enforced across the boundary between two societies, with input rights, output rights, audit trace, and dispute window |
+| **P5 — Insulation (cross-society)** | Channels carry only typed payloads; they do not share internal state. The cloud-egress and input-rights censors are the structural enforcement at the boundary |
+| **Bridge Principle** | Inbound and outbound vocabulary translation are bridges with declared lossiness and round-trip tests ([`../02-protocols/18-bridges.md`](../02-protocols/18-bridges.md)) |
+| **Polyneme transport** | Inter-agency typed events whose receiving slice differs per consumer; channels are the governed inter-society carrier ([`../02-protocols/03-events.md`](../02-protocols/03-events.md), [`../02-protocols/09-representation.md`](../02-protocols/09-representation.md)) |
+
+Full mapping in
+[`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md);
+principles in
+[`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md).

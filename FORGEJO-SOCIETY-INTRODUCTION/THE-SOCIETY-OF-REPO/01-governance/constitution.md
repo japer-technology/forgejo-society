@@ -78,13 +78,25 @@ The constitution is tiered so that deeper commitments are harder to change.
 
 Deep-tier changes must be reviewed across at least two governance cycles and may not be merged on the same day they are proposed.
 
+The gradient is the realisation of the **Self-Ideal Stability
+Principle (P9)** — speed of change is inversely proportional to depth.
+P9 is stated in [`../../THE-SOCIETY-OF-MIND/03-principles.md`](../../THE-SOCIETY-OF-MIND/03-principles.md).
+
 ---
 
-## Self-ideals
+## Self-ideals and self-models
 
-This society stabilises around the ideals in [self-ideals.md](self-ideals.md).
+This society stabilises around the ideals in
+[self-ideals.md](self-ideals.md) and is honest about itself through
+the plural entries in [self-models.md](self-models.md). The two
+registries are deliberately separate: ideals describe what the
+society aims to *be*; self-models describe what it currently *thinks
+it is*.
 
-High-impact proposals must cite any relevant ideal, especially when they involve irreversible change, privacy tradeoffs, or uncertainty.
+High-impact proposals must cite any relevant ideal, especially when
+they involve irreversible change, privacy tradeoffs, or uncertainty.
+Narrative self-models (entries with `is_narrative: true`) may *not*
+be cited as evidence in those proposals.
 
 ---
 
@@ -129,3 +141,25 @@ Amendments require:
 5. Version update and dated merge record
 
 No amendment may remove the non-negotiable limits or bypass the approval gate for deep-tier commitments.
+
+---
+
+## Source notes
+
+The non-negotiable limits and the stability gradient above are
+engineered against principles named in the upstream archive:
+
+- **P3 — Non-Compromise** grounds limit #6 (no non-trivial external
+  action without a settlement record). Stated in
+  [`../../THE-SOCIETY-OF-MIND/book/som-3.2.md`](../../THE-SOCIETY-OF-MIND/book/som-3.2.md).
+- **P9 — Self-Ideal Stability** grounds the deep tier of the stability
+  gradient and the protection of [self-ideals.md](self-ideals.md).
+  Stated in
+  [`../../THE-SOCIETY-OF-MIND/book/som-6.13.md`](../../THE-SOCIETY-OF-MIND/book/som-6.13.md).
+- **P16 — B-Brain** grounds the meta-admin tier and the requirement
+  that critics and censors observe but do not act on the outside
+  world. Stated in
+  [`../../THE-SOCIETY-OF-MIND/book/som-6.4.md`](../../THE-SOCIETY-OF-MIND/book/som-6.4.md).
+- **D5** (settlement as universal decision construct) and **D9**
+  (no per-agency `goal`) are recorded in
+  [`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md).

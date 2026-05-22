@@ -54,3 +54,27 @@ structured files under `07-workspace/`.
 
 A Forgejo comment is enough to record owner approval only when the approval
 gate names that method and the settlement stores the exact Forgejo reference.
+
+---
+
+## Upstream theoretical archive
+
+The workspace is the SOR realisation of Minsky's *partial mental
+state* — the set of agencies and pronomes active within an open
+settlement window (group C of
+[`../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md`](../../THE-SOCIETY-OF-MIND/12-crosswalk-to-society-of-repo.md)).
+There is deliberately no global *context* object; each agency reads
+its own local pattern of active polynemes and isonomes.
+
+| SOM construct | Workspace realisation |
+| --- | --- |
+| **Partial mental state** | The contents of [global-workspace/](global-workspace/README.md) and [current-focus/](current-focus/README.md) at any moment — *partial* by design, not a full snapshot of the society |
+| **D3 — Pronomes are settlement-scoped** | Pronome bindings live in [active-settlements/](active-settlements/README.md); they are bound when a settlement opens and dissolved when it closes |
+| **Micromemory** | Short-lived per-agency working state inside an open settlement — not promoted, not a SOR artifact; expires when the settlement closes |
+| **Interruption** | Settlement windows can be paused and resumed across cognitive-loop iterations; pronome bindings are preserved across pause/resume |
+| **Workspace vs memory** | The transition from temporary attention to durable record is gated by the consolidation window in [`../02-protocols/06-memory.md`](../02-protocols/06-memory.md), not by write-through |
+
+Long-running attentional structures that need to outlive a settlement
+are *frames* ([`../06-memory/frames/`](../06-memory/frames/README.md)),
+not pronomes. Putting them in the workspace would re-introduce a
+global-context object SOR deliberately does not have.
