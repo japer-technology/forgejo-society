@@ -1,5 +1,7 @@
 # Figure Appendix-6 — The anti-evolutionist among the apes
 
+![figure](Appendix-6.png)
+
 **File:** `appendix/Appendix-6.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md)
 

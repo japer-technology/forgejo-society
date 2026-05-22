@@ -1,5 +1,7 @@
 # Figure Appendix-4 — Local clumps and longer connections
 
+![figure](Appendix-4.png)
+
 **File:** `appendix/Appendix-4.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md)
 

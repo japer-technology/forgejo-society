@@ -1,5 +1,7 @@
 # Figure Appendix-1 — A person-recognizing agency
 
+![figure](Appendix-1.png)
+
 **File:** `appendix/Appendix-1.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md) — *The genesis of mental realms*
 

@@ -1,5 +1,7 @@
 # Figure Appendix-5 — Genes constrain the convolutions
 
+![figure](Appendix-5.png)
+
 **File:** `appendix/Appendix-5.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md)
 

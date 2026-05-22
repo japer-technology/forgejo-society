@@ -1,5 +1,7 @@
 # Figure Appendix-3 — A cube-on-cube supercube of agents
 
+![figure](Appendix-3.png)
+
 **File:** `appendix/Appendix-3.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md)
 

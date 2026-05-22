@@ -1,5 +1,7 @@
 # Figure Appendix-2 — Trajectory-type and gesture-type recognizers
 
+![figure](Appendix-2.png)
+
 **File:** `appendix/Appendix-2.png`
 **Appears in:** [../../som-appendix.md](../../som-appendix.md) — *Gestures and trajectories*
 

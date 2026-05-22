@@ -1,5 +1,7 @@
 # Cover — *The Society of Mind*
 
+![figure](som_book.jpeg)
+
 **File:** `som_book.jpeg`
 **Appears in:** [cover.md](../cover.md)
 
