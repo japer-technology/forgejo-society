@@ -63,8 +63,7 @@ The classification is not frozen; learning changes it.
 
 `linked:` edges allow `contradicts`, `cites`, `analogous_to`
 ([`08-state-and-memory.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md)
-+ relational-memory protocol). The plan does not insist on tidy
-hierarchies; the graph is allowed to be messy.
++ relational-memory protocol). The plan does not insist on tidy hierarchies; the graph is allowed to be messy.
 
 ### Re-use of prior structure (idea 7, partial)
 

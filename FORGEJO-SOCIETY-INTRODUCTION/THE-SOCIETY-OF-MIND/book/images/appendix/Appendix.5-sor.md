@@ -97,8 +97,7 @@ reasons," and no review process keyed to changing that decision.
 The figure treats partition count as a primary design choice;
 the plan treats it as implicit.
 
-### E — Caps that are about *room to grow* rather than *cost per
-run*
+### E — Caps that are about *room to grow* rather than *cost per run*
 
 Per-unit budgets answer "how expensive is one invocation?" The
 figure's caps answer "how much *can ever be built here?*" The

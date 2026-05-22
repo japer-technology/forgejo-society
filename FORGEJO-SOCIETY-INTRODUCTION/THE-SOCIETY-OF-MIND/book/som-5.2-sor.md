@@ -52,8 +52,7 @@ does not re-litigate. Authority levels are exactly `read`, `draft`,
 `propose`, `act`, `govern`, `human` — a closed list. The loop does
 not get to reopen the list at runtime.
 
-### Kill switch and approval gate as structural "Just because!"
-(ideas 3, 5)
+### Kill switch and approval gate as structural "Just because!" (ideas 3, 5)
 
 The kill switch
 ([`07-policies-and-safety.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/07-policies-and-safety.md))

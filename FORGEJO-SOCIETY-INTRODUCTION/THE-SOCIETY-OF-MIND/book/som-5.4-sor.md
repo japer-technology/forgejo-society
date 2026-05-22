@@ -51,8 +51,7 @@ receive *one* response per stimulus, attributable to one society.
 This carries Minsky's "single body" practicality at the publication
 layer.
 
-### Per-stimulus concurrency prevents two thoughts at one location
-(idea 3)
+### Per-stimulus concurrency prevents two thoughts at one location (idea 3)
 
 The concurrency group in
 [`02-workflow-design.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/02-workflow-design.md)
@@ -119,8 +118,7 @@ behind this commit." Minsky's point is that responsibility *requires*
 identity; the plan delivers the identity (one society, one voice)
 without naming the responsibility relation explicitly.
 
-### C — Stream-of-consciousness is not visibly labelled as
-simplification
+### C — Stream-of-consciousness is not visibly labelled as simplification
 
 The visible response straightens the blackboard, but does not say
 so. A reader cannot tell from Spock's prose alone that the

@@ -73,8 +73,7 @@ agents only.
 `linked:` edges support `contradicts`, `derived_from`, `cites`,
 `analogous_to`
 ([`08-state-and-memory.md`](../../../FORGEJO-SOCIETY-IMPLEMENTATION/08-state-and-memory.md)
-+ relational-memory protocol). The graph is allowed to be tangled;
-the schema does not require a tree.
++ relational-memory protocol). The graph is allowed to be tangled; the schema does not require a tree.
 
 ---
 
