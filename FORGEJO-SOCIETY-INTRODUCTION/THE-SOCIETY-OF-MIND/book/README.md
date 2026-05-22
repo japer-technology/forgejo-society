@@ -58,15 +58,15 @@ For an annotated read, return to the parent directory:
 
 | # | Chapter | First section |
 | --- | --- | --- |
-|  1 | Building Blocks | [som-1.1.md](som-1.1.md) |
-|  2 | Wholes and Parts | [som-2.1.md](som-2.1.md) |
-|  3 | Conflict and Compromise | [som-3.1.md](som-3.1.md) |
-|  4 | The Self | [som-4.1.md](som-4.1.md) |
-|  5 | Individuality | [som-5.1.md](som-5.1.md) |
-|  6 | Insight and Introspection | [som-6.1.md](som-6.1.md) |
-|  7 | Problems and Goals | [som-7.1.md](som-7.1.md) |
-|  8 | A Theory of Memory | [som-8.1.md](som-8.1.md) |
-|  9 | Summaries | [som-9.1.md](som-9.1.md) |
+| 1 | Building Blocks | [som-1.1.md](som-1.1.md) |
+| 2 | Wholes and Parts | [som-2.1.md](som-2.1.md) |
+| 3 | Conflict and Compromise | [som-3.1.md](som-3.1.md) |
+| 4 | The Self | [som-4.1.md](som-4.1.md) |
+| 5 | Individuality | [som-5.1.md](som-5.1.md) |
+| 6 | Insight and Introspection | [som-6.1.md](som-6.1.md) |
+| 7 | Problems and Goals | [som-7.1.md](som-7.1.md) |
+| 8 | A Theory of Memory | [som-8.1.md](som-8.1.md) |
+| 9 | Summaries | [som-9.1.md](som-9.1.md) |
 | 10 | Papert's Principle | [som-10.1.md](som-10.1.md) |
 | 11 | The Shape of Space | [som-11.1.md](som-11.1.md) |
 | 12 | Learning Meaning | [som-12.1.md](som-12.1.md) |
