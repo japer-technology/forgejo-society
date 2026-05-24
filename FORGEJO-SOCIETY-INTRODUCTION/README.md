@@ -50,6 +50,14 @@ a *settlement* that reinforces *memory*.
 The longer version of that argument lives in
 [`analysis/ci-cd-capabilities-become-agent-capabilities.md`](analysis/ci-cd-capabilities-become-agent-capabilities.md).
 
+The cognitive layer above this substrate is a **Society of Repo**: a
+**multi-repository** architecture in which each repository plays one
+bounded role — agency, critic, censor, memory, workspace, or service —
+and the society is their governed interaction under a shared
+constitution. Forgejo Society is therefore many small repositories,
+not one large one. The full specification lives in
+[`THE-SOCIETY-OF-REPO/`](THE-SOCIETY-OF-REPO/README.md).
+
 ## Why it exists
 
 The project starts from three convictions:

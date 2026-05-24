@@ -14,9 +14,9 @@ A complete design, scaffold, and specification for a **repo-native cognitive soc
 
 ## What is a Society of Repo?
 
-A Society of Repo (SOR) is a Git-native architecture in which repositories become the durable cognitive organs of a living, governed AI society. Intelligence emerges from the structured interaction of many small, specialised, limited parts.
+A Society of Repo (SOR) is a Git-native, **multi-repository** architecture in which repositories become the durable cognitive organs of a living, governed AI society. It is not a single repo with many folders, and not a single agent with many tools: it is many repositories, each one a bounded organ, governed as one society under a shared constitution. Intelligence emerges from the structured interaction of many small, specialised, limited parts.
 
-Each part has a role:
+Each part has a role, and each role is its own repository:
 
 | Part | Role |
 | --- | --- |

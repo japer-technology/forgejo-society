@@ -65,7 +65,9 @@ infrastructure.
   [reading-paths.md](FORGEJO-SOCIETY-INTRODUCTION/reading-paths.md) â†’
   the essays under
   [`FORGEJO-SOCIETY-INTRODUCTION/essay/`](FORGEJO-SOCIETY-INTRODUCTION/essay/).
-- **Specification:** Society of Repo under
+- **Specification:** Society of Repo — the multi-repository cognitive
+  architecture in which each repository plays one role (agency, critic,
+  censor, memory, workspace, service) — under
   [`FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/`](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/)
   for vocabulary, governance, protocols, agencies, critics, censors,
   memory, workspace, services, channels, and evolution.

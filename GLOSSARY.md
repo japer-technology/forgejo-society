@@ -21,7 +21,7 @@ runnable Bun/TypeScript runtime that enacts an early form of that plan lives in
 | Term | Working meaning | Canonical home |
 | --- | --- | --- |
 | Forgejo Society | The self-hosted, local-first cognitive forge described by this repository. | [README.md](README.md) |
-| Society of Repo | A Git-native architecture where repositories, issues, pull requests, workflows, memory, and governance form a governed cognitive society. | [THE-SOCIETY-OF-REPO/README.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md) |
+| Society of Repo | A Git-native, multi-repository architecture in which each repository plays one cognitive role — agency, critic, censor, memory, workspace, or service — and the society is their governed interaction under a shared constitution. | [THE-SOCIETY-OF-REPO/README.md](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/README.md) |
 | Society of Mind | Marvin Minsky's theoretical frame for many small processes combining into mind-like behaviour. In this repository, it is a reference source, not an operating policy by itself. | [THE-SOCIETY-OF-MIND/](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND/) |
 | Forge | The Git forge as operational substrate: repositories, issues, pull requests, runners, workflows, permissions, and audit history. | [THE-REPO-IS-THE-MIND/idea.md](FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/idea.md) |
 | Cognitive forge | A forge used not only for source control, but also for governed memory, review, agency, settlement, and auditable action. | [README.md](README.md) |

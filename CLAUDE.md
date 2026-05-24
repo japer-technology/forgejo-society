@@ -73,7 +73,7 @@ Internalise these rules:
 ### Capitalisation
 
 - *Forgejo Society* — title case, two words, no hyphen.
-- *Society of Repo* — title case, no hyphen.
+- *Society of Repo* — title case, no hyphen. Describe it as a **multi-repository** architecture (many small repositories, each one a bounded organ), never as a single repository.
 - *Society of Mind* — title case, no hyphen; only when explicitly
   referencing Minsky.
 - *Forgejo*, *Ubuntu*, *MIT* — as their upstreams spell them.
