@@ -1,60 +1,207 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-# AI Full Control Ubuntu
-# Fresh Ubuntu Desktop -> novice-friendly AI-admin-ready workstation.
 #
-# Profile:
-# - Local physical hardware
-# - Intel CPU
-# - No local GPU required
-# - Cloud LLM primary
-# - Xorg desktop control
-# - Terminal + GUI + browser control
-# - Tailscale-only remote ingress
-# - No public exposure
+# ai-full-control-ubuntu.sh
+# -------------------------
+# Turn a fresh Ubuntu Desktop into an AI-controllable workstation.
 #
-# Run from the physical machine console:
+# This is the minimum recommended install for non-expert Ubuntu users
+# who want an AI assistant to be able to operate the machine end-to-end:
+# terminal, OS, files, Docker, GUI applications, and the browser.
+# Inbound access is restricted to a private Tailscale network. The
+# public internet cannot reach this host.
+#
+# Read README.md in this directory before running.
+#
+# Usage:
 #   chmod +x ai-full-control-ubuntu.sh
 #   sudo ./ai-full-control-ubuntu.sh
 #
-# After reboot:
-#   ssh agent@<tailscale-ip-or-hostname>
-#   /opt/ai-full-control/bin/verify
+# Non-interactive use:
+#   sudo AFC_NONINTERACTIVE=1 \
+#        SSH_PUBLIC_KEY="ssh-ed25519 AAAA... you@host" \
+#        VNC_PASSWORD="..." \
+#        TAILSCALE_AUTHKEY="tskey-auth-..." \
+#        ./ai-full-control-ubuntu.sh
 #
-# Emergency VNC over private SSH tunnel:
-#   ssh -L 5900:localhost:5900 agent@<tailscale-ip-or-hostname>
-#   Then connect a VNC viewer to localhost:5900
+# Re-running is safe: the script is idempotent. Firewall, sudoers, SSH,
+# Tailscale, and VNC state are added to or skipped, not reset.
+
+set -Eeuo pipefail
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+readonly SCRIPT_VERSION="1.0.0"
+readonly SCRIPT_NAME="ai-full-control-ubuntu.sh"
 
 AGENT_USER="${AGENT_USER:-agent}"
 AGENT_HOME="/home/${AGENT_USER}"
-AFC_DIR="/opt/ai-full-control"
+AFC_DIR="${AFC_DIR:-/opt/ai-full-control}"
 VNC_PORT="${VNC_PORT:-5900}"
+LOG_FILE="${LOG_FILE:-/var/log/ai-full-control-install.log}"
 
-die() {
-  echo "ERROR: $*" >&2
-  exit 1
-}
+AFC_NONINTERACTIVE="${AFC_NONINTERACTIVE:-0}"
+SSH_PUBLIC_KEY="${SSH_PUBLIC_KEY:-}"
+VNC_PASSWORD="${VNC_PASSWORD:-}"
+TAILSCALE_AUTHKEY="${TAILSCALE_AUTHKEY:-}"
+
+# ---------------------------------------------------------------------------
+# Output helpers
+# ---------------------------------------------------------------------------
+
+if [[ -t 1 ]]; then
+  C_RESET=$'\033[0m'
+  C_BOLD=$'\033[1m'
+  C_RED=$'\033[31m'
+  C_YELLOW=$'\033[33m'
+  C_GREEN=$'\033[32m'
+  C_CYAN=$'\033[36m'
+else
+  C_RESET=""; C_BOLD=""; C_RED=""; C_YELLOW=""; C_GREEN=""; C_CYAN=""
+fi
+
+log()   { printf '%s\n' "$*"; }
+info()  { printf '%s[i]%s %s\n' "${C_CYAN}" "${C_RESET}" "$*"; }
+warn()  { printf '%s[!]%s %s\n' "${C_YELLOW}" "${C_RESET}" "$*" >&2; }
+ok()    { printf '%s[+]%s %s\n' "${C_GREEN}" "${C_RESET}" "$*"; }
+die()   { printf '%s[x]%s %s\n' "${C_RED}" "${C_RESET}" "$*" >&2; exit 1; }
 
 section() {
-  echo
-  echo "============================================================"
-  echo "$*"
-  echo "============================================================"
+  printf '\n%s============================================================%s\n' "${C_BOLD}" "${C_RESET}"
+  printf '%s%s%s\n' "${C_BOLD}" "$*" "${C_RESET}"
+  printf '%s============================================================%s\n' "${C_BOLD}" "${C_RESET}"
 }
 
-need_root() {
-  [[ "${EUID}" -eq 0 ]] || die "Run with sudo."
+on_error() {
+  local exit_code=$?
+  local line=$1
+  printf '\n%s[x] %s failed on line %s with exit code %s.%s\n' \
+    "${C_RED}" "${SCRIPT_NAME}" "${line}" "${exit_code}" "${C_RESET}" >&2
+  printf '%s    Full transcript: %s%s\n' "${C_RED}" "${LOG_FILE}" "${C_RESET}" >&2
+  exit "${exit_code}"
+}
+trap 'on_error ${LINENO}' ERR
+
+# ---------------------------------------------------------------------------
+# CLI flags
+# ---------------------------------------------------------------------------
+
+usage() {
+  cat <<EOF
+${SCRIPT_NAME} ${SCRIPT_VERSION}
+
+Turn a fresh Ubuntu Desktop into an AI-controllable workstation,
+reachable only over Tailscale.
+
+Usage:
+  sudo ./${SCRIPT_NAME} [--help] [--version]
+
+Environment variables (all optional):
+  AGENT_USER          Login name for the agent user (default: agent)
+  AFC_DIR             Install root (default: /opt/ai-full-control)
+  VNC_PORT            Loopback-only VNC port (default: 5900)
+  LOG_FILE            Install transcript path (default: /var/log/ai-full-control-install.log)
+  AFC_NONINTERACTIVE  Set to 1 to skip all prompts (then SSH_PUBLIC_KEY and VNC_PASSWORD must be set)
+  SSH_PUBLIC_KEY      SSH public key string (an 'ssh-ed25519 ...' or 'ssh-rsa ...' line)
+  VNC_PASSWORD        VNC password for loopback-only emergency desktop access
+  TAILSCALE_AUTHKEY   Pre-auth key for unattended Tailscale enrolment
+
+See README.md in this directory for the full guide.
+EOF
 }
 
-detect_ubuntu() {
-  [[ -f /etc/os-release ]] || die "Cannot find /etc/os-release."
-  . /etc/os-release
-  [[ "${ID:-}" == "ubuntu" ]] || echo "WARNING: This is written for Ubuntu. Detected: ${PRETTY_NAME:-unknown}"
-}
+for arg in "$@"; do
+  case "${arg}" in
+    -h|--help)    usage; exit 0 ;;
+    -v|--version) printf '%s %s\n' "${SCRIPT_NAME}" "${SCRIPT_VERSION}"; exit 0 ;;
+    *)            die "Unknown argument: ${arg} (try --help)" ;;
+  esac
+done
+
+# ---------------------------------------------------------------------------
+# Preflight
+# ---------------------------------------------------------------------------
+
+[[ ${EUID} -eq 0 ]] || die "Run with sudo: sudo ./${SCRIPT_NAME}"
+
+# shellcheck disable=SC1091
+[[ -r /etc/os-release ]] && . /etc/os-release
+
+if [[ "${ID:-}" != "ubuntu" ]]; then
+  warn "This installer targets Ubuntu. Detected: ${PRETTY_NAME:-unknown}. Continuing anyway."
+fi
+
+case "${VERSION_ID:-}" in
+  22.04|24.04) : ;;
+  "")          warn "Could not detect Ubuntu version." ;;
+  *)           warn "Recommended versions are Ubuntu 22.04 LTS or 24.04 LTS. Detected: ${VERSION_ID}. Continuing." ;;
+esac
+
+ARCH="$(dpkg --print-architecture)"
+case "${ARCH}" in
+  amd64|arm64) : ;;
+  *)           warn "Architecture ${ARCH} is unusual. The Docker and Tailscale apt repos may not have packages for it." ;;
+esac
+
+if ! ping -c1 -W2 1.1.1.1 >/dev/null 2>&1 \
+   && ! ping -c1 -W2 8.8.8.8 >/dev/null 2>&1; then
+  warn "No outbound connectivity detected. Package installation will fail."
+fi
+
+# ---------------------------------------------------------------------------
+# Transcript logging
+# ---------------------------------------------------------------------------
+
+mkdir -p "$(dirname "${LOG_FILE}")"
+touch "${LOG_FILE}"
+chmod 600 "${LOG_FILE}"
+
+# Tee everything from here on into the log file as well.
+exec > >(tee -a "${LOG_FILE}") 2>&1
+
+section "${SCRIPT_NAME} ${SCRIPT_VERSION}"
+
+info "Log file: ${LOG_FILE}"
+info "Agent user: ${AGENT_USER}"
+info "Install root: ${AFC_DIR}"
+info "Mode: $([[ "${AFC_NONINTERACTIVE}" == "1" ]] && echo non-interactive || echo interactive)"
+
+cat <<EOF
+
+This installer will:
+  - Create a full-control agent user with passwordless sudo
+  - Enable SSH key-only access
+  - Install Tailscale from its official apt repository
+  - Allow inbound SSH only on the Tailscale interface
+  - Force Xorg instead of Wayland, autologin the agent user
+  - Enable loopback-only x11vnc for emergency desktop access
+  - Install GUI automation tools (xdotool, scrot, gnome-screenshot)
+  - Install Playwright with Chromium for browser automation
+  - Install Docker CE from its official apt repository
+  - Install Python and Node agent runtimes
+  - Enable automatic security updates
+
+Run this from the physical Ubuntu machine, not over public SSH.
+
+EOF
+
+if [[ "${AFC_NONINTERACTIVE}" != "1" ]]; then
+  read -r -p "Continue? Type YES to proceed: " CONFIRM
+  [[ "${CONFIRM}" == "YES" ]] || die "Cancelled."
+else
+  info "Non-interactive mode: proceeding without confirmation."
+fi
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 apt_install() {
-  DEBIAN_FRONTEND=noninteractive apt install -y "$@"
+  DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    -o Dpkg::Options::=--force-confdef \
+    -o Dpkg::Options::=--force-confold \
+    "$@"
 }
 
 append_line_once() {
@@ -63,33 +210,22 @@ append_line_once() {
   grep -qxF "$line" "$file" 2>/dev/null || echo "$line" >> "$file"
 }
 
-need_root
-detect_ubuntu
+is_ssh_pubkey() {
+  # Accept the common OpenSSH public-key prefixes.
+  [[ "$1" =~ ^(ssh-ed25519|ssh-rsa|ssh-dss|ecdsa-sha2-nistp(256|384|521)|sk-ssh-ed25519@openssh\.com|sk-ecdsa-sha2-nistp256@openssh\.com)\  ]]
+}
 
-section "AI Full Control Ubuntu installer"
-
-echo "This installer will:"
-echo "  - Create a full-control agent user"
-echo "  - Enable SSH key-only access"
-echo "  - Install Tailscale for private-only remote access"
-echo "  - Deny public inbound access with UFW"
-echo "  - Force Xorg instead of Wayland"
-echo "  - Enable real desktop control through localhost-only x11vnc"
-echo "  - Install GUI automation tools"
-echo "  - Install browser automation through Playwright"
-echo "  - Install Docker"
-echo "  - Install Python/Node agent runtime tools"
-echo
-echo "Run this from the physical Ubuntu machine, not over public SSH."
-echo
-
-read -r -p "Continue? Type YES: " CONFIRM
-[[ "${CONFIRM}" == "YES" ]] || die "Cancelled."
+# ---------------------------------------------------------------------------
+# System packages
+# ---------------------------------------------------------------------------
 
 section "System update"
 
-apt update
-apt upgrade -y
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y \
+  -o Dpkg::Options::=--force-confdef \
+  -o Dpkg::Options::=--force-confold \
+  upgrade
 
 section "Base packages"
 
@@ -98,6 +234,11 @@ apt_install \
   sudo \
   curl \
   wget \
+  ca-certificates \
+  gnupg \
+  lsb-release \
+  software-properties-common \
+  apt-transport-https \
   git \
   vim \
   nano \
@@ -108,10 +249,7 @@ apt_install \
   jq \
   net-tools \
   dnsutils \
-  ca-certificates \
-  gnupg \
-  lsb-release \
-  software-properties-common \
+  iputils-ping \
   ufw \
   fail2ban \
   unattended-upgrades \
@@ -129,9 +267,10 @@ apt_install \
   rsync \
   cron \
   dbus-x11 \
-  dconf-cli
+  dconf-cli \
+  pwgen
 
-section "Desktop, Xorg, and GUI-control packages"
+section "Desktop, Xorg, and GUI control packages"
 
 apt_install \
   ubuntu-desktop-minimal \
@@ -149,47 +288,84 @@ apt_install \
   at-spi2-core \
   x11-utils
 
+# ---------------------------------------------------------------------------
+# Agent user and sudo
+# ---------------------------------------------------------------------------
+
 section "Create agent user"
 
 if id "${AGENT_USER}" >/dev/null 2>&1; then
-  echo "User ${AGENT_USER} already exists."
+  info "User ${AGENT_USER} already exists."
 else
-  adduser --gecos "" "${AGENT_USER}"
+  adduser --gecos "" --disabled-password "${AGENT_USER}"
+  ok "Created user ${AGENT_USER}."
 fi
 
 usermod -aG sudo "${AGENT_USER}"
 
-cat > "/etc/sudoers.d/90-${AGENT_USER}-full-control" <<EOF
+SUDOERS_FILE="/etc/sudoers.d/90-${AGENT_USER}-full-control"
+install -m 0440 /dev/null "${SUDOERS_FILE}"
+cat > "${SUDOERS_FILE}" <<EOF
+# Managed by ${SCRIPT_NAME}. Grants ${AGENT_USER} passwordless root.
 ${AGENT_USER} ALL=(ALL) NOPASSWD:ALL
 EOF
-chmod 440 "/etc/sudoers.d/90-${AGENT_USER}-full-control"
+chmod 0440 "${SUDOERS_FILE}"
+visudo -cf "${SUDOERS_FILE}" >/dev/null
+ok "Configured passwordless sudo for ${AGENT_USER}."
+
+# ---------------------------------------------------------------------------
+# SSH key
+# ---------------------------------------------------------------------------
 
 section "SSH key setup"
 
-mkdir -p "${AGENT_HOME}/.ssh"
-touch "${AGENT_HOME}/.ssh/authorized_keys"
-chown -R "${AGENT_USER}:${AGENT_USER}" "${AGENT_HOME}/.ssh"
-chmod 700 "${AGENT_HOME}/.ssh"
+install -d -m 700 -o "${AGENT_USER}" -g "${AGENT_USER}" "${AGENT_HOME}/.ssh"
+install -m 600 -o "${AGENT_USER}" -g "${AGENT_USER}" /dev/null "${AGENT_HOME}/.ssh/authorized_keys.tmp"
+if [[ -f "${AGENT_HOME}/.ssh/authorized_keys" ]]; then
+  cat "${AGENT_HOME}/.ssh/authorized_keys" > "${AGENT_HOME}/.ssh/authorized_keys.tmp"
+fi
+mv "${AGENT_HOME}/.ssh/authorized_keys.tmp" "${AGENT_HOME}/.ssh/authorized_keys"
+chown "${AGENT_USER}:${AGENT_USER}" "${AGENT_HOME}/.ssh/authorized_keys"
 chmod 600 "${AGENT_HOME}/.ssh/authorized_keys"
 
-echo "Paste the SSH public key that will be allowed to control this machine."
-echo "Example: ssh-ed25519 AAAAC3... eric@mac"
-echo "Leave blank only if you will add it manually later from the physical machine."
-read -r -p "SSH public key: " SSH_PUBLIC_KEY || true
+EXISTING_KEYS="$(wc -l < "${AGENT_HOME}/.ssh/authorized_keys" 2>/dev/null || echo 0)"
 
-if [[ -n "${SSH_PUBLIC_KEY:-}" ]]; then
+if [[ -z "${SSH_PUBLIC_KEY}" && "${AFC_NONINTERACTIVE}" != "1" ]]; then
+  if [[ "${EXISTING_KEYS}" -gt 0 ]]; then
+    info "${EXISTING_KEYS} SSH key(s) already authorized for ${AGENT_USER}."
+    read -r -p "Add another public key? Leave blank to skip: " SSH_PUBLIC_KEY || true
+  else
+    log
+    log "Paste the SSH public key that will be allowed to control this machine."
+    log "Example: ssh-ed25519 AAAAC3... you@workstation"
+    log "Leave blank only if you will add it manually after install."
+    read -r -p "SSH public key: " SSH_PUBLIC_KEY || true
+  fi
+fi
+
+if [[ -n "${SSH_PUBLIC_KEY}" ]]; then
+  if ! is_ssh_pubkey "${SSH_PUBLIC_KEY}"; then
+    die "That does not look like an SSH public key. Expected a line starting with 'ssh-ed25519 ', 'ssh-rsa ', etc."
+  fi
   append_line_once "${SSH_PUBLIC_KEY}" "${AGENT_HOME}/.ssh/authorized_keys"
+  ok "Authorized the supplied SSH key."
+elif [[ "${EXISTING_KEYS}" -eq 0 && "${AFC_NONINTERACTIVE}" == "1" ]]; then
+  die "Non-interactive mode requires SSH_PUBLIC_KEY when no key is already authorized."
 fi
 
 chown -R "${AGENT_USER}:${AGENT_USER}" "${AGENT_HOME}/.ssh"
 chmod 700 "${AGENT_HOME}/.ssh"
 chmod 600 "${AGENT_HOME}/.ssh/authorized_keys"
 
+# ---------------------------------------------------------------------------
+# SSH hardening
+# ---------------------------------------------------------------------------
+
 section "Harden SSH"
 
-mkdir -p /etc/ssh/sshd_config.d
-
+install -d -m 755 /etc/ssh/sshd_config.d
 cat > /etc/ssh/sshd_config.d/99-ai-full-control.conf <<EOF
+# Managed by ${SCRIPT_NAME}.
 PermitRootLogin no
 PasswordAuthentication no
 KbdInteractiveAuthentication no
@@ -198,47 +374,99 @@ X11Forwarding yes
 AllowUsers ${AGENT_USER}
 EOF
 
-systemctl enable --now ssh
+sshd -t
+systemctl enable --now ssh >/dev/null
 systemctl restart ssh
+ok "SSH hardened (key-only, ${AGENT_USER} only)."
+
+# ---------------------------------------------------------------------------
+# Tailscale (official apt repo)
+# ---------------------------------------------------------------------------
 
 section "Install Tailscale"
 
 if ! command -v tailscale >/dev/null 2>&1; then
-  curl -fsSL https://tailscale.com/install.sh | sh
+  install -d -m 755 /usr/share/keyrings
+  TS_CODENAME="${UBUNTU_CODENAME:-${VERSION_CODENAME:-noble}}"
+  curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/${TS_CODENAME}.noarmor.gpg" \
+    -o /usr/share/keyrings/tailscale-archive-keyring.gpg
+  chmod 0644 /usr/share/keyrings/tailscale-archive-keyring.gpg
+  cat > /etc/apt/sources.list.d/tailscale.list <<EOF
+deb [signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/ubuntu ${TS_CODENAME} main
+EOF
+  apt-get update
+  apt_install tailscale
+  ok "Tailscale installed from official apt repository."
 else
-  echo "Tailscale already installed."
+  info "Tailscale already installed."
 fi
 
-section "Firewall: never public"
+systemctl enable --now tailscaled >/dev/null
 
-ufw --force reset
-ufw default deny incoming
-ufw default allow outgoing
+# ---------------------------------------------------------------------------
+# Firewall (idempotent)
+# ---------------------------------------------------------------------------
 
-# SSH only over Tailscale. This rule is interface-specific.
-ufw allow in on tailscale0 to any port 22 proto tcp comment "SSH over Tailscale only"
+section "Firewall (Tailscale-only inbound)"
 
-# No direct LAN/WAN VNC rule. VNC binds to localhost only.
-ufw --force enable
+ufw --force default deny incoming
+ufw --force default allow outgoing
+
+if ! ufw status | grep -q "tailscale0.*22/tcp"; then
+  ufw allow in on tailscale0 to any port 22 proto tcp comment "SSH over Tailscale only"
+fi
+
+ufw --force enable >/dev/null
+ok "UFW: deny inbound, allow outbound, SSH allowed only on tailscale0."
+
+# ---------------------------------------------------------------------------
+# Security services and unattended upgrades
+# ---------------------------------------------------------------------------
 
 section "Security services"
 
-systemctl enable --now fail2ban
-systemctl enable --now unattended-upgrades || true
+systemctl enable --now fail2ban >/dev/null
+systemctl enable --now unattended-upgrades >/dev/null || true
 
-section "Force Xorg and autologin agent user"
+cat > /etc/apt/apt.conf.d/20auto-upgrades <<'EOF'
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+APT::Periodic::AutocleanInterval "7";
+EOF
 
-mkdir -p /etc/gdm3
+cat > /etc/apt/apt.conf.d/52unattended-upgrades-local <<'EOF'
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "04:00";
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
+EOF
 
+ok "Automatic security updates enabled (reboots at 04:00 if required)."
+
+# ---------------------------------------------------------------------------
+# Force Xorg, autologin, no sleep, no lock
+# ---------------------------------------------------------------------------
+
+section "Force Xorg and autologin"
+
+install -d -m 755 /etc/gdm3
 cat > /etc/gdm3/custom.conf <<EOF
+# Managed by ${SCRIPT_NAME}.
 [daemon]
 WaylandEnable=false
 AutomaticLoginEnable=true
 AutomaticLogin=${AGENT_USER}
+
+[security]
+
+[xdmcp]
+
+[chooser]
+
+[debug]
 EOF
 
-mkdir -p /var/lib/AccountsService/users
-
+install -d -m 755 /var/lib/AccountsService/users
 cat > "/var/lib/AccountsService/users/${AGENT_USER}" <<EOF
 [User]
 Session=ubuntu-xorg
@@ -246,77 +474,96 @@ XSession=ubuntu-xorg
 SystemAccount=false
 EOF
 
-systemctl set-default graphical.target
+systemctl set-default graphical.target >/dev/null
 
-section "Prevent sleep, suspend, and lockouts"
+section "Prevent sleep, suspend, and screen lock"
 
-systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target || true
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target >/dev/null 2>&1 || true
 
-runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.session idle-delay 0" || true
-runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.screensaver lock-enabled false" || true
-runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false" || true
+runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.session idle-delay 0"             >/dev/null 2>&1 || true
+runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.screensaver lock-enabled false"  >/dev/null 2>&1 || true
+runuser -l "${AGENT_USER}" -c "dbus-run-session -- gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false" >/dev/null 2>&1 || true
+
+ok "Sleep masked, lock disabled."
+
+# ---------------------------------------------------------------------------
+# Workspace at /opt/ai-full-control
+# ---------------------------------------------------------------------------
 
 section "Create AI Full Control workspace"
 
-mkdir -p "${AFC_DIR}/"{bin,logs,state,secrets,scripts,tools}
-chown -R "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}"
-chmod 755 "${AFC_DIR}"
-chmod 700 "${AFC_DIR}/secrets"
+install -d -m 755 -o "${AGENT_USER}" -g "${AGENT_USER}" "${AFC_DIR}" \
+  "${AFC_DIR}/bin" "${AFC_DIR}/logs" "${AFC_DIR}/state" \
+  "${AFC_DIR}/scripts" "${AFC_DIR}/tools"
+install -d -m 700 -o "${AGENT_USER}" -g "${AGENT_USER}" "${AFC_DIR}/secrets"
 
-cat > "${AFC_DIR}/secrets/env" <<'EOF'
-# Cloud LLM keys go here.
+if [[ ! -f "${AFC_DIR}/secrets/env" ]]; then
+  install -m 600 -o "${AGENT_USER}" -g "${AGENT_USER}" /dev/null "${AFC_DIR}/secrets/env"
+  cat > "${AFC_DIR}/secrets/env" <<EOF
+# Cloud LLM keys and runtime environment for the agent user.
 # Example:
-# OPENAI_API_KEY=sk-...
-# ANTHROPIC_API_KEY=sk-ant-...
+#   OPENAI_API_KEY=sk-...
+#   ANTHROPIC_API_KEY=sk-ant-...
 
 DISPLAY=:0
-AFC_DIR=/opt/ai-full-control
-AGENT_USER=agent
+AFC_DIR=${AFC_DIR}
+AGENT_USER=${AGENT_USER}
+AGENT_HOME=${AGENT_HOME}
 EOF
+  chown "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}/secrets/env"
+  chmod 600 "${AFC_DIR}/secrets/env"
+  ok "Created ${AFC_DIR}/secrets/env (add your LLM keys with: sudoedit ${AFC_DIR}/secrets/env)."
+else
+  info "Preserving existing ${AFC_DIR}/secrets/env."
+fi
 
-chown "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}/secrets/env"
-chmod 600 "${AFC_DIR}/secrets/env"
+# ---------------------------------------------------------------------------
+# Docker CE (official repo)
+# ---------------------------------------------------------------------------
 
 section "Install Docker Engine"
 
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
-  apt remove -y "$pkg" >/dev/null 2>&1 || true
-done
+if ! command -v docker >/dev/null 2>&1; then
+  for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+    apt-get remove -y "$pkg" >/dev/null 2>&1 || true
+  done
 
-install -m 0755 -d /etc/apt/keyrings
+  install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  chmod a+r /etc/apt/keyrings/docker.asc
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
-  -o /etc/apt/keyrings/docker.asc
+  # shellcheck disable=SC1091
+  . /etc/os-release
+  DOCKER_CODENAME="${UBUNTU_CODENAME:-${VERSION_CODENAME:-noble}}"
 
-chmod a+r /etc/apt/keyrings/docker.asc
-
-. /etc/os-release
-UBUNTU_CODENAME="${UBUNTU_CODENAME:-$VERSION_CODENAME}"
-
-cat > /etc/apt/sources.list.d/docker.list <<EOF
-deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu ${UBUNTU_CODENAME} stable
+  cat > /etc/apt/sources.list.d/docker.list <<EOF
+deb [arch=${ARCH} signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu ${DOCKER_CODENAME} stable
 EOF
-
-apt update
-
-apt_install \
-  docker-ce \
-  docker-ce-cli \
-  containerd.io \
-  docker-buildx-plugin \
-  docker-compose-plugin
+  apt-get update
+  apt_install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+else
+  info "Docker already installed."
+fi
 
 usermod -aG docker "${AGENT_USER}"
-systemctl enable --now docker
+systemctl enable --now docker >/dev/null
+ok "Docker ready, ${AGENT_USER} is in the docker group."
+
+# ---------------------------------------------------------------------------
+# Python cloud-agent runtime
+# ---------------------------------------------------------------------------
 
 section "Python cloud-agent runtime"
 
-runuser -l "${AGENT_USER}" -c "
-set -e
-python3 -m venv ~/agent-env
+runuser -l "${AGENT_USER}" -c '
+set -euo pipefail
+if [[ ! -d ~/agent-env ]]; then
+  python3 -m venv ~/agent-env
+fi
+# shellcheck disable=SC1091
 . ~/agent-env/bin/activate
 pip install --upgrade pip wheel setuptools
-pip install \
+pip install --upgrade \
   openai \
   anthropic \
   requests \
@@ -330,82 +577,99 @@ pip install \
   mss \
   opencv-python \
   python-xlib
-python -m playwright install --with-deps
-"
+python -m playwright install --with-deps chromium
+'
+
+ok "Python venv ready at ${AGENT_HOME}/agent-env."
+
+# ---------------------------------------------------------------------------
+# Node runtime
+# ---------------------------------------------------------------------------
 
 section "Node runtime"
 
-npm install -g npm@latest || true
-npm install -g yarn pnpm typescript ts-node || true
+npm install -g npm@latest
+npm install -g yarn pnpm typescript ts-node
+
+# ---------------------------------------------------------------------------
+# GUI control helper scripts
+# ---------------------------------------------------------------------------
 
 section "GUI control helper scripts"
 
-cat > "${AFC_DIR}/bin/gui-env" <<'EOF'
+cat > "${AFC_DIR}/bin/gui-env" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ -f /opt/ai-full-control/secrets/env ]]; then
+if [[ -f ${AFC_DIR}/secrets/env ]]; then
   set -a
-  source /opt/ai-full-control/secrets/env
+  # shellcheck disable=SC1091
+  source ${AFC_DIR}/secrets/env
   set +a
 fi
 
-export DISPLAY="${DISPLAY:-:0}"
-export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
-export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-unix:path=${XDG_RUNTIME_DIR}/bus}"
+export DISPLAY="\${DISPLAY:-:0}"
+export XDG_RUNTIME_DIR="\${XDG_RUNTIME_DIR:-/run/user/\$(id -u)}"
+export DBUS_SESSION_BUS_ADDRESS="\${DBUS_SESSION_BUS_ADDRESS:-unix:path=\${XDG_RUNTIME_DIR}/bus}"
 
-exec "$@"
+exec "\$@"
 EOF
 
-cat > "${AFC_DIR}/bin/screenshot" <<'EOF'
+cat > "${AFC_DIR}/bin/screenshot" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-OUT="${1:-/opt/ai-full-control/state/screen.png}"
-/opt/ai-full-control/bin/gui-env gnome-screenshot -f "$OUT"
-echo "$OUT"
+OUT="\${1:-${AFC_DIR}/state/screen.png}"
+${AFC_DIR}/bin/gui-env gnome-screenshot -f "\$OUT"
+echo "\$OUT"
 EOF
 
-cat > "${AFC_DIR}/bin/click" <<'EOF'
+cat > "${AFC_DIR}/bin/click" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-[[ $# -eq 2 ]] || { echo "Usage: click X Y"; exit 2; }
-/opt/ai-full-control/bin/gui-env xdotool mousemove "$1" "$2" click 1
+[[ \$# -eq 2 ]] || { echo "Usage: click X Y" >&2; exit 2; }
+${AFC_DIR}/bin/gui-env xdotool mousemove "\$1" "\$2" click 1
 EOF
 
-cat > "${AFC_DIR}/bin/type-text" <<'EOF'
+cat > "${AFC_DIR}/bin/type-text" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-[[ $# -ge 1 ]] || { echo "Usage: type-text 'text'"; exit 2; }
-/opt/ai-full-control/bin/gui-env xdotool type --delay 10 "$*"
+[[ \$# -ge 1 ]] || { echo "Usage: type-text 'text'" >&2; exit 2; }
+${AFC_DIR}/bin/gui-env xdotool type --delay 10 "\$*"
 EOF
 
-cat > "${AFC_DIR}/bin/key" <<'EOF'
+cat > "${AFC_DIR}/bin/key" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
-[[ $# -ge 1 ]] || { echo "Usage: key ctrl+l"; exit 2; }
-/opt/ai-full-control/bin/gui-env xdotool key "$@"
+[[ \$# -ge 1 ]] || { echo "Usage: key ctrl+l" >&2; exit 2; }
+${AFC_DIR}/bin/gui-env xdotool key "\$@"
 EOF
 
-cat > "${AFC_DIR}/bin/agent-shell" <<'EOF'
+cat > "${AFC_DIR}/bin/agent-shell" <<EOF
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ -f /opt/ai-full-control/secrets/env ]]; then
+if [[ -f ${AFC_DIR}/secrets/env ]]; then
   set -a
-  source /opt/ai-full-control/secrets/env
+  # shellcheck disable=SC1091
+  source ${AFC_DIR}/secrets/env
   set +a
 fi
 
-cd /opt/ai-full-control
+cd ${AFC_DIR}
 exec tmux new -A -s ai-full-control
 EOF
 
 chmod +x "${AFC_DIR}/bin/"*
 chown -R "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}"
 
-section "Browser automation test script"
+# ---------------------------------------------------------------------------
+# Browser automation smoke test
+# ---------------------------------------------------------------------------
+
+section "Browser automation smoke test"
 
 cat > "${AFC_DIR}/tools/browser-test.py" <<'EOF'
+"""Smoke test: drive Chromium through Playwright on the real Xorg desktop."""
 from playwright.sync_api import sync_playwright
 
 with sync_playwright() as p:
@@ -418,150 +682,218 @@ EOF
 
 chown "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}/tools/browser-test.py"
 
-section "x11vnc localhost-only real desktop access"
+# ---------------------------------------------------------------------------
+# x11vnc loopback only
+# ---------------------------------------------------------------------------
+
+section "x11vnc loopback-only desktop access"
 
 runuser -l "${AGENT_USER}" -c "mkdir -p ~/.vnc ~/.config/autostart ~/.local/share"
 
-echo
-echo "Set a VNC password. This is for emergency physical-desktop access over an SSH tunnel only."
-echo "VNC will bind to localhost, not public or LAN."
-runuser -l "${AGENT_USER}" -c "x11vnc -storepasswd"
+VNC_PASSWD_FILE="${AGENT_HOME}/.vnc/passwd"
+
+if [[ -f "${VNC_PASSWD_FILE}" ]]; then
+  info "VNC password already set; keeping it."
+elif [[ -n "${VNC_PASSWORD}" ]]; then
+  runuser -l "${AGENT_USER}" -c "x11vnc -storepasswd '${VNC_PASSWORD}' ~/.vnc/passwd" >/dev/null
+  ok "VNC password set from VNC_PASSWORD env var."
+elif [[ "${AFC_NONINTERACTIVE}" == "1" ]]; then
+  die "Non-interactive mode requires VNC_PASSWORD when no VNC password is already stored."
+else
+  log
+  log "Set a VNC password. This is only used for emergency desktop access"
+  log "over an SSH tunnel. VNC binds to 127.0.0.1, never to the network."
+  runuser -l "${AGENT_USER}" -c "x11vnc -storepasswd"
+fi
 
 cat > "${AGENT_HOME}/.config/autostart/x11vnc.desktop" <<EOF
 [Desktop Entry]
 Type=Application
-Name=x11vnc Localhost Only
+Name=x11vnc Loopback Only
 Exec=/usr/bin/x11vnc -display :0 -forever -shared -localhost -rfbauth ${AGENT_HOME}/.vnc/passwd -rfbport ${VNC_PORT} -o ${AGENT_HOME}/.local/share/x11vnc.log
 X-GNOME-Autostart-enabled=true
 EOF
 
-chown -R "${AGENT_USER}:${AGENT_USER}" "${AGENT_HOME}/.config" "${AGENT_HOME}/.local" "${AGENT_HOME}/.vnc"
+chown -R "${AGENT_USER}:${AGENT_USER}" \
+  "${AGENT_HOME}/.config" "${AGENT_HOME}/.local" "${AGENT_HOME}/.vnc"
 
-section "Verification script"
+# ---------------------------------------------------------------------------
+# Verification script (paths expanded at install time)
+# ---------------------------------------------------------------------------
 
-cat > "${AFC_DIR}/bin/verify" <<'EOF'
+section "Install verification script"
+
+cat > "${AFC_DIR}/bin/verify" <<EOF
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
-if [[ -f /opt/ai-full-control/secrets/env ]]; then
+AFC_DIR="${AFC_DIR}"
+AGENT_USER="${AGENT_USER}"
+AGENT_HOME="${AGENT_HOME}"
+
+if [[ -t 1 ]]; then
+  C_RESET=\$'\\033[0m'; C_RED=\$'\\033[31m'; C_GREEN=\$'\\033[32m'; C_BOLD=\$'\\033[1m'
+else
+  C_RESET=""; C_RED=""; C_GREEN=""; C_BOLD=""
+fi
+
+PASS=0; FAIL=0
+check() {
+  local label="\$1"; shift
+  if "\$@" >/dev/null 2>&1; then
+    printf '  %s[ok]%s %s\\n' "\${C_GREEN}" "\${C_RESET}" "\${label}"
+    PASS=\$((PASS+1))
+  else
+    printf '  %s[--]%s %s\\n' "\${C_RED}" "\${C_RESET}" "\${label}"
+    FAIL=\$((FAIL+1))
+  fi
+}
+
+if [[ -f \${AFC_DIR}/secrets/env ]]; then
   set -a
-  source /opt/ai-full-control/secrets/env
+  # shellcheck disable=SC1091
+  source \${AFC_DIR}/secrets/env
   set +a
 fi
 
-echo "== Identity =="
-id
+printf '\\n%s== ai-full-control verify ==%s\\n' "\${C_BOLD}" "\${C_RESET}"
 echo
 
-echo "== Passwordless sudo =="
-sudo -n true && echo "OK"
+echo "User and sudo:"
+check "running as \${AGENT_USER}"          test "\$(id -un)" = "\${AGENT_USER}"
+check "passwordless sudo"                  sudo -n true
 echo
 
-echo "== SSH service =="
-systemctl is-active ssh
+echo "Network and services:"
+check "ssh service active"                 systemctl is-active ssh
+check "ufw active"                         bash -c "sudo ufw status | grep -q 'Status: active'"
+check "tailscale binary present"           command -v tailscale
+check "tailscale is logged in"             bash -c "tailscale status >/dev/null 2>&1 && ! tailscale status | grep -q 'Logged out'"
+check "docker engine reachable"            docker version
 echo
 
-echo "== Firewall =="
-sudo ufw status verbose
+echo "Desktop and GUI control:"
+check "Xorg session forced for \${AGENT_USER}"  bash -c "grep -q 'XSession=ubuntu-xorg' /var/lib/AccountsService/users/\${AGENT_USER}"
+check "x11vnc autostart present"           test -f \${AGENT_HOME}/.config/autostart/x11vnc.desktop
+check "DISPLAY is set"                     test -n "\${DISPLAY:-}"
+check "xdotool reachable on \${DISPLAY:-:0}" \${AFC_DIR}/bin/gui-env xdotool getdisplaygeometry
 echo
 
-echo "== Tailscale =="
-if command -v tailscale >/dev/null 2>&1; then
-  tailscale status || true
+echo "Runtime:"
+check "Python venv exists"                 test -x \${AGENT_HOME}/agent-env/bin/python
+check "openai SDK importable"              \${AGENT_HOME}/agent-env/bin/python -c "import openai"
+check "anthropic SDK importable"           \${AGENT_HOME}/agent-env/bin/python -c "import anthropic"
+check "playwright importable"              \${AGENT_HOME}/agent-env/bin/python -c "from playwright.sync_api import sync_playwright"
+check "node and tsc present"               bash -c "command -v node && command -v tsc"
+echo
+
+echo "Screenshot:"
+SHOT="\${AFC_DIR}/state/screen.png"
+if \${AFC_DIR}/bin/screenshot "\$SHOT" >/dev/null 2>&1 && [[ -s "\$SHOT" ]]; then
+  printf '  %s[ok]%s screenshot saved to %s\\n' "\${C_GREEN}" "\${C_RESET}" "\$SHOT"
+  PASS=\$((PASS+1))
 else
-  echo "tailscale missing"
+  printf '  %s[--]%s screenshot failed (desktop session may not be active yet)\\n' "\${C_RED}" "\${C_RESET}"
+  FAIL=\$((FAIL+1))
 fi
-echo
 
-echo "== Docker =="
-docker --version
-docker compose version
 echo
+printf '%sResult:%s %d passed, %d failed.\\n' "\${C_BOLD}" "\${C_RESET}" "\$PASS" "\$FAIL"
 
-echo "== X display =="
-echo "DISPLAY=${DISPLAY:-unset}"
-if command -v xdotool >/dev/null 2>&1; then
-  /opt/ai-full-control/bin/gui-env xdotool getdisplaygeometry || true
+if [[ \$FAIL -gt 0 ]]; then
+  echo
+  echo "Tips:"
+  echo "  - If the desktop checks failed, run from a graphical login as \${AGENT_USER}."
+  echo "  - If tailscale is logged out, run: sudo tailscale up"
+  echo "  - If docker is not reachable, log out and log in again so the docker group applies."
+  exit 1
 fi
-echo
-
-echo "== Screenshot =="
-/opt/ai-full-control/bin/screenshot /opt/ai-full-control/state/screen.png || true
-ls -lh /opt/ai-full-control/state/screen.png || true
-echo
-
-echo "== Python agent environment =="
-source /home/agent/agent-env/bin/activate
-python --version
-python - <<'PY'
-import openai
-import anthropic
-import requests
-import pydantic
-import rich
-import typer
-from playwright.sync_api import sync_playwright
-print("Python packages: OK")
-PY
-echo
-
-echo "== Browser automation =="
-echo "Run this after desktop login/autologin:"
-echo "  source ~/agent-env/bin/activate"
-echo "  python /opt/ai-full-control/tools/browser-test.py"
-echo
-
-echo "Verification complete."
 EOF
 
 chmod +x "${AFC_DIR}/bin/verify"
 chown "${AGENT_USER}:${AGENT_USER}" "${AFC_DIR}/bin/verify"
 
+# ---------------------------------------------------------------------------
+# Tailscale enrolment
+# ---------------------------------------------------------------------------
+
 section "Tailscale authentication"
 
-echo "Authenticate this machine into your private Tailscale network."
-echo "This is the only intended remote ingress path."
-echo
+TS_STATUS_OK=0
+if tailscale status >/dev/null 2>&1 && ! tailscale status 2>/dev/null | grep -q "Logged out"; then
+  info "Tailscale is already logged in."
+  TS_STATUS_OK=1
+elif [[ -n "${TAILSCALE_AUTHKEY}" ]]; then
+  if tailscale up --ssh=false --authkey "${TAILSCALE_AUTHKEY}"; then
+    ok "Tailscale logged in with pre-auth key."
+    TS_STATUS_OK=1
+  else
+    warn "Tailscale auth-key login failed. Run 'sudo tailscale up' from the console."
+  fi
+else
+  log
+  log "Authenticate this machine into your private Tailscale network."
+  log "This is the only intended remote ingress path."
+  log
+  if tailscale up --ssh=false; then
+    ok "Tailscale logged in."
+    TS_STATUS_OK=1
+  else
+    warn "Tailscale login did not complete. Run 'sudo tailscale up' from the console after install."
+  fi
+fi
 
-tailscale up --ssh=false || true
+# ---------------------------------------------------------------------------
+# Final summary
+# ---------------------------------------------------------------------------
 
-section "Final hardening reminder"
+section "Final state"
 
-echo "Checking UFW state:"
 ufw status verbose || true
 
+cat <<EOF
+
+${C_GREEN}${C_BOLD}Install complete.${C_RESET}
+
+Next steps:
+
+  1. Reboot:
+       sudo reboot
+
+  2. After reboot, from any device on your Tailscale network:
+       ssh ${AGENT_USER}@<tailscale-name-or-ip>
+       ${AFC_DIR}/bin/verify
+
+  3. Add cloud LLM keys (optional but expected):
+       sudoedit ${AFC_DIR}/secrets/env
+
+  4. Start a persistent agent shell:
+       ${AFC_DIR}/bin/agent-shell
+
+  5. Emergency desktop (still private):
+       ssh -L ${VNC_PORT}:localhost:${VNC_PORT} ${AGENT_USER}@<tailscale-name-or-ip>
+       # then point a VNC viewer at localhost:${VNC_PORT}
+
+Surfaces installed:
+  - Terminal: SSH + sudo + tmux
+  - OS:       apt + systemctl + logs + files + Docker
+  - GUI:      Xorg + xdotool + screenshot + x11vnc (loopback)
+  - Browser:  Playwright + Chromium
+  - Network:  Tailscale-only inbound
+
+Public exposure:
+  - SSH:           Tailscale interface only
+  - VNC:           localhost only
+  - Password SSH:  disabled
+  - Root SSH:      disabled
+  - UFW default:   deny inbound
+
+Install transcript: ${LOG_FILE}
+EOF
+
+if [[ "${TS_STATUS_OK}" != "1" ]]; then
+  warn "Tailscale is not logged in yet. Run 'sudo tailscale up' before rebooting."
+fi
+
 echo
-echo "Install complete."
-echo
-echo "Reboot now:"
-echo "  sudo reboot"
-echo
-echo "After reboot:"
-echo "  ssh ${AGENT_USER}@<tailscale-ip-or-name>"
-echo "  /opt/ai-full-control/bin/verify"
-echo
-echo "Start persistent agent shell:"
-echo "  /opt/ai-full-control/bin/agent-shell"
-echo
-echo "Add cloud LLM keys:"
-echo "  nano /opt/ai-full-control/secrets/env"
-echo
-echo "Emergency VNC, still private:"
-echo "  ssh -L 5900:localhost:5900 ${AGENT_USER}@<tailscale-ip-or-name>"
-echo "  Connect VNC viewer to localhost:5900"
-echo
-echo "Installed control surfaces:"
-echo "  Terminal: SSH + sudo + tmux"
-echo "  OS: apt + systemctl + logs + files + Docker"
-echo "  GUI: Xorg + xdotool + screenshot + x11vnc"
-echo "  Browser: Playwright"
-echo "  Network: Tailscale-only inbound"
-echo
-echo "Public exposure:"
-echo "  SSH: Tailscale interface only"
-echo "  VNC: localhost only"
-echo "  Password SSH: disabled"
-echo "  Root SSH: disabled"
-echo "  UFW: deny inbound by default"
-echo
-echo "A reboot is required."
+echo "A reboot is required: sudo reboot"

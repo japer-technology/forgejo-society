@@ -19,6 +19,7 @@ deep, command-level procedures.
 | Area | Purpose | Start here |
 | --- | --- | --- |
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
+| `ubuntu-zombie/` | Minimum install for a non-expert Ubuntu Desktop: one script, Tailscale-only ingress, AI-controllable terminal + GUI + browser | [ubuntu-zombie](ubuntu-zombie/README.md) |
 | `easy-install/` | Two-script installer (Forgejo + runner, PostgreSQL-backed) for demos and disposable VMs | [easy-install](easy-install/README.md) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
 | `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
@@ -33,6 +34,7 @@ deep, command-level procedures.
 | --- | --- |
 | [Ubuntu Quick Start](quick-start/ubuntu.md) | You are provisioning a fresh Ubuntu host from bare metal |
 | [Ubuntu Refresh](quick-start/ubuntu-refresh.md) | You are repairing, cleaning, or validating an existing Ubuntu host |
+| [Ubuntu Zombie](ubuntu-zombie/README.md) | You want the minimum non-expert install that lets an AI fully operate one Ubuntu Desktop over Tailscale |
 | [Forgejo (minimum viable)](quick-start/forgejo-minimum.md) | You want a viable Forgejo on one Ubuntu host with the fewest possible commands |
 | [Forgejo-Society Full Stack](quick-start/forgejo-society.md) | You want the shortest guided path to a working Forgejo-Society deployment |
 
