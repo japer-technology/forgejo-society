@@ -11,12 +11,7 @@ that *is* the system administrator. The agent installs apps, edits
 config, runs services, automates the GUI, drives a browser, and
 explains what it did, all over a private Tailscale tunnel.
 
-This folder is **not** the production Forgejo-Society runtime path.
-For that, follow the component-by-component guides in
-[`../install/`](../install/00-index.md) and the rollout plan in
-[`../transition-plan/`](../transition-plan/00-overview.md). This is a
-single-host operator workstation, intended to sit alongside the forge
-and runner fleet described there.
+This is a candidate for minimum Ubuntu for Ubuntu R&D Requirements.
 
 ---
 
