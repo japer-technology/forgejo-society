@@ -92,6 +92,7 @@ This is a candidate for minimum Ubuntu for Ubuntu R&D Requirements.
 | --- | --- |
 | [`ai-full-control-ubuntu.sh`](ai-full-control-ubuntu.sh) | One-shot installer. Turns a fresh Ubuntu Desktop into an AI-admin-ready workstation. Most steps are idempotent (`apt_install`, the `id`-guarded `adduser`, `usermod -aG`, the `append_line_once` helper for `authorized_keys`, and the `cat >` drop-ins in `/etc/sudoers.d/`, `/etc/ssh/sshd_config.d/`, and `/etc/gdm3/`). Three steps re-prompt interactively on every run: the initial `Type YES` confirmation, the SSH public-key paste, the `x11vnc -storepasswd` password, and `tailscale up` if the device is not already authenticated. UFW is reset and re-applied on every run, so re-running after a transient failure is safe. |
 | [`script-description.md`](script-description.md) | Short operator quick-reference for the installer. |
+| [`awakening.md`](awakening.md) | Framing document. The machine is not "installed" — it wakes up. Describes the inert-body → token-stream → installer → AI-administrator → root picture, the shape of an awakening token stream, the boot flow, and the safety line (`root-capable, never root-unbounded`) the installer must hold. |
 
 ---
 
