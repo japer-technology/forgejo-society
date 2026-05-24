@@ -8,9 +8,9 @@
 
 ## 1. Definition
 
-**Society of Repo** is a repo-native architecture for building living, governed, useful AI societies out of Git repositories.
+**Society of Repo** is a repo-native, **multi-repository** architecture for building living, governed, useful AI societies out of Git repositories.
 
-In a Society of Repo, a repository is not merely a storage location for code or documents. It is a durable cognitive unit: an agency, memory, critic, censor, habit, regulator, workspace, service provider, or organ of thought.
+A Society of Repo is many repositories, not one. Each repository is a durable cognitive unit — an agency, memory, critic, censor, habit, regulator, workspace, service provider, or organ of thought — and the society is the governed interaction of those repositories under a shared constitution.
 
 A Society of Repo turns the software forge into a living substrate where:
 
