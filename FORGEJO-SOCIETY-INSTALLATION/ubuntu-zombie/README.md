@@ -1,9 +1,8 @@
 # Forgejo Society: ubuntu-zombie
 
 A jokingly named project for turning a fresh Ubuntu Desktop into a
-workstation that a cloud LLM can drive end-to-end — terminal, OS,
-desktop, browser, Docker, and network — without exposing anything to
-the public internet.
+workstation that a local AI Agent using cloud LLM can drive as root, 
+without exposing anything to the public internet.
 
 The goal is plain: a "Windows" user who wants to live on Ubuntu without
 hand-rolling sysadmin work should be able to converse with an agent
