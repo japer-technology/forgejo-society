@@ -40,12 +40,6 @@ That is the invention: not an agent, but a constitutional environment for agents
 
 Forgejo Society deserves to be built assertively because it names the next serious problem in agentic software: not capability, but governable capability. The future will not belong to the biggest agent. It will belong to the best-organised society of limited agents, operating under explicit authority, leaving durable memory, and revising reality through auditable process. In that future, the forge is not where the mind stores its work. The forge is where the mind works.
 
-**Q1:** What is the smallest end-to-end demo that would prove the Society of Repos loop without overbuilding the framework?
-
-**Q2:** Which roles should be separate repositories from day one: agency, critic, censor, memory, governance, or workspace?
-
-**Q3:** What should count as a “settlement” in the system: a commit, a signed Markdown record, a merged pull request, or all three?
-
 [1]: https://github.com/japer-technology/forgejo-society "GitHub - japer-technology/forgejo-society: Forgejo Society is a self-hosted, local-first cognitive forge using Forgejo on Ubuntu  UNDER DEVELOPMENT · GitHub"
 [2]: https://github.com/japer-technology/forgejo-society/blob/main/FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO "forgejo-society/FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO at main · japer-technology/forgejo-society · GitHub"
 [3]: https://github.com/japer-technology/forgejo-society/blob/main/FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND "forgejo-society/FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND at main · japer-technology/forgejo-society · GitHub"
