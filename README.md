@@ -27,7 +27,9 @@ Before running, mirroring, or extending anything in this repository, read
 [WARNING.md](WARNING.md) and the compliance documents it references.
 They define where this project is allowed to *execute*, where it is only
 allowed to be *mirrored*, and what must never be done on shared
-infrastructure.
+infrastructure. [COMPLY.md](COMPLY.md) summarises how this repository is
+assured of compliance with [GitHub Agentic Workflows (`gh-aw`)](https://github.github.com/gh-aw/)
+and [GitHub Site Policy](https://docs.github.com/en/site-policy/).
 
 - Runtime target: **self-hosted Forgejo on owned Ubuntu hardware**.
 - Shared Forgejo instances (e.g. Codeberg): **source mirrors only, never

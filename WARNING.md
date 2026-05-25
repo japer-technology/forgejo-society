@@ -46,6 +46,11 @@ to the integrity of the society itself.
 
 **When in doubt: do not run it.**
 
+For a summary of how this repository is assured of compliance with
+[GitHub Agentic Workflows (`gh-aw`)](https://github.github.com/gh-aw/)
+and [GitHub Site Policy](https://docs.github.com/en/site-policy/), see
+[`COMPLY.md`](COMPLY.md).
+
 <p align="right">
   <picture>
     <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80" title="Forgejo Society">
