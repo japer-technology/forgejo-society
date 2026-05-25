@@ -70,11 +70,14 @@ You will need, sitting at the physical machine:
 ## Run it
 
 From the physical console of the Ubuntu machine, in a terminal:
-# Forgejo Society: ubuntu-zombie
 
-A jokingly named project for turning a fresh Ubuntu Desktop into a
-workstation that a local AI Agent using cloud LLM can drive as root, 
-without exposing anything to the public internet.
+```bash
+chmod +x ai-full-control-ubuntu.sh
+sudo ./ai-full-control-ubuntu.sh
+```
+
+The full step-by-step walkthrough of what the script does is in
+[What the installer does](#what-the-installer-does) below.
 
 The goal is plain: a "Windows" user who wants to live on Ubuntu without
 hand-rolling sysadmin work should be able to converse with an agent
@@ -90,7 +93,7 @@ This is a candidate for minimum Ubuntu for Ubuntu R&D Requirements.
 
 | File | Purpose |
 | --- | --- |
-| [`ai-full-control-ubuntu.sh`](ai-full-control-ubuntu.sh) | One-shot installer. Turns a fresh Ubuntu Desktop into an AI-admin-ready workstation. Most steps are idempotent (`apt_install`, the `id`-guarded `adduser`, `usermod -aG`, the `append_line_once` helper for `authorized_keys`, and the `cat >` drop-ins in `/etc/sudoers.d/`, `/etc/ssh/sshd_config.d/`, and `/etc/gdm3/`). Three steps re-prompt interactively on every run: the initial `Type YES` confirmation, the SSH public-key paste, the `x11vnc -storepasswd` password, and `tailscale up` if the device is not already authenticated. UFW is reset and re-applied on every run, so re-running after a transient failure is safe. |
+| [`ai-full-control-ubuntu.sh`](ai-full-control-ubuntu.sh) | One-shot installer. Turns a fresh Ubuntu Desktop into an AI-admin-ready workstation. Most steps are idempotent (`apt_install`, the `id`-guarded `adduser`, `usermod -aG`, the `append_line_once` helper for `authorized_keys`, and the `cat >` drop-ins in `/etc/sudoers.d/`, `/etc/ssh/sshd_config.d/`, and `/etc/gdm3/`). Three steps re-prompt interactively on every run: the initial `Type YES` confirmation, the SSH public-key paste, the `x11vnc -storepasswd` password, and `tailscale up` if the device is not already authenticated. UFW defaults (deny inbound, allow outbound) are re-applied on every run, and the SSH-on-`tailscale0` allow rule is added only if it is not already present, so re-running after a transient failure is safe. |
 | [`script-description.md`](script-description.md) | Short operator quick-reference for the installer. |
 | [`awakening.md`](awakening.md) | Framing document. The machine is not "installed" — it wakes up. Describes the inert-body → token-stream → installer → AI-administrator → root picture, the shape of an awakening token stream, the boot flow, and the safety line (`root-capable, never root-unbounded`) the installer must hold. |
 
