@@ -1,8 +1,8 @@
-# Buildkite, looked at deeply for society communications
+# Buildkite, looked at deeply for society communication
 
 This essay is not mainly about whether Buildkite is a good CI system. It is
 about a narrower question: **what features does Buildkite have that line up
-with Forgejo Society's need for society communications?**
+with Forgejo Society's need for society communication?**
 
 That matters because Forgejo Society is not interested in "automation" in the
 thin sense. It needs a medium in which agencies, critics, censors, operators,
@@ -11,7 +11,7 @@ trace**. If Buildkite is looked at from that angle, some of its features become
 more interesting than the usual test/build/deploy story.
 
 The short answer is: Buildkite has several strong communication primitives, but
-they are communications **inside an orchestration plane**, not inside a forge's
+they are communication **inside an orchestration plane**, not inside a forge's
 native repository reality. That makes it useful as a precursor, but incomplete
 for Forgejo Society's final target.
 
@@ -33,7 +33,7 @@ Looked at this way, Buildkite has more alignment than many CI systems.
 
 ---
 
-## 2. Buildkite features that align with Forgejo Society communications
+## 2. Buildkite features that align with Forgejo Society communication
 
 ### 2.1 Trigger steps: one pipeline can wake another
 
