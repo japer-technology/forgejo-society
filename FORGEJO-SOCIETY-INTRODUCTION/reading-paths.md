@@ -166,17 +166,20 @@ federation — not for writing agencies.*
 
 1. [`analysis/forgejo-society-expected-performance.md`](analysis/forgejo-society-expected-performance.md)
    — capacity, throughput, and where the hardware will be loaded.
-2. [`../FORGEJO-SOCIETY-INSTALLATION/README.md`](../FORGEJO-SOCIETY-INSTALLATION/README.md)
+2. [`essay/buildkite-deep-dive.md`](essay/buildkite-deep-dive.md)
+   — a deep look at the hybrid CI/CD model that many teams use as a bridge
+   toward more sovereign execution.
+3. [`../FORGEJO-SOCIETY-INSTALLATION/README.md`](../FORGEJO-SOCIETY-INSTALLATION/README.md)
    — the operations library.
-3. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md)
+4. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu.md)
    then [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu-refresh.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/ubuntu-refresh.md)
    — the baseline and refresh procedures for the host.
-4. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md)
+5. [`../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md`](../FORGEJO-SOCIETY-INSTALLATION/quick-start/forgejo-minimum.md)
    — the Forgejo install you will run runners against.
-5. [`../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md`](../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md)
+6. [`../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md`](../FORGEJO-SOCIETY-THE-FEDERATION/local-computer-hardware.md)
    then [`../FORGEJO-SOCIETY-THE-FEDERATION/README.md`](../FORGEJO-SOCIETY-THE-FEDERATION/README.md)
    — the substrate and federation around it.
-6. [`../github-compliance.md`](warning/github-compliance.md) and
+7. [`../github-compliance.md`](warning/github-compliance.md) and
    [`../forgejo-compliance.md`](warning/forgejo-compliance.md) — the
    sovereignty posture you are enforcing.
 
