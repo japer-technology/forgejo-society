@@ -158,8 +158,8 @@ directory is the doorway; the others are the rooms it opens onto.
     summarised as a small concrete edit list.
 - **[`essay/`](essay/)** — longer essays that situate the project:
   - [`buildkite-deep-dive.md`](essay/buildkite-deep-dive.md)
-    — a deep look at Buildkite as a hybrid CI/CD architecture, its structural
-    strengths and limits, and why that matters for Forgejo Society.
+    — a deep look at which Buildkite features align with Forgejo Society's
+    society communications, and where that alignment stops.
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
     on what *emergence* honestly means inside a Society of Repo, and how
     such possibilities are likely to reveal themselves to the people
