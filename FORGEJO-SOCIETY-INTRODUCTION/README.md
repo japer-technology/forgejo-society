@@ -157,6 +157,9 @@ directory is the doorway; the others are the rooms it opens onto.
     implementation plan in [`../FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md),
     summarised as a small concrete edit list.
 - **[`essay/`](essay/)** — longer essays that situate the project:
+  - [`buildkite-deep-dive.md`](essay/buildkite-deep-dive.md)
+    — a deep look at which Buildkite features align with Forgejo Society's
+    society communication, and where that alignment stops.
   - [`sor-emergent-possibilities.md`](essay/sor-emergent-possibilities.md) —
     on what *emergence* honestly means inside a Society of Repo, and how
     such possibilities are likely to reveal themselves to the people
