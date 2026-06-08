@@ -6,7 +6,7 @@
   </picture>
 </p>
 
-> **The forge is the mind. The repo is an agency. The society thinks.**
+> A true AI system is not one giant model. It is a society of small skills, abstractions, verifiers, memories, tools, and synthesizers that can assemble a new working process when reality presents something unseen.
 
 This directory is the **on-ramp** to the project. It explains, in plain
 language, what *Forgejo Society* is, why it exists, and how the rest of the
