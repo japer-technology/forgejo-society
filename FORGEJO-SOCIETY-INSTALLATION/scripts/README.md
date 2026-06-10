@@ -32,6 +32,10 @@ production society, follow those.
 
 ## Quick start
 
+> Prefer one command? [`../bootstrap/`](../bootstrap/README.md) wraps
+> this suite in a `curl | bash` installer with a banner and guided
+> options, then runs `install.sh` for you.
+
 On a fresh Ubuntu 24.04 host:
 
 ```bash
