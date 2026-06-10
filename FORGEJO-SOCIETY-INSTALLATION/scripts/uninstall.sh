@@ -126,8 +126,9 @@ run "systemctl disable --now forgejo.service        2>/dev/null || true"
 # -------------------------------------------------------------------
 # 2. Archive data if requested (before anything is dropped).
 # -------------------------------------------------------------------
-STAMP="$(date -u +%Y%m%d-%H%M%S)"
+STAMP=""
 if [[ "${ARCHIVE}" == "1" ]]; then
+  STAMP="$(date -u +%Y%m%d-%H%M%S)"
   info "Archiving the forge to ${BACKUP_DIR}"
   if [[ ! -d "${BACKUP_DIR}" ]]; then
     run "install -d -m 700 ${BACKUP_DIR}"

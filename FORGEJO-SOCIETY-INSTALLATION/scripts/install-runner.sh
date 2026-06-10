@@ -99,8 +99,8 @@ usermod -aG docker runner
 section "forgejo-runner binary"
 ARCH="$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')"
 RUNNER_VERSION="$(retry 5 3 -- curl -fsSL https://data.forgejo.org/api/v1/repos/forgejo/runner/releases/latest \
-  | grep -o '"tag_name":"[^"]*"' | head -1 | cut -d'"' -f4)"
-[[ -n "${RUNNER_VERSION}" ]] || die "Could not determine the latest forgejo-runner version." 1
+  | jq -r '.tag_name')"
+[[ -n "${RUNNER_VERSION}" && "${RUNNER_VERSION}" != "null" ]] || die "Could not determine the latest forgejo-runner version." 1
 info "Latest forgejo-runner: ${RUNNER_VERSION} (${ARCH})"
 
 TMP="$(mktemp -d)"

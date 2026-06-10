@@ -746,8 +746,8 @@ step_forgejo_binary() {
   local arch version url tmp
   arch="$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')"
   version="$(curl_get https://codeberg.org/api/v1/repos/forgejo/forgejo/releases/latest \
-              | grep -o '"tag_name":"[^"]*"' | head -1 | cut -d'"' -f4)"
-  [[ -n "${version}" ]] || die "Could not determine the latest Forgejo version from codeberg.org." 66
+              | jq -r '.tag_name')"
+  [[ -n "${version}" && "${version}" != "null" ]] || die "Could not determine the latest Forgejo version from codeberg.org." 66
   info "Latest Forgejo: ${version} (${arch})"
 
   local installed=""
@@ -937,6 +937,9 @@ step_migrate_and_admin() {
   done
 
   # Generate a runner registration secret (40 hex chars) and register it.
+  # Note: `forgejo-cli` is Forgejo's own CLI subcommand; forgejo_cli() wraps
+  # the binary with --work-path/--config, so the full call is
+  # `forgejo --work-path ... --config ... forgejo-cli actions register`.
   GEN_RUNNER_SECRET="$(openssl rand -hex 20)"
   if forgejo_cli forgejo-cli actions register \
        --name forgejo-runner --secret "${GEN_RUNNER_SECRET}" --labels "${FS_RUNNER_LABELS}" >/dev/null 2>&1; then
