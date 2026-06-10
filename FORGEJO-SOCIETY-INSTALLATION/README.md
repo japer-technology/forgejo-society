@@ -21,6 +21,7 @@ deep, command-level procedures.
 | `quick-start/` | Fastest path for common platform journeys | [Quick Start guides](#quick-start-guides) |
 | `ubuntu-zombie/` | Minimum install for a non-expert Ubuntu Desktop: one script, Tailscale-only ingress, AI-controllable terminal + GUI + browser | [ubuntu-zombie](ubuntu-zombie/README.md) |
 | `easy-install/` | Two-script installer (Forgejo + runner, PostgreSQL-backed) for demos and disposable VMs | [easy-install](easy-install/README.md) |
+| `scripts/` | Subcommand-driven single-host installer (`install`/`verify`/`doctor`/`repair`/`uninstall`) with dry-run, idempotent re-runs, optional Caddy/HTTPS, UFW, fail2ban, and a runner | [scripts](scripts/README.md) |
 | `install/` | Single-component installation and validation library | [Install library](install/00-index.md) |
 | `transition-plan/` | Full platform rollout plan, governance, continuity, and operations | [Transition plan](transition-plan/00-overview.md) |
 | `CONFORMANCE/` | Drop-in conformance assets that prove a Forgejo installation is ready for advanced use by THE-SOCIETY-OF-REPO | [Conformance library](CONFORMANCE/README.md) |

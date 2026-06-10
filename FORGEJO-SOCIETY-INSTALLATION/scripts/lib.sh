@@ -1,0 +1,321 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
+#
+# lib.sh
+# ------
+# Shared user-experience helpers for the Forgejo Society installer suite.
+#
+# This file is *sourced*, never executed directly. It centralises the
+# colour/TTY logic, status vocabulary, retry/backoff, timing, spinner,
+# and prompt helpers so install.sh, install-runner.sh, uninstall.sh, and
+# build-deb.sh all present an identical look and behaviour.
+#
+# It is adapted from the Ubuntu Zombie script suite
+# (https://github.com/japer-technology/ubuntu-zombie, scripts/lib.sh).
+# The structure and helpers are reused; the brand vocabulary is retuned
+# for Forgejo Society. The Ubuntu Zombie suite is the upstream of this
+# code and is MIT-spirited project tooling by the same author.
+#
+# Sourcing scripts keep their own `set -Eeuo pipefail`; this library does
+# not change shell options so it is safe to source from `set -e` and
+# non-`set -e` scripts alike. Helpers that need to exit do so via die().
+#
+# Colour selection honours, in order:
+#   1. FS_COLOR=always|never|auto  (or the legacy NO_COLOR=1 -> never)
+#   2. the --no-color flag a caller maps onto FS_COLOR=never
+#   3. auto: colour only when stdout is a TTY.
+#
+# Status vocabulary (use these everywhere instead of ad-hoc glyphs):
+#   info  "[i]"   cyan     neutral progress line
+#   ok    "[+]"   green    an action succeeded
+#   warn  "[!]"   yellow   non-fatal problem (always shown, to stderr)
+#   die   "[x]"   red      fatal; prints and exits
+#   status ok|warn|fail "label"   a single checklist bullet:
+#                                   [ok] green / [!] yellow / [x] red
+
+# Guard against double-sourcing.
+if [[ -n "${_FS_LIB_SOURCED:-}" ]]; then
+  return 0 2>/dev/null || true
+fi
+_FS_LIB_SOURCED=1
+
+# ---------------------------------------------------------------------------
+# Colour / TTY
+# ---------------------------------------------------------------------------
+
+# Quiet mode suppresses info/ok/log lines (warnings and errors still show).
+FS_QUIET="${FS_QUIET:-0}"
+
+lib_setup_colors() {
+  local mode="${FS_COLOR:-auto}"
+  local enable=0
+  case "${mode}" in
+    always) enable=1 ;;
+    never)  enable=0 ;;
+    auto|*)
+      if [[ -n "${NO_COLOR:-}" ]]; then
+        enable=0
+      elif [[ -t 1 ]]; then
+        enable=1
+      else
+        enable=0
+      fi
+      ;;
+  esac
+  if (( enable )); then
+    C_RESET=$'\033[0m'; C_BOLD=$'\033[1m'
+    C_RED=$'\033[31m'; C_YELLOW=$'\033[33m'
+    C_GREEN=$'\033[32m'; C_CYAN=$'\033[36m'
+    # Brand / theme accent palette. The primary highlight is Forge Amber
+    # #FB923C (RGB 251,146,60); the others are picked to harmonise with it:
+    # a forge-green, a deep teal, and a slate. These use 24-bit "truecolor"
+    # escapes; terminals without truecolor degrade to the nearest colour and
+    # everything still reads cleanly. They honour the same enable/disable
+    # policy as the base colours, so --no-color / NO_COLOR / FS_COLOR=never
+    # blank them out and emit no ANSI at all.
+    # C_DIM/C_BRAND*/C_ACCENT/C_SLATE are consumed by sourcing scripts.
+    # shellcheck disable=SC2034
+    {
+      C_DIM=$'\033[2m'
+      C_BRAND=$'\033[38;2;251;146;60m'      # #FB923C primary highlight (amber)
+      C_BRAND2=$'\033[38;2;249;186;128m'    # #F9BA80 lighter tint
+      C_ACCENT=$'\033[38;2;52;211;153m'     # #34D399 forge green
+      C_SLATE=$'\033[38;2;148;163;184m'     # #94A3B8 slate
+    }
+  else
+    C_RESET=""; C_BOLD=""; C_RED=""; C_YELLOW=""; C_GREEN=""; C_CYAN=""
+    # shellcheck disable=SC2034
+    {
+      C_DIM=""; C_BRAND=""; C_BRAND2=""; C_ACCENT=""; C_SLATE=""
+    }
+  fi
+}
+
+# Initialise colours immediately on source; callers that parse a
+# --no-color flag re-run lib_setup_colors after setting FS_COLOR.
+lib_setup_colors
+
+# ---------------------------------------------------------------------------
+# Output helpers
+# ---------------------------------------------------------------------------
+
+log()  { (( FS_QUIET )) || printf '%s\n' "$*"; }
+info() { (( FS_QUIET )) || printf '%s[i]%s %s\n' "${C_CYAN}" "${C_RESET}" "$*"; }
+ok()   { (( FS_QUIET )) || printf '%s[+]%s %s\n' "${C_GREEN}" "${C_RESET}" "$*"; }
+warn() { printf '%s[!]%s %s\n' "${C_YELLOW}" "${C_RESET}" "$*" >&2; }
+die()  { printf '%s[x]%s %s\n' "${C_RED}" "${C_RESET}" "$*" >&2; exit "${2:-1}"; }
+
+# A single checklist bullet with a unified glyph vocabulary.
+status() {
+  local kind="$1" label="$2"
+  case "${kind}" in
+    ok)   printf '  %s[ok]%s %s\n' "${C_GREEN}"  "${C_RESET}" "${label}" ;;
+    warn) printf '  %s[!]%s  %s\n' "${C_YELLOW}" "${C_RESET}" "${label}" ;;
+    fail) printf '  %s[x]%s  %s\n' "${C_RED}"    "${C_RESET}" "${label}" ;;
+    info) printf '  %s[i]%s  %s\n' "${C_CYAN}"   "${C_RESET}" "${label}" ;;
+    *)    printf '  %s\n' "${label}" ;;
+  esac
+}
+
+section() {
+  printf '\n%s============================================================%s\n' "${C_BOLD}" "${C_RESET}"
+  printf '%s%s%s\n' "${C_BOLD}" "$*" "${C_RESET}"
+  printf '%s============================================================%s\n' "${C_BOLD}" "${C_RESET}"
+}
+
+# ---------------------------------------------------------------------------
+# Branded UI helpers (Forge Amber theme)
+# ---------------------------------------------------------------------------
+
+# brand_rule [width]
+#   A thin horizontal rule drawn in the brand highlight colour.
+# shellcheck disable=SC2120  # width is optional; callers may omit it
+brand_rule() {
+  local width="${1:-60}" line=""
+  local i
+  for (( i = 0; i < width; i++ )); do line+="─"; done
+  printf '%s%s%s\n' "${C_BRAND}" "${line}" "${C_RESET}"
+}
+
+# brand_banner "Title"
+#   A boxed, brand-coloured banner used to frame the setup experience.
+brand_banner() {
+  (( FS_QUIET )) && return 0
+  local title="$*"
+  printf '\n'
+  brand_rule
+  printf '%s%s  %s%s\n' "${C_BRAND}" "${C_BOLD}" "${title}" "${C_RESET}"
+  brand_rule
+}
+
+# _brand_panel_row WIDTH "text" [colour]
+#   Internal helper for brand_splash: prints one "│ ... │" row of the panel,
+#   left-indented by two spaces and right-padded so the trailing border lines
+#   up. "text" is assumed ASCII so its byte length equals its column width.
+_brand_panel_row() {
+  local width="$1" text="$2" colour="${3:-${C_RESET}}"
+  local pad=$(( width - 2 - ${#text} ))
+  (( pad < 0 )) && pad=0
+  printf '%s│%s  %s%s%s%*s%s│%s\n' \
+    "${C_BRAND}" "${C_RESET}" "${colour}" "${text}" "${C_RESET}" \
+    "${pad}" "" "${C_BRAND}" "${C_RESET}"
+}
+
+# brand_splash "subtitle" "version"
+#   A calm, rounded startup panel that states what is being installed, the
+#   version, and where to reach the forge. Restrained by design: no large
+#   wordmark, in keeping with the Forgejo Society style guide. Honours
+#   FS_QUIET and the colour policy (degrades to plain text with no ANSI).
+brand_splash() {
+  (( FS_QUIET )) && return 0
+  local subtitle="${1:-}" version="${2:-}"
+  printf '\n'
+  local W=66 line="" i
+  for (( i = 0; i < W; i++ )); do line+="─"; done
+  printf '%s╭%s╮%s\n' "${C_BRAND}" "${line}" "${C_RESET}"
+  _brand_panel_row "${W}" "Forgejo Society — self-hosted forge installer" "${C_BOLD}"
+  local tagline="v${version}"
+  [[ -n "${subtitle}" ]] && tagline+="  --  ${subtitle}"
+  _brand_panel_row "${W}" "${tagline}" "${C_DIM}"
+  _brand_panel_row "${W}" ""
+  _brand_panel_row "${W}" "Forgejo + PostgreSQL on owned Ubuntu hardware." "${C_ACCENT}"
+  _brand_panel_row "${W}" "The forge is the operational substrate. You own it." "${C_ACCENT}"
+  _brand_panel_row "${W}" ""
+  _brand_panel_row "${W}" "Every step is idempotent and audit-logged." "${C_BRAND2}"
+  printf '%s╰%s╯%s\n' "${C_BRAND}" "${line}" "${C_RESET}"
+}
+
+# field "Label" "value" [accent_color]
+#   Render an aligned "label : value" row with a brand-coloured label and an
+#   optionally accented value.
+field() {
+  local label="$1" value="$2" vcolor="${3:-${C_ACCENT}}"
+  printf '  %s%-22s%s %s%s%s\n' \
+    "${C_BRAND2}" "${label}" "${C_RESET}" "${vcolor}" "${value}" "${C_RESET}"
+}
+
+# ---------------------------------------------------------------------------
+# Timing
+# ---------------------------------------------------------------------------
+
+# Format a number of seconds as "12s" or "3m07s".
+fmt_duration() {
+  local s="${1:-0}"
+  if (( s < 60 )); then
+    printf '%ds' "${s}"
+  else
+    printf '%dm%02ds' $(( s / 60 )) $(( s % 60 ))
+  fi
+}
+
+# ---------------------------------------------------------------------------
+# Retry with exponential backoff
+# ---------------------------------------------------------------------------
+# Usage: retry <attempts> <sleep_base> -- cmd args...
+retry() {
+  local attempts="$1"; shift
+  local base="$1"; shift
+  [[ "$1" == "--" ]] && shift
+  local n=1 delay="${base}"
+  while true; do
+    if "$@"; then
+      return 0
+    fi
+    if (( n >= attempts )); then
+      warn "Command failed after ${n} attempts: $*"
+      return 1
+    fi
+    warn "Attempt ${n} failed, retrying in ${delay}s: $*"
+    sleep "${delay}"
+    n=$((n + 1))
+    delay=$((delay * 2))
+  done
+}
+
+# ---------------------------------------------------------------------------
+# Spinner / heartbeat for long, otherwise-silent operations
+# ---------------------------------------------------------------------------
+# run_step "Label" -- cmd args...
+#   Runs the command. On an interactive TTY (and when not in quiet mode),
+#   shows a braille spinner with elapsed time so the operator can tell the
+#   step is making progress rather than hung. On a non-TTY, in quiet mode,
+#   or when FS_NO_SPINNER=1, it simply runs the command with no animation.
+#   Returns the command's exit status.
+run_step() {
+  local label="$1"; shift
+  [[ "${1:-}" == "--" ]] && shift
+
+  # Plain path: non-interactive, quiet, or spinner disabled.
+  if [[ ! -t 2 ]] || (( FS_QUIET )) || [[ -n "${FS_NO_SPINNER:-}" ]]; then
+    "$@"
+    return $?
+  fi
+
+  local -a frames=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
+  local start now elapsed i=0 rc
+  start="$(date +%s)"
+
+  "$@" &
+  local pid=$!
+  while kill -0 "${pid}" 2>/dev/null; do
+    now="$(date +%s)"
+    elapsed=$(( now - start ))
+    printf '\r%s %s%s%s (%s)\033[K' \
+      "${frames[i % ${#frames[@]}]}" "${C_CYAN}" "${label}" "${C_RESET}" \
+      "$(fmt_duration "${elapsed}")" >&2
+    i=$((i + 1))
+    sleep 0.2
+  done
+  wait "${pid}"; rc=$?
+  printf '\r\033[K' >&2
+  return "${rc}"
+}
+
+# ---------------------------------------------------------------------------
+# JSON helper
+# ---------------------------------------------------------------------------
+
+# json_escape <string> -> escaped contents suitable for a JSON string literal
+# (no surrounding quotes). Handles backslash, double-quote, and control
+# characters so verify/doctor --json output is always valid.
+json_escape() {
+  local s="$1"
+  s="${s//\\/\\\\}"
+  s="${s//\"/\\\"}"
+  s="${s//$'\n'/\\n}"
+  s="${s//$'\r'/\\r}"
+  s="${s//$'\t'/\\t}"
+  printf '%s' "${s}"
+}
+
+# ---------------------------------------------------------------------------
+# Prompt helpers
+# ---------------------------------------------------------------------------
+# prompt_until_valid "Prompt text: " VALIDATOR_FN OUTVAR [allow_empty]
+#   Reads a line, runs VALIDATOR_FN on it, and re-prompts on failure with a
+#   clear message instead of aborting the whole run. When allow_empty=1 an
+#   empty answer is accepted (and returned) without validation, so callers
+#   can offer a "leave blank to skip" escape hatch. The accepted value is
+#   stored in the named OUTVAR. Returns non-zero only on EOF/Ctrl-D.
+prompt_until_valid() {
+  local prompt="$1" validator="$2" outvar="$3" allow_empty="${4:-0}"
+  local answer
+  while true; do
+    if ! read -r -p "${prompt}" answer; then
+      return 1
+    fi
+    if [[ -z "${answer}" ]]; then
+      if (( allow_empty )); then
+        printf -v "${outvar}" '%s' ""
+        return 0
+      fi
+      warn "A value is required. Please try again (or Ctrl-C to cancel)."
+      continue
+    fi
+    if "${validator}" "${answer}"; then
+      printf -v "${outvar}" '%s' "${answer}"
+      return 0
+    fi
+    warn "That did not look valid. Please try again (or Ctrl-C to cancel)."
+  done
+}
