@@ -298,6 +298,15 @@ resolve_suite() {
     return 0
   fi
 
+  # Validate the download coordinates before building a URL from them.
+  # FS_REPO is owner/name; FS_REF is a branch, tag, or commit. Restrict
+  # both to a conservative character set to keep the URL well-formed and
+  # free of traversal or metacharacters.
+  [[ "${FS_REPO}" =~ ^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$ ]] \
+    || die "Refusing to use FS_REPO='${FS_REPO}' (expected owner/name)." 65
+  [[ "${FS_REF}" =~ ^[A-Za-z0-9._/-]+$ ]] \
+    || die "Refusing to use FS_REF='${FS_REF}' (unexpected characters)." 65
+
   WORKDIR="$(mktemp -d "${TMPDIR:-/tmp}/forgejo-society-bootstrap.XXXXXX")"
   trap cleanup EXIT
   local tarball="${WORKDIR}/suite.tar.gz"
@@ -309,11 +318,12 @@ resolve_suite() {
     || die "Could not extract the downloaded archive." 66
 
   # The archive's top-level directory is <repo>-<ref-ish>; locate the suite
-  # beneath it without hard-coding that name.
+  # beneath it without hard-coding that name. Require both install.sh and
+  # lib.sh so a coincidental directory match cannot be mistaken for the suite.
   local found=""
   found="$(find "${WORKDIR}" -type d -path "*/${FS_SUITE_SUBDIR}" -print -quit 2>/dev/null || true)"
-  [[ -n "${found}" && -r "${found}/install.sh" ]] \
-    || die "Downloaded archive did not contain ${FS_SUITE_SUBDIR}/install.sh." 66
+  [[ -n "${found}" && -r "${found}/install.sh" && -r "${found}/lib.sh" ]] \
+    || die "Downloaded archive did not contain a usable ${FS_SUITE_SUBDIR}/." 66
   SUITE_DIR="${found}"
   ok "Installer suite ready."
 }

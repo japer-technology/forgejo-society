@@ -22,6 +22,11 @@ On a fresh Ubuntu 24.04 LTS host:
 curl -fsSL https://raw.githubusercontent.com/japer-technology/forgejo-society/main/FORGEJO-SOCIETY-INSTALLATION/bootstrap/install.sh | bash
 ```
 
+> **Read before you pipe.** Piping a script into a shell runs code you
+> have not seen. Skim [`install.sh`](install.sh) first, or use the
+> download-then-inspect flow in [Safety](#safety) below. The bootstrap
+> needs `sudo` only at the final hand-off, to run the forge installer.
+
 The bootstrap prints a banner, checks the host, offers a profile
 (LAN / public HTTPS / custom), shows a plan, asks you to confirm, then
 installs the forge.
