@@ -48,6 +48,7 @@ specification (`THE-SOCIETY-OF-REPO/`) and the operational implementation
 | [12-agent-implementation-playbook.md](12-agent-implementation-playbook.md) | Control-flow playbook for AI agents implementing Phase A safely and completely. |
 | [13-inter-repo-communication.md](13-inter-repo-communication.md) | Inter-society (inter-repo) communication plan: incorporates `FORGEJO-SOCIETY-INTRODUCTION/analysis/inter-repo-protocols.md` into the two implementation targets. |
 | [14-three-repo-implementation-targets.md](14-three-repo-implementation-targets.md) | Incorporates [`FORGEJO-SOCIETY/README.md`](../FORGEJO-SOCIETY/README.md): the three repos (`forgejo-intelligence`, `forgejo-society`, `forgejo-labour`) are the implementation targets, each a folder/workflow pair, installed in that order. |
+| [15-single-repo-collapse.md](15-single-repo-collapse.md) | Binding directive: this single repository must have the same effect as the multi-repo society. Maps every repository-boundary guarantee to a subtree mechanism and states the limits honestly. |
 
 ---
 
@@ -96,7 +97,9 @@ reading.
    (`forgejo-intelligence`, `forgejo-society`, `forgejo-labour`) that
    together constitute one installed Forgejo Society, and how the
    two-target collapse rule applies per repo.
-10. `11-mapping-sor-to-implementation.md` last, as a verification table.
+10. `15-single-repo-collapse.md` — how the three repos collapse into this
+    one repository while preserving their separation of roles.
+11. `11-mapping-sor-to-implementation.md` last, as a verification table.
 
 If any implementation instruction appears ambiguous, preserve these priorities:
 fail-closed safety first, Phase A scope second, auditability third, and

@@ -18,17 +18,18 @@ on:
 
 jobs:
   prepare-settlement:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'issues' && github.event.label.name == 'activate:intake') }}
+    if: ${{ forgejo.event_name == 'workflow_dispatch' || (forgejo.event_name == 'issues' && forgejo.event.label.name == 'activate:intake') }}
     runs-on: ubuntu-standard
     env:
       SETTLEMENT_ID: ${{ inputs.settlement_id }}
       SOURCE_REPO: ${{ inputs.source_repo }}
       SOURCE_REF: ${{ inputs.source_ref }}
+      FORGEJO_REPOSITORY_NAME: ${{ forgejo.repository }}
     steps:
       - name: Materialize activation payload
         run: |
           : "${SETTLEMENT_ID:=SET-LOCAL-TEST}"
-          : "${SOURCE_REPO:=${GITHUB_REPOSITORY}}"
+          : "${SOURCE_REPO:=${FORGEJO_REPOSITORY_NAME}}"
           : "${SOURCE_REF:=event}"
           mkdir -p out
           cat > out/settlement.yaml <<EOF2

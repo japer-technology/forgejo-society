@@ -18,12 +18,13 @@ on:
 
 jobs:
   run-labour:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'issues' && github.event.label.name == 'labour:run') }}
+    if: ${{ forgejo.event_name == 'workflow_dispatch' || (forgejo.event_name == 'issues' && forgejo.event.label.name == 'labour:run') }}
     runs-on: ubuntu-standard
     env:
       CALL_ID: ${{ inputs.call_id }}
       LABOUR_ID: ${{ inputs.labour_id }}
       CALLER: ${{ inputs.caller }}
+      COMMIT_SHA: ${{ forgejo.sha }}
     steps:
       - name: Materialize result envelope
         run: |
@@ -41,7 +42,7 @@ jobs:
           artefacts: []
           evidence:
             runner: ${RUNNER_NAME:-local}
-            commit: ${GITHUB_SHA:-unknown}
+            commit: ${COMMIT_SHA:-unknown}
           events: []
           EOF2
           cat out/result.yaml
