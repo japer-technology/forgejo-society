@@ -131,7 +131,7 @@ while IFS= read -r surface_dir; do
     echo "Phase 4 bridge test is missing fixture-backed coverage for active surface: ${surface}" >&2
     missing_surface=1
   fi
-done < <(find "${REPO_ROOT}/.forgejo-intelligence" -maxdepth 1 -type d -name 'forgejo-intelligent-*' -printf '%f\n' | sort)
+done < <(find "${REPO_ROOT}/.forgejo-intelligence" -maxdepth 1 -type d -name 'forgejo-intelligent-*' | sed 's|.*/||' | sort)
 
 if [[ "${missing_surface}" -ne 0 ]]; then
   exit 1

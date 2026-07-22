@@ -106,7 +106,10 @@ if ! command -v rg >/dev/null 2>&1; then
   exit 1
 fi
 
-mapfile -t active_runtime_files < <(
+active_runtime_files=()
+while IFS= read -r line; do
+  active_runtime_files+=("${line}")
+done < <(
   {
     printf '%s\n' \
       "${AGENT_WORKFLOW}" \

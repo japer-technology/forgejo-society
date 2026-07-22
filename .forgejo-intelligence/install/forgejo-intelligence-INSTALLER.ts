@@ -384,6 +384,20 @@ class FilePlanner {
     }
   }
 
+  overwriteFile(path: string, content: string, label = relativeTo(this.root, path)): void {
+    const currentContent = readTextIfExists(path);
+    if (currentContent === content) {
+      this.log(`  - ${label} already up to date`);
+      return;
+    }
+
+    this.log(`  ${this.dryRun ? "would rewrite" : "rewrote"} ${label}`);
+    if (!this.dryRun) {
+      mkdirSync(dirname(path), { recursive: true });
+      writeFileSync(path, content, "utf-8");
+    }
+  }
+
   appendLine(path: string, line: string, label = relativeTo(this.root, path)): void {
     const currentContent = readTextIfExists(path);
     if (currentContent === null) {
@@ -593,7 +607,7 @@ function rewriteLegacyContent(planner: FilePlanner, root: string): void {
     const currentContent = readFileSync(path, "utf-8");
     const nextContent = replaceLegacyNames(currentContent);
     if (nextContent !== currentContent) {
-      planner.writeFile(path, nextContent, relativeTo(planner.root, path));
+      planner.overwriteFile(path, nextContent, relativeTo(planner.root, path));
     }
   }
 }

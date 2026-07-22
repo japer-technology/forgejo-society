@@ -143,7 +143,7 @@ done
 while IFS= read -r surface; do
   require_contains "${REPO_ROOT}/README.md" "${surface}"
   require_contains "${FORGEJO_ROOT}/help/surfaces.md" "${surface}"
-done < <(find "${FORGEJO_ROOT}" -maxdepth 1 -type d -name 'forgejo-intelligent-*' -printf '%f\n' | sort)
+done < <(find "${FORGEJO_ROOT}" -maxdepth 1 -type d -name 'forgejo-intelligent-*' | sed 's|.*/||' | sort)
 
 jq -e '.scripts.test | contains("tests/phase9-docs.test.ts")' "${PACKAGE_JSON}" >/dev/null
 jq -e '.scripts.check == "bash tests/scripts/check-phase10.sh"' "${PACKAGE_JSON}" >/dev/null

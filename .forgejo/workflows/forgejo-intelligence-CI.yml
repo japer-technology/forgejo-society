@@ -1,4 +1,4 @@
-name: forgejo-society-CI
+name: forgejo-intelligence-CI
 
 on:
   push:

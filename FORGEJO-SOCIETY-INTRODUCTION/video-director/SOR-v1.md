@@ -151,7 +151,7 @@ in an editor.
 ### Scene 3 — A workflow activates
 
 > A macro close-up of a YAML workflow file scrolling on a terminal —
-> `forgejo-intelligence-AGENT.yml` visible at the top — as one job
+> `forgejo-intelligence-WORKFLOW-AGENT.yml` visible at the top — as one job
 > transitions from `queued` to `running`, its status dot turning green.
 > The terminal sits on the same wooden desk; a small Ubuntu
 > workstation hums in the background, one LED on. Slow handheld

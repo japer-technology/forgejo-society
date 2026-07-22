@@ -2,7 +2,7 @@
 
 <p align="center">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
+    <img src="LOGO.png" alt="Forgejo Society" title="Forges let Societies emerge when Minds, Intelligences, and Skills act as one" width="320">
   </picture>
 </p>
 
@@ -56,7 +56,7 @@ and [GitHub Site Policy](https://docs.github.com/en/site-policy/).
 | Pillar | Purpose |
 | --- | --- |
 | [FORGEJO-SOCIETY-INTRODUCTION/](FORGEJO-SOCIETY-INTRODUCTION/README.md) | Essays, reading paths, and the canonical reference texts ([Society of Repo](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-REPO/), [Society of Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-SOCIETY-OF-MIND/), [Repo is the Mind](FORGEJO-SOCIETY-INTRODUCTION/THE-REPO-IS-THE-MIND/)). Start here. |
-| [FORGEJO-SOCIETY/](FORGEJO-SOCIETY/README.md) | The Forgejo-flavoured instance. Contains the only runnable subtree: [`forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md). |
+| [`.forgejo-intelligence/`](.forgejo-intelligence/README.md) | The only runnable subtree: the Forgejo Intelligence runtime (Bun/TypeScript installer and Forgejo Actions workflows). |
 | [FORGEJO-SOCIETY-IMPLEMENTATION/](FORGEJO-SOCIETY-IMPLEMENTATION/README.md) | Forward-looking design, target layout, runtime pipeline, agencies/critics/censors, frames and K-lines, bootstrap checklist. |
 | [FORGEJO-SOCIETY-INSTALLATION/](FORGEJO-SOCIETY-INSTALLATION/README.md) | Operational install, quick-start, conformance, and transition plan. |
 | [FORGEJO-SOCIETY-THE-FEDERATION/](FORGEJO-SOCIETY-THE-FEDERATION/README.md) | Federation-scope material and local hardware notes. Houses [`promotion/`](FORGEJO-SOCIETY-THE-FEDERATION/promotion/README.md) (public voice; [`08-style-guide.md`](FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md) is authoritative), [`publicity/`](FORGEJO-SOCIETY-THE-FEDERATION/publicity/README.md) (announcements, media, events, statements), and [`research/`](FORGEJO-SOCIETY-THE-FEDERATION/research/) (research notes and critique). |
@@ -76,7 +76,7 @@ and [GitHub Site Policy](https://docs.github.com/en/site-policy/).
 - **Operator:** [FORGEJO-SOCIETY-INSTALLATION/](FORGEJO-SOCIETY-INSTALLATION/README.md)
   for install and transition; [FORGEJO-SOCIETY-IMPLEMENTATION/](FORGEJO-SOCIETY-IMPLEMENTATION/README.md)
   for the runtime pipeline and bootstrap checklist.
-- **Implementer:** [FORGEJO-SOCIETY/forgejo-intelligence/](FORGEJO-SOCIETY/forgejo-intelligence/README.md)
+- **Implementer:** [`.forgejo-intelligence/`](.forgejo-intelligence/README.md)
   for the Bun/TypeScript installer and Forgejo Actions workflows.
 
 ## Scope and status
@@ -84,8 +84,7 @@ and [GitHub Site Policy](https://docs.github.com/en/site-policy/).
 This repository is **mostly documentation** a specification, planning,
 and promotion corpus written in Markdown. There is no build, test, or
 lint tooling at the root, and none is planned. The only runnable code
-lives under
-[`FORGEJO-SOCIETY/forgejo-intelligence/`](FORGEJO-SOCIETY/forgejo-intelligence/README.md),
+lives under [`.forgejo-intelligence/`](.forgejo-intelligence/README.md),
 which carries its own Bun/TypeScript toolchain and its own area-specific
 agent guidance.
 
@@ -93,6 +92,53 @@ Sections marked as planned are planned. Sections describing existing
 artifacts describe what is already in the tree. The
 [style guide](FORGEJO-SOCIETY-THE-FEDERATION/promotion/08-style-guide.md) requires this
 distinction be kept honest.
+
+## Forgejo Intelligence quick start
+
+The repository carries the Forgejo Intelligence runtime in
+[`.forgejo-intelligence/`](.forgejo-intelligence/README.md): a
+repository-native agent runtime that executes on Forgejo Actions and speaks
+to the forge through the same surfaces humans use. The operational model is
+described in [WHAT.md](WHAT.md); the design philosophy in
+[.ASPIRATION.md](.ASPIRATION.md).
+
+Install or refresh the runtime from the repository root:
+
+```bash
+bun .forgejo-intelligence/install/forgejo-intelligence-INSTALLER.ts --yes
+```
+
+The installer writes
+`.forgejo/workflows/forgejo-intelligence-WORKFLOW-AGENT.yml`, the hatch
+issue template, and `.forgejo-intelligence/config/install.json`. The
+runtime is fail-closed: it acts only while
+`.forgejo-intelligence/forgejo-intelligence-ENABLED.md` is present.
+Deleting that file and committing the deletion stops all automation.
+
+Workflow steps authenticate with the automatic `FORGEJO_TOKEN`. LLM
+provider keys are added under
+`Settings -> Secrets and variables -> Actions`. The full operator path is
+in
+[`.forgejo-intelligence/forgejo-intelligence-QUICKSTART.md`](.forgejo-intelligence/forgejo-intelligence-QUICKSTART.md).
+
+Active surfaces, listed with
+`find .forgejo-intelligence -maxdepth 1 -type d -name 'forgejo-intelligent-*'`:
+
+`forgejo-intelligent-action`, `forgejo-intelligent-branch`,
+`forgejo-intelligent-commit`, `forgejo-intelligent-dev-environment`,
+`forgejo-intelligent-fork`, `forgejo-intelligent-issue`,
+`forgejo-intelligent-label`, `forgejo-intelligent-milestone`,
+`forgejo-intelligent-notification`, `forgejo-intelligent-package`,
+`forgejo-intelligent-page`, `forgejo-intelligent-project`,
+`forgejo-intelligent-pull-request`, `forgejo-intelligent-reaction`,
+`forgejo-intelligent-release`, `forgejo-intelligent-repository`,
+`forgejo-intelligent-security`, `forgejo-intelligent-star`,
+`forgejo-intelligent-team`, `forgejo-intelligent-wiki`.
+
+Presence is permission: a surface is enabled because its folder exists.
+Capabilities that depend on GitHub-only platform features are kept for
+design history under [`archive/github-only/`](archive/README.md) and are
+not discovered by the orchestrator.
 
 ## Governance, contributing, security
 
@@ -115,6 +161,6 @@ Released under the [MIT License](LICENSE.md).
 
 <p align="right">
   <picture>
-    <img src="https://raw.githubusercontent.com/japer-technology/forgejo-society/main/LOGO.png" alt="Forgejo Society" width="80">
+    <img src="LOGO.png" alt="Forgejo Society" width="80">
   </picture>
 </p>

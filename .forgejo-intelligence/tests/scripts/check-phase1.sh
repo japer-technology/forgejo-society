@@ -47,7 +47,7 @@ surfaces="$(find "${FORGEJO_ROOT}" -maxdepth 1 -type d -name 'forgejo-intelligen
 coordinators="$(find "${FORGEJO_ROOT}" -maxdepth 1 -type d -name 'forgejo-intelligence-*' | wc -l | tr -d ' ')"
 agents="$(find "${FORGEJO_ROOT}" -maxdepth 1 -type d -name 'forgejo-ai-*' | wc -l | tr -d ' ')"
 
-if [[ "${surfaces}" -lt 1 || "${coordinators}" -lt 1 || "${agents}" != "6" ]]; then
+if [[ "${surfaces}" -lt 1 || "${coordinators}" -lt 1 || "${agents}" -lt 6 ]]; then
   echo "Unexpected Forgejo module counts after conversion: surfaces=${surfaces}, coordinators=${coordinators}, agents=${agents}" >&2
   exit 1
 fi

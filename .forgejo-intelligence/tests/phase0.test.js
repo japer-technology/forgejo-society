@@ -541,7 +541,6 @@ describe("Three-layer architecture", () => {
     "forgejo-intelligent-release",
     "forgejo-intelligent-repository",
     "forgejo-intelligent-security",
-    "forgejo-intelligent-sponsor",
     "forgejo-intelligent-star",
     "forgejo-intelligent-team",
     "forgejo-intelligent-wiki",

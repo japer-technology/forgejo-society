@@ -1,4 +1,4 @@
-name: forgejo-intelligence-AGENT
+name: forgejo-intelligence-WORKFLOW-AGENT
 
 on:
   issues:

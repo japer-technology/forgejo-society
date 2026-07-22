@@ -52,6 +52,11 @@ Delete the file and commit the deletion to stop automation. Restore it and push
 to enable the workflow again. This is separate from disabling the workflow in
 the Forgejo UI; the sentinel gives you a git-tracked audit trail.
 
+Fork pull requests are skipped by default. The workflow runs the agent only
+when the pull request head repository matches the target repository, so
+untrusted fork code never receives write tokens or provider secrets. See
+[help/action-management.md](help/action-management.md).
+
 ## Active Modules
 
 List surface modules:

@@ -73,7 +73,8 @@ the sentinel file.
 
 ## Fork Pull Requests
 
-The default job condition skips pull requests from forks:
+Fork pull requests are skipped by default. The job condition runs the agent
+only when the pull request head repository matches the target repository:
 
 ```yaml
 if: >-
