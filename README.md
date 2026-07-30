@@ -155,6 +155,8 @@ Agent assistants working in this repository must read
 [CLAUDE.md](CLAUDE.md) (Anthropic). The two files are kept in sync and
 define the binding rules for voice, vocabulary, identifiers, and scope.
 
+> Forgejo Society is an elastic Git-native intelligence in which one repository may embody an entire governed cognitive society, while multiple repositories may separate that same society into independently governed agencies. Local and cloud LLMs provide transient cognition; Git provides enduring identity, structure, memory, learning and constitutional control.
+> 
 ## License
 
 Released under the [MIT License](LICENSE.md).
