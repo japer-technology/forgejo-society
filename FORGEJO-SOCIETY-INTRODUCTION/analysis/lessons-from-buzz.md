@@ -18,7 +18,7 @@ execution bodies.
 This analysis was made against Buzz commit
 [`28ae6cd2174309529305724e455c7ca082f6fe4b`][buzz-commit], dated 2 August
 2026. Buzz is Apache-2.0 licensed and explicitly pre-1.0 at that snapshot.
-References below are pinned to that commit unless they point to a release.
+References below are pinned to that commit.
 
 ---
 
@@ -46,8 +46,11 @@ Several distinctions matter:
 - Remote-agent management has a detailed draft specification with explicit
   known defects. The wider remote-agent deployment is not evidence of a
   completed production path.
-- Branches-as-channels and some moderation surfaces are product designs. Their
-  useful ideas should be assessed separately from their delivery status.
+- Buzz's Git hosting is implemented, but automatic branch-channel binding and
+  its merge coordinator are product designs rather than shipped behavior.
+- Host binding for one implicit community is implemented. The generalization
+  to multiple communities in one relay deployment remains a draft design with
+  an active conformance checklist.
 
 Buzz's willingness to publish these boundaries is itself one of the lessons.
 
@@ -71,9 +74,9 @@ The useful comparison is therefore not “Buzz or Forgejo.” It is:
 
 ---
 
-## 1. Bind authorship, delegation, and content separately
+## 1. Bind authorship, authorization, and content separately
 
-**Buzz evidence — implemented base, draft delegation protocol.**
+**Buzz evidence — implemented base, draft owner-attestation protocol.**
 
 Every ordinary Buzz event carries a content-derived ID and a signature from
 its author. [NIP-OA][buzz-nip-oa] adds a separate owner attestation: the agent
@@ -84,7 +87,7 @@ That is a precise distinction which Forgejo Society should preserve:
 
 1. **Who produced this record?**
 2. **Which authenticated principal delivered it?**
-3. **Who delegated the relevant capability?**
+3. **Which governance record authorised the relevant capability?**
 4. **What exact content was covered by the proof?**
 5. **Did current governance permit the action when it was considered?**
 
@@ -96,7 +99,7 @@ reference:
 
 - the canonical `agency.*`, `critic.*`, or `censor.*` author;
 - the Forgejo or runner principal actually authenticated at the boundary;
-- the governance record which delegated the capability;
+- the governance record which granted the capability;
 - the commit, object, or payload digest which was signed or accepted;
 - the authority decision and its effective revision.
 
@@ -239,6 +242,10 @@ then separates:
 4. the observed enforcement outcome;
 5. any public, sanitized notice.
 
+The same design is candid that platform-level escalation is incomplete: a
+durable escalation record exists, but the operator inbox which consumes it is
+still separate work.
+
 This maps cleanly onto Society of Repo vocabulary.
 
 - A report is a `signal` with evidence.
@@ -261,14 +268,14 @@ that enforcement succeeded.
 
 ## 6. Derive scope at a trusted boundary and carry it everywhere
 
-**Buzz evidence — implemented types plus ongoing multi-tenant conformance
-work.**
+**Buzz evidence — implemented single-community host binding plus a draft
+multi-community design and ongoing conformance work.**
 
-Buzz's multi-tenant design resolves a `TenantContext` from the connection
-host before request content can cause tenant effects. Client-supplied tags may
-narrow a request but cannot override that context. Unknown hosts fail closed.
-The context then follows database access, search, audit, pub/sub, workflows,
-media, and Git transport
+Buzz resolves a `TenantContext` from the connection host before request
+content can cause community effects. Its multi-community design requires
+client-supplied tags to narrow, but never override, that context; unknown
+hosts fail closed. The context is then required to follow database access,
+search, audit, pub/sub, workflows, media, and Git transport
 ([checklist][buzz-multi-tenant-checklist],
 [type][buzz-tenant]).
 
@@ -445,6 +452,10 @@ expression timeouts, concurrency limits, and delay limits
 ([schema][buzz-workflow-schema],
 [architecture][buzz-architecture]).
 
+The implemented classifier is deliberately narrow: it identifies
+`call_webhook`, not a general effect type system. The broader classification
+below is a lesson to extract, not a claim about Buzz's current schema.
+
 This complements Forgejo Society's rule that capability is granted by files.
 A committed file is reviewable evidence, but a declaration is not enforcement
 on its own. The runtime still has to:
@@ -575,7 +586,7 @@ the two systems have deliberately different constitutions.
 
 | Priority | Extracted discipline | First Forgejo Society surface affected |
 | --- | --- | --- |
-| 1 | Record author, authenticated principal, delegation evidence, content identity, and authority decision separately | Event and settlement schemas |
+| 1 | Record author, authenticated principal, authorization evidence, content identity, and authority decision separately | Event and settlement schemas |
 | 1 | Derive society/repository scope at the Forgejo boundary and carry it through every read, cache, audit, and fan-out path | Bridge and platform adapter |
 | 1 | Keep signal, decision, execution attempt, and observed outcome as distinct records | Signals, censors, settlements, action events |
 | 1 | Add an explicit durability/audience class before telemetry or operational state is persisted | Event normalization and memory promotion |
