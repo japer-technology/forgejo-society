@@ -156,6 +156,10 @@ directory is the doorway; the others are the rooms it opens onto.
     — the companion note: what the same framing implies for the
     implementation plan in [`../FORGEJO-SOCIETY-IMPLEMENTATION/`](../FORGEJO-SOCIETY-IMPLEMENTATION/README.md),
     summarised as a small concrete edit list.
+  - [`lessons-from-buzz.md`](analysis/lessons-from-buzz.md) — lessons from
+    Buzz's signed events, scope boundaries, audit, retention, formal
+    invariants, and replaceable execution bodies, kept within Forgejo
+    Society's governance and self-hosting boundaries.
 - **[`essay/`](essay/)** — longer essays that situate the project:
   - [`buildkite-deep-dive.md`](essay/buildkite-deep-dive.md)
     — a deep look at which Buildkite features align with Forgejo Society's
